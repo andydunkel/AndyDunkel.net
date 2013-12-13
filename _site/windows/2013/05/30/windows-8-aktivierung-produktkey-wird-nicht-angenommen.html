@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Windows 8 Aktivierung - Produktkey wird nicht angenommen</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="/css/syntax.css">
+        <script src="/css/jquery.js"></script>
+        <link rel="stylesheet" href="/css/bootstrap.css">
+		<link rel="stylesheet" href="/css/bootstrap-theme.css">		
+		<script src="/css/bootstrap.js"></script>
+		<link href="/css/additional.css" rel="stylesheet">
+		<link rel="stylesheet" href="http://yandex.st/highlightjs/7.4/styles/default.min.css">
+		<script src="http://yandex.st/highlightjs/7.4/highlight.min.js"></script>
+		<link rel="alternate" type="application/rss+xml" title="AndyDunke.net RSS Feed" href="http://andydunkel.net/rss.xml" /> 
+    </head>
+    <body>
+    
+    <div class="container">
+    	<div class="col-md-6">
+	    	<a href="/index.html">
+    			<img src="/assets/logo.png" alt="logo" width="450" height="135">
+    		</a>
+    	</div>
+    	<div class="col-md-6" style="padding:40px">
+	    	<script type="text/javascript"><!--
+			google_ad_client = "ca-pub-1137550895446814";
+			/* 468x60, Erstellt 21.03.09 */
+			google_ad_slot = "2357680339";
+			google_ad_width = 468;
+			google_ad_height = 60;
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>    	
+    	</div>
+    </div>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default">
+      <div class="container">
+	     
+        <div class="navbar-header">	
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+       
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/blog.html">Blog</a></li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projekte <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/websites.html">Webseiten</a></li>
+                <li><a href="/software.html">Software</a></li>
+              </ul>
+            </li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sonstiges <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/documents.html">Dokumente</a></li>
+              </ul>
+            </li>
+            
+            <li><a href="/about.html">Persönliches</a></li>
+            <li><a href="/contact.html">Kontakt</a></li>
+            
+            <!--
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+            -->
+            <li><a href="/imprint.html">Impressum</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+          	<li>
+          	<form action="http://www.google.de" id="cse-search-box" class="navbar-form navbar-left" role="search">
+			  <div class="form-group">
+			    <input type="hidden" name="cx" value="partner-pub-1137550895446814:8857383477" />
+			    <input type="hidden" name="ie" value="UTF-8" />
+			    <input type="text" name="q" size="20" class="form-control"/>
+			  </div>
+			    <input type="submit" name="sa" value="Search" class="btn btn-default"/>			
+			  </form>
+				<script type="text/javascript" src="http://www.google.de/coop/cse/brand?form=cse-search-box&amp;lang=de"></script>
+          	</li>            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+    <h2>Windows 8 Aktivierung - Produktkey wird nicht angenommen</h2>
+<p class="meta">30 May 2013</p>
+
+<div class="post">
+<p>Ich habe letztes Jahr zugeschlagen und mir eine günstige Windows 8 Lizenz gekauft. Benutzen tue ich das nur in VMware um meine Software zu testen. Die Bedienung vom neuen Windows, naja. Aber das ist ein anderes Thema.</p>
+
+<p>Nun wollte Windows aktiviert werden, trotz gültigem Product-Key. Es kam immer die Meldung:</p>
+
+<blockquote>
+<p>Mit dem Product Key stimmt etwas nicht. Bitte überprüfen Sie ihn, und versuchen Sie es noch mal, oder verwenden Sie einen anderen Key.</p>
+</blockquote>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/05/no_valid_key.png" alt="Key ungültig"></p>
+
+<p>Eine typische Microsoft-Fehlermeldung also. :-)</p>
+
+<p>Meine Vermutung war, dass es sich um eine Update-Lizenz handelt und dies Probleme gibt, wenn man diese nicht über ein bestehendes Windows drüber installiert. Ich habe natürlich eine Windows 7 Lizenz, aber ich hatte damals wenig Lust erst ein Windows 7 in der VM zu installieren und dann auf Windows 8 zu updaten. </p>
+
+<p>Zum Glück gibt es eine Lösung über die Registry. Und da sage man mal Windows sei einfacher als Linux. </p>
+
+<p>Also fix den Registry-Editor öffnen:</p>
+
+<ul>
+<li><p>Windows-Taste + R drücken</p></li>
+<li><p>&quot;regedit&quot; eintippen und Enter</p></li>
+<li><p>Registrys-Shlüssel suchen: KEY<em>LOCAL</em>MACHINE/Software/Microsoft/Windows/CurrentVersion/Setup/OOBE</p></li>
+<li><p>Wert &quot;MediaBootInstall&quot; von 1 auf 0 setzen:</p></li>
+</ul>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/05/registry.png" alt="Registry bearbeiten"></p>
+
+<p>Damit die Änderungen übernommen werden, muss man noch die Admin-Eingabeaufforderung starten. Mit dem neuen Bedienkonzept von Windows gar nicht so intuitiv wie früher. Im Kachelmenü &quot;Eingabeaufforderung&quot; eintippen. Dann Rechtsklick auf den Eintrag:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/05/eingabeaufforderung.png" alt="Eingabeaufforderung"></p>
+
+<p>Und dann als Administrator starten:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/05/runas.png" alt="Als Admin ausführen"></p>
+
+<p>Nun noch &quot;slmgr /rearm&quot; in die Konsole eintippen und es erfolgt eine Meldung, dass man neu starten solle. Nach dem Neustart war dann das Windows auch gleich aktiviert. Wenn nicht, die Prozedur über die Systemsteuerung wiederholen.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/05/slrmgr.png" alt="slrmgr /rearm"></p>
+
+</div>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-1137550895446814";
+/* 468x60, Erstellt 21.03.09 */
+google_ad_slot = "2357680339";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<hr>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'andydunkelnet'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </div>
+    
+    <!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.ekiwi.de/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "7"]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+
+    </body>
+</html>

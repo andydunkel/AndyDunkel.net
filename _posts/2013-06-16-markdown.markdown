@@ -1,0 +1,72 @@
+---
+author: admin
+comments: true
+date: 2013-06-16 17:17:38+00:00
+layout: post
+slug: markdown
+title: Markdown
+wordpress_id: 1590
+categories:
+- Tools
+tags:
+- Documentation
+- Markdown
+---
+
+Immer wieder habe ich das Problem irgendwas dokumentieren zu müssen. Meist Kleinigkeiten, eine technische Info hier, etwas Feedback da, eine kleine Anleitung. In der Regel lautete die Standardantwort meist Word oder äquivalentes.
+
+
+
+
+Word ist zwar ein nettes Werkzeug, aber die Sache hat viele Nachteile. Zum einen wird alles in einem binären Dateiformat gespeichert, was Ablage und Versionierung in Subversion und Konsorten erschwert, zudem ist man oft genug damit beschäftigt irgendwas zu Formatieren oder sich mit den Eigenheiten von Word zu beschäftigen.
+
+
+
+
+Die Alternative sind Textdateien, die sind aber in der Regel recht unformatiert und oft unansehnlich, oder man greift zu HTML und darf sich mit jeder Menge Markup und CSS umeinanderschlagen. Lesbar sind die HTML-Dokumente auch nur wirklich im Browser gut.
+
+
+
+
+Im Studium hatte ich mich noch mit Latex beschäftigt, das ist auch schön textbasiert, sehr mächtig und erzeugt auch schöne Dokumente, aber alleine die Grundinstallation verschlingt Unmengen an Speicherplatz und die ganzen Befehle kann ich mir auf Dauer auch nicht merken.
+
+
+
+
+Wenn man nicht gerade eine Diplomarbeit oder ein Buch schreibt ist Latex schlicht Overkill.
+
+
+
+
+Letztendlich kommt es doch auf den Inhalt an. :-)
+
+
+
+
+# Markdown
+
+
+
+
+Irgendwann bin ich dann mal auf [Markdown](https://de.wikipedia.org/wiki/Markdown) gestoßen. Eine einfache Auszeichnungssprache mit wenig Markup-Elementen. Es gibt Überschriften, Fett, Kursiv, Bilder. Wer will auch Tabellen.
+
+
+
+
+Durch die Einfachheit kann mans sich die Elemente recht leicht merken, Editoren wie [Markdownpad](https://www.markdownpad.com/) (verwende ich unter Windows) und [Mou](http://mouapp.com/) (auf dem Mac) helfen einen mit Syntaxhighlighting und einer automatischen Vorschau.   
+So kann man sich auf den Inhalt konzentrieren.
+
+
+
+
+Ich verfasse mittlerweile alles an kleinen Infos, Anleitungen, Reporten und was so anfällt in Markdown. Bei Bedarf kann ich das Dokument als PDF oder HTML konvertieren und weiterverteilen. Beruflich arbeite ich viel mit Wikis, die Syntax hier ist etwas anders, aber es gibt online Konverter hierfür.
+
+
+
+
+Durch die Einfachheit der Syntax kann man sich voll und ganz auf den Inhalt konzentrieren.
+
+
+
+
+Die Syntax von Markdown wurde bewusst so gewählt, dass auch die reine Textdatei sehr gut lesbar ist. Somit kann man die Dateien auch mit einem Texteditor bearbeiten und lesen, falls man nichts anderes zur Hand hat.

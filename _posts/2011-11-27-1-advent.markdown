@@ -1,0 +1,13 @@
+---
+author: admin
+comments: true
+date: 2011-11-27 18:57:00+00:00
+layout: post
+slug: 1-advent
+title: 1. Advent
+wordpress_id: 1147
+categories:
+- Sonstiges
+---
+
+![IMG_0293](http://andydunkel.net/assets/uploads/2011/11/IMG_0293.jpg)

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>AndyDunkel.net</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="/css/syntax.css">
+        <script src="/css/jquery.js"></script>
+        <link rel="stylesheet" href="/css/bootstrap.css">
+		<link rel="stylesheet" href="/css/bootstrap-theme.css">		
+		<script src="/css/bootstrap.js"></script>
+		<link href="/css/additional.css" rel="stylesheet">
+		<link rel="stylesheet" href="http://yandex.st/highlightjs/7.4/styles/default.min.css">
+		<script src="http://yandex.st/highlightjs/7.4/highlight.min.js"></script>
+		<link rel="alternate" type="application/rss+xml" title="AndyDunke.net RSS Feed" href="http://andydunkel.net/rss.xml" /> 
+    </head>
+    <body>
+    
+    <div class="container">
+    	<div class="col-md-6">
+	    	<a href="/index.html">
+    			<img src="/assets/logo.png" alt="logo" width="450" height="135">
+    		</a>
+    	</div>
+    	<div class="col-md-6" style="padding:40px">
+	    	<script type="text/javascript"><!--
+			google_ad_client = "ca-pub-1137550895446814";
+			/* 468x60, Erstellt 21.03.09 */
+			google_ad_slot = "2357680339";
+			google_ad_width = 468;
+			google_ad_height = 60;
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>    	
+    	</div>
+    </div>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default">
+      <div class="container">
+	     
+        <div class="navbar-header">	
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+       
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/blog.html">Blog</a></li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projekte <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/websites.html">Webseiten</a></li>
+                <li><a href="/software.html">Software</a></li>
+              </ul>
+            </li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sonstiges <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/documents.html">Dokumente</a></li>
+              </ul>
+            </li>
+            
+            <li><a href="/about.html">Persönliches</a></li>
+            <li><a href="/contact.html">Kontakt</a></li>
+            
+            <!--
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+            -->
+            <li><a href="/imprint.html">Impressum</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+          	<li>
+          	<form action="http://www.google.de" id="cse-search-box" class="navbar-form navbar-left" role="search">
+			  <div class="form-group">
+			    <input type="hidden" name="cx" value="partner-pub-1137550895446814:8857383477" />
+			    <input type="hidden" name="ie" value="UTF-8" />
+			    <input type="text" name="q" size="20" class="form-control"/>
+			  </div>
+			    <input type="submit" name="sa" value="Search" class="btn btn-default"/>			
+			  </form>
+				<script type="text/javascript" src="http://www.google.de/coop/cse/brand?form=cse-search-box&amp;lang=de"></script>
+          	</li>            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+    <section>
+<h1>Willkommen</h1>
+
+... auf meiner Homepage. Ich schreibe hier über Dinge die mich interessieren. Sprachlich im Mix von Deutsch und English, je nach Themengebiet.
+
+<hr>
+
+
+<div class="row">
+    <div class="col-md-9">
+      <h2>Blog Posts</h2>
+     
+		
+		<h3>
+		  <a href="/coding/eclipse/2012/11/03/rcp-get-command-line-parameters-in-eclipse-apps.html">RCP: Get command line parameters in Eclipse Apps</a>
+		</h3>
+		  <p class="small">Posted on 03 November 2012 by Andy</p>
+		  <p><p>You can easily access the command line parameters of your RCP application via the Platform object, here is an example:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">String args[] = Platform.getCommandLineArgs();
+int i = 0;
+while(i &lt; args.length) {
+  System.out.println(args[i]);
+  i++;
+}
+</code></pre></div></p>		
+		  <p class="small">Tagged:  by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
+		  <a href="/coding/eclipse/2012/11/02/easy-logging-for-rcp-applications.html">Easy logging for RCP applications</a>
+		</h3>
+		  <p class="small">Posted on 02 November 2012 by Andy</p>
+		  <p><p>A small class for easy logging in RCP applications by using the Activators logging functions. This class mainly wraps the need of creating an IStatus object each time we want to log something.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+
+public class LoggerUtil {
+    public static void info(String message){
+        IStatus status = new Status(IStatus.INFO,Activator.PLUGIN_ID, message);
+        Activator.getDefault().getLog().log(status);
+    }
+
+    public static void error(String message){
+        IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, message);
+        Activator.getDefault().getLog().log(status);
+    }
+
+    public static void warning(String message){
+        IStatus status = new Status(IStatus.WARNING,.PLUGIN_ID, message);
+        Activator.getDefault().getLog().log(status);
+    }
+}
+</code></pre></div></p>		
+		  <p class="small">Tagged:  by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
+		  <a href="/coding/eclipse/2012/11/02/rcp-switch-to-perspective-via-code.html">RCP: Switch to perspective via code</a>
+		</h3>
+		  <p class="small">Posted on 02 November 2012 by Andy</p>
+		  <p><p>A small snippet which switches to a certain perspective via code:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">IPerspectiveDescriptor[] perspectives =
+PlatformUI.getWorkbench().getPerspectiveRegistry().getPerspectives();
+
+IWorkbenchPage page =
+PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+    if(page != null) {
+      for (IPerspectiveDescriptor des : perspectives) {
+        if (des.getId().equals(&quot;my.perspective.id&quot;)) {
+          page.setPerspective(des);
+          break;
+        }
+      }
+    }
+
+return null;
+</code></pre></div></p>		
+		  <p class="small">Tagged:  by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
+		  <a href="/coding/eclipse/2012/11/01/rcp-remove-unwanted-preference-pages.html">RCP: Remove unwanted preference pages</a>
+		</h3>
+		  <p class="small">Posted on 01 November 2012 by Andy</p>
+		  <p><p>In my RCP application some unwanted sections in the preferences showed up:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/UnwantedPreferences.png" alt="Unwanted Preferences"></p>
+
+<p>How to get rid of them? Thats easy, in the &quot;ApplicationWorkbenchAdvisor&quot; class, override the &quot;postStartup&quot; method:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">@Override
+public void postStartup(){
+      PreferenceManager pm = PlatformUI.getWorkbench().getPreferenceManager();
+      pm.remove(&quot;org.eclipse.help.ui.browsersPreferencePage&quot;); //$NON-NLS-1$
+      pm.remove(&quot;org.eclipse.help.ui.contentPreferencePage&quot;); //$NON-NLS-1$
+}
+</code></pre></div>
+<p>What if you don&#39;t know the id of the preference page? No problem, you can output those with the following code snippet:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">@Override
+public void postStartup(){
+      PreferenceManager pm = PlatformUI.getWorkbench().getPreferenceManager();
+      IPreferenceNode[] arr = pm.getRootSubNodes();
+
+      for(IPreferenceNode pn:arr){
+          System.out.println(&quot;Label:&quot; + pn.getLabelText() + &quot; ID:&quot; + pn.getId());
+      }
+}
+</code></pre></div></p>		
+		  <p class="small">Tagged: Eclipse, plugin, preferences, and RCP by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
+		  <a href="/coding/eclipse/2012/11/01/rcp-perspectives-and-perspective-contributions-2.html">RCP: Perspectives and Perspective Contributions</a>
+		</h3>
+		  <p class="small">Posted on 01 November 2012 by Andy</p>
+		  <p><p>Note: I put the example project in a ZIP file, you can use that to have a look to the actual code, <a href="http://andydunkel.net/assets/wp-custom/com.da.perspectives.example.zip">Download</a>.</p>
+
+<h3>Start</h3>
+
+<p>In the first step, we create a sample plugin project (Mail project):</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/1.png" alt="1"></p>
+
+<h3>Make the perspective bar visible</h3>
+
+<p>This needs to be done in the ApplicationWorkbenchWindowAdvisor.java class, in the preWindowOpen method:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">IWorkbenchWindowConfigurer configurer = getWindowConfigurer();
+configurer.setShowPerspectiveBar(true);
+</code></pre></div>
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/2.png" alt="2"></p>
+
+<h3>Create another plugin with perspective</h3>
+
+<p>We create another plugin project in the workspace, select &quot;No&quot; for &quot;Rich Client Application&quot; (no template in the next step):</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/3.png" alt="3"></p>
+
+<p>After the project is created, open the &quot;plugin.xml&quot; file of the new plugin project. We create a new &quot;org.eclipse.ui.perspectives&quot; extension point:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/4.png" alt="4"></p>
+
+<p>To create the perspective class, we click on the &quot;class&quot; link and create the class:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/5.png" alt="5"></p>
+
+<p>In our main projects &quot;plugin.xml&quot; add our new plugin project as dependency:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/6.png" alt="6"> <img src="http://andydunkel.net/assets/uploads/2012/11/7.png" alt="7"></p>
+
+<p>If we switch to this perspective, the window will become empty. We want an view appear in this perspective. In the example project, we create an &quot;ImageView&quot; and define the view in the &quot;plugin.xml&quot;:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/8.png" alt="8"></p>
+
+<p>After that, we have to add the code which defines our perspective:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">@Override
+public void createInitialLayout(IPageLayout layout) {
+  String editorArea = layout.getEditorArea();
+  layout.setEditorAreaVisible(false);
+
+  layout.addStandaloneView(ImageView.ID,  false, IPageLayout.TOP, 1, editorArea);
+}
+</code></pre></div>
+<h3>Contribute to an existing perspective</h3>
+
+<p>OK, different example: We now want to contribute our ImageView to an existing perspective. For that, we add to our contribution project an &quot;perpectiveExtensions&quot; extension point:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/9.png" alt="9"></p>
+
+<p>As &quot;targetID&quot; enter the ID of our main perspective in the &quot;main.gui&quot; project. Now we add a view ot our perpective extension. Right click -&gt; New -&gt; view:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/a.png" alt="a"></p>
+
+<p>When the application starts, the ImageViewer will appear next to the message view:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/b.png" alt="b"></p>
+
+<h3>Contribute to the toolbar</h3>
+
+<p>Now we want, that our contribution plugin also contributes a toolbar and menu items to our main application. For that, we have to define an &quot;org.eclipse.ui.actionSets&quot; extension point. Now we have to add the action set to our perspectiveExtension.</p>
+
+<p>The &quot;plugin.xml&quot; extension points should now look something like this:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/c.png" alt="c"></p>
+
+<p>If it does not show up, make sure you entered a correct &quot;toolbarPath&quot; in the definition of your actionSet action:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/d.png" alt="d"></p>
+
+<p>If everything is right, the new icon should appear in the toolbar of our main application.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/e.png" alt="e"></p>
+
+<h3>Remove an existing item from the toolbar</h3>
+
+<p>If we switch to our new perspective, the image viewer, we are able to open new message views via toolbar and the menu. However, we do not want this. So we need to get rid of the menu items and toolbar items. The perspectiveExtension allows us to hide items, too. To do this, we add another perspectiveExtension for our perspective for the image view:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/g.png" alt="g"></p>
+
+<p>Now we add &quot;hiddenMenuItems&quot; and &quot;hiddenToolBarItems&quot;:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/h.png" alt="h"></p>
+
+<p>Basically we just enter the IDs of the commands here. If we switch now to our perspective, the toolbar items defined should be invisible.</p>
+</p>		
+		  <p class="small">Tagged: Eclipse, perspectives, and RCP by Andy</p>
+		  <hr>
+		  
+		
+
+    </div>
+    <div class=".col-md-4">
+    	<h4>Partnerlink</h4>
+    	<a target="_blank" href="http://www.amazon.de/?_encoding=UTF8&camp=1638&creative=19454&linkCode=ur2&site-redirect=de&tag=ekiwide0b-21">Einkaufen bei Amazon.de</a><img src="https://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&l=ur2&o=3" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />	
+    	
+    	<h4>Werbung</h4>
+    	
+    	<div align="left">
+		<script type="text/javascript"><!--
+		google_ad_client = "ca-pub-1137550895446814";
+		/* andy.ekiwi.de */
+		google_ad_slot = "3362068620";
+		google_ad_width = 125;
+		google_ad_height = 125;
+		//-->
+		</script>
+		<script type="text/javascript"
+		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+		</div>
+    	
+    	<h4>Links</h4>
+    	<ul class="list-unstyled">
+    		<li><a href="http://www.ekiwi.de">eKiwi.de</a></li>
+    		<li><a href="http://www.da-software.de">DA-Software.de</a></li>
+    	</ul>
+    	<h4>Categories</h4>    	
+		<section>
+		<ul id="categories" class="list-unstyled">
+		<li class='category'><a href='/categories/android/'>android (1)</a></li>
+<li class='category'><a href='/categories/coding/'>coding (14)</a></li>
+<li class='category'><a href='/categories/delphi/'>delphi (1)</a></li>
+<li class='category'><a href='/categories/eclipse/'>eclipse (23)</a></li>
+<li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
+<li class='category'><a href='/categories/gadgets/'>gadgets (23)</a></li>
+<li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
+<li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
+<li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
+<li class='category'><a href='/categories/java/'>java (22)</a></li>
+<li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
+<li class='category'><a href='/categories/kochen/'>kochen (1)</a></li>
+<li class='category'><a href='/categories/linux/'>linux (6)</a></li>
+<li class='category'><a href='/categories/mac/'>mac (2)</a></li>
+<li class='category'><a href='/categories/meinung/'>meinung (2)</a></li>
+<li class='category'><a href='/categories/radfahren/'>radfahren (27)</a></li>
+<li class='category'><a href='/categories/reparatur/'>reparatur (1)</a></li>
+<li class='category'><a href='/categories/rezepte/'>rezepte (1)</a></li>
+<li class='category'><a href='/categories/science/'>science (3)</a></li>
+<li class='category'><a href='/categories/sonstiges/'>sonstiges (40)</a></li>
+<li class='category'><a href='/categories/swt/'>swt (4)</a></li>
+<li class='category'><a href='/categories/tools/'>tools (18)</a></li>
+<li class='category'><a href='/categories/windows/'>windows (2)</a></li>
+
+		</ul>
+		</section>
+   </div>
+</div>
+
+<h2>Blog Posts</h2>
+
+
+<!-- Pagination links -->
+<div class="pagination">
+  
+    <a href="/page7" class="previous">Previous</a>
+  
+  <span class="page_number ">Page: 8 of 36</span>
+  
+    <a href="/page9" class="next">Next</a>
+  
+</div>
+
+
+    </div>
+    
+    <!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.ekiwi.de/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "7"]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+
+    </body>
+</html>

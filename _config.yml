@@ -1,0 +1,6 @@
+name: AndyDunkel.net
+markdown: redcarpet
+pygments: true
+paginate: 5
+exclude: ['raw']
+url: http://andydunkel.net

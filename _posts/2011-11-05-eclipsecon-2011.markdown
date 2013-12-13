@@ -1,0 +1,78 @@
+---
+author: admin
+comments: true
+date: 2011-11-05 18:13:00+00:00
+layout: post
+slug: eclipsecon-2011
+title: EclipseCON 2011
+wordpress_id: 1092
+categories:
+- Eclipse
+tags:
+- EclipseCON
+- europe
+---
+
+Vom 2.11. bis 4.11. fand in diesem Jahr wieder die [EclipseCON](http://eclipsecon.org/) Europe statt. Im letzten Jahr nahm ich zum ersten Mal teil. Seit etwa dieser Zeit beschäftige ich mich beruflich und privat mit der Java/[Eclipse](http://eclipse.org/)/[RCP](http://wiki.eclipse.org/index.php/Rich_Client_Platform) Programmierung. 
+
+Java selbst hatte ich zwar im Studium vor einigen Jahren mehr als ausführlich behandelt, Eclipse und RCP sind aber nochmal ein anderes Paar Schuhe. Die Lernkurve ist lang, die Anfangsfrustration hoch (zumindest bei mir), die Doku oft zum Haare raufen. Aber nach einem Jahr hat man dann doch schon mal ein gewisses Grundwissen.
+
+Die EclipseCON war in diesem Jahr größer als im letzten Jahr und bot wieder ein sehr breites Spektrum an Vorträgen und Workshops.
+
+Die einzelnen Veranstaltungen, Keynotes ausgenommen, laufen parallel ab und man kann sich aussuchen was für einen interessant ist. In der Regel ist immer was für einen dabei.
+
+![DSCN2746](http://andydunkel.net/assets/uploads/2011/11/DSCN2746.jpg)
+
+Die Reise begann recht zeitig am Dienstag mit IT-Problemen. Ich wollte meinen Arbeitskollegen abholen, aber mein Handy und die Google Navi stürzten alle paar Minuten ab. Ohne Navi einen Ort wie [Derndorf](http://de.wikipedia.org/wiki/Derndorf_(Kirchheim)) zu finden, mit diversen Umleitungen, unmöglich. Zum Glück lief es irgendwann und mit einiger Verspätung ging es weiter.
+
+Gerade noch pünktlich angekommen begann die EclipseCON, wie im letzten Jahr auch, mit einem Workshop. Fokus hier, Dinge selbst ausprobieren, statt nur passiv zuzuhören. Der Workshop behandelte das [Eclipse Modelling Framework](http://www.eclipse.org/modeling/emf/), kurz EMF. Die erste Hälfte waren im Prinzip nichts neues, da wir das ganze in unseren Projekten bereits nutzen. Der zweite Teil war hingegen neu und interessant. Hat sich also schon mal gelohnt.
+
+Anschließend gab es Essen, wie auch im letzten Jahr perfekt. Vor allem die Soßen! Man muss schon extrem aufpassen sich bei den Leckereien nicht komplett zu überfressen.
+
+[![IMAG0547](http://andydunkel.net/assets/uploads/2011/11/IMAG0547_thumb.jpg)](http://andydunkel.net/assets/uploads/2011/11/IMAG0547.jpg)
+
+Gestärkt nach der Mittagspause wurde die Veranstaltung vom Eclipse Foundation Vorstand offiziell eröffnet. Direkt im Anschluss fand die erste Keynote statt. Thema: die offene Hardwareplattform Arduino ([http://www.arduino.cc/](http://www.arduino.cc/)). Sehr interessant, aber für mich als reinen Softwarefuzzy nix, ich tu mich ja schon schwer einen Lötkolben gerade zu halten. ![Smiley](http://andydunkel.net/assets/uploads/2011/11/wlEmoticon-smile.png)
+
+Wer will, kann damit aber recht günstig alles mögliche anstellen, z.B. kleine Roboter entwickeln.
+
+![IMAG0549](http://andydunkel.net/assets/uploads/2011/11/IMAG0549.jpg)
+
+Nachmittags gab es einen interessanten Vortrag über die Neuerungen von Java 7. Anschließend fand die zweite Keynote statt. John Swainson, früher bei IBM als Manager tätig, beschrieb die Geschichte und Hintergründe die IBM dazu bewegten die Eclipse Plattform als Open-Source freizugeben und viele Millionen Euro zu investieren. Grundaussage: Ansonsten hätte man gegen Microsoft keine Change gehabt. ![Smiley](http://andydunkel.net/assets/uploads/2011/11/wlEmoticon-smile.png)
+
+Am Abend fand dann noch die 10 Jahre Eclipse Geburtstagsfeier statt, mit Band “Cool Down” und kostenlosen Getränken den ganzen Abend.
+
+![IMAG0558](http://andydunkel.net/assets/uploads/2011/11/IMAG0558.jpg)![IMAG0559](http://andydunkel.net/assets/uploads/2011/11/IMAG0559.jpg)
+
+Den leichten Kater am nächsten Tag schiebe ich auf das schwäbische Bier. Der zweite Tag war auch der Tag mit der höchsten Vortragsdichte. Ich will hier gar nicht auf die Details eingehen. Konkret haben wir uns Vorträge über die verteilte Versionsverwaltung [GIT](http://git-scm.com/) und dem Eclipse Update Mechanismus [p2](http://wiki.eclipse.org/Equinox/p2) angeschaut. Und natürlich dürfte auch der Vortrag über [Home Automation](http://code.google.com/p/openhab/) mit Eclipse nicht fehlen. 
+
+Ebenfalls interessant, ein Vortrag über die Erstellung von elektronischen Büchern und Dokumentationen in Eclipse. Irgendwann wird Eclipse noch Kaffee kochen und Bier aus dem Keller holen.
+
+Am Abend fand dann der Eclipse Stammtisch statt. Es gab wieder gutes schwäbisches Bier. Anschließend haben ich und mein Kollege den Abend in der Stadt ausklingen lassen.
+
+![IMAG0555](http://andydunkel.net/assets/uploads/2011/11/IMAG0555.jpg)![IMAG0575](http://andydunkel.net/assets/uploads/2011/11/IMAG0575.jpg)
+
+Der letzte Tag, mit allmählich einsetzender totaler Übermüdung, begann wie schon im letzten Jahr mit einer Keynote. Bran Selic diskutierte den Ansatz modelbasierten Softwareengineerings in der Industrie. Sehr interessant aber auch sehr abstrakt.
+
+Den Rest des Tages (bis 15 Uhr) gab es wieder viele interessante Vorträge. Konkret angeschaut haben wir uns neue Ansätze zur Codevervollständigung ([Eclipse Code Recommenders](http://www.eclipse.org/recommenders/)). Eine Art Amazon für Quellcode, nach dem Motto Programmierer die XY so programmiert haben, haben anschließend Z so programmiert. Muss ich mir bei Gelegenheit mal genauer anschauen.
+
+Es folgte ein Vortrag über Projekt- und System- und Codedokumentation unter dem Aspekt dieses synchron zu halten. Man kennt das ja, dokumentieren ist unbeliebt und wird daher vernachlässigt. Folge die Dokumentation spiegelt nicht mehr den realen Zustand des Systems dar und wird dadurch unbrauchbar. Abhilfe soll hier das Project [Mylyn Intent](http://wiki.eclipse.org/Intent) schaffen. Schauen wir mal.
+
+![IMAG0564](http://andydunkel.net/assets/uploads/2011/11/IMAG0564.jpg)
+
+Nachmittags stellte uns [Thomas](http://www.thomaskratz.name/?p=226) von Eiswind Software einen recht interessanten Ansatz von asynchronem Nachrichtenaustausch von Client-Server Anwendungen. Er hat einfach das [XMPP-Protokoll](http://en.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol) verwendet. Auf die Idee ein Instant Messaging Protokoll dafür herzunehmen muss man erst mal kommen. ![Smiley mit geöffnetem Mund](http://andydunkel.net/assets/uploads/2011/11/wlEmoticon-openmouthedsmile.png)
+
+Fazit:
+
+Eigentlich gibt es nicht viel zu kritisieren, die Organisation war sehr gut, die Vorträge interessant. Im normalen beruflichen Alltag bleibt oft nicht die Zeit sich über die Neuerungen auf Stand zu halten, daher sind diese 3 konzentrierten Tage ideal dafür.
+
+Klar kann man in einem 30 bzw. 60 Minuten Vortrag nicht viel über eine Thematik vermittelt bekommen. Aber man bekommt einen Einblick, weiß was es gibt, was es möglich ist und wer will kann sein Wissen anschließend selbst vertiefen. 
+
+In diesem Sinne hoffe ich, dass es nächstes Jahr auch wieder klappt.
+
+* * *
+
+ 
+
+Was nicht so schön war, für die Kürbisausstellung hatten wir leider keine Zeit:
+
+![IMAG0560](http://andydunkel.net/assets/uploads/2011/11/IMAG0560.jpg)

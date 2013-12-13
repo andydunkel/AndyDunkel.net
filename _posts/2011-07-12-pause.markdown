@@ -1,0 +1,15 @@
+---
+author: admin
+comments: true
+date: 2011-07-12 04:00:00+00:00
+layout: post
+slug: pause
+title: Pause
+wordpress_id: 710
+categories:
+- Katzen
+tags:
+- Katze
+---
+
+Werde eine Weile nicht schreiben können (aus Gründen), daher gibt es jetzt zum Abschied noch ein Katzenvideo:

@@ -1,0 +1,11 @@
+---
+author: admin
+comments: true
+date: 2011-08-09 01:48:00+00:00
+layout: post
+slug: nichts-2
+title: Ausgebrannt
+wordpress_id: 874
+---
+
+![image](http://andydunkel.net/assets/uploads/2011/08/image11.png)

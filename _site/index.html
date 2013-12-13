@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>AndyDunkel.net</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="/css/syntax.css">
+        <script src="/css/jquery.js"></script>
+        <link rel="stylesheet" href="/css/bootstrap.css">
+		<link rel="stylesheet" href="/css/bootstrap-theme.css">		
+		<script src="/css/bootstrap.js"></script>
+		<link href="/css/additional.css" rel="stylesheet">
+		<link rel="stylesheet" href="http://yandex.st/highlightjs/7.4/styles/default.min.css">
+		<script src="http://yandex.st/highlightjs/7.4/highlight.min.js"></script>
+		<link rel="alternate" type="application/rss+xml" title="AndyDunke.net RSS Feed" href="http://andydunkel.net/rss.xml" /> 
+    </head>
+    <body>
+    
+    <div class="container">
+    	<div class="col-md-6">
+	    	<a href="/index.html">
+    			<img src="/assets/logo.png" alt="logo" width="450" height="135">
+    		</a>
+    	</div>
+    	<div class="col-md-6" style="padding:40px">
+	    	<script type="text/javascript"><!--
+			google_ad_client = "ca-pub-1137550895446814";
+			/* 468x60, Erstellt 21.03.09 */
+			google_ad_slot = "2357680339";
+			google_ad_width = 468;
+			google_ad_height = 60;
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>    	
+    	</div>
+    </div>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default">
+      <div class="container">
+	     
+        <div class="navbar-header">	
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+       
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/blog.html">Blog</a></li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projekte <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/websites.html">Webseiten</a></li>
+                <li><a href="/software.html">Software</a></li>
+              </ul>
+            </li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sonstiges <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/documents.html">Dokumente</a></li>
+              </ul>
+            </li>
+            
+            <li><a href="/about.html">Persönliches</a></li>
+            <li><a href="/contact.html">Kontakt</a></li>
+            
+            <!--
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+            -->
+            <li><a href="/imprint.html">Impressum</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+          	<li>
+          	<form action="http://www.google.de" id="cse-search-box" class="navbar-form navbar-left" role="search">
+			  <div class="form-group">
+			    <input type="hidden" name="cx" value="partner-pub-1137550895446814:8857383477" />
+			    <input type="hidden" name="ie" value="UTF-8" />
+			    <input type="text" name="q" size="20" class="form-control"/>
+			  </div>
+			    <input type="submit" name="sa" value="Search" class="btn btn-default"/>			
+			  </form>
+				<script type="text/javascript" src="http://www.google.de/coop/cse/brand?form=cse-search-box&amp;lang=de"></script>
+          	</li>            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+    <section>
+<h1>Willkommen</h1>
+
+... auf meiner Homepage. Ich schreibe hier über Dinge die mich interessieren. Sprachlich im Mix von Deutsch und English, je nach Themengebiet.
+
+<hr>
+
+
+<div class="row">
+    <div class="col-md-9">
+      <h2>Blog Posts</h2>
+     
+		
+		<h3>
+		  <a href="/windows/linux/mac/tools/2013/12/05/exfat_truecrypt_volume.html">exFAT für TrueCrypt Volume nutzen</a>
+		</h3>
+		  <p class="small">Posted on 05 December 2013 by Andy</p>
+		  <p><p>Externe Festplatten und USB-Sticks verschlüssele ich meist mit TrueCrypt. Geht der Datenträger verloren, kann man zumindest recht sicher sein, dass niemand etwas mit den Daten anfangen kann. Da ich privat Windows, OSX und Linux nutze, stellt sich die Frage, welches Dateisystem man verwendet. Schließlich will ich von allen Betriebssystemen problemlos darauf zugreifen können.</p>
+
+<p>Die beste Lösung in Dateisystemform kommt von Microsoft und nennt sich <a href="http://de.wikipedia.org/wiki/ExFAT#exFAT">exFat</a>. Windows kann es ab XP lesen, OSX hat auch keine Probleme damit und auch Linux lässt sich problemlos dazu <a href="http://andydunkel.net/linux/2012/12/18/exfat-unter-ubuntu-nutzen.html">überreden</a>.</p>
+
+<p>Der Vorteil von exFat ist die Möglichkeit der Speicherung von Dateien größer 4GB. Leider bietet TrueCrypt keine Möglichkeit bei der Erstellung von Containern exFat zu nutzen. Entweder das alte FAT oder NTFS. </p>
+
+<p>Macht aber nix, exFat lässt sich trotzdem nutzen: Zuerst wird der TrueCrypt Container ganz normal erstellt und formatiert. </p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/12/truecrypt/true_format.png" alt=""></p>
+
+<p>Nachdem der Container erstellt wurde, mountet man ihn. Nun kann man das geöffnete Laufwerk mit dem exFat-Dateisystem formatieren. Im Explorer geht dies allerdings nicht, hier erlaubt Windows das exFat-Dateisystem nur für mobile Datenträger.</p>
+
+<p>Über die Eingabeaufforderung (Windows-Taste und dann CMD eingeben), lässt sich das Laufwerk dann mit exFat-Dateisystem ausstatten:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">format &lt;drive letter&gt;: /FS:exfat /Q
+</code></pre></div>
+<p><img src="http://andydunkel.net/assets/uploads/2013/12/truecrypt/true_format2.png" alt=""></p>
+</p>		
+		  <p class="small">Tagged: truecrypt and exfat by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
+		  <a href="/sonstiges/2013/11/30/festo_bionicopter.html">Festo BionicOpter</a>
+		</h3>
+		  <p class="small">Posted on 30 November 2013 by Andy</p>
+		  <p><p>Nachdem Festo letztes Jahr einen Vogel fliegen ließ, flog dieses Jahr eine Robo-Libelle über deren Messestand:</p>
+
+<iframe width="640" height="360" src="//www.youtube.com/embed/ROEqV4VfPTg" frameborder="0" allowfullscreen></iframe>
+</p>		
+		  <p class="small">Tagged: other by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
+		  <a href="/delphi/coding/2013/11/23/firemonkey_xe_4_taborder_workaround.html">Delphi XE4/Firemonkey - Taborder not working + Workaround</a>
+		</h3>
+		  <p class="small">Posted on 23 November 2013 by Andy</p>
+		  <p><p>Firemonkey, the framework for cross plattform development, still seems to have some problems and bugs. :-( One of the problems I came across was that the TabOrder property was not working:</p>
+
+<iframe width="640" height="360" src="//www.youtube.com/embed/adnmXK3xzyE" frameborder="0" allowfullscreen></iframe>
+
+<p>The problem starts with the inability to set the TabOrder correctly in the designer. They are reset all the time to their defaults. When the application is running, the TabOrder works for some basic dialogs. In others dialogs nothing happens, or the tab key focuses the wrong control.</p>
+
+<p>Looking up the bug database from Embarcadero, this is a known problem / bug. Some people in the internet suggest to set the TabOrder property programmatically during runtime, but that also did not work for me.</p>
+
+<p>After a lot of trying, I found a workaround, that at least works for me. Since I could not set the TabOrder property, I used the HelpContext property (which I dont use in my application) to define the order of the controls:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/11/taborder/1.png" alt=""></p>
+
+<p><em>Note: You can also use the Tag value, but I am using that one for my translation logic.</em></p>
+
+<p>Next step was to create a class helper for TForm:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">unit FormHelper;
+
+interface
+
+type
+  TFormHelper = class helper for TForm
+    procedure DoTabHandlingXE(comp : TForm; tabOrder : Integer);
+  end;
+
+implementation
+
+//Workaround for Tab-Bug in Firemonkey
+procedure TFormHelper.DoTabHandlingXE(comp: TForm; tabOrder : Integer);
+var
+  i, c :integer;
+  current : TComponent;
+  currentNext : integer;
+  focus : TStyledControl;
+begin
+  c := Self.ComponentCount - 1;
+  currentNext := 9999;
+  focus := nil;
+
+  for i := 0 to c do begin
+      current := Self.Components[i];
+      if (current is TStyledControl) then begin
+          if ((current as TStyledControl).HelpContext &lt; currentNext) and 
+          ((current as TStyledControl).HelpContext &gt; tabOrder) then begin
+            currentNext := (current as TStyledControl).HelpContext;
+          end;
+      end;
+  end;  
+
+  for i := 0 to c do begin
+      current := Self.Components[i];
+      if (current is TStyledControl) then begin
+        if (currentNext = (current as TStyledControl).HelpContext) then begin
+          focus := (current as TStyledControl);
+        end;
+      end;
+  end;
+
+  if focus &lt;&gt; nil then begin
+    focus.SetFocus;
+  end;
+end;
+end.
+</code></pre></div>
+<p>I am sure there could be some optimizations done with that code, but it works. What we are doing here is to iterate over all controls of a given form and find the next higher value of the HelpContext. Thats the control we want to set focus, when the user hits the tab key.</p>
+
+<p>Of course the code does nothing to far, since the method is not called yet. So the next step is to implement the KeyDown event in the form:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">procedure TfrmEinzField.KeyDown(var Key: Word; var KeyChar: Char;
+  Shift: TShiftState);
+var
+  control : TStyledControl;
+begin
+  if Key = vkTab then
+  begin
+    //custom handling
+    if (Self.GetFocused is TStyledControl) then begin
+      control := (Self.GetFocused as TStyledControl);
+      DoTabHandlingXE(Self, control.HelpContext);
+    end;
+  end else
+    inherited; //do default handling
+end;
+</code></pre></div>
+<p>In the code, we get the currently focused control. Then we call the method we wrote before with the current Form variable and the controls HelpContext value.
+With that workaround the tab key is now working as expected, jumping to the next control. </p>
+</p>		
+		  <p class="small">Tagged: firemonkey and taborder by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
+		  <a href="/gadgets/sonstiges/reparatur/2013/11/19/sanyo_z5_thermoschalter.html">Sanyo Z5 Beamer - Thermoschalter zurücksetzen</a>
+		</h3>
+		  <p class="small">Posted on 19 November 2013 by Andy</p>
+		  <p><p>Am Samstagabend hatte ich mal wieder Zeit für einen Film. Dafür hatte ich mir einigen Jahren mal ein kleines Heimkinosystem eingerichtet: Beamer + 5.1 Boxen. Prima Sache!</p>
+
+<p>Leider ließ sich der Beamer, ein Sanyo Z5, nicht zum mehr Betrieb überreden. Nach dem Einschalten lief zwar der Lüfter, nach wenigen Sekunden schaltete sich der Beamer aber wieder ab. Zusätzlich blinkte die LED zum Lampenwechsel. Ganz toll.</p>
+
+<p>Dann fiel mir auch schon ein möglicher Grund ein. Bei der letzten Benutzung hatte ich etwas zu voreilig die Steckdosenleiste betätigt und den Beamer während der Nachkühlung hart abgeschaltet. :-(</p>
+
+<p>Nagut dachte ich, ist halt durch deine Dummheit die Lampe hinüber. Wäre nach über 6 Jahren und 2000 Betriebsstunden nicht schön, aber vertretbar gewesen.</p>
+
+<p>Nach kurzer Suche im Internet kam allerdings noch eine weitere Möglichkeit ins Spiel. Der Beamer verfügt über einen Thermoschalter, dieser kann sich beim vorzeitigen Abschalten verhaken.</p>
+
+<p>Also fix das Gerät aufgeschraubt, den Schalter betätigt und zur großen Freude lief er dann wieder und der Filmabend konnte mit 30 Minuten Verspätung doch noch beginnen.</p>
+
+<p>Wer das gleiche Problem hat hier eine kurze Anleitung. </p>
+
+<p>Beamer abbauen und dann hinten die drei Schrauben lösen:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/11/beamer/beamer0.jpg" alt=""></p>
+
+<p>Beamer nun auf den Rücken legen und weitere 3 Schrauben lösen:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/11/beamer/beamer1.jpg" alt=""></p>
+
+<p>Anschließend lässt sich die obere Abdeckung abnehmen. Die Abdeckung ist mit ein paar Kabeln mit dem Rest verbunden, also etwas Vorsicht walten lassen.</p>
+
+<p>Der Schaltet befindet sich hinten rechts am Gerät. Diesen nun vorsichtig rein drücken. Bei mir gab es ein leises Einrastgeräusch.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/11/beamer/beamer2.jpg" alt=""></p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/11/beamer/beamer3.jpg" alt=""></p>
+
+<p>Nach dem Zusammenbau lief der Beamer wieder. </p>
+</p>		
+		  <p class="small">Tagged: beamer and sanyo by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
+		  <a href="/sonstiges/2013/11/17/server_umzug.html">Webseiten-Umzug vollbracht</a>
+		</h3>
+		  <p class="small">Posted on 17 November 2013 by Andy</p>
+		  <p><p>Endlich habe ich in den letzten Wochen mal die Zeit gefunden meine Webseite zu aktualisieren und es heute dann auch endlich geschafft online zu stellen.</p>
+
+<p>Geplant hatte ich das mehr oder weniger schon von Anfang an. Bisher lief alles unter Wordpress, was zum Bloggen natürlich top ist. War damals die einfachste Variante mal schnell eine Webseite online zu stellen, da ich noch nicht wusste, ob ich überhaupt regelmäßig Inhalte online stellen werde.</p>
+
+<p>Was mir aber bisher an Wordpress immer gefehlt hat, war die Möglichkeit weitere Inhalte, abseits vom Blogging irgendwie sinnvoll einzubinden. Gerade wenn man Dinge und Themen etwas strukturiert ablegen möchte, ist das im Blog nicht so einfach möglich. Letztendlich sedimentieren sich die einzelnen Themen einfach blogtypisch nach unten und sind dann nur noch über Google auffindbar.</p>
+
+<p>Es gibt in Wordpress zwar die Möglichkeit Seiten zu erstellen, aber wirklich überzeugt hat mich das nicht. Letztendlich war ich auf der Suche einer Kombination aus Blogsoftware und Webseiten CRM. Wobei ich hier auch nichts großes mit Datenbank und Programmierung haben wollte.</p>
+
+<p>Nun bin ich vor ein paar Monaten auf <a href="http://jekyllrb.com/">Jekyll</a> gestoßen. Jekyll ist eine Art Blog- und Webseitengenerator. Man erzeugt alles in reinem HTML- bzw. Markdownformat und Jekyll baut daraus die Webseite, erzeugt alle Seiten, Links, Navigation etc...</p>
+
+<p>Im Gegensatz zu Wordpress ist das natürlich etwas Handarbeit, dafür bekomme ich wesentlich mehr Flexibilität beim Erstellen der Webseite. Ein weiterer Vorteil: alle Seiten sind statisches HTML. Neben Performance, die hier nicht so wichtig ist, sehe ich hier vor allem Sicherheitstechnisch einen Gewinn. Bei Wordpress muss man eben immer auf die aktuellen Updates achten.</p>
+
+<p>Die ganzen Blogartikel habe ich alle übernommen und ich habe auch versucht alle Links soweit auf die jeweiligen Pendants hier umzuleiten, soweit das halt technisch und aufwandsmäßig geht. </p>
+
+<p><strong>Wer Fehler finden sollte: bitte benutzt einfach das Kontaktformular und teilt es mir mit.</strong></p>
+</p>		
+		  <p class="small">Tagged: server by Andy</p>
+		  <hr>
+		  
+		
+
+    </div>
+    <div class=".col-md-4">
+    	<h4>Partnerlink</h4>
+    	<a target="_blank" href="http://www.amazon.de/?_encoding=UTF8&camp=1638&creative=19454&linkCode=ur2&site-redirect=de&tag=ekiwide0b-21">Einkaufen bei Amazon.de</a><img src="https://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&l=ur2&o=3" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />	
+    	
+    	<h4>Werbung</h4>
+    	
+    	<div align="left">
+		<script type="text/javascript"><!--
+		google_ad_client = "ca-pub-1137550895446814";
+		/* andy.ekiwi.de */
+		google_ad_slot = "3362068620";
+		google_ad_width = 125;
+		google_ad_height = 125;
+		//-->
+		</script>
+		<script type="text/javascript"
+		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+		</div>
+    	
+    	<h4>Links</h4>
+    	<ul class="list-unstyled">
+    		<li><a href="http://www.ekiwi.de">eKiwi.de</a></li>
+    		<li><a href="http://www.da-software.de">DA-Software.de</a></li>
+    	</ul>
+    	<h4>Categories</h4>    	
+		<section>
+		<ul id="categories" class="list-unstyled">
+		<li class='category'><a href='/categories/android/'>android (1)</a></li>
+<li class='category'><a href='/categories/coding/'>coding (14)</a></li>
+<li class='category'><a href='/categories/delphi/'>delphi (1)</a></li>
+<li class='category'><a href='/categories/eclipse/'>eclipse (23)</a></li>
+<li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
+<li class='category'><a href='/categories/gadgets/'>gadgets (23)</a></li>
+<li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
+<li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
+<li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
+<li class='category'><a href='/categories/java/'>java (22)</a></li>
+<li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
+<li class='category'><a href='/categories/kochen/'>kochen (1)</a></li>
+<li class='category'><a href='/categories/linux/'>linux (6)</a></li>
+<li class='category'><a href='/categories/mac/'>mac (2)</a></li>
+<li class='category'><a href='/categories/meinung/'>meinung (2)</a></li>
+<li class='category'><a href='/categories/radfahren/'>radfahren (27)</a></li>
+<li class='category'><a href='/categories/reparatur/'>reparatur (1)</a></li>
+<li class='category'><a href='/categories/rezepte/'>rezepte (1)</a></li>
+<li class='category'><a href='/categories/science/'>science (3)</a></li>
+<li class='category'><a href='/categories/sonstiges/'>sonstiges (40)</a></li>
+<li class='category'><a href='/categories/swt/'>swt (4)</a></li>
+<li class='category'><a href='/categories/tools/'>tools (18)</a></li>
+<li class='category'><a href='/categories/windows/'>windows (2)</a></li>
+
+		</ul>
+		</section>
+   </div>
+</div>
+
+<h2>Blog Posts</h2>
+
+
+<!-- Pagination links -->
+<div class="pagination">
+  
+    <span class="previous">Previous</span>
+  
+  <span class="page_number ">Page: 1 of 36</span>
+  
+    <a href="/page2" class="next">Next</a>
+  
+</div>
+
+
+    </div>
+    
+    <!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.ekiwi.de/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "7"]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+
+    </body>
+</html>

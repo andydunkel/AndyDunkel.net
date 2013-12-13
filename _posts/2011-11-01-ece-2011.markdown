@@ -1,0 +1,17 @@
+---
+author: admin
+comments: true
+date: 2011-11-01 12:22:00+00:00
+layout: post
+slug: ece-2011
+title: ECE 2011
+wordpress_id: 1079
+---
+
+Morgen startet die [EclipseCON](http://eclipsecon.org/) 2011 in Ludwigsburg.
+
+Freuen wir uns also auf spannende Vorträge, leckere Soßen, “[Birds of a feather](http://en.wikipedia.org/wiki/Birds_of_a_Feather_(computing))” Sessions, die local Band “Cool Down” und Bier.
+
+Für iPad und iPhone gibt es wieder [eine App](http://itunes.apple.com/de/app/eclipsecon-2011-hd-europe/id471727611?mt=8) mit allen Vortragsinfos und Zeitplan.
+
+![image](http://andydunkel.net/assets/uploads/2011/11/image.png)

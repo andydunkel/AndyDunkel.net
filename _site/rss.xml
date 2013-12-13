@@ -1,0 +1,1458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>AndyDunkel.net</title>
+    <link>http://andydunkel.net</link>
+    <description>RSS feed for AndyDunkel.net</description>
+    <pubDate>Thu, 05 Dec 2013 18:00:00 +0100</pubDate>
+    <item>
+      <title>exFAT für TrueCrypt Volume nutzen</title>
+      <link>http://andydunkel.net/windows/linux/mac/tools/2013/12/05/exfat_truecrypt_volume.html</link>
+      <description>&lt;p&gt;Externe Festplatten und USB-Sticks verschlüssele ich meist mit TrueCrypt. Geht der Datenträger verloren, kann man zumindest recht sicher sein, dass niemand etwas mit den Daten anfangen kann. Da ich privat Windows, OSX und Linux nutze, stellt sich die Frage, welches Dateisystem man verwendet. Schließlich will ich von allen Betriebssystemen problemlos darauf zugreifen können.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 05 Dec 2013 18:00:00 +0100</pubDate>
+      <dc:date>2013-12-05T18:00:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Festo BionicOpter</title>
+      <link>http://andydunkel.net/sonstiges/2013/11/30/festo_bionicopter.html</link>
+      <description>&lt;p&gt;Nachdem Festo letztes Jahr einen Vogel fliegen ließ, flog dieses Jahr eine Robo-Libelle über deren Messestand:&lt;/p&gt;
+</description>
+      <pubDate>Sat, 30 Nov 2013 18:00:00 +0100</pubDate>
+      <dc:date>2013-11-30T18:00:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Delphi XE4/Firemonkey - Taborder not working + Workaround</title>
+      <link>http://andydunkel.net/delphi/coding/2013/11/23/firemonkey_xe_4_taborder_workaround.html</link>
+      <description>&lt;p&gt;Firemonkey, the framework for cross plattform development, still seems to have some problems and bugs. :-( One of the problems I came across was that the TabOrder property was not working:&lt;/p&gt;
+</description>
+      <pubDate>Sat, 23 Nov 2013 18:00:00 +0100</pubDate>
+      <dc:date>2013-11-23T18:00:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Sanyo Z5 Beamer - Thermoschalter zurücksetzen</title>
+      <link>http://andydunkel.net/gadgets/sonstiges/reparatur/2013/11/19/sanyo_z5_thermoschalter.html</link>
+      <description>&lt;p&gt;Am Samstagabend hatte ich mal wieder Zeit für einen Film. Dafür hatte ich mir einigen Jahren mal ein kleines Heimkinosystem eingerichtet: Beamer + 5.1 Boxen. Prima Sache!&lt;/p&gt;
+</description>
+      <pubDate>Tue, 19 Nov 2013 18:00:00 +0100</pubDate>
+      <dc:date>2013-11-19T18:00:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Webseiten-Umzug vollbracht</title>
+      <link>http://andydunkel.net/sonstiges/2013/11/17/server_umzug.html</link>
+      <description>&lt;p&gt;Endlich habe ich in den letzten Wochen mal die Zeit gefunden meine Webseite zu aktualisieren und es heute dann auch endlich geschafft online zu stellen.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 17 Nov 2013 18:00:00 +0100</pubDate>
+      <dc:date>2013-11-17T18:00:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Eclipse/RCP: Overwrite a default handler in your view</title>
+      <link>http://andydunkel.net/eclipse/2013/10/27/eclipsercp-overwrite-a-default-handler-in-your-view.html</link>
+      <description>&lt;p&gt;In my RCP application CTRL + S is assigned to the save function of the current editor. Addional I wanted to have the same shortcut for a save function in a view.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 27 Oct 2013 12:32:51 +0100</pubDate>
+      <dc:date>2013-10-27T12:32:51+01:00</dc:date>
+    </item>
+    <item>
+      <title>Java: Get IP and Mac address</title>
+      <link>http://andydunkel.net/java/2013/10/10/java-get-ip-and-mac-address.html</link>
+      <description>&lt;p&gt;A small code snippet that reads the computers IP and MAC address:    &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;try {
+    InetAddress ip = InetAddress.getLocalHost();
+    NetworkInterface network;
+    network = NetworkInterface.getByInetAddress(ip);
+    byte[] macaddr = network.getHardwareAddress();
+
+    String mac = &amp;quot;&amp;quot;;
+
+    for (int i = 0; i &amp;lt; macaddr.length; i++) {
+        mac += String.format(&amp;quot;%02X%s&amp;quot;, macaddr[i], (i &amp;lt; macaddr.length - 1) ? &amp;quot;-&amp;quot; : &amp;quot;&amp;quot;);    
+    }
+
+    System.out.println(&amp;quot;IP-Address: &amp;quot; + ip.toString());
+    System.out.println(&amp;quot;Mac-Address: &amp;quot; + mac);
+
+} catch (SocketException | UnknownHostException e) {
+    e.printStackTrace();
+}       
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <pubDate>Thu, 10 Oct 2013 11:34:00 +0200</pubDate>
+      <dc:date>2013-10-10T11:34:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Set workspace location for RCP application</title>
+      <link>http://andydunkel.net/eclipse/2013/08/29/set-workspace-location-for-rcp-application.html</link>
+      <description>&lt;p&gt;In my Eclipse / RCP application the .metadata directory was always created in the working directory. This worked fine when I was opening the application normally.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 29 Aug 2013 20:51:42 +0200</pubDate>
+      <dc:date>2013-08-29T20:51:42+02:00</dc:date>
+    </item>
+    <item>
+      <title>Backups mit Grsync</title>
+      <link>http://andydunkel.net/tools/2013/08/28/backups-mit-grsync.html</link>
+      <description>&lt;p&gt;Für Backups verwende ich gerne rsync, das ist zuverlässig, ausgereift und schnell. Das Programm arbeitet auf der Kommandozeile, prinzipiell toll, aber ich habe immer so meine Probleme irgendwelche Sachen auswendig zu lernen. Also ging die Suche nach den richtigen Parametern immer wieder aufs neue los.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 28 Aug 2013 22:38:25 +0200</pubDate>
+      <dc:date>2013-08-28T22:38:25+02:00</dc:date>
+    </item>
+    <item>
+      <title>Rührei in der Mikrowelle</title>
+      <link>http://andydunkel.net/kochen/2013/08/22/ruhrei-in-der-mikrowelle.html</link>
+      <description>&lt;p&gt;Heute etwas aus dem Bereich Experiment. Problemstellung: ein Rührei sollte heute Abend zum Abendessen auf den Teller. &lt;/p&gt;
+</description>
+      <pubDate>Thu, 22 Aug 2013 21:16:43 +0200</pubDate>
+      <dc:date>2013-08-22T21:16:43+02:00</dc:date>
+    </item>
+    <item>
+      <title>Eclipse / RCP: Remove Quick Access from toolbar</title>
+      <link>http://andydunkel.net/eclipse/java/2013/08/20/eclipse-rcp-remove-quick-access-from-toolbar.html</link>
+      <description>&lt;p&gt;After updating my RCP application from Eclipse 3.7 to Eclipse 4.x the toolbar always showed the quick access toolbar:&lt;/p&gt;
+</description>
+      <pubDate>Tue, 20 Aug 2013 17:50:08 +0200</pubDate>
+      <dc:date>2013-08-20T17:50:08+02:00</dc:date>
+    </item>
+    <item>
+      <title>Android Studio: Nach Update lässt sich das Projekt nicht starten</title>
+      <link>http://andydunkel.net/android/coding/2013/08/18/android-studio-nach-update-lasst-sich-das-projekt-nicht-starten.html</link>
+      <description>&lt;p&gt;Heute wurde mir ein Update für Android Studio angezeigt. Also Update heruntergeladen und installiert. Wie immer erwartet man da natürlich Probleme mit bestehenden Projekten. :-)&lt;/p&gt;
+</description>
+      <pubDate>Sun, 18 Aug 2013 12:16:24 +0200</pubDate>
+      <dc:date>2013-08-18T12:16:24+02:00</dc:date>
+    </item>
+    <item>
+      <title>Mou - Markdown Editor für OSX</title>
+      <link>http://andydunkel.net/tools/2013/08/07/mou-markdown-editor-fur-osx.html</link>
+      <description>&lt;p&gt;Markdown ist meine neue &amp;quot;&lt;a href=&quot;http://andydunkel.net/tools/2013/06/16/markdown.html&quot;&gt;Lieblingsauszeichnungssprache&lt;/a&gt;&amp;quot; für Dokumente aller Art geworden. In der täglichen Arbeit fällt viel an was niedergeschrieben werden will: Notizen, kleinere und größere Dokumentationen. Da es im Prinzip nur Textdateien sind, sind diese auch sehr leicht auffindbar mittels Spotlight oder unter Windows mit der Desktop-Search.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 07 Aug 2013 21:47:48 +0200</pubDate>
+      <dc:date>2013-08-07T21:47:48+02:00</dc:date>
+    </item>
+    <item>
+      <title>Griechische Katze</title>
+      <link>http://andydunkel.net/sonstiges/2013/07/29/griechische-katze.html</link>
+      <description>&lt;p&gt;Zweite Woche in Folge: wir wollen in der Mittagspause zu unserem Stammgriechen. Restaurant ist offen, aber niemand da, wir warten etwas ab und brechen die Aktion nach 15 Minuten Wartezeit ab. &lt;/p&gt;
+</description>
+      <pubDate>Mon, 29 Jul 2013 14:58:31 +0200</pubDate>
+      <dc:date>2013-07-29T14:58:31+02:00</dc:date>
+    </item>
+    <item>
+      <title>Roaminggebühren</title>
+      <link>http://andydunkel.net/meinung/2013/07/03/roaminggebuhren.html</link>
+      <description>&lt;p&gt;Die EU hat zum Anfang des Monats die Roaming-Kosten gesenkt. Telefongespräche und SMS kosten nun weniger, aber das interessiert mich nicht wirklich. Wichtiger sind die mobilen Daten.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 03 Jul 2013 20:15:12 +0200</pubDate>
+      <dc:date>2013-07-03T20:15:12+02:00</dc:date>
+    </item>
+    <item>
+      <title>Backslash unter OSX</title>
+      <link>http://andydunkel.net/mac/2013/06/19/backslash-unter-osx.html</link>
+      <description>&lt;p&gt;Ich werde mir jetzt ein für alle mal merken, dass ein Backslash unter OSX mit *&lt;em&gt;SHIFT + ALT + 7 *&lt;/em&gt;geht! &lt;/p&gt;
+</description>
+      <pubDate>Wed, 19 Jun 2013 21:23:30 +0200</pubDate>
+      <dc:date>2013-06-19T21:23:30+02:00</dc:date>
+    </item>
+    <item>
+      <title>Smartphone als Kamera</title>
+      <link>http://andydunkel.net/meinung/2013/06/17/smartphone-als-kamera.html</link>
+      <description>&lt;p&gt;Bitkom &lt;a href=&quot;https://www.bitkom.org/de/presse/8477_76471.aspx&quot;&gt;schreibt&lt;/a&gt;, Smartphones ersetzen die Urlaubskamera. &lt;/p&gt;
+</description>
+      <pubDate>Mon, 17 Jun 2013 21:51:27 +0200</pubDate>
+      <dc:date>2013-06-17T21:51:27+02:00</dc:date>
+    </item>
+    <item>
+      <title>Markdown</title>
+      <link>http://andydunkel.net/tools/2013/06/16/markdown.html</link>
+      <description>&lt;p&gt;Immer wieder habe ich das Problem irgendwas dokumentieren zu müssen. Meist Kleinigkeiten, eine technische Info hier, etwas Feedback da, eine kleine Anleitung. In der Regel lautete die Standardantwort meist Word oder äquivalentes.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 16 Jun 2013 19:17:38 +0200</pubDate>
+      <dc:date>2013-06-16T19:17:38+02:00</dc:date>
+    </item>
+    <item>
+      <title>Windows 8 Aktivierung - Produktkey wird nicht angenommen</title>
+      <link>http://andydunkel.net/windows/2013/05/30/windows-8-aktivierung-produktkey-wird-nicht-angenommen.html</link>
+      <description>&lt;p&gt;Ich habe letztes Jahr zugeschlagen und mir eine günstige Windows 8 Lizenz gekauft. Benutzen tue ich das nur in VMware um meine Software zu testen. Die Bedienung vom neuen Windows, naja. Aber das ist ein anderes Thema.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 30 May 2013 11:06:23 +0200</pubDate>
+      <dc:date>2013-05-30T11:06:23+02:00</dc:date>
+    </item>
+    <item>
+      <title>Windows Defender deaktivieren in Windows 8</title>
+      <link>http://andydunkel.net/sonstiges/2013/05/17/windows-defender-deaktivieren-in-windows-8.html</link>
+      <description>&lt;p&gt;Windows 8 läuft bei nur in der VM und damit recht selten, aber wenn es läuft brachte es regelmäßig meine Lüfter vom MacBook zum Dauerlauf. Grund war der Windows Defender der regelmäßig das Windows verteidigte.&lt;/p&gt;
+</description>
+      <pubDate>Fri, 17 May 2013 22:30:42 +0200</pubDate>
+      <dc:date>2013-05-17T22:30:42+02:00</dc:date>
+    </item>
+    <item>
+      <title>wget mit Benutzername und Passwort</title>
+      <link>http://andydunkel.net/linux/2013/04/23/wget-mit-benutzername-und-passwort.html</link>
+      <description>&lt;p&gt;Auf meinem &lt;a href=&quot;http://www.amazon.de/gp/product/B008PT4GGC/ref=as_li_ss_tl?ie=UTF8&amp;amp;camp=1638&amp;amp;creative=19454&amp;amp;creativeASIN=B008PT4GGC&amp;amp;linkCode=as2&amp;amp;tag=ekiwide0b-21&quot;&gt;RaspberryPi&lt;/a&gt; läuft momentan ein Cronjob der alle 30 Minuten meinen Feedreader (&lt;a href=&quot;http://tt-rss.org/redmine/projects/tt-rss/wiki&quot;&gt;Tiny Tiny RSS&lt;/a&gt;) aktualisiert. Dieser ist, aus Sicherheitsgründen, mittlerweile mit einem Passwort geschützt und läuft auf meinem Webspace. Etwas unpraktische Kombination, aber Cronjobs auf meinem Webspace haben so ihre Eigenheiten.&lt;/p&gt;
+</description>
+      <pubDate>Tue, 23 Apr 2013 08:10:53 +0200</pubDate>
+      <dc:date>2013-04-23T08:10:53+02:00</dc:date>
+    </item>
+    <item>
+      <title>Enigmail und OpenPGP: INV_RECP 0 0x008D5DBC</title>
+      <link>http://andydunkel.net/tools/2013/04/22/enigmail-und-openpgp-inv_recp-0-0x008d5dbc.html</link>
+      <description>&lt;p&gt;Vor kurzem habe ich, zugegeben aus Langeweile, mal wieder OpenPGP im Thunderbird installiert. Dazu habe ich mir auch gleich einen neuen Key generiert und den alten danach in den Ruhestand geschickt, Backup erstellt und aus der Keychain entfernt.&lt;/p&gt;
+</description>
+      <pubDate>Mon, 22 Apr 2013 18:35:19 +0200</pubDate>
+      <dc:date>2013-04-22T18:35:19+02:00</dc:date>
+    </item>
+    <item>
+      <title>Java: copy array to another</title>
+      <link>http://andydunkel.net/java/2013/04/17/java-copy-array-to-another.html</link>
+      <description>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;String[] stringArray = Arrays.copyOf(items.toArray(), items.size(), String[].class);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <pubDate>Wed, 17 Apr 2013 08:13:28 +0200</pubDate>
+      <dc:date>2013-04-17T08:13:28+02:00</dc:date>
+    </item>
+    <item>
+      <title>Linux Mint mit Full Disk Encryption</title>
+      <link>http://andydunkel.net/linux/2013/03/12/linux-mint-mit-full-disk-encryption.html</link>
+      <description>&lt;p&gt;Für mein Zweitlaptop hatte ich vor einiger Zeit mal Ubuntu 12.10 installiert. Mit schöner Regelmäßigkeit geht das System in einen &amp;quot;Unbenutzbar-Modus&amp;quot;. Dann laufen irgendwelche Prozesse wie Firefox, Compiz oder Software-Update mit 200% Systemlast. Die GUI aktualisiert sich nur noch im Schneckentempo. Auch sonst ist das System eher langsam, trotz halbwegs flotten i3 Prozessor im Laptop.&lt;/p&gt;
+</description>
+      <pubDate>Tue, 12 Mar 2013 11:24:59 +0100</pubDate>
+      <dc:date>2013-03-12T11:24:59+01:00</dc:date>
+    </item>
+    <item>
+      <title>Winter und Schnee</title>
+      <link>http://andydunkel.net/fotos/2013/02/24/winter-und-schnee.html</link>
+      <description>&lt;p&gt;Mich kotzt der Winter ja eigentlich an!&lt;/p&gt;
+</description>
+      <pubDate>Sun, 24 Feb 2013 22:29:02 +0100</pubDate>
+      <dc:date>2013-02-24T22:29:02+01:00</dc:date>
+    </item>
+    <item>
+      <title>Steam, Halflife und Linux: Error initializing main frame buffer</title>
+      <link>http://andydunkel.net/linux/2013/01/29/steam-halflife-und-linux-error-initializing-main-frame-buffer.html</link>
+      <description>&lt;p&gt;Vor kurzem wurde die Beta-Version vom Steam Client für Linux gestartet. Mittlerweile gibt es auch die Klassiker Halflife 1 und Counterstrike für Linux. &lt;/p&gt;
+</description>
+      <pubDate>Tue, 29 Jan 2013 21:03:32 +0100</pubDate>
+      <dc:date>2013-01-29T21:03:32+01:00</dc:date>
+    </item>
+    <item>
+      <title>exFat unter Ubuntu nutzen</title>
+      <link>http://andydunkel.net/linux/2012/12/18/exfat-unter-ubuntu-nutzen.html</link>
+      <description>&lt;p&gt;Ein mit exFat formatierte Festplatte oder USB-Stick lässt sich nicht einfach unter Ubuntu nutzen, aber wie immer unter Linux lässt sich das in &amp;quot;three simple steps&amp;quot; bewerkstelligen. :-)&lt;/p&gt;
+</description>
+      <pubDate>Tue, 18 Dec 2012 20:31:37 +0100</pubDate>
+      <dc:date>2012-12-18T20:31:37+01:00</dc:date>
+    </item>
+    <item>
+      <title>Linux: Netzwerkauslastung grafisch auf der Konsole ausgeben</title>
+      <link>http://andydunkel.net/linux/2012/12/15/linux-netzwerkauslastung-grafisch-auf-der-konsole-ausgeben.html</link>
+      <description>&lt;p&gt;Mein neues Spielzeit ist ein &lt;a href=&quot;http://www.raspberrypi.org&quot;&gt;Raspberry Pi&lt;/a&gt;. Nun wollte ich die Netzwerkauslastung auf der Konsole anzeigen lassen. Natürlich gibt es unter Linux ein Tool dafür, man muss nur wissen wie es heißt. :-)&lt;/p&gt;
+</description>
+      <pubDate>Sat, 15 Dec 2012 16:38:11 +0100</pubDate>
+      <dc:date>2012-12-15T16:38:11+01:00</dc:date>
+    </item>
+    <item>
+      <title>Irland</title>
+      <link>http://andydunkel.net/ireland/2012/12/05/irland.html</link>
+      <description>&lt;p&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/12/20121205-1723271.jpg&quot;&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2012/12/20121205-1723271.jpg&quot; alt=&quot;20121205-172327.jpg&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+      <pubDate>Wed, 05 Dec 2012 18:23:49 +0100</pubDate>
+      <dc:date>2012-12-05T18:23:49+01:00</dc:date>
+    </item>
+    <item>
+      <title>MacOS: Mauszeiger beschleunigen</title>
+      <link>http://andydunkel.net/gadgets/2012/12/03/macos-mauszeiger-beschleunigen.html</link>
+      <description>&lt;p&gt;Ich habe mir letzte Woche eine &lt;a href=&quot;http://www.amazon.de/gp/product/B002NX0M8C/ref=as_li_ss_tl?ie=UTF8&amp;amp;camp=1638&amp;amp;creative=19454&amp;amp;creativeASIN=B002NX0M8C&amp;amp;linkCode=as2&amp;amp;tag=ekiwide0b-21&quot;&gt;Apple Magic Maus&lt;/a&gt; gekauft. Einrichtung war schnell erledigt. Die Maus selbst ist schick, die Touchbedienung erstmal gewöhnungsbedürftig. &lt;/p&gt;
+</description>
+      <pubDate>Mon, 03 Dec 2012 20:05:26 +0100</pubDate>
+      <dc:date>2012-12-03T20:05:26+01:00</dc:date>
+    </item>
+    <item>
+      <title>Neue Leuchtmittel</title>
+      <link>http://andydunkel.net/gadgets/2012/11/27/neue-leuchtmittel.html</link>
+      <description>&lt;p&gt;Heute, ein Beitrag über Lampen. Meine Wohnzimmerlampe benötigt ganze vier davon. Fassung E14. Als &lt;del&gt;geizige&lt;/del&gt; umweltfreundliche Person setze ich natürlich konsequent auf Energiesparlampen. Diese gingen jetzt glücklicherweise nach 7 Jahren, mehr oder weniger gemeinsam, kaputt. Praktisch, so konnte ich gleich in einem Rutsch neue kaufen. &lt;/p&gt;
+</description>
+      <pubDate>Tue, 27 Nov 2012 18:48:26 +0100</pubDate>
+      <dc:date>2012-11-27T18:48:26+01:00</dc:date>
+    </item>
+    <item>
+      <title>Java: Convert String to InputStream</title>
+      <link>http://andydunkel.net/java/2012/11/25/java-convert-string-to-input-stream.html</link>
+      <description>&lt;p&gt;Some methods want an InputStream, converting a String into an InputStream is very easy:&lt;/p&gt;
+</description>
+      <pubDate>Sun, 25 Nov 2012 15:15:51 +0100</pubDate>
+      <dc:date>2012-11-25T15:15:51+01:00</dc:date>
+    </item>
+    <item>
+      <title>Roomba error 9 repair guide (English version)</title>
+      <link>http://andydunkel.net/gadgets/2012/11/24/roomba-error-9-repair-guide-english-version-2.html</link>
+      <description>&lt;p&gt;&lt;strong&gt;Dies ist die englische Version, wer die Reparaturanleitung auf Deutsch lesen möchte, &lt;a href=&quot;http://andydunkel.net/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html&quot;&gt;hier klicken&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+</description>
+      <pubDate>Sat, 24 Nov 2012 14:44:28 +0100</pubDate>
+      <dc:date>2012-11-24T14:44:28+01:00</dc:date>
+    </item>
+    <item>
+      <title>Roomba Fehler Nummer 9 die zweite</title>
+      <link>http://andydunkel.net/gadgets/2012/11/22/roomba-fehler-nummer-9-die-zweite.html</link>
+      <description>&lt;p&gt;Mal wieder Fehler 9 beim &lt;a href=&quot;http://www.amazon.de/gp/product/B002P68ADQ/ref=as_li_ss_tl?ie=UTF8&amp;amp;camp=1638&amp;amp;creative=19454&amp;amp;creativeASIN=B002P68ADQ&amp;amp;linkCode=as2&amp;amp;tag=ekiwide0b-21&quot;&gt;Roomba&lt;/a&gt;. Diesmal war es ein eher schleichender Prozess, mal ging er, mal drehte er sich nur noch im Kreis, um irgendwann mit 9 maligem Piepen den Dienst zu quittieren. Ein anderes Mal konzentrierte er sich verdächtiger Weise nur auf eine hälfte des Raums.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 22 Nov 2012 20:24:53 +0100</pubDate>
+      <dc:date>2012-11-22T20:24:53+01:00</dc:date>
+    </item>
+    <item>
+      <title>RCP: Problems when generating PDF files with RCP</title>
+      <link>http://andydunkel.net/coding/eclipse/2012/11/04/rcp-problems-when-generating-pdf-files-with-rcp.html</link>
+      <description>&lt;p&gt;Recently I ran into a problem in my RCP application during the generation of a PDF file from a &lt;a href=&quot;http://www.eclipse.org/birt/phoenix/&quot;&gt;BIRT&lt;/a&gt; report. This only happened when trying to run the export from the exported product:&lt;/p&gt;
+</description>
+      <pubDate>Sun, 04 Nov 2012 10:57:36 +0100</pubDate>
+      <dc:date>2012-11-04T10:57:36+01:00</dc:date>
+    </item>
+    <item>
+      <title>RCP: Get command line parameters in Eclipse Apps</title>
+      <link>http://andydunkel.net/coding/eclipse/2012/11/03/rcp-get-command-line-parameters-in-eclipse-apps.html</link>
+      <description>&lt;p&gt;You can easily access the command line parameters of your RCP application via the Platform object, here is an example:&lt;/p&gt;
+</description>
+      <pubDate>Sat, 03 Nov 2012 10:55:57 +0100</pubDate>
+      <dc:date>2012-11-03T10:55:57+01:00</dc:date>
+    </item>
+    <item>
+      <title>Easy logging for RCP applications</title>
+      <link>http://andydunkel.net/coding/eclipse/2012/11/02/easy-logging-for-rcp-applications.html</link>
+      <description>&lt;p&gt;A small class for easy logging in RCP applications by using the Activators logging functions. This class mainly wraps the need of creating an IStatus object each time we want to log something.&lt;/p&gt;
+</description>
+      <pubDate>Fri, 02 Nov 2012 10:55:10 +0100</pubDate>
+      <dc:date>2012-11-02T10:55:10+01:00</dc:date>
+    </item>
+    <item>
+      <title>RCP: Switch to perspective via code</title>
+      <link>http://andydunkel.net/coding/eclipse/2012/11/02/rcp-switch-to-perspective-via-code.html</link>
+      <description>&lt;p&gt;A small snippet which switches to a certain perspective via code:&lt;/p&gt;
+</description>
+      <pubDate>Fri, 02 Nov 2012 10:54:44 +0100</pubDate>
+      <dc:date>2012-11-02T10:54:44+01:00</dc:date>
+    </item>
+    <item>
+      <title>RCP: Remove unwanted preference pages</title>
+      <link>http://andydunkel.net/coding/eclipse/2012/11/01/rcp-remove-unwanted-preference-pages.html</link>
+      <description>&lt;p&gt;In my RCP application some unwanted sections in the preferences showed up:&lt;/p&gt;
+</description>
+      <pubDate>Thu, 01 Nov 2012 12:18:12 +0100</pubDate>
+      <dc:date>2012-11-01T12:18:12+01:00</dc:date>
+    </item>
+    <item>
+      <title>RCP: Perspectives and Perspective Contributions</title>
+      <link>http://andydunkel.net/coding/eclipse/2012/11/01/rcp-perspectives-and-perspective-contributions-2.html</link>
+      <description>&lt;p&gt;Note: I put the example project in a ZIP file, you can use that to have a look to the actual code, &lt;a href=&quot;http://andydunkel.net/assets/wp-custom/com.da.perspectives.example.zip&quot;&gt;Download&lt;/a&gt;.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 01 Nov 2012 10:52:51 +0100</pubDate>
+      <dc:date>2012-11-01T10:52:51+01:00</dc:date>
+    </item>
+    <item>
+      <title>Radtour Sonthofen - September 2012</title>
+      <link>http://andydunkel.net/radfahren/2012/09/24/radtour-sonthofen-september-2012.html</link>
+      <description>&lt;p&gt;Wohl an einem der letzten sommerlichen Tage in diesem Jahr ging es mit den &lt;a href=&quot;http://andydunkel.net/radfahren/2012/05/04/bikefrhling-comer-seeitalien.html&quot;&gt;Italienreisenden&lt;/a&gt; (Roland, meine Wenigkeit, Toni, Christine und Hermann) zu einer kleinen Runde rund um Sonthofen. 1600 hm und 74km galt es zu bezwingen, bevor wir auf der &lt;a href=&quot;http://www.oberstdorf.de/partner/piesenalpe/&quot;&gt;Piesenalpe&lt;/a&gt; Brotzeit und Bier (leider nur Paulaner) genießen konnten.&lt;/p&gt;
+</description>
+      <pubDate>Mon, 24 Sep 2012 17:06:47 +0200</pubDate>
+      <dc:date>2012-09-24T17:06:47+02:00</dc:date>
+    </item>
+    <item>
+      <title>Katzbrui 2012</title>
+      <link>http://andydunkel.net/radfahren/2012/09/03/katzbrui-2012.html</link>
+      <description>&lt;p&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2012/09/2012-09-02-17.28.44.jpg&quot; alt=&quot;2012 09 02 17 28 44&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Mon, 03 Sep 2012 20:45:35 +0200</pubDate>
+      <dc:date>2012-09-03T20:45:35+02:00</dc:date>
+    </item>
+    <item>
+      <title>Gougane Bara Irland</title>
+      <link>http://andydunkel.net/hiking/ireland/2012/08/08/gougane-bara-irland.html</link>
+      <description>&lt;p&gt;&lt;a href=&quot;http://de.wikipedia.org/wiki/Gougane_Barra&quot;&gt;Gougane Bara&lt;/a&gt; Irland, Wandertour&lt;/p&gt;
+</description>
+      <pubDate>Wed, 08 Aug 2012 23:33:54 +0200</pubDate>
+      <dc:date>2012-08-08T23:33:54+02:00</dc:date>
+    </item>
+    <item>
+      <title>Crosshaven 21.07.2012</title>
+      <link>http://andydunkel.net/fotos/radfahren/2012/07/23/crosshaven-21-07-2012.html</link>
+      <description>&lt;p&gt;Ein paar Impressionen vom bisher besten Sommertag in Irland:&lt;/p&gt;
+</description>
+      <pubDate>Mon, 23 Jul 2012 20:58:35 +0200</pubDate>
+      <dc:date>2012-07-23T20:58:35+02:00</dc:date>
+    </item>
+    <item>
+      <title>Recaptcha: Force Language</title>
+      <link>http://andydunkel.net/2012/07/17/recaptcha-force-language.html</link>
+      <description>&lt;p&gt;Recent problem: customer wanted his &lt;a href=&quot;http://www.google.com/recaptcha&quot;&gt;reCatpcha&lt;/a&gt; forced to german language. First attempt was to set the setting via the RecaptchaOption Script variable. Howewer, for some reason this did not work.&lt;/p&gt;
+</description>
+      <pubDate>Tue, 17 Jul 2012 22:30:32 +0200</pubDate>
+      <dc:date>2012-07-17T22:30:32+02:00</dc:date>
+    </item>
+    <item>
+      <title>Zeitrafferaufnahme</title>
+      <link>http://andydunkel.net/2012/07/11/zeitrafferaufnahme.html</link>
+      <description>&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube.com/embed/mEd9u3OO9dg&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+</description>
+      <pubDate>Wed, 11 Jul 2012 21:22:41 +0200</pubDate>
+      <dc:date>2012-07-11T21:22:41+02:00</dc:date>
+    </item>
+    <item>
+      <title>Remove unwanted preference pages from your RCP app</title>
+      <link>http://andydunkel.net/coding/eclipse/2012/07/09/remove-unwanted-preference-pages-from-your-rcp-app.html</link>
+      <description>&lt;p&gt;In my recent RCP app some unwanted preferences, contributed from other plugins showed up:&lt;/p&gt;
+</description>
+      <pubDate>Mon, 09 Jul 2012 23:21:25 +0200</pubDate>
+      <dc:date>2012-07-09T23:21:25+02:00</dc:date>
+    </item>
+    <item>
+      <title>Irland Impressionen #1</title>
+      <link>http://andydunkel.net/ireland/2012/06/25/irland-impressionen-1.html</link>
+      <description>&lt;p&gt;&lt;p&gt;Wettertechnisch ist es immer noch nicht ganz optimal, immerhin reichte es gestern für die erste Radtour. Ein paar Bilder:&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/06/SDC10133.jpg&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;SDC10133&quot; border=&quot;0&quot; alt=&quot;SDC10133&quot; src=&quot;http://andydunkel.net/assets/uploads/2012/06/SDC10133_thumb.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/06/SDC10135.jpg&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;SDC10135&quot; border=&quot;0&quot; alt=&quot;SDC10135&quot; src=&quot;http://andydunkel.net/assets/uploads/2012/06/SDC10135_thumb.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/06/SDC10136.jpg&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;SDC10136&quot; border=&quot;0&quot; alt=&quot;SDC10136&quot; src=&quot;http://andydunkel.net/assets/uploads/2012/06/SDC10136_thumb.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/06/SDC10141.jpg&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;SDC10141&quot; border=&quot;0&quot; alt=&quot;SDC10141&quot; src=&quot;http://andydunkel.net/assets/uploads/2012/06/SDC10141_thumb.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/06/SDC10142.jpg&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;SDC10142&quot; border=&quot;0&quot; alt=&quot;SDC10142&quot; src=&quot;http://andydunkel.net/assets/uploads/2012/06/SDC10142_thumb.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/06/SDC10144.jpg&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;SDC10144&quot; border=&quot;0&quot; alt=&quot;SDC10144&quot; src=&quot;http://andydunkel.net/assets/uploads/2012/06/SDC10144_thumb.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/06/SDC10147.jpg&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;SDC10147&quot; border=&quot;0&quot; alt=&quot;SDC10147&quot; src=&quot;http://andydunkel.net/assets/uploads/2012/06/SDC10147_thumb.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Aufzeichnung der ersten Radtour:&lt;/p&gt;&lt;iframe height=&quot;350&quot; marginheight=&quot;0&quot; src=&quot;https://maps.google.de/maps/ms?msa=0&amp;amp;msid=208324790998598431494.0004c33ae695aee7e9d7f&amp;amp;ie=UTF8&amp;amp;t=h&amp;amp;ll=51.913356,-8.561783&amp;amp;spn=0.074123,0.171661&amp;amp;z=12&amp;amp;output=embed&quot; frameborder=&quot;0&quot; width=&quot;500&quot; marginwidth=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;&lt;br&gt;&lt;small&gt;&lt;a style=&quot;text-align: left; color: #0000ff&quot; href=&quot;https://maps.google.de/maps/ms?msa=0&amp;amp;msid=208324790998598431494.0004c33ae695aee7e9d7f&amp;amp;ie=UTF8&amp;amp;t=h&amp;amp;ll=51.913356,-8.561783&amp;amp;spn=0.074123,0.171661&amp;amp;z=12&amp;amp;source=embed&quot;&gt;24.06.2012 15:11&lt;/a&gt; auf einer größeren Karte anzeigen&lt;/small&gt;&lt;/p&gt;
+</description>
+      <pubDate>Mon, 25 Jun 2012 22:17:00 +0200</pubDate>
+      <dc:date>2012-06-25T22:17:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Internetsperren umgehen</title>
+      <link>http://andydunkel.net/sonstiges/tools/2012/06/23/internetsperren-umgehen.html</link>
+      <description>&lt;p&gt;Ich bin momentan für einige Zeit in Irland, schön, Internet und WLAN gibt es in der Unterkunft überall. Unschön, der Internetzugang ist gefiltert und nicht alle Dienste stehen zur Verfügung, kein Remotedesktop zu meinen Servern, kein MSN Messenger, Sperre für einige Webseiten. Uncool!&lt;/p&gt;
+</description>
+      <pubDate>Sat, 23 Jun 2012 19:53:00 +0200</pubDate>
+      <dc:date>2012-06-23T19:53:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>EM 2012 in Irland</title>
+      <link>http://andydunkel.net/ireland/2012/06/19/em-2012-in-irland.html</link>
+      <description>&lt;p&gt;Ein paar Impressionen der EM in Irland, die Iren nehmen ja leider seid gestern nicht mehr teil:&lt;/p&gt;
+</description>
+      <pubDate>Tue, 19 Jun 2012 23:25:00 +0200</pubDate>
+      <dc:date>2012-06-19T23:25:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Grünten–07.06.2012</title>
+      <link>http://andydunkel.net/hiking/radfahren/2012/06/17/grnten07-06-2012.html</link>
+      <description>&lt;p&gt;Bei gutem Wetter sollte es auf den &lt;a href=&quot;http://de.wikipedia.org/wiki/Gr%C3%BCnten&quot;&gt;Grünten&lt;/a&gt; gehen. Ein ambitioniertes Vorhaben, immerhin hat der Berg eine Höhe von 1738m. Aufgrund der Höhenmeter eher eine Tour für das August oder September, wenn das entsprechende Training da ist.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 17 Jun 2012 12:00:00 +0200</pubDate>
+      <dc:date>2012-06-17T12:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Kenzenhütte 27.05.2012</title>
+      <link>http://andydunkel.net/radfahren/2012/06/16/kenzenhtte-27-05-2012.html</link>
+      <description>&lt;p&gt;Wie jedes Jahr: die Standardtour zur &lt;a href=&quot;http://www.berggasthof-kenzenhuette.de/&quot; target=&quot;_blank&quot;&gt;Kenzenhütte&lt;/a&gt;. Am 27.05. ging es zuerst ins &lt;a href=&quot;http://www.schlossbrauhaus.de/&quot; target=&quot;_blank&quot;&gt;Schwangauer Brauhaus&lt;/a&gt;. Nach entsprechender fester und flüssiger Stärkung ging es anschließend den Anstieg zur Kenzenhütte hinauf. Wie immer etwas anstrengend. &lt;img style=&quot;border-bottom-style: none; border-left-style: none; border-top-style: none; border-right-style: none&quot; class=&quot;wlEmoticon wlEmoticon-smile&quot; alt=&quot;Smiley&quot; src=&quot;http://andydunkel.net/assets/uploads/2012/06/wlEmoticon-smile1.png&quot;&gt;&lt;/p&gt; &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:906ef1f9-ed6f-4fbe-b0d1-2ae0e2969c8b&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;613&quot; height=&quot;344&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/aElqidjT-Yk?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/aElqidjT-Yk?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;613&quot; height=&quot;344&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;2012-05-27 15.44.42&quot; border=&quot;0&quot; alt=&quot;2012-05-27 15.44.42&quot; src=&quot;http://andydunkel.net/assets/uploads/2012/06/2012-05-27-15.44.42.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/p&gt; &lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;iframe height=&quot;400&quot; marginheight=&quot;0&quot; src=&quot;https://maps.google.de/maps/ms?msa=0&amp;amp;msid=208324790998598431494.0004c1192def3d439bdf5&amp;amp;hl=de&amp;amp;ie=UTF8&amp;amp;t=h&amp;amp;ll=47.621438,10.779648&amp;amp;spn=0.185127,0.342636&amp;amp;z=11&amp;amp;output=embed&quot; frameborder=&quot;0&quot; width=&quot;500&quot; marginwidth=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;&lt;br&gt;&lt;small&gt;&lt;a style=&quot;text-align: left; color: #0000ff&quot; href=&quot;https://maps.google.de/maps/ms?msa=0&amp;amp;msid=208324790998598431494.0004c1192def3d439bdf5&amp;amp;hl=de&amp;amp;ie=UTF8&amp;amp;t=h&amp;amp;ll=47.621438,10.779648&amp;amp;spn=0.185127,0.342636&amp;amp;z=11&amp;amp;source=embed&quot;&gt;27.05.2012 11:33 - Kenzenhütte&lt;/a&gt; auf einer größeren Karte anzeigen&lt;/small&gt;  &lt;p&gt;&amp;nbsp;&lt;/p&gt; &lt;p&gt;Gesamtstrecke: 63,05 km (39,2 Meile/n)&lt;br&gt;Zeit in Bewegung: 3:31:57&lt;br&gt;Durchschnittliche Geschwindigkeit in Bewegung: 17,85 km/h (11,1 Meile/h)&lt;br&gt;Maximale Geschwindigkeit: 48,63 km/h (30,2 Meile/h)&lt;br&gt;Durchschnittliches Tempo in Bewegung: 3,36 min/km (5,4 min/Meile)&lt;br&gt;Minimales Tempo: 1,23 min/km (2,0 min/Meile)&lt;br&gt;Maximale Höhe: 1358 m (4455 Fuß)&lt;br&gt;Minimale Höhe: 825 m (2708 Fuß)&lt;br&gt;Höhenunterschied: 1179 m (3867 Fuß)&lt;br&gt;Maximales Gefälle: 15 %&lt;br&gt;Minimales Gefälle: -20 %&lt;br&gt;&lt;/p&gt; &lt;p&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;chart&quot; border=&quot;0&quot; alt=&quot;chart&quot; src=&quot;http://andydunkel.net/assets/uploads/2012/06/chart.png&quot; width=&quot;644&quot; height=&quot;377&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Sat, 16 Jun 2012 15:46:00 +0200</pubDate>
+      <dc:date>2012-06-16T15:46:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Mehlblockalpe 26.05.2012</title>
+      <link>http://andydunkel.net/radfahren/2012/06/11/mehlblockalpe-26-05-2012.html</link>
+      <description>&lt;p&gt;&lt;p&gt;Endlich haben wir mal die Zeit gefunden zur &lt;a href=&quot;http://andydunkel.net/hiking/radfahren/sonstiges/2011/06/18/mehlblockalpe-im-kempter-wald-anfahrt-und-infos.html&quot;&gt;Mehlblockalpe&lt;/a&gt; zu radeln. Mit Rennrad ging es auf kürzestem Wege in den Kemptener Wald. Bier, Schnäppsle und Brotzeit sind immer noch Spitze. Wie immer gab es Musik. Was soll man mehr sagen. &lt;img style=&quot;border-bottom-style: none; border-left-style: none; border-top-style: none; border-right-style: none&quot; class=&quot;wlEmoticon wlEmoticon-smile&quot; alt=&quot;Smiley&quot; src=&quot;http://andydunkel.net/assets/uploads/2012/06/wlEmoticon-smile.png&quot;&gt;&lt;/p&gt; &lt;p&gt; &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:8b418a00-5cab-4b43-ae64-e3d9d3501bec&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;595&quot; height=&quot;334&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/yVFOpQzL_tY?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/yVFOpQzL_tY?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;595&quot; height=&quot;334&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt; &lt;p&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;2012-05-26 15.48.46&quot; border=&quot;0&quot; alt=&quot;2012-05-26 15.48.46&quot; src=&quot;http://andydunkel.net/assets/uploads/2012/06/2012-05-26-15.48.46.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/p&gt; &lt;p&gt;Das geniale Schinken-/Käsebrot:&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/06/2012-05-26-17.38.05.jpg&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;2012-05-26 17.38.05&quot; border=&quot;0&quot; alt=&quot;2012-05-26 17.38.05&quot; src=&quot;http://andydunkel.net/assets/uploads/2012/06/2012-05-26-17.38.05_thumb.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;iframe height=&quot;350&quot; marginheight=&quot;0&quot; src=&quot;https://maps.google.de/maps/ms?msa=0&amp;amp;msid=208324790998598431494.0004c119330e3a6ca6feb&amp;amp;ie=UTF8&amp;amp;t=h&amp;amp;ll=47.805776,10.560608&amp;amp;spn=0.322828,0.583649&amp;amp;z=10&amp;amp;output=embed&quot; frameborder=&quot;0&quot; width=&quot;425&quot; marginwidth=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;&lt;br&gt;&lt;small&gt;&lt;a style=&quot;text-align: left; color: #0000ff&quot; href=&quot;https://maps.google.de/maps/ms?msa=0&amp;amp;msid=208324790998598431494.0004c119330e3a6ca6feb&amp;amp;ie=UTF8&amp;amp;t=h&amp;amp;ll=47.805776,10.560608&amp;amp;spn=0.322828,0.583649&amp;amp;z=10&amp;amp;source=embed&quot;&gt;26.05.2012 13:42 - Mehlblockalpe&lt;/a&gt; auf einer größeren Karte anzeigen&lt;/small&gt;&lt;/p&gt; &lt;p&gt;Gesamtstrecke: 68,62 km (42,6 Meile/n)&lt;br&gt;Zeit in Bewegung: 3:11:48&lt;br&gt;Durchschnittliche Geschwindigkeit: 10,85 km/h (6,7 Meile/h)&lt;br&gt;Durchschnittliche Geschwindigkeit in Bewegung: 21,47 km/h (13,3 Meile/h)&lt;br&gt;Maximale Geschwindigkeit: 43,20 km/h (26,8 Meile/h)&lt;br&gt;Durchschnittliches Tempo: 5,53 min/km (8,9 min/Meile)&lt;br&gt;Durchschnittliches Tempo in Bewegung: 2,79 min/km (4,5 min/Meile)&lt;br&gt;Minimales Tempo: 1,39 min/km (2,2 min/Meile)&lt;br&gt;Maximale Höhe: 881 m (2889 Fuß)&lt;br&gt;Minimale Höhe: 704 m (2310 Fuß)&lt;br&gt;Höhenunterschied: 498 m (1633 Fuß)&lt;br&gt;Maximales Gefälle: 7 %&lt;br&gt;Minimales Gefälle: -5 %&lt;br&gt;Aufgezeichnet: 26.05.2012 13:42&lt;/p&gt;
+</description>
+      <pubDate>Mon, 11 Jun 2012 14:27:00 +0200</pubDate>
+      <dc:date>2012-06-11T14:27:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Maibaumfest in Zaisertshofen</title>
+      <link>http://andydunkel.net/radfahren/2012/06/10/maibaumfest-in-zaisertshofen.html</link>
+      <description>&lt;p&gt;OK, das ist jetzt schon etwas länger her, aber besser spät als nie. Am 1. Mai ging es, mit Fahrrad, ins beschauliche Zaisertshofen. Zu &lt;a href=&quot;http://www.storchenbraeu.de/&quot;&gt;Storchenbräu&lt;/a&gt; und Blasmusik wurde der Maibaum errichtet.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 10 Jun 2012 13:17:00 +0200</pubDate>
+      <dc:date>2012-06-10T13:17:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Feli und Cat Piano</title>
+      <link>http://andydunkel.net/katzen/2012/05/28/feli-und-cat-piano.html</link>
+      <description>&lt;p&gt;&lt;p&gt;Ein wenig CatContent:&lt;/p&gt; &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:89b52e98-173d-472f-80c4-5e7926fa609a&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;573&quot; height=&quot;322&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/bZgNqeay0lQ?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/bZgNqeay0lQ?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;573&quot; height=&quot;322&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
+      <pubDate>Mon, 28 May 2012 15:59:00 +0200</pubDate>
+      <dc:date>2012-05-28T15:59:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Bikefrühling Comer See–Italien</title>
+      <link>http://andydunkel.net/radfahren/2012/05/04/bikefrhling-comer-seeitalien.html</link>
+      <description>&lt;p&gt;Eine kleine und interessante Dokumentation über die Anfänge des CCC und Hackern im Allgemeinen.&lt;/p&gt; &lt;p&gt; &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:4da15fc2-1716-425a-88ef-25685d68ece6&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;651&quot; height=&quot;365&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/VAypNOTczfI?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/VAypNOTczfI?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;651&quot; height=&quot;365&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
+      <pubDate>Fri, 04 May 2012 20:09:00 +0200</pubDate>
+      <dc:date>2012-05-04T20:09:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>How to add files recursively to InnoSetup</title>
+      <link>http://andydunkel.net/coding/2012/03/21/how-to-add-files-recursively-to-innosetup.html</link>
+      <description>&lt;p&gt;Especially with my current RCP applications I had the problem how to add all these files to the installer. &lt;/p&gt;
+</description>
+      <pubDate>Wed, 21 Mar 2012 10:41:00 +0100</pubDate>
+      <dc:date>2012-03-21T10:41:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Roomba Fehler 9–Reparaturanleitung</title>
+      <link>http://andydunkel.net/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html</link>
+      <description>&lt;p&gt;Wie ich erst berichtet hatte, stellte mein Roomba vor kurzem seinen Dienst mit Fehler 9 ein. Ärgerlich, nach 2.5 Jahren ist die Garantie natürlich abgelaufen und der Roomba auch recht teuer. Nach etwas Recherche im Internet fand ich heraus, dass es sich bei Fehler 9 um einen defekten Stoßsensor handelt.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 11 Mar 2012 15:51:00 +0100</pubDate>
+      <dc:date>2012-03-11T15:51:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Roomba out of order</title>
+      <link>http://andydunkel.net/gadgets/2012/03/07/roomba-out-of-order.html</link>
+      <description>&lt;p&gt;So sieht aktuell mein Staubsauger-Roboter aus. Nach 2,5 Jahren hat er nun erst mal den Betrieb eingestellt (Fehler 9). Die Diagnose hat ergeben, dass der rechte Stoßsensor nicht mehr funktioniert.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 07 Mar 2012 19:48:00 +0100</pubDate>
+      <dc:date>2012-03-07T19:48:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Bloggen mit dem iPad</title>
+      <link>http://andydunkel.net/2012/02/20/bloggen-mit-dem-ipad.html</link>
+      <description>&lt;p&gt;Das ist ein Test, ob man mit dem Ipad auch bloggen kann.&lt;/p&gt;
+</description>
+      <pubDate>Mon, 20 Feb 2012 21:59:32 +0100</pubDate>
+      <dc:date>2012-02-20T21:59:32+01:00</dc:date>
+    </item>
+    <item>
+      <title>Roomba Fehler 9</title>
+      <link>http://andydunkel.net/gadgets/sonstiges/2012/02/04/roomba-fehler-9.html</link>
+      <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;Hinweis:&lt;/strong&gt; es gibt eine aktualisierte Fassung für den Fehler 9 (&lt;/em&gt;&lt;a href=&quot;http://andydunkel.net/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html&quot;&gt;&lt;em&gt;hier&lt;/em&gt;&lt;/a&gt;&lt;em&gt;). Dies hier beschriebene hat zwar funktioniert, aber nach einer Woche trat der Fehler wieder auf. Von daher ist diese Anleitung technisch nicht ganz korrekt.&lt;/em&gt;&lt;/p&gt;
+</description>
+      <pubDate>Sat, 04 Feb 2012 16:39:00 +0100</pubDate>
+      <dc:date>2012-02-04T16:39:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Doku: Hacker–Portrait einer Gegenkultur</title>
+      <link>http://andydunkel.net/sonstiges/2012/02/02/doku-hackerportrait-einer-gegenkultur.html</link>
+      <description>&lt;p&gt;Eine kleine und interessante Dokumentation über die Anfänge des CCC und Hackern im Allgemeinen.&lt;/p&gt; &lt;p&gt; &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:4da15fc2-1716-425a-88ef-25685d68ece6&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;651&quot; height=&quot;365&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/VAypNOTczfI?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/VAypNOTczfI?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;651&quot; height=&quot;365&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
+      <pubDate>Thu, 02 Feb 2012 21:36:00 +0100</pubDate>
+      <dc:date>2012-02-02T21:36:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Arduino Inbetriebnahme</title>
+      <link>http://andydunkel.net/science/2012/01/26/arduino-inbetriebnahme.html</link>
+      <description>&lt;p&gt;&lt;p&gt;Läuft, der Anfang ist getan.&lt;/p&gt; &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:38e96524-3066-4e9c-8193-4f4cd204b33d&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;529&quot; height=&quot;297&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/ABPhPnQlpyg?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/ABPhPnQlpyg?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;529&quot; height=&quot;297&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
+      <pubDate>Thu, 26 Jan 2012 21:27:00 +0100</pubDate>
+      <dc:date>2012-01-26T21:27:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Handyfotos</title>
+      <link>http://andydunkel.net/fotos/2012/01/25/handyfotos.html</link>
+      <description>&lt;p&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0616.jpg&quot;&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0616_thumb.jpg&quot; alt=&quot;IMAG0616&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0623.jpg&quot;&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0623_thumb.jpg&quot; alt=&quot;IMAG0623&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0635.jpg&quot;&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0635_thumb.jpg&quot; alt=&quot;IMAG0635&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0642.jpg&quot;&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0642_thumb.jpg&quot; alt=&quot;IMAG0642&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0643.jpg&quot;&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0643_thumb.jpg&quot; alt=&quot;IMAG0643&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0644.jpg&quot;&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0644_thumb.jpg&quot; alt=&quot;IMAG0644&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0645.jpg&quot;&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0645_thumb.jpg&quot; alt=&quot;IMAG0645&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0646.jpg&quot;&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0646_thumb.jpg&quot; alt=&quot;IMAG0646&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0648.jpg&quot;&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0648_thumb.jpg&quot; alt=&quot;IMAG0648&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0649.jpg&quot;&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0649_thumb.jpg&quot; alt=&quot;IMAG0649&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0650.jpg&quot;&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0650_thumb.jpg&quot; alt=&quot;IMAG0650&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0664.jpg&quot;&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0664_thumb.jpg&quot; alt=&quot;IMAG0664&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0677.jpg&quot;&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0677_thumb.jpg&quot; alt=&quot;IMAG0677&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0678.jpg&quot;&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2012/01/IMAG0678_thumb.jpg&quot; alt=&quot;IMAG0678&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+      <pubDate>Wed, 25 Jan 2012 19:00:00 +0100</pubDate>
+      <dc:date>2012-01-25T19:00:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Everything you need to know about the C64</title>
+      <link>http://andydunkel.net/gadgets/2012/01/23/everything-you-need-to-know-about-the-c64.html</link>
+      <description>&lt;p&gt;This talk was given some years ago on the 25C3. Very interesting and also very technical talk about the good old C64.  It features a overview over the hardware and the hacks made in the software development for the C64.&lt;/p&gt;
+</description>
+      <pubDate>Mon, 23 Jan 2012 20:27:45 +0100</pubDate>
+      <dc:date>2012-01-23T20:27:45+01:00</dc:date>
+    </item>
+    <item>
+      <title>Batteriewechsel Roomba</title>
+      <link>http://andydunkel.net/gadgets/2011/12/20/batteriewechsel-roomba.html</link>
+      <description>&lt;p&gt;Seit knapp 2,5 Jahren saugt bei mir ein Roomba 580 die Wohnung. Das klappt ganz gut. Man muss ein wenig die Hindernisse aus dem Weg aus dem Weg räumen, dann kommt der kleine überall hin und saugt den Raum automatisch. Dank Seitenbürste kommt er auch in alle Ecken. Insgesamt eine praktische Sache und spart mir eine Menge Zeit. Will ihn nicht mehr missen.&lt;/p&gt;
+</description>
+      <pubDate>Tue, 20 Dec 2011 20:43:00 +0100</pubDate>
+      <dc:date>2011-12-20T20:43:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Thinkpad Edge 11 auf SSD umrüsten</title>
+      <link>http://andydunkel.net/gadgets/sonstiges/2011/12/11/thinkpad-edge-11-auf-ssd-umrsten.html</link>
+      <description>&lt;p&gt;Vor einem knappen Jahr habe ich mir ein Thinkpad Edge 11 gekauft. Nicht weil ich es brauchte, sondern eher der schuckeligen Technik wegen. Oft benutzt hatte ich es nicht. Auch weil es nicht besonders schnell war. Es ist zwar ein halbwegs flotter Core i3 eingebaut, aber die Festplatte ist grottenlangsam. Man hat schon gar keinen Bock das Ding überhaupt anzuschalten, wenn man einige Minuten warten muss bis Windows gestartet ist.&lt;/p&gt; &lt;p&gt;Da ich mal wieder Lust zum Basteln hatte, habe ich die Festplatte jetzt durch eine SSD ersetzt. Die Wahl fiel auf eine &lt;a href=&quot;http://www.amazon.de/gp/product/B005OK6VIG/ref=as_li_ss_tl?ie=UTF8&amp;amp;tag=ekiwide0b-21&amp;amp;linkCode=as2&amp;amp;camp=1638&amp;amp;creative=19454&amp;amp;creativeASIN=B005OK6VIG&quot;&gt;Samsung SSD&lt;/a&gt;&lt;img style=&quot;border-bottom-style: none !important; margin: 0px; border-left-style: none !important; border-top-style: none !important; border-right-style: none !important&quot; border=&quot;0&quot; alt=&quot;&quot; src=&quot;http://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&amp;amp;l=as2&amp;amp;o=3&amp;amp;a=B005OK6VIG&quot; width=&quot;1&quot; height=&quot;1&quot;&gt;. Diese hat 64 GB, nicht die Welt. Aber für das Zweitnotebook für Internet, E-Mail und Filme ausreichend, und mit knapp 100 Euro nicht zu teuer. Die alte Platte tut jetzt in meinem Server Dienst als Backupplatte.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Die grundsätzliche Frage, lohnt sich der Umbau? Definitiv!&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Ich habe hier mal ein Vergleichsvideo erstellt. Boot mit der alten Festplatte und anschließend mit SSD. Das Laptop ist mit der SSD rasend schnell geworden. Bootet in wenigen Sekunden, Programme starten in Sekundenschnelle.&lt;/p&gt; &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:b1b3f3bb-fab7-491e-b6b4-bebcbe828b45&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;545&quot; height=&quot;306&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/_cvOcy1F3bA?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/_cvOcy1F3bA?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;545&quot; height=&quot;306&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;Die Samsung SSD kommt in einer schönen Retailverpackung und Gehäuse. Fast zu schade um diese einzubauen, wo man sie nicht mehr sieht. &lt;/p&gt; &lt;p&gt;Mit dabei ist ein 3.5 Zoll Adapter, Strom- und Satakabel. Softwaremäßig ist Norton Ghost dabei, um die Daten von der alten Platte auf die SSD zu ziehen. Ich wollte in dem Zuge aber gleich das Windows neuinstallieren um alle Altlasten loszuwerden.&lt;/p&gt; &lt;p&gt;Verpackung, Aufmachung und Inhalt erinnern schwer an Apple-Verpackungen, kein Wunder das die Jungs von Samsung gerade soviel Ärger mit Apple haben. &lt;img style=&quot;border-bottom-style: none; border-left-style: none; border-top-style: none; border-right-style: none&quot; class=&quot;wlEmoticon wlEmoticon-smile&quot; alt=&quot;Smiley&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/12/wlEmoticon-smile.png&quot;&gt;&lt;/p&gt; &lt;p&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2817&quot; border=&quot;0&quot; alt=&quot;DSCN2817&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/12/DSCN2817.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/p&gt; &lt;p&gt;Nun aber zum Einbau. Dies geht zum Glück recht einfach. Bei der Gelegenheit ist auch gleich noch ein zusätzlicher 4 GB Ram-Riegel ins Notebook gewandert.&lt;/p&gt; &lt;p&gt;Zuerst entfernen wir den Akku und lösen anschließend die 3 Schrauben (normaler Kreuz) auf der Unterseite:&lt;/p&gt; &lt;p&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;image&quot; border=&quot;0&quot; alt=&quot;image&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/12/image.png&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/p&gt; &lt;p&gt;Nun muss man den Deckel an der Seite der Schrauben etwas hochziehen und dann nach vorne ziehen, die Abdeckung ist mit Nasen auf der Akkuseite fixiert. Hier muss man etwas vorsichtig sein damit nichts abbricht. Aber keine Sorge, dass Ganze ist recht stabil.&lt;/p&gt; &lt;p&gt;Nun sehen wir das Innenleben:&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2011/12/image1.png&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;image&quot; border=&quot;0&quot; alt=&quot;image&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/12/image_thumb.png&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Die Festplatte ist mit 2 Schrauben fixiert. Diese lösen, dann kann die Festplatte nach links geschoben werden, wobei sich diese vom SATA-Port löst. Nun kann diese herausgenommen werden.&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2011/12/image2.png&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;image&quot; border=&quot;0&quot; alt=&quot;image&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/12/image_thumb1.png&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Die Festplatte ist nochmal mit einer Halterung verschraubt. Nun die Festplatte dort abschrauben und die SSD einbauen. Anschließend kann der Rahmen mit der SSD wieder eingebaut werden.&lt;/p&gt; &lt;p&gt;Auf dem Bild hier sieht man übrigens am unteren Ende den SIM-Kartenslot und den Steckplatz für die UMTS-Karte. &lt;/p&gt; &lt;p&gt;Da wir das Ding gerade offen haben, verbauen wir gleich noch etwas mehr Arbeitsspeicher. Standardmäßig ist bei meinem Gerät ein 2 GB Riegel verbaut. Ich habe hier &lt;a href=&quot;http://www.amazon.de/gp/product/B0034PII2U/ref=as_li_ss_tl?ie=UTF8&amp;amp;tag=ekiwide0b-21&amp;amp;linkCode=as2&amp;amp;camp=1638&amp;amp;creative=19454&amp;amp;creativeASIN=B0034PII2U&quot;&gt;RAM von Samsung&lt;/a&gt;&lt;img style=&quot;border-bottom-style: none !important; margin: 0px; border-left-style: none !important; border-top-style: none !important; border-right-style: none !important&quot; border=&quot;0&quot; alt=&quot;&quot; src=&quot;http://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&amp;amp;l=as2&amp;amp;o=3&amp;amp;a=B0034PII2U&quot; width=&quot;1&quot; height=&quot;1&quot;&gt; gekauft. War preislich gerade der günstigste. Anderer RAM sollte es genauso tun.&lt;/p&gt; &lt;p&gt;Den neuen Riegel einfach im 45 Grad Winkel einstecken und danach nach unten drücken:&lt;/p&gt; &lt;p&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;image&quot; border=&quot;0&quot; alt=&quot;image&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/12/image3.png&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;image&quot; border=&quot;0&quot; alt=&quot;image&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/12/image4.png&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/p&gt;  &lt;p&gt;Nun das Gerät wieder zuschrauben und fertig. Anschließend kann Windows neu installiert werden auf dem Gerät. Dies geht am Besten über USB-Stick. Eine Anleitung wie man einen solchen Stick erstellt &lt;a href=&quot;http://blog.ekiwi.de/?p=789&quot; target=&quot;_blank&quot;&gt;gibt es hier&lt;/a&gt;.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 11 Dec 2011 13:59:00 +0100</pubDate>
+      <dc:date>2011-12-11T13:59:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>1. Advent</title>
+      <link>http://andydunkel.net/sonstiges/2011/11/27/1-advent.html</link>
+      <description>&lt;p&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/11/IMG_0293.jpg&quot; alt=&quot;IMG_0293&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Sun, 27 Nov 2011 19:57:00 +0100</pubDate>
+      <dc:date>2011-11-27T19:57:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Grünten-20.11.2011</title>
+      <link>http://andydunkel.net/hiking/2011/11/25/grnten-20-11-2011.html</link>
+      <description>&lt;p&gt;Da freut man sich auf einen verregneten Herbst zum Xbox zocken, dann ist die ganze Zeit schönes Wetter. &lt;img style=&quot;border-bottom-style: none; border-left-style: none; border-top-style: none; border-right-style: none&quot; class=&quot;wlEmoticon wlEmoticon-smile&quot; alt=&quot;Smiley&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/wlEmoticon-smile1.png&quot;&gt;&amp;nbsp;&lt;/p&gt; &lt;p&gt;Tja deswegen ging es letzten Sonntag auch auf den Grünten. Der Anstieg war beschwerlicher als erwartet, anscheinend bin ich etwas aus der Form.&lt;/p&gt; &lt;p&gt;Aber die Mühe war nicht vergeblich, im Grüntenhaus wartete eine ordentliche Brotzeit und Bierchen. Danach ging es weiter auf den Gipfel mit super Fernsicht. &lt;/p&gt; &lt;p&gt;Die Fotos sagen denke alles… am Ende gibt es noch etwas Statistik.&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2764.jpg&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2764&quot; border=&quot;0&quot; alt=&quot;DSCN2764&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2764_thumb.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Hier geht’s weiter:&lt;/p&gt;&lt;!--more--&gt;&lt;p&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2756&quot; border=&quot;0&quot; alt=&quot;DSCN2756&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2756.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2760&quot; border=&quot;0&quot; alt=&quot;DSCN2760&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2760.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2762&quot; border=&quot;0&quot; alt=&quot;DSCN2762&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2762.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2767&quot; border=&quot;0&quot; alt=&quot;DSCN2767&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2767.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2768&quot; border=&quot;0&quot; alt=&quot;DSCN2768&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2768.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2769&quot; border=&quot;0&quot; alt=&quot;DSCN2769&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2769.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2772&quot; border=&quot;0&quot; alt=&quot;DSCN2772&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2772.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2773&quot; border=&quot;0&quot; alt=&quot;DSCN2773&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2773.jpg&quot; width=&quot;419&quot; height=&quot;557&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2774&quot; border=&quot;0&quot; alt=&quot;DSCN2774&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2774.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2777.jpg&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2777&quot; border=&quot;0&quot; alt=&quot;DSCN2777&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2777_thumb.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/a&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2782&quot; border=&quot;0&quot; alt=&quot;DSCN2782&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2782.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2785.jpg&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2785&quot; border=&quot;0&quot; alt=&quot;DSCN2785&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2785_thumb.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/a&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2787&quot; border=&quot;0&quot; alt=&quot;DSCN2787&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2787.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2789&quot; border=&quot;0&quot; alt=&quot;DSCN2789&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2789.jpg&quot; width=&quot;425&quot; height=&quot;565&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2790&quot; border=&quot;0&quot; alt=&quot;DSCN2790&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2790.jpg&quot; width=&quot;425&quot; height=&quot;564&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2791&quot; border=&quot;0&quot; alt=&quot;DSCN2791&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2791.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2793&quot; border=&quot;0&quot; alt=&quot;DSCN2793&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2793.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2797&quot; border=&quot;0&quot; alt=&quot;DSCN2797&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2797.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2801&quot; border=&quot;0&quot; alt=&quot;DSCN2801&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/DSCN2801.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/p&gt; &lt;p&gt;&amp;nbsp;&lt;/p&gt; &lt;p&gt;&lt;iframe height=&quot;480&quot; marginheight=&quot;0&quot; src=&quot;http://maps.google.de/maps/ms?hl=de&amp;amp;mpa=0&amp;amp;ctz=-60&amp;amp;mpf=0&amp;amp;ie=UTF8&amp;amp;msa=0&amp;amp;t=h&amp;amp;vpsrc=0&amp;amp;msid=208324790998598431494.0004b292ac44e90d48638&amp;amp;ll=47.546698,10.306206&amp;amp;spn=0.027809,0.054932&amp;amp;z=14&amp;amp;output=embed&quot; frameborder=&quot;0&quot; width=&quot;640&quot; marginwidth=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;&lt;br&gt;&lt;small&gt;&lt;a style=&quot;text-align: left; color: #0000ff&quot; href=&quot;http://maps.google.de/maps/ms?hl=de&amp;amp;mpa=0&amp;amp;ctz=-60&amp;amp;mpf=0&amp;amp;ie=UTF8&amp;amp;msa=0&amp;amp;t=h&amp;amp;vpsrc=0&amp;amp;msid=208324790998598431494.0004b292ac44e90d48638&amp;amp;ll=47.546698,10.306206&amp;amp;spn=0.027809,0.054932&amp;amp;z=14&amp;amp;source=embed&quot;&gt;2011-11-20 10:36 - Grünten&lt;/a&gt; auf einer größeren Karte anzeigen&lt;/small&gt;&lt;/p&gt; &lt;p&gt;Gesamtentfernung: 12,06 km (7,5 mi)&lt;br&gt;Gesamtzeit: 4:44:09&lt;br&gt;Durchschnitt in Bew.: 5,64 km/h (3,5 mi/h)&lt;br&gt;Max. Geschwindigkeit: 36,71 km/h (22,8 mi/h)&lt;br&gt;Niedrigste Höhenlage: 883 m (2896 Fuß)&lt;br&gt;Höchste Höhenlage: 1784 m (5854 Fuß)&lt;br&gt;Höhengewinn: 1214 m (3983 Fuß)&lt;br&gt;Maximale Steigung: 11 %&lt;br&gt;Minimale Steigung: -5 %&lt;/p&gt; &lt;p&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;image&quot; border=&quot;0&quot; alt=&quot;image&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/11/image7.png&quot; width=&quot;547&quot; height=&quot;321&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Fri, 25 Nov 2011 18:27:00 +0100</pubDate>
+      <dc:date>2011-11-25T18:27:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Suppress Eclipse default key bindings in RCP application</title>
+      <link>http://andydunkel.net/eclipse/swt/2011/11/23/suppress-eclipse-default-key-bindings-in-rcp-application.html</link>
+      <description>&lt;p&gt;In my current project, the default key bindings from Eclipse where active. When I hit CTRL + N (CMD +N on a MAC) for a new file the “New Wizard” showed up. I defined my own key bindings, but the Eclipse key bindings seemed to overrule them. &lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/11/wlEmoticon-sadsmile.png&quot; alt=&quot;Trauriges Smiley&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Wed, 23 Nov 2011 22:04:00 +0100</pubDate>
+      <dc:date>2011-11-23T22:04:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Hängematte</title>
+      <link>http://andydunkel.net/2011/11/13/hngematte.html</link>
+      <description>&lt;p&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/11/IMAG0599.jpg&quot; alt=&quot;IMAG0599&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Sun, 13 Nov 2011 17:45:00 +0100</pubDate>
+      <dc:date>2011-11-13T17:45:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>............</title>
+      <link>http://andydunkel.net/2011/11/07/1101.html</link>
+      <description>&lt;p&gt;.....................&lt;/p&gt;
+</description>
+      <pubDate>Mon, 07 Nov 2011 20:08:51 +0100</pubDate>
+      <dc:date>2011-11-07T20:08:51+01:00</dc:date>
+    </item>
+    <item>
+      <title>Alte Online Zeiten</title>
+      <link>http://andydunkel.net/sonstiges/2011/11/06/alte-online-zeiten.html</link>
+      <description>&lt;p&gt;Gerade bin ich im Internet über ein Video gestolpert, welches den Sound eines guten alten 56k Modems wiedergibt.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 06 Nov 2011 14:34:00 +0100</pubDate>
+      <dc:date>2011-11-06T14:34:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>EclipseCON 2011</title>
+      <link>http://andydunkel.net/eclipse/2011/11/05/eclipsecon-2011.html</link>
+      <description>&lt;p&gt;Vom 2.11. bis 4.11. fand in diesem Jahr wieder die &lt;a href=&quot;http://eclipsecon.org/&quot;&gt;EclipseCON&lt;/a&gt; Europe statt. Im letzten Jahr nahm ich zum ersten Mal teil. Seit etwa dieser Zeit beschäftige ich mich beruflich und privat mit der Java/&lt;a href=&quot;http://eclipse.org/&quot;&gt;Eclipse&lt;/a&gt;/&lt;a href=&quot;http://wiki.eclipse.org/index.php/Rich_Client_Platform&quot;&gt;RCP&lt;/a&gt; Programmierung. &lt;/p&gt;
+</description>
+      <pubDate>Sat, 05 Nov 2011 19:13:00 +0100</pubDate>
+      <dc:date>2011-11-05T19:13:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>ECE 2011</title>
+      <link>http://andydunkel.net/2011/11/01/ece-2011.html</link>
+      <description>&lt;p&gt;Morgen startet die &lt;a href=&quot;http://eclipsecon.org/&quot;&gt;EclipseCON&lt;/a&gt; 2011 in Ludwigsburg.&lt;/p&gt;
+</description>
+      <pubDate>Tue, 01 Nov 2011 13:22:00 +0100</pubDate>
+      <dc:date>2011-11-01T13:22:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Speiden/Burgruinen 30.10.2011</title>
+      <link>http://andydunkel.net/hiking/sonstiges/2011/11/01/speidenburgruinen-30-10-2011.html</link>
+      <description>&lt;p&gt;Ein paar Fotos vom letzten Ausflug nach Speiden ins Sudhaus und Wanderung auf die Burgruine Eisenberg und Hohenfreyberg.&lt;/p&gt;
+</description>
+      <pubDate>Tue, 01 Nov 2011 12:27:00 +0100</pubDate>
+      <dc:date>2011-11-01T12:27:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>This week</title>
+      <link>http://andydunkel.net/sonstiges/2011/10/25/this-week.html</link>
+      <description>&lt;p&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/10/image6.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Tue, 25 Oct 2011 17:49:00 +0200</pubDate>
+      <dc:date>2011-10-25T17:49:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Wanderung Falkenstein, Saloberalm–16.10.2011</title>
+      <link>http://andydunkel.net/2011/10/20/wanderung-falkenstein-saloberalm16-10-2011.html</link>
+      <description>&lt;p&gt;Denke das war eines der letzten schönen Wochenenden dieses Jahres. Zumindest wandertechnisch. &lt;/p&gt; &lt;p&gt;Diesmal ging es zur Burgruine &lt;a href=&quot;http://de.wikipedia.org/wiki/Falkenstein_(Manzenberg)&quot; target=&quot;_blank&quot;&gt;Falkenstein&lt;/a&gt;. Bei bestem Wetter erst zur Burg, anschließend ging es weiter zur &lt;a href=&quot;http://www.saloberalm.de/&quot; target=&quot;_blank&quot;&gt;Saloberalm&lt;/a&gt;. Dort kurze Einkehr, lange konnten wir dort nicht bleiben, da die Dunkelheit nahte. Insgesamt eine schöne Tour mit ca. 3 Stunden Gehzeit.&lt;/p&gt; &lt;p&gt;Hier ein paar Fotos und die übliche Statistik:&lt;/p&gt; &lt;p&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2699&quot; border=&quot;0&quot; alt=&quot;DSCN2699&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/10/DSCN2699.jpg&quot; width=&quot;604&quot; height=&quot;454&quot;&gt;&lt;/p&gt;&lt;iframe height=&quot;350&quot; marginheight=&quot;0&quot; src=&quot;http://maps.google.de/maps/ms?vpsrc=0&amp;amp;ctz=-120&amp;amp;ie=UTF8&amp;amp;msa=0&amp;amp;msid=208324790998598431494.0004af70322d6233c5f45&amp;amp;t=h&amp;amp;ll=47.566276,10.606441&amp;amp;spn=0.02027,0.051498&amp;amp;z=14&amp;amp;output=embed&quot; frameborder=&quot;0&quot; width=&quot;600&quot; marginwidth=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;&lt;br&gt;&lt;small&gt;View &lt;a style=&quot;text-align: left; color: #0000ff&quot; href=&quot;http://maps.google.de/maps/ms?vpsrc=0&amp;amp;ctz=-120&amp;amp;ie=UTF8&amp;amp;msa=0&amp;amp;msid=208324790998598431494.0004af70322d6233c5f45&amp;amp;t=h&amp;amp;ll=47.566276,10.606441&amp;amp;spn=0.02027,0.051498&amp;amp;z=14&amp;amp;source=embed&quot;&gt;2011-10-16 14:14 - Falkenstein&lt;/a&gt; in a larger map&lt;/small&gt;  &lt;p&gt;Gesamtentfernung: 11,00 km (6,8 mi)&lt;br&gt;Gesamtzeit: 4:01:53&lt;br&gt;Durchschnittsgeschw.: 2,73 km/h (1,7 mi/h)&lt;br&gt;Durchschnitt in Bew.: 5,90 km/h (3,7 mi/h)&lt;br&gt;Max. Geschwindigkeit: 12,89 km/h (8,0 mi/h)&lt;br&gt;Niedrigste Höhenlage: 1124 m (3688 Fuß)&lt;br&gt;Höchste Höhenlage: 1350 m (4430 Fuß)&lt;br&gt;Höhengewinn: 803 m (2636 Fuß)&lt;br&gt;Maximale Steigung: 30 %&lt;br&gt;Minimale Steigung: 2 %&lt;br&gt;Aufgezeichnet am: So. Okt 16 14:14:52 MESZ 2011&lt;br&gt;&lt;/p&gt; &lt;p&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;chart&quot; border=&quot;0&quot; alt=&quot;chart&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/10/chart.png&quot; width=&quot;604&quot; height=&quot;354&quot;&gt;&lt;/p&gt; &lt;p&gt;Weitere Fotos:&lt;/p&gt;&lt;!--more--&gt;&lt;p&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2679&quot; border=&quot;0&quot; alt=&quot;DSCN2679&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/10/DSCN2679.jpg&quot; width=&quot;624&quot; height=&quot;469&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2680&quot; border=&quot;0&quot; alt=&quot;DSCN2680&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/10/DSCN2680.jpg&quot; width=&quot;624&quot; height=&quot;469&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2683&quot; border=&quot;0&quot; alt=&quot;DSCN2683&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/10/DSCN2683.jpg&quot; width=&quot;624&quot; height=&quot;469&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2685&quot; border=&quot;0&quot; alt=&quot;DSCN2685&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/10/DSCN2685.jpg&quot; width=&quot;624&quot; height=&quot;469&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2686&quot; border=&quot;0&quot; alt=&quot;DSCN2686&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/10/DSCN2686.jpg&quot; width=&quot;624&quot; height=&quot;469&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2687&quot; border=&quot;0&quot; alt=&quot;DSCN2687&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/10/DSCN2687.jpg&quot; width=&quot;624&quot; height=&quot;469&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2688&quot; border=&quot;0&quot; alt=&quot;DSCN2688&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/10/DSCN2688.jpg&quot; width=&quot;624&quot; height=&quot;469&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2689&quot; border=&quot;0&quot; alt=&quot;DSCN2689&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/10/DSCN2689.jpg&quot; width=&quot;624&quot; height=&quot;469&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2693&quot; border=&quot;0&quot; alt=&quot;DSCN2693&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/10/DSCN2693.jpg&quot; width=&quot;624&quot; height=&quot;469&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2696&quot; border=&quot;0&quot; alt=&quot;DSCN2696&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/10/DSCN2696.jpg&quot; width=&quot;624&quot; height=&quot;469&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2704&quot; border=&quot;0&quot; alt=&quot;DSCN2704&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/10/DSCN2704.jpg&quot; width=&quot;624&quot; height=&quot;469&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2707&quot; border=&quot;0&quot; alt=&quot;DSCN2707&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/10/DSCN2707.jpg&quot; width=&quot;624&quot; height=&quot;469&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2711&quot; border=&quot;0&quot; alt=&quot;DSCN2711&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/10/DSCN2711.jpg&quot; width=&quot;624&quot; height=&quot;469&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2712&quot; border=&quot;0&quot; alt=&quot;DSCN2712&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/10/DSCN2712.jpg&quot; width=&quot;624&quot; height=&quot;469&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2714&quot; border=&quot;0&quot; alt=&quot;DSCN2714&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/10/DSCN2714.jpg&quot; width=&quot;624&quot; height=&quot;469&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2715&quot; border=&quot;0&quot; alt=&quot;DSCN2715&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/10/DSCN2715.jpg&quot; width=&quot;624&quot; height=&quot;469&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Thu, 20 Oct 2011 19:58:00 +0200</pubDate>
+      <dc:date>2011-10-20T19:58:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Java: Reading output from the Console/StdOut</title>
+      <link>http://andydunkel.net/java/2011/10/12/java-reading-output-from-a-consolestdout.html</link>
+      <description>&lt;p&gt;Today I had a small problem. I wanted to start an external C++ console programm with some parameters and get the output back to my Java program.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 12 Oct 2011 20:37:00 +0200</pubDate>
+      <dc:date>2011-10-12T20:37:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>JFace: Set selection index in TableViewer</title>
+      <link>http://andydunkel.net/eclipse/java/swt/2011/10/06/jface-set-selection-index-in-tableviewer.html</link>
+      <description>&lt;p&gt;Selecting a row by index in a table viewer isn&amp;#39;t very straightforward. There is no method like tableViewer.setSelectionIndex.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 06 Oct 2011 20:53:51 +0200</pubDate>
+      <dc:date>2011-10-06T20:53:51+02:00</dc:date>
+    </item>
+    <item>
+      <title>Eclipse RCP: Remove tab folder from View</title>
+      <link>http://andydunkel.net/eclipse/java/swt/2011/10/04/eclipse-rcp-remove-tab-folder-from-view.html</link>
+      <description>&lt;p&gt;If you create a new RCP application a view gets a tab like this:&lt;/p&gt;
+</description>
+      <pubDate>Tue, 04 Oct 2011 19:20:00 +0200</pubDate>
+      <dc:date>2011-10-04T19:20:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Infrarotlicht sichtbar machen</title>
+      <link>http://andydunkel.net/science/2011/10/03/infrarotlicht-sichtbar-machen.html</link>
+      <description>&lt;p&gt;Fernbedienungen für Fernseher, DVD-Player etc. arbeiten mit infrarotem Licht. Dieses können wir Menschen nicht sehen.&amp;nbsp; Interessanterweise kann man mit einem Handy bzw. einer Digitalkamera dieses Licht sichtbar machen:&lt;/p&gt; &lt;p&gt; &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:f4995228-0d34-45ca-a579-165df6a0b727&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;605&quot; height=&quot;339&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/KgPFJlVNGzY?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/KgPFJlVNGzY?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;605&quot; height=&quot;339&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt; &lt;p&gt;Praktischer Nutzen? So kann man recht leicht überprüfen, ob die Fernbedienung noch funktioniert oder die Batterien ausgetauscht werden müssen.&lt;/p&gt;
+</description>
+      <pubDate>Mon, 03 Oct 2011 15:35:00 +0200</pubDate>
+      <dc:date>2011-10-03T15:35:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>EMF: Setting an empty string as default value</title>
+      <link>http://andydunkel.net/eclipse/java/2011/10/01/emf-setting-an-empty-string-as-default-value.html</link>
+      <description>&lt;p&gt;If you create a string in an EMF model, its null by default:&lt;/p&gt;
+</description>
+      <pubDate>Sat, 01 Oct 2011 11:38:00 +0200</pubDate>
+      <dc:date>2011-10-01T11:38:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Java: Open an URL in the standard browser</title>
+      <link>http://andydunkel.net/eclipse/java/2011/09/27/java-open-an-url-in-the-standard-browser.html</link>
+      <description>&lt;p&gt;Here is short code snippet to open an URL with the systems standard browser:&lt;/p&gt;
+</description>
+      <pubDate>Tue, 27 Sep 2011 21:19:47 +0200</pubDate>
+      <dc:date>2011-09-27T21:19:47+02:00</dc:date>
+    </item>
+    <item>
+      <title>Viehscheid Bad Hindelang / Radtour zur Käseralpe</title>
+      <link>http://andydunkel.net/radfahren/2011/09/18/viehscheid-bad-hindelang-radtour-zur-kseralm.html</link>
+      <description>&lt;p&gt;Schon ein wenig her, aber ich kam erst jetzt dazu das Video zu schneiden. Diesmal &lt;a href=&quot;http://de.wikipedia.org/wiki/Almabtrieb&quot; target=&quot;_blank&quot;&gt;Viehscheid&lt;/a&gt; und Frühschoppen in Bad Hindelang. Beschwingt ging es danach mit Fahrrad auf die &lt;a href=&quot;http://oberstdorf-online.info/alphuetten/kaeseralpe.htm&quot; target=&quot;_blank&quot;&gt;Käseralpe&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;Das letzte Drittel hatte dann doch wieder ordentliche Steigungen von bis zu 20%. Aber irgendwie kommt man immer rauf, mit dem richtigen Ziel vor Augen: &lt;img style=&quot;border-bottom-style: none; border-left-style: none; border-top-style: none; border-right-style: none&quot; class=&quot;wlEmoticon wlEmoticon-mug&quot; alt=&quot;Bierkrug&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/09/wlEmoticon-mug.png&quot;&gt;.&lt;/p&gt;  &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:2acd1fef-b149-43cf-92a5-26a172ce3c01&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;594&quot; height=&quot;334&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/GDf-v088Xak?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/GDf-v088Xak?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;594&quot; height=&quot;334&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;  &lt;p&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;image&quot; border=&quot;0&quot; alt=&quot;image&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/09/image11.png&quot; width=&quot;604&quot; height=&quot;354&quot;&gt;&lt;/p&gt; &lt;p&gt;&amp;nbsp;&lt;/p&gt; &lt;p&gt;&lt;iframe height=&quot;400&quot; marginheight=&quot;0&quot; src=&quot;http://maps.google.de/maps/ms?msa=0&amp;amp;msid=208324790998598431494.0004aca5d29f398cf319e&amp;amp;ie=UTF8&amp;amp;t=h&amp;amp;vpsrc=0&amp;amp;ll=47.438306,10.321655&amp;amp;spn=0.185774,0.411301&amp;amp;z=11&amp;amp;output=embed&quot; frameborder=&quot;0&quot; width=&quot;600&quot; marginwidth=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;&lt;br&gt;&lt;small&gt;&lt;a style=&quot;text-align: left; color: #0000ff&quot; href=&quot;http://maps.google.de/maps/ms?msa=0&amp;amp;msid=208324790998598431494.0004aca5d29f398cf319e&amp;amp;ie=UTF8&amp;amp;t=h&amp;amp;vpsrc=0&amp;amp;ll=47.438306,10.321655&amp;amp;spn=0.185774,0.411301&amp;amp;z=11&amp;amp;source=embed&quot;&gt;2011-09-10 09:13 - Viehscheid/Käseralm&lt;/a&gt; auf einer größeren Karte anzeigen&lt;/small&gt; &lt;/p&gt; &lt;p&gt;Gesamtentfernung: 67,68 km (42,1 mi)&lt;br&gt;Zeit in Bewegung: 4:21:02&lt;br&gt;Durchschnittsgeschw.: 7,43 km/h (4,6 mi/h)&lt;br&gt;Durchschnitt in Bew.: 15,56 km/h (9,7 mi/h)&lt;br&gt;Max. Geschwindigkeit: 49,79 km/h (30,9 mi/h)&lt;br&gt;Niedrigste Höhenlage: 790 m (2591 Fuß)&lt;br&gt;Höchste Höhenlage: 1450 m (4757 Fuß)&lt;br&gt;Höhengewinn: 1591 m (5220 Fuß)&lt;br&gt;Maximale Steigung: 21 %&lt;br&gt;Minimale Steigung: -18 %&lt;br&gt;Aufgezeichnet am: Sa. Sep 10 09:13:10 MESZ 2011&lt;br&gt; &lt;p&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2011/09/DSCN2625.jpg&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2625&quot; border=&quot;0&quot; alt=&quot;DSCN2625&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/09/DSCN2625_thumb.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Weitere Bilder:&lt;/p&gt;&lt;!--more--&gt;&lt;p&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2607&quot; border=&quot;0&quot; alt=&quot;DSCN2607&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/09/DSCN2607.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2609&quot; border=&quot;0&quot; alt=&quot;DSCN2609&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/09/DSCN2609.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2612&quot; border=&quot;0&quot; alt=&quot;DSCN2612&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/09/DSCN2612.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2614&quot; border=&quot;0&quot; alt=&quot;DSCN2614&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/09/DSCN2614.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2615&quot; border=&quot;0&quot; alt=&quot;DSCN2615&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/09/DSCN2615.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2618&quot; border=&quot;0&quot; alt=&quot;DSCN2618&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/09/DSCN2618.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2620&quot; border=&quot;0&quot; alt=&quot;DSCN2620&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/09/DSCN2620.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2630&quot; border=&quot;0&quot; alt=&quot;DSCN2630&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/09/DSCN2630.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2634&quot; border=&quot;0&quot; alt=&quot;DSCN2634&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/09/DSCN2634.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2635&quot; border=&quot;0&quot; alt=&quot;DSCN2635&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/09/DSCN2635.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2638&quot; border=&quot;0&quot; alt=&quot;DSCN2638&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/09/DSCN2638.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2639&quot; border=&quot;0&quot; alt=&quot;DSCN2639&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/09/DSCN2639.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Sun, 18 Sep 2011 10:22:00 +0200</pubDate>
+      <dc:date>2011-09-18T10:22:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>EMF: Object is not contained in a resource</title>
+      <link>http://andydunkel.net/eclipse/java/2011/09/17/emf-object-is-not-contained-in-a-resource.html</link>
+      <description>&lt;p&gt;I had a small problem &lt;a href=&quot;http://andydunkel.net/eclipse/java/2011/08/02/save-and-load-an-emf-model-to-an-xml-file.html&quot;&gt;saving my EMF model to XML&lt;/a&gt;. I got the error message “The object … is not contained in a resource”.&lt;/p&gt;
+</description>
+      <pubDate>Sat, 17 Sep 2011 18:38:00 +0200</pubDate>
+      <dc:date>2011-09-17T18:38:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>setAccelerator(SWT.CTRL | 'O'); //not working!</title>
+      <link>http://andydunkel.net/java/2011/09/16/setacceleratorswt-ctrl-o-not-working.html</link>
+      <description>&lt;p&gt;In my current RCP application I had a problem that the menu key shortcuts did not work correctly:&lt;/p&gt;
+</description>
+      <pubDate>Fri, 16 Sep 2011 08:00:00 +0200</pubDate>
+      <dc:date>2011-09-16T08:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Parkplatzschranke wird aufgebaut</title>
+      <link>http://andydunkel.net/sonstiges/2011/09/15/parkplatzschranke-wird-aufgebaut.html</link>
+      <description>&lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:72f4a9cb-7758-4442-aa0c-32a87e99b541&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;620&quot; height=&quot;348&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/uMVuaDpOC48?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/uMVuaDpOC48?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;620&quot; height=&quot;348&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+      <pubDate>Thu, 15 Sep 2011 19:41:00 +0200</pubDate>
+      <dc:date>2011-09-15T19:41:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Pause</title>
+      <link>http://andydunkel.net/sonstiges/2011/09/13/pause-2.html</link>
+      <description>&lt;p&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/09/image7.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Tue, 13 Sep 2011 21:51:00 +0200</pubDate>
+      <dc:date>2011-09-13T21:51:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Mond</title>
+      <link>http://andydunkel.net/sonstiges/2011/09/09/mond.html</link>
+      <description>&lt;p&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/09/mond.jpg&quot; alt=&quot;mond&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Fri, 09 Sep 2011 19:46:00 +0200</pubDate>
+      <dc:date>2011-09-09T19:46:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Neutrinos–Geheimschrift des Kosmos</title>
+      <link>http://andydunkel.net/science/2011/09/08/neutrinosgeheimschrift-des-kosmos.html</link>
+      <description>&lt;p&gt;&lt;p&gt;Gestern habe ich einen interessanten Vortrag zum Thema &lt;a href=&quot;http://de.wikipedia.org/wiki/Neutrino&quot; target=&quot;_blank&quot;&gt;Neutrinos&lt;/a&gt; auf Youtube gefunden. Geht eine knappe Stunde. &lt;/p&gt; &lt;p&gt;Besonders interessant: die Anwendungsmöglichkeiten im Bereich der Astrophysik um z.B. Vorgänge im inneren der Sonne oder in weit entfernten kosmischen Objekten zu beobachten.&lt;/p&gt; &lt;p&gt;Hier ist Teil 1:&lt;/p&gt; &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:8d473c11-aab3-4fe4-af6f-c528c3c91206&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;448&quot; height=&quot;252&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/hbRryPNVU7A?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/hbRryPNVU7A?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;448&quot; height=&quot;252&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;Teil 2 und Teil 3:&lt;/p&gt;&amp;lt;!--more--&amp;gt;&lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:de5643ae-f0b2-46c4-bdbb-aecd9bac9d2f&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;448&quot; height=&quot;252&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/KbhQMagCdVU?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/KbhQMagCdVU?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;448&quot; height=&quot;252&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt; &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:d26d6dbb-94f0-4bf3-927f-1463a48662b4&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;448&quot; height=&quot;252&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/BOm0chtqFJM?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/BOm0chtqFJM?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;448&quot; height=&quot;252&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
+      <pubDate>Thu, 08 Sep 2011 20:21:00 +0200</pubDate>
+      <dc:date>2011-09-08T20:21:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>org.eclipse.swt.SWTError: No more handles</title>
+      <link>http://andydunkel.net/java/2011/09/07/org-eclipse-swt-swterror-no-more-handles.html</link>
+      <description>&lt;p&gt;In our current project we came across the following error, when we opened multiple of our editors in a RCP application: &lt;/p&gt;
+</description>
+      <pubDate>Wed, 07 Sep 2011 20:17:00 +0200</pubDate>
+      <dc:date>2011-09-07T20:17:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Galaxy on Fire 2 für das iPad</title>
+      <link>http://andydunkel.net/gadgets/ipad/2011/09/05/galaxy-on-fire-2-fr-das-ipad.html</link>
+      <description>&lt;p&gt;Schon beeindruckend, was so für Spiele für das iPad möglich sind. Eins davon ist Galaxy on Fire 2 (&lt;a href=&quot;http://www.galaxyonfire.com/&quot;&gt;http://www.galaxyonfire.com/&lt;/a&gt;). Solche 3D Grafik war vor wenigen Jahren noch PCs mit 3D Grafikkarte vorbehalten.&lt;/p&gt;
+</description>
+      <pubDate>Mon, 05 Sep 2011 20:23:00 +0200</pubDate>
+      <dc:date>2011-09-05T20:23:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Unterwegs</title>
+      <link>http://andydunkel.net/sonstiges/2011/09/04/unterwegs.html</link>
+      <description>&lt;p&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/09/Foto-04.09.11-15-28-32.jpg&quot; alt=&quot;Foto 04.09.11 15 28 32&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Sun, 04 Sep 2011 15:25:00 +0200</pubDate>
+      <dc:date>2011-09-04T15:25:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Color Themes for Eclipse</title>
+      <link>http://andydunkel.net/coding/2011/09/01/color-themes-for-eclipse.html</link>
+      <description>&lt;p&gt;When it comes to programming I like dark backgrounds in the editor. Setting the colors in Eclipse is a lot of work and the settings only apply for a certain workspace. If you create another workspace, all is set to default colors. &lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/09/wlEmoticon-sadsmile.png&quot; alt=&quot;Trauriges Smiley&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Thu, 01 Sep 2011 21:16:00 +0200</pubDate>
+      <dc:date>2011-09-01T21:16:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Grün</title>
+      <link>http://andydunkel.net/radfahren/2011/08/30/grn.html</link>
+      <description>&lt;p&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/08/image25.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Tue, 30 Aug 2011 21:12:00 +0200</pubDate>
+      <dc:date>2011-08-30T21:12:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Nicht genügend Serverspeicher</title>
+      <link>http://andydunkel.net/sonstiges/tools/2011/08/27/nicht-gengend-serverspeicher.html</link>
+      <description>&lt;p&gt;Momentan ziehe ich Windows Probleme magisch an. Heute habe ich auf meinem Server (eigentlich nur eine Windows XP Kiste mit ein paar Freigaben) Acronis True Image installiert. Backups sind ja wichtig und so…&lt;/p&gt;
+</description>
+      <pubDate>Sat, 27 Aug 2011 18:33:00 +0200</pubDate>
+      <dc:date>2011-08-27T18:33:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Strom bei der Arbeit</title>
+      <link>http://andydunkel.net/sonstiges/2011/08/25/strom-bei-der-arbeit.html</link>
+      <description>&lt;p&gt;Nicht daheim nachmachen Kinders:&lt;/p&gt;
+</description>
+      <pubDate>Thu, 25 Aug 2011 13:14:04 +0200</pubDate>
+      <dc:date>2011-08-25T13:14:04+02:00</dc:date>
+    </item>
+    <item>
+      <title>Berchtesgadener Land Teil 2–Kehlstein</title>
+      <link>http://andydunkel.net/radfahren/2011/08/24/berchtesgadener-land-teil-2kehlstein.html</link>
+      <description>&lt;p&gt;Hier Teil 2, es ging zum Kehlsteinhaus, war insgesamt doch recht anstrengend. Kurz vor der Ankunft auf dem Berg ist mir noch die Kette gerissen.&lt;/p&gt; &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:edad44fa-5314-46ae-a6d1-335e0c90536f&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;607&quot; height=&quot;341&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/ymKmBXP1luo?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/ymKmBXP1luo?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;607&quot; height=&quot;341&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;&amp;nbsp;&lt;/p&gt; &lt;p&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;image&quot; border=&quot;0&quot; alt=&quot;image&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/image20.png&quot; width=&quot;604&quot; height=&quot;354&quot;&gt;&lt;/p&gt;&lt;iframe height=&quot;350&quot; marginheight=&quot;0&quot; src=&quot;http://maps.google.de/maps/ms?msa=0&amp;amp;msid=208324790998598431494.0004aacd71d67d149da4d&amp;amp;ie=UTF8&amp;amp;t=h&amp;amp;vpsrc=0&amp;amp;ll=47.622711,13.039742&amp;amp;spn=0.040495,0.102997&amp;amp;z=13&amp;amp;output=embed&quot; frameborder=&quot;0&quot; width=&quot;600&quot; marginwidth=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;  &lt;p&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2552&quot; border=&quot;0&quot; alt=&quot;DSCN2552&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2552.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/p&gt; &lt;p&gt;Weitere Fotos:&lt;/p&gt;&lt;!--more--&gt;&lt;p&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2527&quot; border=&quot;0&quot; alt=&quot;DSCN2527&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2527.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2529&quot; border=&quot;0&quot; alt=&quot;DSCN2529&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2529.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2533&quot; border=&quot;0&quot; alt=&quot;DSCN2533&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2533.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2535&quot; border=&quot;0&quot; alt=&quot;DSCN2535&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2535.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2538&quot; border=&quot;0&quot; alt=&quot;DSCN2538&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2538.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2542&quot; border=&quot;0&quot; alt=&quot;DSCN2542&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2542.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2545&quot; border=&quot;0&quot; alt=&quot;DSCN2545&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2545.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2550&quot; border=&quot;0&quot; alt=&quot;DSCN2550&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2550.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2553&quot; border=&quot;0&quot; alt=&quot;DSCN2553&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2553.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2556&quot; border=&quot;0&quot; alt=&quot;DSCN2556&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2556.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Wed, 24 Aug 2011 20:29:00 +0200</pubDate>
+      <dc:date>2011-08-24T20:29:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Berchtesgadener Land Teil 1 - Hirschbichlalm</title>
+      <link>http://andydunkel.net/radfahren/2011/08/22/berchtesgadener-land-teil-1-hirschbichlalm.html</link>
+      <description>&lt;p&gt;Zwei Tage Kurztrip ins Berchtesgadener Land, hier ist Teil 1, Radtour zur Hirschbichlalm:&lt;/p&gt; &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:477beca8-f76d-4b31-a11b-d1b4fe167661&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;634&quot; height=&quot;356&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/d5HHMsvGhL8?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/d5HHMsvGhL8?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;634&quot; height=&quot;356&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2507.jpg&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;DSCN2507&quot; border=&quot;0&quot; alt=&quot;DSCN2507&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2507_thumb.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2011/08/image19.png&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;image&quot; border=&quot;0&quot; alt=&quot;image&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/image_thumb7.png&quot; width=&quot;604&quot; height=&quot;354&quot;&gt;&lt;/a&gt;&lt;/p&gt;&lt;iframe height=&quot;400&quot; marginheight=&quot;0&quot; src=&quot;http://maps.google.de/maps/ms?msa=0&amp;amp;msid=208324790998598431494.0004aacd737310786ac2e&amp;amp;ie=UTF8&amp;amp;t=h&amp;amp;vpsrc=0&amp;amp;ll=47.594125,12.855721&amp;amp;spn=0.092612,0.20565&amp;amp;z=12&amp;amp;output=embed&quot; frameborder=&quot;0&quot; width=&quot;600&quot; marginwidth=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;&lt;br&gt; &lt;p&gt;Weitere Fotos:&lt;/p&gt;&lt;!--more--&gt;&lt;p&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2498&quot; border=&quot;0&quot; alt=&quot;DSCN2498&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2498.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2499&quot; border=&quot;0&quot; alt=&quot;DSCN2499&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2499.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2501&quot; border=&quot;0&quot; alt=&quot;DSCN2501&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2501.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2503&quot; border=&quot;0&quot; alt=&quot;DSCN2503&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2503.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2504&quot; border=&quot;0&quot; alt=&quot;DSCN2504&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2504.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2506&quot; border=&quot;0&quot; alt=&quot;DSCN2506&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2506.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2510&quot; border=&quot;0&quot; alt=&quot;DSCN2510&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2510.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2511&quot; border=&quot;0&quot; alt=&quot;DSCN2511&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2511.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2515&quot; border=&quot;0&quot; alt=&quot;DSCN2515&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2515.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2518&quot; border=&quot;0&quot; alt=&quot;DSCN2518&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2518.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;DSCN2522&quot; border=&quot;0&quot; alt=&quot;DSCN2522&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/DSCN2522.jpg&quot; width=&quot;644&quot; height=&quot;484&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Mon, 22 Aug 2011 21:11:00 +0200</pubDate>
+      <dc:date>2011-08-22T21:11:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Fujitsu ScanJet 1300</title>
+      <link>http://andydunkel.net/gadgets/2011/08/16/fujitsu-scanjet-1300.html</link>
+      <description>&lt;p&gt;&lt;p&gt;So heute mal wieder eine Neuanschaffung. Eine kleine Geschichte vorab. Vor ein paar Jahren habe ich mir angewöhnt alles an Dokumenten, was so reinkommt, einzuscannen und digital abzulegen. Papierloses Büro und so.&lt;/p&gt; &lt;p&gt;Vieles kann dann weggeworfen werden (leider nicht alles), spart Platz im Ordner und ich habe jederzeit Zugriff auf die Dokumente. &lt;/p&gt; &lt;p&gt;Bislang habe ich dafür einen Flachbettscanner verwendet. Alllerdings ist dieser für das Scannen von Dokumenten eher umständlich, jede Seite muss einzeln eingescannt werden. Beidseitig bedruckte Seiten müssen umgedreht werden. Nimmt auch ne Menge Platz weg.&lt;/p&gt; &lt;p&gt;Zu allem Überfluss gab es keinen Treiber mehr für Windows 7. Also habe ich mit einem Linux unter VmWare gescannt. Summa summarum: Hat keinen Spaß mehr gemacht.&lt;/p&gt; &lt;p&gt;Also musste etwas neues her. Anforderungen: Klein, Mehrfacheinzug, Duplexscan (beidseitig).&lt;/p&gt; &lt;p&gt;Die Wahl fiel auf den &lt;a href=&quot;http://www.amazon.de/gp/product/B0038N4OA8/ref=as_li_ss_tl?ie=UTF8&amp;amp;tag=ekiwide0b-21&amp;amp;linkCode=as2&amp;amp;camp=1638&amp;amp;creative=19454&amp;amp;creativeASIN=B0038N4OA8&quot;&gt;Fujitsu ScanSnap S1300&lt;/a&gt;&lt;img style=&quot;border-bottom-style: none !important; margin: 0px; border-left-style: none !important; border-top-style: none !important; border-right-style: none !important&quot; border=&quot;0&quot; alt=&quot;&quot; src=&quot;http://www.assoc-amazon.de/e/ir?t=&amp;amp;l=as2&amp;amp;o=3&amp;amp;a=B0038N4OA8&quot; width=&quot;1&quot; height=&quot;1&quot;&gt;. Kostet bescheidene 280 Euro bei Amazon. Obwohl Amazon eine Lieferzeit von 4 Wochen angab, war der Scanner nach einer Woche da. Schön, das Ding ist klein. Zum Lieferumfang gehört der Scanner, 2 Stromkabel (deutsch und irisch!), Netzteil, Treiber-CD und 2 USB Kabel (Daten + Strom). &lt;/p&gt; &lt;p&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;image&quot; border=&quot;0&quot; alt=&quot;image&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/image17.png&quot; width=&quot;604&quot; height=&quot;454&quot;&gt;&lt;/p&gt; &lt;p&gt;Der Scanner kann rein über USB betrieben werden, es kommt zwar die Meldung, dass er dann langsamer scannt, aber er ist immer noch schnell. So spart man sich etwas Kabelsalat und Steckdosenplatz.&lt;/p&gt; &lt;p&gt;Scannen geht einfach: Dokument(e) einlegen, Scantaste drücken oder im Tray von Windows den Scan starten. Alle Seiten werden dann durchgezogen (bis zu 10 Seiten).&lt;/p&gt; &lt;p&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;image&quot; border=&quot;0&quot; alt=&quot;image&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/image18.png&quot; width=&quot;604&quot; height=&quot;454&quot;&gt;&lt;/p&gt; &lt;p&gt;Anschließend kann man das Dokument als PDF abspeichern (durchsuchbar), mittels Texterkennung nach Word, Excel oder Powerpoint übertragen oder einfach als Bild speichern, Drucken, E-Mail, etc…&lt;/p&gt; &lt;p&gt;Der Scanner lässt sich sowohl unter Windows als auch unter MacOS betreiben.&lt;/p&gt; &lt;p&gt;Insgesamt, feines Gerät, wenn auch nicht gerade billig. Im Gegensatz zum Flachbettscanner spare ich mir jedoch eine Menge Zeit und Frustration.&lt;/p&gt; &lt;p&gt;Zu guter Letzt noch ein Video damit man sehen kann wie der Mehrfacheinzug funktioniert und wie schnell das Ding scannt:&lt;/p&gt; &lt;p&gt; &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:f63d9c07-053d-42e9-9b2a-7d67ed846ad9&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;508&quot; height=&quot;285&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/3z9L8Ks1N_U?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/3z9L8Ks1N_U?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;508&quot; height=&quot;285&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt; &lt;p&gt;Wie gesagt, den Scanner gibt es auf Amazon:&lt;/p&gt;&lt;iframe style=&quot;width: 120px; height: 240px&quot; marginheight=&quot;0&quot; src=&quot;http://rcm-de.amazon.de/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=ekiwide0b-21&amp;amp;o=3&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=ss_til&amp;amp;asins=B0038N4OA8&quot; frameborder=&quot;0&quot; marginwidth=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+</description>
+      <pubDate>Tue, 16 Aug 2011 20:11:00 +0200</pubDate>
+      <dc:date>2011-08-16T20:11:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Schwan</title>
+      <link>http://andydunkel.net/sonstiges/2011/08/15/schwan.html</link>
+      <description>&lt;p&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/08/image16.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Mon, 15 Aug 2011 18:46:00 +0200</pubDate>
+      <dc:date>2011-08-15T18:46:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Morgen geht die Bombe hoch</title>
+      <link>http://andydunkel.net/2011/08/12/morgen-geht-die-bombe-hoch.html</link>
+      <description>&lt;iframe width=&quot;600&quot; height=&quot;480&quot; src=&quot;http://www.youtube.com/embed/KcyzF06ridc&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+</description>
+      <pubDate>Fri, 12 Aug 2011 19:17:33 +0200</pubDate>
+      <dc:date>2011-08-12T19:17:33+02:00</dc:date>
+    </item>
+    <item>
+      <title>Handyfotos #3</title>
+      <link>http://andydunkel.net/sonstiges/2011/08/12/handyfotos-3-2.html</link>
+      <description>&lt;p&gt;Wieder mal Handyfotos zur Archivierung:&lt;/p&gt;
+</description>
+      <pubDate>Fri, 12 Aug 2011 08:00:00 +0200</pubDate>
+      <dc:date>2011-08-12T08:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Nächste Lieferung</title>
+      <link>http://andydunkel.net/sonstiges/2011/08/11/nchste-lieferung.html</link>
+      <description>&lt;p&gt;Spannend: Heute kam wieder der große Kran und hat eine Röhre für die Radiologie nebenan geliefert. Ich hab das ganze als Zeitraffer festgehalten:&lt;/p&gt; &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:507db742-21eb-4d84-ae10-96123dcd8635&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;566&quot; height=&quot;318&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/XQPAsx1ZMaE?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/XQPAsx1ZMaE?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;566&quot; height=&quot;318&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;Gut, so spannend ist das dann doch nicht, hauptsächlich wollte ich mal die Zeitrafferanwendung vom iPad testen. &lt;img style=&quot;border-bottom-style: none; border-left-style: none; border-top-style: none; border-right-style: none&quot; class=&quot;wlEmoticon wlEmoticon-smile&quot; alt=&quot;Smiley&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/08/wlEmoticon-smile1.png&quot;&gt;&amp;nbsp;&lt;/p&gt; &lt;p&gt;Wie das geht, habe ich unter&amp;nbsp; &lt;a href=&quot;http://blog.ekiwi.de/?p=687&quot;&gt;http://blog.ekiwi.de/?p=687&lt;/a&gt; beschrieben.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 11 Aug 2011 09:00:00 +0200</pubDate>
+      <dc:date>2011-08-11T09:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Der Befehl “ping” konnte nicht gefunden werden</title>
+      <link>http://andydunkel.net/tools/2011/08/10/der-befehl-ping-konnte-nicht-gefunden-werden.html</link>
+      <description>&lt;p&gt;Windows schafft es auch nach vielen Jahren mich zu überraschen. Diesmal auf der Kommandozeile, die man ab und zu mal braucht um Befehle wie “ping”, “ipconfig” oder ein “tracert” abzusetzen.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 10 Aug 2011 08:00:00 +0200</pubDate>
+      <dc:date>2011-08-10T08:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Gelingt immer</title>
+      <link>http://andydunkel.net/sonstiges/2011/08/09/gelingt-immer.html</link>
+      <description>&lt;p&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/08/image10.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Tue, 09 Aug 2011 21:11:00 +0200</pubDate>
+      <dc:date>2011-08-09T21:11:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Ausgebrannt</title>
+      <link>http://andydunkel.net/2011/08/09/nichts-2.html</link>
+      <description>&lt;p&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/08/image11.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Tue, 09 Aug 2011 03:48:00 +0200</pubDate>
+      <dc:date>2011-08-09T03:48:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Katzenbilder #3</title>
+      <link>http://andydunkel.net/sonstiges/2011/08/08/katzenbilder-3.html</link>
+      <description>&lt;p&gt;Zum internationalen Tag der Katze: Wieder mal ein paar Katzenbilder:&lt;/p&gt;
+</description>
+      <pubDate>Mon, 08 Aug 2011 08:00:00 +0200</pubDate>
+      <dc:date>2011-08-08T08:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Taschenrechner App für das iPad</title>
+      <link>http://andydunkel.net/ipad/2011/08/07/taschenrechner-app-fr-das-ipad.html</link>
+      <description>&lt;p&gt;Zu den Dingen die man für mobile Geräte braucht gehört definitiv ein Taschenrechner. Man weiß ja nie, wann eine Funktion geplottet werden muss, ein Integral berechnet …&lt;/p&gt;
+</description>
+      <pubDate>Sun, 07 Aug 2011 11:32:00 +0200</pubDate>
+      <dc:date>2011-08-07T11:32:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Kran holt Röhre von Radiologie ab</title>
+      <link>http://andydunkel.net/sonstiges/2011/08/04/kran-holt-rhre-von-radiologie-ab.html</link>
+      <description>&lt;p&gt;&lt;p&gt;Wie aufregend, gestern wurde eine alte Röhre von der Radiologie nebenan abgeholt. Mit Kran!&lt;/p&gt; &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:61b6c211-b1b9-4d7f-af05-89e204e55f09&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;607&quot; height=&quot;341&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/gF5FRSIWa1M?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/gF5FRSIWa1M?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;607&quot; height=&quot;341&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
+      <pubDate>Thu, 04 Aug 2011 21:23:00 +0200</pubDate>
+      <dc:date>2011-08-04T21:23:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Windows 7 Service Pack 1-Unbekannter Fehler 0x8004401e</title>
+      <link>http://andydunkel.net/2011/08/03/windows-7-service-pack-1-unbekannter-fehler-0x8004401e.html</link>
+      <description>&lt;p&gt;Tja, nach meinem letzten Eintrag &lt;a href=&quot;http://andydunkel.net/sonstiges/2011/07/31/kein-service-pack-1-frs-thinkpad-edge.html&quot;&gt;zum Thema&lt;/a&gt;, war ich recht optimistisch. Aber denkste, zwar tauchte das Service Pack nun in der Liste der Updates auf, lud herunter und tat so, als ob es sich installierte.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 03 Aug 2011 20:18:00 +0200</pubDate>
+      <dc:date>2011-08-03T20:18:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Save and load an EMF model to an XML file</title>
+      <link>http://andydunkel.net/eclipse/java/2011/08/02/save-and-load-an-emf-model-to-an-xml-file.html</link>
+      <description>&lt;p&gt;Here are two code snippets which give you an example how to save and load an EMF model to an XML file.&lt;/p&gt;
+</description>
+      <pubDate>Tue, 02 Aug 2011 21:54:38 +0200</pubDate>
+      <dc:date>2011-08-02T21:54:38+02:00</dc:date>
+    </item>
+    <item>
+      <title>Kein Service Pack 1 fürs ThinkPad Edge</title>
+      <link>http://andydunkel.net/sonstiges/2011/07/31/kein-service-pack-1-frs-thinkpad-edge.html</link>
+      <description>&lt;p&gt;Service Pack 1 für Windows 7 gibt es ja schon eine Weile. Allerdings wollte das SP1 im Windows Update auf meinem Thinkpad Edge nie auftauchen. Hat mich erst mal nicht weiter gekümmert, irgendwie schwang da die Hoffnung mit das sich das Problem irgendwann selbst löst. Hat es natürlich nicht.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 31 Jul 2011 13:43:00 +0200</pubDate>
+      <dc:date>2011-07-31T13:43:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Nichts</title>
+      <link>http://andydunkel.net/sonstiges/2011/07/31/nichts.html</link>
+      <description>&lt;p&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/07/image27.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Sun, 31 Jul 2011 03:00:00 +0200</pubDate>
+      <dc:date>2011-07-31T03:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Drehung eines Vektors im R2</title>
+      <link>http://andydunkel.net/sonstiges/2011/07/30/drehung-eines-vektors-im-r2.html</link>
+      <description>&lt;p&gt;Heute mal ein wenig Mathematik. Braucht man ja mal ab und zu. Konkretes Problem: Drehung eines Punktes um den Koordinatenursprung. Brauchte ich konkret für eine Visualisierungskomponente (Anzeige des aktuellen Winkels).&lt;/p&gt;
+</description>
+      <pubDate>Sat, 30 Jul 2011 16:26:00 +0200</pubDate>
+      <dc:date>2011-07-30T16:26:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Offline Karten für das iPad</title>
+      <link>http://andydunkel.net/ipad/2011/07/28/offline-karten-fr-das-ipad.html</link>
+      <description>&lt;p&gt;Auf dem iPad ist standardmäßig Google Maps installiert, funktioniert auch prächtig, solange man Internetverbindung hat.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 28 Jul 2011 21:26:00 +0200</pubDate>
+      <dc:date>2011-07-28T21:26:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Waldhof Spreewald bei Lübben/Treppendorf</title>
+      <link>http://andydunkel.net/hiking/sonstiges/2011/07/27/waldhof-spreewald-bei-lbbentreppendorf.html</link>
+      <description>&lt;p&gt;Ich war wieder mal ein paar Tage in Lübben. Hier ein Video der Radtour zum Waldhof und etwas Werbung für den selbigen. Mehr Infos zum Waldhof gibt’s &lt;a href=&quot;http://www.waldhof-spreewald.de/Waldhof-Spreewald/Home.html&quot; target=&quot;_blank&quot;&gt;auf der Homepage&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;Insgesamt: sehr empfehlenswert. Liegt etwas abseits im Wald, etwas schwer zu finden. Wenn keiner da ist, Glocke läuten. &lt;img style=&quot;border-bottom-style: none; border-left-style: none; border-top-style: none; border-right-style: none&quot; class=&quot;wlEmoticon wlEmoticon-smile&quot; alt=&quot;Smiley&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/07/wlEmoticon-smile5.png&quot;&gt;&lt;/p&gt; &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:6b8794cb-1063-47cb-bb5f-30d8f0db108c&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;616&quot; height=&quot;346&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/-5NBqzAhj5w?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/-5NBqzAhj5w?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;616&quot; height=&quot;346&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;Preise sind günstig, Hefeweizen für 1,30 Euro!!!&lt;/p&gt; &lt;p&gt;&lt;img style=&quot;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&quot; title=&quot;&quot; border=&quot;0&quot; alt=&quot;&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/07/image19.png&quot; width=&quot;303&quot; height=&quot;501&quot;&gt;&lt;/p&gt; &lt;p&gt;Brotzeiten gibt es auch. &lt;/p&gt; &lt;p&gt;Wie gesagt, mehr Infos gibt es auf der Homepage:&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;http://www.waldhof-spreewald.de/&quot;&gt;http://www.waldhof-spreewald.de&lt;/a&gt;&lt;/p&gt;
+</description>
+      <pubDate>Wed, 27 Jul 2011 08:00:00 +0200</pubDate>
+      <dc:date>2011-07-27T08:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>How an Engineer folds a T-Shirt</title>
+      <link>http://andydunkel.net/gadgets/sonstiges/2011/07/26/how-an-engineer-folds-a-t-shirt.html</link>
+      <description>&lt;p&gt;&lt;p&gt;Ist schon etwas älter, aber ich habe mal diesen &lt;a href=&quot;http://www.youtube.com/watch?v=fZKKrUXjzDY&quot; target=&quot;_blank&quot;&gt;T-Shirt-Falter&lt;/a&gt; nachgebaut. Mit ein paar alten Pappkartons und etwas Paketband.&lt;/p&gt; &lt;p&gt;Was soll ich sagen? Funktioniert super, wird seitdem immer verwendet:&lt;/p&gt; &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:52b8f249-ab68-450b-840d-5089348a77a5&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;540&quot; height=&quot;303&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/CMm0mX-CYUM?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/CMm0mX-CYUM?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;540&quot; height=&quot;303&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
+      <pubDate>Tue, 26 Jul 2011 08:00:00 +0200</pubDate>
+      <dc:date>2011-07-26T08:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Changelog Droid–Was gibt’s neues in Apps?</title>
+      <link>http://andydunkel.net/2011/07/25/changelog-droidwas-gibts-neues-in-apps.html</link>
+      <description>&lt;p&gt;Für Android Apps gibt es ja oft und gerne mal Updates. Natürlich updatet man immer brav, aber so richtig weiß man oft nicht, was es so für Änderungen in der Software gibt. Hier hilft die kostenlose App “&lt;a href=&quot;https://market.android.com/details?id=com.cypressworks.changelogviewer&quot;&gt;Changelog Droid&lt;/a&gt;” weiter.&lt;/p&gt;
+</description>
+      <pubDate>Mon, 25 Jul 2011 21:07:00 +0200</pubDate>
+      <dc:date>2011-07-25T21:07:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Plants vs. Zombies</title>
+      <link>http://andydunkel.net/gadgets/sonstiges/2011/07/21/plants-vs-zombies.html</link>
+      <description>&lt;p&gt;Spieleempfehlung für das iPad, &lt;a href=&quot;http://itunes.apple.com/de/app/pflanzen-gegen-zombies/id350642635?mt=8&quot;&gt;Plants vs. Zombies&lt;/a&gt;: &lt;/p&gt;
+</description>
+      <pubDate>Thu, 21 Jul 2011 08:00:00 +0200</pubDate>
+      <dc:date>2011-07-21T08:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>iPad: RDP Zugang zu Windows Rechner</title>
+      <link>http://andydunkel.net/gadgets/tools/2011/07/20/ipad-rdp-zugang-zu-windows-rechner.html</link>
+      <description>&lt;p&gt;Mittlerweile Standard, der eigene Server daheim. Was liegt näher als diesen bequem mit dem iPad vom Sofa aus zu bedienen.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 20 Jul 2011 08:00:00 +0200</pubDate>
+      <dc:date>2011-07-20T08:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Die guten alten Zeiten</title>
+      <link>http://andydunkel.net/sonstiges/2011/07/19/die-guten-alten-zeiten.html</link>
+      <description></description>
+      <pubDate>Tue, 19 Jul 2011 08:00:00 +0200</pubDate>
+      <dc:date>2011-07-19T08:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Eclipse RCP: Forms Section not expanded</title>
+      <link>http://andydunkel.net/java/2011/07/18/eclipse-rcp-forms-section-not-expanded.html</link>
+      <description>&lt;p&gt;Sometimes strange things happen in Eclipse. Like this one in &lt;a href=&quot;http://www.eclipse.org/windowbuilder/&quot;&gt;WindowBuilder&lt;/a&gt;, the best tool for designing GUIs in Eclipse (&lt;a href=&quot;http://twitter.com/#!/hrb79/status/92941011923374080&quot;&gt;via&lt;/a&gt;). &lt;/p&gt;
+</description>
+      <pubDate>Mon, 18 Jul 2011 22:14:00 +0200</pubDate>
+      <dc:date>2011-07-18T22:14:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Ireland-July 2011</title>
+      <link>http://andydunkel.net/ireland/2011/07/18/ireland-july-2011.html</link>
+      <description>&lt;p&gt;Well, Ireland again. Short trip, we where over for 5 days (from Tuesday to Saturday). Same procedure... &lt;/p&gt; &lt;p&gt;Short stop in the Airbräu at the Munich AirPort, then flying to Cork. In Cork visiting our local pubs, having some Beamish ... the usual.&lt;br&gt;Despite the risk that Anthony is even more convinced that this is just holidays for us, here is the video and some pictures:&lt;/p&gt; &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:9383fbd8-62bb-4acc-a619-9a54c429fbb1&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;633&quot; height=&quot;356&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/8TEqwf9EcEI?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/8TEqwf9EcEI?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;633&quot; height=&quot;356&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2011/07/IMAG0300.jpg&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;IMAG0300&quot; border=&quot;0&quot; alt=&quot;IMAG0300&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/07/IMAG0300_thumb.jpg&quot; width=&quot;644&quot; height=&quot;387&quot;&gt;&lt;/a&gt;&lt;/p&gt;&lt;!--more--&gt;&lt;p&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2011/07/IMAG0282.jpg&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;IMAG0282&quot; border=&quot;0&quot; alt=&quot;IMAG0282&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/07/IMAG0282_thumb.jpg&quot; width=&quot;644&quot; height=&quot;387&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2011/07/IMAG0297.jpg&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;IMAG0297&quot; border=&quot;0&quot; alt=&quot;IMAG0297&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/07/IMAG0297_thumb.jpg&quot; width=&quot;644&quot; height=&quot;387&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://andydunkel.net/assets/uploads/2011/07/IMAG0299.jpg&quot;&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;IMAG0299&quot; border=&quot;0&quot; alt=&quot;IMAG0299&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/07/IMAG0299_thumb.jpg&quot; width=&quot;644&quot; height=&quot;387&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+      <pubDate>Mon, 18 Jul 2011 08:00:00 +0200</pubDate>
+      <dc:date>2011-07-18T08:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Rennradtour nach Speiden–10.07.2011</title>
+      <link>http://andydunkel.net/radfahren/2011/07/17/rennradtour-nach-speiden10-07-2011.html</link>
+      <description>&lt;p&gt;&lt;p&gt;Diesmal ging es, endlich mal wieder, mit Rennrad nach Speiden ins &lt;a href=&quot;http://www.koessel-braeu.de/&quot; target=&quot;_blank&quot;&gt;Sudhaus&lt;/a&gt;. Unterwegs mussten wir aufgrund von Regen einen ungeplanten Zwischenstopp in einem Biergarten einlegen.&lt;/p&gt; &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:eb1da107-e9e4-43b6-9366-1149b33572b8&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;607&quot; height=&quot;341&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/K88PNcbiZ5A?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/K88PNcbiZ5A?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;607&quot; height=&quot;341&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;&amp;lt;!--more--&amp;gt;&lt;p&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;sudhaus&quot; border=&quot;0&quot; alt=&quot;sudhaus&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/07/sudhaus.png&quot; width=&quot;559&quot; height=&quot;328&quot;&gt; &lt;iframe height=&quot;400&quot; marginheight=&quot;0&quot; src=&quot;http://maps.google.de/maps/ms?msa=0&amp;amp;msid=208324790998598431494.0004a7bb4436bc61744fd&amp;amp;ie=UTF8&amp;amp;t=h&amp;amp;ll=47.768868,10.664978&amp;amp;spn=0.369208,0.822601&amp;amp;z=10&amp;amp;output=embed&quot; frameborder=&quot;0&quot; width=&quot;600&quot; marginwidth=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;&lt;br&gt;&lt;small&gt;&lt;a style=&quot;text-align: left; color: #0000ff&quot; href=&quot;http://maps.google.de/maps/ms?msa=0&amp;amp;msid=208324790998598431494.0004a7bb4436bc61744fd&amp;amp;ie=UTF8&amp;amp;t=h&amp;amp;ll=47.768868,10.664978&amp;amp;spn=0.369208,0.822601&amp;amp;z=10&amp;amp;source=embed&quot;&gt;2011-07-10 13:07 - Sudhaustour&lt;/a&gt; auf einer größeren Karte anzeigen&lt;/small&gt;  &lt;p&gt;&amp;nbsp; &lt;p&gt;Gesamtentfernung: 101,20 km (62,9 mi)&lt;br&gt;Gesamtzeit: 7:23:19&lt;br&gt;Zeit in Bewegung: 4:53:59&lt;br&gt;Durchschnitt in Bew.: 20,65 km/h (12,8 mi/h)&lt;br&gt;Max. Geschwindigkeit: 45,04 km/h (28,0 mi/h)&lt;br&gt;Niedrigste Höhenlage: 700 m (2295 Fuß)&lt;br&gt;Höchste Höhenlage: 916 m (3004 Fuß)&lt;br&gt;Höhengewinn: 896 m (2939 Fuß)&lt;br&gt;Maximale Steigung: 10 %&lt;br&gt;Minimale Steigung: -10 %&lt;br&gt;Aufgezeichnet am: So. Jul 10 13:07:04 MESZ 2011&lt;/p&gt;
+</description>
+      <pubDate>Sun, 17 Jul 2011 16:08:00 +0200</pubDate>
+      <dc:date>2011-07-17T16:08:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Android: Welche Geräte sind im Netzwerk?</title>
+      <link>http://andydunkel.net/gadgets/tools/2011/07/16/android-welche-gerte-sind-im-netzwerk.html</link>
+      <description>&lt;p&gt;Heute im &lt;a href=&quot;http://www.ekiwi.de&quot;&gt;eKiwi.de&lt;/a&gt; Blog vorgestellt, eine App zum &lt;a href=&quot;http://blog.ekiwi.de/?p=583&quot;&gt;Anzeigen der Geräte im aktuellen Netzwerk&lt;/a&gt;. Was ähnliches gibt es auch als kostenlose App für Android, &lt;a href=&quot;https://market.android.com/details?id=com.overlook.android.fing&quot;&gt;Overlook Fing&lt;/a&gt;:&lt;/p&gt;
+</description>
+      <pubDate>Sat, 16 Jul 2011 21:28:00 +0200</pubDate>
+      <dc:date>2011-07-16T21:28:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Pause</title>
+      <link>http://andydunkel.net/katzen/2011/07/12/pause.html</link>
+      <description>&lt;p&gt;Werde eine Weile nicht schreiben können (aus Gründen), daher gibt es jetzt zum Abschied noch ein Katzenvideo:&lt;/p&gt;
+</description>
+      <pubDate>Tue, 12 Jul 2011 06:00:00 +0200</pubDate>
+      <dc:date>2011-07-12T06:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Radtour mit Orbeidskollegen–06.07.2011</title>
+      <link>http://andydunkel.net/radfahren/2011/07/11/radtour-mit-orbeidskollegen06-07-2011.html</link>
+      <description>&lt;p&gt;Fast schon Tradition, die jährliche Radtour im Sommer mit den Kollegen. Diesmal ging es nicht nach Katzbrui, sondern eine Runde um Kaufbeuren und anschließender Einkehr in Gennachhausen: &lt;a href=&quot;http://www.gasthaus-zum-hack.de/&quot; target=&quot;_blank&quot;&gt;Zum Hack&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;Zum Abschluss gab es noch einen Abstecher &lt;a href=&quot;http://www.mccallionsirishpub.de/&quot; target=&quot;_blank&quot;&gt;in den Irish Pub&lt;/a&gt;.&lt;/p&gt;  &lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:8fadd103-0f20-49ec-bf5c-939b0d33b34f&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;585&quot; height=&quot;329&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/WONCZtcfrqw?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/WONCZtcfrqw?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;585&quot; height=&quot;329&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;&lt;!--more--&gt;&lt;p&gt;Erstellt von My Tracks für Android.&lt;br&gt;Gesamtentfernung: 45,57 km (28,3 mi)&lt;br&gt;Gesamtzeit: 5:46:43&lt;br&gt;Zeit in Bewegung: 2:09:08&lt;br&gt;Durchschnitt in Bew.: 21,17 km/h (13,2 mi/h)&lt;br&gt;Max. Geschwindigkeit: 56,70 km/h (35,2 mi/h)&lt;br&gt;Niedrigste Höhenlage: 726 m (2383 Fuß)&lt;br&gt;Höchste Höhenlage: 913 m (2994 Fuß)&lt;br&gt;Höhengewinn: 696 m (2283 Fuß)&lt;br&gt;Maximale Steigung: 10 %&lt;br&gt;Minimale Steigung: -18 %&lt;br&gt;Aufgezeichnet am: Mi. Jul 06 17:13:07 MESZ 2011&lt;/p&gt;&lt;iframe height=&quot;430&quot; marginheight=&quot;0&quot; src=&quot;http://maps.google.de/maps/ms?msa=0&amp;amp;msid=208324790998598431494.0004a76dc0051643cd7ff&amp;amp;ie=UTF8&amp;amp;t=h&amp;amp;ll=47.86178,10.702744&amp;amp;spn=0.099047,0.20565&amp;amp;z=12&amp;amp;output=embed&quot; frameborder=&quot;0&quot; width=&quot;600&quot; marginwidth=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;&lt;br&gt;&lt;small&gt;&lt;a style=&quot;text-align: left; color: #0000ff&quot; href=&quot;http://maps.google.de/maps/ms?msa=0&amp;amp;msid=208324790998598431494.0004a76dc0051643cd7ff&amp;amp;ie=UTF8&amp;amp;t=h&amp;amp;ll=47.86178,10.702744&amp;amp;spn=0.099047,0.20565&amp;amp;z=12&amp;amp;source=embed&quot;&gt;2011-07-06 17:13 - Feierabendrunde mit Kollegen&lt;/a&gt; auf einer größeren Karte anzeigen&lt;/small&gt;  &lt;p&gt;&lt;img style=&quot;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&quot; title=&quot;route&quot; border=&quot;0&quot; alt=&quot;route&quot; src=&quot;http://andydunkel.net/assets/uploads/2011/07/route.png&quot; width=&quot;604&quot; height=&quot;354&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Mon, 11 Jul 2011 08:00:00 +0200</pubDate>
+      <dc:date>2011-07-11T08:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Videos fürs iPad konvertieren</title>
+      <link>http://andydunkel.net/tools/2011/07/10/videos-frs-ipad-konvertieren.html</link>
+      <description>&lt;p&gt;Das iPad ist ne feine Sache, allerdings ist es etwas heikel beim Umgang mit Videoformaten. Mit anderen Worten, alles was nicht im MP4-Format mit H.264 Video und AAC Ton vorliegt wird nicht abgespielt. &lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/07/wlEmoticon-smile2.png&quot; alt=&quot;Smiley&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Sun, 10 Jul 2011 08:00:00 +0200</pubDate>
+      <dc:date>2011-07-10T08:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Radtour Kemptener Wald-03.07.2011</title>
+      <link>http://andydunkel.net/radfahren/2011/07/09/radtour-kemptener-wald-03-07-2011.html</link>
+      <description>&lt;p&gt;Kleine Runde im Kemptener Wald, nichts besonderes. &lt;/p&gt;
+</description>
+      <pubDate>Sat, 09 Jul 2011 16:34:00 +0200</pubDate>
+      <dc:date>2011-07-09T16:34:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Screenshots unter Android erstellen (ohne Root)</title>
+      <link>http://andydunkel.net/gadgets/tools/2011/07/09/screenshots-unter-android-erstellen-ohne-root.html</link>
+      <description>&lt;p&gt;Screenshots unter Android erstellen, gar nicht so trivial. Es gibt einige Apps, diese benötigen aber Root-Rechte. Habe ich keinen Bock drauf. Geht bei &lt;a href=&quot;http://andydunkel.net/ipad/2011/06/25/quicktipp-screenshot-auf-dem-ipad-erstellen.html&quot;&gt;Apple Geräten&lt;/a&gt; leichter.&lt;/p&gt;
+</description>
+      <pubDate>Sat, 09 Jul 2011 10:36:00 +0200</pubDate>
+      <dc:date>2011-07-09T10:36:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Wieder mal eine Seemöwe + eine faule Katze</title>
+      <link>http://andydunkel.net/sonstiges/2011/07/07/wieder-mal-eine-seemwe-eine-faule-katze.html</link>
+      <description>&lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:b507fe98-90eb-43df-8692-c51e3041408e&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;591&quot; height=&quot;332&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/6iFufXkDBEQ?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/6iFufXkDBEQ?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;591&quot; height=&quot;332&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+      <pubDate>Thu, 07 Jul 2011 21:54:00 +0200</pubDate>
+      <dc:date>2011-07-07T21:54:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Java: Handle Exceptions from Threads</title>
+      <link>http://andydunkel.net/coding/java/2011/07/07/java-handle-exceptions-from-threads.html</link>
+      <description>&lt;p&gt;In this post I want to describe handling exceptions from threads with the ThreadGroup class and the uncaughtExceptionHandler.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 07 Jul 2011 21:47:38 +0200</pubDate>
+      <dc:date>2011-07-07T21:47:38+02:00</dc:date>
+    </item>
+    <item>
+      <title>Dynamically create QR codes using PHP</title>
+      <link>http://andydunkel.net/coding/2011/07/04/dynamically-create-qr-codes-using-php.html</link>
+      <description>&lt;p&gt;Today I wrote a blog entry &lt;a href=&quot;http://blog.ekiwi.de/?p=542&quot;&gt;about QR codes&lt;/a&gt; in our &lt;a href=&quot;http://www.ekiwi.de&quot;&gt;eKiwi.de&lt;/a&gt; blog. There we where using an online tool to create the QR code. &lt;/p&gt;
+</description>
+      <pubDate>Mon, 04 Jul 2011 20:41:31 +0200</pubDate>
+      <dc:date>2011-07-04T20:41:31+02:00</dc:date>
+    </item>
+    <item>
+      <title>Möwe klaut Kamera</title>
+      <link>http://andydunkel.net/sonstiges/2011/07/03/mwe-klaut-kamera.html</link>
+      <description>&lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:2545dc3d-14d8-42e5-a19c-cd6691508898&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;559&quot; height=&quot;314&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/rIu5B3Fsstg?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/rIu5B3Fsstg?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;559&quot; height=&quot;314&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;div style=&quot;width:559px;clear:both;font-size:.8em&quot;&gt;Ohne Worte&lt;/div&gt;&lt;/div&gt;
+</description>
+      <pubDate>Sun, 03 Jul 2011 14:01:00 +0200</pubDate>
+      <dc:date>2011-07-03T14:01:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Stoppuhr für Windows</title>
+      <link>http://andydunkel.net/tools/2011/07/03/stoppuhr-fr-windows.html</link>
+      <description>&lt;p&gt;Der Titel sagt eigentlich alles. Eine kleine kostenlose Stoppuhr für Windows. Ohne besondere Funktionen. &lt;/p&gt;
+</description>
+      <pubDate>Sun, 03 Jul 2011 13:55:00 +0200</pubDate>
+      <dc:date>2011-07-03T13:55:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Handyfotos #2</title>
+      <link>http://andydunkel.net/fotos/2011/07/03/handyfotos-2.html</link>
+      <description>&lt;p&gt;Es haben sich mal wieder ein paar Fotos auf dem Handy angesammelt, die hier archiviert werden (anklicken zum Vergrößern):&lt;/p&gt;
+</description>
+      <pubDate>Sun, 03 Jul 2011 09:00:00 +0200</pubDate>
+      <dc:date>2011-07-03T09:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Web Albums für das iPad: Zugriff auf Picasa</title>
+      <link>http://andydunkel.net/gadgets/2011/07/02/web-albums-fr-das-ipad-zugriff-auf-picasa.html</link>
+      <description>&lt;p&gt;Kleine App-Vorstellung für das iPad. Wie ich bereits schrub, liegen meine Fotos allesamt bei Picasa im Internet. Zugriff von überall mit dem Browser möglich, Backup etc.&lt;/p&gt;
+</description>
+      <pubDate>Sat, 02 Jul 2011 15:37:00 +0200</pubDate>
+      <dc:date>2011-07-02T15:37:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Picasa - MP4 Dateien werden nicht importiert</title>
+      <link>http://andydunkel.net/sonstiges/tools/2011/07/01/picasa-mp4-dateien-werden-nicht-importiert-2.html</link>
+      <description>&lt;p&gt;Zur Verwaltung meiner Fotos und Videos verwende ich &lt;a href=&quot;http://picasa.google.com/&quot;&gt;Picasa&lt;/a&gt;. Dieses lädt die Dateien gleich zu Picasa hoch, Backup und außerdem kann ich so von überall darauf zugreifen. Bis jetzt hatte das ganze auch gut funktioniert. Nur MP4-Dateien wollte Picasa nicht erkennen. &lt;/p&gt;
+</description>
+      <pubDate>Fri, 01 Jul 2011 09:07:20 +0200</pubDate>
+      <dc:date>2011-07-01T09:07:20+02:00</dc:date>
+    </item>
+    <item>
+      <title>Radtour Kenzenhütte–26.06.2011</title>
+      <link>http://andydunkel.net/radfahren/2011/06/30/radtour-kenzenhtte26-06-2011.html</link>
+      <description>&lt;p&gt;Diesmal ging es bei bestem Wetter spontan zur &lt;a href=&quot;http://www.berggasthof-kenzenhuette.de/&quot;&gt;Kenzenhütte&lt;/a&gt;. Los ging es von Kaufbeuren.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 30 Jun 2011 20:23:00 +0200</pubDate>
+      <dc:date>2011-06-30T20:23:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>AirBubble für Android–Streaming von iTunes aufs Handy</title>
+      <link>http://andydunkel.net/gadgets/2011/06/29/airbubble-fr-androidstreaming-von-itunes-aufs-handy.html</link>
+      <description>&lt;p&gt;Gerade getestet: Die Software AirBubble macht aus einem Android Handy einen &lt;a href=&quot;http://www.amazon.de/gp/product/B00169H1XS/ref=as_li_ss_tl?ie=UTF8&amp;amp;tag=ekiwide0b-21&amp;amp;linkCode=as2&amp;amp;camp=1638&amp;amp;creative=19454&amp;amp;creativeASIN=B00169H1XS&quot;&gt;AirPort Express&lt;/a&gt;&lt;img src=&quot;http://www.assoc-amazon.de/e/ir?t=&amp;amp;l=as2&amp;amp;o=3&amp;amp;a=B00169H1XS&quot; alt=&quot;&quot;&gt;. Man kann dann Musik direkt von iTunes auf das Handy streamen. Ideal um normale Lautsprecher mit Musik zu versorgen, statt Notebook oder Computer anzuschließen.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 29 Jun 2011 21:03:00 +0200</pubDate>
+      <dc:date>2011-06-29T21:03:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Java/RCP - okPressed in JFace dialog</title>
+      <link>http://andydunkel.net/eclipse/java/2011/06/28/okpressed-in-jface-dialog.html</link>
+      <description>&lt;p&gt;Sometimes JFace and RCP are not straightforward. At least not for me. &lt;a href=&quot;http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile5.png&quot;&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile5.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+      <pubDate>Tue, 28 Jun 2011 13:44:50 +0200</pubDate>
+      <dc:date>2011-06-28T13:44:50+02:00</dc:date>
+    </item>
+    <item>
+      <title>C#–Read STDOUT from a console application</title>
+      <link>http://andydunkel.net/coding/2011/06/27/cread-stdout-from-a-console-application.html</link>
+      <description>&lt;p&gt;Recently I needed to start a console application from C#, wait until the execution has finished and read the output back. Here is a simple way this can be done.&lt;/p&gt;
+</description>
+      <pubDate>Mon, 27 Jun 2011 22:38:00 +0200</pubDate>
+      <dc:date>2011-06-27T22:38:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>iPad als zweiten Monitor verwenden</title>
+      <link>http://andydunkel.net/ipad/2011/06/25/ipad-als-zweiten-monitor-verwenden.html</link>
+      <description>&lt;p&gt;Das Wetter ist schlecht, daher mehr iPad hier im Blog. &lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile5.png&quot; alt=&quot;Smiley&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Sat, 25 Jun 2011 17:53:00 +0200</pubDate>
+      <dc:date>2011-06-25T17:53:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Quicktipp: Screenshot auf dem iPad erstellen</title>
+      <link>http://andydunkel.net/ipad/2011/06/25/quicktipp-screenshot-auf-dem-ipad-erstellen.html</link>
+      <description>&lt;p&gt;Das Erstellen eines Bildschirmfotos bzw. Screenshots auf dem iPad ist recht einfach (im Gegensatz zu Android).&lt;/p&gt;
+</description>
+      <pubDate>Sat, 25 Jun 2011 17:03:13 +0200</pubDate>
+      <dc:date>2011-06-25T17:03:13+02:00</dc:date>
+    </item>
+    <item>
+      <title>SwitchEasy Canvas Schutzhülle für das iPad 2</title>
+      <link>http://andydunkel.net/gadgets/2011/06/23/switcheasy-canvas-schutzhlle-fr-das-ipad-2.html</link>
+      <description>&lt;p&gt;Ich besitze ja seit wenigen Tagen ein iPad 2. Natürlich muss das gute Teil geschützt werden, insbesondere beim Transport im Rucksack. Am Markt gibt es jede Menge Taschen und Cases. Das originale SmartCover kam für mich nicht in Frage, da es ja nur die Vorderseite schützt.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 23 Jun 2011 19:10:00 +0200</pubDate>
+      <dc:date>2011-06-23T19:10:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Java: Check if your code is running in Eclipse</title>
+      <link>http://andydunkel.net/java/2011/06/22/java-check-if-your-code-is-running-in-eclipse.html</link>
+      <description>&lt;p&gt;Sometimes, for example during debugging, it is useful to check if your code is running from the &lt;a href=&quot;http://eclipse.org/&quot;&gt;Eclipse&lt;/a&gt; IDE to exclude certain code from execution.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 22 Jun 2011 21:02:00 +0200</pubDate>
+      <dc:date>2011-06-22T21:02:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>iPad 2-erste Eindrücke</title>
+      <link>http://andydunkel.net/gadgets/ipad/2011/06/21/ipad-2-erste-eindrcke.html</link>
+      <description>&lt;p&gt;Technische Spielereien mag ich ja: Also ich habe mir dann mal ein iPad 2 gekauft. Es handelt sich um die normale WLAN Variante mit 16 GB für 479 Euro.&lt;/p&gt;
+</description>
+      <pubDate>Tue, 21 Jun 2011 20:31:00 +0200</pubDate>
+      <dc:date>2011-06-21T20:31:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Bilder auf Konsole verkleinern / Batch Konvertierung</title>
+      <link>http://andydunkel.net/tools/2011/06/19/bilder-auf-konsole-verkleinern-batch-konvertierung.html</link>
+      <description>&lt;p&gt;Bilder von modernen Digi-Cams sind recht groß. Will man diese per E-Mail verschicken oder ins Internet hochladen ist es oft sinnvoll diese verkleinern. Nur wie macht man das am Besten bei vielen Bildern? Abhilfe schafft &lt;a href=&quot;http://www.imagemagick.org/script/index.php&quot;&gt;ImageMagick&lt;/a&gt;, kostenlose OpenSource Software. Unter Windows muss man diese erst noch installieren, unter Linux ist diese meist schon installiert.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 19 Jun 2011 15:20:00 +0200</pubDate>
+      <dc:date>2011-06-19T15:20:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Mehlblockalpe im Kempter Wald, Anfahrt und Infos</title>
+      <link>http://andydunkel.net/hiking/radfahren/sonstiges/2011/06/18/mehlblockalpe-im-kempter-wald-anfahrt-und-infos.html</link>
+      <description>&lt;p&gt;Nachdem hier mittlerweile recht viele über Google und dem Suchbegriff “Mehlblockalpe” auf meine Seite finden, schreibe ich also mal ein paar Zeilen dazu.&lt;/p&gt;
+</description>
+      <pubDate>Sat, 18 Jun 2011 16:04:00 +0200</pubDate>
+      <dc:date>2011-06-18T16:04:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Handyfotos #1</title>
+      <link>http://andydunkel.net/sonstiges/2011/06/17/handyfotos-1.html</link>
+      <description>&lt;p&gt;Ich mache häufig Fotos mit dem Handy. Damit die Bilder nicht verloren, werde ich hier zukünftig in unregelmäßigen Abständen die Bilder posten, anklicken zum Vergrößern.&lt;/p&gt;
+</description>
+      <pubDate>Fri, 17 Jun 2011 18:16:11 +0200</pubDate>
+      <dc:date>2011-06-17T18:16:11+02:00</dc:date>
+    </item>
+    <item>
+      <title>Radtour durch den Kemptener Wald–12.06.2011</title>
+      <link>http://andydunkel.net/radfahren/2011/06/16/radtour-durch-den-kemptener-wald12-06-2011.html</link>
+      <description>&lt;p&gt;Diesmal ging es wieder in den Kemptener Wald. Kilometerlange Wege durch den Wald und natürlich Einkehrmöglichkeiten wie die Mehlblockalpe oder “Zum Tobias”. &lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile3.png&quot; alt=&quot;Smiley&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Thu, 16 Jun 2011 20:32:00 +0200</pubDate>
+      <dc:date>2011-06-16T20:32:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>GPS Logging für Android mit MyTracks</title>
+      <link>http://andydunkel.net/hiking/radfahren/tools/2011/06/15/gps-logging-fr-android-mit-mytracks.html</link>
+      <description>&lt;p&gt;Heute mal eine App-Vorstellung für Android: &lt;a href=&quot;http://mytracks.appspot.com/&quot;&gt;MyTracks&lt;/a&gt;. &lt;/p&gt;
+</description>
+      <pubDate>Wed, 15 Jun 2011 21:23:56 +0200</pubDate>
+      <dc:date>2011-06-15T21:23:56+02:00</dc:date>
+    </item>
+    <item>
+      <title>Lübben / Spreewald–Juni 2011</title>
+      <link>http://andydunkel.net/sonstiges/2011/06/12/lbben-spreewaldjuni-2011.html</link>
+      <description>&lt;p&gt;Ich war wieder ein paar Tage in Lübben. Eigentlich war&amp;#39;s wie immer &lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-winkingsmile.png&quot; alt=&quot;Zwinkerndes Smiley&quot;&gt;. Wetter war gut, es gab Bier, Radeltouren, Paddeln. Das Bier schmeckte. Hier ein Video und ein paar Fotos:&lt;/p&gt;
+</description>
+      <pubDate>Sun, 12 Jun 2011 13:33:00 +0200</pubDate>
+      <dc:date>2011-06-12T13:33:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Paddeln im Spreewald</title>
+      <link>http://andydunkel.net/sonstiges/2011/06/11/paddeln-im-spreewald.html</link>
+      <description>&lt;p&gt;Hier ein Video von meiner Paddeltour im Spreewald. Gestartet wurde in Lübben gegenüber dem &lt;a href=&quot;http://www.strandcafe-luebben.de/default.aspx&quot;&gt;Strandcafé&lt;/a&gt; beim &lt;a href=&quot;http://www.spreewald-bootsverleih.de/&quot;&gt;Bootsverleih.&lt;/a&gt; Dank genug Wegzehrung in Form vom Bier im Rucksack kam keine Langeweile auf (und es wurde dadurch auch nicht zu anstrengend). &lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile1.png&quot; alt=&quot;Smiley&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Sat, 11 Jun 2011 16:19:00 +0200</pubDate>
+      <dc:date>2011-06-11T16:19:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>3D Panorama vom Garten in Lübben</title>
+      <link>http://andydunkel.net/tools/2011/06/10/3d-panorama-vom-garten-in-lbben.html</link>
+      <description>&lt;p&gt;Ich hab mal ein 3d Panorama von Omas Garten in Lübben angefertigt:&lt;/p&gt;
+</description>
+      <pubDate>Fri, 10 Jun 2011 20:14:00 +0200</pubDate>
+      <dc:date>2011-06-10T20:14:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Reifenwechsel MTB</title>
+      <link>http://andydunkel.net/radfahren/2011/06/09/reifenwechsel-mtb.html</link>
+      <description>&lt;p&gt;Jo heute Platten am Fahrrad. Zum Glück passiert das nicht so oft. &lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-angrysmile.png&quot; alt=&quot;Verärgertes Smiley&quot;&gt;&lt;br&gt;
+Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten war der Mantel bereits komplett abgefahren.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 09 Jun 2011 22:15:00 +0200</pubDate>
+      <dc:date>2011-06-09T22:15:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Rezept: Beer Butt Chicken</title>
+      <link>http://andydunkel.net/rezepte/2011/06/04/rezept-beer-butt-chicken.html</link>
+      <description>&lt;p&gt;Heute mal ein Rezept, das Beer Butt Chicken. Gelingt immer!&lt;img src=&quot;http://andydunkel.net/assets/uploads/2011/06/DSCN1895.jpg&quot; alt=&quot;DSCN1895&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Sat, 04 Jun 2011 13:45:00 +0200</pubDate>
+      <dc:date>2011-06-04T13:45:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Mountain Biking Tannheimer Tal–29.05.2011</title>
+      <link>http://andydunkel.net/radfahren/2011/05/30/mountain-biking-tannheimer-tal29-05-2011.html</link>
+      <description>&lt;p&gt;Diesmal ging es bei bestem Wetter ins &lt;a href=&quot;http://www.tannheimertal.com/&quot;&gt;Tannheimer Tal&lt;/a&gt;. Ziel war das Neunerköpfle, dummerweise haben wir jedoch die Ausfahrt verpasst. Es ging auf fast 2000 Meter Höhe, perfektes Alpenpanorama. Die Abfahrt lässt sich als “technisch anspruchsvoll” beschreiben. Abgerundet wurde der Tag durch einen Abstecher in das &lt;a href=&quot;http://www.koessel-braeu.de/&quot;&gt;Speidener Sudhaus&lt;/a&gt;.&lt;/p&gt;
+</description>
+      <pubDate>Mon, 30 May 2011 23:31:00 +0200</pubDate>
+      <dc:date>2011-05-30T23:31:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Wanderung auf den Buchenberg–28.05.2011</title>
+      <link>http://andydunkel.net/hiking/2011/05/30/wanderung-auf-den-buchenberg28-05-2011.html</link>
+      <description>&lt;p&gt;Eine kleine Wanderung auf den Buchenberg. Mit Bierchen… (wie immer).&lt;/p&gt;
+</description>
+      <pubDate>Mon, 30 May 2011 21:05:00 +0200</pubDate>
+      <dc:date>2011-05-30T21:05:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>RCP Application Set Title of Application Window</title>
+      <link>http://andydunkel.net/eclipse/2011/05/27/rcp-application-set-title-of-application-window.html</link>
+      <description>&lt;p&gt;To dynamically set the title of a RCP application, the following code snippet is useful:&lt;/p&gt;
+</description>
+      <pubDate>Fri, 27 May 2011 18:14:00 +0200</pubDate>
+      <dc:date>2011-05-27T18:14:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Externer USB-Akku fürs Smartphone</title>
+      <link>http://andydunkel.net/gadgets/2011/05/26/usb-akku-frs-smartphone.html</link>
+      <description>&lt;p&gt;Ein modernes Smartphone ist eine feine Sache. Ich nutze es unter anderem um meine &lt;a href=&quot;http://andydunkel.net/radfahren/tools/2011/05/23/google-maps-karten-kml-datei-exportierenspeichern.html&quot;&gt;Fahrradtouren zu Tracken&lt;/a&gt;. Nicht so toll ist dabei die Akkulaufzeit. Nach 5-6 Stunden ist da der Akku schon mal zu Ende, wenn GPS genutzt wird.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 26 May 2011 21:20:00 +0200</pubDate>
+      <dc:date>2011-05-26T21:20:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Katzenbilder #2</title>
+      <link>http://andydunkel.net/katzen/2011/05/25/katzenbilder-2.html</link>
+      <description>&lt;p&gt;Wieder ein paar Katzenbilder…&lt;/p&gt;
+</description>
+      <pubDate>Wed, 25 May 2011 21:51:00 +0200</pubDate>
+      <dc:date>2011-05-25T21:51:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Java - Load text file to string</title>
+      <link>http://andydunkel.net/java/2011/05/25/java-load-text-file-to-string.html</link>
+      <description>&lt;p&gt;Most common in programming is to load text files to a string. Since this usually involves some lines of code, here is a snippet for that:&lt;/p&gt;
+</description>
+      <pubDate>Wed, 25 May 2011 10:38:53 +0200</pubDate>
+      <dc:date>2011-05-25T10:38:53+02:00</dc:date>
+    </item>
+    <item>
+      <title>Google Maps Karten KML Datei exportieren/speichern</title>
+      <link>http://andydunkel.net/radfahren/tools/2011/05/23/google-maps-karten-kml-datei-exportierenspeichern.html</link>
+      <description>&lt;p&gt;Ich nutze &lt;a href=&quot;http://mytracks.appspot.com/&quot;&gt;MyTracks&lt;/a&gt; von Google zum GPS-Logging meiner Radtouren. Nach dem Upload stehen diese erst mal nur in Google Maps zur Verfügung. Der Download als &lt;a href=&quot;http://de.wikipedia.org/wiki/Keyhole_Markup_Language&quot;&gt;KML-Datei&lt;/a&gt; ist über einen “Trick” möglich:&lt;/p&gt;
+</description>
+      <pubDate>Mon, 23 May 2011 20:34:00 +0200</pubDate>
+      <dc:date>2011-05-23T20:34:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Alpen-Panorama-Runde vom 21.05.2011</title>
+      <link>http://andydunkel.net/radfahren/2011/05/22/alpen-panorama-runde-vom-21-05-2011.html</link>
+      <description>&lt;p&gt;Diesmal ging es mit dem &lt;a href=&quot;http://www.dav-og-bw.de/&quot;&gt;Alpenverein&lt;/a&gt; und Mountain-Bike zur einer Panorama-Rundfahrt. Start und Ziel waren in Roßhaupten. Eine Brotzeit gabs in der &lt;a href=&quot;http://www.alpe-beichelstein.de/Willkommen..html&quot;&gt;Alpe Beichelstein&lt;/a&gt;.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 22 May 2011 13:55:00 +0200</pubDate>
+      <dc:date>2011-05-22T13:55:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Radtour auf den Auerberg – 20.05.2011</title>
+      <link>http://andydunkel.net/radfahren/2011/05/22/radtour-auf-den-auerberg-21-05-2011.html</link>
+      <description>&lt;p&gt;Eine kleine Freitagnachmittagsrunde auf den Auerberg:&lt;/p&gt;
+</description>
+      <pubDate>Sun, 22 May 2011 09:45:00 +0200</pubDate>
+      <dc:date>2011-05-22T09:45:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Katzenbilder #1</title>
+      <link>http://andydunkel.net/katzen/2011/05/19/katzenbilder-1.html</link>
+      <description>&lt;p&gt;Im Internet kann es nie genug Katzenbilder geben.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 19 May 2011 21:52:00 +0200</pubDate>
+      <dc:date>2011-05-19T21:52:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Fotos vom Radfahren 18.05.2011</title>
+      <link>http://andydunkel.net/fotos/radfahren/2011/05/18/fotos-vom-radfahren-18-05-2011.html</link>
+      <description>&lt;p&gt;Aufgenommen währen einer Feierabendrunde mit dem Fahrrad.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 18 May 2011 20:57:00 +0200</pubDate>
+      <dc:date>2011-05-18T20:57:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Java/SWT GUI Access from Thread</title>
+      <link>http://andydunkel.net/java/swt/2011/05/17/javaswt-gui-access-from-thread.html</link>
+      <description>&lt;p&gt;A thread in Java cannot directly access the GUI. With the following snippet the access is possible:&lt;/p&gt;
+</description>
+      <pubDate>Tue, 17 May 2011 18:55:27 +0200</pubDate>
+      <dc:date>2011-05-17T18:55:27+02:00</dc:date>
+    </item>
+    <item>
+      <title>Remove unwanted actions in RCP application</title>
+      <link>http://andydunkel.net/eclipse/java/2011/05/16/remove-unwanted-actions-in-rcp-application.html</link>
+      <description>&lt;p&gt;In my current RCP application some unwanted Eclipse actions showed up in the toolbar and menubar:&lt;/p&gt;
+</description>
+      <pubDate>Mon, 16 May 2011 21:14:00 +0200</pubDate>
+      <dc:date>2011-05-16T21:14:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Radtour zur Mehlblockalpe 13.05.2011</title>
+      <link>http://andydunkel.net/radfahren/2011/05/14/radtour-zur-mehlblockalpe-13-05-2011.html</link>
+      <description>&lt;p&gt;Gestern gings zur Mehlblockalpe im Kemptener Wald. Die halbe Bier war mit 2 Euro recht günstig, es gab musikalische Unterhaltung.&lt;/p&gt;
+</description>
+      <pubDate>Sat, 14 May 2011 13:15:00 +0200</pubDate>
+      <dc:date>2011-05-14T13:15:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Set title for JFace dialog</title>
+      <link>http://andydunkel.net/eclipse/java/2011/05/12/set-title-for-jface-dialog.html</link>
+      <description>&lt;p&gt;The following snippet sets the title for a JFace dialog:&lt;/p&gt;
+</description>
+      <pubDate>Thu, 12 May 2011 22:28:00 +0200</pubDate>
+      <dc:date>2011-05-12T22:28:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Irland Mai 2011</title>
+      <link>http://andydunkel.net/ireland/2011/05/12/irland-mai-2011.html</link>
+      <description>&lt;iframe width=&quot;640&quot; height=&quot;390&quot; src=&quot;http://www.youtube.com/embed/NTvgRrgL1w8&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+</description>
+      <pubDate>Thu, 12 May 2011 12:40:00 +0200</pubDate>
+      <dc:date>2011-05-12T12:40:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Comeragh Mountains</title>
+      <link>http://andydunkel.net/hiking/ireland/2011/05/11/comeragh-mountains.html</link>
+      <description>&lt;div id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:fb8bbd9d-782b-47dc-a982-6edf15d63d37&quot; class=&quot;wlWriterEditableSmartContent&quot; style=&quot;margin: 0px; display: inline; float: none; padding: 0px;&quot;&gt;
+&lt;div&gt;&lt;object width=&quot;581&quot; height=&quot;326&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/aUPTGg19DkY?hl=en&amp;amp;hd=1&quot; /&gt;&lt;embed type=&quot;application/x-shockwave-flash&quot; width=&quot;581&quot; height=&quot;326&quot; src=&quot;http://www.youtube.com/v/aUPTGg19DkY?hl=en&amp;amp;hd=1&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;
+&lt;/div&gt;
+</description>
+      <pubDate>Wed, 11 May 2011 18:51:27 +0200</pubDate>
+      <dc:date>2011-05-11T18:51:27+02:00</dc:date>
+    </item>
+    <item>
+      <title>Radtour nach Speiden 30.04.2011</title>
+      <link>http://andydunkel.net/radfahren/2011/05/01/radtour-nach-speiden-30-04-2011.html</link>
+      <description>&lt;div style=&quot;padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px&quot; id=&quot;scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:77fd9044-ad2e-426c-992e-9289e7e1ac2b&quot; class=&quot;wlWriterEditableSmartContent&quot;&gt;&lt;div&gt;&lt;object width=&quot;585&quot; height=&quot;328&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/wI407tXmm38?hl=en&amp;amp;hd=1&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/wI407tXmm38?hl=en&amp;amp;hd=1&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;585&quot; height=&quot;328&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+      <pubDate>Sun, 01 May 2011 15:50:00 +0200</pubDate>
+      <dc:date>2011-05-01T15:50:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Get plugin path </title>
+      <link>http://andydunkel.net/eclipse/java/2011/04/28/get-plugin-path.html</link>
+      <description>&lt;p&gt;This snippets gets the local folder for a plugin:&lt;/p&gt;
+</description>
+      <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
+      <dc:date>2011-04-28T22:59:35+02:00</dc:date>
+    </item>
+    <dc:date>2013-12-05T18:00:00+01:00</dc:date>
+  </channel>
+</rss>
