@@ -18,6 +18,14 @@
       <dc:date>2013-12-05T18:00:00+01:00</dc:date>
     </item>
     <item>
+      <title>Homebrew - Could not link xz Fehler</title>
+      <link>http://andydunkel.net/mac/tools/2013/12/05/homebrew_link_errors.html</link>
+      <description>&lt;p&gt;&lt;a href=&quot;http://brew.sh/&quot;&gt;Homebrew&lt;/a&gt; ist eine feine Sache. Ähnlich die unter Linux kann man so allerhand Pakete über die Konsole installieren. Leider brachte das Update auf OSX 10.9 ein paar Probleme mit sich.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 05 Dec 2013 11:00:00 +0100</pubDate>
+      <dc:date>2013-12-05T11:00:00+01:00</dc:date>
+    </item>
+    <item>
       <title>Festo BionicOpter</title>
       <link>http://andydunkel.net/sonstiges/2013/11/30/festo_bionicopter.html</link>
       <description>&lt;p&gt;Nachdem Festo letztes Jahr einen Vogel fliegen ließ, flog dieses Jahr eine Robo-Libelle über deren Messestand:&lt;/p&gt;
