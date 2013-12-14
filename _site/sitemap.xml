@@ -863,14 +863,14 @@
         <lastmod>2013-12-08T15:26:12+01:00</lastmod>
     </url>
     <url>
-        <loc>http://andydunkel.net/mac/tools/2013/12/05/homebrew_link_errors.html</loc>
-        <lastmod>2013-12-14T10:11:25+01:00</lastmod>
-    </url>
-    <url>
         <loc>
             http://andydunkel.net/windows/linux/mac/tools/2013/12/05/exfat_truecrypt_volume.html
         </loc>
         <lastmod>2013-12-08T15:26:12+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://andydunkel.net/mac/tools/2013/12/14/homebrew_link_errors.html</loc>
+        <lastmod>2013-12-14T10:18:13+01:00</lastmod>
     </url>
     <url>
         <loc>http://andydunkel.net/about.html</loc>
@@ -898,7 +898,7 @@
     </url>
     <url>
         <loc>http://andydunkel.net/</loc>
-        <lastmod>2013-12-14T10:11:25+01:00</lastmod>
+        <lastmod>2013-12-14T10:18:13+01:00</lastmod>
     </url>
     <url>
         <loc>http://andydunkel.net/software.html</loc>

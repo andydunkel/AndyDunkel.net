@@ -123,34 +123,9 @@
      
 		
 		<h3>
-		  <a href="/windows/linux/mac/tools/2013/12/05/exfat_truecrypt_volume.html">exFAT für TrueCrypt Volume nutzen</a>
+		  <a href="/mac/tools/2013/12/14/homebrew_link_errors.html">Homebrew - Could not link xz Fehler</a>
 		</h3>
-		  <p class="small">Posted on 05 December 2013 by Andy</p>
-		  <p><p>Externe Festplatten und USB-Sticks verschlüssele ich meist mit TrueCrypt. Geht der Datenträger verloren, kann man zumindest recht sicher sein, dass niemand etwas mit den Daten anfangen kann. Da ich privat Windows, OSX und Linux nutze, stellt sich die Frage, welches Dateisystem man verwendet. Schließlich will ich von allen Betriebssystemen problemlos darauf zugreifen können.</p>
-
-<p>Die beste Lösung in Dateisystemform kommt von Microsoft und nennt sich <a href="http://de.wikipedia.org/wiki/ExFAT#exFAT">exFat</a>. Windows kann es ab XP lesen, OSX hat auch keine Probleme damit und auch Linux lässt sich problemlos dazu <a href="http://andydunkel.net/linux/2012/12/18/exfat-unter-ubuntu-nutzen.html">überreden</a>.</p>
-
-<p>Der Vorteil von exFat ist die Möglichkeit der Speicherung von Dateien größer 4GB. Leider bietet TrueCrypt keine Möglichkeit bei der Erstellung von Containern exFat zu nutzen. Entweder das alte FAT oder NTFS. </p>
-
-<p>Macht aber nix, exFat lässt sich trotzdem nutzen: Zuerst wird der TrueCrypt Container ganz normal erstellt und formatiert. </p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/12/truecrypt/true_format.png" alt=""></p>
-
-<p>Nachdem der Container erstellt wurde, mountet man ihn. Nun kann man das geöffnete Laufwerk mit dem exFat-Dateisystem formatieren. Im Explorer geht dies allerdings nicht, hier erlaubt Windows das exFat-Dateisystem nur für mobile Datenträger.</p>
-
-<p>Über die Eingabeaufforderung (Windows-Taste und dann CMD eingeben), lässt sich das Laufwerk dann mit exFat-Dateisystem ausstatten:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">format &lt;drive letter&gt;: /FS:exfat /Q
-</code></pre></div>
-<p><img src="http://andydunkel.net/assets/uploads/2013/12/truecrypt/true_format2.png" alt=""></p>
-</p>		
-		  <p class="small">Tagged: truecrypt and exfat by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/mac/tools/2013/12/05/homebrew_link_errors.html">Homebrew - Could not link xz Fehler</a>
-		</h3>
-		  <p class="small">Posted on 05 December 2013 by Andy</p>
+		  <p class="small">Posted on 14 December 2013 by Andy</p>
 		  <p><p><a href="http://brew.sh/">Homebrew</a> ist eine feine Sache. Ähnlich die unter Linux kann man so allerhand Pakete über die Konsole installieren. Leider brachte das Update auf OSX 10.9 ein paar Probleme mit sich.</p>
 
 <p>Zuerst lief die alte Brew-Version gar nicht mehr. Also geupdated. Dann fingen die Probleme an. Bei der Installation von Paketen wurden diese zwar heruntergeladen, allerdings konnten die Symlinks nicht erstellt werden, da bereits vorhanden aus einer alten Version. Eventuell habe ich beim Update ein paar Fehler gemacht und irgendwas nicht bereinigt, keine Ahnung. </p>
@@ -185,6 +160,31 @@ $ brew doctor
 <p>Anschließend lief wieder alles ohne Probleme.</p>
 </p>		
 		  <p class="small">Tagged: homebrew by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
+		  <a href="/windows/linux/mac/tools/2013/12/05/exfat_truecrypt_volume.html">exFAT für TrueCrypt Volume nutzen</a>
+		</h3>
+		  <p class="small">Posted on 05 December 2013 by Andy</p>
+		  <p><p>Externe Festplatten und USB-Sticks verschlüssele ich meist mit TrueCrypt. Geht der Datenträger verloren, kann man zumindest recht sicher sein, dass niemand etwas mit den Daten anfangen kann. Da ich privat Windows, OSX und Linux nutze, stellt sich die Frage, welches Dateisystem man verwendet. Schließlich will ich von allen Betriebssystemen problemlos darauf zugreifen können.</p>
+
+<p>Die beste Lösung in Dateisystemform kommt von Microsoft und nennt sich <a href="http://de.wikipedia.org/wiki/ExFAT#exFAT">exFat</a>. Windows kann es ab XP lesen, OSX hat auch keine Probleme damit und auch Linux lässt sich problemlos dazu <a href="http://andydunkel.net/linux/2012/12/18/exfat-unter-ubuntu-nutzen.html">überreden</a>.</p>
+
+<p>Der Vorteil von exFat ist die Möglichkeit der Speicherung von Dateien größer 4GB. Leider bietet TrueCrypt keine Möglichkeit bei der Erstellung von Containern exFat zu nutzen. Entweder das alte FAT oder NTFS. </p>
+
+<p>Macht aber nix, exFat lässt sich trotzdem nutzen: Zuerst wird der TrueCrypt Container ganz normal erstellt und formatiert. </p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/12/truecrypt/true_format.png" alt=""></p>
+
+<p>Nachdem der Container erstellt wurde, mountet man ihn. Nun kann man das geöffnete Laufwerk mit dem exFat-Dateisystem formatieren. Im Explorer geht dies allerdings nicht, hier erlaubt Windows das exFat-Dateisystem nur für mobile Datenträger.</p>
+
+<p>Über die Eingabeaufforderung (Windows-Taste und dann CMD eingeben), lässt sich das Laufwerk dann mit exFat-Dateisystem ausstatten:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">format &lt;drive letter&gt;: /FS:exfat /Q
+</code></pre></div>
+<p><img src="http://andydunkel.net/assets/uploads/2013/12/truecrypt/true_format2.png" alt=""></p>
+</p>		
+		  <p class="small">Tagged: truecrypt and exfat by Andy</p>
 		  <hr>
 		  
 		

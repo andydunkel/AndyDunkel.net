@@ -1,7 +1,7 @@
 ---
 author: admin
 comments: true
-date: 2013-12-05 10:00:00+00:00
+date: 2013-12-14 10:00:00+00:00
 layout: post
 slug: homebrew_link_errors
 title: 'Homebrew - Could not link xz Fehler'
