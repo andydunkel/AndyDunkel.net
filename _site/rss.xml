@@ -8,7 +8,15 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Sat, 14 Dec 2013 11:00:00 +0100</pubDate>
+    <pubDate>Sun, 15 Dec 2013 18:00:00 +0100</pubDate>
+    <item>
+      <title>Git - The remote end hung up unexpectedly</title>
+      <link>http://andydunkel.net/coding/2013/12/15/github_the_remote_end_hung_up_unexpectedly.html</link>
+      <description>&lt;p&gt;Recently I tried to push a bigger repository to Github. At some stage of the upload process failed:&lt;/p&gt;
+</description>
+      <pubDate>Sun, 15 Dec 2013 18:00:00 +0100</pubDate>
+      <dc:date>2013-12-15T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Homebrew - Could not link xz Fehler</title>
       <link>http://andydunkel.net/mac/tools/2013/12/14/homebrew_link_errors.html</link>
@@ -1461,6 +1469,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2013-12-14T11:00:00+01:00</dc:date>
+    <dc:date>2013-12-15T18:00:00+01:00</dc:date>
   </channel>
 </rss>
