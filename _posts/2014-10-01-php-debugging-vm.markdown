@@ -27,7 +27,7 @@ So I [created a virtual machine for PHP debugging](/projects/php-debugging-vm/in
 
 I am publishing it here with the hope it might be useful for other:
 
-![image](/projects/php-debugging-vm/vm1.png)
+![image](/projects/php-debugging-vm/vm1_small.png)
 
 [Click here to get to the project page.](/projects/php-debugging-vm/index.html)
 
