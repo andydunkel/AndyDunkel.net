@@ -111,6 +111,17 @@ Anschließend alles wieder rückwärts zusammensetzen. Wenn nun alles geklappt h
 
 Ich empfehle das zu machen, bevor der Roomba komplett zusammengesetzt ist. 
 
+# Spende 
+
+Wem die Anleitung geholfen hat seinen Roomba wieder flott zu bekommen, kann, wenn er oder sie will, mir einen kleinen Betrag für die Kaffeekasse zukommen lassen. :-)
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="T5XFPN596APVJ">
+<input type="image" src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal.">
+<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+</form>
+
 
 -------------
 
