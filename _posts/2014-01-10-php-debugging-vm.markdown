@@ -1,7 +1,7 @@
 ---
 author: admin
 comments: true
-date: 2014-10-10 17:00:00+00:00
+date: 2014-01-10 17:00:00+00:00
 layout: post
 slug: php_debugging_vm_to_debug_and_develip_php
 title: 'Virtual Machine to debug and develop PHP'

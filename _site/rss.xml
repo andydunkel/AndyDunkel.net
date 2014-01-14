@@ -8,14 +8,28 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Fri, 10 Oct 2014 19:00:00 +0200</pubDate>
+    <pubDate>Tue, 14 Jan 2014 18:00:00 +0100</pubDate>
+    <item>
+      <title>Checkout GIT repository into existing folder</title>
+      <link>http://andydunkel.net/coding/tools/2014/01/14/checkout_git_repository_into_existing_folder.html</link>
+      <description>&lt;p&gt;I usually create my project first, tinker around and then at some point I want to use version control, like GIT. So I create the repository and want to check it out and merge it with my existing project folder.&lt;/p&gt;
+
+&lt;p&gt;This can be done with the following commands:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;git init
+git remote add origin PATH_TO_REPOSITORY
+git fetch
+git checkout -t origin/master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <pubDate>Tue, 14 Jan 2014 18:00:00 +0100</pubDate>
+      <dc:date>2014-01-14T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Virtual Machine to debug and develop PHP</title>
-      <link>http://andydunkel.net/projects/2014/10/10/php-debugging-vm.html</link>
+      <link>http://andydunkel.net/projects/2014/01/10/php-debugging-vm.html</link>
       <description>&lt;p&gt;I used PHP a lot in the past for our websites. I think its not the best programming language, but its simple enough to get things done very quickly. And it runs on the most servers of web hosters.&lt;/p&gt;
 </description>
-      <pubDate>Fri, 10 Oct 2014 19:00:00 +0200</pubDate>
-      <dc:date>2014-10-10T19:00:00+02:00</dc:date>
+      <pubDate>Fri, 10 Jan 2014 18:00:00 +0100</pubDate>
+      <dc:date>2014-01-10T18:00:00+01:00</dc:date>
     </item>
     <item>
       <title>Git - The remote end hung up unexpectedly</title>
@@ -1477,6 +1491,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2014-10-10T19:00:00+02:00</dc:date>
+    <dc:date>2014-01-14T18:00:00+01:00</dc:date>
   </channel>
 </rss>

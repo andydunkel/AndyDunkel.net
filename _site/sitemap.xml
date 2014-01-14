@@ -879,8 +879,14 @@
         <lastmod>2014-01-10T21:46:01+01:00</lastmod>
     </url>
     <url>
-        <loc>http://andydunkel.net/projects/2014/10/10/php-debugging-vm.html</loc>
-        <lastmod>2014-01-10T22:28:09+01:00</lastmod>
+        <loc>http://andydunkel.net/projects/2014/01/10/php-debugging-vm.html</loc>
+        <lastmod>2014-01-14T20:34:49+01:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://andydunkel.net/coding/tools/2014/01/14/checkout_git_repository_into_existing_folder.html
+        </loc>
+        <lastmod>2014-01-14T20:32:52+01:00</lastmod>
     </url>
     <url>
         <loc>http://andydunkel.net/about.html</loc>
@@ -908,7 +914,7 @@
     </url>
     <url>
         <loc>http://andydunkel.net/</loc>
-        <lastmod>2014-01-13T13:54:18+01:00</lastmod>
+        <lastmod>2014-01-14T20:34:49+01:00</lastmod>
     </url>
     <url>
         <loc>http://andydunkel.net/projects/php-debugging-vm/projects/php-debugging-vm/</loc>

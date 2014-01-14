@@ -126,6 +126,34 @@
      
 		
 		<h3>
+		  <a href="/java/2013/10/10/java-get-ip-and-mac-address.html">Java: Get IP and Mac address</a>
+		</h3>
+		  <p class="small">Posted on 10 October 2013 by Andy</p>
+		  <p><p>A small code snippet that reads the computers IP and MAC address:    </p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">try {
+    InetAddress ip = InetAddress.getLocalHost();
+    NetworkInterface network;
+    network = NetworkInterface.getByInetAddress(ip);
+    byte[] macaddr = network.getHardwareAddress();
+
+    String mac = &quot;&quot;;
+
+    for (int i = 0; i &lt; macaddr.length; i++) {
+        mac += String.format(&quot;%02X%s&quot;, macaddr[i], (i &lt; macaddr.length - 1) ? &quot;-&quot; : &quot;&quot;);    
+    }
+
+    System.out.println(&quot;IP-Address: &quot; + ip.toString());
+    System.out.println(&quot;Mac-Address: &quot; + mac);
+
+} catch (SocketException | UnknownHostException e) {
+    e.printStackTrace();
+}       
+</code></pre></div></p>		
+		  <p class="small">Tagged: ip, Java, and Mac by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/eclipse/2013/08/29/set-workspace-location-for-rcp-application.html">Set workspace location for RCP application</a>
 		</h3>
 		  <p class="small">Posted on 29 August 2013 by Andy</p>
@@ -249,28 +277,6 @@ catch (Exception err) {
 		  <hr>
 		  
 		
-		<h3>
-		  <a href="/android/coding/2013/08/18/android-studio-nach-update-lasst-sich-das-projekt-nicht-starten.html">Android Studio: Nach Update lässt sich das Projekt nicht starten</a>
-		</h3>
-		  <p class="small">Posted on 18 August 2013 by Andy</p>
-		  <p><p>Heute wurde mir ein Update für Android Studio angezeigt. Also Update heruntergeladen und installiert. Wie immer erwartet man da natürlich Probleme mit bestehenden Projekten. :-)</p>
-
-<p>War natürlich der Fall: </p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">Gradle: &lt;br&gt;&lt;/br&gt;FAILURE: Could not determine which tasks to execute.&lt;br&gt;&lt;/br&gt;* What went wrong:&lt;br&gt;&lt;/br&gt;Task &#39;assemble&#39; not found in root project &#39;SomeProject&#39;.&lt;br&gt;&lt;/br&gt;* Try:&lt;br&gt;&lt;/br&gt;Run gradle tasks to get a list of available tasks.
-
-
-
-
-Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;&#39;/Users/da/.gradle/wrapper/dists/gradle-1.6-bin/.../gradle-1.6&#39;.
-</code></pre></div>
-<p>Die Lösung ist in der *.iml Datei (liegt im Root-Verzeichnis, den folgenden Inhalt herauszulöschen:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/08/RausDamit.png" alt="Raus Damit"></p>
-</p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class=".col-md-4">
@@ -313,7 +319,7 @@ Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;&#39;/Use
 		<section>
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/android/'>android (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (15)</a></li>
+<li class='category'><a href='/categories/coding/'>coding (16)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (1)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (23)</a></li>
 <li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
@@ -334,7 +340,7 @@ Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;&#39;/Use
 <li class='category'><a href='/categories/science/'>science (3)</a></li>
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (40)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
-<li class='category'><a href='/categories/tools/'>tools (19)</a></li>
+<li class='category'><a href='/categories/tools/'>tools (20)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (2)</a></li>
 
 		</ul>
