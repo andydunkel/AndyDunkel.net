@@ -126,6 +126,26 @@
      
 		
 		<h3>
+		  <a href="/radfahren/tools/2011/05/23/google-maps-karten-kml-datei-exportierenspeichern.html">Google Maps Karten KML Datei exportieren/speichern</a>
+		</h3>
+		  <p class="small">Posted on 23 May 2011 by Andy</p>
+		  <p><p>Ich nutze <a href="http://mytracks.appspot.com/">MyTracks</a> von Google zum GPS-Logging meiner Radtouren. Nach dem Upload stehen diese erst mal nur in Google Maps zur Verfügung. Der Download als <a href="http://de.wikipedia.org/wiki/Keyhole_Markup_Language">KML-Datei</a> ist über einen “Trick” möglich:</p>
+
+<p>Man wählt zuerst die Karte in Google Maps aus. Klickt dann auf Link und kopiert diesen:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/05/image8.png" alt="image"></p>
+
+<p>Link nun einfach in die Adresszeile des Browsers kopieren und &amp;output=kml einfügen.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/05/image9.png" alt="image"></p>
+
+<p>Enter und der Download der KML-Datei beginnt.</p>
+</p>		
+		  <p class="small">Tagged: Maps KML GPS Loggin Export by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/radfahren/2011/05/22/alpen-panorama-runde-vom-21-05-2011.html">Alpen-Panorama-Runde vom 21.05.2011</a>
 		</h3>
 		  <p class="small">Posted on 22 May 2011 by Andy</p>
@@ -229,35 +249,6 @@ Aufgezeichnet am: Fr. Mai 20 13:57:10 MESZ 2011</p>
 		  <hr>
 		  
 		
-		<h3>
-		  <a href="/java/swt/2011/05/17/javaswt-gui-access-from-thread.html">Java/SWT GUI Access from Thread</a>
-		</h3>
-		  <p class="small">Posted on 17 May 2011 by Andy</p>
-		  <p><p>A thread in Java cannot directly access the GUI. With the following snippet the access is possible:</p>
-
-<p>Call from the thread:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">@Override
-public void run() {
-    html = &quot;&lt;h1&gt;Huhu&lt;/h1&gt;&quot;;
-    dlg.setSomeStuffToGui(html);    
-}
-</code></pre></div>
-<p>Method in the GUI:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">public void setSomeStuffToGui(final String html) {
-    Display display = getDisplay();
-
-    display.asyncExec(new Runnable() {
-        public void run() {
-            //your stuff goes here:
-            textField.setText(html);
-        }
-      });           
-}
-</code></pre></div></p>		
-		  <p class="small">Tagged: Java, SWT, and Thread by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class=".col-md-4">
@@ -302,7 +293,7 @@ public void run() {
 		<li class='category'><a href='/categories/android/'>android (1)</a></li>
 <li class='category'><a href='/categories/coding/'>coding (16)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (1)</a></li>
-<li class='category'><a href='/categories/eclipse/'>eclipse (23)</a></li>
+<li class='category'><a href='/categories/eclipse/'>eclipse (24)</a></li>
 <li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
 <li class='category'><a href='/categories/gadgets/'>gadgets (23)</a></li>
 <li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
@@ -316,6 +307,7 @@ public void run() {
 <li class='category'><a href='/categories/meinung/'>meinung (2)</a></li>
 <li class='category'><a href='/categories/projects/'>projects (1)</a></li>
 <li class='category'><a href='/categories/radfahren/'>radfahren (27)</a></li>
+<li class='category'><a href='/categories/rcp/'>rcp (1)</a></li>
 <li class='category'><a href='/categories/reparatur/'>reparatur (1)</a></li>
 <li class='category'><a href='/categories/rezepte/'>rezepte (1)</a></li>
 <li class='category'><a href='/categories/science/'>science (3)</a></li>

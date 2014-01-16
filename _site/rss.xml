@@ -8,7 +8,120 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Tue, 14 Jan 2014 18:00:00 +0100</pubDate>
+    <pubDate>Thu, 16 Jan 2014 18:00:00 +0100</pubDate>
+    <item>
+      <title>Branding of Eclipse/RCP Applications</title>
+      <link>http://andydunkel.net/eclipse/rcp/2014/01/16/branding_of_eclipse_applications.html</link>
+      <description>&lt;h2&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;In this document I want to describe some ideas how branding of an Eclipse RCP application can be implemenented. Since I never done this before, there might be better ways to do that, so feel free to contact me.&lt;/p&gt;
+
+&lt;p&gt;Its not a walk through how to do these things step by step, its more an example how certain things could be done. The complete source code is available for download at the end.&lt;/p&gt;
+
+&lt;h2&gt;Was is branding?&lt;/h2&gt;
+
+&lt;p&gt;First lets discuss what we want to achieve and what branding means in this context. Imagine a situation where we want to ship our software in multiple versions, with different names for the software, different images shown in the GUI, different reports, template files, icons etc. &lt;/p&gt;
+
+&lt;p&gt;We have a single source code and want to implement two versions of our product: &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;%7B%7B%20site.url%20%7D%7D/assets/uploads/2014/01/branding/branding1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Catastic&lt;/h2&gt;
+
+&lt;p&gt;In my example we want to ship two versions of our cat mail software. Its based on the Eclipse mail application sample. We want to have two versions of that Software: &amp;quot;Catastic&amp;quot; and &amp;quot;FatCat&amp;quot;. Each version should have its own splash screen, Icons, About dialog, custom file templates and also certain strings are different in the UI. &lt;/p&gt;
+
+&lt;p&gt;Our goal is to achieve that with minimum impact on our source code. Lets get started!&lt;/p&gt;
+
+&lt;h2&gt;Plugins&lt;/h2&gt;
+
+&lt;p&gt;Lets start with the plugins:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;%7B%7B%20site.url%20%7D%7D/assets/uploads/2014/01/branding/plugins.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;The application code resides in &amp;quot;com.da.branding.example&amp;quot;. In addition we create 3 more plugins, one generic branding plugin, which is the &amp;quot;gateway&amp;quot; to the specific branding plugins. If we look at the dependencies, we can see, that our application only depends on the branding plugin:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;packages.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;This allows us to add new brandings, as well as removing brandings, without having our main application depending on a specific branding. The main branding plugin contains the branding logic, the specific plugins mostly contain the spefific branding information, like images, texts etc: &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;%7B%7B%20site.url%20%7D%7D/assets/uploads/2014/01/branding/resources.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Branding&lt;/h2&gt;
+
+&lt;p&gt;OK lets brand the software. There are certain tasks that can be achieved easily by the RCP framework and product configurations. Other functionality must be implemented in code. Lets start what we can do with the product configuration.&lt;/p&gt;
+
+&lt;h3&gt;Product&lt;/h3&gt;
+
+&lt;p&gt;A lot of stuff can be done in the product configuration, like splash, about and icons. So we create a product configuration for each output software. The first step is to create an extension point for the products in the specific branding plugins:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;product_plugin.png&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;As you can see, there is also a specific splash screen in each plugin.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In the extension point we can define several things for each branded version, the about text, about image, the application name and the icon which appears in the title bar of the application. The extension point is used by the actual product configuration.&lt;/p&gt;
+
+&lt;p&gt;For each extension point I created a product configuration for the specific branded applications:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;%7B%7B%20site.url%20%7D%7D/assets/uploads/2014/01/branding/product_files.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Selecting the correct product picks of the settings from the extension points and adds them to the product configuration.&lt;/p&gt;
+
+&lt;p&gt;The other configuration of the product configuration is straight forward. The important thing is to set the correct settings for the product definition:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;%7B%7B%20site.url%20%7D%7D/assets/uploads/2014/01/branding/product_definition.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;All other things like the splash screen image and the icons are configured as normal.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;%7B%7B%20site.url%20%7D%7D/assets/uploads/2014/01/branding/splash.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;When we launch each product configuration, the correct splash screen should be shown, as well as a different application name and a custom about dialog.&lt;/p&gt;
+
+&lt;p&gt;However there might be more. The other things we need are implemented in code.&lt;/p&gt;
+
+&lt;h3&gt;Code&lt;/h3&gt;
+
+&lt;p&gt;Since now we only changed some visual things. But there might be more, like different templates files, some different logic, whatever.&lt;/p&gt;
+
+&lt;p&gt;So we create a class &amp;quot;&lt;a href=&quot;https://github.com/andydunkel/EclipseBrandingExample/blob/master/com.da.branding.branding/src/com/da/branding/branding/Branding.java&quot;&gt;Branding&lt;/a&gt;&amp;quot; in &amp;quot;com.da.branding.branding&amp;quot;, which is a singleton and will be responsible for handling branding requests from our main application.  &lt;/p&gt;
+
+&lt;p&gt;When we create the singleton, we have to check which product configuration we are running:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;String product = Platform.getProduct().getId();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We store that information in the Branding object. By that we now can distinguish the current software we are running, for example to display different images, like that:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;public Image getImage() {       
+    return ResourceManager.getPluginImage(_brandingPlugin, &amp;quot;res/cat.png&amp;quot;);
+}   
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;_brandingPlugin contains the name of the specific branding plugin. We can use the same mechanism for files, strings and other things. Even more complex things like returning a perspective. Goal is to implement the differences for each application here. &lt;/p&gt;
+
+&lt;p&gt;In our main source code we just call the branding class where needed:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;labelImage.setImage(Branding.getInstance().getImage());
+
+loadFile(Branding.getInstance().getFile());
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If we add a new branding, no change in the main applications source code is neccessary.&lt;/p&gt;
+
+&lt;h4&gt;Notes for the Code&lt;/h4&gt;
+
+&lt;p&gt;In my example everything is in the single branding class. Depending on the amount of logic you need to implement it might be sensible to move logic to its specific plugins. I also thought to create an extension point for the branding logic. However in my example and for the required functionality, lets keep it simple. :-)&lt;/p&gt;
+
+&lt;h2&gt;Application&lt;/h2&gt;
+
+&lt;p&gt;Here is how our application looks now:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;%7B%7B%20site.url%20%7D%7D/assets/uploads/2014/01/branding/screenshot.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;iframe width=&quot;640&quot; height=&quot;360&quot; src=&quot;//www.youtube.com/embed/Ouyy-4nBjj0?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Well, thats it! As said at the beginning, thats not an exact guide how to do this. Depending on the requirements, there are more things to implement or implementation might be different. To see how I did things exactly, have a look to the source code. If there are better ways to do things, well let me know! :-)&lt;/p&gt;
+
+&lt;h2&gt;Download&lt;/h2&gt;
+
+&lt;p&gt;The source code of the sample application can be &lt;a href=&quot;https://github.com/andydunkel/EclipseBrandingExample&quot;&gt;found here&lt;/a&gt;.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 16 Jan 2014 18:00:00 +0100</pubDate>
+      <dc:date>2014-01-16T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Checkout GIT repository into existing folder</title>
       <link>http://andydunkel.net/coding/tools/2014/01/14/checkout_git_repository_into_existing_folder.html</link>
@@ -1491,6 +1604,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2014-01-14T18:00:00+01:00</dc:date>
+    <dc:date>2014-01-16T18:00:00+01:00</dc:date>
   </channel>
 </rss>

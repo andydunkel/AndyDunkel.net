@@ -889,6 +889,12 @@
         <lastmod>2014-01-14T20:32:52+01:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://andydunkel.net/eclipse/rcp/2014/01/16/branding_of_eclipse_applications.html
+        </loc>
+        <lastmod>2014-01-16T21:44:50+01:00</lastmod>
+    </url>
+    <url>
         <loc>http://andydunkel.net/about.html</loc>
         <lastmod>2014-01-10T21:46:01+01:00</lastmod>
     </url>
@@ -914,7 +920,7 @@
     </url>
     <url>
         <loc>http://andydunkel.net/</loc>
-        <lastmod>2014-01-14T20:34:49+01:00</lastmod>
+        <lastmod>2014-01-16T21:44:50+01:00</lastmod>
     </url>
     <url>
         <loc>http://andydunkel.net/projects/php-debugging-vm/projects/php-debugging-vm/</loc>

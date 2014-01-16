@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>AndyDunkel.net</title>
+        <title>Branding of Eclipse/RCP Applications</title>
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="/css/syntax.css">
         <script src="/css/jquery.js"></script>
@@ -112,24 +112,11 @@
 
     <div class="container">
 
-    <section>
-<h1>Willkommen</h1>
+    <h2>Branding of Eclipse/RCP Applications</h2>
+<p class="meta">16 Jan 2014</p>
 
-... auf meiner Homepage. Ich schreibe hier über Dinge die mich interessieren. Sprachlich im Mix von Deutsch und English, je nach Themengebiet.
-
-<hr>
-
-
-<div class="row">
-    <div class="col-md-9">
-      <h2>Blog Posts</h2>
-     
-		
-		<h3>
-		  <a href="/eclipse/rcp/2014/01/16/branding_of_eclipse_applications.html">Branding of Eclipse/RCP Applications</a>
-		</h3>
-		  <p class="small">Posted on 16 January 2014 by Andy</p>
-		  <p><h2>Introduction</h2>
+<div class="post">
+<h2>Introduction</h2>
 
 <p>In this document I want to describe some ideas how branding of an Eclipse RCP application can be implemenented. Since I never done this before, there might be better ways to do that, so feel free to contact me.</p>
 
@@ -235,203 +222,39 @@ loadFile(Branding.getInstance().getFile());
 <h2>Download</h2>
 
 <p>The source code of the sample application can be <a href="https://github.com/andydunkel/EclipseBrandingExample">found here</a>.</p>
-</p>		
-		  <p class="small">Tagged: Eclipse, RCP, Branding, and Product by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/coding/tools/2014/01/14/checkout_git_repository_into_existing_folder.html">Checkout GIT repository into existing folder</a>
-		</h3>
-		  <p class="small">Posted on 14 January 2014 by Andy</p>
-		  <p><p>I usually create my project first, tinker around and then at some point I want to use version control, like GIT. So I create the repository and want to check it out and merge it with my existing project folder.</p>
 
-<p>This can be done with the following commands:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">git init
-git remote add origin PATH_TO_REPOSITORY
-git fetch
-git checkout -t origin/master
-</code></pre></div></p>		
-		  <p class="small">Tagged: GIT by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/projects/2014/01/10/php-debugging-vm.html">Virtual Machine to debug and develop PHP</a>
-		</h3>
-		  <p class="small">Posted on 10 January 2014 by Andy</p>
-		  <p><p>I used PHP a lot in the past for our websites. I think its not the best programming language, but its simple enough to get things done very quickly. And it runs on the most servers of web hosters.</p>
-
-<p>Today most likely I would choose another language, but I still have to maintain and debug PHP scripts once in a while. </p>
-
-<p>Usually its very painfull, since most of the times I don&#39;t have a running webserver on my local machine. Just makes no sense to have a webserver running all the times. Not to mention a running instance of MySQL.</p>
-
-<p>So I ended up using a simple text editor and uploading the files to my webserver for testing. 
-Of course without debugger thats a very painfull and slow process. I am still puzzled how many PHP developers use <code>echo</code> commands to debug there code.</p>
-
-<p>In the past I used a commercial Zend Studio license. I still have that running on my Mac. However I also wanted a simple solution I can use easily on my Linux notebook.</p>
-
-<p>So I <a href="/projects/php-debugging-vm/index.html">created a virtual machine for PHP debugging</a>. It runs an Apache webserver with, MySQL + phpMyAdmin and Netbeans as IDE. Xdebug is configured in PHP. </p>
-
-<p>I am publishing it here with the hope it might be useful for other:</p>
-
-<p><img src="/projects/php-debugging-vm/vm1_small.png" alt="image"></p>
-
-<p><a href="/projects/php-debugging-vm/index.html">Click here to get to the project page.</a></p>
-</p>		
-		  <p class="small">Tagged: PHP and Projects by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/coding/2013/12/15/github_the_remote_end_hung_up_unexpectedly.html">Git - The remote end hung up unexpectedly</a>
-		</h3>
-		  <p class="small">Posted on 15 December 2013 by Andy</p>
-		  <p><p>Recently I tried to push a bigger repository to Github. At some stage of the upload process failed:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">fatal: The remote end hung up unexpectedly
-Everything up-to-date
-</code></pre></div>
-<p>Some research on the internet indicated that the https buffer was not big enough. The simplest fix to that was to increase the buffer size:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">git config http.postBuffer 524288000
-</code></pre></div>
-<p>That worked fairly well, however the upload was more like a black box thing now. The commit was compressed locally and there was no real upload progress information anymore. </p>
-
-<p>One other solution is to switch from https to SSH by the following command:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">git remote add origin git@github.com:username/project.git
-</code></pre></div>
-<p>In order to get SSH working you will have to create SSH Keys first, which is <a href="https://help.github.com/articles/generating-ssh-keys">described here</a>.</p>
-</p>		
-		  <p class="small">Tagged: Git and Github by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/mac/tools/2013/12/14/homebrew_link_errors.html">Homebrew - Could not link xz Fehler</a>
-		</h3>
-		  <p class="small">Posted on 14 December 2013 by Andy</p>
-		  <p><p><a href="http://brew.sh/">Homebrew</a> ist eine feine Sache. Ähnlich die unter Linux kann man so allerhand Pakete über die Konsole installieren. Leider brachte das Update auf OSX 10.9 ein paar Probleme mit sich.</p>
-
-<p>Zuerst lief die alte Brew-Version gar nicht mehr. Also geupdated. Dann fingen die Probleme an. Bei der Installation von Paketen wurden diese zwar heruntergeladen, allerdings konnten die Symlinks nicht erstellt werden, da bereits vorhanden aus einer alten Version. Eventuell habe ich beim Update ein paar Fehler gemacht und irgendwas nicht bereinigt, keine Ahnung. </p>
-
-<p>Die Fehlermeldung sah in etwa so aus:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">Linking /usr/local/Cellar/... Warning: Could not link $foo. Unlinking...
-Error: Could not symlink file: /usr/local/Cellar/...
-/usr/local/... may already exist.
-/usr/local/... may not be writable.
-</code></pre></div>
-<p>Jedenfalls kann man die Symlinks in <code>/usr/local/share</code> von Hand löschen, was sehr viel Arbeit ist. Also etwas das Internet bemüht und das ganze mit folgenden Schritten gelöst:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"># Besitzer von /usr/local auf den aktuellen Benutzer setzen
-$ sudo chown -R `whoami` /usr/local
-
-# ggf. die fehlgeschlagene Installation entfernen
-$ brew uninstall -f $foo
-
-# Cache leeren
-$ rm -rf `brew --cache`
-
-# Aufräumen
-$ brew cleanup
-
-# nicht mehr aktuelle Symlinks löschen
-$ brew prune
-
-# der Homebrew Doktor:
-$ brew doctor
-</code></pre></div>
-<p>Im letzten Schritt wurden mir noch ein paar Hinweise ausgegeben, welche ich manuell auf der Konsole ausführen musste.</p>
-
-<p>Anschließend lief wieder alles ohne Probleme.</p>
-</p>		
-		  <p class="small">Tagged: homebrew by Andy</p>
-		  <hr>
-		  
-		
-
-    </div>
-    <div class=".col-md-4">
-		<script id='fb7sm2s'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//api.flattr.com/button/view/?uid=mengenleere&button=compact&url='+encodeURIComponent(document.URL);f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fb7sm2s');</script>
-    
-    	<h4>Partnerlink</h4>
-    	<a target="_blank" href="http://www.amazon.de/?_encoding=UTF8&camp=1638&creative=19454&linkCode=ur2&site-redirect=de&tag=ekiwide0b-21">Einkaufen bei Amazon.de</a><img src="https://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&l=ur2&o=3" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />	
-    	
-    	<h4>Werbung</h4>
-    	
-    	<div align="left">
-		<script type="text/javascript"><!--
-		google_ad_client = "ca-pub-1137550895446814";
-		/* andy.ekiwi.de */
-		google_ad_slot = "3362068620";
-		google_ad_width = 125;
-		google_ad_height = 125;
-		//-->
-		</script>
-		<script type="text/javascript"
-		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-		</script>
-		</div>
-		
-		<h4>Links</h4>
-    	<ul class="list-unstyled">
-    		<li><a href="http://andydunkel.net/da.asc.zip">Andys PGP-Key</a></li>
-    		<li><a href="https://github.com/andydunkel">Me on GitHub</a></li> 	
-    		<li><a href="http://www.linkedin.com/pub/andy-dunkel/85/41a/793">Me on LinkedIn</a></li> 	
-    		<li><a href="http://stackoverflow.com/users/285039/da">Me on StackOverflow</a></li>    			
-    	</ul>
-    	
-    	<h4>Webseiten</h4>
-    	<ul class="list-unstyled">
-    		<li><a href="http://www.ekiwi.de">eKiwi.de</a></li>
-    		<li><a href="http://blog.ekiwi.de">eKiwi.de Blog</a></li>
-    		<li><a href="http://www.da-software.de">DA-Software.de</a></li>    		
-    	</ul>
-    	<h4>Categories</h4>    	
-		<section>
-		<ul id="categories" class="list-unstyled">
-		<li class='category'><a href='/categories/android/'>android (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (16)</a></li>
-<li class='category'><a href='/categories/delphi/'>delphi (1)</a></li>
-<li class='category'><a href='/categories/eclipse/'>eclipse (24)</a></li>
-<li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
-<li class='category'><a href='/categories/gadgets/'>gadgets (23)</a></li>
-<li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
-<li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
-<li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
-<li class='category'><a href='/categories/java/'>java (22)</a></li>
-<li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
-<li class='category'><a href='/categories/kochen/'>kochen (1)</a></li>
-<li class='category'><a href='/categories/linux/'>linux (6)</a></li>
-<li class='category'><a href='/categories/mac/'>mac (3)</a></li>
-<li class='category'><a href='/categories/meinung/'>meinung (2)</a></li>
-<li class='category'><a href='/categories/projects/'>projects (1)</a></li>
-<li class='category'><a href='/categories/radfahren/'>radfahren (27)</a></li>
-<li class='category'><a href='/categories/rcp/'>rcp (1)</a></li>
-<li class='category'><a href='/categories/reparatur/'>reparatur (1)</a></li>
-<li class='category'><a href='/categories/rezepte/'>rezepte (1)</a></li>
-<li class='category'><a href='/categories/science/'>science (3)</a></li>
-<li class='category'><a href='/categories/sonstiges/'>sonstiges (40)</a></li>
-<li class='category'><a href='/categories/swt/'>swt (4)</a></li>
-<li class='category'><a href='/categories/tools/'>tools (20)</a></li>
-<li class='category'><a href='/categories/windows/'>windows (2)</a></li>
-
-		</ul>
-		</section>
-   </div>
 </div>
 
-<h2>Blog Posts</h2>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-1137550895446814";
+/* 468x60, Erstellt 21.03.09 */
+google_ad_slot = "2357680339";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
 
+<hr>
 
-<!-- Pagination links -->
-<div class="pagination">
-  
-    <span class="previous">Previous</span>
-  
-  <span class="page_number ">Page: 1 of 37</span>
-  
-    <a href="/page2" class="next">Next</a>
-  
-</div>
+<script id='fb7sm2s'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//api.flattr.com/button/view/?uid=mengenleere&button=compact&url='+encodeURIComponent(document.URL);f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fb7sm2s');</script>
 
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'andydunkelnet'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
     </div>
     
