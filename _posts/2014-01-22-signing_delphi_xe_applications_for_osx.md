@@ -4,7 +4,7 @@ comments: true
 date: 2014-01-22 17:00:00+00:00
 layout: post
 slug: sign_firemonkey_applications_on_osx
-title: 'Sign Firemonkey Applications on OSX'
+title: 'Signing Firemonkey Applications on OSX'
 categories:
 - Delphi
 - Firemonkey
