@@ -895,6 +895,12 @@
         <lastmod>2014-01-16T21:44:50+01:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://andydunkel.net/delphi/firemonkey/2014/01/22/signing_delphi_xe_applications_for_osx.html
+        </loc>
+        <lastmod>2014-01-22T23:41:32+01:00</lastmod>
+    </url>
+    <url>
         <loc>http://andydunkel.net/about.html</loc>
         <lastmod>2014-01-10T21:46:01+01:00</lastmod>
     </url>
@@ -920,7 +926,7 @@
     </url>
     <url>
         <loc>http://andydunkel.net/</loc>
-        <lastmod>2014-01-16T21:44:50+01:00</lastmod>
+        <lastmod>2014-01-22T23:41:32+01:00</lastmod>
     </url>
     <url>
         <loc>http://andydunkel.net/projects/php-debugging-vm/projects/php-debugging-vm/</loc>
