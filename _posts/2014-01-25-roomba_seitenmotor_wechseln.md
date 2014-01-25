@@ -23,7 +23,7 @@ Der Wechsel geht sehr einfach. Kreuzschraubenzieher, mehr wird nicht benötigt. 
 
 Anschließend löst man noch zwei Schrauben und dann dann den Motor einfach herausnehmen:
 
-![]({{ site.url }}/assets/uploads/2014/01/roomba/roomba_motor1.png)
+![]({{ site.url }}/assets/uploads/2014/01/roomba/roomba_motor2.png)
 
 Neuen Motor einsetzen und alles wieder zuschrauben, das wars auch schon. Schon funktionierte der Roomba wieder.
 
