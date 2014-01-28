@@ -8,7 +8,38 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Sat, 25 Jan 2014 18:00:00 +0100</pubDate>
+    <pubDate>Tue, 28 Jan 2014 18:00:00 +0100</pubDate>
+    <item>
+      <title>Code signing problems with Delphi XE4 Mavericks</title>
+      <link>http://andydunkel.net/delphi/firemonkey/2014/01/28/code_signing_problems_with_delphi_xe4_and_mavericks.html</link>
+      <description>&lt;p&gt;Some days ago I wrote a &lt;a href=&quot;http://andydunkel.net/delphi/firemonkey/2014/01/22/signing_delphi_xe_applications_for_osx.html&quot;&gt;blog post&lt;/a&gt; about signing a Firemonkey application manually with the developer ID.&lt;/p&gt;
+
+&lt;p&gt;For app store applications Delphi automatically runs the code signing procedure for you and creates a PKG file. Handy!&lt;/p&gt;
+
+&lt;p&gt;Since Apples new Mavericks release the code signing has changed a little bit and the command now needs an additional parameter: &lt;code&gt;--deep&lt;/code&gt;. Delphi does not add the parameter, which results in an error building the application:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;[PAClient Error] Error: E0264 Unable to execute &amp;#39;&amp;quot;/usr/bin/
+codesign&amp;quot; --en &amp;quot;/Users/.../daform.app/Contents/Entitlements.plist&amp;quot; 
+-s &amp;quot;Mac Developer&amp;quot; -f &amp;quot;/Users/.../daform.app&amp;quot;&amp;#39; (Error 1)
+
+daform.app code object is not signed at all
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;OK what to do? The first problem is, that you cannot tell Delphi to add the parameter.&lt;/p&gt;
+
+&lt;p&gt;So I created a workaround for that. I wrote a small C++ command line tool, which replaces the original &amp;quot;codesign&amp;quot; program. When launched is parses all the parameters from the call and adds the &lt;code&gt;--deep&lt;/code&gt; option if its not present.&lt;/p&gt;
+
+&lt;p&gt;Then it runs the original &amp;quot;codesign&amp;quot; tool. The project is &lt;a href=&quot;https://github.com/andydunkel/DelphiXE4-Mavericks-Codesign-Helper&quot;&gt;available on Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Installation&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download the &lt;a href=&quot;https://github.com/andydunkel/DelphiXE4-Mavericks-Codesign-Helper/blob/master/codesign?raw=true&quot;&gt;binary&lt;/a&gt; or compile your own version with XCode&lt;/li&gt;
+&lt;li&gt;Rename the original codesign tool in /usr/bin to codesign_original&lt;/li&gt;
+&lt;li&gt;Copy the codesign binary to /usr/bin&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      <pubDate>Tue, 28 Jan 2014 18:00:00 +0100</pubDate>
+      <dc:date>2014-01-28T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Roomba: Motor für die Seitenbürste wechseln</title>
       <link>http://andydunkel.net/reparatur/2014/01/25/roomba_seitenmotor_wechseln.html</link>
@@ -1620,6 +1651,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2014-01-25T18:00:00+01:00</dc:date>
+    <dc:date>2014-01-28T18:00:00+01:00</dc:date>
   </channel>
 </rss>

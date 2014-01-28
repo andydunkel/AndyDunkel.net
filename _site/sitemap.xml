@@ -905,6 +905,12 @@
         <lastmod>2014-01-25T15:07:26+01:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://andydunkel.net/delphi/firemonkey/2014/01/28/code_signing_problems_with_delphi_xe4_and_mavericks.html
+        </loc>
+        <lastmod>2014-01-28T19:06:53+01:00</lastmod>
+    </url>
+    <url>
         <loc>http://andydunkel.net/about.html</loc>
         <lastmod>2014-01-10T21:46:01+01:00</lastmod>
     </url>
@@ -930,7 +936,7 @@
     </url>
     <url>
         <loc>http://andydunkel.net/</loc>
-        <lastmod>2014-01-25T15:07:26+01:00</lastmod>
+        <lastmod>2014-01-28T19:06:53+01:00</lastmod>
     </url>
     <url>
         <loc>http://andydunkel.net/projects/php-debugging-vm/projects/php-debugging-vm/</loc>

@@ -126,6 +126,43 @@
      
 		
 		<h3>
+		  <a href="/delphi/firemonkey/2014/01/28/code_signing_problems_with_delphi_xe4_and_mavericks.html">Code signing problems with Delphi XE4 Mavericks</a>
+		</h3>
+		  <p class="small">Posted on 28 January 2014 by Andy</p>
+		  <p><p>Some days ago I wrote a <a href="http://andydunkel.net/delphi/firemonkey/2014/01/22/signing_delphi_xe_applications_for_osx.html">blog post</a> about signing a Firemonkey application manually with the developer ID.</p>
+
+<p>For app store applications Delphi automatically runs the code signing procedure for you and creates a PKG file. Handy!</p>
+
+<p>Since Apples new Mavericks release the code signing has changed a little bit and the command now needs an additional parameter: <code>--deep</code>. Delphi does not add the parameter, which results in an error building the application:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">[PAClient Error] Error: E0264 Unable to execute &#39;&quot;/usr/bin/
+codesign&quot; --en &quot;/Users/.../daform.app/Contents/Entitlements.plist&quot; 
+-s &quot;Mac Developer&quot; -f &quot;/Users/.../daform.app&quot;&#39; (Error 1)
+
+daform.app code object is not signed at all
+</code></pre></div>
+<p>OK what to do? The first problem is, that you cannot tell Delphi to add the parameter.</p>
+
+<p>So I created a workaround for that. I wrote a small C++ command line tool, which replaces the original &quot;codesign&quot; program. When launched is parses all the parameters from the call and adds the <code>--deep</code> option if its not present.</p>
+
+<p>Then it runs the original &quot;codesign&quot; tool. The project is <a href="https://github.com/andydunkel/DelphiXE4-Mavericks-Codesign-Helper">available on Github</a>.</p>
+
+<h2>Installation</h2>
+
+<ul>
+<li>Download the <a href="https://github.com/andydunkel/DelphiXE4-Mavericks-Codesign-Helper/blob/master/codesign?raw=true">binary</a> or compile your own version with XCode</li>
+<li>Rename the original codesign tool in /usr/bin to codesign_original</li>
+<li>Copy the codesign binary to /usr/bin</li>
+</ul>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/codesigning_app_store/files.png" alt=""></p>
+
+<p>After that Delphi is able to run and build the application with code signing for the app store.</p>
+</p>		
+		  <p class="small">Tagged: XE4, Firemonkey, and OSX by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/reparatur/2014/01/25/roomba_seitenmotor_wechseln.html">Roomba: Motor für die Seitenbürste wechseln</a>
 		</h3>
 		  <p class="small">Posted on 25 January 2014 by Andy</p>
@@ -367,33 +404,6 @@ git checkout -t origin/master
 		  <hr>
 		  
 		
-		<h3>
-		  <a href="/projects/2014/01/10/php-debugging-vm.html">Virtual Machine to debug and develop PHP</a>
-		</h3>
-		  <p class="small">Posted on 10 January 2014 by Andy</p>
-		  <p><p>I used PHP a lot in the past for our websites. I think its not the best programming language, but its simple enough to get things done very quickly. And it runs on the most servers of web hosters.</p>
-
-<p>Today most likely I would choose another language, but I still have to maintain and debug PHP scripts once in a while. </p>
-
-<p>Usually its very painfull, since most of the times I don&#39;t have a running webserver on my local machine. Just makes no sense to have a webserver running all the times. Not to mention a running instance of MySQL.</p>
-
-<p>So I ended up using a simple text editor and uploading the files to my webserver for testing. 
-Of course without debugger thats a very painfull and slow process. I am still puzzled how many PHP developers use <code>echo</code> commands to debug there code.</p>
-
-<p>In the past I used a commercial Zend Studio license. I still have that running on my Mac. However I also wanted a simple solution I can use easily on my Linux notebook.</p>
-
-<p>So I <a href="/projects/php-debugging-vm/index.html">created a virtual machine for PHP debugging</a>. It runs an Apache webserver with, MySQL + phpMyAdmin and Netbeans as IDE. Xdebug is configured in PHP. </p>
-
-<p>I am publishing it here with the hope it might be useful for other:</p>
-
-<p><img src="/projects/php-debugging-vm/vm1_small.png" alt="image"></p>
-
-<p><a href="/projects/php-debugging-vm/index.html">Click here to get to the project page.</a></p>
-</p>		
-		  <p class="small">Tagged: PHP and Projects by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class=".col-md-4">
@@ -437,9 +447,9 @@ Of course without debugger thats a very painfull and slow process. I am still pu
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/android/'>android (1)</a></li>
 <li class='category'><a href='/categories/coding/'>coding (16)</a></li>
-<li class='category'><a href='/categories/delphi/'>delphi (2)</a></li>
+<li class='category'><a href='/categories/delphi/'>delphi (3)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (24)</a></li>
-<li class='category'><a href='/categories/firemonkey/'>firemonkey (1)</a></li>
+<li class='category'><a href='/categories/firemonkey/'>firemonkey (2)</a></li>
 <li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
 <li class='category'><a href='/categories/gadgets/'>gadgets (23)</a></li>
 <li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
@@ -475,7 +485,7 @@ Of course without debugger thats a very painfull and slow process. I am still pu
   
     <span class="previous">Previous</span>
   
-  <span class="page_number ">Page: 1 of 37</span>
+  <span class="page_number ">Page: 1 of 38</span>
   
     <a href="/page2" class="next">Next</a>
   
