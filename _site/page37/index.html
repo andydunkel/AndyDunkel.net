@@ -164,15 +164,12 @@ Aufgezeichnet am: Fr. Mai 13 15:22:25 MESZ 201</p>
 		</h3>
 		  <p class="small">Posted on 12 May 2011 by Andy</p>
 		  <p><p>The following snippet sets the title for a JFace dialog:</p>
-
-<blockquote>
-<p>@Override
+<div class="highlight"><pre><code class="text language-text" data-lang="text">@Override
 protected void configureShell(Shell shell) {
-super.configureShell(shell);
-shell.setText(&quot;My Dialog Title&quot;);
-}</p>
-</blockquote>
-
+    super.configureShell(shell);
+    shell.setText(&quot;My Dialog Title&quot;);
+}
+</code></pre></div>
 <p>However the following error might occur:</p>
 
 <p><a href="http://andydunkel.net/assets/uploads/2011/05/image1.png"><img src="http://andydunkel.net/assets/uploads/2011/05/image_thumb1.png" alt="image"></a></p>
