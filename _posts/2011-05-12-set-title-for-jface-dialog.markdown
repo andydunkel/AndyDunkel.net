@@ -17,11 +17,11 @@ tags:
 The following snippet sets the title for a JFace dialog:
 
 
-> @Override
-protected void configureShell(Shell shell) {
-super.configureShell(shell);
-shell.setText("My Dialog Title");
-}
+	@Override
+	protected void configureShell(Shell shell) {
+		super.configureShell(shell);
+		shell.setText("My Dialog Title");
+	}
 
 
 However the following error might occur:
