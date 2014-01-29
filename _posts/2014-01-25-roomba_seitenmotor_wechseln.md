@@ -30,3 +30,12 @@ Neuen Motor einsetzen und alles wieder zuschrauben, das wars auch schon. Schon f
 Hier gibt es die Anleitung auch als Video:
 
 <iframe width="640" height="360" src="//www.youtube.com/embed/PAw2A-MawK0" frameborder="0" allowfullscreen></iframe>
+
+
+## Nachtrag ##
+
+Ich habe jetzt noch das defekte Seitenmodul zerlegt:
+
+![]({{ site.url }}/assets/uploads/2014/01/roomba/roomba_motor3.png)
+
+Theoretisch könnte man das Modul vielleicht kostengünstiger ersetzen, wenn man an den entsprechenden Motor kommen würde. Auf dem Motor, von S.M.C. Motors, steht eine Art Typennummer: "RC500-KW/14440/DV". Leider habe ich bei Google nicht wirklich etwas gefunden.
