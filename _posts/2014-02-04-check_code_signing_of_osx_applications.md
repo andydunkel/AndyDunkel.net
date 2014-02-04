@@ -1,7 +1,7 @@
 ---
 author: admin
 comments: true
-date: 2014-01-28 17:00:00+00:00
+date: 2014-02-04 17:00:00+00:00
 layout: post
 slug: check_code_signing_of_applications_on_osx
 title: 'Check code signing of applications on OSX'

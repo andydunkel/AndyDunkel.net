@@ -906,15 +906,15 @@
     </url>
     <url>
         <loc>
-            http://andydunkel.net/coding/tools/2014/01/28/check_code_signing_of_osx_applications.html
-        </loc>
-        <lastmod>2014-02-04T19:49:43+01:00</lastmod>
-    </url>
-    <url>
-        <loc>
             http://andydunkel.net/delphi/firemonkey/2014/01/28/code_signing_problems_with_delphi_xe4_and_mavericks.html
         </loc>
         <lastmod>2014-02-02T14:49:27+01:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://andydunkel.net/coding/tools/2014/02/04/check_code_signing_of_osx_applications.html
+        </loc>
+        <lastmod>2014-02-04T19:51:40+01:00</lastmod>
     </url>
     <url>
         <loc>http://andydunkel.net/about.html</loc>
@@ -942,7 +942,7 @@
     </url>
     <url>
         <loc>http://andydunkel.net/</loc>
-        <lastmod>2014-02-04T19:49:43+01:00</lastmod>
+        <lastmod>2014-02-04T19:51:40+01:00</lastmod>
     </url>
     <url>
         <loc>http://andydunkel.net/projects/php-debugging-vm/projects/php-debugging-vm/</loc>

@@ -8,7 +8,15 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Tue, 28 Jan 2014 18:00:00 +0100</pubDate>
+    <pubDate>Tue, 04 Feb 2014 18:00:00 +0100</pubDate>
+    <item>
+      <title>Check code signing of applications on OSX</title>
+      <link>http://andydunkel.net/coding/tools/2014/02/04/check_code_signing_of_osx_applications.html</link>
+      <description>&lt;p&gt;The last days I was busy signing my Delphi applications on my Mac. One version was signed with my Developer ID, the other one with the third party developer ID for the Mac App Store.&lt;/p&gt;
+</description>
+      <pubDate>Tue, 04 Feb 2014 18:00:00 +0100</pubDate>
+      <dc:date>2014-02-04T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Code signing problems with Delphi XE4 Mavericks</title>
       <link>http://andydunkel.net/delphi/firemonkey/2014/01/28/code_signing_problems_with_delphi_xe4_and_mavericks.html</link>
@@ -36,14 +44,6 @@ daform.app code object is not signed at all
 &lt;li&gt;Rename the original codesign tool in /usr/bin to codesign_original&lt;/li&gt;
 &lt;li&gt;Copy the codesign binary to /usr/bin&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-      <pubDate>Tue, 28 Jan 2014 18:00:00 +0100</pubDate>
-      <dc:date>2014-01-28T18:00:00+01:00</dc:date>
-    </item>
-    <item>
-      <title>Check code signing of applications on OSX</title>
-      <link>http://andydunkel.net/coding/tools/2014/01/28/check_code_signing_of_osx_applications.html</link>
-      <description>&lt;p&gt;The last days I was busy signing my Delphi applications on my Mac. One version was signed with my Developer ID, the other one with the third party developer ID for the Mac App Store.&lt;/p&gt;
 </description>
       <pubDate>Tue, 28 Jan 2014 18:00:00 +0100</pubDate>
       <dc:date>2014-01-28T18:00:00+01:00</dc:date>
@@ -1659,6 +1659,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2014-01-28T18:00:00+01:00</dc:date>
+    <dc:date>2014-02-04T18:00:00+01:00</dc:date>
   </channel>
 </rss>
