@@ -163,6 +163,33 @@ daform.app code object is not signed at all
 		  
 		
 		<h3>
+		  <a href="/coding/tools/2014/01/28/check_code_signing_of_osx_applications.html">Check code signing of applications on OSX</a>
+		</h3>
+		  <p class="small">Posted on 28 January 2014 by Andy</p>
+		  <p><p>The last days I was busy signing my Delphi applications on my Mac. One version was signed with my Developer ID, the other one with the third party developer ID for the Mac App Store.</p>
+
+<p>Maybe its all very easy if you use XCode for that, but I had my issues with Delphi, where I had to do many steps manually on the command line.</p>
+
+<p>After the signing you usually want to check if the signature of the application is correct.</p>
+
+<p>You can of course do that on the command line (if you have XCode installed):</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">codesign -dv /Applications/Awesome.app
+</code></pre></div>
+<p>but I also found a tool with a neat GUI: <a href="http://brockerhoff.net/RB/AppCheckerLite/">RB App Checker</a>.  </p>
+
+<p>Its available for free on the <a href="https://itunes.apple.com/us/app/rb-app-checker-lite/id519421117?mt=12">Mac App Store</a>. </p>
+
+<p>You just drag and drop the application on the tool and it shows you very detailed information of the signature.</p>
+
+<p>It also checks entitlements, application receipts and requirements.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/02/rbappchecker/1.png" alt=""></p>
+</p>		
+		  <p class="small">Tagged: Code Signing and OSX by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/reparatur/2014/01/25/roomba_seitenmotor_wechseln.html">Roomba: Motor für die Seitenbürste wechseln</a>
 		</h3>
 		  <p class="small">Posted on 25 January 2014 by Andy</p>
@@ -396,22 +423,6 @@ loadFile(Branding.getInstance().getFile());
 		  <hr>
 		  
 		
-		<h3>
-		  <a href="/coding/tools/2014/01/14/checkout_git_repository_into_existing_folder.html">Checkout GIT repository into existing folder</a>
-		</h3>
-		  <p class="small">Posted on 14 January 2014 by Andy</p>
-		  <p><p>I usually create my project first, tinker around and then at some point I want to use version control, like GIT. So I create the repository and want to check it out and merge it with my existing project folder.</p>
-
-<p>This can be done with the following commands:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">git init
-git remote add origin PATH_TO_REPOSITORY
-git fetch
-git checkout -t origin/master
-</code></pre></div></p>		
-		  <p class="small">Tagged: GIT by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class=".col-md-4">
@@ -454,7 +465,7 @@ git checkout -t origin/master
 		<section>
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/android/'>android (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (16)</a></li>
+<li class='category'><a href='/categories/coding/'>coding (17)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (3)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (24)</a></li>
 <li class='category'><a href='/categories/firemonkey/'>firemonkey (2)</a></li>
@@ -477,7 +488,7 @@ git checkout -t origin/master
 <li class='category'><a href='/categories/science/'>science (3)</a></li>
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (40)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
-<li class='category'><a href='/categories/tools/'>tools (20)</a></li>
+<li class='category'><a href='/categories/tools/'>tools (21)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (2)</a></li>
 
 		</ul>
