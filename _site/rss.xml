@@ -8,7 +8,108 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Tue, 04 Feb 2014 18:00:00 +0100</pubDate>
+    <pubDate>Tue, 11 Feb 2014 18:00:00 +0100</pubDate>
+    <item>
+      <title>VPN für mobile Geräte auf dem Raspberry PI einrichten</title>
+      <link>http://andydunkel.net/raspberry/linux/2014/02/11/raspberry_pi_als_vpn_server_einrichten.html</link>
+      <description>&lt;p&gt;Ich hatte schon eine Weile mal vor, mir einen VPN-Server auf dem Raspberry Pi einzurichten. Zum einen will ich von unterwegs in irgendwelchen WLANs nicht unverschlüsselt kommunizieren und zum Anderen wird bei mobilen Internettarifen gern der ein oder andere Dienst blockiert. So funktioniert bei Congstar kein VOIP mit Skype. Richtet man hingegen ein VPN ein, funktioniert es, da der Anbieter nicht mehr in die Kommunikation reinschauen kann.&lt;/p&gt;
+
+&lt;p&gt;Bisher hatte ich den Dienst &lt;a href=&quot;http://www.swissvpn.net/&quot;&gt;SwissVPN&lt;/a&gt; benutzt. Wer öfter unterwegs ist und regelmäßig einen VPN-Dienst benötigt fährt mit so einem Dienst besser, beim Home-VPN ist der Upload vom DSL ein limitierender Faktor. Außerdem geht damit Youtube. :-) Da ich geizig bin, will ich mir das Geld aber sparen und mein VPN-Server selbst betreiben.&lt;/p&gt;
+
+&lt;p&gt;Also los geht es: Wir gehen davon aus, dass auf dem RPI bereits ein Linux installiert ist, z.B. Raspbian. &lt;a href=&quot;http://blog.ekiwi.de/?p=1757&quot;&gt;Hier gibt es eine gute Anleitung&lt;/a&gt; für die erste Einrichtung.&lt;/p&gt;
+
+&lt;h2&gt;PPTP&lt;/h2&gt;
+
+&lt;p&gt;Als VPN verwenden wir &lt;a href=&quot;http://de.wikipedia.org/wiki/PPTP&quot;&gt;PPTP&lt;/a&gt;. Dieses wird praktischerweise auf dem iPhone, iPad und Co direkt unterstützt.&lt;/p&gt;
+
+&lt;h2&gt;Updates&lt;/h2&gt;
+
+&lt;p&gt;Zuerst updaten wir mal die Software auf unserem RPI:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo apt-get update
+sudo apt-get upgrade
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Das kann je nach Stand der Software eine Weile dauern.&lt;/p&gt;
+
+&lt;h2&gt;Installation und Konfiguration&lt;/h2&gt;
+
+&lt;p&gt;Die PPTP-Software installieren wir mit:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo apt-get install pptdp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Anschließend bearbeiten wir die Config mit Nano:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo nano /etc/pptdp.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Man kann alternativ auch VIM verwenden. Im Nano-Editor speichern wir mit STRG+X und anschließend Y.&lt;/p&gt;
+
+&lt;p&gt;In der &amp;quot;pptdp.conf&amp;quot; Datei tragen wir die lokale IP des Raspberry ein:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;localip 192.168.1.5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Außerdem die Remote-IP-Adressen. Diese werden unseren VPN-Clients zugeteilt. Hier vergibt man einen Adressbereich, je nachdem wieviele Geräte man plant zu nutzen:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;remoteip 192.168.1.234-238
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Nach dem Speichern, konfigurieren wir jetzt die Optionen von PPTDP:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo nano /etc/ppp/pptpd-options
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Am Ender Datei tragen wir folgende Zeilen ein:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;ms-dns 192.168.1.1
+noipx
+mtu 1490
+mru 1490
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Nach &amp;quot;ms-dns&amp;quot; muss ein gültiger DNS-Server eingetragen werden. In den meisten Fällen verwendet man hier die Adresse seines Routers oder man trägt einen &lt;a href=&quot;http://www.ccc.de/de/censorship/dns-howto&quot;&gt;öffentlichen DNS-Server&lt;/a&gt; ein.&lt;/p&gt;
+
+&lt;h3&gt;Benutzer hinzufügen&lt;/h3&gt;
+
+&lt;p&gt;Nun noch die VPN-Benutzer hinzufügen; dazu bearbeiten wir die folgende Datei:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo nano /etc/ppp/chap-secrets
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Das Anlegen von Benutzern ist sehr einfach:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;Benutzername[TAB]*[TAB]Passwort[Tab]*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Beispiel:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;Andy    *   GeheimesPasswort    *
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Nach dem Bearbeiten muss der PPTP-Server neu gestartet werden:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo service pptpd restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Sonstige Konfiguration&lt;/h2&gt;
+
+&lt;p&gt;Wir wollen nicht nur auf den RPI zugreifen, sondern auch auf das Internet und sonstige Resourcen. Das richten wir jetzt ein:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo nano /etc/sysctl.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Hier tragen wir die folgende Zeile ein:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;net.ipv4.ip_forward=1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Die Änderung übernehmen wir mit:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo sysctl -p
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Firewall konfigurieren&lt;/h3&gt;
+
+&lt;p&gt;Zuletzt aktualisieren wir noch die Firewall des RPI:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bei mir kam an der Stelle die Fehlermeldung &lt;code&gt;iptables: Table does not exist (do you need to insmod?)&lt;/code&gt;. Ein Neustart des RPI nach den Updates, vom Anfang, schaffte hier  Abhilfe. Wichtig: Dieser Befehl muss nach jedem Start des RPI neu ausgeführt werden. Also am Besten gleich einen Cronjob einrichten:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo crontab -e
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Am Ende fügen wir die folgende Zeile ein:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;@reboot sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Speichern und fertig.&lt;/p&gt;
+
+&lt;h3&gt;Portforwarding auf dem Router aktivieren&lt;/h3&gt;
+
+&lt;p&gt;PPTP verwendet den Port 1723. Damit der RPI Anfragen auf diesem Port entgegen nehmen kann, muss dieser vom Router weitergeleitet werden. Dazu loggen wir uns auf unserem Router ein und konfigurieren die Weiterleitung.&lt;/p&gt;
+
+&lt;p&gt;Hier für eine FritzBox:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;%7B%7B%20site.url%20%7D%7D/assets/uploads/2014/02/vpn/vpn2.png&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
+
+&lt;h3&gt;Einrichten auf dem iPhone&lt;/h3&gt;
+
+&lt;p&gt;Die Einrichtung auf dem iPhone und anderen Geräten ist einfach. Zuerst gehen wir in die VPN-Einstellungen und legt ein neues VPN-Profil an:&lt;/p&gt;
+</description>
+      <pubDate>Tue, 11 Feb 2014 18:00:00 +0100</pubDate>
+      <dc:date>2014-02-11T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Check code signing of applications on OSX</title>
       <link>http://andydunkel.net/coding/tools/2014/02/04/check_code_signing_of_osx_applications.html</link>
@@ -1659,6 +1760,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2014-02-04T18:00:00+01:00</dc:date>
+    <dc:date>2014-02-11T18:00:00+01:00</dc:date>
   </channel>
 </rss>
