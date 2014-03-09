@@ -13,4 +13,6 @@ Diese Seite wird betrieben von:
 
 E-Mail: andy.dunkel@ekiwi.de
 
+Telefon: +49 176 93748280
+
 Steuernummer: 0125/156/50200

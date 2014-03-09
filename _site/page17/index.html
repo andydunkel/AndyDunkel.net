@@ -111,6 +111,42 @@
      
 		
 		<h3>
+		  <a href="/eclipse/swt/2011/11/23/suppress-eclipse-default-key-bindings-in-rcp-application.html">Suppress Eclipse default key bindings in RCP application</a>
+		</h3>
+		  <p class="small">Posted on 23 November 2011 by Andy</p>
+		  <p><p>In my current project, the default key bindings from Eclipse where active. When I hit CTRL + N (CMD +N on a MAC) for a new file the “New Wizard” showed up. I defined my own key bindings, but the Eclipse key bindings seemed to overrule them. <img src="http://andydunkel.net/assets/uploads/2011/11/wlEmoticon-sadsmile.png" alt="Trauriges Smiley"></p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/11/image2.png" alt="image"></p>
+
+<p>Not what I had in mind. And who knows what other key bindings are waiting in the background, just showing up and scaring my customers.</p>
+
+<p>But how to get rid of these?</p>
+
+<p>In your plugin XML, add a new extension point, enter id and name:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/11/image3.png" alt="image"></p>
+
+<p>Next step, create a “plugin_customization.ini” file in the directory where your plugin.xml file is, with the following content:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/11/image4.png" alt="image"></p>
+
+<p>Now we need to create a product that uses this ini file:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/11/image5.png" alt="image"></p>
+
+<p>*<em>Warning: *</em>After the product was created, the ini file was a little bit mixed up, because Eclipse added 2 lines. So correct the file if needed, otherwise the key bindings will not work.</p>
+
+<p>Now start your product, the key bindings should be correct now:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/11/image6.png" alt="image"></p>
+
+<p>If not, clear the workspace of your application first.</p>
+</p>		
+		  <p class="small">Tagged: bindings, Eclipse, Key, and overwrite by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/2011/11/13/hngematte.html">Hängematte</a>
 		</h3>
 		  <p class="small">Posted on 13 November 2011 by Andy</p>
@@ -216,22 +252,6 @@
 		  <hr>
 		  
 		
-		<h3>
-		  <a href="/2011/11/01/ece-2011.html">ECE 2011</a>
-		</h3>
-		  <p class="small">Posted on 01 November 2011 by Andy</p>
-		  <p><p>Morgen startet die <a href="http://eclipsecon.org/">EclipseCON</a> 2011 in Ludwigsburg.</p>
-
-<p>Freuen wir uns also auf spannende Vorträge, leckere Soßen, “<a href="http://en.wikipedia.org/wiki/Birds_of_a_Feather_(computing">Birds of a feather</a>)” Sessions, die local Band “Cool Down” und Bier.</p>
-
-<p>Für iPad und iPhone gibt es wieder <a href="http://itunes.apple.com/de/app/eclipsecon-2011-hd-europe/id471727611?mt=8">eine App</a> mit allen Vortragsinfos und Zeitplan.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/11/image.png" alt="image"></p>
-</p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">
@@ -275,9 +295,9 @@
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/android/'>android (1)</a></li>
 <li class='category'><a href='/categories/coding/'>coding (17)</a></li>
-<li class='category'><a href='/categories/delphi/'>delphi (3)</a></li>
+<li class='category'><a href='/categories/delphi/'>delphi (4)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (24)</a></li>
-<li class='category'><a href='/categories/firemonkey/'>firemonkey (2)</a></li>
+<li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
 <li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
 <li class='category'><a href='/categories/gadgets/'>gadgets (23)</a></li>
 <li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
