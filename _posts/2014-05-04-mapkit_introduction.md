@@ -161,6 +161,6 @@ The method gets called everytime the user position gets updated. It calculates t
 
 ## The end
 
-Well thats it for some quickstart with MapKit. You can download the source code of the [example here](http://andydunkel.net/assets/uploads/2014/05/MapKitExample.zip).
+Well thats it for some quickstart with MapKit. You can download the source code of the [example here](http://andydunkel.net/assets/uploads/2014/05/mapkit/MapKitExample.zip).
 
 
