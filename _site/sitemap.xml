@@ -933,6 +933,12 @@
         <lastmod>2014-04-18T21:53:49+02:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://andydunkel.net/objectivec/coding/xcode/2014/05/04/mapkit_introduction.html
+        </loc>
+        <lastmod>2014-05-04T14:48:14+02:00</lastmod>
+    </url>
+    <url>
         <loc>http://andydunkel.net/about.html</loc>
         <lastmod>2014-03-01T16:50:52+01:00</lastmod>
     </url>
@@ -958,7 +964,7 @@
     </url>
     <url>
         <loc>http://andydunkel.net/</loc>
-        <lastmod>2014-04-18T21:53:49+02:00</lastmod>
+        <lastmod>2014-05-04T14:48:14+02:00</lastmod>
     </url>
     <url>
         <loc>http://andydunkel.net/projects/php-debugging-vm/projects/php-debugging-vm/</loc>
