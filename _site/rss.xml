@@ -8,7 +8,15 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Sat, 24 May 2014 19:00:00 +0200</pubDate>
+    <pubDate>Mon, 07 Jul 2014 19:00:00 +0200</pubDate>
+    <item>
+      <title>Dokumentation: We the tiny house people</title>
+      <link>http://andydunkel.net/minimalismus/2014/07/07/we_the_tiny_house_people.html</link>
+      <description>&lt;p&gt;Eher durch Zufall bin ich über einen Podcast auf die Dokumentation &amp;quot;&lt;a href=&quot;https://www.youtube.com/watch?v=lDcVrVA4bSQ&quot;&gt;We the tiny house people&lt;/a&gt;&amp;quot; gestoßen. Die &amp;quot;Tiny House&amp;quot; Bewegung kommt ursprünglich aus den USA und findet anscheinend weltweit einige Anhänger. &lt;/p&gt;
+</description>
+      <pubDate>Mon, 07 Jul 2014 19:00:00 +0200</pubDate>
+      <dc:date>2014-07-07T19:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>Introduction to the common navigator framework</title>
       <link>http://andydunkel.net/eclipse/rcp/2014/05/24/introduction_to_cnf.html</link>
@@ -1793,6 +1801,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2014-05-24T19:00:00+02:00</dc:date>
+    <dc:date>2014-07-07T19:00:00+02:00</dc:date>
   </channel>
 </rss>
