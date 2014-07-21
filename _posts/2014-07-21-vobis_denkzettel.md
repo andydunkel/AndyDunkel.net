@@ -6,7 +6,6 @@ layout: post
 slug: we_the_tiny_house_people
 title: 'Vobis - Denkzettel von 1991'
 categories:
-- Minimalismus
 - Sonstiges
 tags:
 - Computer
