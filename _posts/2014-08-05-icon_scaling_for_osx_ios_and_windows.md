@@ -4,7 +4,7 @@ comments: true
 date: 2014-08-05 17:00:00+00:00
 layout: post
 slug: icon_scaling_for_osx_ios_android_and_windows
-title: 'Vobis - Denkzettel von 1991'
+title: 'Icon scaling tool for OSX, IOS, Android and Windows'
 categories:
 - Coding
 tags:
