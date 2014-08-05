@@ -948,7 +948,13 @@
     </url>
     <url>
         <loc>http://andydunkel.net/sonstiges/2014/07/21/vobis_denkzettel.html</loc>
-        <lastmod>2014-07-21T20:26:04+02:00</lastmod>
+        <lastmod>2014-08-05T21:18:56+02:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://andydunkel.net/coding/2014/08/05/icon_scaling_for_osx_ios_and_windows.html
+        </loc>
+        <lastmod>2014-08-05T21:34:40+02:00</lastmod>
     </url>
     <url>
         <loc>http://andydunkel.net/about.html</loc>
@@ -976,7 +982,7 @@
     </url>
     <url>
         <loc>http://andydunkel.net/</loc>
-        <lastmod>2014-07-21T20:26:04+02:00</lastmod>
+        <lastmod>2014-08-05T21:34:40+02:00</lastmod>
     </url>
     <url>
         <loc>http://andydunkel.net/projects/php-debugging-vm/projects/php-debugging-vm/</loc>

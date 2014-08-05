@@ -111,6 +111,28 @@
      
 		
 		<h3>
+		  <a href="/eclipse/java/2011/09/27/java-open-an-url-in-the-standard-browser.html">Java: Open an URL in the standard browser</a>
+		</h3>
+		  <p class="small">Posted on 27 September 2011 by Andy</p>
+		  <p><p>Here is short code snippet to open an URL with the systems standard browser:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">public void openUrl(String url) throws IOException, URISyntaxException {
+  if(java.awt.Desktop.isDesktopSupported() ) {
+        java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+
+        if(desktop.isSupported(java.awt.Desktop.Action.BROWSE) ) {
+          java.net.URI uri = new java.net.URI(url);
+              desktop.browse(uri);
+        }
+      } 
+}
+</code></pre></div>
+<p>java.awt.Desktop is supported as of Java 6.</p>
+</p>		
+		  <p class="small">Tagged: brower, open, standard, and system by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/radfahren/2011/09/18/viehscheid-bad-hindelang-radtour-zur-kseralm.html">Viehscheid Bad Hindelang / Radtour zur Käseralpe</a>
 		</h3>
 		  <p class="small">Posted on 18 September 2011 by Andy</p>
@@ -178,16 +200,6 @@ if(window instanceof WorkbenchWindow) {
 		  <hr>
 		  
 		
-		<h3>
-		  <a href="/sonstiges/2011/09/13/pause-2.html">Pause</a>
-		</h3>
-		  <p class="small">Posted on 13 September 2011 by Andy</p>
-		  <p><p><img src="http://andydunkel.net/assets/uploads/2011/09/image7.png" alt="image"></p>
-</p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -228,7 +240,7 @@ if(window instanceof WorkbenchWindow) {
 		<section>
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/android/'>android (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (18)</a></li>
+<li class='category'><a href='/categories/coding/'>coding (19)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (4)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (25)</a></li>
 <li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>

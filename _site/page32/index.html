@@ -111,6 +111,36 @@
      
 		
 		<h3>
+		  <a href="/gadgets/2011/07/02/web-albums-fr-das-ipad-zugriff-auf-picasa.html">Web Albums für das iPad: Zugriff auf Picasa</a>
+		</h3>
+		  <p class="small">Posted on 02 July 2011 by Andy</p>
+		  <p><p>Kleine App-Vorstellung für das iPad. Wie ich bereits schrub, liegen meine Fotos allesamt bei Picasa im Internet. Zugriff von überall mit dem Browser möglich, Backup etc.</p>
+
+<p>Ganz überzeugt mich die Weboberfläche aber nicht, besonders beim Anschauen der Bilder. Da ist z.B. keine Vollbildanzeige möglich. Gerade das iPad ist für das Anschauen von Bildern geeignet, also entweder die Weboberfläche von Picasa nutzen oder die Bilder mittels iTunes synchronisieren (umständlich). Beides nicht ideal.</p>
+
+<p>Abhilfe schafft die App “<a href="http://itunes.apple.com/de/app/web-albums-for-ipad-a-picasa/id364824944?mt=8">Web Albums for iPad</a>”. Kostet 2,39 Euro, ist sein Geld aber wert. Nachdem man sein Picasa Account eingetragen hat sieht man sofort seine Alben:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/07/image.png" alt="image"></p>
+
+<p>Wie geht’s weiter?  </p>
+
+<!-- more -->
+
+<p>Ein Klick/Touch auf das Album öffnet dieses, die Bilder werden dann als Thumbnails angezeigt. Ein weiterer Klick und schon wird das Bild Vollbild angezeigt.</p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2011/07/image1.png"><img src="http://andydunkel.net/assets/uploads/2011/07/image_thumb.png" alt="image"></a></p>
+
+<p>Mit Klick auf den Play-Button startet das ganze als Vollbild-Slideshow. Durch Wischen kann man durch die Bilder navigieren. Über WLAN ist das ganze auch recht flott. Die Bilder werden im Hintergrund schon mal vorgeladen.</p>
+
+<p>Nachteil ist natürlich wie bei allen Cloud-Diensten. Funktioniert nur, wenn man Internetverbindung hat.</p>
+
+<p>Was gibt’s sonst noch? Facebook kann man einbinden, Bilder hochladen und verwalten. Kommentieren etc… eine genaue Funktionsbeschreibung findet man im <a href="http://itunes.apple.com/de/app/web-albums-for-ipad-a-picasa/id364824944?mt=8#">AppStore</a>.</p>
+</p>		
+		  <p class="small">Tagged: ipad, Picasa, Web Albums, WLAN, and Zugriff by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/sonstiges/tools/2011/07/01/picasa-mp4-dateien-werden-nicht-importiert-2.html">Picasa - MP4 Dateien werden nicht importiert</a>
 		</h3>
 		  <p class="small">Posted on 01 July 2011 by Andy</p>
@@ -209,51 +239,6 @@ Minimale Steigung: -17 %</p>
 		  <hr>
 		  
 		
-		<h3>
-		  <a href="/coding/2011/06/27/cread-stdout-from-a-console-application.html">C#–Read STDOUT from a console application</a>
-		</h3>
-		  <p class="small">Posted on 27 June 2011 by Andy</p>
-		  <p><p>Recently I needed to start a console application from C#, wait until the execution has finished and read the output back. Here is a simple way this can be done.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/06/image9.png" alt="image"></p>
-
-<p>The first thing is to run the process and attach an EventHandler for the finish of the process:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">Process process = new Process();
-process.StartInfo.FileName = @&quot;ping.exe&quot;;
-process.StartInfo.Arguments = @&quot;www.ekiwi.de&quot;;
-process.StartInfo.CreateNoWindow = true;
-process.StartInfo.UseShellExecute = false;
-process.StartInfo.RedirectStandardOutput = true;
-process.StartInfo.RedirectStandardInput = true;
-process.StartInfo.RedirectStandardError = true;
-
-process.EnableRaisingEvents = true;
-process.Exited += processHasFinished;
-process.Start();
-</code></pre></div>
-<!-- more -->
-
-<p>Now we have to write the EventHandler, in the handler we have to use the “Invoke” command to execute the setting of the text in the GUI thread:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">private void processHasFinished(object sender, EventArgs e)
-{
-    var process = (Process)sender;
-    String output = process.StandardOutput.ReadToEnd();
-    textOut.Invoke(new UpdateTextCallback(this.UpdateText),  output);
-}
-
-public delegate void UpdateTextCallback(string text);
-
-private void UpdateText(string text)
-{
-    textOut.Text = text;
-}
-</code></pre></div>
-<p>That’s it!</p>
-</p>		
-		  <p class="small">Tagged: C#, Console, Data, read, and StdOut by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -294,7 +279,7 @@ private void UpdateText(string text)
 		<section>
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/android/'>android (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (18)</a></li>
+<li class='category'><a href='/categories/coding/'>coding (19)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (4)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (25)</a></li>
 <li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>

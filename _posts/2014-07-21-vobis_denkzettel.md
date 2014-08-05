@@ -3,7 +3,7 @@ author: admin
 comments: true
 date: 2014-07-21 17:00:00+00:00
 layout: post
-slug: we_the_tiny_house_people
+slug: vobis_denkzettel_von_1991
 title: 'Vobis - Denkzettel von 1991'
 categories:
 - Sonstiges
