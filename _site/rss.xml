@@ -8,7 +8,15 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Tue, 05 Aug 2014 19:00:00 +0200</pubDate>
+    <pubDate>Fri, 29 Aug 2014 19:00:00 +0200</pubDate>
+    <item>
+      <title>Backup of an SD card on OSX</title>
+      <link>http://andydunkel.net/raspberry/2014/08/29/backup_sd_card_of_your_rpi.html</link>
+      <description>&lt;p&gt;I own a RaspberryPi which I mainly use for &lt;a href=&quot;https://owncloud.org/&quot;&gt;Owncloud&lt;/a&gt; and &lt;a href=&quot;http://seafile.com&quot;&gt;Seafile&lt;/a&gt; as my personal Cloud-Storage. One of my concern is the backup. Lets face it, its a cheap device and it holds all its data on a cheap SD-Card.&lt;/p&gt;
+</description>
+      <pubDate>Fri, 29 Aug 2014 19:00:00 +0200</pubDate>
+      <dc:date>2014-08-29T19:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>Icon scaling tool for OSX, IOS, Android and Windows</title>
       <link>http://andydunkel.net/coding/2014/08/05/icon_scaling_for_osx_ios_and_windows.html</link>
@@ -1817,6 +1825,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2014-08-05T19:00:00+02:00</dc:date>
+    <dc:date>2014-08-29T19:00:00+02:00</dc:date>
   </channel>
 </rss>
