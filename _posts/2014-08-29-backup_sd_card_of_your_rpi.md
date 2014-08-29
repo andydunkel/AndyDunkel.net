@@ -18,9 +18,9 @@ In the past I was using a backup script which backups all the data and puts it i
 
 So I my idea was to buy another RPI and SD card and make an image of the original one every week. If the card in the RPI fails, I just have to plug in the backup card. 
 
-# Creating the image
+## Creating the image
 
-## Windows
+### Windows
 
 On Windows the easiest way to do a complete backup/image of your SD card is the "Win 32 Disk Imager" tool. Its free and you can [download it here](http://sourceforge.net/projects/win32diskimager/).
 
@@ -35,7 +35,7 @@ The restore is also very simple. Insert the new SD card, select the drive number
 **Done!**
 
 
-## OSX and Linux
+### OSX and Linux
 
 On OSX creating an image of the SD card is also very simple. Just open the "Disk Utility", select the SD card on the left and click "New Image". The system prompts you for a location of the image.
 
@@ -59,7 +59,7 @@ You can find the correct device by looking for a Linux partition.
 
 Note: There is no output of the DD command during the process. Also the image has the same size as the original SD card. So it makes sense to compress the image with ZIP or GZIP.
 
-### Restore
+#### Restore
 
 The restore is similar:
 
