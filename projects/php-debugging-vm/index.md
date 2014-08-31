@@ -43,8 +43,6 @@ Start Firefox for more information and help.
 
 ![image](vm1.png)
 
-![image](vm1.png)
+![image](vm2.png)
 
-![image](vm1.png)
-
-![image](vm1.png)
+![image](vm3.png)
