@@ -111,6 +111,71 @@
      
 		
 		<h3>
+		  <a href="/java/2011/09/07/org-eclipse-swt-swterror-no-more-handles.html">org.eclipse.swt.SWTError: No more handles</a>
+		</h3>
+		  <p class="small">Posted on 07 September 2011 by Andy</p>
+		  <p><p>In our current project we came across the following error, when we opened multiple of our editors in a RCP application: </p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/09/image5.png" alt="image"></p>
+
+<p>Never seen this one before. Most sources in the internet mentioned something about “not disposing SWT resources”. However this happened when we opened the editor. So a “not disposed” problem was very unlikely.</p>
+
+<p>Strange enough, all other applications in the system started to behave strange. No new windows could be opened, the clipboard stopped working …</p>
+
+<p>Well, what&#39;s the problem then? </p>
+
+<p>Simple enough, the only bad thing we did was creating too much controls in our editors. We have a “MultiPageEditor” in Eclipse with a lot of controls in it for configuring servo drives.</p>
+
+<p>Each control in Windows uses a handle. Windows XP can manage 10000 user handles for each process and total 32000 for each desktop. </p>
+
+<p>Each of our editors added about 1100 handles to the list. After opening 4-5 editors on my machine, the exception occurred.</p>
+
+<p>Here is some sample code to reproduce the problem, it just creates 10.000 buttons:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.RowLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+
+public class SWTHandleTest {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        Display display = new Display();
+        Shell shell = new Shell(display);
+        shell.setSize(300, 200);
+        shell.setText(&quot;Button Example&quot;);
+        shell.setLayout(new RowLayout());
+
+        for (int i = 0; i &lt; 10000; i++) {
+            Button button = new Button(shell, SWT.PUSH);
+            button.setText(&quot;www.eKiwi.de&quot;);
+        }
+
+        shell.open();
+        while (!shell.isDisposed()) {
+            if (!display.readAndDispatch())
+                display.sleep();
+        }
+        display.dispose();
+    }
+}
+</code></pre></div>
+<p>You can check how many handles an application uses in the task manager. You must display the “User objects” column:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/09/image6.png" alt="image"></p>
+
+<p>*<em>What is the solution? *</em></p>
+
+<p>Well there is none. The limit is hard coded in Windows. So the only way is to change your application design. Only create elements that are visible and remove/dispose elements that no longer need to be visible.</p>
+</p>		
+		  <p class="small">Tagged: Exception, handle, and SWT by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/gadgets/ipad/2011/09/05/galaxy-on-fire-2-fr-das-ipad.html">Galaxy on Fire 2 für das iPad</a>
 		</h3>
 		  <p class="small">Posted on 05 September 2011 by Andy</p>
@@ -178,38 +243,6 @@
 		  <hr>
 		  
 		
-		<h3>
-		  <a href="/sonstiges/tools/2011/08/27/nicht-gengend-serverspeicher.html">Nicht genügend Serverspeicher</a>
-		</h3>
-		  <p class="small">Posted on 27 August 2011 by Andy</p>
-		  <p><p>Momentan ziehe ich Windows Probleme magisch an. Heute habe ich auf meinem Server (eigentlich nur eine Windows XP Kiste mit ein paar Freigaben) Acronis True Image installiert. Backups sind ja wichtig und so…</p>
-
-<p>Nicht nur, dass es hierbei schon <a href="http://blog.ekiwi.de/?p=733">zu Problemen kam</a>, nein, ich konnte anschließend auch nicht mehr auf meine Netzwerkfreigaben zugreifen. Fehlermeldung: “Nicht genügend Serverspeicher”. Super! <img src="http://andydunkel.net/assets/uploads/2011/08/wlEmoticon-cryingface.png" alt="Weinendes Smiley"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/08/image21.png" alt="image"></p>
-
-<p>Nach etwas Internetrecherche kam ich zu folgendem Lösungsvorschlag. In der Registry unter<br>
-“HKEY<em>LOCAL</em>MACHINE\SYSTEM\CurrentControlSet\Services<br>
-\lanmanserver\parameters”</p>
-
-<p>den Parameter “IRPStackSize” abändern. 32 hex, bzw. 50 ist das Maximum.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/08/image22.png" alt="image"></p>
-
-<p>Bei mir war der Eintrag nicht vorhanden, also anlegen mit Rechtsklick:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/08/image23.png" alt="image"></p>
-
-<p>Anschließend den Wert eingeben:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/08/image24.png" alt="image"></p>
-
-<p>Nun noch neustarten und schon ging wieder alles. Easy oder? <img src="http://andydunkel.net/assets/uploads/2011/08/wlEmoticon-smile2.png" alt="Smiley"></p>
-</p>		
-		  <p class="small">Tagged: Acronis, Netzwerkfreigaben, and Serverspeicher by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -252,14 +285,14 @@
 		<li class='category'><a href='/categories/android/'>android (1)</a></li>
 <li class='category'><a href='/categories/coding/'>coding (19)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (4)</a></li>
-<li class='category'><a href='/categories/eclipse/'>eclipse (25)</a></li>
+<li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
 <li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
 <li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
 <li class='category'><a href='/categories/gadgets/'>gadgets (23)</a></li>
 <li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
 <li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
 <li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
-<li class='category'><a href='/categories/java/'>java (22)</a></li>
+<li class='category'><a href='/categories/java/'>java (23)</a></li>
 <li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
 <li class='category'><a href='/categories/kochen/'>kochen (1)</a></li>
 <li class='category'><a href='/categories/linux/'>linux (7)</a></li>

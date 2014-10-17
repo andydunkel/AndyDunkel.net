@@ -961,6 +961,12 @@
         <lastmod>2014-08-29T20:10:45+02:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://andydunkel.net/eclipse/java/2014/10/17/eclipse_rcp_editor_part_lost_focus.html
+        </loc>
+        <lastmod>2014-10-17T14:12:57+02:00</lastmod>
+    </url>
+    <url>
         <loc>http://andydunkel.net/about.html</loc>
         <lastmod>2014-03-01T16:50:52+01:00</lastmod>
     </url>
@@ -986,7 +992,7 @@
     </url>
     <url>
         <loc>http://andydunkel.net/</loc>
-        <lastmod>2014-08-29T20:10:45+02:00</lastmod>
+        <lastmod>2014-10-17T14:12:57+02:00</lastmod>
     </url>
     <url>
         <loc>http://andydunkel.net/projects/php-debugging-vm/projects/php-debugging-vm/</loc>

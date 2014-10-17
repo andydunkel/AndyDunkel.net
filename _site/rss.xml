@@ -8,7 +8,15 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Fri, 29 Aug 2014 19:00:00 +0200</pubDate>
+    <pubDate>Fri, 17 Oct 2014 19:00:00 +0200</pubDate>
+    <item>
+      <title>Eclipse RCP: lost focus event for Editor Part</title>
+      <link>http://andydunkel.net/eclipse/java/2014/10/17/eclipse_rcp_editor_part_lost_focus.html</link>
+      <description>&lt;p&gt;Problem: how you can get notified when an editor part loses his focus. For getting the focus there is a simple solution to just overwrite the &lt;code&gt;setFocus&lt;/code&gt; method of the editor part. Losing the focus is a little bit more difficult and not that obvious.&lt;/p&gt;
+</description>
+      <pubDate>Fri, 17 Oct 2014 19:00:00 +0200</pubDate>
+      <dc:date>2014-10-17T19:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>Backup of an SD card on OSX</title>
       <link>http://andydunkel.net/raspberry/2014/08/29/backup_sd_card_of_your_rpi.html</link>
@@ -1825,6 +1833,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2014-08-29T19:00:00+02:00</dc:date>
+    <dc:date>2014-10-17T19:00:00+02:00</dc:date>
   </channel>
 </rss>
