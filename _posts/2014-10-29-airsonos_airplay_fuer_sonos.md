@@ -13,7 +13,7 @@ tags:
 - Linux
 ---
 
-Vor kurzem habe ich mir ein [Sonos Play1](http://www.sonos.com/shop/products/play1) zugelegt. Gegen Hardware und Technik ist nichts einzuwenden. Die Klang ist gut und die App funktioniert zuverlässig. Leider ist das auch der einzige Knackpunkt am Sonos-System: ohne Sonos-App kein Abspielen von Inhalten. 
+Vor kurzem habe ich mir ein [Sonos Play1](http://www.sonos.com/shop/products/play1) zugelegt. Mein Kumpel Kiwi besitzt dieses bereits eine Weile und hat [das hier](http://blog.ekiwi.de/?p=1927) vor einiger Zeit bereits getestet. Gegen Hardware und Technik ist nichts einzuwenden. Die Klang ist gut und die App funktioniert zuverlässig. Leider ist das auch der einzige Knackpunkt am Sonos-System: ohne Sonos-App kein Abspielen von Inhalten. 
 Problemlos funktioniert dies für vorhandene Inhalte auf dem Smartphone oder Tablett. Radiosender und diverse Musikdienste lassen sich ebenfalls über die App nutzen.
 
 ![image](http://andydunkel.net/assets/uploads/2014/10/sonos.jpg)
