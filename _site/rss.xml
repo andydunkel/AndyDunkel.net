@@ -8,7 +8,15 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Wed, 29 Oct 2014 18:00:00 +0100</pubDate>
+    <pubDate>Fri, 21 Nov 2014 18:00:00 +0100</pubDate>
+    <item>
+      <title>Sealife München</title>
+      <link>http://andydunkel.net/sonstiges/2014/11/21/sealife_muenchen.html</link>
+      <description>&lt;p&gt;Ein paar Impressionen vom &lt;a href=&quot;http://www.visitsealife.com/munchen/&quot;&gt;Sealife München&lt;/a&gt;, welches wir vor ein paar Wochen besucht haben. Ein Besuch ist auf jeden Fall zu empfehlen, allerdings ist der Eintrittspreis mit 16 Euro pro Person nicht gerade wenig. Dafür ist man schlicht zu schnell durch. Auf der anderen Seite haben natürlich auch die Fische Hunger...&lt;/p&gt;
+</description>
+      <pubDate>Fri, 21 Nov 2014 18:00:00 +0100</pubDate>
+      <dc:date>2014-11-21T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>AirSonos - Airplay für Sonos mit dem Raspberry Pi</title>
       <link>http://andydunkel.net/raspberry/linux/2014/10/29/airsonos_airplay_fuer_sonos.html</link>
@@ -1842,6 +1850,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2014-10-29T18:00:00+01:00</dc:date>
+    <dc:date>2014-11-21T18:00:00+01:00</dc:date>
   </channel>
 </rss>
