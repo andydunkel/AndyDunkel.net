@@ -8,7 +8,15 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Fri, 21 Nov 2014 18:00:00 +0100</pubDate>
+    <pubDate>Tue, 02 Dec 2014 18:00:00 +0100</pubDate>
+    <item>
+      <title>Owncloud - automatische Deinstallation unter Ubuntu und Passwort zurücksetzen</title>
+      <link>http://andydunkel.net/linux/2014/12/02/ubuntu_owncloud_wurde_entfernt.html</link>
+      <description>&lt;p&gt;Das es unter Linux ab und zu mal etwas Gefrickel ist, diverse Dinge und Dienste einzurichten und in Betrieb zu halten ist ja nix neues. Für die Synchronisierung von Kontakten und Kalender verwende ich Owncloud. Dieses lief anfangs auf einem Raspberry Pi, mittlerweile auf einem etwas größeren Server der mit Ubuntu arbeitet.&lt;/p&gt;
+</description>
+      <pubDate>Tue, 02 Dec 2014 18:00:00 +0100</pubDate>
+      <dc:date>2014-12-02T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Sealife München</title>
       <link>http://andydunkel.net/sonstiges/2014/11/21/sealife_muenchen.html</link>
@@ -1850,6 +1858,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2014-11-21T18:00:00+01:00</dc:date>
+    <dc:date>2014-12-02T18:00:00+01:00</dc:date>
   </channel>
 </rss>
