@@ -8,7 +8,15 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Tue, 02 Dec 2014 18:00:00 +0100</pubDate>
+    <pubDate>Mon, 08 Dec 2014 18:00:00 +0100</pubDate>
+    <item>
+      <title>Delphi XE7 - Startup problem</title>
+      <link>http://andydunkel.net/delphi/2014/12/08/delphi_xe7_startup_problems.html</link>
+      <description>&lt;p&gt;I experienced a very annoying problem with after updating Delphi XE7 to update 1.&lt;/p&gt;
+</description>
+      <pubDate>Mon, 08 Dec 2014 18:00:00 +0100</pubDate>
+      <dc:date>2014-12-08T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Owncloud - automatische Deinstallation unter Ubuntu und Passwort zurücksetzen</title>
       <link>http://andydunkel.net/linux/2014/12/02/ubuntu_owncloud_wurde_entfernt.html</link>
@@ -1858,6 +1866,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2014-12-02T18:00:00+01:00</dc:date>
+    <dc:date>2014-12-08T18:00:00+01:00</dc:date>
   </channel>
 </rss>

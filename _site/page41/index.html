@@ -111,108 +111,26 @@
      
 		
 		<h3>
-		  <a href="/hiking/ireland/2012/08/08/gougane-bara-irland.html">Gougane Bara Irland</a>
+		  <a href="/eclipse/java/2011/04/28/get-plugin-path.html">Get plugin path </a>
 		</h3>
-		  <p class="small">Posted on 08 August 2012 by Andy</p>
-		  <p><p><a href="http://de.wikipedia.org/wiki/Gougane_Barra">Gougane Bara</a> Irland, Wandertour</p>
+		  <p class="small">Posted on 28 April 2011 by Andy</p>
+		  <p><p>This snippets gets the local folder for a plugin:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">public static File getPluginFolder() {
+    if(pluginFolder == null) {
+        URL url = Platform.getBundle(&quot;my.plugin.id&quot;).getEntry(&quot;/&quot;);
+        try {
+            url = Platform.resolve(url);
+        }
+        catch(IOException ex) {
+            ex.printStackTrace();
+        }
+        pluginFolder = new File(url.getPath());
+    }
 
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/P1000046.jpg" alt="P1000046"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/P1000058.jpg" alt="P1000058"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/P1000065.jpg" alt="P1000065"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/SDC10308.jpg" alt="SDC10308"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/SDC10281.jpg" alt="SDC10281"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/SDC10317.jpg" alt="SDC10317"></p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-</p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/fotos/radfahren/2012/07/23/crosshaven-21-07-2012.html">Crosshaven 21.07.2012</a>
-		</h3>
-		  <p class="small">Posted on 23 July 2012 by Andy</p>
-		  <p><p>Ein paar Impressionen vom bisher besten Sommertag in Irland:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/07/SDC10204.jpg" alt="SDC10204"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/07/SDC10234.jpg" alt="SDC10234"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/07/SDC10215.jpg" alt="SDC10215"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/07/SDC10249.jpg" alt="SDC10249"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/07/SDC10209.jpg" alt="SDC10209"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/07/SDC10226.jpg" alt="SDC10226"></p>
-
-<p><a href="https://maps.google.com/maps/ms?msa=0&amp;msid=208324790998598431494.0004c583c9db2396b734c&amp;ie=UTF8&amp;t=h&amp;ll=51.833656,-8.397675&amp;spn=0.169724,0.411301&amp;z=11&amp;source=embed">Crosshaven - 21.07.2012</a> auf einer größeren Karte anzeigen</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/07/NewImage.png" alt="NewImage"></p>
-</p>		
-		  <p class="small">Tagged: Crosshaven and Irland by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/2012/07/17/recaptcha-force-language.html">Recaptcha: Force Language</a>
-		</h3>
-		  <p class="small">Posted on 17 July 2012 by Andy</p>
-		  <p><p>Recent problem: customer wanted his <a href="http://www.google.com/recaptcha">reCatpcha</a> forced to german language. First attempt was to set the setting via the RecaptchaOption Script variable. Howewer, for some reason this did not work.</p>
-
-<p>Here is the solution:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">&lt;script type=&quot;text/javascript&quot; 
-src=&quot;http://api.recaptcha.net/challenge?k=apiKey&lt;strong&gt;&amp;hl=de&lt;/strong&gt;&quot;&gt; 
-</code></pre></div>
-<p>By adding &amp;hl=de to the &quot;src&quot; URL the language was forced to german.</p>
-</p>		
-		  <p class="small">Tagged: audio, deutsch, german, language, Recaptcha, and sprache by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/2012/07/11/zeitrafferaufnahme.html">Zeitrafferaufnahme</a>
-		</h3>
-		  <p class="small">Posted on 11 July 2012 by Andy</p>
-		  <p><iframe width="560" height="315" src="http://www.youtube.com/embed/mEd9u3OO9dg" frameborder="0" allowfullscreen></iframe>
-</p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/coding/eclipse/2012/07/09/remove-unwanted-preference-pages-from-your-rcp-app.html">Remove unwanted preference pages from your RCP app</a>
-		</h3>
-		  <p class="small">Posted on 09 July 2012 by Andy</p>
-		  <p><p>In my recent RCP app some unwanted preferences, contributed from other plugins showed up:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/07/RCP_preferences1.png" alt="NewImage"></p>
-
-<p>To remove them, just add the following code to your WorkbenchAdvisor class:</p>
-
-<blockquote>
-<p>public void postStartup(){</p>
-
-<p>  PreferenceManagerpm=PlatformUI.getWorkbench().getPreferenceManager();</p>
-
-<p>  pm.remove( &quot;org.eclipse.help.ui.browsersPreferencePage&quot; ); //remove single contribution</p>
-
-<p>  pm.removeAll(); //just remove all</p>
-
-<p>}</p>
-</blockquote>
-</p>		
-		  <p class="small">Tagged: PreferencePage and RCP by Andy</p>
+    return pluginFolder;
+}
+</code></pre></div></p>		
+		  <p class="small">Tagged: Plugin folder eclipse by Andy</p>
 		  <hr>
 		  
 		
@@ -297,11 +215,11 @@ src=&quot;http://api.recaptcha.net/challenge?k=apiKey&lt;strong&gt;&amp;hl=de&lt
 <!-- Pagination links -->
 <div class="pagination">
   
-    <a href="/page13" class="previous">Previous</a>
+    <a href="/page40" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 14 of 41</span>
+  <span class="page_number ">Page: 41 of 41</span>
   
-    <a href="/page15" class="next">Next</a>
+    <span class="next ">Next</span>
   
 </div>
 
