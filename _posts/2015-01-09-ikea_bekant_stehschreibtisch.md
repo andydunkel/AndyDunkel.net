@@ -1,7 +1,7 @@
 ---
 author: admin
 comments: true
-date: 2014-12-08 17:00:00+00:00
+date: 2015-01-09 17:00:00+00:00
 layout: post
 slug: ikea_bekant_stehschreibtisch
 title: 'Ikea Bekant - Stehschreibtisch'

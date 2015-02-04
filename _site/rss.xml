@@ -8,16 +8,25 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Mon, 08 Dec 2014 18:00:00 +0100</pubDate>
+    <pubDate>Tue, 08 Dec 2015 18:00:00 +0100</pubDate>
+    <item>
+      <title>Delphi XE / Firemonkey - Problem with switchable graphic card</title>
+      <link>http://andydunkel.net/delphi/2015/12/08/firemonkey_switchable_graphics_problem.html</link>
+      <description>&lt;p&gt;I got a new Windows laptop and found out that there is an issue with my Firemonkey applications. 
+The laptop has two graphic cards. An Intel and a dedicated ATI chip.&lt;/p&gt;
+</description>
+      <pubDate>Tue, 08 Dec 2015 18:00:00 +0100</pubDate>
+      <dc:date>2015-12-08T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Ikea Bekant - Stehschreibtisch</title>
-      <link>http://andydunkel.net/office/2014/12/08/ikea_bekant_stehschreibtisch.html</link>
+      <link>http://andydunkel.net/office/2015/01/09/ikea_bekant_stehschreibtisch.html</link>
       <description>&lt;p&gt;Das Thema Stehschreibtisch hat mich bisher gar nicht interessiert, obwohl es mehrmals in diversen Podcasts, die ich so höre, angesprochen wurde. Irgendwie erschien es mir abwegig im Stehen zu arbeiten. Zu unbequem, zu anstrengend, sicher kann man sich da gar nicht konzentrieren. Stehen macht ja auch keinen Spaß, das wusste ich besonders von Zugfahrten, wenn man mal wieder keinen Sitzplatz abbekommen hat.&lt;/p&gt;
 
 &lt;p&gt;Interessanterweise wurde in besagten Podcasts und auch Artikeln regelmäßig das Gegenteil meiner Vorurteile behauptet. Bessere Konzentration, fitter, weniger Müdigkeit, mehr Bewegung.&lt;/p&gt;
 </description>
-      <pubDate>Mon, 08 Dec 2014 18:00:00 +0100</pubDate>
-      <dc:date>2014-12-08T18:00:00+01:00</dc:date>
+      <pubDate>Fri, 09 Jan 2015 18:00:00 +0100</pubDate>
+      <dc:date>2015-01-09T18:00:00+01:00</dc:date>
     </item>
     <item>
       <title>Delphi XE7 - Startup problem</title>
@@ -1876,6 +1885,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2014-12-08T18:00:00+01:00</dc:date>
+    <dc:date>2015-12-08T18:00:00+01:00</dc:date>
   </channel>
 </rss>
