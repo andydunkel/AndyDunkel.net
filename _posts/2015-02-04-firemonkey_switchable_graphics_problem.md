@@ -1,7 +1,7 @@
 ---
 author: admin
 comments: true
-date: 2015-12-08 17:00:00+00:00
+date: 2015-02-04 17:00:00+00:00
 layout: post
 slug: delphi_firemonkey_problem_with_switchable_graphic_card
 title: 'Delphi XE / Firemonkey - Problem with switchable graphic card'
