@@ -106,6 +106,31 @@
      
 		
 		<h3>
+		  <a href="/coding/2011/07/04/dynamically-create-qr-codes-using-php.html">Dynamically create QR codes using PHP</a>
+		</h3>
+		  <p class="small">Posted on 04 July 2011 by Andy</p>
+		  <p><p>Today I wrote a blog entry <a href="http://blog.ekiwi.de/?p=542">about QR codes</a> in our <a href="http://www.ekiwi.de">eKiwi.de</a> blog. There we where using an online tool to create the QR code. </p>
+
+<p>If you want to create QR codes dynamically on your website, you can use the class from <a href="http://phpqrcode.sourceforge.net/">http://phpqrcode.sourceforge.net/</a></p>
+
+<p>The usage is pretty simple. In this example I created an image php file:</p>
+
+<p>This outputs date and time into a QR code and outputs a PNG file. In the HTML file we only have to show the image:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">&lt;img src=&quot;img.php&quot;&gt;
+</code></pre></div>
+<p>The QR code looks like that (if you do a refresh in the browser the code will change):</p>
+
+<p><img src="http://andydunkel.net/assets/wp-custom/qrcode/img.php" alt=""></p>
+
+<p>And that’s it. <img src="http://andydunkel.net/assets/uploads/2011/07/wlEmoticon-smile.png" alt="Smiley"> More documentation can be found on the projects homepage.</p>
+
+<p>Here is the complete <a href="http://andydunkel.net/assets/wp-custom/qrcode/qrcode.zip">example as download</a>.</p>
+</p>		
+		  <p class="small">Tagged: Code, PHP, and QR by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/sonstiges/2011/07/03/mwe-klaut-kamera.html">Möwe klaut Kamera</a>
 		</h3>
 		  <p class="small">Posted on 03 July 2011 by Andy</p>
@@ -170,24 +195,6 @@
 <p>Was gibt’s sonst noch? Facebook kann man einbinden, Bilder hochladen und verwalten. Kommentieren etc… eine genaue Funktionsbeschreibung findet man im <a href="http://itunes.apple.com/de/app/web-albums-for-ipad-a-picasa/id364824944?mt=8#">AppStore</a>.</p>
 </p>		
 		  <p class="small">Tagged: ipad, Picasa, Web Albums, WLAN, and Zugriff by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/sonstiges/tools/2011/07/01/picasa-mp4-dateien-werden-nicht-importiert-2.html">Picasa - MP4 Dateien werden nicht importiert</a>
-		</h3>
-		  <p class="small">Posted on 01 July 2011 by Andy</p>
-		  <p><p>Zur Verwaltung meiner Fotos und Videos verwende ich <a href="http://picasa.google.com/">Picasa</a>. Dieses lädt die Dateien gleich zu Picasa hoch, Backup und außerdem kann ich so von überall darauf zugreifen. Bis jetzt hatte das ganze auch gut funktioniert. Nur MP4-Dateien wollte Picasa nicht erkennen. </p>
-
-<p>Nach kurzer Recherche im Internet, man muss dafür Apple Quicktime installiert haben. Dies hatte ich zwar, aber trotzdem funktionierte es nicht. </p>
-
-<p>Die Lösung war dann doch recht “einfach”. Man muss in den Optionen (Tools –&gt; Optionen) noch Quicktime als Dateityp aktivieren.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/06/image10.png" alt="image"></p>
-
-<p>Das ganze ist etwas missverständlich, da dort nur etwas von *.mov Dateien steht. Danach wurden die Videos aber erkannt, importiert und hochgeladen.</p>
-</p>		
-		  <p class="small">Tagged: Import, MP4, Picasa, and Probleme by Andy</p>
 		  <hr>
 		  
 		
@@ -259,7 +266,7 @@
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (42)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (22)</a></li>
-<li class='category'><a href='/categories/windows/'>windows (2)</a></li>
+<li class='category'><a href='/categories/windows/'>windows (3)</a></li>
 <li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>
 
 		</ul>

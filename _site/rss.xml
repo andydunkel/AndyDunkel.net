@@ -8,7 +8,15 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Wed, 04 Feb 2015 18:00:00 +0100</pubDate>
+    <pubDate>Sat, 28 Feb 2015 18:00:00 +0100</pubDate>
+    <item>
+      <title>Die Geräteverschlüsselung ist vorübergehend unterbrochen und wird beim nächsten Neustart des Gerätes fortgesetzt.</title>
+      <link>http://andydunkel.net/windows/2015/02/28/geraeterschluesselung_windows_8_1.html</link>
+      <description>&lt;p&gt;So stand es in den Einstellungen meines neuen HP Stream 7 Gerätes. Eine typische &amp;quot;sinnvolle&amp;quot; Windows-Fehlermeldung. Und ja, auch nach einem Neustart funktionierte es natürlich nicht. Auch Aktivieren und Deaktivieren der Funktion brachte nix.&lt;/p&gt;
+</description>
+      <pubDate>Sat, 28 Feb 2015 18:00:00 +0100</pubDate>
+      <dc:date>2015-02-28T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Delphi XE / Firemonkey - Problem with switchable graphic card</title>
       <link>http://andydunkel.net/delphi/2015/02/04/firemonkey_switchable_graphics_problem.html</link>
@@ -1885,6 +1893,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2015-02-04T18:00:00+01:00</dc:date>
+    <dc:date>2015-02-28T18:00:00+01:00</dc:date>
   </channel>
 </rss>
