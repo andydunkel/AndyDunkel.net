@@ -9,17 +9,32 @@ title: Kontakt
   {
       var now = new Date();
       if (document.images) {
-          document.images.captchaimg.src = 'http://www.ekiwi-scripts.de/form/v29/formmail.php?action=captcha&id=964858&now=' + now.getTime();
+          document.images.captchaimg.src = 'http://www.ekiwi-scripts.de/form/v29/formmail.php?action=captcha&id=6874137&now=' + now.getTime();
       }     
   }
 /* ]]> */
 </script>
 
-<form action="http://www.ekiwi-scripts.de/form/v29/formmail.php" method="POST" name="DAFORM" enctype="multipart/form-data" target="_self">
-  <input type="hidden" name="formid" value="964858">
-  <input type="hidden" name="settings" value="cXZ7ZHI=">
-  <input type="hidden" name="redirect" value="http://www.andydunkel.net/contact_thx.html">
-  <input type="hidden" name="subject" value="Kontaktformular - AndyDunkel.net">
+<!-- FORMTITLE_BEGIN -->
+<div class="row">
+    <div class="col-md-12"> 
+      <h1>Kontaktformular</h1>
+    </div>
+</div>
+<!-- FORMTITLE_END -->
+<!-- EINLEITUNGTEXT_BEGIN -->
+<div class="row">
+    <div class="col-md-12"> 
+      <p class="textend">Mit diesem Formular können Sie mit uns Kontakt aufnehmen.</p>
+    </div>
+</div>
+<!-- EINLEITUNGTEXT_END -->
+
+  <form action="http://www.ekiwi-scripts.de/form/v29/formmail.php" method="POST" name="DAFORM" onSubmit="SetCookies();return chkFormular();" enctype="multipart/form-data" target="_self">
+  <input type="hidden" name="formid" value="6874137">
+  <input type="hidden" name="settings" value="Y2Vicg==">
+  <input type="hidden" name="redirect" value="http://andydunkel.net/contact_thx.html">
+  <input type="hidden" name="subject" value="Kontaktformular AndyDunkel.net">
   <input type="hidden" name="admin" value="dnlzbjlzYnl8cntXcnx+YH45c3I=">
   <input type="hidden" name="admin1" value="">
   <input type="hidden" name="admin2" value="">
@@ -29,65 +44,70 @@ title: Kontakt
   <input type="hidden" name="copyfields" value="-1">
   <input type="hidden" name="copyip" value="-1">
   <input type="hidden" name="hide_empty_fields" value="0">
-  <input type="hidden" name="settings_encoding" value="iso-8859-1">  
+  <input type="hidden" name="settings_encoding" value="utf-8">  
   <input type="hidden" name="ReturnToSender" value="0">
 
 
-      <table  width="500px" align="center" border="0" cellpadding="3" cellspacing="2">
-      	<!-- FORMTITLE_BEGIN -->
-        <tr>
-          <td colspan="2"><h1>Kontaktformular<br>
-            </h1></td>
-        </tr>
-        <!-- FORMTITLE_END -->
-        <!-- EINLEITUNGTEXT_BEGIN -->
-        <tr>
-          <td colspan="2"><p>Mit diesem Formular können Sie mit uns Kontakt aufnehmen. <br>
-            </p></td>
-        </tr>
-        <!-- EINLEITUNGTEXT_END -->
-        
-        <tr><td align="right"  valign="top" class="my" nowrap>E-Mail</td>
-<td class="my">
-<input type="text" name="email" value="" size="25" maxlength="200"> </td></tr>
+  
+<div class="row">
+	<div class="col-md-2">
+		<label for="email" class="control-label">E-Mail</label>
+	</div>
+	<div class="col-md-10">
+		<input type="text" name="email" class="form-control" id="email" value="">
+	</div>
+</div>
 
-<tr><td align="right"  valign="top" class="my" nowrap>Name</td>
-<td class="my">
-<input type="text" name="Name" value="" size="25" maxlength="200"> </td></tr>
+<div class="row">
+	<div class="col-md-2">
+		<label for="Name" class="control-label">Name</label>
+	</div>
+	<div class="col-md-10">
+		<input type="text" name="Name" class="form-control" id="Name" value="">
+	</div>
+</div>
 
-<tr><td align="right"  valign="top" class="my" nowrap>Bemerkung</td>
-<td class="my">
-<textarea name="Bemerkung" cols="40" rows="10"></textarea> </td></tr>
+<div class="row">
+	<div class="col-md-2">
+		<label for="Bemerkung" class="control-label">Bemerkung</label>
+	</div>
+	<div class="col-md-10">
+		<textarea id="textarea" class="form-control" name="Bemerkung"></textarea>
+	</div>
+</div>
 
 
-        <tr>
-	<td class="my" align="right" valign="middle"><p class="my">Spam-Schutz</p></td>
-  <td class="my" valign="middle">
- <table width="100%"  border="0" cellspacing="0" cellpadding="00">
-<tr valign="middle">
- <td width="0%"><input type="text" name="captcha_input" size="10" maxlength="5"></td>
- <td width="100%">&nbsp;<img src="http://www.ekiwi-scripts.de/form/v29/formmail.php?action=captcha&amp;id=964858" border="1" alt="captcha" align="middle" name="captchaimg">
- 	<script type="text/javascript">
-	<!--
- 		document.write("<a href=\"javascript:refreshCaptcha()\"><img src=\"http://www.ekiwi-scripts.de/form/v29/refresh.png\" align=\"middle\" border=\"0\"><\/a>");
- 	--> 
- 	</script>
- 	</td>
-</tr>
-</table>
-</tr>
+<div class="row">
+	<div class="col-md-2">
+		<label for="Captcha" class="control-label">Spam-Schutz</label>
+	</div>
+	<div class="col-md-10">
+		<input type="text" name="captcha_input" class="form-control captcha" id="captcha_input" placeholder="">
+		<img src="http://www.ekiwi-scripts.de/form/v29/formmail.php?action=captcha&amp;id=6874137" border="1" alt="captcha" align="middle" name="captchaimg">		
+	 	<script type="text/javascript">
+		<!--
+	 		document.write("<a href=\"javascript:refreshCaptcha()\"><img src=\"http://www.ekiwi-scripts.de/form/v29/refresh.png\" align=\"middle\" border=\"0\"><\/a>");
+	 	--> 
+	 	</script>		
+	</div>
+</div>
 
-        <tr>
-          <td colspan="2"><p class="my"><br>
-            </p></td>
-        </tr>
-        <tr>
-          <td colspan="2">
-          	<input type="submit" name="next" value="Absenden" >
-            <input type="reset" name="next" value="Zurücksetzen" >
 
-            <!-- PRINTBUTTON -->
-          </td>
-        </tr>
-      </table>
+<div class="row">
+    <div class="col-md-12"> 
+      <p class="textend"></p>
+    </div>
+</div>
+
+<hr>
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+      <button type="submit" class="btn btn-success">Absenden</button>
+      <button type="reset" class="btn btn-danger">Zurücksetzen</button>
+
+      <!-- PRINTBUTTON -->
+    </div>
+</div>
+  
 </form>
