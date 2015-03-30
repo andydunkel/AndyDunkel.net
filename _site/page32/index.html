@@ -123,6 +123,16 @@
      
 		
 		<h3>
+		  <a href="/radfahren/2011/07/11/radtour-mit-orbeidskollegen06-07-2011.html">Radtour mit Orbeidskollegen–06.07.2011</a>
+		</h3>
+		  <p class="small">Posted on 11 July 2011 by Andy</p>
+		  <p><p>Fast schon Tradition, die jährliche Radtour im Sommer mit den Kollegen. Diesmal ging es nicht nach Katzbrui, sondern eine Runde um Kaufbeuren und anschließender Einkehr in Gennachhausen: <a href="http://www.gasthaus-zum-hack.de/" target="_blank">Zum Hack</a>.</p> <p>Zum Abschluss gab es noch einen Abstecher <a href="http://www.mccallionsirishpub.de/" target="_blank">in den Irish Pub</a>.</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:8fadd103-0f20-49ec-bf5c-939b0d33b34f" class="wlWriterEditableSmartContent"><div><object width="585" height="329"><param name="movie" value="http://www.youtube.com/v/WONCZtcfrqw?hl=en&amp;hd=1"></param><embed src="http://www.youtube.com/v/WONCZtcfrqw?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="585" height="329"></embed></object></div></div><!--more--><p>Erstellt von My Tracks für Android.<br>Gesamtentfernung: 45,57 km (28,3 mi)<br>Gesamtzeit: 5:46:43<br>Zeit in Bewegung: 2:09:08<br>Durchschnitt in Bew.: 21,17 km/h (13,2 mi/h)<br>Max. Geschwindigkeit: 56,70 km/h (35,2 mi/h)<br>Niedrigste Höhenlage: 726 m (2383 Fuß)<br>Höchste Höhenlage: 913 m (2994 Fuß)<br>Höhengewinn: 696 m (2283 Fuß)<br>Maximale Steigung: 10 %<br>Minimale Steigung: -18 %<br>Aufgezeichnet am: Mi. Jul 06 17:13:07 MESZ 2011</p><iframe height="430" marginheight="0" src="http://maps.google.de/maps/ms?msa=0&amp;msid=208324790998598431494.0004a76dc0051643cd7ff&amp;ie=UTF8&amp;t=h&amp;ll=47.86178,10.702744&amp;spn=0.099047,0.20565&amp;z=12&amp;output=embed" frameborder="0" width="600" marginwidth="0" scrolling="no"></iframe><br><small><a style="text-align: left; color: #0000ff" href="http://maps.google.de/maps/ms?msa=0&amp;msid=208324790998598431494.0004a76dc0051643cd7ff&amp;ie=UTF8&amp;t=h&amp;ll=47.86178,10.702744&amp;spn=0.099047,0.20565&amp;z=12&amp;source=embed">2011-07-06 17:13 - Feierabendrunde mit Kollegen</a> auf einer größeren Karte anzeigen</small>  <p><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="route" border="0" alt="route" src="http://andydunkel.net/assets/uploads/2011/07/route.png" width="604" height="354"></p>
+</p>		
+		  <p class="small">Tagged: Radfahren by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/tools/2011/07/10/videos-frs-ipad-konvertieren.html">Videos fürs iPad konvertieren</a>
 		</h3>
 		  <p class="small">Posted on 10 July 2011 by Andy</p>
@@ -234,67 +244,6 @@
 		  <hr>
 		  
 		
-		<h3>
-		  <a href="/coding/java/2011/07/07/java-handle-exceptions-from-threads.html">Java: Handle Exceptions from Threads</a>
-		</h3>
-		  <p class="small">Posted on 07 July 2011 by Andy</p>
-		  <p><p>In this post I want to describe handling exceptions from threads with the ThreadGroup class and the uncaughtExceptionHandler.</p>
-
-<p>First we create a Thread which does useful stuff and throws an exception at some time:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">public class PfostenThread implements Runnable {    
-    @Override
-    public void run() {
-        for (int i = 0; i &lt; 1000000; i++) {
-            System.out.println(&quot;Pfosten: &quot; + i);
-
-            if (i == 31456) {
-                //Cause an exception
-                i = i / 0;
-            }
-        }
-    }
-}
-</code></pre></div>
-<p>No we will start our thread from the main method of our Java program:
-&lt;!-- more --&gt;</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">import java.lang.Thread.UncaughtExceptionHandler;
-
-public class Main {
-    public static void main(String[] args) {
-        PfostenThreadGroup group = new PfostenThreadGroup(&quot;PfostenGruppe&quot;);
-        Thread t = new Thread(new PfostenThread(), &quot;Pfosten&quot;);
-        t.start();      
-    }
-}
-</code></pre></div>
-<p>This thread will throw a divide by zero exception:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/java_exception1.png" alt=""></p>
-
-<p>To catch the exception we will now extend the ThreadGroup class:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">public class PfostenThreadGroup extends ThreadGroup {
-
-    public PfostenThreadGroup(String name) {
-        super(name);
-    }
-
-    @Override
-    public void uncaughtException(Thread t, Throwable e) {
-            System.out.println(&quot;Error: &quot; + e.getMessage());
-    }
-}
-</code></pre></div>
-<p>If we start our Thread with this group, the exception will be caught by the &quot;uncaugtException&quot; method in our ThreadGroup:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">PfostenThreadGroup group = new PfostenThreadGroup(&quot;PfostenGruppe&quot;);
-Thread t = new Thread(new PfostenThread(), &quot;Pfosten&quot;);
-t.start();  
-</code></pre></div>
-<p><a href="http://andydunkel.net/assets/uploads/2011/07/java_exception2.png"><img src="http://andydunkel.net/assets/uploads/2011/07/java_exception2.png" alt=""></a></p>
-</p>		
-		  <p class="small">Tagged: Exception, Handling, Java, Thread, and ThreadGroup by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -342,6 +291,7 @@ t.start();
 <li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
 <li class='category'><a href='/categories/gadgets/'>gadgets (23)</a></li>
 <li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
+<li class='category'><a href='/categories/html/'>html (1)</a></li>
 <li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
 <li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
 <li class='category'><a href='/categories/java/'>java (23)</a></li>
@@ -363,6 +313,7 @@ t.start();
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (42)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (22)</a></li>
+<li class='category'><a href='/categories/webseiten/'>webseiten (1)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (3)</a></li>
 <li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>
 

@@ -123,6 +123,40 @@
      
 		
 		<h3>
+		  <a href="/reparatur/2014/01/25/roomba_seitenmotor_wechseln.html">Roomba: Motor für die Seitenbürste wechseln</a>
+		</h3>
+		  <p class="small">Posted on 25 January 2014 by Andy</p>
+		  <p><p>Nachdem der Roomba (580) seit seiner <a href="http://andydunkel.net/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html">letzten Reparatur</a> problemlos lief, hat sich letzte Woche ein Kopfhörerkabel in der Seitenbürste verfangen. Dies hatte dann vermutlich den Motor überlastet, so dass dieser nur noch sporadisch lief. Na toll.</p>
+
+<p>Gute Nachricht, es gibt die passenden Ersatzteile im Internet zu bestellen (einfach nach Seitenbürstenmodul googlen) und diese sind sehr leicht zu wechseln. So kam wenige Tage später der passende Motor für knapp 40 Euro ins Haus. Nicht gerade billig, aber immerhin ist auch eine neue Seitenbürste mit dabei.</p>
+
+<p>Der Wechsel geht sehr einfach. Kreuzschraubenzieher, mehr wird nicht benötigt. Zuerst entfernt man die Bodenplatte und die Seitenbürste:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/roomba/roomba_motor1.png" alt=""></p>
+
+<p>Anschließend löst man noch zwei Schrauben und dann dann den Motor einfach herausnehmen:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/roomba/roomba_motor2.png" alt=""></p>
+
+<p>Neuen Motor einsetzen und alles wieder zuschrauben, das wars auch schon. Schon funktionierte der Roomba wieder.</p>
+
+<p>Hier gibt es die Anleitung auch als Video:</p>
+
+<iframe width="640" height="360" src="//www.youtube.com/embed/PAw2A-MawK0" frameborder="0" allowfullscreen></iframe>
+
+<h2>Nachtrag</h2>
+
+<p>Ich habe jetzt noch das defekte Seitenmodul zerlegt:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/roomba/roomba_motor3.png" alt=""></p>
+
+<p>Theoretisch könnte man das Modul vielleicht kostengünstiger ersetzen, wenn man an den entsprechenden Motor kommen würde. Auf dem Motor, von S.M.C. Motors, steht eine Art Typennummer: &quot;RC500-KW/14440/DV&quot;. Leider habe ich bei Google nicht wirklich etwas gefunden.</p>
+</p>		
+		  <p class="small">Tagged: Roomba, Motor, and Reparatur by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/delphi/firemonkey/2014/01/22/signing_delphi_xe_applications_for_osx.html">Signing Firemonkey Applications on OSX</a>
 		</h3>
 		  <p class="small">Posted on 22 January 2014 by Andy</p>
@@ -365,28 +399,6 @@ Of course without debugger thats a very painfull and slow process. I am still pu
 		  <hr>
 		  
 		
-		<h3>
-		  <a href="/coding/2013/12/15/github_the_remote_end_hung_up_unexpectedly.html">Git - The remote end hung up unexpectedly</a>
-		</h3>
-		  <p class="small">Posted on 15 December 2013 by Andy</p>
-		  <p><p>Recently I tried to push a bigger repository to Github. At some stage of the upload process failed:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">fatal: The remote end hung up unexpectedly
-Everything up-to-date
-</code></pre></div>
-<p>Some research on the internet indicated that the https buffer was not big enough. The simplest fix to that was to increase the buffer size:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">git config http.postBuffer 524288000
-</code></pre></div>
-<p>That worked fairly well, however the upload was more like a black box thing now. The commit was compressed locally and there was no real upload progress information anymore. </p>
-
-<p>One other solution is to switch from https to SSH by the following command:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">git remote add origin git@github.com:username/project.git
-</code></pre></div>
-<p>In order to get SSH working you will have to create SSH Keys first, which is <a href="https://help.github.com/articles/generating-ssh-keys">described here</a>.</p>
-</p>		
-		  <p class="small">Tagged: Git and Github by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -434,6 +446,7 @@ Everything up-to-date
 <li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
 <li class='category'><a href='/categories/gadgets/'>gadgets (23)</a></li>
 <li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
+<li class='category'><a href='/categories/html/'>html (1)</a></li>
 <li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
 <li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
 <li class='category'><a href='/categories/java/'>java (23)</a></li>
@@ -455,6 +468,7 @@ Everything up-to-date
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (42)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (22)</a></li>
+<li class='category'><a href='/categories/webseiten/'>webseiten (1)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (3)</a></li>
 <li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>
 
