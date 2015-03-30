@@ -43,7 +43,7 @@ Neue Unterseiten sind mit einem Klick erstellt und dem Webseitenmenü hinzugefü
 
 Neben den Standardfunktionen für Webseiten, lässt sich die Webseite mit jeder Menge Funktionen ausrüsten. Kontaktformular?, Bildergalerie?, Blog? Kein Problem! Mit einem Klick erstellt.
 
-![](/assets/uploads/2015/2/wix4.png)
+![](/assets/uploads/2015/3/wix4.png)
 
 Bereits mit dem kostenlosen Account kann man jede Menge machen. Wer mehr will, der kann sich einen [Premium-Account](http://de.wix.com/upgrade/website) klicken. Neben einer eigenen Domain, gibt es Werbefreiheit, mehr Speicherplatz und andere Zusatzfunktionen wie Statistiken und sogar [Online-Shops](http://de.wix.com/ecommerce/website) sind möglich.
 
