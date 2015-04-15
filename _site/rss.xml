@@ -8,7 +8,15 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Mon, 30 Mar 2015 19:00:00 +0200</pubDate>
+    <pubDate>Wed, 15 Apr 2015 19:00:00 +0200</pubDate>
+    <item>
+      <title>Code signing problems with Delphi: Entitlements.plist</title>
+      <link>http://andydunkel.net/delphi/osx/2015/04/15/code_signing_problems_with_delphi.html</link>
+      <description>&lt;p&gt;Sometimes Apple changes things in the code signing process. Some weeks ago I had trouble signing my Delphi XE 4 application for the app store. Since I documented my steps from last time I was very sure I did everything as before.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 15 Apr 2015 19:00:00 +0200</pubDate>
+      <dc:date>2015-04-15T19:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>Homepageerstellung mit Wix.com</title>
       <link>http://andydunkel.net/webseiten/html/2015/03/30/homepageerstellung_mit_wix_com.html</link>
@@ -1901,6 +1909,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2015-03-30T19:00:00+02:00</dc:date>
+    <dc:date>2015-04-15T19:00:00+02:00</dc:date>
   </channel>
 </rss>

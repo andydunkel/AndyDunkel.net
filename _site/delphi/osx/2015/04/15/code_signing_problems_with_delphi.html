@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Category: delphi</title>
+        <title>Code signing problems with Delphi: Entitlements.plist</title>
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="/css/syntax.min.css">
         <script src="/css/jquery.min.js"></script>
@@ -109,38 +109,79 @@
 
     <div class="container">
 
-    <h1 class="category">Category: delphi</h1>
- <ul class="posts">
- 
-     <div><span class="month">APR</span> <span class="day">15</span> <span class="year">2015</span> </div>
-     <h2><a href="/delphi/osx/2015/04/15/code_signing_problems_with_delphi.html">Code signing problems with Delphi: Entitlements.plist</a></h2>
-     <div class="categories">Filed under <a class='category' href='/categories/delphi/'>delphi</a>, <a class='category' href='/categories/osx/'>osx</a></div>
- 
-     <div><span class="month">FEB</span> <span class="day">04</span> <span class="year">2015</span> </div>
-     <h2><a href="/delphi/2015/02/04/firemonkey_switchable_graphics_problem.html">Delphi XE / Firemonkey - Problem with switchable graphic card</a></h2>
-     <div class="categories">Filed under <a class='category' href='/categories/delphi/'>delphi</a></div>
- 
-     <div><span class="month">DEC</span> <span class="day">08</span> <span class="year">2014</span> </div>
-     <h2><a href="/delphi/2014/12/08/delphi_xe7_startup_problems.html">Delphi XE7 - Startup problem</a></h2>
-     <div class="categories">Filed under <a class='category' href='/categories/delphi/'>delphi</a></div>
- 
-     <div><span class="month">MAR</span> <span class="day">05</span> <span class="year">2014</span> </div>
-     <h2><a href="/delphi/firemonkey/2014/03/05/delphi_and_firemonkey_experience.html">My experiences with Delphi XE and Firemonkey</a></h2>
-     <div class="categories">Filed under <a class='category' href='/categories/delphi/'>delphi</a>, <a class='category' href='/categories/firemonkey/'>firemonkey</a></div>
- 
-     <div><span class="month">JAN</span> <span class="day">28</span> <span class="year">2014</span> </div>
-     <h2><a href="/delphi/firemonkey/2014/01/28/code_signing_problems_with_delphi_xe4_and_mavericks.html">Code signing problems with Delphi XE4 Mavericks</a></h2>
-     <div class="categories">Filed under <a class='category' href='/categories/delphi/'>delphi</a>, <a class='category' href='/categories/firemonkey/'>firemonkey</a></div>
- 
-     <div><span class="month">JAN</span> <span class="day">22</span> <span class="year">2014</span> </div>
-     <h2><a href="/delphi/firemonkey/2014/01/22/signing_delphi_xe_applications_for_osx.html">Signing Firemonkey Applications on OSX</a></h2>
-     <div class="categories">Filed under <a class='category' href='/categories/delphi/'>delphi</a>, <a class='category' href='/categories/firemonkey/'>firemonkey</a></div>
- 
-     <div><span class="month">NOV</span> <span class="day">23</span> <span class="year">2013</span> </div>
-     <h2><a href="/delphi/coding/2013/11/23/firemonkey_xe_4_taborder_workaround.html">Delphi XE4/Firemonkey - Taborder not working + Workaround</a></h2>
-     <div class="categories">Filed under <a class='category' href='/categories/coding/'>coding</a>, <a class='category' href='/categories/delphi/'>delphi</a></div>
- 
- </ul>
+        <div class="row">
+    	<div class="col-md-9">
+
+			<h2>Code signing problems with Delphi: Entitlements.plist</h2>
+			<p class="meta">15 Apr 2015</p>
+			
+			<div class="post">
+			<p>Sometimes Apple changes things in the code signing process. Some weeks ago I had trouble signing my Delphi XE 4 application for the app store. Since I documented my steps from last time I was very sure I did everything as before.</p>
+
+<p>The code signing was successful and no error was shown on the console. However during the upload to the app store it told me that  the &quot;code object not signed at all&quot;. Hmm...</p>
+
+<p>After some investigations (see bug report at <a href="http://qc.embarcadero.com/wc/qcmain.aspx?d=127441">Embarcaderos website</a>) it turned out that the &quot;Entitlements.plist&quot; file is no longer allowed in the bundle. But it is still needed for the signing.</p>
+
+<p><img src="/assets/uploads/2015/4/delphi.png" alt=""></p>
+
+<p>So I moved the file away from the the bundle to the same folder where the bundle was located and signed the app bundle like that:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"> codesign -f -s &quot;3rd Party Mac Developer Application&quot; -v &quot;DA-FormMaker.app&quot; —-deep --entitlements Entitlements.plist
+</code></pre></div>
+<p>After that the upload was successful and the review went fine.</p>
+
+			</div>
+			
+			<script type="text/javascript"><!--
+			google_ad_client = "ca-pub-1137550895446814";
+			/* 468x60, Erstellt 21.03.09 */
+			google_ad_slot = "2357680339";
+			google_ad_width = 468;
+			google_ad_height = 60;
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+    	</div>
+    	
+    	<div class="col-md-3" align="center">  
+    		<div class="panel panel-default sideBarTop">    			
+	    		<script id='fb7sm2s'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//api.flattr.com/button/view/?uid=mengenleere&button=compact&url='+encodeURIComponent(document.URL);f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fb7sm2s');</script>    		
+    		</div>
+    	  	
+    		<div class="panel panel-default">
+	    		<div class="panel-body">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- Seitenleiste -->
+				<ins class="adsbygoogle"
+				     style="display:inline-block;width:160px;height:600px"
+				     data-ad-client="ca-pub-1137550895446814"
+				     data-ad-slot="1909195079"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>		    	
+	    		</div>
+    		</div>
+    	</div>    	
+    	
+    </div>			
+
+<hr>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'andydunkelnet'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
     </div>
     

@@ -123,129 +123,26 @@
      
 		
 		<h3>
-		  <a href="/projects/2014/01/10/php-debugging-vm.html">Virtual Machine to debug and develop PHP</a>
+		  <a href="/eclipse/java/2011/04/28/get-plugin-path.html">Get plugin path </a>
 		</h3>
-		  <p class="small">Posted on 10 January 2014 by Andy</p>
-		  <p><p>I used PHP a lot in the past for our websites. I think its not the best programming language, but its simple enough to get things done very quickly. And it runs on the most servers of web hosters.</p>
+		  <p class="small">Posted on 28 April 2011 by Andy</p>
+		  <p><p>This snippets gets the local folder for a plugin:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">public static File getPluginFolder() {
+    if(pluginFolder == null) {
+        URL url = Platform.getBundle(&quot;my.plugin.id&quot;).getEntry(&quot;/&quot;);
+        try {
+            url = Platform.resolve(url);
+        }
+        catch(IOException ex) {
+            ex.printStackTrace();
+        }
+        pluginFolder = new File(url.getPath());
+    }
 
-<p>Today most likely I would choose another language, but I still have to maintain and debug PHP scripts once in a while. </p>
-
-<p>Usually its very painfull, since most of the times I don&#39;t have a running webserver on my local machine. Just makes no sense to have a webserver running all the times. Not to mention a running instance of MySQL.</p>
-
-<p>So I ended up using a simple text editor and uploading the files to my webserver for testing. 
-Of course without debugger thats a very painfull and slow process. I am still puzzled how many PHP developers use <code>echo</code> commands to debug there code.</p>
-
-<p>In the past I used a commercial Zend Studio license. I still have that running on my Mac. However I also wanted a simple solution I can use easily on my Linux notebook.</p>
-
-<p>So I <a href="/projects/php-debugging-vm/index.html">created a virtual machine for PHP debugging</a>. It runs an Apache webserver with, MySQL + phpMyAdmin and Netbeans as IDE. Xdebug is configured in PHP. </p>
-
-<p>I am publishing it here with the hope it might be useful for other:</p>
-
-<p><img src="/projects/php-debugging-vm/vm1_small.png" alt="image"></p>
-
-<p><a href="/projects/php-debugging-vm/index.html">Click here to get to the project page.</a></p>
-</p>		
-		  <p class="small">Tagged: PHP and Projects by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/coding/2013/12/15/github_the_remote_end_hung_up_unexpectedly.html">Git - The remote end hung up unexpectedly</a>
-		</h3>
-		  <p class="small">Posted on 15 December 2013 by Andy</p>
-		  <p><p>Recently I tried to push a bigger repository to Github. At some stage of the upload process failed:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">fatal: The remote end hung up unexpectedly
-Everything up-to-date
-</code></pre></div>
-<p>Some research on the internet indicated that the https buffer was not big enough. The simplest fix to that was to increase the buffer size:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">git config http.postBuffer 524288000
-</code></pre></div>
-<p>That worked fairly well, however the upload was more like a black box thing now. The commit was compressed locally and there was no real upload progress information anymore. </p>
-
-<p>One other solution is to switch from https to SSH by the following command:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">git remote add origin git@github.com:username/project.git
-</code></pre></div>
-<p>In order to get SSH working you will have to create SSH Keys first, which is <a href="https://help.github.com/articles/generating-ssh-keys">described here</a>.</p>
-</p>		
-		  <p class="small">Tagged: Git and Github by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/mac/tools/2013/12/14/homebrew_link_errors.html">Homebrew - Could not link xz Fehler</a>
-		</h3>
-		  <p class="small">Posted on 14 December 2013 by Andy</p>
-		  <p><p><a href="http://brew.sh/">Homebrew</a> ist eine feine Sache. Ähnlich die unter Linux kann man so allerhand Pakete über die Konsole installieren. Leider brachte das Update auf OSX 10.9 ein paar Probleme mit sich.</p>
-
-<p>Zuerst lief die alte Brew-Version gar nicht mehr. Also geupdated. Dann fingen die Probleme an. Bei der Installation von Paketen wurden diese zwar heruntergeladen, allerdings konnten die Symlinks nicht erstellt werden, da bereits vorhanden aus einer alten Version. Eventuell habe ich beim Update ein paar Fehler gemacht und irgendwas nicht bereinigt, keine Ahnung. </p>
-
-<p>Die Fehlermeldung sah in etwa so aus:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">Linking /usr/local/Cellar/... Warning: Could not link $foo. Unlinking...
-Error: Could not symlink file: /usr/local/Cellar/...
-/usr/local/... may already exist.
-/usr/local/... may not be writable.
-</code></pre></div>
-<p>Jedenfalls kann man die Symlinks in <code>/usr/local/share</code> von Hand löschen, was sehr viel Arbeit ist. Also etwas das Internet bemüht und das ganze mit folgenden Schritten gelöst:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"># Besitzer von /usr/local auf den aktuellen Benutzer setzen
-$ sudo chown -R `whoami` /usr/local
-
-# ggf. die fehlgeschlagene Installation entfernen
-$ brew uninstall -f $foo
-
-# Cache leeren
-$ rm -rf `brew --cache`
-
-# Aufräumen
-$ brew cleanup
-
-# nicht mehr aktuelle Symlinks löschen
-$ brew prune
-
-# der Homebrew Doktor:
-$ brew doctor
-</code></pre></div>
-<p>Im letzten Schritt wurden mir noch ein paar Hinweise ausgegeben, welche ich manuell auf der Konsole ausführen musste.</p>
-
-<p>Anschließend lief wieder alles ohne Probleme.</p>
-</p>		
-		  <p class="small">Tagged: homebrew by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/windows/linux/mac/tools/2013/12/05/exfat_truecrypt_volume.html">exFAT für TrueCrypt Volume nutzen</a>
-		</h3>
-		  <p class="small">Posted on 05 December 2013 by Andy</p>
-		  <p><p>Externe Festplatten und USB-Sticks verschlüssele ich meist mit TrueCrypt. Geht der Datenträger verloren, kann man zumindest recht sicher sein, dass niemand etwas mit den Daten anfangen kann. Da ich privat Windows, OSX und Linux nutze, stellt sich die Frage, welches Dateisystem man verwendet. Schließlich will ich von allen Betriebssystemen problemlos darauf zugreifen können.</p>
-
-<p>Die beste Lösung in Dateisystemform kommt von Microsoft und nennt sich <a href="http://de.wikipedia.org/wiki/ExFAT#exFAT">exFat</a>. Windows kann es ab XP lesen, OSX hat auch keine Probleme damit und auch Linux lässt sich problemlos dazu <a href="http://andydunkel.net/linux/2012/12/18/exfat-unter-ubuntu-nutzen.html">überreden</a>.</p>
-
-<p>Der Vorteil von exFat ist die Möglichkeit der Speicherung von Dateien größer 4GB. Leider bietet TrueCrypt keine Möglichkeit bei der Erstellung von Containern exFat zu nutzen. Entweder das alte FAT oder NTFS. </p>
-
-<p>Macht aber nix, exFat lässt sich trotzdem nutzen: Zuerst wird der TrueCrypt Container ganz normal erstellt und formatiert. </p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/12/truecrypt/true_format.png" alt=""></p>
-
-<p>Nachdem der Container erstellt wurde, mountet man ihn. Nun kann man das geöffnete Laufwerk mit dem exFat-Dateisystem formatieren. Im Explorer geht dies allerdings nicht, hier erlaubt Windows das exFat-Dateisystem nur für mobile Datenträger.</p>
-
-<p>Über die Eingabeaufforderung (Windows-Taste und dann CMD eingeben), lässt sich das Laufwerk dann mit exFat-Dateisystem ausstatten:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">format &lt;drive letter&gt;: /FS:exfat /Q
-</code></pre></div>
-<p><img src="http://andydunkel.net/assets/uploads/2013/12/truecrypt/true_format2.png" alt=""></p>
-</p>		
-		  <p class="small">Tagged: truecrypt and exfat by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/sonstiges/2013/11/30/festo_bionicopter.html">Festo BionicOpter</a>
-		</h3>
-		  <p class="small">Posted on 30 November 2013 by Andy</p>
-		  <p><p>Nachdem Festo letztes Jahr einen Vogel fliegen ließ, flog dieses Jahr eine Robo-Libelle über deren Messestand:</p>
-
-<iframe width="640" height="360" src="//www.youtube.com/embed/ROEqV4VfPTg" frameborder="0" allowfullscreen></iframe>
-</p>		
-		  <p class="small">Tagged: other by Andy</p>
+    return pluginFolder;
+}
+</code></pre></div></p>		
+		  <p class="small">Tagged: Plugin folder eclipse by Andy</p>
 		  <hr>
 		  
 		
@@ -334,11 +231,11 @@ $ brew doctor
 <!-- Pagination links -->
 <div class="pagination">
   
-    <a href="/page5" class="previous">Previous</a>
+    <a href="/page41" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 6 of 42</span>
+  <span class="page_number ">Page: 42 of 42</span>
   
-    <a href="/page7" class="next">Next</a>
+    <span class="next ">Next</span>
   
 </div>
 
