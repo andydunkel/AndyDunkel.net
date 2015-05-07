@@ -123,6 +123,28 @@
      
 		
 		<h3>
+		  <a href="/android/coding/2013/08/18/android-studio-nach-update-lasst-sich-das-projekt-nicht-starten.html">Android Studio: Nach Update lässt sich das Projekt nicht starten</a>
+		</h3>
+		  <p class="small">Posted on 18 August 2013 by Andy</p>
+		  <p><p>Heute wurde mir ein Update für Android Studio angezeigt. Also Update heruntergeladen und installiert. Wie immer erwartet man da natürlich Probleme mit bestehenden Projekten. :-)</p>
+
+<p>War natürlich der Fall: </p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">Gradle: &lt;br&gt;&lt;/br&gt;FAILURE: Could not determine which tasks to execute.&lt;br&gt;&lt;/br&gt;* What went wrong:&lt;br&gt;&lt;/br&gt;Task &#39;assemble&#39; not found in root project &#39;SomeProject&#39;.&lt;br&gt;&lt;/br&gt;* Try:&lt;br&gt;&lt;/br&gt;Run gradle tasks to get a list of available tasks.
+
+
+
+
+Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;&#39;/Users/da/.gradle/wrapper/dists/gradle-1.6-bin/.../gradle-1.6&#39;.
+</code></pre></div>
+<p>Die Lösung ist in der *.iml Datei (liegt im Root-Verzeichnis, den folgenden Inhalt herauszulöschen:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/08/RausDamit.png" alt="Raus Damit"></p>
+</p>		
+		  <p class="small">Tagged:  by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/tools/2013/08/07/mou-markdown-editor-fur-osx.html">Mou - Markdown Editor für OSX</a>
 		</h3>
 		  <p class="small">Posted on 07 August 2013 by Andy</p>
@@ -188,38 +210,6 @@
 		  <hr>
 		  
 		
-		<h3>
-		  <a href="/meinung/2013/06/17/smartphone-als-kamera.html">Smartphone als Kamera</a>
-		</h3>
-		  <p class="small">Posted on 17 June 2013 by Andy</p>
-		  <p><p>Bitkom <a href="https://www.bitkom.org/de/presse/8477_76471.aspx">schreibt</a>, Smartphones ersetzen die Urlaubskamera. </p>
-
-<p>Ich war die letzten Wochen etwas unterwegs und immer wenn ich unterwegs bin mache ich gerne Fotos, zur Erinnerung. </p>
-
-<p>Bisher hatte ich eine normale Kamera dabei. Es handelt sich um eine Nikon Coolpix P90. Es ist keine Spiegelreflex, sondern eine Hybridkamera.</p>
-
-<p>Die Bildqualität ist super, keine Frage, und der 24fache Zoom macht Spaß. Irgendein Motiv etwas zu weit weg, schnell ran zoomen. Es gibt auch jede Menge manuelle Einstellungen, aber meist nutze ich die Automatik. </p>
-
-<p>Allerdings ist das Ding auch sehr unhandlich. Ich will es eigentlich nicht die ganze Zeit tragen oder um den Hals hängen haben. Also ist die Kamera im Rucksack und muss mehr oder weniger umständlich heraus gekramt werden. </p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/06/2013-06-17-21.32.27.jpg" alt="2013 06 17 21 32 27"></p>
-
-<p>Seit letztem Jahr besitze ich ein iPhone 5. Die Kamera liefert mittlerweile solide Qualität. Meist sehe ich keinen Unterschied mehr zwischen iPhone und einer normalen Komptaktkamera. Lediglich bei schlechten Lichtverhältnissen gibt es Abstriche, was wohl auch an der Sensorgröße liegt.</p>
-
-<p>Bei der letzten Reise habe ich mich nun entschlossen, dass ich mir das Handling mit der großen Kamera spare. Das Smartphone habe ich immer dabei und es ist schnell einsatzbereit. Aus der Tasche ziehen, Foto machen, wegstecken. Die andere Kamera muss ich erst aus dem Rucksack zerren, einschalten, warten, Foto machen, weg packen. Das stresst, besonders im Urlaub.</p>
-
-<p>Zuhause angekommen werden die Bilder automatisch mit der Dropbox synchronisiert und dann auf den Rechner. Kein SD-Karten Gefummel.</p>
-
-<p>Fazit: es war praktischer und bis auf die Spezialfälle wo man gerne eine optischen Zoom gehabt hätte, hat das Smartphone alles abgedeckt. In Zukunft werde ich wohl öfter die große Kamera daheim lassen.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/06/2013-06-17-18.34.25.jpg" alt="2013 06 17 18 34 25"></p>
-
-<p> </p>
-</p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -261,6 +251,7 @@
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/android/'>android (1)</a></li>
 <li class='category'><a href='/categories/coding/'>coding (19)</a></li>
+<li class='category'><a href='/categories/computer/'>computer (1)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (7)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
 <li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>

@@ -8,7 +8,17 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Wed, 15 Apr 2015 19:00:00 +0200</pubDate>
+    <pubDate>Thu, 07 May 2015 19:00:00 +0200</pubDate>
+    <item>
+      <title>USB 3.0 am Thinkpad W500 nachrüsten</title>
+      <link>http://andydunkel.net/computer/2015/05/07/thinkpad_w500_usb_30.html</link>
+      <description>&lt;p&gt;USB 2.0 ist nicht gerade schnell, wenn man große Datenmengen auf die externe Festplatte verschieben möchte. Da mein Thinkpad W500 über zwei PCMCIA-Slots verfügt, lag es nahe den Mangel durch eine entsprechende Karte zu beheben.&lt;/p&gt;
+
+&lt;p&gt;Diese gibt es wie Sand am Meer und ich habe mich für die vergleichsweise günstige &lt;a href=&quot;http://www.amazon.de/gp/product/B00C7NV69C/ref=as_li_tl?ie=UTF8&amp;amp;camp=1638&amp;amp;creative=6742&amp;amp;creativeASIN=B00C7NV69C&amp;amp;linkCode=as2&amp;amp;tag=ekiwide0b-21&amp;amp;linkId=YXMCVAQEPDUP5V4Y&quot;&gt;Karte von CSL&lt;/a&gt; entschieden.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 07 May 2015 19:00:00 +0200</pubDate>
+      <dc:date>2015-05-07T19:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>Code signing problems with Delphi: Entitlements.plist</title>
       <link>http://andydunkel.net/delphi/osx/2015/04/15/code_signing_problems_with_delphi.html</link>
@@ -1909,6 +1919,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2015-04-15T19:00:00+02:00</dc:date>
+    <dc:date>2015-05-07T19:00:00+02:00</dc:date>
   </channel>
 </rss>

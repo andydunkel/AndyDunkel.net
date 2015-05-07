@@ -123,6 +123,100 @@
      
 		
 		<h3>
+		  <a href="/eclipse/rcp/2014/05/24/introduction_to_cnf.html">Introduction to the common navigator framework</a>
+		</h3>
+		  <p class="small">Posted on 24 May 2014 by Andy</p>
+		  <p><p>The common navigator framework is one of the more complex things in Eclipse RCP. This article describes how to get started with the common navigator framework (CNF). So its just the basic stuff to get started and play around more on your own.</p>
+
+<p>Enough <a href="http://youtu.be/oHoeXFbc1PA?t=10s">chitchat</a>, lets get started.</p>
+
+<h2>Creating the view</h2>
+
+<p>The first step is to create a demo application where you can put the CNF view. Use the RCP sample application with a view. After you created the demo project, add the <code>org.eclipse.ui.navigator</code> plugin to the manifest.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/05/cnf/cnf1.png" alt=""></p>
+
+<p>The next step is to add the view to the project by adding it to the <code>org.eclipse.ui.views</code> extension point.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/05/cnf/cnf2.png" alt=""></p>
+
+<p>Enter the ID, a name and create a new class, subclassing the <code>CommonNavigator</code> class. In the example this class is named <code>MyNavigator</code>.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/05/cnf/cnf3.png" alt=""></p>
+
+<p>After thats done, add the view to the perspective, either by plugin.xml or in code.</p>
+
+<h2>Data classes</h2>
+
+<p>To show something in the tree, create some data classes: The first is our node we want to show. Also create a new bean class, named <a href="https://github.com/andydunkel/RCP-Demo-Application/blob/master/com.da.editor/src/com/da/editor/cnf/ParentNode.java">ParentNode</a>  with a &quot;name&quot; attribute.</p>
+
+<p>After that, create a class named <a href="https://github.com/andydunkel/RCP-Demo-Application/blob/master/com.da.editor/src/com/da/editor/cnf/NavigatorRoot.java">NavigatorRoot</a>. This will serve as root node in the navigator. The root does not appear in the view itself. The class must implement the IAdaptable interface. To achieve that easily, just extend the <code>PlatformObject</code> class.</p>
+
+<p>After that, add the following method to the <code>NavigatorRoot</code> class:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">public Set&lt;ParentNode&gt; getParentNodes() {                   
+    ParentNode node = new ParentNode();
+    node.setName(&quot;Hello World&quot;);
+
+    ParentNode node2 = new ParentNode();
+    node2.setName(&quot;Hallo Welt&quot;);
+
+    Set&lt;ParentNode&gt; list = new HashSet&lt;ParentNode&gt;();
+    list.add(node);     
+    list.add(node2);        
+    return list;
+}   
+</code></pre></div>
+<p>This just creates and returns two nodes, which should show up in the navigator later.</p>
+
+<p>The last step is to add the data to the MyNavigator class we created before:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">@Override
+protected Object getInitialInput() {
+    return new NavigatorRoot();
+}
+</code></pre></div>
+<p>Usually you would not statically set the input like in the example, but thats just an example to get it working.</p>
+
+<h2>Plugin.xml</h2>
+
+<p>Now there are some things to do in the <code>plugin.xml</code> file. The first thing is to add an <code>org.eclipse.ui.navigator.navigatorContent</code> extension point.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/05/cnf/cnf4.png" alt=""></p>
+
+<p>Enter an ID and a name and create a contentProvider and labelProvider for the extension point, by clicking on the links in the plugin.xml editor.</p>
+
+<p>The label and content providers need some basic coding now. The content provider takes a <code>NavigatorRoot</code> object as input and should return an array ouf our <code>ParentNode</code> objects. The label provider takes the <code>ParentNode</code> as input and return its name property (<a href="https://github.com/andydunkel/RCP-Demo-Application/tree/master/com.da.editor/src/com/da/editor/cnf">see here for code</a>). </p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/05/cnf/cnf5.png" alt=""></p>
+
+<p>In the next step, define the triggerPoints which define when the content should appear. Add a <code>triggerPoints</code> to the <code>navigatorContent</code> extension point we created before. When done add a <code>instanceof</code> element and enter the name of the <code>NavigatorRoot</code> class. The result should look like that: </p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/05/cnf/cnf6.png" alt=""></p>
+
+<p>In the last step, add an <code>org.eclipse.ui.navigator.viewer</code> extension point:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/05/cnf/cnf7.png" alt=""></p>
+
+<p>The extension point registers the view as the navigator view and binds the content to it. First create the <code>viewer</code> element, then the <code>viewerContentBinding</code>. Enter the view id here again. Add an <code>includes</code> element, which well, includes the <code>navigatorContent</code> as <code>contentExtension.</code> In the pattern field, enter the id of the <code>navigatorContent</code> we created above.</p>
+
+<h2>Launching the application</h2>
+
+<p>Once all is done and the application is launched, you should now see the content in the navigator tree:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/05/cnf/cnf8.png" alt=""></p>
+
+<p>Since a lot of steps are required, especially in the <code>plugin.xml</code>, its most likely that the content will not show up. In that case check your code and the xml files for typos. </p>
+
+<p>Well thats it. As you can see its a lot of work to get even that basic example working. In my personal opinion: think before using the CNF framework and only use it when you really need all the functionality.</p>
+
+<h2>Code</h2>
+
+<p>The code for the example can be found on <a href="https://github.com/andydunkel/RCP-Demo-Application">GitHub</a>.</p>
+</p>		
+		  <p class="small">Tagged: CNF by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/objectivec/coding/xcode/2014/05/04/mapkit_introduction.html">Introduction to MapKit on IOS</a>
 		</h3>
 		  <p class="small">Posted on 04 May 2014 by Andy</p>
@@ -525,33 +619,6 @@ mru 1490
 		  <hr>
 		  
 		
-		<h3>
-		  <a href="/coding/tools/2014/02/04/check_code_signing_of_osx_applications.html">Check code signing of applications on OSX</a>
-		</h3>
-		  <p class="small">Posted on 04 February 2014 by Andy</p>
-		  <p><p>The last days I was busy signing my Delphi applications on my Mac. One version was signed with my Developer ID, the other one with the third party developer ID for the Mac App Store.</p>
-
-<p>Maybe its all very easy if you use XCode for that, but I had my issues with Delphi, where I had to do many steps manually on the command line.</p>
-
-<p>After the signing you usually want to check if the signature of the application is correct.</p>
-
-<p>You can of course do that on the command line (if you have XCode installed):</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">codesign -dv /Applications/Awesome.app
-</code></pre></div>
-<p>but I also found a tool with a neat GUI: <a href="http://brockerhoff.net/RB/AppCheckerLite/">RB App Checker</a>.  </p>
-
-<p>Its available for free on the <a href="https://itunes.apple.com/us/app/rb-app-checker-lite/id519421117?mt=12">Mac App Store</a>. </p>
-
-<p>You just drag and drop the application on the tool and it shows you very detailed information of the signature.</p>
-
-<p>It also checks entitlements, application receipts and requirements.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/02/rbappchecker/1.png" alt=""></p>
-</p>		
-		  <p class="small">Tagged: Code Signing and OSX by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -593,6 +660,7 @@ mru 1490
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/android/'>android (1)</a></li>
 <li class='category'><a href='/categories/coding/'>coding (19)</a></li>
+<li class='category'><a href='/categories/computer/'>computer (1)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (7)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
 <li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
