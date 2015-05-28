@@ -123,6 +123,28 @@
      
 		
 		<h3>
+		  <a href="/minimalismus/2014/07/07/we_the_tiny_house_people.html">Dokumentation: We the tiny house people</a>
+		</h3>
+		  <p class="small">Posted on 07 July 2014 by Andy</p>
+		  <p><p>Eher durch Zufall bin ich über einen Podcast auf die Dokumentation &quot;<a href="https://www.youtube.com/watch?v=lDcVrVA4bSQ">We the tiny house people</a>&quot; gestoßen. Die &quot;Tiny House&quot; Bewegung kommt ursprünglich aus den USA und findet anscheinend weltweit einige Anhänger. </p>
+
+<p>Statt beim Wohnen und Hausbau auf immer größer und mehr zu setzen, geht es bei den &quot;Tiny Houses&quot; darum sich klein, kompakt und funktionell einzurichten. Einige sind sogar mobil.</p>
+
+<p>Obwohl die Tiny Houses recht preiswert sind, da klein und gerne auch selbst gebaut, mangelt es innen oft nicht an Komfort. Oft werden individuell optimierte Möbel und Einrichtungen gezeigt. Kein Wunder, da das Haus aufgrund der Größe deutlich weniger kostet, hat man am Ende schlicht mehr Geld für eine hochwertige, individuelle Inneneinrichtung, welche maßgeschneidert auf die Größe ist. Qualität statt Quantität. Jedes Ding hat seinen Platz. Und natürlich ist auch der Unterhalt eines solchen Kleinhauses weniger kostspielig.</p>
+
+<p>Die Motive der Hausbesitzer sind unterschiedlich. Der Eine möchte der Umwelt wenig zumuten, andere wollen nicht über Jahrzehnte mit Krediten von der Bank abhängig sein. Und natürlich gibt es auch Leute die sich schlicht nicht mehr leisten können. </p>
+
+<p>Was auffällt: viele der Hausbesitzer sind anscheinend Singles und alleine leben. Mit Partner dürfte es doch anspruchsvoller sein auf engem Raum zusammen zu leben, wenn man sich nicht aus dem Weg gehen kann.</p>
+
+<p>Ich gebe zu, viele der dargestellten Häuser und Wohnstätten wären mir doch zu klein, dennoch zeigen die Beispiele wie man sich auch mit wenig Platz äußerst komfortabel einrichten kann, wenn man sich auf das Wesentliche konzentriert. Probieren würde ich es mal für einige Zeit.</p>
+
+<iframe width="640" height="360" src="//www.youtube.com/embed/lDcVrVA4bSQ" frameborder="0" allowfullscreen></iframe>
+</p>		
+		  <p class="small">Tagged: Tiny Houses by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/eclipse/rcp/2014/05/24/introduction_to_cnf.html">Introduction to the common navigator framework</a>
 		</h3>
 		  <p class="small">Posted on 24 May 2014 by Andy</p>
@@ -508,117 +530,6 @@ I rewrote about 80% of the application, then I decided to throw it away and use 
 		  <hr>
 		  
 		
-		<h3>
-		  <a href="/raspberry/linux/2014/02/11/raspberry_pi_als_vpn_server_einrichten.html">VPN für mobile Geräte auf dem Raspberry PI einrichten</a>
-		</h3>
-		  <p class="small">Posted on 11 February 2014 by Andy</p>
-		  <p><p>Ich hatte schon eine Weile mal vor, mir einen VPN-Server auf dem Raspberry Pi einzurichten. Zum einen will ich von unterwegs in irgendwelchen WLANs nicht unverschlüsselt kommunizieren und zum Anderen wird bei mobilen Internettarifen gern der ein oder andere Dienst blockiert. So funktioniert bei Congstar kein VOIP mit Skype. Richtet man hingegen ein VPN ein, funktioniert es, da der Anbieter nicht mehr in die Kommunikation reinschauen kann.</p>
-
-<p>Bisher hatte ich den Dienst <a href="http://www.swissvpn.net/">SwissVPN</a> benutzt. Wer öfter unterwegs ist und regelmäßig einen VPN-Dienst benötigt fährt mit so einem Dienst besser, beim Home-VPN ist der Upload vom DSL ein limitierender Faktor. Außerdem geht damit Youtube. :-) Da ich geizig bin, will ich mir das Geld aber sparen und mein VPN-Server selbst betreiben.</p>
-
-<p>Also los geht es: Wir gehen davon aus, dass auf dem RPI bereits ein Linux installiert ist, z.B. Raspbian. <a href="http://blog.ekiwi.de/?p=1757">Hier gibt es eine gute Anleitung</a> für die erste Einrichtung.</p>
-
-<h2>PPTP</h2>
-
-<p>Als VPN verwenden wir <a href="http://de.wikipedia.org/wiki/PPTP">PPTP</a>. Dieses wird praktischerweise auf dem iPhone, iPad und Co direkt unterstützt.</p>
-
-<h2>Updates</h2>
-
-<p>Zuerst updaten wir mal die Software auf unserem RPI:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo apt-get update
-sudo apt-get upgrade
-</code></pre></div>
-<p>Das kann je nach Stand der Software eine Weile dauern.</p>
-
-<h2>Installation und Konfiguration</h2>
-
-<p>Die PPTP-Software installieren wir mit:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo apt-get install pptdp
-</code></pre></div>
-<p>Anschließend bearbeiten wir die Config mit Nano:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo nano /etc/pptdp.conf
-</code></pre></div>
-<p>Man kann alternativ auch VIM verwenden. Im Nano-Editor speichern wir mit STRG+X und anschließend Y.</p>
-
-<p>In der &quot;pptdp.conf&quot; Datei tragen wir die lokale IP des Raspberry ein:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">localip 192.168.1.5
-</code></pre></div>
-<p>Außerdem die Remote-IP-Adressen. Diese werden unseren VPN-Clients zugeteilt. Hier vergibt man einen Adressbereich, je nachdem wieviele Geräte man plant zu nutzen:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">remoteip 192.168.1.234-238
-</code></pre></div>
-<p>Nach dem Speichern, konfigurieren wir jetzt die Optionen von PPTDP:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo nano /etc/ppp/pptpd-options
-</code></pre></div>
-<p>Am Ender Datei tragen wir folgende Zeilen ein:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">ms-dns 192.168.1.1
-noipx
-mtu 1490
-mru 1490
-</code></pre></div>
-<p>Nach &quot;ms-dns&quot; muss ein gültiger DNS-Server eingetragen werden. In den meisten Fällen verwendet man hier die Adresse seines Routers oder man trägt einen <a href="http://www.ccc.de/de/censorship/dns-howto">öffentlichen DNS-Server</a> ein.</p>
-
-<h3>Benutzer hinzufügen</h3>
-
-<p>Nun noch die VPN-Benutzer hinzufügen; dazu bearbeiten wir die folgende Datei:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo nano /etc/ppp/chap-secrets
-</code></pre></div>
-<p>Das Anlegen von Benutzern ist sehr einfach:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">Benutzername[TAB]*[TAB]Passwort[Tab]*
-</code></pre></div>
-<p>Beispiel:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">Andy    *   GeheimesPasswort    *
-</code></pre></div>
-<p>Nach dem Bearbeiten muss der PPTP-Server neu gestartet werden:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo service pptpd restart
-</code></pre></div>
-<h2>Sonstige Konfiguration</h2>
-
-<p>Wir wollen nicht nur auf den RPI zugreifen, sondern auch auf das Internet und sonstige Resourcen. Das richten wir jetzt ein:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo nano /etc/sysctl.conf
-</code></pre></div>
-<p>Hier tragen wir die folgende Zeile ein:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">net.ipv4.ip_forward=1
-</code></pre></div>
-<p>Die Änderung übernehmen wir mit:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo sysctl -p
-</code></pre></div>
-<h3>Firewall konfigurieren</h3>
-
-<p>Zuletzt aktualisieren wir noch die Firewall des RPI:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-</code></pre></div>
-<p>Bei mir kam an der Stelle die Fehlermeldung <code>iptables: Table does not exist (do you need to insmod?)</code>. Ein Neustart des RPI nach den Updates, vom Anfang, schaffte hier  Abhilfe. Wichtig: Dieser Befehl muss nach jedem Start des RPI neu ausgeführt werden. Also am Besten gleich einen Cronjob einrichten:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo crontab -e
-</code></pre></div>
-<p>Am Ende fügen wir die folgende Zeile ein:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">@reboot sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-</code></pre></div>
-<p>Speichern und fertig.</p>
-
-<h3>Portforwarding auf dem Router aktivieren</h3>
-
-<p>PPTP verwendet den Port 1723. Damit der RPI Anfragen auf diesem Port entgegen nehmen kann, muss dieser vom Router weitergeleitet werden. Dazu loggen wir uns auf unserem Router ein und konfigurieren die Weiterleitung.</p>
-
-<p>Hier für eine FritzBox:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/02/vpn/vpn2.png" alt=""> </p>
-
-<h3>Einrichten auf dem iPhone</h3>
-
-<p>Die Einrichtung auf dem iPhone und anderen Geräten ist einfach. Zuerst gehen wir in die VPN-Einstellungen und legt ein neues VPN-Profil an:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/02/vpn/vpn1.png" alt=""></p>
-
-<p>PPTP auswählen, Servernamen, Benutzername und Passwort eingeben.</p>
-
-<p>Als Servernamen gibt man den Servernamen oder die IP-Adresse seines Internetzugangs ein. Da die IP-Adresse bei einem DSL-Anschluss oft dynamisch ist, sollte man einen DynDNS-Dienst nutzen.</p>
-
-<p>Das war es auch schon. Wenn alles korrekt konfiguriert ist, sollte die Verbindung nach dem Speichern funktionieren.</p>
-</p>		
-		  <p class="small">Tagged: RPI and VPN by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -690,6 +601,7 @@ mru 1490
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (42)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (22)</a></li>
+<li class='category'><a href='/categories/webdesign/'>webdesign (1)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (1)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (3)</a></li>
 <li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>

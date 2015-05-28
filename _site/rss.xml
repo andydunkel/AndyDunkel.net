@@ -8,7 +8,15 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Thu, 07 May 2015 19:00:00 +0200</pubDate>
+    <pubDate>Thu, 28 May 2015 19:00:00 +0200</pubDate>
+    <item>
+      <title>Typische Webdesign Fehler - Fehlende Optimierung für Mobilgeräte</title>
+      <link>http://andydunkel.net/webdesign/2015/05/28/typische_webdesign_fehler.html</link>
+      <description>&lt;p&gt;Früher war die Webdesignwelt noch einfach. Man erstellte die Homepage und konnte sich sicher sein, dass diese an einem PC oder Notebook mit einem großen Bildschirm angeschaut wurde. &lt;/p&gt;
+</description>
+      <pubDate>Thu, 28 May 2015 19:00:00 +0200</pubDate>
+      <dc:date>2015-05-28T19:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>USB 3.0 am Thinkpad W500 nachrüsten</title>
       <link>http://andydunkel.net/computer/2015/05/07/thinkpad_w500_usb_30.html</link>
@@ -1919,6 +1927,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2015-05-07T19:00:00+02:00</dc:date>
+    <dc:date>2015-05-28T19:00:00+02:00</dc:date>
   </channel>
 </rss>
