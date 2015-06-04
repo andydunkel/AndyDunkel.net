@@ -20,7 +20,7 @@ Mittlerweile sind die Browser alle auf einem Stand in der sie die aktuellen Stan
 
 Inzwischen zeichnet sich, seit ein paar Jahren, ein anderer Trend ab. Statt am Computer werden Webseiten mehr und mehr an mobilen Endgeräten konsumiert. Kein Wunder, die kleinen Dinger hat man immer dabei und so können Wartezeiten im Alltag durch surfen im Netz überbrückt und genutzt werden.
  
-Google gibt an, dass mittlerweile mehr Leute die Google Suche über [Smartphones](https://www.deinhandy.de/smartphones) und Co benutzen als klassisch am Desktop.
+Google gibt an, dass mittlerweile mehr Leute die Google Suche über Smartphones und Co benutzen als klassisch am Desktop.
 
 ![](/assets/uploads/2015/5/opt.jpg)
 
