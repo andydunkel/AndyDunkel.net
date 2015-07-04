@@ -8,36 +8,10 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Thu, 28 May 2015 19:00:00 +0200</pubDate>
-    <item>
-      <title>Typische Webdesign Fehler - Fehlende Optimierung für Mobilgeräte</title>
-      <link>http://andydunkel.net/webdesign/2015/05/28/typische_webdesign_fehler.html</link>
-      <description>&lt;p&gt;Früher war die Webdesignwelt noch einfach. Man erstellte die Homepage und konnte sich sicher sein, dass diese an einem PC oder Notebook mit einem großen Bildschirm angeschaut wurde. &lt;/p&gt;
-</description>
-      <pubDate>Thu, 28 May 2015 19:00:00 +0200</pubDate>
-      <dc:date>2015-05-28T19:00:00+02:00</dc:date>
-    </item>
-    <item>
-      <title>USB 3.0 am Thinkpad W500 nachrüsten</title>
-      <link>http://andydunkel.net/computer/2015/05/07/thinkpad_w500_usb_30.html</link>
-      <description>&lt;p&gt;USB 2.0 ist nicht gerade schnell, wenn man große Datenmengen auf die externe Festplatte verschieben möchte. Da mein Thinkpad W500 über zwei PCMCIA-Slots verfügt, lag es nahe den Mangel durch eine entsprechende Karte zu beheben.&lt;/p&gt;
-
-&lt;p&gt;Diese gibt es wie Sand am Meer und ich habe mich für die vergleichsweise günstige &lt;a href=&quot;http://www.amazon.de/gp/product/B00C7NV69C/ref=as_li_tl?ie=UTF8&amp;amp;camp=1638&amp;amp;creative=6742&amp;amp;creativeASIN=B00C7NV69C&amp;amp;linkCode=as2&amp;amp;tag=ekiwide0b-21&amp;amp;linkId=YXMCVAQEPDUP5V4Y&quot;&gt;Karte von CSL&lt;/a&gt; entschieden.&lt;/p&gt;
-</description>
-      <pubDate>Thu, 07 May 2015 19:00:00 +0200</pubDate>
-      <dc:date>2015-05-07T19:00:00+02:00</dc:date>
-    </item>
-    <item>
-      <title>Code signing problems with Delphi: Entitlements.plist</title>
-      <link>http://andydunkel.net/delphi/osx/2015/04/15/code_signing_problems_with_delphi.html</link>
-      <description>&lt;p&gt;Sometimes Apple changes things in the code signing process. Some weeks ago I had trouble signing my Delphi XE 4 application for the app store. Since I documented my steps from last time I was very sure I did everything as before.&lt;/p&gt;
-</description>
-      <pubDate>Wed, 15 Apr 2015 19:00:00 +0200</pubDate>
-      <dc:date>2015-04-15T19:00:00+02:00</dc:date>
-    </item>
+    <pubDate>Sat, 04 Jul 2015 19:00:00 +0200</pubDate>
     <item>
       <title>C#-Anwendungen mehrsprachig gestalten</title>
-      <link>http://andydunkel.net/coding/2015/04/07/c_sharp_anwendungen_mehrsprachig.html</link>
+      <link>http://andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html</link>
       <description>&lt;h1&gt;C# Anwendungen lokalisieren&lt;/h1&gt;
 
 &lt;p&gt;Im folgenden Artikel werde ich kurz die ersten Schritte beschreiben um eine C#-Anwendung mehrsprachig zu gestalten.&lt;/p&gt;
@@ -107,8 +81,34 @@ MessageBox.Show(DateTime.Now.ToString(&amp;quot;d&amp;quot;, ci));
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Wie man sieht, ist die grundsätzliche Mehrsprachigkeit einer Anwendung in C# sehr leicht möglich.&lt;/p&gt;
 </description>
-      <pubDate>Tue, 07 Apr 2015 19:00:00 +0200</pubDate>
-      <dc:date>2015-04-07T19:00:00+02:00</dc:date>
+      <pubDate>Sat, 04 Jul 2015 19:00:00 +0200</pubDate>
+      <dc:date>2015-07-04T19:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Typische Webdesign Fehler - Fehlende Optimierung für Mobilgeräte</title>
+      <link>http://andydunkel.net/webdesign/2015/05/28/typische_webdesign_fehler.html</link>
+      <description>&lt;p&gt;Früher war die Webdesignwelt noch einfach. Man erstellte die Homepage und konnte sich sicher sein, dass diese an einem PC oder Notebook mit einem großen Bildschirm angeschaut wurde. &lt;/p&gt;
+</description>
+      <pubDate>Thu, 28 May 2015 19:00:00 +0200</pubDate>
+      <dc:date>2015-05-28T19:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>USB 3.0 am Thinkpad W500 nachrüsten</title>
+      <link>http://andydunkel.net/computer/2015/05/07/thinkpad_w500_usb_30.html</link>
+      <description>&lt;p&gt;USB 2.0 ist nicht gerade schnell, wenn man große Datenmengen auf die externe Festplatte verschieben möchte. Da mein Thinkpad W500 über zwei PCMCIA-Slots verfügt, lag es nahe den Mangel durch eine entsprechende Karte zu beheben.&lt;/p&gt;
+
+&lt;p&gt;Diese gibt es wie Sand am Meer und ich habe mich für die vergleichsweise günstige &lt;a href=&quot;http://www.amazon.de/gp/product/B00C7NV69C/ref=as_li_tl?ie=UTF8&amp;amp;camp=1638&amp;amp;creative=6742&amp;amp;creativeASIN=B00C7NV69C&amp;amp;linkCode=as2&amp;amp;tag=ekiwide0b-21&amp;amp;linkId=YXMCVAQEPDUP5V4Y&quot;&gt;Karte von CSL&lt;/a&gt; entschieden.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 07 May 2015 19:00:00 +0200</pubDate>
+      <dc:date>2015-05-07T19:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Code signing problems with Delphi: Entitlements.plist</title>
+      <link>http://andydunkel.net/delphi/osx/2015/04/15/code_signing_problems_with_delphi.html</link>
+      <description>&lt;p&gt;Sometimes Apple changes things in the code signing process. Some weeks ago I had trouble signing my Delphi XE 4 application for the app store. Since I documented my steps from last time I was very sure I did everything as before.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 15 Apr 2015 19:00:00 +0200</pubDate>
+      <dc:date>2015-04-15T19:00:00+02:00</dc:date>
     </item>
     <item>
       <title>Homepageerstellung mit Wix.com</title>
@@ -2002,6 +2002,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2015-05-28T19:00:00+02:00</dc:date>
+    <dc:date>2015-07-04T19:00:00+02:00</dc:date>
   </channel>
 </rss>
