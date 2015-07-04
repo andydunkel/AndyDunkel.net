@@ -123,6 +123,103 @@
      
 		
 		<h3>
+		  <a href="/coding/eclipse/2012/11/01/rcp-perspectives-and-perspective-contributions-2.html">RCP: Perspectives and Perspective Contributions</a>
+		</h3>
+		  <p class="small">Posted on 01 November 2012 by Andy</p>
+		  <p><p>Note: I put the example project in a ZIP file, you can use that to have a look to the actual code, <a href="http://andydunkel.net/assets/wp-custom/com.da.perspectives.example.zip">Download</a>.</p>
+
+<h3>Start</h3>
+
+<p>In the first step, we create a sample plugin project (Mail project):</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/1.png" alt="1"></p>
+
+<h3>Make the perspective bar visible</h3>
+
+<p>This needs to be done in the ApplicationWorkbenchWindowAdvisor.java class, in the preWindowOpen method:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">IWorkbenchWindowConfigurer configurer = getWindowConfigurer();
+configurer.setShowPerspectiveBar(true);
+</code></pre></div>
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/2.png" alt="2"></p>
+
+<h3>Create another plugin with perspective</h3>
+
+<p>We create another plugin project in the workspace, select &quot;No&quot; for &quot;Rich Client Application&quot; (no template in the next step):</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/3.png" alt="3"></p>
+
+<p>After the project is created, open the &quot;plugin.xml&quot; file of the new plugin project. We create a new &quot;org.eclipse.ui.perspectives&quot; extension point:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/4.png" alt="4"></p>
+
+<p>To create the perspective class, we click on the &quot;class&quot; link and create the class:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/5.png" alt="5"></p>
+
+<p>In our main projects &quot;plugin.xml&quot; add our new plugin project as dependency:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/6.png" alt="6"> <img src="http://andydunkel.net/assets/uploads/2012/11/7.png" alt="7"></p>
+
+<p>If we switch to this perspective, the window will become empty. We want an view appear in this perspective. In the example project, we create an &quot;ImageView&quot; and define the view in the &quot;plugin.xml&quot;:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/8.png" alt="8"></p>
+
+<p>After that, we have to add the code which defines our perspective:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">@Override
+public void createInitialLayout(IPageLayout layout) {
+  String editorArea = layout.getEditorArea();
+  layout.setEditorAreaVisible(false);
+
+  layout.addStandaloneView(ImageView.ID,  false, IPageLayout.TOP, 1, editorArea);
+}
+</code></pre></div>
+<h3>Contribute to an existing perspective</h3>
+
+<p>OK, different example: We now want to contribute our ImageView to an existing perspective. For that, we add to our contribution project an &quot;perpectiveExtensions&quot; extension point:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/9.png" alt="9"></p>
+
+<p>As &quot;targetID&quot; enter the ID of our main perspective in the &quot;main.gui&quot; project. Now we add a view ot our perpective extension. Right click -&gt; New -&gt; view:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/a.png" alt="a"></p>
+
+<p>When the application starts, the ImageViewer will appear next to the message view:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/b.png" alt="b"></p>
+
+<h3>Contribute to the toolbar</h3>
+
+<p>Now we want, that our contribution plugin also contributes a toolbar and menu items to our main application. For that, we have to define an &quot;org.eclipse.ui.actionSets&quot; extension point. Now we have to add the action set to our perspectiveExtension.</p>
+
+<p>The &quot;plugin.xml&quot; extension points should now look something like this:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/c.png" alt="c"></p>
+
+<p>If it does not show up, make sure you entered a correct &quot;toolbarPath&quot; in the definition of your actionSet action:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/d.png" alt="d"></p>
+
+<p>If everything is right, the new icon should appear in the toolbar of our main application.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/e.png" alt="e"></p>
+
+<h3>Remove an existing item from the toolbar</h3>
+
+<p>If we switch to our new perspective, the image viewer, we are able to open new message views via toolbar and the menu. However, we do not want this. So we need to get rid of the menu items and toolbar items. The perspectiveExtension allows us to hide items, too. To do this, we add another perspectiveExtension for our perspective for the image view:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/g.png" alt="g"></p>
+
+<p>Now we add &quot;hiddenMenuItems&quot; and &quot;hiddenToolBarItems&quot;:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/h.png" alt="h"></p>
+
+<p>Basically we just enter the IDs of the commands here. If we switch now to our perspective, the toolbar items defined should be invisible.</p>
+</p>		
+		  <p class="small">Tagged: Eclipse, perspectives, and RCP by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/radfahren/2012/09/24/radtour-sonthofen-september-2012.html">Radtour Sonthofen - September 2012</a>
 		</h3>
 		  <p class="small">Posted on 24 September 2012 by Andy</p>
@@ -210,22 +307,6 @@
 		  <hr>
 		  
 		
-		<h3>
-		  <a href="/2012/07/17/recaptcha-force-language.html">Recaptcha: Force Language</a>
-		</h3>
-		  <p class="small">Posted on 17 July 2012 by Andy</p>
-		  <p><p>Recent problem: customer wanted his <a href="http://www.google.com/recaptcha">reCatpcha</a> forced to german language. First attempt was to set the setting via the RecaptchaOption Script variable. Howewer, for some reason this did not work.</p>
-
-<p>Here is the solution:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">&lt;script type=&quot;text/javascript&quot; 
-src=&quot;http://api.recaptcha.net/challenge?k=apiKey&lt;strong&gt;&amp;hl=de&lt;/strong&gt;&quot;&gt; 
-</code></pre></div>
-<p>By adding &amp;hl=de to the &quot;src&quot; URL the language was forced to german.</p>
-</p>		
-		  <p class="small">Tagged: audio, deutsch, german, language, Recaptcha, and sprache by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -266,7 +347,7 @@ src=&quot;http://api.recaptcha.net/challenge?k=apiKey&lt;strong&gt;&amp;hl=de&lt
 		<section>
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/android/'>android (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (19)</a></li>
+<li class='category'><a href='/categories/coding/'>coding (20)</a></li>
 <li class='category'><a href='/categories/computer/'>computer (1)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (7)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>

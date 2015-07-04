@@ -1005,6 +1005,10 @@
         <lastmod>2015-03-30T20:18:28+02:00</lastmod>
     </url>
     <url>
+        <loc>http://andydunkel.net/coding/2015/04/07/c_sharp_anwendungen_mehrsprachig.html</loc>
+        <lastmod>2015-07-04T10:27:23+02:00</lastmod>
+    </url>
+    <url>
         <loc>
             http://andydunkel.net/delphi/osx/2015/04/15/code_signing_problems_with_delphi.html
         </loc>
@@ -1044,6 +1048,6 @@
     </url>
     <url>
         <loc>http://andydunkel.net/</loc>
-        <lastmod>2015-06-04T18:55:55+02:00</lastmod>
+        <lastmod>2015-07-04T10:27:23+02:00</lastmod>
     </url>
 </urlset>
