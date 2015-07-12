@@ -4,7 +4,7 @@ comments: true
 date: 2015-07-12 17:00:00+00:00
 layout: post
 slug: c_sharp_dateiaenderungen_ueberwachen
-title: 'C#-Anwendungen mehrsprachig gestalten'
+title: 'C#-Dateiänderungen in Verzeichnissen überwachen'
 categories:
 - Coding
 tags:
