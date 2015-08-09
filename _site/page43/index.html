@@ -132,135 +132,26 @@
      
 		
 		<h3>
-		  <a href="/eclipse/java/2011/08/02/save-and-load-an-emf-model-to-an-xml-file.html">Save and load an EMF model to an XML file</a>
+		  <a href="/eclipse/java/2011/04/28/get-plugin-path.html">Get plugin path </a>
 		</h3>
-		  <p class="small">Posted on 02 August 2011 by Andy</p>
-		  <p><p>Here are two code snippets which give you an example how to save and load an EMF model to an XML file.</p>
+		  <p class="small">Posted on 28 April 2011 by Andy</p>
+		  <p><p>This snippets gets the local folder for a plugin:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">public static File getPluginFolder() {
+    if(pluginFolder == null) {
+        URL url = Platform.getBundle(&quot;my.plugin.id&quot;).getEntry(&quot;/&quot;);
+        try {
+            url = Platform.resolve(url);
+        }
+        catch(IOException ex) {
+            ex.printStackTrace();
+        }
+        pluginFolder = new File(url.getPath());
+    }
 
-<p>Note that &quot;Data&quot; is my EMF model object.</p>
-
-<p>Save EMF to XML file:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">public void saveData(String fileName, Data data) throws IOException {  
-  Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
-  Map&lt;String, Object&gt; m = reg.getExtensionToFactoryMap();
-  m.put(&quot;daform&quot;, new XMIResourceFactoryImpl());
-
-  ResourceSet resSet = new ResourceSetImpl();
-  Resource resource = resSet.createResource(URI.createFileURI(fileName));
-  resource.getContents().add(data);
-  resource.save(Collections.EMPTY_MAP);
-}
-</code></pre></div>
-<p>Load to EMF object:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">public Data loadData(String fileName) throws FileNotFoundException, IOException {
-  XMIResourceImpl resource = new XMIResourceImpl();
-  File source = new File(fileName);
-  resource.load( new FileInputStream(source), new HashMap&lt;Object,Object&gt;());
-  Data data = (Data)resource.getContents().get(0);  
-  return data;
+    return pluginFolder;
 }
 </code></pre></div></p>		
-		  <p class="small">Tagged: EMF, load, Save, and XML by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/sonstiges/2011/07/31/kein-service-pack-1-frs-thinkpad-edge.html">Kein Service Pack 1 fürs ThinkPad Edge</a>
-		</h3>
-		  <p class="small">Posted on 31 July 2011 by Andy</p>
-		  <p><p>Service Pack 1 für Windows 7 gibt es ja schon eine Weile. Allerdings wollte das SP1 im Windows Update auf meinem Thinkpad Edge nie auftauchen. Hat mich erst mal nicht weiter gekümmert, irgendwie schwang da die Hoffnung mit das sich das Problem irgendwann selbst löst. Hat es natürlich nicht.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image28.png" alt="image"></p>
-
-<p>Auch manuelles herunterladen vom SP1 hat außer 3 Stunden Zeitverschwendung nichts gebracht.</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2011/07/image29.png"><img src="http://andydunkel.net/assets/uploads/2011/07/image_thumb5.png" alt="image"></a></p>
-
-<p>Nun war guter Rat teuer.</p>
-
-<!-- more -->
-
-<p>Also Google angeworfen und siehe da, anscheinend ist ein veralteter Grafikkartentreiber von Intel schuld. Genau genommen, die Versionen von 8.15.10.2104 bis 8.15.10.2141.</p>
-
-<p>Wie findet man raus welche Version man installiert hat? Startmenü öffnen und “dxdiag” eintippen. Dort klickt man dann auf Grafik und sieht auf der rechten Seite die Version des Grafikkartentreibers (hier bereits die aktuelle Version):</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image30.png" alt="image"></p>
-
-<p>Also von Lenovo die neue Version des Treibers geladen und schon zeigt das Windows Update das Service Pack 1 an:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image31.png" alt="image"></p>
-</p>		
-		  <p class="small">Tagged: Edge, Intel, SP1, Thinkpad, Treiber, and Windows by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/sonstiges/2011/07/31/nichts.html">Nichts</a>
-		</h3>
-		  <p class="small">Posted on 31 July 2011 by Andy</p>
-		  <p><p><img src="http://andydunkel.net/assets/uploads/2011/07/image27.png" alt="image"></p>
-</p>		
-		  <p class="small">Tagged: Nichts by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/sonstiges/2011/07/30/drehung-eines-vektors-im-r2.html">Drehung eines Vektors im R2</a>
-		</h3>
-		  <p class="small">Posted on 30 July 2011 by Andy</p>
-		  <p><p>Heute mal ein wenig Mathematik. Braucht man ja mal ab und zu. Konkretes Problem: Drehung eines Punktes um den Koordinatenursprung. Brauchte ich konkret für eine Visualisierungskomponente (Anzeige des aktuellen Winkels).</p>
-
-<p>Fangen wir an, zuerst benötigen wir die <a href="http://de.wikipedia.org/wiki/Drehmatrix">Drehmatrix</a> (auf die Herleitung verzichte ich an dieser Stelle <img src="http://andydunkel.net/assets/uploads/2011/07/wlEmoticon-smile7.png" alt="Smiley">), diese sieht wie folgt aus:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image22.png" alt="image"></p>
-
-<p>Mit dieser wird der Vektor multipliziert:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image23.png" alt="image"></p>
-
-<p>Hier gilt zu beachten, dass Matrixmultiplikationen im Allgemeinen nicht kommutativ sind. Die Drehung erfolgt im mathematisch positiven Sinn, also gegen den Uhrzeiger. Ausmultipliziert ergeben sich folgende Formeln:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image24.png" alt="image"></p>
-
-<p>Ein kleines Beispiel, wir drehen den Punkt (2,2) um den Koordinatenursprung:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image25.png" alt="image"></p>
-
-<p>Im Koordinatensystem sieht das ganze so aus:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image26.png" alt="image"></p>
-
-<p>Das war’s auch schon. In diesem Sinne:</p>
-</p>		
-		  <p class="small">Tagged: Drehung and Vektor by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/ipad/2011/07/28/offline-karten-fr-das-ipad.html">Offline Karten für das iPad</a>
-		</h3>
-		  <p class="small">Posted on 28 July 2011 by Andy</p>
-		  <p><p>Auf dem iPad ist standardmäßig Google Maps installiert, funktioniert auch prächtig, solange man Internetverbindung hat.</p>
-
-<p>Aber es gibt ja für alles eine App: <a href="http://itunes.apple.com/de/app/forevermap-by-skobbler/id394763737?mt=8">ForeverMap</a></p>
-
-<p>Gibt’s im App-Store für bescheidene 1,59 Euro. Nach der Installation installiert man sich die gewünschten Karten gleich Länderweise. Deutschland schlägt mit 400 MB zu Buche, andere Länder sind kleiner. </p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image20.png" alt="image"></p>
-
-<p><strong>Was kann man noch machen?</strong></p>
-
-<!-- more -->
-
-<p>Routen planen, sowohl für Auto oder Fußgänger. Ist allerdings keine Navi im klassischen Sinne. </p>
-
-<p>Offlinesuche nach Adressen und Locations, z.B. wo ist die Kneipe? <img src="http://andydunkel.net/assets/uploads/2011/07/wlEmoticon-smile6.png" alt="Smiley"></p>
-
-<p>Das ganze basiert auf <a href="http://www.openstreetmap.org/">www.openstreetmap.org/</a>, ist also aktuell.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image21.png" alt="image"></p>
-</p>		
-		  <p class="small">Tagged: ipad, Karten, and Offline by Andy</p>
+		  <p class="small">Tagged: Plugin folder eclipse by Andy</p>
 		  <hr>
 		  
 		
@@ -351,11 +242,11 @@
 <!-- Pagination links -->
 <div class="pagination">
   
-    <a href="/page29" class="previous">Previous</a>
+    <a href="/page42" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 30 of 43</span>
+  <span class="page_number ">Page: 43 of 43</span>
   
-    <a href="/page31" class="next">Next</a>
+    <span class="next ">Next</span>
   
 </div>
 

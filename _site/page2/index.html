@@ -132,6 +132,27 @@
      
 		
 		<h3>
+		  <a href="/delphi/osx/2015/04/15/code_signing_problems_with_delphi.html">Code signing problems with Delphi: Entitlements.plist</a>
+		</h3>
+		  <p class="small">Posted on 15 April 2015 by Andy</p>
+		  <p><p>Sometimes Apple changes things in the code signing process. Some weeks ago I had trouble signing my Delphi XE 4 application for the app store. Since I documented my steps from last time I was very sure I did everything as before.</p>
+
+<p>The code signing was successful and no error was shown on the console. However during the upload to the app store it told me that  the &quot;code object not signed at all&quot;. Hmm...</p>
+
+<p>After some investigations (see bug report at <a href="http://qc.embarcadero.com/wc/qcmain.aspx?d=127441">Embarcaderos website</a>) it turned out that the &quot;Entitlements.plist&quot; file is no longer allowed in the bundle. But it is still needed for the signing.</p>
+
+<p><img src="/assets/uploads/2015/4/delphi.png" alt=""></p>
+
+<p>So I moved the file away from the the bundle to the same folder where the bundle was located and signed the app bundle like that:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"> codesign -f -s &quot;3rd Party Mac Developer Application&quot; -v &quot;DA-FormMaker.app&quot; —-deep --entitlements Entitlements.plist
+</code></pre></div>
+<p>After that the upload was successful and the review went fine.</p>
+</p>		
+		  <p class="small">Tagged: OSX, CodeSigning, Delphi, and Pascal by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/webseiten/html/2015/03/30/homepageerstellung_mit_wix_com.html">Homepageerstellung mit Wix.com</a>
 		</h3>
 		  <p class="small">Posted on 30 March 2015 by Andy</p>
@@ -308,35 +329,6 @@ end.
 		  <hr>
 		  
 		
-		<h3>
-		  <a href="/delphi/2014/12/08/delphi_xe7_startup_problems.html">Delphi XE7 - Startup problem</a>
-		</h3>
-		  <p class="small">Posted on 08 December 2014 by Andy</p>
-		  <p><p>I experienced a very annoying problem with after updating Delphi XE7 to update 1.</p>
-
-<p>When Delphi was started, it just hangs. After some time at least an error message pops up informing the user about not enough stack memory.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/12/xe7_1.png" alt="image"></p>
-
-<p><code>displayNotification: Nicht genügend Stackspeicher / noch enough stack memory </code></p>
-
-<p>Delphi would still not react after clicking &quot;OK&quot; in the error message and remained in an unuseable state.</p>
-
-<p>Looks like some problem with the start page Delphi shows (bds://default.html) when started. Investigations on the internet brought up some information and hints how to solve the problem: clear the Internet Explorers cache, delete the cache folder of Internet Explorer manually. However non of that worked for me.</p>
-
-<p>Another solution is do disable the start page completely. To do that open the explorer (with admin rights) and navigate to the following folder of your Delphi installation:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> c:\Program Files (x86)\Embarcadero\Studio\15.0\Welcomepage\
-</code></pre></div>
-<p>In that folder there are lot of subfolders. Open the one with your Delphi language and rename the original <code>default.htm</code> to <code>default_bak.htm</code>. Now create an empty <code>default.htm</code>. </p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/12/xe7_2.png" alt="image"></p>
-
-<p>After that is done Delphi should start without any problems. The only downside is that you loose the functionality of the start page, like quick accessing your last projects.</p>
-</p>		
-		  <p class="small">Tagged: XE by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -378,7 +370,7 @@ end.
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/android/'>android (1)</a></li>
 <li class='category'><a href='/categories/coding/'>coding (21)</a></li>
-<li class='category'><a href='/categories/computer/'>computer (1)</a></li>
+<li class='category'><a href='/categories/computer/'>computer (2)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (7)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
 <li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
@@ -426,7 +418,7 @@ end.
   
     <a href="/page1" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 2 of 42</span>
+  <span class="page_number ">Page: 2 of 43</span>
   
     <a href="/page3" class="next">Next</a>
   
