@@ -13,8 +13,6 @@ tags:
 
 ---
 
-# Download with progress using Lazarus and Synapse
-
 The Synapse library provides a lot of TCP/IP functions for use in Delphi and Lazarus. 
 
 ![](/assets/uploads/2015/9/laz1.jpg)

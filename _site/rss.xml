@@ -12,9 +12,7 @@
     <item>
       <title>Download with progress using Lazarus and Synapse</title>
       <link>http://andydunkel.net/lazarus/delphi/2015/09/09/lazarus_synapse_progress.html</link>
-      <description>&lt;h1&gt;Download with progress using Lazarus and Synapse&lt;/h1&gt;
-
-&lt;p&gt;The Synapse library provides a lot of TCP/IP functions for use in Delphi and Lazarus. &lt;/p&gt;
+      <description>&lt;p&gt;The Synapse library provides a lot of TCP/IP functions for use in Delphi and Lazarus. &lt;/p&gt;
 </description>
       <pubDate>Wed, 09 Sep 2015 19:00:00 +0200</pubDate>
       <dc:date>2015-09-09T19:00:00+02:00</dc:date>
