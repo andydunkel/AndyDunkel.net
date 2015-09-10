@@ -15,7 +15,7 @@ tags:
 
 The Synapse library provides a lot of TCP/IP functions for use in Delphi and Lazarus. 
 
-![](/assets/uploads/2015/9/laz1.jpg)
+![](/assets/uploads/2015/9/laz1.png)
 
 I needed to download something from a HTTP server. The [basic download](http://wiki.freepascal.org/Synapse) is very simple: 
 
