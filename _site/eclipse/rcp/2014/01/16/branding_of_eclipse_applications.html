@@ -198,17 +198,17 @@
 <p>So we create a class &quot;<a href="https://github.com/andydunkel/EclipseBrandingExample/blob/master/com.da.branding.branding/src/com/da/branding/branding/Branding.java">Branding</a>&quot; in &quot;com.da.branding.branding&quot;, which is a singleton and will be responsible for handling branding requests from our main application.  </p>
 
 <p>When we create the singleton, we have to check which product configuration we are running:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">String product = Platform.getProduct().getId();
+<div class="highlight"><pre><code class="language-text" data-lang="text">String product = Platform.getProduct().getId();
 </code></pre></div>
 <p>We store that information in the Branding object. By that we now can distinguish the current software we are running, for example to display different images, like that:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">public Image getImage() {       
+<div class="highlight"><pre><code class="language-text" data-lang="text">public Image getImage() {       
     return ResourceManager.getPluginImage(_brandingPlugin, &quot;res/cat.png&quot;);
 }   
 </code></pre></div>
 <p>_brandingPlugin contains the name of the specific branding plugin. We can use the same mechanism for files, strings and other things. Even more complex things like returning a perspective. Goal is to implement the differences for each application here. </p>
 
 <p>In our main source code we just call the branding class where needed:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">labelImage.setImage(Branding.getInstance().getImage());
+<div class="highlight"><pre><code class="language-text" data-lang="text">labelImage.setImage(Branding.getInstance().getImage());
 
 loadFile(Branding.getInstance().getFile());
 </code></pre></div>

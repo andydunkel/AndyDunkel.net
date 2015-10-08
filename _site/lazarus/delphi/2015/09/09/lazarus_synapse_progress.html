@@ -130,14 +130,14 @@
 <p><img src="/assets/uploads/2015/9/laz1.png" alt=""></p>
 
 <p>I needed to download something from a HTTP server. The <a href="http://wiki.freepascal.org/Synapse">basic download</a> is very simple: </p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">HTTPGetResult := HTTPSender.HTTPMethod(&#39;GET&#39;, URL);
+<div class="highlight"><pre><code class="language-text" data-lang="text">HTTPGetResult := HTTPSender.HTTPMethod(&#39;GET&#39;, URL);
 if (HTTPSender.ResultCode &gt;= 100) and (HTTPSender.ResultCode&lt;=299) then begin
    HTTPSender.Document.SaveToFile(TargetFile);
 </code></pre></div>
 <p>While this code works, it is blocking and there is no information on the progress, nor any information how big the file is, which is downloaded.</p>
 
 <p>So I started by implementing a class around the download function:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">type
+<div class="highlight"><pre><code class="language-text" data-lang="text">type
   { THttpDownloader }
 
   THttpDownloader = class
@@ -153,13 +153,13 @@ if (HTTPSender.ResultCode &gt;= 100) and (HTTPSender.ResultCode&lt;=299) then be
   end; 
 </code></pre></div>
 <p>I also defined an interface to get the UI notified about the progress:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">type
+<div class="highlight"><pre><code class="language-text" data-lang="text">type
   IProgress = interface
     procedure ProgressNotification(Text: String; CurrentProgress : integer; MaxProgress : integer);
   end;  
 </code></pre></div>
 <p>The download code from above moves to the &quot;DownloadHTTP&quot; function:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">function THttpDownloader.DownloadHTTP(URL, TargetFile: string; ProgressMonitor : IProgress): Boolean;
+<div class="highlight"><pre><code class="language-text" data-lang="text">function THttpDownloader.DownloadHTTP(URL, TargetFile: string; ProgressMonitor : IProgress): Boolean;
 var
   HTTPGetResult: Boolean;
 begin
@@ -184,7 +184,7 @@ end;
 <p>To get updates on the progress we need to implement a callback function, which we assign in the line <code>HTTPSender.Sock.OnStatus:= Status;</code>.</p>
 
 <p>This function looks like that:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">procedure THttpDownloader.Status(Sender: TObject; Reason: THookSocketReason; const Value: String);
+<div class="highlight"><pre><code class="language-text" data-lang="text">procedure THttpDownloader.Status(Sender: TObject; Reason: THookSocketReason; const Value: String);
 var
   V, currentHeader: String;
   i: integer;
@@ -237,7 +237,7 @@ end;
 <p>&quot;HR_ReadCount&quot; provides us with the information how many bytes where read since the last event. </p>
 
 <p>The progress is then reported to the UI:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">procedure TMainForm.ProgressNotification(Text: String; CurrentProgress: integer; MaxProgress: integer);
+<div class="highlight"><pre><code class="language-text" data-lang="text">procedure TMainForm.ProgressNotification(Text: String; CurrentProgress: integer; MaxProgress: integer);
 begin
   if (MaxProgress &lt;&gt; -1) then ProgressBar.Max:= MaxProgress;
   ProgressBar.Position:= CurrentProgress;

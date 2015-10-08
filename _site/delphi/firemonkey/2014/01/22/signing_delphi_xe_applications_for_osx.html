@@ -182,21 +182,21 @@
 <h2>Signing</h2>
 
 <p>To do that open a console and switch to the applications folder. Sign the application with the following command:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">codesign -f -s &quot;Common Name&quot; -v &quot;application_name.app&quot; --deep
+<div class="highlight"><pre><code class="language-text" data-lang="text">codesign -f -s &quot;Common Name&quot; -v &quot;application_name.app&quot; --deep
 </code></pre></div>
 <p>Enter the common name mentioned above and the application name. Here is an example:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">da$ codesign -f -s &quot;Developer ID Application: Andy Dunkel&quot; -v &quot;daform.app&quot; --deep
+<div class="highlight"><pre><code class="language-text" data-lang="text">da$ codesign -f -s &quot;Developer ID Application: Andy Dunkel&quot; -v &quot;daform.app&quot; --deep
 daform.app: signed bundle with Mach-O thin (i386) [daform]
 </code></pre></div>
 <p>You can check the validity of the signing with the following command:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">spctl --verbose=4 --assess --type execute DA-yourapp
+<div class="highlight"><pre><code class="language-text" data-lang="text">spctl --verbose=4 --assess --type execute DA-yourapp
 </code></pre></div>
 <p>It should return something like:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">DA-FormMaker.app: accepted
+<div class="highlight"><pre><code class="language-text" data-lang="text">DA-FormMaker.app: accepted
 source=Developer ID
 </code></pre></div>
 <p>I first run into a problem. The app was not signed correctly. It told me that &quot;my.app is damaged and can&#39;t be opened. You should move it to the trash.&quot;. And the check above returned:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">DA-FormMaker.app: a sealed resource is missing or invalid
+<div class="highlight"><pre><code class="language-text" data-lang="text">DA-FormMaker.app: a sealed resource is missing or invalid
 </code></pre></div>
 <p>The problem? Turned out that I made a mistake and had other files in the &quot;MacOS&quot; folder of the bundle. I moved those to &quot;Resources&quot; and everything was OK.</p>
 

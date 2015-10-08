@@ -145,13 +145,13 @@ The laptop has two graphic cards. An Intel and a dedicated ATI chip.</p>
 <p>Since Firemonkey uses the graphic card for rendering the UI, deactivating the acceleration should hopefully solve the problem. Its more a workaround, as it deactivates the hardware acceleration. Since I am not using any special effects it has now visible speed impact on the application.</p>
 
 <p>To disable the hardware foo in your application open the <code>*.dpr</code> file in Delphi. Add the two showed units to your uses clause:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">uses
+<div class="highlight"><pre><code class="language-text" data-lang="text">uses
   FMX.Forms,
   FMX.Types,
   ...
 </code></pre></div>
 <p>In the code add the following <code>{code}</code> section:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">begin
+<div class="highlight"><pre><code class="language-text" data-lang="text">begin
   Application.Initialize;
   {code}
   fmx.types.GlobalUseHWEffects:=false;

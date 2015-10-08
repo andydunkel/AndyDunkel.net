@@ -142,10 +142,10 @@ Im Laufe der Einrichtung wurde mir dann lapidar mitgeteilt, dass in der installi
 <h2>Daten einspielen</h2>
 
 <p>Ob ich nur Glück hatte oder ob die Daten auch einfach hätten überschrieben werden können und damit weg wären, kann ich leider gar nicht mehr sagen. In jedem Fall lagen die bisherigen Daten unter:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">/var/lib/owncloud/data
+<div class="highlight"><pre><code class="language-text" data-lang="text">/var/lib/owncloud/data
 </code></pre></div>
 <p>Die neue Installation legte die Datenbank jedoch unter:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">/var/www/owncloud/data
+<div class="highlight"><pre><code class="language-text" data-lang="text">/var/www/owncloud/data
 </code></pre></div>
 <p>an. Also habe ich einfach das bisherige Datenverzeichnis einfach über die neuen drüberkopiert. Die Datenbank wurde auch brav erkannt beim nächsten Aufruf. Inklusive der Option zum Datenbankupgrade auf die aktuelle Version. Hier sei noch erwähnt, dass ich SQLite als Datenbank verwende. Bei MySQL ist das nochmal etwas anders.</p>
 
@@ -155,13 +155,13 @@ Im Laufe der Einrichtung wurde mir dann lapidar mitgeteilt, dass in der installi
 
 <p>Prinzipiell kann man zwar das Passwort via E-Mail zurücksetzen, allerdings habe ich bei meinem Account dummerweise keine E-Mail-Adresse hinterlegt. 
 Zum Glück gibt es die Möglichkeit das Passwort auf der Kommandozeile zurückzusetzen. Hierfür wechselt man in das Owncloud-Verzeichnis:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">cd /var/www/owncloud/
+<div class="highlight"><pre><code class="language-text" data-lang="text">cd /var/www/owncloud/
 </code></pre></div>
 <p>Mit dem folgenden Befehl kann das Passwort neu gesetzt werden:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo ./occ user:resetpassword admin
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo ./occ user:resetpassword admin
 </code></pre></div>
 <p>Bei mir war die Datei standardmäßig “nicht ausführbar”, was zu einer Fehlermeldung führte. Hier hilft dann folgender Befehl weiter:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo chmod +x occ
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo chmod +x occ
 </code></pre></div>
 <h2>Fazit</h2>
 

@@ -152,7 +152,7 @@
 <p>After that, create a class named <a href="https://github.com/andydunkel/RCP-Demo-Application/blob/master/com.da.editor/src/com/da/editor/cnf/NavigatorRoot.java">NavigatorRoot</a>. This will serve as root node in the navigator. The root does not appear in the view itself. The class must implement the IAdaptable interface. To achieve that easily, just extend the <code>PlatformObject</code> class.</p>
 
 <p>After that, add the following method to the <code>NavigatorRoot</code> class:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">public Set&lt;ParentNode&gt; getParentNodes() {                   
+<div class="highlight"><pre><code class="language-text" data-lang="text">public Set&lt;ParentNode&gt; getParentNodes() {                   
     ParentNode node = new ParentNode();
     node.setName(&quot;Hello World&quot;);
 
@@ -168,7 +168,7 @@
 <p>This just creates and returns two nodes, which should show up in the navigator later.</p>
 
 <p>The last step is to add the data to the MyNavigator class we created before:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">@Override
+<div class="highlight"><pre><code class="language-text" data-lang="text">@Override
 protected Object getInitialInput() {
     return new NavigatorRoot();
 }

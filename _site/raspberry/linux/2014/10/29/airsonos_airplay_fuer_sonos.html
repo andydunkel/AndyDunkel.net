@@ -139,10 +139,10 @@ Problemlos funktioniert dies für vorhandene Inhalte auf dem Smartphone oder Tab
 <h2>Übertakten</h2>
 
 <p>Mit der Standardtaktfrequenz vom RPI funktionierte bei mir die Musikwiedergabe leider nicht flüssig. Deswegen ist die Empfehlung den Kleinen auf 1000 Mhz zu übertakten. Dies geschieht entweder direkt bei der Installation von Raspbian oder später durch einfaches Bearbeiten der entsprechenden Config-Datei:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> sudo vim /boot/config.txt
+<div class="highlight"><pre><code class="language-text" data-lang="text"> sudo vim /boot/config.txt
 </code></pre></div>
 <p>In der Config-Datei kommentiert man die folgenden Zeilen ein (# Symbol am Anfang entfernen):</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> #Turbo
+<div class="highlight"><pre><code class="language-text" data-lang="text"> #Turbo
  arm_freq=1000
  core_freq=500
  sdram_freq=500
@@ -153,31 +153,31 @@ Problemlos funktioniert dies für vorhandene Inhalte auf dem Smartphone oder Tab
 <p>Installation von AirSonos</p>
 
 <p>Wie so oft beginnen wir die Installation mit einem Update der Paketquellen und der bereits installierten Software:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> sudo apt-get update
+<div class="highlight"><pre><code class="language-text" data-lang="text"> sudo apt-get update
  sudo apt-get upgrade
 </code></pre></div>
 <p>Nun installieren wir noch ein paar Dinge:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> sudo apt-get install git-all libavahi-compat-libdnssd-dev
+<div class="highlight"><pre><code class="language-text" data-lang="text"> sudo apt-get install git-all libavahi-compat-libdnssd-dev
 </code></pre></div>
 <p>Es folgt Node.js, welches wir vorkompiliert herunterladen: </p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> wget http://node-arm.herokuapp.com/node_latest_armhf.deb
+<div class="highlight"><pre><code class="language-text" data-lang="text"> wget http://node-arm.herokuapp.com/node_latest_armhf.deb
 </code></pre></div>
 <p>und installieren:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> sudo dpkg -i node_latest_armhf.deb
+<div class="highlight"><pre><code class="language-text" data-lang="text"> sudo dpkg -i node_latest_armhf.deb
 </code></pre></div>
 <p>Das Ganze dauert ein wenig, also geduldig sein. :-)
 Im vorletzten Schritt folgt nun noch die Installation von AirSonos selbst:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> sudo npm install airsonos -g
+<div class="highlight"><pre><code class="language-text" data-lang="text"> sudo npm install airsonos -g
 </code></pre></div>
 <p>Auch das dauert eine Weile. Unschön: bei mir kam es vor, dass der Vorgang mit der Fehlermeldung <code>npm ERR! cb() never called</code> abgebrochen wurde. Hier hat es geholfen den letzten Schritt einfach nochmal durchzuführen.</p>
 
 <h2>Fertig!</h2>
 
 <p>Ist alles installiert und eingerichtet, kann man AirSonos starten:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> sudo airsonos
+<div class="highlight"><pre><code class="language-text" data-lang="text"> sudo airsonos
 </code></pre></div>
 <p>Es sollten nun alle Sonos-Lautsprecher im Netzwerk gefunden und aufgelistet werden:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">Searching for Sonos devices on network...
+<div class="highlight"><pre><code class="language-text" data-lang="text">Searching for Sonos devices on network...
 Setting up AirSonos for Kitchen {192.168.1.108:1400}
 </code></pre></div>
 <p>Im IOS-Gerät der Wahl werden diese jetzt auch als AirPlay-Device angezeigt und können entsprechend genutzt werden.</p>
@@ -185,7 +185,7 @@ Setting up AirSonos for Kitchen {192.168.1.108:1400}
 <p><img src="http://andydunkel.net/assets/uploads/2014/10/airplay.png" alt="image"></p>
 
 <p>Kleiner Schönheitsfehler, schließt man die Konsole zum Rechner beendet sich AirSonos. Dies kann man verhindern indem man den Prozess von der Konsole entkoppelt:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> $ airsonos &amp; disown
+<div class="highlight"><pre><code class="language-text" data-lang="text"> $ airsonos &amp; disown
 </code></pre></div>
 <p>Viel Spaß beim Ausprobieren!</p>
 

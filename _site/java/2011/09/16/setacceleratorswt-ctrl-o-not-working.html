@@ -138,7 +138,7 @@
 </blockquote>
 
 <p>So what is the problem? It came up, that in an RCP application the menu and the items are loaded, when the user opens it for the first time. There is not really a solution for that, just a workaround: I had to call “updateAll(true)” on the menu manager:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">IWorkbenchWindow window = Workbench.getInstance().getActiveWorkbenchWindow();
+<div class="highlight"><pre><code class="language-text" data-lang="text">IWorkbenchWindow window = Workbench.getInstance().getActiveWorkbenchWindow();
 
 if(window instanceof WorkbenchWindow) {
     MenuManager menuManager = ((WorkbenchWindow)window).getMenuManager();

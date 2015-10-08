@@ -132,6 +132,55 @@
      
 		
 		<h3>
+		  <a href="/delphi/2015/02/04/firemonkey_switchable_graphics_problem.html">Delphi XE / Firemonkey - Problem with switchable graphic card</a>
+		</h3>
+		  <p class="small">Posted on 04 February 2015 by Andy</p>
+		  <p><p>I got a new Windows laptop and found out that there is an issue with my Firemonkey applications. 
+The laptop has two graphic cards. An Intel and a dedicated ATI chip.</p>
+
+<p>When the laptop is using the dedicated graphics card the application starts flickering, turned windows black and became more or less unuseable. </p>
+
+<p>Forcing to use the internal graphic card solved the problem. However its not a solution a customer would have any understanding for. </p>
+
+<p>I do not really know the root cause, as this could be a bug in Firemonkey or some driver issue. I assume its a bug in Firemonkey as I have only seen it in FM applications. I was able to reproduce it with Delphi XE 4 and XE 7 on my computer.</p>
+
+<h2>Video</h2>
+
+<p>I made a small video which shows the issue. As you can see its more then small glitches:</p>
+
+<iframe width="750" height="422" src="https://www.youtube.com/embed/erBkqWToKag" frameborder="0" allowfullscreen></iframe>
+
+<h2>Code and solution</h2>
+
+<p>Since Firemonkey uses the graphic card for rendering the UI, deactivating the acceleration should hopefully solve the problem. Its more a workaround, as it deactivates the hardware acceleration. Since I am not using any special effects it has now visible speed impact on the application.</p>
+
+<p>To disable the hardware foo in your application open the <code>*.dpr</code> file in Delphi. Add the two showed units to your uses clause:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">uses
+  FMX.Forms,
+  FMX.Types,
+  ...
+</code></pre></div>
+<p>In the code add the following <code>{code}</code> section:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">begin
+  Application.Initialize;
+  {code}
+  fmx.types.GlobalUseHWEffects:=false;
+  FMX.Types.GlobalDisableFocusEffect:=false;
+  FMX.Types.GlobalUseDirect2D:=false;
+  FMX.Types.GlobalUseDX10Software:=false;
+  {code}
+
+  ...
+  Application.Run;
+end.
+</code></pre></div>
+<p>After a compile the problem was gone. I also tested the application on OSX after that, there was also no negative effect.</p>
+</p>		
+		  <p class="small">Tagged: Firemonkey by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/office/2015/01/09/ikea_bekant_stehschreibtisch.html">Ikea Bekant - Stehschreibtisch</a>
 		</h3>
 		  <p class="small">Posted on 09 January 2015 by Andy</p>
@@ -204,7 +253,7 @@
 <p>Looks like some problem with the start page Delphi shows (bds://default.html) when started. Investigations on the internet brought up some information and hints how to solve the problem: clear the Internet Explorers cache, delete the cache folder of Internet Explorer manually. However non of that worked for me.</p>
 
 <p>Another solution is do disable the start page completely. To do that open the explorer (with admin rights) and navigate to the following folder of your Delphi installation:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> c:\Program Files (x86)\Embarcadero\Studio\15.0\Welcomepage\
+<div class="highlight"><pre><code class="language-text" data-lang="text"> c:\Program Files (x86)\Embarcadero\Studio\15.0\Welcomepage\
 </code></pre></div>
 <p>In that folder there are lot of subfolders. Open the one with your Delphi language and rename the original <code>default.htm</code> to <code>default_bak.htm</code>. Now create an empty <code>default.htm</code>. </p>
 
@@ -237,10 +286,10 @@ Im Laufe der Einrichtung wurde mir dann lapidar mitgeteilt, dass in der installi
 <h2>Daten einspielen</h2>
 
 <p>Ob ich nur Glück hatte oder ob die Daten auch einfach hätten überschrieben werden können und damit weg wären, kann ich leider gar nicht mehr sagen. In jedem Fall lagen die bisherigen Daten unter:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">/var/lib/owncloud/data
+<div class="highlight"><pre><code class="language-text" data-lang="text">/var/lib/owncloud/data
 </code></pre></div>
 <p>Die neue Installation legte die Datenbank jedoch unter:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">/var/www/owncloud/data
+<div class="highlight"><pre><code class="language-text" data-lang="text">/var/www/owncloud/data
 </code></pre></div>
 <p>an. Also habe ich einfach das bisherige Datenverzeichnis einfach über die neuen drüberkopiert. Die Datenbank wurde auch brav erkannt beim nächsten Aufruf. Inklusive der Option zum Datenbankupgrade auf die aktuelle Version. Hier sei noch erwähnt, dass ich SQLite als Datenbank verwende. Bei MySQL ist das nochmal etwas anders.</p>
 
@@ -250,13 +299,13 @@ Im Laufe der Einrichtung wurde mir dann lapidar mitgeteilt, dass in der installi
 
 <p>Prinzipiell kann man zwar das Passwort via E-Mail zurücksetzen, allerdings habe ich bei meinem Account dummerweise keine E-Mail-Adresse hinterlegt. 
 Zum Glück gibt es die Möglichkeit das Passwort auf der Kommandozeile zurückzusetzen. Hierfür wechselt man in das Owncloud-Verzeichnis:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">cd /var/www/owncloud/
+<div class="highlight"><pre><code class="language-text" data-lang="text">cd /var/www/owncloud/
 </code></pre></div>
 <p>Mit dem folgenden Befehl kann das Passwort neu gesetzt werden:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo ./occ user:resetpassword admin
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo ./occ user:resetpassword admin
 </code></pre></div>
 <p>Bei mir war die Datei standardmäßig “nicht ausführbar”, was zu einer Fehlermeldung führte. Hier hilft dann folgender Befehl weiter:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo chmod +x occ
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo chmod +x occ
 </code></pre></div>
 <h2>Fazit</h2>
 
@@ -276,78 +325,6 @@ Für mich war es in erster Linie nervig, da nur ich die Synchronisation mit dem 
 <iframe width="853" height="480" src="//www.youtube.com/embed/RuDk5GqwgJA" frameborder="0" allowfullscreen></iframe>
 </p>		
 		  <p class="small">Tagged: Sealife by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/raspberry/linux/2014/10/29/airsonos_airplay_fuer_sonos.html">AirSonos - Airplay für Sonos mit dem Raspberry Pi</a>
-		</h3>
-		  <p class="small">Posted on 29 October 2014 by Andy</p>
-		  <p><p>Vor kurzem habe ich mir ein <a href="http://www.sonos.com/shop/products/play1">Sonos Play1</a> zugelegt. Mein Kumpel Kiwi besitzt dieses bereits eine Weile und hat <a href="http://blog.ekiwi.de/?p=1927">das hier</a> vor einiger Zeit bereits getestet. Gegen Hardware und Technik ist nichts einzuwenden. Die Klang ist gut und die App funktioniert zuverlässig. Leider ist das auch der einzige Knackpunkt am Sonos-System: ohne Sonos-App kein Abspielen von Inhalten. 
-Problemlos funktioniert dies für vorhandene Inhalte auf dem Smartphone oder Tablett. Radiosender und diverse Musikdienste lassen sich ebenfalls über die App nutzen.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/10/sonos.jpg" alt="image"></p>
-
-<p>IOS- und Mac-User, wie ich, vermissen die Unterstützung für Airplay. Diese erlaubt die Wiedergabe aus jeder App. Ich verwende <a href="http://vemedio.com/products/instacast">Instacast</a> als Podcastapp auf meinem Telefon. Mit dieser läuft jedoch nichts in Sachen Sonos. </p>
-
-<p>Die Lösung in diesem Fall heißt <a href="https://github.com/stephen/airsonos">AirSonos</a>: AirSonos ist ein, in <a href="http://nodejs.org/">Node.js</a> geschriebener, AirPlay-Server, welche die Musik an das Sonos-System weiterleitet. Der Server läuft auf einem extra Rechner, welcher an das Heimnetzwerk angeschlossen sein muss. In Zeiten von Raspberry Pi und Co. ist damit zum Glück kein großer klobiger PC mehr notwendig. Die Software kommt zudem mit mehreren Lautsprechern im Netzwerk klar.</p>
-
-<p>Legen wir los: Ich beschreibe Installation und Einrichtung unter <a href="http://www.raspbian.org/">Raspbian</a> auf dem Raspberry Pi. Das ganze funktioniert aber auch mit etwas Variation auf anderen Linuxderivaten und Rechnertypen.</p>
-
-<h2>Übertakten</h2>
-
-<p>Mit der Standardtaktfrequenz vom RPI funktionierte bei mir die Musikwiedergabe leider nicht flüssig. Deswegen ist die Empfehlung den Kleinen auf 1000 Mhz zu übertakten. Dies geschieht entweder direkt bei der Installation von Raspbian oder später durch einfaches Bearbeiten der entsprechenden Config-Datei:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> sudo vim /boot/config.txt
-</code></pre></div>
-<p>In der Config-Datei kommentiert man die folgenden Zeilen ein (# Symbol am Anfang entfernen):</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> #Turbo
- arm_freq=1000
- core_freq=500
- sdram_freq=500
- over_voltage=6
-</code></pre></div>
-<p>Nach dem Neustart sollte der RPI in der neuen hohen Taktrate unterwegs sein.</p>
-
-<p>Installation von AirSonos</p>
-
-<p>Wie so oft beginnen wir die Installation mit einem Update der Paketquellen und der bereits installierten Software:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> sudo apt-get update
- sudo apt-get upgrade
-</code></pre></div>
-<p>Nun installieren wir noch ein paar Dinge:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> sudo apt-get install git-all libavahi-compat-libdnssd-dev
-</code></pre></div>
-<p>Es folgt Node.js, welches wir vorkompiliert herunterladen: </p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> wget http://node-arm.herokuapp.com/node_latest_armhf.deb
-</code></pre></div>
-<p>und installieren:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> sudo dpkg -i node_latest_armhf.deb
-</code></pre></div>
-<p>Das Ganze dauert ein wenig, also geduldig sein. :-)
-Im vorletzten Schritt folgt nun noch die Installation von AirSonos selbst:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> sudo npm install airsonos -g
-</code></pre></div>
-<p>Auch das dauert eine Weile. Unschön: bei mir kam es vor, dass der Vorgang mit der Fehlermeldung <code>npm ERR! cb() never called</code> abgebrochen wurde. Hier hat es geholfen den letzten Schritt einfach nochmal durchzuführen.</p>
-
-<h2>Fertig!</h2>
-
-<p>Ist alles installiert und eingerichtet, kann man AirSonos starten:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> sudo airsonos
-</code></pre></div>
-<p>Es sollten nun alle Sonos-Lautsprecher im Netzwerk gefunden und aufgelistet werden:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">Searching for Sonos devices on network...
-Setting up AirSonos for Kitchen {192.168.1.108:1400}
-</code></pre></div>
-<p>Im IOS-Gerät der Wahl werden diese jetzt auch als AirPlay-Device angezeigt und können entsprechend genutzt werden.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/10/airplay.png" alt="image"></p>
-
-<p>Kleiner Schönheitsfehler, schließt man die Konsole zum Rechner beendet sich AirSonos. Dies kann man verhindern indem man den Prozess von der Konsole entkoppelt:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> $ airsonos &amp; disown
-</code></pre></div>
-<p>Viel Spaß beim Ausprobieren!</p>
-</p>		
-		  <p class="small">Tagged: Sonos and Linux by Andy</p>
 		  <hr>
 		  
 		
@@ -403,6 +380,7 @@ Setting up AirSonos for Kitchen {192.168.1.108:1400}
 <li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
 <li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
 <li class='category'><a href='/categories/java/'>java (23)</a></li>
+<li class='category'><a href='/categories/jekyll/'>jekyll (1)</a></li>
 <li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
 <li class='category'><a href='/categories/kochen/'>kochen (1)</a></li>
 <li class='category'><a href='/categories/lazarus/'>lazarus (1)</a></li>

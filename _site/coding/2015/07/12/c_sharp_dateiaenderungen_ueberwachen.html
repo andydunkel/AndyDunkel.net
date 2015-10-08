@@ -134,7 +134,7 @@
 <p><img src="/assets/uploads/2015/7/fsw1.png" alt=""></p>
 
 <p>Zuerst legen wir uns das <code>FileSystemWatcher</code>-Object an und konfigurieren es:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">private FileSystemWatcher _watcher;
+<div class="highlight"><pre><code class="language-text" data-lang="text">private FileSystemWatcher _watcher;
 
 _watcher = new FileSystemWatcher();
 _watcher.Path = &quot;c:\\temp&quot;;
@@ -142,16 +142,16 @@ _watcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite | Not
 _watcher.Filter = &quot;*.*&quot;;
 </code></pre></div>
 <p>Neben dem Pfad können wir festlegen über welche Änderungen wir uns benachrichtigen lassen wollen. Ebenfalls können wir festlegen, welche Dateien wir überwachen wollen. In unserem Beispiel einfach alle.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">_watcher.Changed += new FileSystemEventHandler(OnChanged);
+<div class="highlight"><pre><code class="language-text" data-lang="text">_watcher.Changed += new FileSystemEventHandler(OnChanged);
 _watcher.Created += new FileSystemEventHandler(OnChanged);
 _watcher.Deleted += new FileSystemEventHandler(OnChanged);
 _watcher.Renamed += new RenamedEventHandler(OnRenamed);
 </code></pre></div>
 <p>Nun müssen wir den <code>FileSystemWatcher</code> nur noch starten:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">_watcher.EnableRaisingEvents = true;
+<div class="highlight"><pre><code class="language-text" data-lang="text">_watcher.EnableRaisingEvents = true;
 </code></pre></div>
 <p>Die EventHandler sehen so aus:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">private void OnRenamed(object sender, RenamedEventArgs e)
+<div class="highlight"><pre><code class="language-text" data-lang="text">private void OnRenamed(object sender, RenamedEventArgs e)
 {
     MessageBox.Show(&quot;Änderung: &quot; + e.FullPath + &quot; - &quot; + e.ChangeType.ToString());          
 }

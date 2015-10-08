@@ -138,7 +138,7 @@
 <h2>Updates</h2>
 
 <p>Zuerst updaten wir mal die Software auf unserem RPI:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo apt-get update
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo apt-get update
 sudo apt-get upgrade
 </code></pre></div>
 <p>Das kann je nach Stand der Software eine Weile dauern.</p>
@@ -146,24 +146,24 @@ sudo apt-get upgrade
 <h2>Installation und Konfiguration</h2>
 
 <p>Die PPTP-Software installieren wir mit:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo apt-get install pptdp
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo apt-get install pptdp
 </code></pre></div>
 <p>Anschließend bearbeiten wir die Config mit Nano:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo nano /etc/pptdp.conf
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo nano /etc/pptdp.conf
 </code></pre></div>
 <p>Man kann alternativ auch VIM verwenden. Im Nano-Editor speichern wir mit STRG+X und anschließend Y.</p>
 
 <p>In der &quot;pptdp.conf&quot; Datei tragen wir die lokale IP des Raspberry ein:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">localip 192.168.1.5
+<div class="highlight"><pre><code class="language-text" data-lang="text">localip 192.168.1.5
 </code></pre></div>
 <p>Außerdem die Remote-IP-Adressen. Diese werden unseren VPN-Clients zugeteilt. Hier vergibt man einen Adressbereich, je nachdem wieviele Geräte man plant zu nutzen:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">remoteip 192.168.1.234-238
+<div class="highlight"><pre><code class="language-text" data-lang="text">remoteip 192.168.1.234-238
 </code></pre></div>
 <p>Nach dem Speichern, konfigurieren wir jetzt die Optionen von PPTDP:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo nano /etc/ppp/pptpd-options
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo nano /etc/ppp/pptpd-options
 </code></pre></div>
 <p>Am Ender Datei tragen wir folgende Zeilen ein:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">ms-dns 192.168.1.1
+<div class="highlight"><pre><code class="language-text" data-lang="text">ms-dns 192.168.1.1
 noipx
 mtu 1490
 mru 1490
@@ -173,38 +173,38 @@ mru 1490
 <h3>Benutzer hinzufügen</h3>
 
 <p>Nun noch die VPN-Benutzer hinzufügen; dazu bearbeiten wir die folgende Datei:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo nano /etc/ppp/chap-secrets
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo nano /etc/ppp/chap-secrets
 </code></pre></div>
 <p>Das Anlegen von Benutzern ist sehr einfach:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">Benutzername[TAB]*[TAB]Passwort[Tab]*
+<div class="highlight"><pre><code class="language-text" data-lang="text">Benutzername[TAB]*[TAB]Passwort[Tab]*
 </code></pre></div>
 <p>Beispiel:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">Andy    *   GeheimesPasswort    *
+<div class="highlight"><pre><code class="language-text" data-lang="text">Andy    *   GeheimesPasswort    *
 </code></pre></div>
 <p>Nach dem Bearbeiten muss der PPTP-Server neu gestartet werden:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo service pptpd restart
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo service pptpd restart
 </code></pre></div>
 <h2>Sonstige Konfiguration</h2>
 
 <p>Wir wollen nicht nur auf den RPI zugreifen, sondern auch auf das Internet und sonstige Resourcen. Das richten wir jetzt ein:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo nano /etc/sysctl.conf
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo nano /etc/sysctl.conf
 </code></pre></div>
 <p>Hier tragen wir die folgende Zeile ein:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">net.ipv4.ip_forward=1
+<div class="highlight"><pre><code class="language-text" data-lang="text">net.ipv4.ip_forward=1
 </code></pre></div>
 <p>Die Änderung übernehmen wir mit:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo sysctl -p
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo sysctl -p
 </code></pre></div>
 <h3>Firewall konfigurieren</h3>
 
 <p>Zuletzt aktualisieren wir noch die Firewall des RPI:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 </code></pre></div>
 <p>Bei mir kam an der Stelle die Fehlermeldung <code>iptables: Table does not exist (do you need to insmod?)</code>. Ein Neustart des RPI nach den Updates, vom Anfang, schaffte hier  Abhilfe. Wichtig: Dieser Befehl muss nach jedem Start des RPI neu ausgeführt werden. Also am Besten gleich einen Cronjob einrichten:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo crontab -e
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo crontab -e
 </code></pre></div>
 <p>Am Ende fügen wir die folgende Zeile ein:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">@reboot sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+<div class="highlight"><pre><code class="language-text" data-lang="text">@reboot sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 </code></pre></div>
 <p>Speichern und fertig.</p>
 

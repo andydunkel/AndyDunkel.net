@@ -8,7 +8,15 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Wed, 09 Sep 2015 19:00:00 +0200</pubDate>
+    <pubDate>Thu, 08 Oct 2015 19:00:00 +0200</pubDate>
+    <item>
+      <title>Jekyll auf El Capitan installieren</title>
+      <link>http://andydunkel.net/jekyll/2015/10/08/jekyll_auf_el_capitan.html</link>
+      <description>&lt;p&gt;Nach dem Update auf El Capitan, fehlte Jekyll zur Erstellung meiner Homepage. Ärgerlich. Laut Webseite lässt sich Jekyll mit einem einfachen&lt;/p&gt;
+</description>
+      <pubDate>Thu, 08 Oct 2015 19:00:00 +0200</pubDate>
+      <dc:date>2015-10-08T19:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>Download with progress using Lazarus and Synapse</title>
       <link>http://andydunkel.net/lazarus/delphi/2015/09/09/lazarus_synapse_progress.html</link>
@@ -37,7 +45,7 @@
 &lt;p&gt;&lt;img src=&quot;/assets/uploads/2015/7/fsw1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Zuerst legen wir uns das &lt;code&gt;FileSystemWatcher&lt;/code&gt;-Object an und konfigurieren es:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;private FileSystemWatcher _watcher;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;private FileSystemWatcher _watcher;
 
 _watcher = new FileSystemWatcher();
 _watcher.Path = &amp;quot;c:\\temp&amp;quot;;
@@ -45,16 +53,16 @@ _watcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite | Not
 _watcher.Filter = &amp;quot;*.*&amp;quot;;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Neben dem Pfad können wir festlegen über welche Änderungen wir uns benachrichtigen lassen wollen. Ebenfalls können wir festlegen, welche Dateien wir überwachen wollen. In unserem Beispiel einfach alle.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;_watcher.Changed += new FileSystemEventHandler(OnChanged);
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;_watcher.Changed += new FileSystemEventHandler(OnChanged);
 _watcher.Created += new FileSystemEventHandler(OnChanged);
 _watcher.Deleted += new FileSystemEventHandler(OnChanged);
 _watcher.Renamed += new RenamedEventHandler(OnRenamed);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Nun müssen wir den &lt;code&gt;FileSystemWatcher&lt;/code&gt; nur noch starten:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;_watcher.EnableRaisingEvents = true;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;_watcher.EnableRaisingEvents = true;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Die EventHandler sehen so aus:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;private void OnRenamed(object sender, RenamedEventArgs e)
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;private void OnRenamed(object sender, RenamedEventArgs e)
 {
     MessageBox.Show(&amp;quot;Änderung: &amp;quot; + e.FullPath + &amp;quot; - &amp;quot; + e.ChangeType.ToString());          
 }
@@ -93,12 +101,12 @@ private void OnChanged(object source, FileSystemEventArgs e)
 &lt;h2&gt;Sprache manuell festlegen&lt;/h2&gt;
 
 &lt;p&gt;Nicht immer will man sich auf die automatische Sprachwahl vom System verlassen. Daher können wir beim Start der Anwendung die Sprache auch manuell festlegen:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;CultureInfo myCultureInfo = new CultureInfo(&amp;quot;en&amp;quot;);
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;CultureInfo myCultureInfo = new CultureInfo(&amp;quot;en&amp;quot;);
 Thread.CurrentThread.CurrentCulture = myCultureInfo;
 Thread.CurrentThread.CurrentUICulture = myCultureInfo;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Ein guter Platz für diese Einstellung ist z.B. die &lt;code&gt;Program.cs&lt;/code&gt; Datei:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;/// &amp;lt;summary&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/// &amp;lt;summary&amp;gt;
 /// The main entry point for the application.
 /// &amp;lt;/summary&amp;gt;
 [STAThread]
@@ -118,7 +126,7 @@ static void Main()
 &lt;h2&gt;Strings im Code&lt;/h2&gt;
 
 &lt;p&gt;Die Übersetzung der Anwendung im Designer gestaltet sich wie gesehen recht einfach. Doch was ist mit Strings im Code? &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;MetroMessageBox.Show(this, &amp;quot;Die Einstellungen werden nach Neustart der Anwendung übernommen.&amp;quot;, &amp;quot;Hinweis&amp;quot;);
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;MetroMessageBox.Show(this, &amp;quot;Die Einstellungen werden nach Neustart der Anwendung übernommen.&amp;quot;, &amp;quot;Hinweis&amp;quot;);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Auch diese müssen übersetzt werden. Auch dies ist sehr leicht möglich. Zuerst legen wir neue Resourcendateien für unsere Sprachen an:&lt;/p&gt;
 
@@ -129,7 +137,7 @@ static void Main()
 &lt;p&gt;&lt;img src=&quot;/assets/uploads/2015/7/inter4.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Nun passen wir den Code unserer MessageBox noch an:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;MetroMessageBox.Show(this, AppResources.SettingsMessage, AppResources.SettingsTitle);
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;MetroMessageBox.Show(this, AppResources.SettingsMessage, AppResources.SettingsTitle);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Das wars auch schon.&lt;/p&gt;
 
@@ -138,7 +146,7 @@ static void Main()
 &lt;p&gt;Neben den Texten gibt es noch weitere Dinge zu beachten, welche hier nicht besprochen wurden, wie Datum- und Zeitangaben, welche oft anders formatiert sind. &lt;/p&gt;
 
 &lt;p&gt;Hier ein Beispiel:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;CultureInfo ci = new CultureInfo(&amp;quot;de&amp;quot;);
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;CultureInfo ci = new CultureInfo(&amp;quot;de&amp;quot;);
 MessageBox.Show(DateTime.Now.ToString(&amp;quot;d&amp;quot;, ci));
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Wie man sieht, ist die grundsätzliche Mehrsprachigkeit einer Anwendung in C# sehr leicht möglich.&lt;/p&gt;
@@ -329,7 +337,7 @@ Da ich damals noch nicht wusste wie weit meine Blogausdauer gehen würde, war da
 &lt;h2&gt;Updates&lt;/h2&gt;
 
 &lt;p&gt;Zuerst updaten wir mal die Software auf unserem RPI:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo apt-get update
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo apt-get update
 sudo apt-get upgrade
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Das kann je nach Stand der Software eine Weile dauern.&lt;/p&gt;
@@ -337,24 +345,24 @@ sudo apt-get upgrade
 &lt;h2&gt;Installation und Konfiguration&lt;/h2&gt;
 
 &lt;p&gt;Die PPTP-Software installieren wir mit:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo apt-get install pptdp
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo apt-get install pptdp
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Anschließend bearbeiten wir die Config mit Nano:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo nano /etc/pptdp.conf
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo nano /etc/pptdp.conf
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Man kann alternativ auch VIM verwenden. Im Nano-Editor speichern wir mit STRG+X und anschließend Y.&lt;/p&gt;
 
 &lt;p&gt;In der &amp;quot;pptdp.conf&amp;quot; Datei tragen wir die lokale IP des Raspberry ein:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;localip 192.168.1.5
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;localip 192.168.1.5
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Außerdem die Remote-IP-Adressen. Diese werden unseren VPN-Clients zugeteilt. Hier vergibt man einen Adressbereich, je nachdem wieviele Geräte man plant zu nutzen:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;remoteip 192.168.1.234-238
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;remoteip 192.168.1.234-238
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Nach dem Speichern, konfigurieren wir jetzt die Optionen von PPTDP:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo nano /etc/ppp/pptpd-options
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo nano /etc/ppp/pptpd-options
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Am Ender Datei tragen wir folgende Zeilen ein:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;ms-dns 192.168.1.1
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;ms-dns 192.168.1.1
 noipx
 mtu 1490
 mru 1490
@@ -364,38 +372,38 @@ mru 1490
 &lt;h3&gt;Benutzer hinzufügen&lt;/h3&gt;
 
 &lt;p&gt;Nun noch die VPN-Benutzer hinzufügen; dazu bearbeiten wir die folgende Datei:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo nano /etc/ppp/chap-secrets
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo nano /etc/ppp/chap-secrets
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Das Anlegen von Benutzern ist sehr einfach:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;Benutzername[TAB]*[TAB]Passwort[Tab]*
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Benutzername[TAB]*[TAB]Passwort[Tab]*
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Beispiel:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;Andy    *   GeheimesPasswort    *
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Andy    *   GeheimesPasswort    *
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Nach dem Bearbeiten muss der PPTP-Server neu gestartet werden:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo service pptpd restart
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo service pptpd restart
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Sonstige Konfiguration&lt;/h2&gt;
 
 &lt;p&gt;Wir wollen nicht nur auf den RPI zugreifen, sondern auch auf das Internet und sonstige Resourcen. Das richten wir jetzt ein:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo nano /etc/sysctl.conf
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo nano /etc/sysctl.conf
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Hier tragen wir die folgende Zeile ein:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;net.ipv4.ip_forward=1
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;net.ipv4.ip_forward=1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Die Änderung übernehmen wir mit:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo sysctl -p
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo sysctl -p
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;Firewall konfigurieren&lt;/h3&gt;
 
 &lt;p&gt;Zuletzt aktualisieren wir noch die Firewall des RPI:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Bei mir kam an der Stelle die Fehlermeldung &lt;code&gt;iptables: Table does not exist (do you need to insmod?)&lt;/code&gt;. Ein Neustart des RPI nach den Updates, vom Anfang, schaffte hier  Abhilfe. Wichtig: Dieser Befehl muss nach jedem Start des RPI neu ausgeführt werden. Also am Besten gleich einen Cronjob einrichten:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo crontab -e
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo crontab -e
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Am Ende fügen wir die folgende Zeile ein:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;@reboot sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;@reboot sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Speichern und fertig.&lt;/p&gt;
 
@@ -430,7 +438,7 @@ mru 1490
 &lt;p&gt;For app store applications Delphi automatically runs the code signing procedure for you and creates a PKG file. Handy!&lt;/p&gt;
 
 &lt;p&gt;Since Apples new Mavericks release the code signing has changed a little bit and the command now needs an additional parameter: &lt;code&gt;--deep&lt;/code&gt;. Delphi does not add the parameter, which results in an error building the application:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;[PAClient Error] Error: E0264 Unable to execute &amp;#39;&amp;quot;/usr/bin/
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;[PAClient Error] Error: E0264 Unable to execute &amp;#39;&amp;quot;/usr/bin/
 codesign&amp;quot; --en &amp;quot;/Users/.../daform.app/Contents/Entitlements.plist&amp;quot; 
 -s &amp;quot;Mac Developer&amp;quot; -f &amp;quot;/Users/.../daform.app&amp;quot;&amp;#39; (Error 1)
 
@@ -545,17 +553,17 @@ daform.app code object is not signed at all
 &lt;p&gt;So we create a class &amp;quot;&lt;a href=&quot;https://github.com/andydunkel/EclipseBrandingExample/blob/master/com.da.branding.branding/src/com/da/branding/branding/Branding.java&quot;&gt;Branding&lt;/a&gt;&amp;quot; in &amp;quot;com.da.branding.branding&amp;quot;, which is a singleton and will be responsible for handling branding requests from our main application.  &lt;/p&gt;
 
 &lt;p&gt;When we create the singleton, we have to check which product configuration we are running:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;String product = Platform.getProduct().getId();
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;String product = Platform.getProduct().getId();
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;We store that information in the Branding object. By that we now can distinguish the current software we are running, for example to display different images, like that:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;public Image getImage() {       
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public Image getImage() {       
     return ResourceManager.getPluginImage(_brandingPlugin, &amp;quot;res/cat.png&amp;quot;);
 }   
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;_brandingPlugin contains the name of the specific branding plugin. We can use the same mechanism for files, strings and other things. Even more complex things like returning a perspective. Goal is to implement the differences for each application here. &lt;/p&gt;
 
 &lt;p&gt;In our main source code we just call the branding class where needed:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;labelImage.setImage(Branding.getInstance().getImage());
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;labelImage.setImage(Branding.getInstance().getImage());
 
 loadFile(Branding.getInstance().getFile());
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -588,7 +596,7 @@ loadFile(Branding.getInstance().getFile());
       <description>&lt;p&gt;I usually create my project first, tinker around and then at some point I want to use version control, like GIT. So I create the repository and want to check it out and merge it with my existing project folder.&lt;/p&gt;
 
 &lt;p&gt;This can be done with the following commands:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;git init
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;git init
 git remote add origin PATH_TO_REPOSITORY
 git fetch
 git checkout -t origin/master
@@ -672,7 +680,7 @@ git checkout -t origin/master
       <title>Java: Get IP and Mac address</title>
       <link>http://andydunkel.net/java/2013/10/10/java-get-ip-and-mac-address.html</link>
       <description>&lt;p&gt;A small code snippet that reads the computers IP and MAC address:    &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;try {
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;try {
     InetAddress ip = InetAddress.getLocalHost();
     NetworkInterface network;
     network = NetworkInterface.getByInetAddress(ip);
@@ -817,7 +825,7 @@ git checkout -t origin/master
     <item>
       <title>Java: copy array to another</title>
       <link>http://andydunkel.net/java/2013/04/17/java-copy-array-to-another.html</link>
-      <description>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;String[] stringArray = Arrays.copyOf(items.toArray(), items.size(), String[].class);
+      <description>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;String[] stringArray = Arrays.copyOf(items.toArray(), items.size(), String[].class);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
       <pubDate>Wed, 17 Apr 2013 08:13:28 +0200</pubDate>
       <dc:date>2013-04-17T08:13:28+02:00</dc:date>
@@ -2064,6 +2072,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2015-09-09T19:00:00+02:00</dc:date>
+    <dc:date>2015-10-08T19:00:00+02:00</dc:date>
   </channel>
 </rss>

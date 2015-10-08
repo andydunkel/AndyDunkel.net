@@ -136,7 +136,7 @@
 <h3>Make the perspective bar visible</h3>
 
 <p>This needs to be done in the ApplicationWorkbenchWindowAdvisor.java class, in the preWindowOpen method:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">IWorkbenchWindowConfigurer configurer = getWindowConfigurer();
+<div class="highlight"><pre><code class="language-text" data-lang="text">IWorkbenchWindowConfigurer configurer = getWindowConfigurer();
 configurer.setShowPerspectiveBar(true);
 </code></pre></div>
 <p><img src="http://andydunkel.net/assets/uploads/2012/11/2.png" alt="2"></p>
@@ -164,7 +164,7 @@ configurer.setShowPerspectiveBar(true);
 <p><img src="http://andydunkel.net/assets/uploads/2012/11/8.png" alt="8"></p>
 
 <p>After that, we have to add the code which defines our perspective:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">@Override
+<div class="highlight"><pre><code class="language-text" data-lang="text">@Override
 public void createInitialLayout(IPageLayout layout) {
   String editorArea = layout.getEditorArea();
   layout.setEditorAreaVisible(false);

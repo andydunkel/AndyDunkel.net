@@ -144,12 +144,12 @@
 <h2>Sprache manuell festlegen</h2>
 
 <p>Nicht immer will man sich auf die automatische Sprachwahl vom System verlassen. Daher können wir beim Start der Anwendung die Sprache auch manuell festlegen:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">CultureInfo myCultureInfo = new CultureInfo(&quot;en&quot;);
+<div class="highlight"><pre><code class="language-text" data-lang="text">CultureInfo myCultureInfo = new CultureInfo(&quot;en&quot;);
 Thread.CurrentThread.CurrentCulture = myCultureInfo;
 Thread.CurrentThread.CurrentUICulture = myCultureInfo;
 </code></pre></div>
 <p>Ein guter Platz für diese Einstellung ist z.B. die <code>Program.cs</code> Datei:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">/// &lt;summary&gt;
+<div class="highlight"><pre><code class="language-text" data-lang="text">/// &lt;summary&gt;
 /// The main entry point for the application.
 /// &lt;/summary&gt;
 [STAThread]
@@ -169,7 +169,7 @@ static void Main()
 <h2>Strings im Code</h2>
 
 <p>Die Übersetzung der Anwendung im Designer gestaltet sich wie gesehen recht einfach. Doch was ist mit Strings im Code? </p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">MetroMessageBox.Show(this, &quot;Die Einstellungen werden nach Neustart der Anwendung übernommen.&quot;, &quot;Hinweis&quot;);
+<div class="highlight"><pre><code class="language-text" data-lang="text">MetroMessageBox.Show(this, &quot;Die Einstellungen werden nach Neustart der Anwendung übernommen.&quot;, &quot;Hinweis&quot;);
 </code></pre></div>
 <p>Auch diese müssen übersetzt werden. Auch dies ist sehr leicht möglich. Zuerst legen wir neue Resourcendateien für unsere Sprachen an:</p>
 
@@ -180,7 +180,7 @@ static void Main()
 <p><img src="/assets/uploads/2015/7/inter4.png" alt=""></p>
 
 <p>Nun passen wir den Code unserer MessageBox noch an:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">MetroMessageBox.Show(this, AppResources.SettingsMessage, AppResources.SettingsTitle);
+<div class="highlight"><pre><code class="language-text" data-lang="text">MetroMessageBox.Show(this, AppResources.SettingsMessage, AppResources.SettingsTitle);
 </code></pre></div>
 <p>Das wars auch schon.</p>
 
@@ -189,7 +189,7 @@ static void Main()
 <p>Neben den Texten gibt es noch weitere Dinge zu beachten, welche hier nicht besprochen wurden, wie Datum- und Zeitangaben, welche oft anders formatiert sind. </p>
 
 <p>Hier ein Beispiel:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">CultureInfo ci = new CultureInfo(&quot;de&quot;);
+<div class="highlight"><pre><code class="language-text" data-lang="text">CultureInfo ci = new CultureInfo(&quot;de&quot;);
 MessageBox.Show(DateTime.Now.ToString(&quot;d&quot;, ci));
 </code></pre></div>
 <p>Wie man sieht, ist die grundsätzliche Mehrsprachigkeit einer Anwendung in C# sehr leicht möglich.</p>

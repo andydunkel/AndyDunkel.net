@@ -130,13 +130,13 @@
 <p>Zuerst lief die alte Brew-Version gar nicht mehr. Also geupdated. Dann fingen die Probleme an. Bei der Installation von Paketen wurden diese zwar heruntergeladen, allerdings konnten die Symlinks nicht erstellt werden, da bereits vorhanden aus einer alten Version. Eventuell habe ich beim Update ein paar Fehler gemacht und irgendwas nicht bereinigt, keine Ahnung. </p>
 
 <p>Die Fehlermeldung sah in etwa so aus:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">Linking /usr/local/Cellar/... Warning: Could not link $foo. Unlinking...
+<div class="highlight"><pre><code class="language-text" data-lang="text">Linking /usr/local/Cellar/... Warning: Could not link $foo. Unlinking...
 Error: Could not symlink file: /usr/local/Cellar/...
 /usr/local/... may already exist.
 /usr/local/... may not be writable.
 </code></pre></div>
 <p>Jedenfalls kann man die Symlinks in <code>/usr/local/share</code> von Hand löschen, was sehr viel Arbeit ist. Also etwas das Internet bemüht und das ganze mit folgenden Schritten gelöst:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"># Besitzer von /usr/local auf den aktuellen Benutzer setzen
+<div class="highlight"><pre><code class="language-text" data-lang="text"># Besitzer von /usr/local auf den aktuellen Benutzer setzen
 $ sudo chown -R `whoami` /usr/local
 
 # ggf. die fehlgeschlagene Installation entfernen

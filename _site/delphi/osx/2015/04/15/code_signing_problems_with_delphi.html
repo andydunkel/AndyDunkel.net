@@ -134,7 +134,7 @@
 <p><img src="/assets/uploads/2015/4/delphi.png" alt=""></p>
 
 <p>So I moved the file away from the the bundle to the same folder where the bundle was located and signed the app bundle like that:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> codesign -f -s &quot;3rd Party Mac Developer Application&quot; -v &quot;DA-FormMaker.app&quot; —-deep --entitlements Entitlements.plist
+<div class="highlight"><pre><code class="language-text" data-lang="text"> codesign -f -s &quot;3rd Party Mac Developer Application&quot; -v &quot;DA-FormMaker.app&quot; —-deep --entitlements Entitlements.plist
 </code></pre></div>
 <p>After that the upload was successful and the review went fine.</p>
 

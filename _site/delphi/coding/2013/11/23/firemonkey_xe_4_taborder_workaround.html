@@ -140,7 +140,7 @@
 <p><em>Note: You can also use the Tag value, but I am using that one for my translation logic.</em></p>
 
 <p>Next step was to create a class helper for TForm:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">unit FormHelper;
+<div class="highlight"><pre><code class="language-text" data-lang="text">unit FormHelper;
 
 interface
 
@@ -191,7 +191,7 @@ end.
 <p>I am sure there could be some optimizations done with that code, but it works. What we are doing here is to iterate over all controls of a given form and find the next higher value of the HelpContext. Thats the control we want to set focus, when the user hits the tab key.</p>
 
 <p>Of course the code does nothing to far, since the method is not called yet. So the next step is to implement the KeyDown event in the form:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">procedure TfrmEinzField.KeyDown(var Key: Word; var KeyChar: Char;
+<div class="highlight"><pre><code class="language-text" data-lang="text">procedure TfrmEinzField.KeyDown(var Key: Word; var KeyChar: Char;
   Shift: TShiftState);
 var
   control : TStyledControl;

@@ -146,7 +146,7 @@
 <p><img src="http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_3.png" alt="image"></p>
 
 <p>We also need to add MapKit to the imports. While we are doing that we also add the map delegate:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">#import &lt;MapKit/MapKit.h&gt;
+<div class="highlight"><pre><code class="language-text" data-lang="text">#import &lt;MapKit/MapKit.h&gt;
 
 @interface DASViewController : UIViewController &lt;MKMapViewDelegate&gt;
 </code></pre></div>
@@ -161,7 +161,7 @@
 <p><img src="http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_4.png" alt="image"></p>
 
 <p>...and implement the action method:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">    - (IBAction)setType:(UISegmentedControl *)sender {
+<div class="highlight"><pre><code class="language-text" data-lang="text">    - (IBAction)setType:(UISegmentedControl *)sender {
     switch (sender.selectedSegmentIndex) {
         case 0:
             self.mapView.mapType = MKMapTypeStandard;
@@ -184,7 +184,7 @@
 <p>While the map currently defaults to specific position, we now want to set a location / area on our own by default.</p>
 
 <p>To do that, we add the following code to our <code>viewDidLoad</code> method:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">- (void)viewDidLoad
+<div class="highlight"><pre><code class="language-text" data-lang="text">- (void)viewDidLoad
 {
     [super viewDidLoad];
     // Create your coordinate
@@ -198,17 +198,17 @@
 }
 </code></pre></div>
 <p>Lets have a look to the details:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">CLLocationCoordinate2D myCoordinate = {47.879854, 10.641000};
+<div class="highlight"><pre><code class="language-text" data-lang="text">CLLocationCoordinate2D myCoordinate = {47.879854, 10.641000};
 </code></pre></div>
 <p>Coordinates are longitude and latitude of the position. Best way to find out for a place is Google Maps. The zoom level is adjusted in the following line:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(myCoordinate, 1000, 1000);
+<div class="highlight"><pre><code class="language-text" data-lang="text">MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(myCoordinate, 1000, 1000);
 </code></pre></div>
 <p>This is defined in metres, in our case we want to have a 1000 meters zoom level. When we launch the app now, it should default to the given position.</p>
 
 <h2>Add annotation</h2>
 
 <p>The next step for us is to add an annotation to the map. We add the following code to the <code>viewDidLoad</code> method:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"> //Create your annotation
+<div class="highlight"><pre><code class="language-text" data-lang="text"> //Create your annotation
 MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
 // Set your annotation to point at your coordinate
 point.coordinate = myCoordinate;
@@ -222,7 +222,7 @@ point.title = @&quot;Andys Home&quot;;
 <h3>Remove all annotations</h3>
 
 <p>To remove all annotations from the map:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">for (id annotation in self.mapView.annotations) {
+<div class="highlight"><pre><code class="language-text" data-lang="text">for (id annotation in self.mapView.annotations) {
     [self.mapView removeAnnotation:annotation];
 }
 </code></pre></div>
@@ -231,13 +231,13 @@ point.title = @&quot;Andys Home&quot;;
 <p>The last thing we want to do is do something with users location. The users location is only available if the user enabled the function. The user is asked wether he wants to share his location or not, when the function is first called. To enable that in XCode activate &quot;Show Users Location&quot; in the MapViews properties.</p>
 
 <p>Also drop a label on the view and create an outlet for it:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">@property (weak, nonatomic) IBOutlet UILabel *labelPosition;
+<div class="highlight"><pre><code class="language-text" data-lang="text">@property (weak, nonatomic) IBOutlet UILabel *labelPosition;
 </code></pre></div>
 <p>To update the user location, we are using the delegate we defined in our header file and assign the delegate to the mapView:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">self.mapView.delegate = self;
+<div class="highlight"><pre><code class="language-text" data-lang="text">self.mapView.delegate = self;
 </code></pre></div>
 <p>Now we implement the method for the update:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+<div class="highlight"><pre><code class="language-text" data-lang="text">-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
 
     CLLocationCoordinate2D myCoordinate = {47.879854, 10.641000};
     CLLocationCoordinate2D userCoordinate = [[[self.mapView userLocation]

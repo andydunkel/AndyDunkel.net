@@ -130,7 +130,7 @@
 <p><img src="http://andydunkel.net/assets/uploads/2011/10/image3.png" alt="image"></p>
 
 <p>To remove the tab, use the “addStandaloneView” method in your perspective. Here is an example:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">public class Perspective implements IPerspectiveFactory {
+<div class="highlight"><pre><code class="language-text" data-lang="text">public class Perspective implements IPerspectiveFactory {
   public void createInitialLayout(IPageLayout layout) {       
     String editorArea = layout.getEditorArea();
     layout.setEditorAreaVisible(false);

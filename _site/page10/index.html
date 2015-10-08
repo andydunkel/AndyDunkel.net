@@ -132,13 +132,44 @@
      
 		
 		<h3>
+		  <a href="/eclipse/java/2013/08/20/eclipse-rcp-remove-quick-access-from-toolbar.html">Eclipse / RCP: Remove Quick Access from toolbar</a>
+		</h3>
+		  <p class="small">Posted on 20 August 2013 by Andy</p>
+		  <p><p>After updating my RCP application from Eclipse 3.7 to Eclipse 4.x the toolbar always showed the quick access toolbar:</p>
+
+<p> </p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/08/quick_access.png" alt="Quick access"></p>
+
+<p>How to get rid of that? The workaround is to hide the item with some CSS code.</p>
+
+<p>First create a CSS file in your plugins root folder, for example &quot;default.css&quot;:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">#SearchField {
+    visibility: hidden; 
+}
+</code></pre></div>
+<p>Then add a property in the plugin.xml to your product extension point:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/08/property.png" alt="Property"></p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/08/property2.png" alt="Property2"></p>
+
+<p>The name for the property is &quot;applicationCSS&quot; and in the value field link to your CSS file.</p>
+
+<p>The quick access should be gone next time you run your application with the product configuration.</p>
+</p>		
+		  <p class="small">Tagged: e4, eclipse4, Kepler, and RCP by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/android/coding/2013/08/18/android-studio-nach-update-lasst-sich-das-projekt-nicht-starten.html">Android Studio: Nach Update lässt sich das Projekt nicht starten</a>
 		</h3>
 		  <p class="small">Posted on 18 August 2013 by Andy</p>
 		  <p><p>Heute wurde mir ein Update für Android Studio angezeigt. Also Update heruntergeladen und installiert. Wie immer erwartet man da natürlich Probleme mit bestehenden Projekten. :-)</p>
 
 <p>War natürlich der Fall: </p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">Gradle: &lt;br&gt;&lt;/br&gt;FAILURE: Could not determine which tasks to execute.&lt;br&gt;&lt;/br&gt;* What went wrong:&lt;br&gt;&lt;/br&gt;Task &#39;assemble&#39; not found in root project &#39;SomeProject&#39;.&lt;br&gt;&lt;/br&gt;* Try:&lt;br&gt;&lt;/br&gt;Run gradle tasks to get a list of available tasks.
+<div class="highlight"><pre><code class="language-text" data-lang="text">Gradle: &lt;br&gt;&lt;/br&gt;FAILURE: Could not determine which tasks to execute.&lt;br&gt;&lt;/br&gt;* What went wrong:&lt;br&gt;&lt;/br&gt;Task &#39;assemble&#39; not found in root project &#39;SomeProject&#39;.&lt;br&gt;&lt;/br&gt;* Try:&lt;br&gt;&lt;/br&gt;Run gradle tasks to get a list of available tasks.
 
 
 
@@ -207,18 +238,6 @@ Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;&#39;/Use
 		  <hr>
 		  
 		
-		<h3>
-		  <a href="/mac/2013/06/19/backslash-unter-osx.html">Backslash unter OSX</a>
-		</h3>
-		  <p class="small">Posted on 19 June 2013 by Andy</p>
-		  <p><p>Ich werde mir jetzt ein für alle mal merken, dass ein Backslash unter OSX mit *<em>SHIFT + ALT + 7 *</em>geht! </p>
-
-<p>Ansonsten kann ich immer hier nachschauen. :-)</p>
-</p>		
-		  <p class="small">Tagged: Backslash, Mac, and OSX by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -271,6 +290,7 @@ Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;&#39;/Use
 <li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
 <li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
 <li class='category'><a href='/categories/java/'>java (23)</a></li>
+<li class='category'><a href='/categories/jekyll/'>jekyll (1)</a></li>
 <li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
 <li class='category'><a href='/categories/kochen/'>kochen (1)</a></li>
 <li class='category'><a href='/categories/lazarus/'>lazarus (1)</a></li>

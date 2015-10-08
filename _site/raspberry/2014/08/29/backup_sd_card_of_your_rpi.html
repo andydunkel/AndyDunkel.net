@@ -156,10 +156,10 @@
 <p><img src="http://andydunkel.net/assets/uploads/2014/08/sdcard1.png" alt="image"></p>
 
 <p>On Linux (and OSX too), you can also backup from the command line using the DD command.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo dd if=/dev/rdisk1 of=~/Desktop/pi.img bs=1m
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo dd if=/dev/rdisk1 of=~/Desktop/pi.img bs=1m
 </code></pre></div>
 <p>To find the correct device, you can use the <code>diskutil</code> command (OSX only):</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">diskutil list
+<div class="highlight"><pre><code class="language-text" data-lang="text">diskutil list
 </code></pre></div>
 <p>This will output something like that:</p>
 
@@ -172,7 +172,7 @@
 <h4>Restore</h4>
 
 <p>The restore is similar:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo dd if=/path/to/backup.img of=/dev/rdisk1 bs=1m
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo dd if=/path/to/backup.img of=/dev/rdisk1 bs=1m
 </code></pre></div>
 <p>Once the restore is done to the new SD card, just put it into your Raspberry Pi and the system should boot as nothing happened.</p>
 

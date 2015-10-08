@@ -132,6 +132,28 @@
      
 		
 		<h3>
+		  <a href="/radfahren/2011/07/09/radtour-kemptener-wald-03-07-2011.html">Radtour Kemptener Wald-03.07.2011</a>
+		</h3>
+		  <p class="small">Posted on 09 July 2011 by Andy</p>
+		  <p><p>Kleine Runde im Kemptener Wald, nichts besonderes. </p>
+
+<p>Wetter war eher schlecht, daher lag der Fokus auf Begutachtung der Einkehrmöglichkeiten: <a href="http://www.gasthaus-mittelallgaeu.de/">Gasthaus Mittelallgäu</a>, Alpe Beilstein und die <a href="http://andydunkel.net/hiking/radfahren/sonstiges/2011/06/18/mehlblockalpe-im-kempter-wald-anfahrt-und-infos.html">Mehlblockalpe</a>.</p>
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:514ea4bc-41f8-4d94-ae15-8feae6e71c4e" class="wlWriterEditableSmartContent"><div><object width="587" height="330"><param name="movie" value="http://www.youtube.com/v/r-k14h7xorE?hl=en&amp;hd=1"></param><embed src="http://www.youtube.com/v/r-k14h7xorE?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="587" height="330"></embed></object></div></div>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/07/DSCN2241.jpg" alt="DSCN2241"></p>
+
+<!-- more -->
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/07/DSCN2243.jpg" alt="DSCN2243"></p>
+
+<p>Schinken-Käse-Brot in der Mehlblockalpe:<img src="http://andydunkel.net/assets/uploads/2011/07/DSCN2244.jpg" alt="DSCN2244"></p>
+</p>		
+		  <p class="small">Tagged: Beilsteinalpe, Kemptener Wald, and Mehlblockalpe by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/gadgets/tools/2011/07/09/screenshots-unter-android-erstellen-ohne-root.html">Screenshots unter Android erstellen (ohne Root)</a>
 		</h3>
 		  <p class="small">Posted on 09 July 2011 by Andy</p>
@@ -188,7 +210,7 @@
 		  <p><p>In this post I want to describe handling exceptions from threads with the ThreadGroup class and the uncaughtExceptionHandler.</p>
 
 <p>First we create a Thread which does useful stuff and throws an exception at some time:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">public class PfostenThread implements Runnable {    
+<div class="highlight"><pre><code class="language-text" data-lang="text">public class PfostenThread implements Runnable {    
     @Override
     public void run() {
         for (int i = 0; i &lt; 1000000; i++) {
@@ -204,7 +226,7 @@
 </code></pre></div>
 <p>No we will start our thread from the main method of our Java program:
 &lt;!-- more --&gt;</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">import java.lang.Thread.UncaughtExceptionHandler;
+<div class="highlight"><pre><code class="language-text" data-lang="text">import java.lang.Thread.UncaughtExceptionHandler;
 
 public class Main {
     public static void main(String[] args) {
@@ -219,7 +241,7 @@ public class Main {
 <p><img src="http://andydunkel.net/assets/uploads/2011/07/java_exception1.png" alt=""></p>
 
 <p>To catch the exception we will now extend the ThreadGroup class:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">public class PfostenThreadGroup extends ThreadGroup {
+<div class="highlight"><pre><code class="language-text" data-lang="text">public class PfostenThreadGroup extends ThreadGroup {
 
     public PfostenThreadGroup(String name) {
         super(name);
@@ -232,7 +254,7 @@ public class Main {
 }
 </code></pre></div>
 <p>If we start our Thread with this group, the exception will be caught by the &quot;uncaugtException&quot; method in our ThreadGroup:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">PfostenThreadGroup group = new PfostenThreadGroup(&quot;PfostenGruppe&quot;);
+<div class="highlight"><pre><code class="language-text" data-lang="text">PfostenThreadGroup group = new PfostenThreadGroup(&quot;PfostenGruppe&quot;);
 Thread t = new Thread(new PfostenThread(), &quot;Pfosten&quot;);
 t.start();  
 </code></pre></div>
@@ -253,7 +275,7 @@ t.start();
 <p>The usage is pretty simple. In this example I created an image php file:</p>
 
 <p>This outputs date and time into a QR code and outputs a PNG file. In the HTML file we only have to show the image:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">&lt;img src=&quot;img.php&quot;&gt;
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;img src=&quot;img.php&quot;&gt;
 </code></pre></div>
 <p>The QR code looks like that (if you do a refresh in the browser the code will change):</p>
 
@@ -264,16 +286,6 @@ t.start();
 <p>Here is the complete <a href="http://andydunkel.net/assets/wp-custom/qrcode/qrcode.zip">example as download</a>.</p>
 </p>		
 		  <p class="small">Tagged: Code, PHP, and QR by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/sonstiges/2011/07/03/mwe-klaut-kamera.html">Möwe klaut Kamera</a>
-		</h3>
-		  <p class="small">Posted on 03 July 2011 by Andy</p>
-		  <p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:2545dc3d-14d8-42e5-a19c-cd6691508898" class="wlWriterEditableSmartContent"><div><object width="559" height="314"><param name="movie" value="http://www.youtube.com/v/rIu5B3Fsstg?hl=en&amp;hd=1"></param><embed src="http://www.youtube.com/v/rIu5B3Fsstg?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="559" height="314"></embed></object></div><div style="width:559px;clear:both;font-size:.8em">Ohne Worte</div></div>
-</p>		
-		  <p class="small">Tagged: Seagull and Steals by Andy</p>
 		  <hr>
 		  
 		
@@ -329,6 +341,7 @@ t.start();
 <li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
 <li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
 <li class='category'><a href='/categories/java/'>java (23)</a></li>
+<li class='category'><a href='/categories/jekyll/'>jekyll (1)</a></li>
 <li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
 <li class='category'><a href='/categories/kochen/'>kochen (1)</a></li>
 <li class='category'><a href='/categories/lazarus/'>lazarus (1)</a></li>
