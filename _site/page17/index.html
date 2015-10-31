@@ -11,8 +11,6 @@
 		<link rel="stylesheet" href="/css/bootstrap-theme.min.css">		
 		<script src="/css/bootstrap.min.js"></script>
 		<link href="/css/additional.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="http://yandex.st/highlightjs/7.4/styles/default.min.css">
-		<script src="http://yandex.st/highlightjs/7.4/highlight.min.js"></script>
 		<link rel="alternate" type="application/rss+xml" title="AndyDunkel.net RSS Feed" href="http://andydunkel.net/rss.xml" /> 
 		
 		<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
@@ -132,6 +130,22 @@
      
 		
 		<h3>
+		  <a href="/2012/07/17/recaptcha-force-language.html">Recaptcha: Force Language</a>
+		</h3>
+		  <p class="small">Posted on 17 July 2012 by Andy</p>
+		  <p><p>Recent problem: customer wanted his <a href="http://www.google.com/recaptcha">reCatpcha</a> forced to german language. First attempt was to set the setting via the RecaptchaOption Script variable. Howewer, for some reason this did not work.</p>
+
+<p>Here is the solution:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;script type=&quot;text/javascript&quot; 
+src=&quot;http://api.recaptcha.net/challenge?k=apiKey&lt;strong&gt;&amp;hl=de&lt;/strong&gt;&quot;&gt; 
+</code></pre></div>
+<p>By adding &amp;hl=de to the &quot;src&quot; URL the language was forced to german.</p>
+</p>		
+		  <p class="small">Tagged: audio, deutsch, german, language, Recaptcha, and sprache by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/2012/07/11/zeitrafferaufnahme.html">Zeitrafferaufnahme</a>
 		</h3>
 		  <p class="small">Posted on 11 July 2012 by Andy</p>
@@ -207,30 +221,6 @@
 		  <hr>
 		  
 		
-		<h3>
-		  <a href="/ireland/2012/06/19/em-2012-in-irland.html">EM 2012 in Irland</a>
-		</h3>
-		  <p class="small">Posted on 19 June 2012 by Andy</p>
-		  <p><p>Ein paar Impressionen der EM in Irland, die Iren nehmen ja leider seid gestern nicht mehr teil:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/06/2012-06-17-19.18.12.jpg" alt="2012-06-17 19.18.12"></p>
-
-<p>Deutschland gewinnt:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/06/2012-06-17-20.50.14.jpg" alt="2012-06-17 20.50.14"></p>
-
-<p>Frankreich verliert:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/06/2012-06-19-20.16.20.jpg" alt="2012-06-19 20.16.20"></p>
-
-<p>Ansonsten gibt es nicht viel zu berichten. Regenwetter, 5er WG, 3 Franzosen eine Irin. Fahrrad habe ich auch schon:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/06/2012-06-16-17.43.16.jpg" alt="2012-06-16 17.43.16"></p>
-</p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -271,7 +261,7 @@
 		<section>
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/android/'>android (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (21)</a></li>
+<li class='category'><a href='/categories/coding/'>coding (22)</a></li>
 <li class='category'><a href='/categories/computer/'>computer (2)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (8)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
