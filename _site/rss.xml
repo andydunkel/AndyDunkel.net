@@ -353,10 +353,10 @@ sudo apt-get upgrade
 &lt;h2&gt;Installation und Konfiguration&lt;/h2&gt;
 
 &lt;p&gt;Die PPTP-Software installieren wir mit:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo apt-get install pptdp
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo apt-get install pptpd
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Anschließend bearbeiten wir die Config mit Nano:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo nano /etc/pptdp.conf
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo nano /etc/pptpd.conf
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Man kann alternativ auch VIM verwenden. Im Nano-Editor speichern wir mit STRG+X und anschließend Y.&lt;/p&gt;
 
