@@ -8,7 +8,15 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Sun, 01 Nov 2015 18:00:00 +0100</pubDate>
+    <pubDate>Fri, 13 Nov 2015 18:00:00 +0100</pubDate>
+    <item>
+      <title>Visual Studio 2015 startup: problem occurred when loading the menu</title>
+      <link>http://andydunkel.net/coding/2015/11/13/visual_studio_problem_occured.html</link>
+      <description>&lt;p&gt;This morning I had a strange error message, when I tried to start Visual Studio (version 2015, but it seems this also affects older versions):&lt;/p&gt;
+</description>
+      <pubDate>Fri, 13 Nov 2015 18:00:00 +0100</pubDate>
+      <dc:date>2015-11-13T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>InnoSetup - IPersistFile error 0x80070003</title>
       <link>http://andydunkel.net/coding/2015/11/01/inno_setup_ipersistfile_save_schlug_fehl.html</link>
@@ -2080,6 +2088,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2015-11-01T18:00:00+01:00</dc:date>
+    <dc:date>2015-11-13T18:00:00+01:00</dc:date>
   </channel>
 </rss>

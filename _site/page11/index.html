@@ -130,6 +130,22 @@
      
 		
 		<h3>
+		  <a href="/sonstiges/2013/07/29/griechische-katze.html">Griechische Katze</a>
+		</h3>
+		  <p class="small">Posted on 29 July 2013 by Andy</p>
+		  <p><p>Zweite Woche in Folge: wir wollen in der Mittagspause zu unserem Stammgriechen. Restaurant ist offen, aber niemand da, wir warten etwas ab und brechen die Aktion nach 15 Minuten Wartezeit ab. </p>
+
+<p>Heute war dann zumindest noch die hungrige Katze da:</p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2013/07/20130729-145519.jpg"><img src="http://andydunkel.net/assets/uploads/2013/07/20130729-145519.jpg" alt="20130729-145519.jpg"></a></p>
+
+<p>Schauen wir mal nächste Woche.</p>
+</p>		
+		  <p class="small">Tagged:  by Andy</p>
+		  <hr>
+		  
+		
+		<h3>
 		  <a href="/meinung/2013/07/03/roaminggebuhren.html">Roaminggebühren</a>
 		</h3>
 		  <p class="small">Posted on 03 July 2013 by Andy</p>
@@ -224,53 +240,6 @@ So kann man sich auf den Inhalt konzentrieren.</p>
 		  <hr>
 		  
 		
-		<h3>
-		  <a href="/windows/2013/05/30/windows-8-aktivierung-produktkey-wird-nicht-angenommen.html">Windows 8 Aktivierung - Produktkey wird nicht angenommen</a>
-		</h3>
-		  <p class="small">Posted on 30 May 2013 by Andy</p>
-		  <p><p>Ich habe letztes Jahr zugeschlagen und mir eine günstige Windows 8 Lizenz gekauft. Benutzen tue ich das nur in VMware um meine Software zu testen. Die Bedienung vom neuen Windows, naja. Aber das ist ein anderes Thema.</p>
-
-<p>Nun wollte Windows aktiviert werden, trotz gültigem Product-Key. Es kam immer die Meldung:</p>
-
-<blockquote>
-<p>Mit dem Product Key stimmt etwas nicht. Bitte überprüfen Sie ihn, und versuchen Sie es noch mal, oder verwenden Sie einen anderen Key.</p>
-</blockquote>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/05/no_valid_key.png" alt="Key ungültig"></p>
-
-<p>Eine typische Microsoft-Fehlermeldung also. :-)</p>
-
-<p>Meine Vermutung war, dass es sich um eine Update-Lizenz handelt und dies Probleme gibt, wenn man diese nicht über ein bestehendes Windows drüber installiert. Ich habe natürlich eine Windows 7 Lizenz, aber ich hatte damals wenig Lust erst ein Windows 7 in der VM zu installieren und dann auf Windows 8 zu updaten. </p>
-
-<p>Zum Glück gibt es eine Lösung über die Registry. Und da sage man mal Windows sei einfacher als Linux. </p>
-
-<p>Also fix den Registry-Editor öffnen:</p>
-
-<ul>
-<li><p>Windows-Taste + R drücken</p></li>
-<li><p>&quot;regedit&quot; eintippen und Enter</p></li>
-<li><p>Registrys-Shlüssel suchen: KEY<em>LOCAL</em>MACHINE/Software/Microsoft/Windows/CurrentVersion/Setup/OOBE</p></li>
-<li><p>Wert &quot;MediaBootInstall&quot; von 1 auf 0 setzen:</p></li>
-</ul>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/05/registry.png" alt="Registry bearbeiten"></p>
-
-<p>Damit die Änderungen übernommen werden, muss man noch die Admin-Eingabeaufforderung starten. Mit dem neuen Bedienkonzept von Windows gar nicht so intuitiv wie früher. Im Kachelmenü &quot;Eingabeaufforderung&quot; eintippen. Dann Rechtsklick auf den Eintrag:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/05/eingabeaufforderung.png" alt="Eingabeaufforderung"></p>
-
-<p>Und dann als Administrator starten:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/05/runas.png" alt="Als Admin ausführen"></p>
-
-<p>Nun noch &quot;slmgr /rearm&quot; in die Konsole eintippen und es erfolgt eine Meldung, dass man neu starten solle. Nach dem Neustart war dann das Windows auch gleich aktiviert. Wenn nicht, die Prozedur über die Systemsteuerung wiederholen.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/05/slrmgr.png" alt="slrmgr /rearm"></p>
-</p>		
-		  <p class="small">Tagged: Aktivierung, ProductKey, and Windows 8 by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -311,7 +280,7 @@ So kann man sich auf den Inhalt konzentrieren.</p>
 		<section>
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/android/'>android (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (22)</a></li>
+<li class='category'><a href='/categories/coding/'>coding (23)</a></li>
 <li class='category'><a href='/categories/computer/'>computer (2)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (8)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
