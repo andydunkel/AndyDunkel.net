@@ -3,7 +3,7 @@ author: admin
 comments: true
 date: 2015-11-13 17:00:00+00:00
 layout: post
-slug: visual_studio_problem_occured_startup
+slug: visual_studio_error_startup
 title: 'Visual Studio won't start: problem occurred when loading the menu'
 categories:
 - Coding
