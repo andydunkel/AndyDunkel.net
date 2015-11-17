@@ -37,11 +37,11 @@ Das kann je nach Stand der Software eine Weile dauern.
 
 Die PPTP-Software installieren wir mit:
 
-	sudo apt-get install pptdp
+	sudo apt-get install pptpd
 
 Anschließend bearbeiten wir die Config mit Nano:
 
-	sudo nano /etc/pptdp.conf
+	sudo nano /etc/pptpd.conf
 
 Man kann alternativ auch VIM verwenden. Im Nano-Editor speichern wir mit STRG+X und anschließend Y.
 
