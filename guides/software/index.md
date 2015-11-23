@@ -9,7 +9,7 @@ title: Anleitungen Software
 
 - [Windows 10 Lenovo Thinkpad W500 installieren](http://andydunkel.net/computer/2015/08/09/windows_10_on_thinkpad_w500.html)
 - [Windows 7 Service Pack 1-Unbekannter Fehler 0x8004401e](http://andydunkel.net/2011/08/03/windows-7-service-pack-1-unbekannter-fehler-0x8004401e.html)
-- [Windows 7 - Kein Service Pack 1 fürs ThinkPad Edge)(http://andydunkel.net/sonstiges/2011/07/31/kein-service-pack-1-frs-thinkpad-edge.html)
+- [Windows 7 - Kein Service Pack 1 fürs ThinkPad Edge](http://andydunkel.net/sonstiges/2011/07/31/kein-service-pack-1-frs-thinkpad-edge.html)
 - [Windows 8 Aktivierung - Product Key wird nicht angenommen](http://andydunkel.net/windows/2013/05/30/windows-8-aktivierung-produktkey-wird-nicht-angenommen.html)
 
 ## Linux
