@@ -488,7 +488,7 @@ daform.app code object is not signed at all
     <item>
       <title>Signing Firemonkey Applications on OSX</title>
       <link>http://andydunkel.net/delphi/firemonkey/2014/01/22/signing_delphi_xe_applications_for_osx.html</link>
-      <description>&lt;p&gt;Some time ago I started porting my application &lt;a href=&quot;http://da-software.de/daform_osx/index.html&quot;&gt;DA-FormMaker&lt;/a&gt; for the Mac. After finishing the development, the app needs to be signed with the Developer ID. Otherwise your users will end up with some message like:&lt;/p&gt;
+      <description>&lt;p&gt;Some time ago I started porting my application &lt;a href=&quot;http://da-software.de/daform/daform_start.htm&quot;&gt;DA-FormMaker&lt;/a&gt; for the Mac. After finishing the development, the app needs to be signed with the Developer ID. Otherwise your users will end up with some message like:&lt;/p&gt;
 </description>
       <pubDate>Wed, 22 Jan 2014 18:00:00 +0100</pubDate>
       <dc:date>2014-01-22T18:00:00+01:00</dc:date>
