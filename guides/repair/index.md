@@ -19,6 +19,7 @@ title: Reparaturanleitungen
 
 - [USB 3.0 am Thinkpad W500 nachrüchsten](http://andydunkel.net/computer/2015/05/07/thinkpad_w500_usb_30.html)
 - [Thinkpad Edge 11 auf SSD umrüsten](http://andydunkel.net/gadgets/sonstiges/2011/12/11/thinkpad-edge-11-auf-ssd-umrsten.html)
+- [Dell Vostro 2520 - Festplatte auf SSD umrüsten](http://andydunkel.net/repair/reparatur/2015/12/04/festplatte_dell_2520.html)
 
 
 ## Sonstige
