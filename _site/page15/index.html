@@ -136,9 +136,28 @@
       <h2>Blog Posts</h2>
      
 		
-		<h3>
+		<h1>
+		  <a href="/java/2012/11/25/java-convert-string-to-input-stream.html">Java: Convert String to InputStream</a>
+		</h1>
+		  <p class="small">Posted on 25 November 2012 by Andy</p>
+		  <p><p>Some methods want an InputStream, converting a String into an InputStream is very easy:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/**
+ * Converts a string into an inputstream
+ * @param s
+ * @return
+ */
+private InputStream convertStringToInputStream(String s) {
+  ByteArrayInputStream in = new ByteArrayInputStream(s.getBytes());
+  return in;
+}
+</code></pre></div></p>		
+		  <p class="small">Tagged:  by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/gadgets/2012/11/24/roomba-error-9-repair-guide-english-version-2.html">Roomba error 9 repair guide (English version)</a>
-		</h3>
+		</h1>
 		  <p class="small">Posted on 24 November 2012 by Andy</p>
 		  <p><p><strong>Dies ist die englische Version, wer die Reparaturanleitung auf Deutsch lesen möchte, <a href="http://andydunkel.net/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html">hier klicken</a>.</strong></p>
 
@@ -242,9 +261,9 @@
 		  <hr>
 		  
 		
-		<h3>
+		<h1>
 		  <a href="/gadgets/2012/11/22/roomba-fehler-nummer-9-die-zweite.html">Roomba Fehler Nummer 9 die zweite</a>
-		</h3>
+		</h1>
 		  <p class="small">Posted on 22 November 2012 by Andy</p>
 		  <p><p>Mal wieder Fehler 9 beim <a href="http://www.amazon.de/gp/product/B002P68ADQ/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B002P68ADQ&amp;linkCode=as2&amp;tag=ekiwide0b-21">Roomba</a>. Diesmal war es ein eher schleichender Prozess, mal ging er, mal drehte er sich nur noch im Kreis, um irgendwann mit 9 maligem Piepen den Dienst zu quittieren. Ein anderes Mal konzentrierte er sich verdächtiger Weise nur auf eine hälfte des Raums.</p>
 
@@ -266,9 +285,9 @@
 		  <hr>
 		  
 		
-		<h3>
+		<h1>
 		  <a href="/coding/eclipse/2012/11/04/rcp-problems-when-generating-pdf-files-with-rcp.html">RCP: Problems when generating PDF files with RCP</a>
-		</h3>
+		</h1>
 		  <p class="small">Posted on 04 November 2012 by Andy</p>
 		  <p><p>Recently I ran into a problem in my RCP application during the generation of a PDF file from a <a href="http://www.eclipse.org/birt/phoenix/">BIRT</a> report. This only happened when trying to run the export from the exported product:</p>
 
@@ -298,9 +317,9 @@
 		  <hr>
 		  
 		
-		<h3>
+		<h1>
 		  <a href="/coding/eclipse/2012/11/03/rcp-get-command-line-parameters-in-eclipse-apps.html">RCP: Get command line parameters in Eclipse Apps</a>
-		</h3>
+		</h1>
 		  <p class="small">Posted on 03 November 2012 by Andy</p>
 		  <p><p>You can easily access the command line parameters of your RCP application via the Platform object, here is an example:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">String args[] = Platform.getCommandLineArgs();
@@ -308,35 +327,6 @@ int i = 0;
 while(i &lt; args.length) {
   System.out.println(args[i]);
   i++;
-}
-</code></pre></div></p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/coding/eclipse/2012/11/02/easy-logging-for-rcp-applications.html">Easy logging for RCP applications</a>
-		</h3>
-		  <p class="small">Posted on 02 November 2012 by Andy</p>
-		  <p><p>A small class for easy logging in RCP applications by using the Activators logging functions. This class mainly wraps the need of creating an IStatus object each time we want to log something.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
-
-public class LoggerUtil {
-    public static void info(String message){
-        IStatus status = new Status(IStatus.INFO,Activator.PLUGIN_ID, message);
-        Activator.getDefault().getLog().log(status);
-    }
-
-    public static void error(String message){
-        IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, message);
-        Activator.getDefault().getLog().log(status);
-    }
-
-    public static void warning(String message){
-        IStatus status = new Status(IStatus.WARNING,.PLUGIN_ID, message);
-        Activator.getDefault().getLog().log(status);
-    }
 }
 </code></pre></div></p>		
 		  <p class="small">Tagged:  by Andy</p>
@@ -385,7 +375,7 @@ public class LoggerUtil {
 		<li class='category'><a href='/categories/android/'>android (1)</a></li>
 <li class='category'><a href='/categories/coding/'>coding (23)</a></li>
 <li class='category'><a href='/categories/computer/'>computer (2)</a></li>
-<li class='category'><a href='/categories/delphi/'>delphi (8)</a></li>
+<li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
 <li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
 <li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
@@ -398,7 +388,7 @@ public class LoggerUtil {
 <li class='category'><a href='/categories/jekyll/'>jekyll (1)</a></li>
 <li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
 <li class='category'><a href='/categories/kochen/'>kochen (1)</a></li>
-<li class='category'><a href='/categories/lazarus/'>lazarus (1)</a></li>
+<li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
 <li class='category'><a href='/categories/linux/'>linux (9)</a></li>
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (3)</a></li>

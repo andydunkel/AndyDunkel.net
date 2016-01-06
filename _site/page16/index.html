@@ -136,9 +136,38 @@
       <h2>Blog Posts</h2>
      
 		
-		<h3>
+		<h1>
+		  <a href="/coding/eclipse/2012/11/02/easy-logging-for-rcp-applications.html">Easy logging for RCP applications</a>
+		</h1>
+		  <p class="small">Posted on 02 November 2012 by Andy</p>
+		  <p><p>A small class for easy logging in RCP applications by using the Activators logging functions. This class mainly wraps the need of creating an IStatus object each time we want to log something.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+
+public class LoggerUtil {
+    public static void info(String message){
+        IStatus status = new Status(IStatus.INFO,Activator.PLUGIN_ID, message);
+        Activator.getDefault().getLog().log(status);
+    }
+
+    public static void error(String message){
+        IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, message);
+        Activator.getDefault().getLog().log(status);
+    }
+
+    public static void warning(String message){
+        IStatus status = new Status(IStatus.WARNING,.PLUGIN_ID, message);
+        Activator.getDefault().getLog().log(status);
+    }
+}
+</code></pre></div></p>		
+		  <p class="small">Tagged:  by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/coding/eclipse/2012/11/02/rcp-switch-to-perspective-via-code.html">RCP: Switch to perspective via code</a>
-		</h3>
+		</h1>
 		  <p class="small">Posted on 02 November 2012 by Andy</p>
 		  <p><p>A small snippet which switches to a certain perspective via code:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">IPerspectiveDescriptor[] perspectives =
@@ -161,9 +190,9 @@ return null;
 		  <hr>
 		  
 		
-		<h3>
+		<h1>
 		  <a href="/coding/eclipse/2012/11/01/rcp-remove-unwanted-preference-pages.html">RCP: Remove unwanted preference pages</a>
-		</h3>
+		</h1>
 		  <p class="small">Posted on 01 November 2012 by Andy</p>
 		  <p><p>In my RCP application some unwanted sections in the preferences showed up:</p>
 
@@ -192,9 +221,9 @@ public void postStartup(){
 		  <hr>
 		  
 		
-		<h3>
+		<h1>
 		  <a href="/coding/eclipse/2012/11/01/rcp-perspectives-and-perspective-contributions-2.html">RCP: Perspectives and Perspective Contributions</a>
-		</h3>
+		</h1>
 		  <p class="small">Posted on 01 November 2012 by Andy</p>
 		  <p><p>Note: I put the example project in a ZIP file, you can use that to have a look to the actual code, <a href="http://andydunkel.net/assets/wp-custom/com.da.perspectives.example.zip">Download</a>.</p>
 
@@ -289,9 +318,9 @@ public void createInitialLayout(IPageLayout layout) {
 		  <hr>
 		  
 		
-		<h3>
+		<h1>
 		  <a href="/radfahren/2012/09/24/radtour-sonthofen-september-2012.html">Radtour Sonthofen - September 2012</a>
-		</h3>
+		</h1>
 		  <p class="small">Posted on 24 September 2012 by Andy</p>
 		  <p><p>Wohl an einem der letzten sommerlichen Tage in diesem Jahr ging es mit den <a href="http://andydunkel.net/radfahren/2012/05/04/bikefrhling-comer-seeitalien.html">Italienreisenden</a> (Roland, meine Wenigkeit, Toni, Christine und Hermann) zu einer kleinen Runde rund um Sonthofen. 1600 hm und 74km galt es zu bezwingen, bevor wir auf der <a href="http://www.oberstdorf.de/partner/piesenalpe/">Piesenalpe</a> Brotzeit und Bier (leider nur Paulaner) genießen konnten.</p>
 
@@ -306,18 +335,6 @@ public void createInitialLayout(IPageLayout layout) {
 <p><img src="http://andydunkel.net/assets/uploads/2012/09/SDC10338.jpg" alt="SDC10338"></p>
 
 <p><img src="http://andydunkel.net/assets/uploads/2012/09/SDC10340.jpg" alt="SDC10340"></p>
-</p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/radfahren/2012/09/03/katzbrui-2012.html">Katzbrui 2012</a>
-		</h3>
-		  <p class="small">Posted on 03 September 2012 by Andy</p>
-		  <p><p><img src="http://andydunkel.net/assets/uploads/2012/09/2012-09-02-17.28.44.jpg" alt="2012 09 02 17 28 44"></p>
-
-<p> </p>
 </p>		
 		  <p class="small">Tagged:  by Andy</p>
 		  <hr>
@@ -365,7 +382,7 @@ public void createInitialLayout(IPageLayout layout) {
 		<li class='category'><a href='/categories/android/'>android (1)</a></li>
 <li class='category'><a href='/categories/coding/'>coding (23)</a></li>
 <li class='category'><a href='/categories/computer/'>computer (2)</a></li>
-<li class='category'><a href='/categories/delphi/'>delphi (8)</a></li>
+<li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
 <li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
 <li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
@@ -378,7 +395,7 @@ public void createInitialLayout(IPageLayout layout) {
 <li class='category'><a href='/categories/jekyll/'>jekyll (1)</a></li>
 <li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
 <li class='category'><a href='/categories/kochen/'>kochen (1)</a></li>
-<li class='category'><a href='/categories/lazarus/'>lazarus (1)</a></li>
+<li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
 <li class='category'><a href='/categories/linux/'>linux (9)</a></li>
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (3)</a></li>

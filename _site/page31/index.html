@@ -136,9 +136,59 @@
       <h2>Blog Posts</h2>
      
 		
-		<h3>
+		<h1>
+		  <a href="/2011/08/03/windows-7-service-pack-1-unbekannter-fehler-0x8004401e.html">Windows 7 Service Pack 1-Unbekannter Fehler 0x8004401e</a>
+		</h1>
+		  <p class="small">Posted on 03 August 2011 by Andy</p>
+		  <p><p>Tja, nach meinem letzten Eintrag <a href="http://andydunkel.net/sonstiges/2011/07/31/kein-service-pack-1-frs-thinkpad-edge.html">zum Thema</a>, war ich recht optimistisch. Aber denkste, zwar tauchte das Service Pack nun in der Liste der Updates auf, lud herunter und tat so, als ob es sich installierte.</p>
+
+<p>Beim nächsten Neustart wurde dann wieder ein Fehler festgestellt und die Installation zurückgerollt:</p>
+
+<p><strong>Unbekannter Fehler 0x8004401e</strong></p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2011/08/image.png"><img src="http://andydunkel.net/assets/uploads/2011/08/image_thumb.png" alt="image"></a></p>
+
+<p>Na toll, Google und Foren gaben zum Thema nicht viel her. Außer probiere mal Voodoo XY, installiere Windows neu, deinstalliere alle Treiber und installiere alle neu, mit Linux wäre das nicht passiert…</p>
+
+<p>Irgendwie ließ sich dann das ganze auf “fehlerhafte Systemdateien” eingrenzen. Welche, keine Ahnung. Aber es wurde in “Inplace Upgrade” empfohlen. Dies hat letztendlich auch die Lösung gebracht.</p>
+
+<p><strong>Nun aber zur Lösung:</strong></p>
+
+<!-- more -->
+
+<p>Eins vorneweg: ob das wirklich für alle, welche das Problem haben, die Lösung ist, kann ich nicht sagen. Auf jeden Fall sollte man vorher seine Daten sichern.</p>
+
+<p>Prinzipiell bleiben beim &quot;Inplace Upgrade&quot; alle Daten und Programme erhalten. Lediglich Windows wird neu drüberinstalliert. </p>
+
+<p>Zuerst legt man eine Windows DVD ein. Wer keine hat, kann sich ein Image aus dem Internet ziehen (<a href="http://stadt-bremerhaven.de/windows-7-dvd-als-iso-downloaden">Infos z.B. hier</a>). Wichtig, die DVD muss den gleichen Stand haben wie das installierte Windows, d.h. ohne Service Pack in diesem Fall.</p>
+
+<p>Dann geht man auf Arbeitsplatz und das DVD-Laufwerk öffnet die DVD und klickt auf die <strong>setup.exe</strong>:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image1.png" alt="image"></p>
+
+<p>Anschließend klickt man auf “Jetzt installieren”. Dann  geht’s weiter:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image2.png" alt="image"></p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2011/08/image3.png"><img src="http://andydunkel.net/assets/uploads/2011/08/image_thumb1.png" alt="image"></a></p>
+
+<p>Updates wollen wir keine machen und wir machen ein “Upgrade”.</p>
+
+<p>Dann legt er auch schon los. Dauert eine Weile, Neustart, Weiterinstallation.</p>
+
+<p>Nachdem das ganze fertig war, hat dann auch die Service Pack 1 Installation geklappt.</p>
+
+<p>Tada:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image4.png" alt="image"></p>
+</p>		
+		  <p class="small">Tagged: 0x8004401e, Inplace, Installation, Problem, SP1, Upgrade, and Windows by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/eclipse/java/2011/08/02/save-and-load-an-emf-model-to-an-xml-file.html">Save and load an EMF model to an XML file</a>
-		</h3>
+		</h1>
 		  <p class="small">Posted on 02 August 2011 by Andy</p>
 		  <p><p>Here are two code snippets which give you an example how to save and load an EMF model to an XML file.</p>
 
@@ -169,9 +219,9 @@
 		  <hr>
 		  
 		
-		<h3>
+		<h1>
 		  <a href="/sonstiges/2011/07/31/kein-service-pack-1-frs-thinkpad-edge.html">Kein Service Pack 1 fürs ThinkPad Edge</a>
-		</h3>
+		</h1>
 		  <p class="small">Posted on 31 July 2011 by Andy</p>
 		  <p><p>Service Pack 1 für Windows 7 gibt es ja schon eine Weile. Allerdings wollte das SP1 im Windows Update auf meinem Thinkpad Edge nie auftauchen. Hat mich erst mal nicht weiter gekümmert, irgendwie schwang da die Hoffnung mit das sich das Problem irgendwann selbst löst. Hat es natürlich nicht.</p>
 
@@ -199,9 +249,9 @@
 		  <hr>
 		  
 		
-		<h3>
+		<h1>
 		  <a href="/sonstiges/2011/07/31/nichts.html">Nichts</a>
-		</h3>
+		</h1>
 		  <p class="small">Posted on 31 July 2011 by Andy</p>
 		  <p><p><img src="http://andydunkel.net/assets/uploads/2011/07/image27.png" alt="image"></p>
 </p>		
@@ -209,9 +259,9 @@
 		  <hr>
 		  
 		
-		<h3>
+		<h1>
 		  <a href="/sonstiges/2011/07/30/drehung-eines-vektors-im-r2.html">Drehung eines Vektors im R2</a>
-		</h3>
+		</h1>
 		  <p class="small">Posted on 30 July 2011 by Andy</p>
 		  <p><p>Heute mal ein wenig Mathematik. Braucht man ja mal ab und zu. Konkretes Problem: Drehung eines Punktes um den Koordinatenursprung. Brauchte ich konkret für eine Visualisierungskomponente (Anzeige des aktuellen Winkels).</p>
 
@@ -238,34 +288,6 @@
 <p>Das war’s auch schon. In diesem Sinne:</p>
 </p>		
 		  <p class="small">Tagged: Drehung and Vektor by Andy</p>
-		  <hr>
-		  
-		
-		<h3>
-		  <a href="/ipad/2011/07/28/offline-karten-fr-das-ipad.html">Offline Karten für das iPad</a>
-		</h3>
-		  <p class="small">Posted on 28 July 2011 by Andy</p>
-		  <p><p>Auf dem iPad ist standardmäßig Google Maps installiert, funktioniert auch prächtig, solange man Internetverbindung hat.</p>
-
-<p>Aber es gibt ja für alles eine App: <a href="http://itunes.apple.com/de/app/forevermap-by-skobbler/id394763737?mt=8">ForeverMap</a></p>
-
-<p>Gibt’s im App-Store für bescheidene 1,59 Euro. Nach der Installation installiert man sich die gewünschten Karten gleich Länderweise. Deutschland schlägt mit 400 MB zu Buche, andere Länder sind kleiner. </p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image20.png" alt="image"></p>
-
-<p><strong>Was kann man noch machen?</strong></p>
-
-<!-- more -->
-
-<p>Routen planen, sowohl für Auto oder Fußgänger. Ist allerdings keine Navi im klassischen Sinne. </p>
-
-<p>Offlinesuche nach Adressen und Locations, z.B. wo ist die Kneipe? <img src="http://andydunkel.net/assets/uploads/2011/07/wlEmoticon-smile6.png" alt="Smiley"></p>
-
-<p>Das ganze basiert auf <a href="http://www.openstreetmap.org/">www.openstreetmap.org/</a>, ist also aktuell.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image21.png" alt="image"></p>
-</p>		
-		  <p class="small">Tagged: ipad, Karten, and Offline by Andy</p>
 		  <hr>
 		  
 		
@@ -311,7 +333,7 @@
 		<li class='category'><a href='/categories/android/'>android (1)</a></li>
 <li class='category'><a href='/categories/coding/'>coding (23)</a></li>
 <li class='category'><a href='/categories/computer/'>computer (2)</a></li>
-<li class='category'><a href='/categories/delphi/'>delphi (8)</a></li>
+<li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
 <li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
 <li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
@@ -324,7 +346,7 @@
 <li class='category'><a href='/categories/jekyll/'>jekyll (1)</a></li>
 <li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
 <li class='category'><a href='/categories/kochen/'>kochen (1)</a></li>
-<li class='category'><a href='/categories/lazarus/'>lazarus (1)</a></li>
+<li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
 <li class='category'><a href='/categories/linux/'>linux (9)</a></li>
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (3)</a></li>
