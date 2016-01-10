@@ -8,7 +8,15 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Wed, 06 Jan 2016 18:00:00 +0100</pubDate>
+    <pubDate>Sat, 09 Jan 2016 18:00:00 +0100</pubDate>
+    <item>
+      <title>32c3</title>
+      <link>http://andydunkel.net/ccc/2016/01/09/32c3.html</link>
+      <description>&lt;p&gt;Wohl zum vorläufig vorletzten Mal war der Chaos Communication Congress in Hamburg. Diesmal war der Congress aufverkauft, 13000 Leute sollen wohl da gewesen sein. Gefühlt war es aber nicht voller als letztes Jahr. Die Sääle waren zwar voll, aber wir sind immer reingekommen. Mit etwas Wehmut denkt man an den ersten Congress in Hamburg vor 4 Jahren zurück, da waren knapp die Hälfte an Leuten da und es gab jede Menge Platz. &lt;/p&gt;
+</description>
+      <pubDate>Sat, 09 Jan 2016 18:00:00 +0100</pubDate>
+      <dc:date>2016-01-09T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Moving from Delphi to Lazarus</title>
       <link>http://andydunkel.net/delphi/lazarus/2016/01/06/delphi_lazarus.html</link>
@@ -2104,6 +2112,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2016-01-06T18:00:00+01:00</dc:date>
+    <dc:date>2016-01-09T18:00:00+01:00</dc:date>
   </channel>
 </rss>
