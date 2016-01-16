@@ -21,9 +21,9 @@ In [Gimp](http://www.gimp.org) there is no such feature by default yet. But ther
 
 After installation the plugin becomes available in the file menu. The plugin offers the same functions as the Photoshop one:
 
-!()(/assets/uploads/2016/1/save_for_web_linux.png)
+![](/assets/uploads/2016/1/save_for_web_linux.png)
 
-!()(/assets/uploads/2016/1/save_for_web_main.png)
+![](/assets/uploads/2016/1/save_for_web_main.png)
 
 ## Installation on Windows
 
