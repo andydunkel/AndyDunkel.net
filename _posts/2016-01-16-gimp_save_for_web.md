@@ -23,7 +23,7 @@ After installation the plugin becomes available in the file menu. The plugin off
 
 ![](/assets/uploads/2016/1/save_for_web_linux.png)
 
-![](/assets/uploads/2016/1/save_for_web_main.png)
+![](/assets/uploads/2016/1/save_for_web_linux_main.png)
 
 ## Installation on Windows
 
