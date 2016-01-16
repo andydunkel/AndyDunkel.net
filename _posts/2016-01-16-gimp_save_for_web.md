@@ -4,7 +4,7 @@ comments: true
 date: 2016-01-16 17:00:00+00:00
 layout: post
 slug: gimp_save_for_web
-title: 'Gimp - save for web plugin'
+title: 'Gimp - Save for Web Plugin'
 categories:
 - Linux
 - OpenSource
