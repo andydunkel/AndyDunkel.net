@@ -137,6 +137,37 @@
      
 		
 		<h1>
+		  <a href="/coding/eclipse/2012/11/01/rcp-remove-unwanted-preference-pages.html">RCP: Remove unwanted preference pages</a>
+		</h1>
+		  <p class="small">Posted on 01 November 2012 by Andy</p>
+		  <p><p>In my RCP application some unwanted sections in the preferences showed up:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/UnwantedPreferences.png" alt="Unwanted Preferences"></p>
+
+<p>How to get rid of them? Thats easy, in the &quot;ApplicationWorkbenchAdvisor&quot; class, override the &quot;postStartup&quot; method:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">@Override
+public void postStartup(){
+      PreferenceManager pm = PlatformUI.getWorkbench().getPreferenceManager();
+      pm.remove(&quot;org.eclipse.help.ui.browsersPreferencePage&quot;); //$NON-NLS-1$
+      pm.remove(&quot;org.eclipse.help.ui.contentPreferencePage&quot;); //$NON-NLS-1$
+}
+</code></pre></div>
+<p>What if you don&#39;t know the id of the preference page? No problem, you can output those with the following code snippet:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">@Override
+public void postStartup(){
+      PreferenceManager pm = PlatformUI.getWorkbench().getPreferenceManager();
+      IPreferenceNode[] arr = pm.getRootSubNodes();
+
+      for(IPreferenceNode pn:arr){
+          System.out.println(&quot;Label:&quot; + pn.getLabelText() + &quot; ID:&quot; + pn.getId());
+      }
+}
+</code></pre></div></p>		
+		  <p class="small">Tagged: Eclipse, plugin, preferences, and RCP by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/coding/eclipse/2012/11/01/rcp-perspectives-and-perspective-contributions-2.html">RCP: Perspectives and Perspective Contributions</a>
 		</h1>
 		  <p class="small">Posted on 01 November 2012 by Andy</p>
@@ -295,32 +326,6 @@ public void createInitialLayout(IPageLayout layout) {
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/fotos/radfahren/2012/07/23/crosshaven-21-07-2012.html">Crosshaven 21.07.2012</a>
-		</h1>
-		  <p class="small">Posted on 23 July 2012 by Andy</p>
-		  <p><p>Ein paar Impressionen vom bisher besten Sommertag in Irland:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/07/SDC10204.jpg" alt="SDC10204"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/07/SDC10234.jpg" alt="SDC10234"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/07/SDC10215.jpg" alt="SDC10215"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/07/SDC10249.jpg" alt="SDC10249"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/07/SDC10209.jpg" alt="SDC10209"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/07/SDC10226.jpg" alt="SDC10226"></p>
-
-<p><a href="https://maps.google.com/maps/ms?msa=0&amp;msid=208324790998598431494.0004c583c9db2396b734c&amp;ie=UTF8&amp;t=h&amp;ll=51.833656,-8.397675&amp;spn=0.169724,0.411301&amp;z=11&amp;source=embed">Crosshaven - 21.07.2012</a> auf einer größeren Karte anzeigen</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/07/NewImage.png" alt="NewImage"></p>
-</p>		
-		  <p class="small">Tagged: Crosshaven and Irland by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -362,7 +367,7 @@ public void createInitialLayout(IPageLayout layout) {
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/android/'>android (1)</a></li>
 <li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (23)</a></li>
+<li class='category'><a href='/categories/coding/'>coding (24)</a></li>
 <li class='category'><a href='/categories/computer/'>computer (2)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
