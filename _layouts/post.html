@@ -35,6 +35,17 @@ layout: default
 		  	       </div>
 			   </div>
 			 </div>
+
+			{% if site.related_posts.size > 0 %}
+			 <div class="panel panel-default">
+			 	<div class="panel-heading">Verwandte Artikel:</div>
+				<div class="panel-body">
+				{% for post in site.related_posts %}
+				   <li class="list-unstyled"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+				{% endfor %}
+				</div>
+			</div>
+			{% endif %}
 						
 			<script type="text/javascript"><!--
 			google_ad_client = "ca-pub-1137550895446814";
