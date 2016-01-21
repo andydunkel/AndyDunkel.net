@@ -70,7 +70,7 @@
                 <li><a href="http://da-software.de">DA-Software.de</a></li>
                 <li class="divider"></li>
 	               <li class="dropdown-header">Blogs</li>
-				        <li><a href="http://blog.ekiwi.de">eKiwi Blog</a></li>				
+				        <li><a href="http://ekiwi-blog.de">eKiwi Blog</a></li>				
                 <li class="divider"></li>
                 <li class="dropdown-header">Sonstiges</li>
                 <li><a href="/documents.html">Dokumente</a></li>
@@ -135,6 +135,31 @@
     <div class="col-md-9">
       <h2>Blog Posts</h2>
      
+		
+		<h1>
+		  <a href="/coding/eclipse/2012/11/02/rcp-switch-to-perspective-via-code.html">RCP: Switch to perspective via code</a>
+		</h1>
+		  <p class="small">Posted on 02 November 2012 by Andy</p>
+		  <p><p>A small snippet which switches to a certain perspective via code:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">IPerspectiveDescriptor[] perspectives =
+PlatformUI.getWorkbench().getPerspectiveRegistry().getPerspectives();
+
+IWorkbenchPage page =
+PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+    if(page != null) {
+      for (IPerspectiveDescriptor des : perspectives) {
+        if (des.getId().equals(&quot;my.perspective.id&quot;)) {
+          page.setPerspective(des);
+          break;
+        }
+      }
+    }
+
+return null;
+</code></pre></div></p>		
+		  <p class="small">Tagged:  by Andy</p>
+		  <hr>
+		  
 		
 		<h1>
 		  <a href="/coding/eclipse/2012/11/01/rcp-remove-unwanted-preference-pages.html">RCP: Remove unwanted preference pages</a>
@@ -298,34 +323,6 @@ public void createInitialLayout(IPageLayout layout) {
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/hiking/ireland/2012/08/08/gougane-bara-irland.html">Gougane Bara Irland</a>
-		</h1>
-		  <p class="small">Posted on 08 August 2012 by Andy</p>
-		  <p><p><a href="http://de.wikipedia.org/wiki/Gougane_Barra">Gougane Bara</a> Irland, Wandertour</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/P1000046.jpg" alt="P1000046"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/P1000058.jpg" alt="P1000058"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/P1000065.jpg" alt="P1000065"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/SDC10308.jpg" alt="SDC10308"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/SDC10281.jpg" alt="SDC10281"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/SDC10317.jpg" alt="SDC10317"></p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-</p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -379,7 +376,7 @@ public void createInitialLayout(IPageLayout layout) {
 <li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
 <li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
 <li class='category'><a href='/categories/java/'>java (23)</a></li>
-<li class='category'><a href='/categories/jekyll/'>jekyll (1)</a></li>
+<li class='category'><a href='/categories/jekyll/'>jekyll (2)</a></li>
 <li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
 <li class='category'><a href='/categories/kochen/'>kochen (1)</a></li>
 <li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
@@ -402,7 +399,7 @@ public void createInitialLayout(IPageLayout layout) {
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (42)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (22)</a></li>
-<li class='category'><a href='/categories/webdesign/'>webdesign (1)</a></li>
+<li class='category'><a href='/categories/webdesign/'>webdesign (2)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (1)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (3)</a></li>
 <li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>
@@ -420,7 +417,7 @@ public void createInitialLayout(IPageLayout layout) {
   
     <a href="/page16" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 17 of 44</span>
+  <span class="page_number ">Page: 17 of 45</span>
   
     <a href="/page18" class="next">Next</a>
   

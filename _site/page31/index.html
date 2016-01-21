@@ -70,7 +70,7 @@
                 <li><a href="http://da-software.de">DA-Software.de</a></li>
                 <li class="divider"></li>
 	               <li class="dropdown-header">Blogs</li>
-				        <li><a href="http://blog.ekiwi.de">eKiwi Blog</a></li>				
+				        <li><a href="http://ekiwi-blog.de">eKiwi Blog</a></li>				
                 <li class="divider"></li>
                 <li class="dropdown-header">Sonstiges</li>
                 <li><a href="/documents.html">Dokumente</a></li>
@@ -135,6 +135,16 @@
     <div class="col-md-9">
       <h2>Blog Posts</h2>
      
+		
+		<h1>
+		  <a href="/2011/08/09/nichts-2.html">Ausgebrannt</a>
+		</h1>
+		  <p class="small">Posted on 09 August 2011 by Andy</p>
+		  <p><p><img src="http://andydunkel.net/assets/uploads/2011/08/image11.png" alt="image"></p>
+</p>		
+		  <p class="small">Tagged:  by Andy</p>
+		  <hr>
+		  
 		
 		<h1>
 		  <a href="/sonstiges/2011/08/08/katzenbilder-3.html">Katzenbilder #3</a>
@@ -228,39 +238,6 @@
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/eclipse/java/2011/08/02/save-and-load-an-emf-model-to-an-xml-file.html">Save and load an EMF model to an XML file</a>
-		</h1>
-		  <p class="small">Posted on 02 August 2011 by Andy</p>
-		  <p><p>Here are two code snippets which give you an example how to save and load an EMF model to an XML file.</p>
-
-<p>Note that &quot;Data&quot; is my EMF model object.</p>
-
-<p>Save EMF to XML file:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">public void saveData(String fileName, Data data) throws IOException {  
-  Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
-  Map&lt;String, Object&gt; m = reg.getExtensionToFactoryMap();
-  m.put(&quot;daform&quot;, new XMIResourceFactoryImpl());
-
-  ResourceSet resSet = new ResourceSetImpl();
-  Resource resource = resSet.createResource(URI.createFileURI(fileName));
-  resource.getContents().add(data);
-  resource.save(Collections.EMPTY_MAP);
-}
-</code></pre></div>
-<p>Load to EMF object:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">public Data loadData(String fileName) throws FileNotFoundException, IOException {
-  XMIResourceImpl resource = new XMIResourceImpl();
-  File source = new File(fileName);
-  resource.load( new FileInputStream(source), new HashMap&lt;Object,Object&gt;());
-  Data data = (Data)resource.getContents().get(0);  
-  return data;
-}
-</code></pre></div></p>		
-		  <p class="small">Tagged: EMF, load, Save, and XML by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -314,7 +291,7 @@
 <li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
 <li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
 <li class='category'><a href='/categories/java/'>java (23)</a></li>
-<li class='category'><a href='/categories/jekyll/'>jekyll (1)</a></li>
+<li class='category'><a href='/categories/jekyll/'>jekyll (2)</a></li>
 <li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
 <li class='category'><a href='/categories/kochen/'>kochen (1)</a></li>
 <li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
@@ -337,7 +314,7 @@
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (42)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (22)</a></li>
-<li class='category'><a href='/categories/webdesign/'>webdesign (1)</a></li>
+<li class='category'><a href='/categories/webdesign/'>webdesign (2)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (1)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (3)</a></li>
 <li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>
@@ -355,7 +332,7 @@
   
     <a href="/page30" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 31 of 44</span>
+  <span class="page_number ">Page: 31 of 45</span>
   
     <a href="/page32" class="next">Next</a>
   
