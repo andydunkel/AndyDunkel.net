@@ -137,6 +137,36 @@
      
 		
 		<h1>
+		  <a href="/java/2011/09/16/setacceleratorswt-ctrl-o-not-working.html">setAccelerator(SWT.CTRL | 'O'); //not working!</a>
+		</h1>
+		  <p class="small">Posted on 16 September 2011 by Andy</p>
+		  <p><p>In my current RCP application I had a problem that the menu key shortcuts did not work correctly:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/09/image8.png" alt="image"></p>
+
+<p>When I started the application and pressed the shortcut, nothing happened. After I opened the menu once, suddenly everything worked! <img src="http://andydunkel.net/assets/uploads/2011/09/wlEmoticon-thinkingsmile.png" alt="Nachdenkliches Smiley"></p>
+
+<p>I created the menu item in the “ApplicationActionBarAdvisor”:</p>
+
+<blockquote>
+<p>actionOpen.setAccelerator(SWT.CTRL | &#39;O&#39;);</p>
+</blockquote>
+
+<p>So what is the problem? It came up, that in an RCP application the menu and the items are loaded, when the user opens it for the first time. There is not really a solution for that, just a workaround: I had to call “updateAll(true)” on the menu manager:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">IWorkbenchWindow window = Workbench.getInstance().getActiveWorkbenchWindow();
+
+if(window instanceof WorkbenchWindow) {
+    MenuManager menuManager = ((WorkbenchWindow)window).getMenuManager();
+    menuManager.updateAll(true);
+}
+</code></pre></div>
+<p>I called this from my main application window. After that the key bindings worked correctly.</p>
+</p>		
+		  <p class="small">Tagged: binding, Key, menu, Problem, and RCP by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/sonstiges/2011/09/15/parkplatzschranke-wird-aufgebaut.html">Parkplatzschranke wird aufgebaut</a>
 		</h1>
 		  <p class="small">Posted on 15 September 2011 by Andy</p>
@@ -173,71 +203,6 @@
 		  <p><p><p>Gestern habe ich einen interessanten Vortrag zum Thema <a href="http://de.wikipedia.org/wiki/Neutrino" target="_blank">Neutrinos</a> auf Youtube gefunden. Geht eine knappe Stunde. </p> <p>Besonders interessant: die Anwendungsmöglichkeiten im Bereich der Astrophysik um z.B. Vorgänge im inneren der Sonne oder in weit entfernten kosmischen Objekten zu beobachten.</p> <p>Hier ist Teil 1:</p> <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:8d473c11-aab3-4fe4-af6f-c528c3c91206" class="wlWriterEditableSmartContent"><div><object width="448" height="252"><param name="movie" value="http://www.youtube.com/v/hbRryPNVU7A?hl=en&amp;hd=1"></param><embed src="http://www.youtube.com/v/hbRryPNVU7A?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="448" height="252"></embed></object></div></div> <p>Teil 2 und Teil 3:</p>&lt;!--more--&gt;<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:de5643ae-f0b2-46c4-bdbb-aecd9bac9d2f" class="wlWriterEditableSmartContent"><div><object width="448" height="252"><param name="movie" value="http://www.youtube.com/v/KbhQMagCdVU?hl=en&amp;hd=1"></param><embed src="http://www.youtube.com/v/KbhQMagCdVU?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="448" height="252"></embed></object></div></div> <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:d26d6dbb-94f0-4bf3-927f-1463a48662b4" class="wlWriterEditableSmartContent"><div><object width="448" height="252"><param name="movie" value="http://www.youtube.com/v/BOm0chtqFJM?hl=en&amp;hd=1"></param><embed src="http://www.youtube.com/v/BOm0chtqFJM?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="448" height="252"></embed></object></div></div></p>
 </p>		
 		  <p class="small">Tagged: Neutrino by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/java/2011/09/07/org-eclipse-swt-swterror-no-more-handles.html">org.eclipse.swt.SWTError: No more handles</a>
-		</h1>
-		  <p class="small">Posted on 07 September 2011 by Andy</p>
-		  <p><p>In our current project we came across the following error, when we opened multiple of our editors in a RCP application: </p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/09/image5.png" alt="image"></p>
-
-<p>Never seen this one before. Most sources in the internet mentioned something about “not disposing SWT resources”. However this happened when we opened the editor. So a “not disposed” problem was very unlikely.</p>
-
-<p>Strange enough, all other applications in the system started to behave strange. No new windows could be opened, the clipboard stopped working …</p>
-
-<p>Well, what&#39;s the problem then? </p>
-
-<p>Simple enough, the only bad thing we did was creating too much controls in our editors. We have a “MultiPageEditor” in Eclipse with a lot of controls in it for configuring servo drives.</p>
-
-<p>Each control in Windows uses a handle. Windows XP can manage 10000 user handles for each process and total 32000 for each desktop. </p>
-
-<p>Each of our editors added about 1100 handles to the list. After opening 4-5 editors on my machine, the exception occurred.</p>
-
-<p>Here is some sample code to reproduce the problem, it just creates 10.000 buttons:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">import org.eclipse.swt.SWT;
-import org.eclipse.swt.layout.RowLayout;
-import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Shell;
-
-public class SWTHandleTest {
-
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        Display display = new Display();
-        Shell shell = new Shell(display);
-        shell.setSize(300, 200);
-        shell.setText(&quot;Button Example&quot;);
-        shell.setLayout(new RowLayout());
-
-        for (int i = 0; i &lt; 10000; i++) {
-            Button button = new Button(shell, SWT.PUSH);
-            button.setText(&quot;www.eKiwi.de&quot;);
-        }
-
-        shell.open();
-        while (!shell.isDisposed()) {
-            if (!display.readAndDispatch())
-                display.sleep();
-        }
-        display.dispose();
-    }
-}
-</code></pre></div>
-<p>You can check how many handles an application uses in the task manager. You must display the “User objects” column:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/09/image6.png" alt="image"></p>
-
-<p>*<em>What is the solution? *</em></p>
-
-<p>Well there is none. The limit is hard coded in Windows. So the only way is to change your application design. Only create elements that are visible and remove/dispose elements that no longer need to be visible.</p>
-</p>		
-		  <p class="small">Tagged: Exception, handle, and SWT by Andy</p>
 		  <hr>
 		  
 		
@@ -294,7 +259,7 @@ public class SWTHandleTest {
 <li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
 <li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
 <li class='category'><a href='/categories/java/'>java (23)</a></li>
-<li class='category'><a href='/categories/jekyll/'>jekyll (2)</a></li>
+<li class='category'><a href='/categories/jekyll/'>jekyll (3)</a></li>
 <li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
 <li class='category'><a href='/categories/kochen/'>kochen (1)</a></li>
 <li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
@@ -317,7 +282,7 @@ public class SWTHandleTest {
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (42)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (22)</a></li>
-<li class='category'><a href='/categories/webdesign/'>webdesign (2)</a></li>
+<li class='category'><a href='/categories/webdesign/'>webdesign (3)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (1)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (3)</a></li>
 <li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>

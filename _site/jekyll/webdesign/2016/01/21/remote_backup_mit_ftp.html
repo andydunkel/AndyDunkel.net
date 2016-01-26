@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Jekyll auf El Capitan installieren</title>
+        <title>Jekyll - Related Posts / Verwandte Artikel</title>
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="/css/syntax.min.css">
         <script src="/css/jquery.min.js"></script>
@@ -126,34 +126,43 @@
         <div class="row">
     	<div class="col-md-9">
 
-			<h2>Jekyll auf El Capitan installieren</h2>
-			<p class="meta">08 Oct 2015</p>
+			<h2>Jekyll - Related Posts / Verwandte Artikel</h2>
+			<p class="meta">21 Jan 2016</p>
 			
 			<div class="post">
-			<p>Nach dem Update auf El Capitan, fehlte Jekyll zur Erstellung meiner Homepage. Ärgerlich. Laut Webseite lässt sich Jekyll mit einem einfachen</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">gem install jekyll
-</code></pre></div>
-<p>installieren. Geklappt hat das bei mir allerdings noch nie. Mindestens ein <code>sudo</code> musste schon vorangestellt werden.</p>
+			<p>Jekyll bietet über das die Variable <code>site.related_posts</code> eine Funktion um &quot;Verwandte Artikel&quot; zu einem Blogpost anzuzeigen. Standardmäßig ist die Funktion jedoch eher eingeschränkt und enthält nur die letzten 10 Artikel.</p>
 
-<p>Auch dieses brachte kein Glück, da die folgende Fehlermeldung die Installation jäh unterbrach:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">Building native extensions.  This could take a while...
-ERROR:  Error installing jekyll:
-    ERROR: Failed to build gem native extension.
+<p>Das Ganze wird z.B. so verwendet:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">{% for post in site.related_posts %}
+   &lt;li&gt;&lt;a href=&quot;{{ site.url }}{{ post.url }}&quot; title=&quot;{{ post.title }}&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
+{% endfor %}
+</code></pre></div>
+<p>Da jeweils immer nur die letzten 10 Artikel angezeigt werden, ist das nicht wirklich &quot;related&quot;. Immerhin wird noch die Option angeboten das Ganze über einen Index etwas schlauer zu machen. Mit der Option <code>--lsi</code> wird beim Generieren der Seite ein Index angelegt und die Funktion arbeitet semantisch etwas schlauer. Bei mir hat das jedoch auch nicht funktioniert. Hier kam es leider nur zu einer Fehlermeldung. Außerdem wollte ich nicht stupide immer 10 Artikel angezeigt bekommen, obs passt oder nicht.</p>
 
-    /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb
-mkmf.rb can&#39;t find header files for ruby at /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/include/ruby.h
+<p>Auf der Suche nach einer besseren Lösung bin ich auf <a href="https://github.com/jumanji27/related-posts-jekyll-plugin">ein Github-Projekt</a> gestoßen. Das Plugin kopiert man einfach in das Plugin-Verzeichnis von Jekyll. Es ersetzt die Standardfunktion von Jekyll. Die Zuordnung der verwandten Artikel erfolgt beim Plugin über die Tags, gleicher Tag == verwandt.</p>
 
-Gem files will remain installed in /Library/Ruby/Gems/2.0.0/gems/yajl-ruby-1.2.1 for inspection.
+<p>Zur Einbindung habe ich folgenden Code verwendet.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">{% if site.related_posts.size &gt; 0 %}
+ &lt;div class=&quot;panel panel-default&quot;&gt;
+    &lt;div class=&quot;panel-heading&quot;&gt;Verwandte Artikel:&lt;/div&gt;
+    &lt;div class=&quot;panel-body&quot;&gt;
+    {% for post in site.related_posts %}
+       &lt;li&gt;&lt;a href=&quot;{{ site.url }}{{ post.url }}&quot; title=&quot;{{ post.title }}&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
+    {% endfor %}
+    &lt;/div&gt;
+&lt;/div&gt;
+{% endif %}
 </code></pre></div>
-<p>Na fein. Stellt sich heraus, dass man zuerst die XCode command line tools installieren muss:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">xcode-select --install
-</code></pre></div>
-<p>Das dauert ein wenig. Ist das installiert, stimmen wir noch den Lizenzbedingungen zu:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo xcodebuild -license
-</code></pre></div>
-<p>Nachdem auch das erledigt ist, installiert sich Jekyll hoffentlich ohne Probleme.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo gem install jekyll 
-</code></pre></div>
+<p>Das Ergebnis sieht dann z.B. so aus:</p>
+
+<p><img src="/assets/uploads/2016/1/related_posts.png" alt=""></p>
+
+<p>Der Code stellt die Box zudem nur dar, wenn es verwandte Artikel gibt. </p>
+
+<hr>
+
+<p>Beim Schreiben dieses Artikels ist es mir aufgefallen, dass es gar nicht so leicht ist &quot;Liquid code&quot; in Jekyll als Code darzustellen. Wie das geht, <a href="https://truongtx.me/2013/01/09/display-liquid-code-in-jekyll/">ist hier erklärt</a>.</p>
+
 			</div>
 			
 			<br>
@@ -185,9 +194,9 @@ Gem files will remain installed in /Library/Ruby/Gems/2.0.0/gems/yajl-ruby-1.2.1
 			 	<div class="panel-heading">Verwandte Artikel:</div>
 				<div class="panel-body">
 				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/jekyll/webdesign/2016/01/21/remote_backup_mit_ftp.html" title="Jekyll - Related Posts / Verwandte Artikel">Jekyll - Related Posts / Verwandte Artikel</a></li>
-				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/jekyll/webdesign/2016/01/21/jekyll_related_posts.html" title="Jekyll - Related Posts / Verwandte Artikel">Jekyll - Related Posts / Verwandte Artikel</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/jekyll/2015/10/08/jekyll_auf_el_capitan.html" title="Jekyll auf El Capitan installieren">Jekyll auf El Capitan installieren</a></li>
 				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/meinung/tools/2014/04/18/jekyll-fazit.html" title="Umstellung auf Jekyll">Umstellung auf Jekyll</a></li>
 				
