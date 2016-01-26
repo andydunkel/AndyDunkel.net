@@ -137,25 +137,6 @@
      
 		
 		<h1>
-		  <a href="/java/2012/11/25/java-convert-string-to-input-stream.html">Java: Convert String to InputStream</a>
-		</h1>
-		  <p class="small">Posted on 25 November 2012 by Andy</p>
-		  <p><p>Some methods want an InputStream, converting a String into an InputStream is very easy:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">/**
- * Converts a string into an inputstream
- * @param s
- * @return
- */
-private InputStream convertStringToInputStream(String s) {
-  ByteArrayInputStream in = new ByteArrayInputStream(s.getBytes());
-  return in;
-}
-</code></pre></div></p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
 		  <a href="/gadgets/2012/11/24/roomba-error-9-repair-guide-english-version-2.html">Roomba error 9 repair guide (English version)</a>
 		</h1>
 		  <p class="small">Posted on 24 November 2012 by Andy</p>
@@ -333,6 +314,35 @@ while(i &lt; args.length) {
 		  <hr>
 		  
 		
+		<h1>
+		  <a href="/coding/eclipse/2012/11/02/easy-logging-for-rcp-applications.html">Easy logging for RCP applications</a>
+		</h1>
+		  <p class="small">Posted on 02 November 2012 by Andy</p>
+		  <p><p>A small class for easy logging in RCP applications by using the Activators logging functions. This class mainly wraps the need of creating an IStatus object each time we want to log something.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+
+public class LoggerUtil {
+    public static void info(String message){
+        IStatus status = new Status(IStatus.INFO,Activator.PLUGIN_ID, message);
+        Activator.getDefault().getLog().log(status);
+    }
+
+    public static void error(String message){
+        IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, message);
+        Activator.getDefault().getLog().log(status);
+    }
+
+    public static void warning(String message){
+        IStatus status = new Status(IStatus.WARNING,.PLUGIN_ID, message);
+        Activator.getDefault().getLog().log(status);
+    }
+}
+</code></pre></div></p>		
+		  <p class="small">Tagged:  by Andy</p>
+		  <hr>
+		  
+		
 
     </div>
     <div class="col-md-3">    
@@ -386,7 +396,7 @@ while(i &lt; args.length) {
 <li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
 <li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
 <li class='category'><a href='/categories/java/'>java (23)</a></li>
-<li class='category'><a href='/categories/jekyll/'>jekyll (3)</a></li>
+<li class='category'><a href='/categories/jekyll/'>jekyll (2)</a></li>
 <li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
 <li class='category'><a href='/categories/kochen/'>kochen (1)</a></li>
 <li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
@@ -409,7 +419,7 @@ while(i &lt; args.length) {
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (42)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (22)</a></li>
-<li class='category'><a href='/categories/webdesign/'>webdesign (3)</a></li>
+<li class='category'><a href='/categories/webdesign/'>webdesign (2)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (1)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (3)</a></li>
 <li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>

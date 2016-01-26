@@ -11,14 +11,6 @@
     <pubDate>Thu, 21 Jan 2016 18:00:00 +0100</pubDate>
     <item>
       <title>Jekyll - Related Posts / Verwandte Artikel</title>
-      <link>http://andydunkel.net/jekyll/webdesign/2016/01/21/remote_backup_mit_ftp.html</link>
-      <description>&lt;p&gt;Jekyll bietet über das die Variable &lt;code&gt;site.related_posts&lt;/code&gt; eine Funktion um &amp;quot;Verwandte Artikel&amp;quot; zu einem Blogpost anzuzeigen. Standardmäßig ist die Funktion jedoch eher eingeschränkt und enthält nur die letzten 10 Artikel.&lt;/p&gt;
-</description>
-      <pubDate>Thu, 21 Jan 2016 18:00:00 +0100</pubDate>
-      <dc:date>2016-01-21T18:00:00+01:00</dc:date>
-    </item>
-    <item>
-      <title>Jekyll - Related Posts / Verwandte Artikel</title>
       <link>http://andydunkel.net/jekyll/webdesign/2016/01/21/jekyll_related_posts.html</link>
       <description>&lt;p&gt;Jekyll bietet über das die Variable &lt;code&gt;site.related_posts&lt;/code&gt; eine Funktion um &amp;quot;Verwandte Artikel&amp;quot; zu einem Blogpost anzuzeigen. Standardmäßig ist die Funktion jedoch eher eingeschränkt und enthält nur die letzten 10 Artikel.&lt;/p&gt;
 </description>
