@@ -1,50 +1,37 @@
 ---
 author: admin
 comments: true
-date: 2016-01-21 17:00:00+00:00
+date: 2016-01-26 17:00:00+00:00
 layout: post
-slug: jekyll_related_posts
-title: 'Jekyll - Related Posts / Verwandte Artikel'
+slug: remote_backup_mit_ftp
+title: 'Linux: Remote Backup mit FTP'
 categories:
-- Jekyll
-- Webdesign
+- Linux
 tags:
-- Jekyll
-- Webdesign
+- Linux
+- Backup
+- FTP
 
 ---
 
-Jekyll bietet über das die Variable <code>site.related_posts</code> eine Funktion um "Verwandte Artikel" zu einem Blogpost anzuzeigen. Standardmäßig ist die Funktion jedoch eher eingeschränkt und enthält nur die letzten 10 Artikel.
+Backups sind wichtig und hoffentlich hat man eins, wenn man es mal braucht. Neben den lokalen Backups auf NAS und USB-Speicher, sichere ich die wichtigsten Daten gerne nochmal außerhalb für den Fall der Fälle. 
 
-Das Ganze wird z.B. so verwendet:
+Aus diesem Grund habe ich mir ein kleines Bash-Script geschrieben, welches die wichtigsten Daten mit ZIP packt und anschließend auf einen FTP-Server kopiert.
 
-	{{ "{% for post in site.related_posts "}}%}
-	   <li><a href="{{ "{{ site.url "}}}}{{ "{{ post.url "}}}}" title="{{ "{{ post.title "}}}}>{{ "{{ post.title "}}}}</a></li>
-	{{ "{% endfor "}}%}
+Ich stelle das hier online, falls jemand mal sowas in der Arbeit implementieren will.
 
-Da jeweils immer nur die letzten 10 Artikel angezeigt werden, ist das nicht wirklich "related". Immerhin wird noch die Option angeboten das Ganze über einen Index etwas schlauer zu machen. Mit der Option <code>--lsi</code> wird beim Generieren der Seite ein Index angelegt und die Funktion arbeitet semantisch etwas schlauer. Bei mir hat das jedoch auch nicht funktioniert. Hier kam es leider nur zu einer Fehlermeldung. Außerdem wollte ich nicht stupide immer 10 Artikel angezeigt bekommen, obs passt oder nicht.
+	#/!bin/bash
+	now=$(date +"%Y.%m.%d.%H.%M.%S")
+	zip -r /home/da/backup_remote/backup.$now.zip /home/da/SVN/* /verzeichnis2/* /verzeichnis3/*
+	lftp -u username,password ftp.server.de:21 << EOF
+	set ssl:verify-certificate false
+	set ftp:ssl-allow yes 
+	cd /remote/verzeichnis
+	put /home/da/backup_remote/backup.$now.zip
 
-Auf der Suche nach einer besseren Lösung bin ich auf [ein Github-Projekt](https://github.com/jumanji27/related-posts-jekyll-plugin) gestoßen. Das Plugin kopiert man einfach in das Plugin-Verzeichnis von Jekyll. Es ersetzt die Standardfunktion von Jekyll. Die Zuordnung der verwandten Artikel erfolgt beim Plugin über die Tags, gleicher Tag == verwandt.
+	bye
+	EOF
 
-Zur Einbindung habe ich folgenden Code verwendet.
+Zuerst generieren wir das Datum für das aktuelle Backup. Dieses wird der ZIP-Datei hinzugefügt. Anschließend wird das Backup mit LFTP auf den Server geladen. LFTP ist normalerweise noch nicht standardmäßig installiert. Der Vorteil von LFTP ist die Möglichkeit eine verschlüsselte FTP-Verbindung zu nutzen. Ansonsten werden Benutzername und Passwort im Klartext übermittelt, was eher uncool ist.
 
-	{{ "{% if site.related_posts.size > 0 "}}%}
-	 <div class="panel panel-default">
-	 	<div class="panel-heading">Verwandte Artikel:</div>
-		<div class="panel-body">
-		{{ "{% for post in site.related_posts "}}%}
-		   <li><a href="{{ "{{ site.url "}}}}{{ "{{ post.url "}}}}" title="{{ "{{ post.title "}}}}>{{ "{{ post.title "}}}}</a></li>
-		{{ "{% endfor "}}%}
-		</div>
-	</div>
-	{{ "{% endif "}}%}
-
-Das Ergebnis sieht dann z.B. so aus:
-
-![](/assets/uploads/2016/1/related_posts.png)
-
-Der Code stellt die Box zudem nur dar, wenn es verwandte Artikel gibt. 
-
-----------
-
-Beim Schreiben dieses Artikels ist es mir aufgefallen, dass es gar nicht so leicht ist "Liquid code" in Jekyll als Code darzustellen. Wie das geht, [ist hier erklärt](https://truongtx.me/2013/01/09/display-liquid-code-in-jekyll/).
+Im LFTP-Teil des Scriptes, aktivieren wir SSL und deaktivieren die Verifikation des SSL-Zertifikates. Die Deaktivierung der Zertifikatsüberprüfung muss nur gemacht werden, wenn man ein eigenes Zertifikat verwendet. Im letzten Teil, wechseln wir auf dem FTP-Server in das passende Verzeichnis und laden die lokale Datei hoch, anschließend verabschieden wir uns.
