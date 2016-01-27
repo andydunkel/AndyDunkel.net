@@ -8,7 +8,15 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Thu, 21 Jan 2016 18:00:00 +0100</pubDate>
+    <pubDate>Tue, 26 Jan 2016 18:00:00 +0100</pubDate>
+    <item>
+      <title>Linux: Remote Backup mit FTP</title>
+      <link>http://andydunkel.net/linux/2016/01/26/remote_backup_mit_ftp.html</link>
+      <description>&lt;p&gt;Backups sind wichtig und hoffentlich hat man eins, wenn man es mal braucht. Neben den lokalen Backups auf NAS und USB-Speicher, sichere ich die wichtigsten Daten gerne nochmal außerhalb für den Fall der Fälle. &lt;/p&gt;
+</description>
+      <pubDate>Tue, 26 Jan 2016 18:00:00 +0100</pubDate>
+      <dc:date>2016-01-26T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Jekyll - Related Posts / Verwandte Artikel</title>
       <link>http://andydunkel.net/jekyll/webdesign/2016/01/21/jekyll_related_posts.html</link>
@@ -2136,6 +2144,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2016-01-21T18:00:00+01:00</dc:date>
+    <dc:date>2016-01-26T18:00:00+01:00</dc:date>
   </channel>
 </rss>

@@ -137,6 +137,35 @@
      
 		
 		<h1>
+		  <a href="/coding/eclipse/2012/11/02/easy-logging-for-rcp-applications.html">Easy logging for RCP applications</a>
+		</h1>
+		  <p class="small">Posted on 02 November 2012 by Andy</p>
+		  <p><p>A small class for easy logging in RCP applications by using the Activators logging functions. This class mainly wraps the need of creating an IStatus object each time we want to log something.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+
+public class LoggerUtil {
+    public static void info(String message){
+        IStatus status = new Status(IStatus.INFO,Activator.PLUGIN_ID, message);
+        Activator.getDefault().getLog().log(status);
+    }
+
+    public static void error(String message){
+        IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, message);
+        Activator.getDefault().getLog().log(status);
+    }
+
+    public static void warning(String message){
+        IStatus status = new Status(IStatus.WARNING,.PLUGIN_ID, message);
+        Activator.getDefault().getLog().log(status);
+    }
+}
+</code></pre></div></p>		
+		  <p class="small">Tagged:  by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/coding/eclipse/2012/11/02/rcp-switch-to-perspective-via-code.html">RCP: Switch to perspective via code</a>
 		</h1>
 		  <p class="small">Posted on 02 November 2012 by Andy</p>
@@ -311,18 +340,6 @@ public void createInitialLayout(IPageLayout layout) {
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/radfahren/2012/09/03/katzbrui-2012.html">Katzbrui 2012</a>
-		</h1>
-		  <p class="small">Posted on 03 September 2012 by Andy</p>
-		  <p><p><img src="http://andydunkel.net/assets/uploads/2012/09/2012-09-02-17.28.44.jpg" alt="2012 09 02 17 28 44"></p>
-
-<p> </p>
-</p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -380,7 +397,7 @@ public void createInitialLayout(IPageLayout layout) {
 <li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
 <li class='category'><a href='/categories/kochen/'>kochen (1)</a></li>
 <li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
-<li class='category'><a href='/categories/linux/'>linux (10)</a></li>
+<li class='category'><a href='/categories/linux/'>linux (11)</a></li>
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (3)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
