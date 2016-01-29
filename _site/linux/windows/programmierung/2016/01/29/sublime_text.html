@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Linux: Remote Backup mit FTP</title>
+        <title>Sublime Text</title>
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="/css/syntax.min.css">
         <script src="/css/jquery.min.js"></script>
@@ -126,30 +126,38 @@
         <div class="row">
     	<div class="col-md-9">
 
-			<h2>Linux: Remote Backup mit FTP</h2>
-			<p class="meta">26 Jan 2016</p>
+			<h2>Sublime Text</h2>
+			<p class="meta">29 Jan 2016</p>
 			
 			<div class="post">
-			<p>Backups sind wichtig und hoffentlich hat man eins, wenn man es mal braucht. Neben den lokalen Backups auf NAS und USB-Speicher, sichere ich die wichtigsten Daten gerne nochmal außerhalb für den Fall der Fälle. </p>
+			<p>Sublime Text gehört zu den Testversionen, wie WinRar und TotalCommander, ab und zu kommt mal ein Hinweis. Aber die Software lässt sich beliebig lange nutzen.</p>
 
-<p>Aus diesem Grund habe ich mir ein kleines Bash-Script geschrieben, welches die wichtigsten Daten mit ZIP packt und anschließend auf einen FTP-Server kopiert.</p>
+<p>Am Ende habe ich alle irgendwann gekauft. Diese Woche habe ich nun auch eine Lizenz für Sublime Text gekauft.</p>
 
-<p>Ich stelle das hier online, falls jemand mal sowas in der Arbeit implementieren will.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">#/!bin/bash
-now=$(date +&quot;%Y.%m.%d.%H.%M.%S&quot;)
-zip -r /home/da/backup_remote/backup.$now.zip /home/da/SVN/* /verzeichnis2/* /verzeichnis3/*
-lftp -u username,password ftp.server.de:21 &lt;&lt; EOF
-set ssl:verify-certificate false
-set ftp:ssl-allow yes 
-cd /remote/verzeichnis
-put /home/da/backup_remote/backup.$now.zip
+<p>Ein Texteditor gehört zu den Werkzeugen, welche man als Entwickler täglich braucht. Und natürlich lässt sich darüber auch vertrefflich streiten, welcher der beste ist. Einfach mal nach &quot;Vim vs Emacs&quot; googlen.</p>
 
-bye
-EOF
-</code></pre></div>
-<p>Zuerst generieren wir das Datum für das aktuelle Backup. Dieses wird der ZIP-Datei hinzugefügt. Anschließend wird das Backup mit LFTP auf den Server geladen. LFTP ist normalerweise noch nicht standardmäßig installiert. Der Vorteil von LFTP ist die Möglichkeit eine verschlüsselte FTP-Verbindung zu nutzen. Ansonsten werden Benutzername und Passwort im Klartext übermittelt, was eher uncool ist.</p>
+<p>In der Vergangenheit habe ich Notepad++ und UltraEdit verwendet. Beide ebenfalls tolle Text-Editoren. Notepad++ gibt es nur für Windows, UltraEdit für Windows, OSX und Linux. Allerdings unterscheiden sich bei UltraEdit die Versionen je nach Betriebssystem etwas, was mir nicht gefällt.</p>
 
-<p>Im LFTP-Teil des Scriptes, aktivieren wir SSL und deaktivieren die Verifikation des SSL-Zertifikates. Die Deaktivierung der Zertifikatsüberprüfung muss nur gemacht werden, wenn man ein eigenes Zertifikat verwendet. Im letzten Teil, wechseln wir auf dem FTP-Server in das passende Verzeichnis und laden die lokale Datei hoch, anschließend verabschieden wir uns.</p>
+<p>SublimeText gibt es ebenfalls für Windows, Linux und den Mac. Eine Lizenz kostet 70 Dollar und ist auf allen Betriebssystemen gültig. Da ich alle drei Betriebssystem einsetze, ist das perfekt. Die Lizenz gilt pro Benutzer und kann ohne Probleme und Aktivierungsfoo auf allen Systemen verwendent werden. Ich habe drei Rechner hier, teilweise mit mehreren Betriebssystem und virtuellen Maschinen drauf. Wenn ich eine gekaufte Software dann nicht überall verwenden kann und in irgendwelche Aktivierungslimits reinlaufe, dann ist das ein Grund die Software nicht zu kaufen.</p>
+
+<p><img src="/assets/uploads/2016/1/sublime.png" alt=""></p>
+
+<p>Zurück zu Sublime, der Editor ist klein, schlank und startet flott. Die Programmoberfläche präsentiert sich spartanisch, auf Toolbar und Icons wird verzichtet. Neben der Scrollbar ist am linken Rand eine Minimap des Dokuments sichtbar, welche schnelle Navigation durch das Dokument erlaubt.
+Man merkt, Fokus in der Bedienung liegt in den Tastenkombinationen. Der Editor verhält sich unter den jeweiligen Betriebssystemen gleich.</p>
+
+<p>Von den Funktionen bietet Sublime alles, was man von einem modernen Editor erwartet, Syntaxhighlighting, Projektverwaltung, Build-System, komplexe Suchen und Ersetzen-Funktionen, reguläre Ausdrücke, Navigation im Dokument um nur einige Features zu nennen. Alle Funktionen lassen auch über die Command-Palette finden. Drückt man STRG, SHIFT und P, öffnet sich diese. Anschließend hat man eine Volltextsuche über alle Befehle. </p>
+
+<p><img src="/assets/uploads/2016/1/sublime_command_palette.png" alt=""></p>
+
+<p>Fehlt eine Funktion, kann man diese meist über das Plugin-System installieren. Hier sei die Webseite <a href="https://packagecontrol.io/">PackageControl</a>, mit tausenden Plugins, empfohlen. Einmal eingerichtet lassen sich neue Plugins innerhalb von Sekunden installieren.</p>
+
+<h2>Fazit</h2>
+
+<p>70 Dollar sind nicht unbedingt wenig für einen Texteditor. Auf der anderen Seite nicht zuviel für ein Werkzeug, welches man jeden Tag nutzt. Trotzdem ist Sublime Text jeden Cent wert. Die Software startet extrem schnell, reagiert fluffig auf Eingaben und bietet jede Menge Funktionen. Die Bedienung geht dank der vielen Shortcuts flott von der Hand. Dank Plugins lassen sich Funktionen nachrüsten. Da es die Software für Windows, Linux und OSX gibt, muss man sich nicht umgewöhnen, wenn man auf einem anderen Betriebssystem unterwegs ist.</p>
+
+<h2>Alternativen</h2>
+
+<p>Wer kein Geld für einen kostenpflichtigen Editor ausgeben möchte, trotzdem einen Sublime ähnlichen Editor nutzen möchte, kann sich den kostenlosen <a href="https://atom.io/">Atom-Editor</a> anschauen. Dieser ist ebenfalls für alle Plattformen verfügbar und orientiert sich von Design und Bedienung sehr an Sublime Text. Die Software basiert auf Google Chrome, ist damit tendenziell resourcenhungriger und etwas langsamer. Gerade der Start der Software hat mir immer etwas zu lang gedauert.</p>
 
 			</div>
 			
@@ -182,7 +190,7 @@ EOF
 			 	<div class="panel-heading">Verwandte Artikel:</div>
 				<div class="panel-body">
 				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/linux/windows/programmierung/2016/01/29/sublime_text.html" title="Sublime Text">Sublime Text</a></li>
+				   <li class="list-unstyled"><a href="http://andydunkel.net/linux/2016/01/26/remote_backup_mit_ftp.html" title="Linux: Remote Backup mit FTP">Linux: Remote Backup mit FTP</a></li>
 				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/raspberry/linux/2014/10/29/airsonos_airplay_fuer_sonos.html" title="AirSonos - Airplay für Sonos mit dem Raspberry Pi">AirSonos - Airplay für Sonos mit dem Raspberry Pi</a></li>
 				
