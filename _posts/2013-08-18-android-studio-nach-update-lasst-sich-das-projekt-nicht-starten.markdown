@@ -7,7 +7,6 @@ slug: android-studio-nach-update-lasst-sich-das-projekt-nicht-starten
 title: 'Android Studio: Nach Update lässt sich das Projekt nicht starten'
 wordpress_id: 1610
 categories:
-- Android
 - Coding
 ---
 

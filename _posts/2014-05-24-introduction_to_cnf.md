@@ -7,7 +7,6 @@ slug: introduction_to_the_common_navigator_framework
 title: 'Introduction to the common navigator framework'
 categories:
 - Eclipse
-- RCP
 tags:
 - CNF
 ---

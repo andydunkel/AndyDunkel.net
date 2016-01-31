@@ -6,7 +6,7 @@ layout: post
 slug: php_debugging_vm_to_debug_and_develip_php
 title: 'Virtual Machine to debug and develop PHP'
 categories:
-- Projects
+- Coding
 tags:
 - PHP
 - Projects

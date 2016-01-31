@@ -6,7 +6,7 @@ layout: post
 slug: ikea_bekant_stehschreibtisch
 title: 'Ikea Bekant - Stehschreibtisch'
 categories:
-- Office
+- Gadgets
 tags:
 - Stehschreibtisch
 ---

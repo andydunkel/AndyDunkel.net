@@ -7,7 +7,6 @@ slug: branding_of_eclipse_rcp_applications
 title: 'Branding of Eclipse/RCP Applications'
 categories:
 - Eclipse
-- RCP
 tags:
 - Eclipse
 - RCP
