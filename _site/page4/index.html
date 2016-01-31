@@ -137,6 +137,83 @@
      
 		
 		<h1>
+		  <a href="/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html">C#-Anwendungen mehrsprachig gestalten</a>
+		</h1>
+		  <p class="small">Posted on 04 July 2015 by Andy</p>
+		  <p><h1>C# Anwendungen lokalisieren</h1>
+
+<p>Im folgenden Artikel werde ich kurz die ersten Schritte beschreiben um eine C#-Anwendung mehrsprachig zu gestalten.</p>
+
+<p>Legen wir los und beginnen mit den Formularen. Im Designer setzen wir die Eigenschaft <code>Localizable</code> auf <code>true</code>:</p>
+
+<p><img src="/assets/uploads/2015/7/inter1.png" alt=""></p>
+
+<p>Anschließend können wir über die <code>Language</code>-Eigenschaft die Sprache umschalten. In Beispiel möchte ich die Sprachen Deutsch und Englisch implementieren. Im Hintergrund legt Visual Studio nun für die gewählte Sprache die entsprechende Resourcen-Datei an:</p>
+
+<p><img src="/assets/uploads/2015/7/inter2.png" alt=""></p>
+
+<p>Für jede Sprache können wir jetzt im Designer die Texte der Steuerelemente anpassen und übersetzen. Da für jede Sprache oft auch mehr oder weniger Platz benötigt wird um Texte oder Grafiken darzustellen, können wir auch für jede Sprache das Design abändern.</p>
+
+<p>Beim Start der Anwendung wird nun automatisch die Sprache des Systems ermittelt und die Anwendung automatisch in der passenden Sprache geöffnet. Oder alternativ die Default-Sprache.</p>
+
+<h2>Sprache manuell festlegen</h2>
+
+<p>Nicht immer will man sich auf die automatische Sprachwahl vom System verlassen. Daher können wir beim Start der Anwendung die Sprache auch manuell festlegen:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">CultureInfo myCultureInfo = new CultureInfo(&quot;en&quot;);
+Thread.CurrentThread.CurrentCulture = myCultureInfo;
+Thread.CurrentThread.CurrentUICulture = myCultureInfo;
+</code></pre></div>
+<p>Ein guter Platz für diese Einstellung ist z.B. die <code>Program.cs</code> Datei:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/// &lt;summary&gt;
+/// The main entry point for the application.
+/// &lt;/summary&gt;
+[STAThread]
+static void Main()
+{
+    CultureInfo myCultureInfo = new CultureInfo(&quot;de&quot;);
+    Thread.CurrentThread.CurrentCulture = myCultureInfo;
+    Thread.CurrentThread.CurrentUICulture = myCultureInfo;
+
+    Application.EnableVisualStyles();
+    Application.SetCompatibleTextRenderingDefault(false);
+    Application.Run(new MainForm());
+}
+</code></pre></div>
+<p>Die Angabe der Sprache erfolgt in Form von <code>en</code> oder spezifischer mit <code>en-US</code>.</p>
+
+<h2>Strings im Code</h2>
+
+<p>Die Übersetzung der Anwendung im Designer gestaltet sich wie gesehen recht einfach. Doch was ist mit Strings im Code? </p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">MetroMessageBox.Show(this, &quot;Die Einstellungen werden nach Neustart der Anwendung übernommen.&quot;, &quot;Hinweis&quot;);
+</code></pre></div>
+<p>Auch diese müssen übersetzt werden. Auch dies ist sehr leicht möglich. Zuerst legen wir neue Resourcendateien für unsere Sprachen an:</p>
+
+<p><img src="/assets/uploads/2015/7/inter3.png" alt=""> </p>
+
+<p>In diesen Tragen wir jetzt unsere Strings ein, mit den jeweiligen Übersetzungen.</p>
+
+<p><img src="/assets/uploads/2015/7/inter4.png" alt=""></p>
+
+<p>Nun passen wir den Code unserer MessageBox noch an:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">MetroMessageBox.Show(this, AppResources.SettingsMessage, AppResources.SettingsTitle);
+</code></pre></div>
+<p>Das wars auch schon.</p>
+
+<h2>Abschluss</h2>
+
+<p>Neben den Texten gibt es noch weitere Dinge zu beachten, welche hier nicht besprochen wurden, wie Datum- und Zeitangaben, welche oft anders formatiert sind. </p>
+
+<p>Hier ein Beispiel:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">CultureInfo ci = new CultureInfo(&quot;de&quot;);
+MessageBox.Show(DateTime.Now.ToString(&quot;d&quot;, ci));
+</code></pre></div>
+<p>Wie man sieht, ist die grundsätzliche Mehrsprachigkeit einer Anwendung in C# sehr leicht möglich.</p>
+</p>		
+		  <p class="small">Tagged: C# by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/webdesign/2015/05/28/typische_webdesign_fehler.html">Typische Webdesign Fehler - Fehlende Optimierung für Mobilgeräte</a>
 		</h1>
 		  <p class="small">Posted on 28 May 2015 by Andy</p>
@@ -305,26 +382,6 @@ noch nicht getestet. Nach der Installation funktionierte die Karte auch probleml
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/windows/2015/02/28/geraeterschluesselung_windows_8_1.html">Die Geräteverschlüsselung ist vorübergehend unterbrochen und wird beim nächsten Neustart des Gerätes fortgesetzt.</a>
-		</h1>
-		  <p class="small">Posted on 28 February 2015 by Andy</p>
-		  <p><p>So stand es in den Einstellungen meines neuen HP Stream 7 Gerätes. Eine typische &quot;sinnvolle&quot; Windows-Fehlermeldung. Und ja, auch nach einem Neustart funktionierte es natürlich nicht. Auch Aktivieren und Deaktivieren der Funktion brachte nix.</p>
-
-<p>Da eine Verschlüsselung des Tabletts für den Falle des Verlustes durchaus sinnvoll ist, machte ich mich auf die Suche. Zu dieser Fehlermeldung findet man leider nicht viel im deutschsprachigen Internet. Aber englische Webseiten brachten ein paar Infos zu Tage.</p>
-
-<p>Um es kurz zu machen: diese Fehlermeldung rührte daher, dass ich mich bei meinem Windows 8.1 mit einem lokalen Benutzerkonto angemeldet hatte. Wechselt man auf die Anmeldung zu einem Live/Outlook.com/Microsoft Konto funktioniert es plötzliche ohne Probleme.</p>
-
-<p>Der Hintergrund ist, Microsoft synchronisiert den Key für die Entschlüsselung mit der Cloud. Ja nicht schön, prinzipiell können Microsoft, NSA und Co damit das Tablett entschlüsseln. Aber zumindest bei einem Geräteverlust kann man denke etwas ruhiger schlafen.</p>
-
-<p>Ist letztendlich Abwägungssache und zumindest wenn man den Key verliert kann man den wohl auch online wiederherstellen.</p>
-
-<p><img src="/assets/uploads/2015/2/encryption_windows_8.jpg" alt=""></p>
-</p>		
-		  <p class="small">Tagged: Tablett, Windows, and Encryption by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -366,7 +423,7 @@ noch nicht getestet. Nach der Installation funktionierte die Karte auch probleml
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
 <li class='category'><a href='/categories/coding/'>coding (25)</a></li>
-<li class='category'><a href='/categories/computer/'>computer (2)</a></li>
+<li class='category'><a href='/categories/computer/'>computer (3)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
 <li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
@@ -400,7 +457,7 @@ noch nicht getestet. Nach der Installation funktionierte die Karte auch probleml
 <li class='category'><a href='/categories/tools/'>tools (22)</a></li>
 <li class='category'><a href='/categories/webdesign/'>webdesign (2)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (1)</a></li>
-<li class='category'><a href='/categories/windows/'>windows (4)</a></li>
+<li class='category'><a href='/categories/windows/'>windows (5)</a></li>
 <li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>
 
 		</ul>

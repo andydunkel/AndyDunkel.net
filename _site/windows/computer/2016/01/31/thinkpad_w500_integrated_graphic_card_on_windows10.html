@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Die Geräteverschlüsselung ist vorübergehend unterbrochen und wird beim nächsten Neustart des Gerätes fortgesetzt.</title>
+        <title>Thinkpad W500 - Integrierte Grafikkarte - Treiber für Windows 10</title>
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="/css/syntax.min.css">
         <script src="/css/jquery.min.js"></script>
@@ -126,21 +126,61 @@
         <div class="row">
     	<div class="col-md-9">
 
-			<h2>Die Geräteverschlüsselung ist vorübergehend unterbrochen und wird beim nächsten Neustart des Gerätes fortgesetzt.</h2>
-			<p class="meta">28 Feb 2015</p>
+			<h2>Thinkpad W500 - Integrierte Grafikkarte - Treiber für Windows 10</h2>
+			<p class="meta">31 Jan 2016</p>
 			
 			<div class="post">
-			<p>So stand es in den Einstellungen meines neuen HP Stream 7 Gerätes. Eine typische &quot;sinnvolle&quot; Windows-Fehlermeldung. Und ja, auch nach einem Neustart funktionierte es natürlich nicht. Auch Aktivieren und Deaktivieren der Funktion brachte nix.</p>
+			<p><em>English Version below</em></p>
 
-<p>Da eine Verschlüsselung des Tabletts für den Falle des Verlustes durchaus sinnvoll ist, machte ich mich auf die Suche. Zu dieser Fehlermeldung findet man leider nicht viel im deutschsprachigen Internet. Aber englische Webseiten brachten ein paar Infos zu Tage.</p>
+<p>Mein Thinkpad W500, mit SSD und 6GB RAM, ist immer noch eine veritable Workstation für alles was ich so mache. Neuere Notebooks haben leider oft auch noch eine kleinere Displayauflösung als das W500. Deswegen hoffe ich, dass ich das Ding noch eine ganze Weile verwenden kann. Windows 10 läuft ebenfalls ohne Probleme, wenn man von etwas Treiberproblemen absieht. Aber die sind lösbar. </p>
 
-<p>Um es kurz zu machen: diese Fehlermeldung rührte daher, dass ich mich bei meinem Windows 8.1 mit einem lokalen Benutzerkonto angemeldet hatte. Wechselt man auf die Anmeldung zu einem Live/Outlook.com/Microsoft Konto funktioniert es plötzliche ohne Probleme.</p>
+<p>Leider liefert Lenovo keine neuen Treiber für das Notebook. Man will da <a href="http://www.heise.de/newsticker/meldung/Lenovo-Chef-Windows-10-Gratis-Upgrade-war-ein-Fehler-3067578.html">lieber neue Geräte verkaufen</a>, als sich um den alten Kram zu kümmern. Übrigens läuft Linux ohne Probleme.</p>
 
-<p>Der Hintergrund ist, Microsoft synchronisiert den Key für die Entschlüsselung mit der Cloud. Ja nicht schön, prinzipiell können Microsoft, NSA und Co damit das Tablett entschlüsseln. Aber zumindest bei einem Geräteverlust kann man denke etwas ruhiger schlafen.</p>
+<p>Hauptsächlich macht die Grafikkarte Probleme. hier gibt es keinen Treiber für Windows 10. Ich hatte bereits geschrieben, wie man die <a href="http://andydunkel.net/computer/2015/08/09/windows_10_on_thinkpad_w500.html">ATI Fire GL 5700 Grafikkarte</a> unter Windows 10 zum Laufen bekommt. Dies funktioniert auch problemlos, allerdings läuft dann immer die ATI-Grafikkarte. Diese verbraucht allerdings mehr Strom, was zu geringerer Akkulaufzeit führt.</p>
 
-<p>Ist letztendlich Abwägungssache und zumindest wenn man den Key verliert kann man den wohl auch online wiederherstellen.</p>
+<p>Also die integrierte Grafik im Bios aktiviert. Linux bootet ohne Probleme, unter Windows wird erstmal nur der Standardtreiber installiert. Bei der integrierten Grafik handelt es sich um einen &quot;Intel Graphics Media Accelerator 4500MHD&quot;-Grafikkarte. Leider gibt es von Haus aus keinen Treiber für Windows 10. Auch hier führt der Weg über den Windows 7 Treiber zum Erfolg. Nach mehreren Versuchen mit diversen Treibern, die nicht funktioniert haben (ließen sich gar nicht installieren), habe ich den folgenden Treiber von der Intel-Webseite ausprobiert <a href="https://downloadcenter.intel.com/download/18402">Win7Vista<em>64</em>151717bb.zip</a>.</p>
 
-<p><img src="/assets/uploads/2015/2/encryption_windows_8.jpg" alt=""></p>
+<p>Statt diesen über das Setup zu installieren, habe ich den manuell über den Gerätemanager ausgewählt. Im Gerätemanager die Eigenschaften des Video-Adapters anzeigen lassen und dann dort Treiber aktualisieren auswählen.</p>
+
+<p><img src="/assets/uploads/2016/1/intel_treiber.png" alt=""></p>
+
+<p>Der Treiber befindet sich im Downloadarchiv im Unterordner &quot;Graphics&quot;:</p>
+
+<p><img src="/assets/uploads/2016/1/intel_treiber1.png" alt=""></p>
+
+<p>Gleich nach der Installation der erste Erfolg, Auflösung und Darstellung passen und der Gerätemanager meldet keine Probleme mehr. Leider musste ich kurz darauf feststellen, dass es doch noch zu Grafikproblemen kam. Ab und zu wurden Elemente von Windows mit Artefakten dargestellt:</p>
+
+<p><img src="/assets/uploads/2016/1/intel_grafikfehler.png" alt=""></p>
+
+<p>Mein Verdacht war, dass der Treiber doch nicht so gut unter Windows 10 funktioniert. Das <a href="http://thinkwiki.de/W500">Thinkpad-Wiki</a> brachte hier aber die Lösung:</p>
+
+<blockquote>
+<p>Artefakte beim Betrieb der Intel Grafikkarte in Verbindung mit zwei verschiedenen Arbeitsspeichermodulen und aktiviertem Intel VT-d</p>
+</blockquote>
+
+<p>Und siehe da, kaum hatte ich dies im Bios deaktiviert, lief es ohne Probleme. Damit lässt sich nun auch die interne Grafik unter Windows nutzen. Wie sich das auf die Akkuleistung auswirkt muss ich noch testen. Das Notebook läuft zumindest mit weniger Lüfter und wird weniger warm, als mit der ATI-Grafikkarte. Wer die meiste Zeit am Notebook arbeitet und keine 3D-Leistung benötigt, spart so Strom und Akku. Momentan beim Tippen dieses Textes meldet Windows derzeit knappe 5 Stunden, mit Auslastung wird es weniger sein. Mit der ATI-Grafik bin ich mit Müh und Not auf 2,5 Stunden gekommen.</p>
+
+<p>Für den Betrieb eines externen Monitors am Display-Port wird allerdings die ATI-Grafik benötigt.</p>
+
+<hr>
+
+<h1>Thinkpad W500 - Use Integrated Graphic Card on Windows 100</h1>
+
+<p>My Thinkpad W500 is still a very powerful workstation for everything I am doing. New notebooks often lack the display resolution of the W500. Windows 10 is running without any problems, if you have solved the driver problems.</p>
+
+<p>Lenovo does not provide any Windows 10 support for the W500. Selling new laptops seems more important for them than supporting older models. By the way: Linux runs without any problems. The biggest driver problem is the graphic card. There is no driver for Windows 10.</p>
+
+<p>I wrote an <a href="http://andydunkel.net/computer/2015/08/09/windows_10_on_thinkpad_w500.html">article</a> in the past how to get the &quot;ATI Fire GL 5700 Grafikkarte running on Windows 10. This works without problems, however the ATI card needs a lot of power, which results in bad battery life.</p>
+
+<p>To get more battery life I switched to the integrated graphics card in the Bios. Linux runs without problems, Windows does not have a driver for the &quot;Intel Graphics Media Accelerator 4500MHD&quot; and runs only the standard driver. As for the ATI card installing the Windows 7 driver is the solution. Finding the correct driver was a bit of an issue. Several drivers did not work, however the following worked: <a href="https://downloadcenter.intel.com/download/18402">Win7Vista<em>64</em>151717bb.zip</a>.</p>
+
+<p>I did not install the driver with the Setup. In the device manager I selected the graphics card and installed the driver manually. After unzipping the driver package, you can find the driver in the &quot;graphics&quot; directory. See images above.</p>
+
+<p>After installation the display resolution was correct and everthiny seemed fine. However I had some graphic issues, some windows where showing artifacts. Turned out that this happens, if you have different memory modules installed and Intel VT-d actived in the Bios. Deactivating VT-d in the Bios and everything worked fine.</p>
+
+<p><img src="/assets/uploads/2016/1/intel_grafikfehler.png" alt=""></p>
+
+<p>Now I can use the integrated graphic card on Windows 10. How much more battery life I will get out of that, I have not tried yet. But first tests showed that the fan is running much less and the noteboo is much cooler. Currently Windows is saying something about 5 hours of battery life. With the ATI card is was usually 2,5 hours. For using an external display the ATI graphic card must be actived. The display port is only working with the ATI graphic card.</p>
 
 			</div>
 			
@@ -173,17 +213,29 @@
 			 	<div class="panel-heading">Verwandte Artikel:</div>
 				<div class="panel-body">
 				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/windows/computer/2016/01/31/thinkpad_w500_integrated_graphic_card_on_windows10.html" title="Thinkpad W500 - Integrierte Grafikkarte - Treiber für Windows 10">Thinkpad W500 - Integrierte Grafikkarte - Treiber für Windows 10</a></li>
+				   <li class="list-unstyled"><a href="http://andydunkel.net/computer/2015/05/07/thinkpad_w500_usb_30.html" title="USB 3.0 am Thinkpad W500 nachrüsten">USB 3.0 am Thinkpad W500 nachrüsten</a></li>
 				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/computer/2015/08/09/windows_10_on_thinkpad_w500.html" title="Windows 10 auf Lenovo Thinkpad W500">Windows 10 auf Lenovo Thinkpad W500</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/sonstiges/2011/07/31/kein-service-pack-1-frs-thinkpad-edge.html" title="Kein Service Pack 1 fürs ThinkPad Edge">Kein Service Pack 1 fürs ThinkPad Edge</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/linux/windows/programmierung/2016/01/29/sublime_text.html" title="Sublime Text">Sublime Text</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/linux/2016/01/26/remote_backup_mit_ftp.html" title="Linux: Remote Backup mit FTP">Linux: Remote Backup mit FTP</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/raspberry/linux/2014/10/29/airsonos_airplay_fuer_sonos.html" title="AirSonos - Airplay für Sonos mit dem Raspberry Pi">AirSonos - Airplay für Sonos mit dem Raspberry Pi</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/linux/2013/03/12/linux-mint-mit-full-disk-encryption.html" title="Linux Mint mit Full Disk Encryption">Linux Mint mit Full Disk Encryption</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/gadgets/sonstiges/2011/12/11/thinkpad-edge-11-auf-ssd-umrsten.html" title="Thinkpad Edge 11 auf SSD umrüsten">Thinkpad Edge 11 auf SSD umrüsten</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/windows/2015/02/28/geraeterschluesselung_windows_8_1.html" title="Die Geräteverschlüsselung ist vorübergehend unterbrochen und wird beim nächsten Neustart des Gerätes fortgesetzt.">Die Geräteverschlüsselung ist vorübergehend unterbrochen und wird beim nächsten Neustart des Gerätes fortgesetzt.</a></li>
 				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/tools/2013/08/28/backups-mit-grsync.html" title="Backups mit Grsync">Backups mit Grsync</a></li>
 				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/sonstiges/2013/05/17/windows-defender-deaktivieren-in-windows-8.html" title="Windows Defender deaktivieren in Windows 8">Windows Defender deaktivieren in Windows 8</a></li>
 				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/2011/08/03/windows-7-service-pack-1-unbekannter-fehler-0x8004401e.html" title="Windows 7 Service Pack 1-Unbekannter Fehler 0x8004401e">Windows 7 Service Pack 1-Unbekannter Fehler 0x8004401e</a></li>
-				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/sonstiges/2011/07/31/kein-service-pack-1-frs-thinkpad-edge.html" title="Kein Service Pack 1 fürs ThinkPad Edge">Kein Service Pack 1 fürs ThinkPad Edge</a></li>
 				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/gadgets/tools/2011/07/20/ipad-rdp-zugang-zu-windows-rechner.html" title="iPad: RDP Zugang zu Windows Rechner">iPad: RDP Zugang zu Windows Rechner</a></li>
 				
