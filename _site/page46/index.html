@@ -137,100 +137,26 @@
      
 		
 		<h1>
-		  <a href="/tools/2013/08/07/mou-markdown-editor-fur-osx.html">Mou - Markdown Editor für OSX</a>
+		  <a href="/eclipse/java/2011/04/28/get-plugin-path.html">Get plugin path </a>
 		</h1>
-		  <p class="small">Posted on 07 August 2013 by Andy</p>
-		  <p><p>Markdown ist meine neue &quot;<a href="http://andydunkel.net/tools/2013/06/16/markdown.html">Lieblingsauszeichnungssprache</a>&quot; für Dokumente aller Art geworden. In der täglichen Arbeit fällt viel an was niedergeschrieben werden will: Notizen, kleinere und größere Dokumentationen. Da es im Prinzip nur Textdateien sind, sind diese auch sehr leicht auffindbar mittels Spotlight oder unter Windows mit der Desktop-Search.</p>
+		  <p class="small">Posted on 28 April 2011 by Andy</p>
+		  <p><p>This snippets gets the local folder for a plugin:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">public static File getPluginFolder() {
+    if(pluginFolder == null) {
+        URL url = Platform.getBundle(&quot;my.plugin.id&quot;).getEntry(&quot;/&quot;);
+        try {
+            url = Platform.resolve(url);
+        }
+        catch(IOException ex) {
+            ex.printStackTrace();
+        }
+        pluginFolder = new File(url.getPath());
+    }
 
-<p>Evernote ist deswegen vor einiger Zeit von meinem Rechner geflogen.</p>
-
-<p>Als Editor verwende ich unter MacOS die Anwenung &quot;<a href="http://mouapp.com/">Mou</a>&quot;. Die Software ist derzeit kostenlos, Spende erwünscht. Ansonsten bietet die Software das klassische 2-Splaten Layout. Links der reine Text und rechts die Vorschau.</p>
-
-<p><a href="http://mouapp.com/"><img src="http://andydunkel.net/assets/uploads/2013/08/Screen-Shot-2013-08-07-at-9.36.25-PM.png" alt="Screen Shot 2013 08 07 at 9 36 25 PM"></a></p>
-
-<p>Die Software bietet die üblichen Funktionen die man von einem Markdown-Editor erwartet: einen schönen Editor mit jeder Menge hilfreicher Shortcuts, HTML- und PDF-Export, Stylesheets, Themes etc.</p>
-
-<p>Meiner Meinung nach der momentan beste Markdown-Editor für OSX.</p>
-</p>		
-		  <p class="small">Tagged: Markdown by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/sonstiges/2013/07/29/griechische-katze.html">Griechische Katze</a>
-		</h1>
-		  <p class="small">Posted on 29 July 2013 by Andy</p>
-		  <p><p>Zweite Woche in Folge: wir wollen in der Mittagspause zu unserem Stammgriechen. Restaurant ist offen, aber niemand da, wir warten etwas ab und brechen die Aktion nach 15 Minuten Wartezeit ab. </p>
-
-<p>Heute war dann zumindest noch die hungrige Katze da:</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2013/07/20130729-145519.jpg"><img src="http://andydunkel.net/assets/uploads/2013/07/20130729-145519.jpg" alt="20130729-145519.jpg"></a></p>
-
-<p>Schauen wir mal nächste Woche.</p>
-</p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/meinung/2013/07/03/roaminggebuhren.html">Roaminggebühren</a>
-		</h1>
-		  <p class="small">Posted on 03 July 2013 by Andy</p>
-		  <p><p>Die EU hat zum Anfang des Monats die Roaming-Kosten gesenkt. Telefongespräche und SMS kosten nun weniger, aber das interessiert mich nicht wirklich. Wichtiger sind die mobilen Daten.</p>
-
-<p>Nichts ist nerviger als im Ausland auf Internet zu verzichten. Keine Handynavi, keine E-Mails, nichts mal eben auf der Karte nachschauen. Meistens habe ich mir dann vor Ort eine Prepaid-Karte geholt, wenn der Aufenthalt mal länger war.</p>
-
-<p>53 cent kostet jetzt das Megabyte im Ausland, zumindest bei Congstar. Da kann man schonmal kurz online gehen um irgendwas nachzuschauen. Dauerhaft anschalten, kann es zu diesen Preisen natürlich immer noch nicht.</p>
-
-<p>Zusätzlich wurden auch die <a href="https://www.congstar.de/hilfe-zu-tarifen/roaming/">Day-Passes</a> im Preis angepasst. Man bekommt jetzt für 2,90 Euro immerhin 50 MB pro Tag. Vorher hat es unverschämte 6,90 Euro gekostet.</p>
-
-<p>Immer noch viel zu teuer, aber wir bewegen uns in die richtige Richtung. Ich hege ja noch die ferne Hoffnung, dass ich irgendwann mein Handy einfach europaweit benutzen kann ohne mir irgendwelche Gedanken machen zu müssen.</p>
-</p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/mac/2013/06/19/backslash-unter-osx.html">Backslash unter OSX</a>
-		</h1>
-		  <p class="small">Posted on 19 June 2013 by Andy</p>
-		  <p><p>Ich werde mir jetzt ein für alle mal merken, dass ein Backslash unter OSX mit *<em>SHIFT + ALT + 7 *</em>geht! </p>
-
-<p>Ansonsten kann ich immer hier nachschauen. :-)</p>
-</p>		
-		  <p class="small">Tagged: Backslash, Mac, and OSX by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/meinung/2013/06/17/smartphone-als-kamera.html">Smartphone als Kamera</a>
-		</h1>
-		  <p class="small">Posted on 17 June 2013 by Andy</p>
-		  <p><p>Bitkom <a href="https://www.bitkom.org/de/presse/8477_76471.aspx">schreibt</a>, Smartphones ersetzen die Urlaubskamera. </p>
-
-<p>Ich war die letzten Wochen etwas unterwegs und immer wenn ich unterwegs bin mache ich gerne Fotos, zur Erinnerung. </p>
-
-<p>Bisher hatte ich eine normale Kamera dabei. Es handelt sich um eine Nikon Coolpix P90. Es ist keine Spiegelreflex, sondern eine Hybridkamera.</p>
-
-<p>Die Bildqualität ist super, keine Frage, und der 24fache Zoom macht Spaß. Irgendein Motiv etwas zu weit weg, schnell ran zoomen. Es gibt auch jede Menge manuelle Einstellungen, aber meist nutze ich die Automatik. </p>
-
-<p>Allerdings ist das Ding auch sehr unhandlich. Ich will es eigentlich nicht die ganze Zeit tragen oder um den Hals hängen haben. Also ist die Kamera im Rucksack und muss mehr oder weniger umständlich heraus gekramt werden. </p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/06/2013-06-17-21.32.27.jpg" alt="2013 06 17 21 32 27"></p>
-
-<p>Seit letztem Jahr besitze ich ein iPhone 5. Die Kamera liefert mittlerweile solide Qualität. Meist sehe ich keinen Unterschied mehr zwischen iPhone und einer normalen Komptaktkamera. Lediglich bei schlechten Lichtverhältnissen gibt es Abstriche, was wohl auch an der Sensorgröße liegt.</p>
-
-<p>Bei der letzten Reise habe ich mich nun entschlossen, dass ich mir das Handling mit der großen Kamera spare. Das Smartphone habe ich immer dabei und es ist schnell einsatzbereit. Aus der Tasche ziehen, Foto machen, wegstecken. Die andere Kamera muss ich erst aus dem Rucksack zerren, einschalten, warten, Foto machen, weg packen. Das stresst, besonders im Urlaub.</p>
-
-<p>Zuhause angekommen werden die Bilder automatisch mit der Dropbox synchronisiert und dann auf den Rechner. Kein SD-Karten Gefummel.</p>
-
-<p>Fazit: es war praktischer und bis auf die Spezialfälle wo man gerne eine optischen Zoom gehabt hätte, hat das Smartphone alles abgedeckt. In Zukunft werde ich wohl öfter die große Kamera daheim lassen.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/06/2013-06-17-18.34.25.jpg" alt="2013 06 17 18 34 25"></p>
-
-<p> </p>
-</p>		
-		  <p class="small">Tagged:  by Andy</p>
+    return pluginFolder;
+}
+</code></pre></div></p>		
+		  <p class="small">Tagged: Plugin folder eclipse by Andy</p>
 		  <hr>
 		  
 		
@@ -325,11 +251,11 @@
 <!-- Pagination links -->
 <div class="pagination">
   
-    <a href="/page12" class="previous">Previous</a>
+    <a href="/page45" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 13 of 46</span>
+  <span class="page_number ">Page: 46 of 46</span>
   
-    <a href="/page14" class="next">Next</a>
+    <span class="next ">Next</span>
   
 </div>
 

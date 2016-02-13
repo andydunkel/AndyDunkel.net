@@ -137,6 +137,31 @@
      
 		
 		<h1>
+		  <a href="/sonstiges/kochen/2016/02/13/klean_kanteen_food_canister.html">Klean Kanteen Food Behälter </a>
+		</h1>
+		  <p class="small">Posted on 13 February 2016 by Andy</p>
+		  <p><p>Ab und zu nehme ich mal Essen mit in die Arbeit. Früher habe ich dafür immer so &quot;Tupper-Ähnliche&quot; Behältnisse aus Plastik verwendet. Da ich meist mit Rad in die Arbeit fahre, würfelt es die Dinge im Rucksack gerne auch mal etwas durcheinander.</p>
+
+<p>Die Plastikdinger sind dann, ab und zu mal, aufgegangen oder anderweitig undicht geworden. Da lief dann schön irgendwas in den Rucksack. </p>
+
+<p>Als Alternative habe ich vor geraumer Zeit zwei &quot;<a href="http://www.amazon.de/gp/product/B00BFZUVK8/ref=as_li_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B00BFZUVK8&amp;linkCode=as2&amp;tag=ekiwide0b-21">Klean Kanteen Food Behälter</a>&quot;, in verschiedenen Größen, gekauft. Die Behälter sind aus doppelwandigen Edelstahl und halten das Essen einige Zeit kühl bzw. warm.</p>
+
+<p>Zugeschraubt sind sie 100% dicht und gehen auch nicht mal eben unterwegs auf. Damit perfekt auf dem Rad und anderen unruhigen Transportmitteln.</p>
+
+<p>In den <a href="http://www.amazon.de/gp/product/B00BFZUVK8/ref=as_li_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B00BFZUVK8&amp;linkCode=as2&amp;tag=ekiwide0b-21">großen Behälter</a> passen 473 ml rein, in <a href="http://www.amazon.de/gp/product/B00BFZH4HG/ref=as_li_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B00BFZH4HG&amp;linkCode=as2&amp;tag=ekiwide0b-21">den Kleinen</a> die Hälfte. Mengenmäßig bekommt man eine Mahlzeit ganz gut rein, etwas größer könnten sie aber dennoch sein.</p>
+
+<p>Natürlich gibt es auch ein paar Nachteile. Da die Behälter aus Metall sind, kann man diese nicht in die Mikrowelle tun. Die die zylindrische Form bekommt man das Essen auch nicht so leicht hinein. </p>
+
+<p>Davon abgesehen sind die Behälter recht praktisch. Die Reinigung ist ebenfalls sehr leicht. 
+Entweder putzt man die schnell von Hand, ansonsten sind die auch für die Spülmaschine geeignet. Im Gegensatz zu Behältern aus Plastik, hat man auch nach langer Benutzung keine Gebrauchsspuren. Plastikbehältnisse zerkratzen gerne mal von innen und sind dann kaum zu sinnvoll zu reinigen.</p>
+
+<p><img src="/assets/uploads/2016/2/klean_canteen.jpg" alt=""></p>
+</p>		
+		  <p class="small">Tagged: Sonstiges and Umwelt by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/mobilit%C3%A4t/umwelt/2016/02/02/mobilitaet_januar_2016.html">Mobilität Januar 2016</a>
 		</h1>
 		  <p class="small">Posted on 02 February 2016 by Andy</p>
@@ -300,47 +325,6 @@ EOF
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/jekyll/webdesign/2016/01/21/jekyll_related_posts.html">Jekyll - Related Posts / Verwandte Artikel</a>
-		</h1>
-		  <p class="small">Posted on 21 January 2016 by Andy</p>
-		  <p><p>Jekyll bietet über das die Variable <code>site.related_posts</code> eine Funktion um &quot;Verwandte Artikel&quot; zu einem Blogpost anzuzeigen. Standardmäßig ist die Funktion jedoch eher eingeschränkt und enthält nur die letzten 10 Artikel.</p>
-
-<p>Das Ganze wird z.B. so verwendet:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">{% for post in site.related_posts %}
-   &lt;li&gt;&lt;a href=&quot;{{ site.url }}{{ post.url }}&quot; title=&quot;{{ post.title }}&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
-{% endfor %}
-</code></pre></div>
-<p>Da jeweils immer nur die letzten 10 Artikel angezeigt werden, ist das nicht wirklich &quot;related&quot;. Immerhin wird noch die Option angeboten das Ganze über einen Index etwas schlauer zu machen. Mit der Option <code>--lsi</code> wird beim Generieren der Seite ein Index angelegt und die Funktion arbeitet semantisch etwas schlauer. Bei mir hat das jedoch auch nicht funktioniert. Hier kam es leider nur zu einer Fehlermeldung. Außerdem wollte ich nicht stupide immer 10 Artikel angezeigt bekommen, obs passt oder nicht.</p>
-
-<p>Auf der Suche nach einer besseren Lösung bin ich auf <a href="h%0Attps://github.com/jumanji27/related-posts-jekyll-plugin">ein Github-Projekt</a> gestoßen. Das Plugin kopiert man einfach in das Plugin-Verzeichnis von Jekyll. Es ersetzt die Standardfunktion von Jekyll. Die Zuordnung der verwandten Artikel erfolgt beim Plugin über die Tags, gleicher Tag == verwandt.</p>
-
-<p>Zur Einbindung habe ich folgenden Code verwendet.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">{% if site.related_posts.size &gt; 0 %}
- &lt;div class=&quot;panel panel-default&quot;&gt;
-    &lt;div class=&quot;panel-heading&quot;&gt;Verwandte Artikel:&lt;/div&gt;
-    &lt;div class=&quot;panel-body&quot;&gt;
-    {% for post in site.related_posts %}
-       &lt;li&gt;&lt;a href=&quot;{{ site.url }}{{ post.url }}&quot; title=&quot;{{ post.title }}&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
-    {% endfor %}
-    &lt;/div&gt;
-&lt;/div&gt;
-{% endif %}
-</code></pre></div>
-<p>Das Ergebnis sieht dann z.B. so aus:</p>
-
-<p><img src="/assets/uploads/2016/1/related_posts.png" alt=""></p>
-
-<p>Der Code stellt die Box zudem nur dar, wenn es verwandte Artikel gibt. </p>
-
-<hr>
-
-<p>Beim Schreiben dieses Artikels ist es mir aufgefallen, dass es gar nicht so leicht ist &quot;Liquid code&quot; in Jekyll als Code darzustellen. Wie das geht, <a href="https://truongtx.me/2013/01/09/display-liquid-code-in-jekyll/">ist hier erklärt</a>.</p>
-</p>		
-		  <p class="small">Tagged: Jekyll and Webdesign by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -395,7 +379,7 @@ EOF
 <li class='category'><a href='/categories/java/'>java (23)</a></li>
 <li class='category'><a href='/categories/jekyll/'>jekyll (2)</a></li>
 <li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
-<li class='category'><a href='/categories/kochen/'>kochen (1)</a></li>
+<li class='category'><a href='/categories/kochen/'>kochen (2)</a></li>
 <li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
 <li class='category'><a href='/categories/linux/'>linux (12)</a></li>
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
@@ -412,7 +396,7 @@ EOF
 <li class='category'><a href='/categories/reparatur/'>reparatur (3)</a></li>
 <li class='category'><a href='/categories/rezepte/'>rezepte (1)</a></li>
 <li class='category'><a href='/categories/science/'>science (3)</a></li>
-<li class='category'><a href='/categories/sonstiges/'>sonstiges (42)</a></li>
+<li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (22)</a></li>
 <li class='category'><a href='/categories/umwelt/'>umwelt (1)</a></li>
@@ -434,7 +418,7 @@ EOF
   
     <span class="previous">Previous</span>
   
-  <span class="page_number ">Page: 1 of 45</span>
+  <span class="page_number ">Page: 1 of 46</span>
   
     <a href="/page2" class="next">Next</a>
   
