@@ -137,6 +137,77 @@
      
 		
 		<h1>
+		  <a href="/tools/2013/04/22/enigmail-und-openpgp-inv_recp-0-0x008d5dbc.html">Enigmail und OpenPGP: INV_RECP 0 0x008D5DBC</a>
+		</h1>
+		  <p class="small">Posted on 22 April 2013 by Andy</p>
+		  <p><p>Vor kurzem habe ich, zugegeben aus Langeweile, mal wieder OpenPGP im Thunderbird installiert. Dazu habe ich mir auch gleich einen neuen Key generiert und den alten danach in den Ruhestand geschickt, Backup erstellt und aus der Keychain entfernt.</p>
+
+<p>Beim Senden trat nun aber ein unschöner Fehler auf: INV_RECP 0 0x008D5DBC</p>
+
+<p>Offensichtlich versuchte er hier partout noch mit meinem alten Key die Nachricht zu verschlüsseln und zu signieren. Die Lösung: in den Accounteinstellungen unter OpenPGP Security den neuen Standardkey auswählen:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/04/EnigMailKeySetting.png" alt="Enigmail Key Settings"></p>
+
+<p>Anschließend klappt nun alles.</p>
+
+<hr>
+
+<h1>Alte Kommentare</h1>
+
+<h3>Hauke Laging says:</h3>
+
+<p>April 28, 2013 at 18:44 </p>
+
+<p>&quot;Dazu habe ich mir auch gleich einen neuen Key generiert&quot;</p>
+
+<p>Na, hoffentlich ist der neue dann auch ein guter Schlüssel… :-)</p>
+
+<h3>Eduard says:</h3>
+
+<p>August 2, 2013 at 14:49 </p>
+
+<p>Ich hatte dasselbe Problem, ein anderes Symptom war die Meldung “Der Schlüssel 0xXXXXX wurde nicht gefunden oder ist ungültig. Der (Unter-)Schlüssel könnte abgelaufen sein”.</p>
+
+<p>Deine Lösung hat mein Problem gelöst. Dankeschön!</p>
+
+<h3>Lothar says:</h3>
+
+<p>August 5, 2013 at 18:22 </p>
+
+<p>Danke für die Lösung. Bei mir war kein Schlüssel, sondern die eMail-Adresse abgegeben.
+Grund: Es war nur ein öffentlicher Schlüssel importiert, aber kein eigenes Schlüsselpaar vorhanden.</p>
+
+<p>Schlüsselpaar erzeugt, jetzt klappt es.</p>
+
+<h3>M E says:</h3>
+
+<p>August 15, 2013 at 01:23    </p>
+
+<p>Auf diese Stelle wäre ich nicht im Traum gekommen.</p>
+
+<p>Danke!</p>
+
+<h3>Frederik says:</h3>
+
+<p>September 22, 2013 at 10:28 </p>
+
+<p>Klasse! Nun klappt wieder alles. Was eine dämliche Fehlermeldung ohne Mehrwert ;) Gruß aus Bielefeld</p>
+
+<h3>Theodore M Rolle, Jr. says:</h3>
+
+<p>September 27, 2013 at 03:12 </p>
+
+<p>From beautiful Clyde, North Carolina, USA (http://www.townofclyde.com)
+Thank you for the solution.
+It got me up and running.
+German is rusty, but I got enough to fix Enigmail…the screenshot is especially helpful.
+Ted</p>
+</p>		
+		  <p class="small">Tagged: Encrypted, Enigmail, and GPG by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/java/2013/04/17/java-copy-array-to-another.html">Java: copy array to another</a>
 		</h1>
 		  <p class="small">Posted on 17 April 2013 by Andy</p>
@@ -215,32 +286,6 @@ $ sudo ubiquity</p>
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/linux/2012/12/18/exfat-unter-ubuntu-nutzen.html">exFat unter Ubuntu nutzen</a>
-		</h1>
-		  <p class="small">Posted on 18 December 2012 by Andy</p>
-		  <p><p>Ein mit exFat formatierte Festplatte oder USB-Stick lässt sich nicht einfach unter Ubuntu nutzen, aber wie immer unter Linux lässt sich das in &quot;three simple steps&quot; bewerkstelligen. :-)</p>
-
-<p>Also fix ein Terminal aufgemacht und dort nacheinander die folgenden drei Zeilen reinklopfen:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo -s  
-apt-add-repository ppa:relan/exfat  
-apt-get install fuse-exfat
-</code></pre></div>
-<p>Das wars schon, anschließend sollte sich das Gerät problemlos mounten lassen. Sollte Ubuntu beim dritten Befehl rummeckern, dass das Paket &quot;fuse-exfat&quot; nicht gefunden werden kann, einfach vorher noch den folgenden Befehl absetzen:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">apt-get update 
-</code></pre></div>
-<h2>Nachtrag - 11.12.2014</h2>
-
-<p>Unter Ubuntu 14.04 bricht die Installation von &quot;fuse-exfat&quot; ab: </p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">fuse-exfat : Depends: fuse-utils (&gt;= 2.7) but it is not installable
-</code></pre></div>
-<p>Abhilfe schafft die alternative folgende Zeile zur Installation:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo apt-get install exfat-fuse exfat-utils
-</code></pre></div></p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -306,7 +351,7 @@ apt-get install fuse-exfat
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
 <li class='category'><a href='/categories/programmierung/'>programmierung (1)</a></li>
-<li class='category'><a href='/categories/radfahren/'>radfahren (27)</a></li>
+<li class='category'><a href='/categories/radfahren/'>radfahren (28)</a></li>
 <li class='category'><a href='/categories/raspberry/'>raspberry (3)</a></li>
 <li class='category'><a href='/categories/repair/'>repair (1)</a></li>
 <li class='category'><a href='/categories/reparatur/'>reparatur (3)</a></li>
@@ -315,7 +360,7 @@ apt-get install fuse-exfat
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (22)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (1)</a></li>
+<li class='category'><a href='/categories/umwelt/'>umwelt (2)</a></li>
 <li class='category'><a href='/categories/webdesign/'>webdesign (2)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (1)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (5)</a></li>

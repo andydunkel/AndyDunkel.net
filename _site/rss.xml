@@ -8,7 +8,15 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Sat, 13 Feb 2016 18:00:00 +0100</pubDate>
+    <pubDate>Sun, 28 Feb 2016 18:00:00 +0100</pubDate>
+    <item>
+      <title>Brompton Faltrad</title>
+      <link>http://andydunkel.net/radfahren/umwelt/2016/02/28/brompton_faltrad.html</link>
+      <description>&lt;p&gt;Beim &lt;a href=&quot;http://freakshow.fm/fs163-mentale-menopause&quot;&gt;Podcasthören&lt;/a&gt; bin ich auf das Thema Falträder aufmerksam geworden. Ab und zu habe ich sowas mal im echten Leben gesehen, sahen etwas seltsam aus und irgendwie hatte ich auch keine Vorstellung, dass man darauf sinnvoll fahren kann. Eher eine Notlösung, mit der man mit vielleicht etwas schneller unterwegs ist als zu Fuß.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 28 Feb 2016 18:00:00 +0100</pubDate>
+      <dc:date>2016-02-28T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Klean Kanteen Food Behälter </title>
       <link>http://andydunkel.net/sonstiges/kochen/2016/02/13/klean_kanteen_food_canister.html</link>
@@ -2333,6 +2341,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2016-02-13T18:00:00+01:00</dc:date>
+    <dc:date>2016-02-28T18:00:00+01:00</dc:date>
   </channel>
 </rss>

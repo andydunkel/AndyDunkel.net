@@ -25,8 +25,6 @@ Stattdessen habe die modernen Räder einen ausgefuchsten Faltmechanismus, modern
 
 ![](/assets/uploads/2016/2/brompton1.jpg)
 
-<blockquote>Brompton entfaltet</blockquote>
-
 ## Brompton Faltrad
 
 Nach einigem Überlegen habe ich mich für ein Brompton entschieden. Den Ausschlag hat die Komptaktheit im gefalteten Zustand gegeben. Mit den 16 Zoll Rädern und dem speziellen Faltmechanismus lässt es sich sehr kompakt zusammenfalten. Andere Räder bieten mehr Gänge und größere Räder, benötigen dafür auch mehr Platz. Da ich noch andere Räder (Tourenrad, Rennrad und Mountain Bike) habe für alle anderen Gelegenheiten, sollte es für unterwegs so klein wie möglich sein, wenn man es zusammengefaltet transportiert. 
@@ -43,7 +41,7 @@ Der Faltmechanismus lässt sich eigentlich nur mit genial umschreiben. Mit etwas
 
 ![](/assets/uploads/2016/2/brompton5.jpg)
 
-<blockquote>Brompton zusammen gefaltet</blockquote>
+<blockquote>Brompton gefaltet</blockquote>
 
 ## Ausstattung
 
