@@ -137,6 +137,117 @@
      
 		
 		<h1>
+		  <a href="/raspberry/linux/2014/02/11/raspberry_pi_als_vpn_server_einrichten.html">VPN für mobile Geräte auf dem Raspberry PI einrichten</a>
+		</h1>
+		  <p class="small">Posted on 11 February 2014 by Andy</p>
+		  <p><p>Ich hatte schon eine Weile mal vor, mir einen VPN-Server auf dem Raspberry Pi einzurichten. Zum einen will ich von unterwegs in irgendwelchen WLANs nicht unverschlüsselt kommunizieren und zum Anderen wird bei mobilen Internettarifen gern der ein oder andere Dienst blockiert. So funktioniert bei Congstar kein VOIP mit Skype. Richtet man hingegen ein VPN ein, funktioniert es, da der Anbieter nicht mehr in die Kommunikation reinschauen kann.</p>
+
+<p>Bisher hatte ich den Dienst <a href="http://www.swissvpn.net/">SwissVPN</a> benutzt. Wer öfter unterwegs ist und regelmäßig einen VPN-Dienst benötigt fährt mit so einem Dienst besser, beim Home-VPN ist der Upload vom DSL ein limitierender Faktor. Außerdem geht damit Youtube. :-) Da ich geizig bin, will ich mir das Geld aber sparen und mein VPN-Server selbst betreiben.</p>
+
+<p>Also los geht es: Wir gehen davon aus, dass auf dem RPI bereits ein Linux installiert ist, z.B. Raspbian. <a href="http://blog.ekiwi.de/?p=1757">Hier gibt es eine gute Anleitung</a> für die erste Einrichtung.</p>
+
+<h2>PPTP</h2>
+
+<p>Als VPN verwenden wir <a href="http://de.wikipedia.org/wiki/PPTP">PPTP</a>. Dieses wird praktischerweise auf dem iPhone, iPad und Co direkt unterstützt.</p>
+
+<h2>Updates</h2>
+
+<p>Zuerst updaten wir mal die Software auf unserem RPI:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo apt-get update
+sudo apt-get upgrade
+</code></pre></div>
+<p>Das kann je nach Stand der Software eine Weile dauern.</p>
+
+<h2>Installation und Konfiguration</h2>
+
+<p>Die PPTP-Software installieren wir mit:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo apt-get install pptpd
+</code></pre></div>
+<p>Anschließend bearbeiten wir die Config mit Nano:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo nano /etc/pptpd.conf
+</code></pre></div>
+<p>Man kann alternativ auch VIM verwenden. Im Nano-Editor speichern wir mit STRG+X und anschließend Y.</p>
+
+<p>In der &quot;pptdp.conf&quot; Datei tragen wir die lokale IP des Raspberry ein:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">localip 192.168.1.5
+</code></pre></div>
+<p>Außerdem die Remote-IP-Adressen. Diese werden unseren VPN-Clients zugeteilt. Hier vergibt man einen Adressbereich, je nachdem wieviele Geräte man plant zu nutzen:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">remoteip 192.168.1.234-238
+</code></pre></div>
+<p>Nach dem Speichern, konfigurieren wir jetzt die Optionen von PPTDP:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo nano /etc/ppp/pptpd-options
+</code></pre></div>
+<p>Am Ender Datei tragen wir folgende Zeilen ein:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">ms-dns 192.168.1.1
+noipx
+mtu 1490
+mru 1490
+</code></pre></div>
+<p>Nach &quot;ms-dns&quot; muss ein gültiger DNS-Server eingetragen werden. In den meisten Fällen verwendet man hier die Adresse seines Routers oder man trägt einen <a href="http://www.ccc.de/de/censorship/dns-howto">öffentlichen DNS-Server</a> ein.</p>
+
+<h3>Benutzer hinzufügen</h3>
+
+<p>Nun noch die VPN-Benutzer hinzufügen; dazu bearbeiten wir die folgende Datei:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo nano /etc/ppp/chap-secrets
+</code></pre></div>
+<p>Das Anlegen von Benutzern ist sehr einfach:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Benutzername[TAB]*[TAB]Passwort[Tab]*
+</code></pre></div>
+<p>Beispiel:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Andy    *   GeheimesPasswort    *
+</code></pre></div>
+<p>Nach dem Bearbeiten muss der PPTP-Server neu gestartet werden:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo service pptpd restart
+</code></pre></div>
+<h2>Sonstige Konfiguration</h2>
+
+<p>Wir wollen nicht nur auf den RPI zugreifen, sondern auch auf das Internet und sonstige Resourcen. Das richten wir jetzt ein:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo nano /etc/sysctl.conf
+</code></pre></div>
+<p>Hier tragen wir die folgende Zeile ein:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">net.ipv4.ip_forward=1
+</code></pre></div>
+<p>Die Änderung übernehmen wir mit:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo sysctl -p
+</code></pre></div>
+<h3>Firewall konfigurieren</h3>
+
+<p>Zuletzt aktualisieren wir noch die Firewall des RPI:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+</code></pre></div>
+<p>Bei mir kam an der Stelle die Fehlermeldung <code>iptables: Table does not exist (do you need to insmod?)</code>. Ein Neustart des RPI nach den Updates, vom Anfang, schaffte hier  Abhilfe. Wichtig: Dieser Befehl muss nach jedem Start des RPI neu ausgeführt werden. Also am Besten gleich einen Cronjob einrichten:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo crontab -e
+</code></pre></div>
+<p>Am Ende fügen wir die folgende Zeile ein:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">@reboot sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+</code></pre></div>
+<p>Speichern und fertig.</p>
+
+<h3>Portforwarding auf dem Router aktivieren</h3>
+
+<p>PPTP verwendet den Port 1723. Damit der RPI Anfragen auf diesem Port entgegen nehmen kann, muss dieser vom Router weitergeleitet werden. Dazu loggen wir uns auf unserem Router ein und konfigurieren die Weiterleitung.</p>
+
+<p>Hier für eine FritzBox:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/02/vpn/vpn2.png" alt=""> </p>
+
+<h3>Einrichten auf dem iPhone</h3>
+
+<p>Die Einrichtung auf dem iPhone und anderen Geräten ist einfach. Zuerst gehen wir in die VPN-Einstellungen und legt ein neues VPN-Profil an:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/02/vpn/vpn1.png" alt=""></p>
+
+<p>PPTP auswählen, Servernamen, Benutzername und Passwort eingeben.</p>
+
+<p>Als Servernamen gibt man den Servernamen oder die IP-Adresse seines Internetzugangs ein. Da die IP-Adresse bei einem DSL-Anschluss oft dynamisch ist, sollte man einen DynDNS-Dienst nutzen.</p>
+
+<p>Das war es auch schon. Wenn alles korrekt konfiguriert ist, sollte die Verbindung nach dem Speichern funktionieren.</p>
+</p>		
+		  <p class="small">Tagged: RPI and VPN by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/coding/tools/2014/02/04/check_code_signing_of_osx_applications.html">Check code signing of applications on OSX</a>
 		</h1>
 		  <p class="small">Posted on 04 February 2014 by Andy</p>
@@ -319,121 +430,6 @@ source=Developer ID
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/eclipse/2014/01/16/branding_of_eclipse_applications.html">Branding of Eclipse/RCP Applications</a>
-		</h1>
-		  <p class="small">Posted on 16 January 2014 by Andy</p>
-		  <p><h2>Introduction</h2>
-
-<p>In this document I want to describe some ideas how branding of an Eclipse RCP application can be implemenented. Since I never done this before, there might be better ways to do that, so feel free to contact me.</p>
-
-<p>Its not a walk through how to do these things step by step, its more an example how certain things could be done. The complete source code is available for download at the end.</p>
-
-<h2>Was is branding?</h2>
-
-<p>First lets discuss what we want to achieve and what branding means in this context. Imagine a situation where we want to ship our software in multiple versions, with different names for the software, different images shown in the GUI, different reports, template files, icons etc. </p>
-
-<p>We have a single source code and want to implement two versions of our product: </p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/branding1.png" alt=""></p>
-
-<h2>Catastic</h2>
-
-<p>In my example we want to ship two versions of our cat mail software. Its based on the Eclipse mail application sample. We want to have two versions of that Software: &quot;Catastic&quot; and &quot;FatCat&quot;. Each version should have its own splash screen, Icons, About dialog, custom file templates and also certain strings are different in the UI. </p>
-
-<p>Our goal is to achieve that with minimum impact on our source code. Lets get started!</p>
-
-<h2>Plugins</h2>
-
-<p>Lets start with the plugins:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/plugins.png" alt=""></p>
-
-<p>The application code resides in &quot;com.da.branding.example&quot;. In addition we create 3 more plugins, one generic branding plugin, which is the &quot;gateway&quot; to the specific branding plugins. If we look at the dependencies, we can see, that our application only depends on the branding plugin:</p>
-
-<p><img src="packages.png" alt=""></p>
-
-<p>This allows us to add new brandings, as well as removing brandings, without having our main application depending on a specific branding. The main branding plugin contains the branding logic, the specific plugins mostly contain the spefific branding information, like images, texts etc: </p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/resources.png" alt=""></p>
-
-<h2>Branding</h2>
-
-<p>OK lets brand the software. There are certain tasks that can be achieved easily by the RCP framework and product configurations. Other functionality must be implemented in code. Lets start what we can do with the product configuration.</p>
-
-<h3>Product</h3>
-
-<p>A lot of stuff can be done in the product configuration, like splash, about and icons. So we create a product configuration for each output software. The first step is to create an extension point for the products in the specific branding plugins:</p>
-
-<p><img src="product_plugin.png" alt=""> </p>
-
-<p><em>As you can see, there is also a specific splash screen in each plugin.</em></p>
-
-<p>In the extension point we can define several things for each branded version, the about text, about image, the application name and the icon which appears in the title bar of the application. The extension point is used by the actual product configuration.</p>
-
-<p>For each extension point I created a product configuration for the specific branded applications:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/product_files.png" alt=""></p>
-
-<p>Selecting the correct product picks of the settings from the extension points and adds them to the product configuration.</p>
-
-<p>The other configuration of the product configuration is straight forward. The important thing is to set the correct settings for the product definition:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/product_definition.png" alt=""></p>
-
-<p>All other things like the splash screen image and the icons are configured as normal.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/splash.png" alt=""></p>
-
-<p>When we launch each product configuration, the correct splash screen should be shown, as well as a different application name and a custom about dialog.</p>
-
-<p>However there might be more. The other things we need are implemented in code.</p>
-
-<h3>Code</h3>
-
-<p>Since now we only changed some visual things. But there might be more, like different templates files, some different logic, whatever.</p>
-
-<p>So we create a class &quot;<a href="https://github.com/andydunkel/EclipseBrandingExample/blob/master/com.da.branding.branding/src/com/da/branding/branding/Branding.java">Branding</a>&quot; in &quot;com.da.branding.branding&quot;, which is a singleton and will be responsible for handling branding requests from our main application.  </p>
-
-<p>When we create the singleton, we have to check which product configuration we are running:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">String product = Platform.getProduct().getId();
-</code></pre></div>
-<p>We store that information in the Branding object. By that we now can distinguish the current software we are running, for example to display different images, like that:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">public Image getImage() {       
-    return ResourceManager.getPluginImage(_brandingPlugin, &quot;res/cat.png&quot;);
-}   
-</code></pre></div>
-<p>_brandingPlugin contains the name of the specific branding plugin. We can use the same mechanism for files, strings and other things. Even more complex things like returning a perspective. Goal is to implement the differences for each application here. </p>
-
-<p>In our main source code we just call the branding class where needed:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">labelImage.setImage(Branding.getInstance().getImage());
-
-loadFile(Branding.getInstance().getFile());
-</code></pre></div>
-<p>If we add a new branding, no change in the main applications source code is neccessary.</p>
-
-<h4>Notes for the Code</h4>
-
-<p>In my example everything is in the single branding class. Depending on the amount of logic you need to implement it might be sensible to move logic to its specific plugins. I also thought to create an extension point for the branding logic. However in my example and for the required functionality, lets keep it simple. :-)</p>
-
-<h2>Application</h2>
-
-<p>Here is how our application looks now:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/screenshot.png" alt=""></p>
-
-<iframe width="640" height="360" src="//www.youtube.com/embed/Ouyy-4nBjj0?rel=0" frameborder="0" allowfullscreen></iframe>
-
-<p>Well, thats it! As said at the beginning, thats not an exact guide how to do this. Depending on the requirements, there are more things to implement or implementation might be different. To see how I did things exactly, have a look to the source code. If there are better ways to do things, well let me know! :-)</p>
-
-<h2>Download</h2>
-
-<p>The source code of the sample application can be <a href="https://github.com/andydunkel/EclipseBrandingExample">found here</a>.</p>
-</p>		
-		  <p class="small">Tagged: Eclipse, RCP, Branding, and Product by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -494,7 +490,7 @@ loadFile(Branding.getInstance().getFile());
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (3)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilität/'>mobilität (1)</a></li>
+<li class='category'><a href='/categories/mobilität/'>mobilität (2)</a></li>
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
@@ -508,7 +504,7 @@ loadFile(Branding.getInstance().getFile());
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (22)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (2)</a></li>
+<li class='category'><a href='/categories/umwelt/'>umwelt (3)</a></li>
 <li class='category'><a href='/categories/webdesign/'>webdesign (2)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (1)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (5)</a></li>
