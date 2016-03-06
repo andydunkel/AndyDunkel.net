@@ -6,10 +6,10 @@ layout: post
 slug: mobilitaet_februar_2016
 title: 'Mobilität Februar 2016'
 categories:
-- Mobilität
+- Mobilitaet
 - Umwelt
 tags:
-- Mobilität
+- Mobilitaet
 - Umwelt
 
 ---
