@@ -19,7 +19,7 @@ Für den Transport meines [Brompton](http://andydunkel.net/radfahren/umwelt/2016
 
 ## Brompton Überwurftasche
 
-Die erste "Tasche" ist eher ein Überzug. Diesen zieht man über das zusammengefaltete Brompton. Das Material ist dünn. Es handelt sich hierbei um Originalzubehör von Brompton.
+Die erste "[Tasche](http://www.faltradxxs.de/1741-Brompton/1745-Brompton-Zubehoer/1747-Brompton-Transport/11156-Brompton-Satteltasche-UEberwurf-Cover-and-Saddlebag.html)" ist eher ein Überzug. Diesen zieht man über das zusammengefaltete Brompton. Das Material ist dünn. Es handelt sich hierbei um Originalzubehör von Brompton.
 
 Mitgeliefert wird eine kleine Tasche, zur Anbringung am Sattel des Brompton. Hier kann die zusammengefaltet die Hülle unterbringen. 
 
@@ -37,11 +37,11 @@ Kostenmäßig liegt der Überzug bei 50 Euro.
 
 ## Brompton Transporttasche
 
-Die zweite Tasche ist keine Original-Tasche, ist aber dennoch speziell für das Brompton Faltrad gefertigt. Die Tasche ist komplett geschlossen und aus dickeren Material als der Überzug. Die Tasche nutze ich für den Transport im Auto oder später auch mal im ICE. Da das Brompton komplett verpackt ist, macht es die Sitzbezüge im Auto nicht dreckig. 
+Die [zweite Tasche](http://www.faltradxxs.de/1741-Brompton/1745-Brompton-Zubehoer/1747-Brompton-Transport/11157-Brompton-Seglertasche-inkl-Tragegurt.html) ist keine Original-Tasche, ist aber dennoch speziell für das Brompton Faltrad gefertigt. Die Tasche ist komplett geschlossen und aus dickeren Material als der Überzug. Die Tasche nutze ich für den Transport im Auto oder später auch mal im ICE. Da das Brompton komplett verpackt ist, macht es die Sitzbezüge im Auto nicht dreckig. 
 
 Von außen sieht man nicht, dass man ein Fahrrad transportiert. Obwohl die Mitnahme von Falträdern auch im ICE erlaubt ist, spart man sich auf jeden Fall Diskussionen mit dem Zugpersonal.
 
-Ich habe zuerst überlegt, ob ich mir nicht den Brompton Roller Bag holen soll. Diese bietet ebenfalls Rundumschutz und verfügt über einen stabilen Unterboden, der zudem noch mit Rollen ausgestattet ist. Das erleichtert den Transport über längere Strecken. Den Transportvorteil erkauft man sich allerdings mit einem größeren Packmaß. Den Roller Bag kann nicht mehr ohne weiteres am Rad transportieren. Wer am Zielort direkt losfahren will, fährt denke mit dieser Tasche hier besser.
+Ich habe zuerst überlegt, ob ich mir nicht den [Brompton Roller Bag](http://www.faltradxxs.de/1741-Brompton/1745-Brompton-Zubehoer/1747-Brompton-Transport/) holen soll. Diese bietet ebenfalls Rundumschutz und verfügt über einen stabilen Unterboden, der zudem noch mit Rollen ausgestattet ist. Das erleichtert den Transport über längere Strecken. Den Transportvorteil erkauft man sich allerdings mit einem größeren Packmaß. Den Roller Bag kann nicht mehr ohne weiteres am Rad transportieren. Wer am Zielort direkt losfahren will, fährt denke mit dieser Tasche hier besser.
 
 Wie beim Überzug gibt es bei der Tasche auch einen Transportbeutel für den Sattel. Dieser ist etwas größer. Das Zusammenfalten der Tasche, auf das Packmaß des Transportbeutels, gestaltet sich etwas schwieriger. Nur mit richtiger Falttechnik passt die Tasche wieder in den Beutel. 
 
