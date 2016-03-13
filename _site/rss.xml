@@ -8,7 +8,15 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Sun, 06 Mar 2016 18:00:00 +0100</pubDate>
+    <pubDate>Sun, 13 Mar 2016 18:00:00 +0100</pubDate>
+    <item>
+      <title>Transporttaschen für Brompton Faltrad</title>
+      <link>http://andydunkel.net/radfahren/umwelt/2016/03/13/brompton_taschen.html</link>
+      <description>&lt;p&gt;Für den Transport meines &lt;a href=&quot;http://andydunkel.net/radfahren/umwelt/2016/02/28/brompton_faltrad.html&quot;&gt;Brompton&lt;/a&gt; habe ich zwei Taschen gekauft. Die einfache Brompton Überwurftasche und eine komplett geschlossene für den Transport, z.B. im ICE oder im Auto auf der Rücksitzbank. &lt;/p&gt;
+</description>
+      <pubDate>Sun, 13 Mar 2016 18:00:00 +0100</pubDate>
+      <dc:date>2016-03-13T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Mobilität Februar 2016</title>
       <link>http://andydunkel.net/mobilitaet/umwelt/2016/03/06/mobilitaet_februar_2016.html</link>
@@ -2349,6 +2357,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2016-03-06T18:00:00+01:00</dc:date>
+    <dc:date>2016-03-13T18:00:00+01:00</dc:date>
   </channel>
 </rss>
