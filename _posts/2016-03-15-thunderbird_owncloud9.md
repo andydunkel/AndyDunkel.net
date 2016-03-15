@@ -27,7 +27,7 @@ Mein Verständnis ist, dass dort einfach alle Kalender angeboten werden und der 
 
 Leider zeigte Thunderbird nur ein gelbes Ausrufezeichen an. 
 
-/assets/uploads/2016/3/
+![](/assets/uploads/2016/3/)
 
 Geht man in die Fehlerkonsole findet man die entsprechenden Fehlereinträge:
 
@@ -55,7 +55,7 @@ Doch wie findet man den richtigen Namen heraus? Dies geht mit folgendem Befehl, 
 
 Statt "admin" gibt man den entsprechenden Benutzernamen ein. Es kommt dann zu folgender Ausgabe:
 
-/assets/uploads/2016/3/
+![](/assets/uploads/2016/3/)
 
 Rot habe ich den richtigen Namen des Kalenders markiert. Dies gibt dann die folgende URL:
 
