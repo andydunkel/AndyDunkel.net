@@ -21,7 +21,7 @@ Daher ist es eine normale Standluftpumpe geworden. Das Gerät hat den wundersch�
 Wie der Name "Renn" im Namen bereits andeutet, ist die Pumpe auch für Rennräder, mit entsprechend hohen Bar-Werten, bestens geeignet. 
 Das geht mit der Pumpe problemlos. Im Gegensatz zur alten Luftpumpe funktioniert das entsprechend stabil. Bei der alten Pumpe musste ich mich regelrecht mit ganzem Körpergewicht drauflehnen. Die Anzeige der Pumpe geht bis 16 Bar, was ich aber nicht ausprobiert habe. 
 
-![](/assets/uploads/2016/3/sks1.png)
+![](/assets/uploads/2016/3/sks1.jpg)
 
 Insgesamt macht die Pumpe einen sehr wertigen Eindruck. Alles wichtige ist aus Metall und entsprechend stabil.
 
@@ -33,6 +33,6 @@ Fazit: Wer eine qualitativ hochwertige Pumpe sucht, wird hier fündig. Auch der 
 
 [Kaufen bei Amazon](http://www.amazon.de/gp/product/B0019HKEV8/ref=as_li_tl?ie=UTF8&camp=1638&creative=19454&creativeASIN=B0019HKEV8&linkCode=as2&tag=ekiwide0b-21)
 
-![](/assets/uploads/2016/3/sks2.png)
+![](/assets/uploads/2016/3/sks2.jpg)
 
-![](/assets/uploads/2016/3/sks3.png)
+![](/assets/uploads/2016/3/sks3.jpg)
