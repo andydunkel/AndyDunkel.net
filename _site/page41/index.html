@@ -137,6 +137,42 @@
      
 		
 		<h1>
+		  <a href="/java/2011/06/22/java-check-if-your-code-is-running-in-eclipse.html">Java: Check if your code is running in Eclipse</a>
+		</h1>
+		  <p class="small">Posted on 22 June 2011 by Andy</p>
+		  <p><p>Sometimes, for example during debugging, it is useful to check if your code is running from the <a href="http://eclipse.org/">Eclipse</a> IDE to exclude certain code from execution.</p>
+
+<p>How can this be done? Here is an example:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">public class mainClass {
+
+    public static void main(String[] args) {
+        String inEclipse = System.getProperty(&quot;ineclipse&quot;);
+
+        if ((inEclipse == null) || (!inEclipse.equals(&quot;true&quot;))) {
+            System.out.println(&quot;Not running from Eclipse&quot;);
+            System.out.println(inEclipse);          
+        } else {
+            System.out.println(&quot;Running from Eclipse&quot;);
+            System.out.println(inEclipse);
+        }           
+    }
+}
+</code></pre></div>
+<!-- more -->
+
+<p>The other thing we need to do here is to set the VM argument “ineclipse” in the “Run Configurations”:</p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2011/06/image5.png"><img src="http://andydunkel.net/assets/uploads/2011/06/image_thumb.png" alt="image"></a></p>
+
+<p>Here is the output from the example from within Eclipse and from the command line:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/06/compare_output.png" alt="compare_output"></p>
+</p>		
+		  <p class="small">Tagged: Check, Command Line, Debugging, Eclipse, Java, and Running by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/gadgets/ipad/2011/06/21/ipad-2-erste-eindrcke.html">iPad 2-erste Eindrücke</a>
 		</h1>
 		  <p class="small">Posted on 21 June 2011 by Andy</p>
@@ -246,43 +282,6 @@
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/radfahren/2011/06/16/radtour-durch-den-kemptener-wald12-06-2011.html">Radtour durch den Kemptener Wald–12.06.2011</a>
-		</h1>
-		  <p class="small">Posted on 16 June 2011 by Andy</p>
-		  <p><p>Diesmal ging es wieder in den Kemptener Wald. Kilometerlange Wege durch den Wald und natürlich Einkehrmöglichkeiten wie die Mehlblockalpe oder “Zum Tobias”. <img src="http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile3.png" alt="Smiley"></p>
-
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:74b03f37-3d25-4ebf-829c-ab37b1391531" class="wlWriterEditableSmartContent"><div><object width="626" height="352"><param name="movie" value="http://www.youtube.com/v/BKm5tQRcd50?hl=en&amp;hd=1"></param><embed src="http://www.youtube.com/v/BKm5tQRcd50?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="626" height="352"></embed></object></div></div>
-
-<p>Das ganze natürlich mit stetigem Bergauf und Bergab, damit es nicht zu langweilig wird.</p>
-
-<p>In der Mehlblockalpe wurde wie beim letzten Mal Musik gespielt.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/06/DSCN2092.jpg" alt="DSCN2092"></p>
-
-<!-- more -->
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/06/DSCN2093.jpg" alt="DSCN2093"><img src="http://andydunkel.net/assets/uploads/2011/06/DSCN2097.jpg" alt="DSCN2097"><img src="http://andydunkel.net/assets/uploads/2011/06/DSCN2098.jpg" alt="DSCN2098"><img src="http://andydunkel.net/assets/uploads/2011/06/DSCN2099.jpg" alt="DSCN2099"><img src="http://andydunkel.net/assets/uploads/2011/06/DSCN2101.jpg" alt="DSCN2101"><img src="http://andydunkel.net/assets/uploads/2011/06/DSCN2102.jpg" alt="DSCN2102"><img src="http://andydunkel.net/assets/uploads/2011/06/DSCN2103.jpg" alt="DSCN2103"><img src="http://andydunkel.net/assets/uploads/2011/06/DSCN2104.jpg" alt="DSCN2104"><img src="http://andydunkel.net/assets/uploads/2011/06/DSCN2105.jpg" alt="DSCN2105"><img src="http://andydunkel.net/assets/uploads/2011/06/DSCN2108.jpg" alt="DSCN2108"></p>
-
-<p>Gesamtentfernung: 58,27 km (36,2 mi)<br>
-Gesamtzeit: 5:39:26<br>
-Zeit in Bewegung: 3:05:08<br>
-Durchschnitt in Bew.: 18,88 km/h (11,7 mi/h)<br>
-Max. Geschwindigkeit: 41,44 km/h (25,7 mi/h)<br>
-Niedrigste Höhenlage: 783 m (2570 Fuß)<br>
-Höchste Höhenlage: 995 m (3266 Fuß)<br>
-Höhengewinn: 799 m (2622 Fuß)<br>
-Maximale Steigung: 9 %<br>
-Minimale Steigung: -13 %<br>
-Aufgezeichnet am: So. Jun 12 14:23:55 MESZ 2011  </p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2011/06/map.png"><img src="http://andydunkel.net/assets/uploads/2011/06/map_thumb.png" alt="map"></a><br>
-<a href="http://maps.google.de/maps/ms?msa=0&amp;msid=208324790998598431494.0004a5891f67d32daf775&amp;ie=UTF8&amp;ll=47.750866,10.480957&amp;spn=0.184668,0.411301&amp;z=11&amp;source=embed">2011-06-12 14:23 - Kemptener Wald</a> auf einer größeren Karte anzeigen</p>
-</p>		
-		  <p class="small">Tagged: Görisried, Kemptener Wald, Mehlblockalpe, Radfahren, and Tobias by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -348,7 +347,7 @@ Aufgezeichnet am: So. Jun 12 14:23:55 MESZ 2011  </p>
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
 <li class='category'><a href='/categories/programmierung/'>programmierung (1)</a></li>
-<li class='category'><a href='/categories/radfahren/'>radfahren (29)</a></li>
+<li class='category'><a href='/categories/radfahren/'>radfahren (30)</a></li>
 <li class='category'><a href='/categories/raspberry/'>raspberry (3)</a></li>
 <li class='category'><a href='/categories/repair/'>repair (1)</a></li>
 <li class='category'><a href='/categories/reparatur/'>reparatur (3)</a></li>
@@ -376,7 +375,7 @@ Aufgezeichnet am: So. Jun 12 14:23:55 MESZ 2011  </p>
   
     <a href="/page40" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 41 of 46</span>
+  <span class="page_number ">Page: 41 of 47</span>
   
     <a href="/page42" class="next">Next</a>
   
