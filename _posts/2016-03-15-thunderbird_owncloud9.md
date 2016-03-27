@@ -62,3 +62,12 @@ Rot habe ich den richtigen Namen des Kalenders markiert. Dies gibt dann die folg
 	https://server/owncloud/remote.php/dav/calendars/admin/andy-1
 
 Und siehe da, mit der neuen URL konnte Thunderbird den Kalender nun ohne Fehler synchronisieren.
+
+
+## Update
+
+Ein Leser hat mich darauf hingewiesen, dass man die URL auch ohne <code>curl</code>-Befehl ermitteln kann. Man bleibt einfach mit der Maus auf dem Kalender, bis der Tooltip erscheint:
+
+![](/assets/uploads/2016/3/cal4.png)
+
+Schon hat man fast die richtige URL. Bei der angezeigten URL muss noch der Teil "dave.php/" entfernt werden. Anschließend hat man auch so die korrekte URL.
