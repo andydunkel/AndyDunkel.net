@@ -137,6 +137,38 @@
      
 		
 		<h1>
+		  <a href="/sonstiges/tools/2011/08/27/nicht-gengend-serverspeicher.html">Nicht genügend Serverspeicher</a>
+		</h1>
+		  <p class="small">Posted on 27 August 2011 by Andy</p>
+		  <p><p>Momentan ziehe ich Windows Probleme magisch an. Heute habe ich auf meinem Server (eigentlich nur eine Windows XP Kiste mit ein paar Freigaben) Acronis True Image installiert. Backups sind ja wichtig und so…</p>
+
+<p>Nicht nur, dass es hierbei schon <a href="http://blog.ekiwi.de/?p=733">zu Problemen kam</a>, nein, ich konnte anschließend auch nicht mehr auf meine Netzwerkfreigaben zugreifen. Fehlermeldung: “Nicht genügend Serverspeicher”. Super! <img src="http://andydunkel.net/assets/uploads/2011/08/wlEmoticon-cryingface.png" alt="Weinendes Smiley"></p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image21.png" alt="image"></p>
+
+<p>Nach etwas Internetrecherche kam ich zu folgendem Lösungsvorschlag. In der Registry unter<br>
+“HKEY<em>LOCAL</em>MACHINE\SYSTEM\CurrentControlSet\Services<br>
+\lanmanserver\parameters”</p>
+
+<p>den Parameter “IRPStackSize” abändern. 32 hex, bzw. 50 ist das Maximum.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image22.png" alt="image"></p>
+
+<p>Bei mir war der Eintrag nicht vorhanden, also anlegen mit Rechtsklick:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image23.png" alt="image"></p>
+
+<p>Anschließend den Wert eingeben:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image24.png" alt="image"></p>
+
+<p>Nun noch neustarten und schon ging wieder alles. Easy oder? <img src="http://andydunkel.net/assets/uploads/2011/08/wlEmoticon-smile2.png" alt="Smiley"></p>
+</p>		
+		  <p class="small">Tagged: Acronis, Netzwerkfreigaben, and Serverspeicher by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/sonstiges/2011/08/25/strom-bei-der-arbeit.html">Strom bei der Arbeit</a>
 		</h1>
 		  <p class="small">Posted on 25 August 2011 by Andy</p>
@@ -175,16 +207,6 @@
 		  <p><p><p>So heute mal wieder eine Neuanschaffung. Eine kleine Geschichte vorab. Vor ein paar Jahren habe ich mir angewöhnt alles an Dokumenten, was so reinkommt, einzuscannen und digital abzulegen. Papierloses Büro und so.</p> <p>Vieles kann dann weggeworfen werden (leider nicht alles), spart Platz im Ordner und ich habe jederzeit Zugriff auf die Dokumente. </p> <p>Bislang habe ich dafür einen Flachbettscanner verwendet. Alllerdings ist dieser für das Scannen von Dokumenten eher umständlich, jede Seite muss einzeln eingescannt werden. Beidseitig bedruckte Seiten müssen umgedreht werden. Nimmt auch ne Menge Platz weg.</p> <p>Zu allem Überfluss gab es keinen Treiber mehr für Windows 7. Also habe ich mit einem Linux unter VmWare gescannt. Summa summarum: Hat keinen Spaß mehr gemacht.</p> <p>Also musste etwas neues her. Anforderungen: Klein, Mehrfacheinzug, Duplexscan (beidseitig).</p> <p>Die Wahl fiel auf den <a href="http://www.amazon.de/gp/product/B0038N4OA8/ref=as_li_ss_tl?ie=UTF8&amp;tag=ekiwide0b-21&amp;linkCode=as2&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B0038N4OA8">Fujitsu ScanSnap S1300</a><img style="border-bottom-style: none !important; margin: 0px; border-left-style: none !important; border-top-style: none !important; border-right-style: none !important" border="0" alt="" src="http://www.assoc-amazon.de/e/ir?t=&amp;l=as2&amp;o=3&amp;a=B0038N4OA8" width="1" height="1">. Kostet bescheidene 280 Euro bei Amazon. Obwohl Amazon eine Lieferzeit von 4 Wochen angab, war der Scanner nach einer Woche da. Schön, das Ding ist klein. Zum Lieferumfang gehört der Scanner, 2 Stromkabel (deutsch und irisch!), Netzteil, Treiber-CD und 2 USB Kabel (Daten + Strom). </p> <p><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://andydunkel.net/assets/uploads/2011/08/image17.png" width="604" height="454"></p> <p>Der Scanner kann rein über USB betrieben werden, es kommt zwar die Meldung, dass er dann langsamer scannt, aber er ist immer noch schnell. So spart man sich etwas Kabelsalat und Steckdosenplatz.</p> <p>Scannen geht einfach: Dokument(e) einlegen, Scantaste drücken oder im Tray von Windows den Scan starten. Alle Seiten werden dann durchgezogen (bis zu 10 Seiten).</p> <p><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://andydunkel.net/assets/uploads/2011/08/image18.png" width="604" height="454"></p> <p>Anschließend kann man das Dokument als PDF abspeichern (durchsuchbar), mittels Texterkennung nach Word, Excel oder Powerpoint übertragen oder einfach als Bild speichern, Drucken, E-Mail, etc…</p> <p>Der Scanner lässt sich sowohl unter Windows als auch unter MacOS betreiben.</p> <p>Insgesamt, feines Gerät, wenn auch nicht gerade billig. Im Gegensatz zum Flachbettscanner spare ich mir jedoch eine Menge Zeit und Frustration.</p> <p>Zu guter Letzt noch ein Video damit man sehen kann wie der Mehrfacheinzug funktioniert und wie schnell das Ding scannt:</p> <p> <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:f63d9c07-053d-42e9-9b2a-7d67ed846ad9" class="wlWriterEditableSmartContent"><div><object width="508" height="285"><param name="movie" value="http://www.youtube.com/v/3z9L8Ks1N_U?hl=en&amp;hd=1"></param><embed src="http://www.youtube.com/v/3z9L8Ks1N_U?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="508" height="285"></embed></object></div></div></p> <p>Wie gesagt, den Scanner gibt es auf Amazon:</p><iframe style="width: 120px; height: 240px" marginheight="0" src="http://rcm-de.amazon.de/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=ekiwide0b-21&amp;o=3&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=ss_til&amp;asins=B0038N4OA8" frameborder="0" marginwidth="0" scrolling="no"></iframe></p>
 </p>		
 		  <p class="small">Tagged: Dokumentenscanner, klein, and USB by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/sonstiges/2011/08/15/schwan.html">Schwan</a>
-		</h1>
-		  <p class="small">Posted on 15 August 2011 by Andy</p>
-		  <p><p><img src="http://andydunkel.net/assets/uploads/2011/08/image16.png" alt="image"></p>
-</p>		
-		  <p class="small">Tagged: Schwan by Andy</p>
 		  <hr>
 		  
 		
@@ -248,7 +270,7 @@
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (3)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (2)</a></li>
+<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (3)</a></li>
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
@@ -262,7 +284,7 @@
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (22)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (4)</a></li>
+<li class='category'><a href='/categories/umwelt/'>umwelt (5)</a></li>
 <li class='category'><a href='/categories/webdesign/'>webdesign (2)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (1)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (5)</a></li>
