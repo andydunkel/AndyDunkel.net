@@ -8,7 +8,15 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Wed, 23 Mar 2016 18:00:00 +0100</pubDate>
+    <pubDate>Fri, 01 Apr 2016 19:00:00 +0200</pubDate>
+    <item>
+      <title>Mobilität März 2016</title>
+      <link>http://andydunkel.net/mobilitaet/umwelt/2016/04/01/mobilitaet_maerz_2016.html</link>
+      <description>&lt;p&gt;Diesen Monat wurde das Wetter langsam besser, so dass mehr mit dem Rad gefahren worden ist, auch längere Strecken. &lt;/p&gt;
+</description>
+      <pubDate>Fri, 01 Apr 2016 19:00:00 +0200</pubDate>
+      <dc:date>2016-04-01T19:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>SKS Rennkompressor</title>
       <link>http://andydunkel.net/radfahren/2016/03/23/sks_rennkompressor.html</link>
@@ -128,14 +136,6 @@
 </description>
       <pubDate>Wed, 06 Jan 2016 18:00:00 +0100</pubDate>
       <dc:date>2016-01-06T18:00:00+01:00</dc:date>
-    </item>
-    <item>
-      <title>Mobilität März 2016</title>
-      <link>http://andydunkel.net/mobilitaet/umwelt/2016/01/04/mobilitaet_maerz_2016.html</link>
-      <description>&lt;p&gt;Diesen Monat wurde das Wetter langsam besser, so dass mehr mit dem Rad gefahren worden ist, auch längere Strecken. &lt;/p&gt;
-</description>
-      <pubDate>Mon, 04 Jan 2016 18:00:00 +0100</pubDate>
-      <dc:date>2016-01-04T18:00:00+01:00</dc:date>
     </item>
     <item>
       <title>Festplatte eines Dell Vostro 2520 wechseln</title>
@@ -2381,6 +2381,6 @@ Da die Reifen nun knapp 10.000 km hinter sich hatten: Komplettwechsel. Hinten wa
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2016-03-23T18:00:00+01:00</dc:date>
+    <dc:date>2016-04-01T19:00:00+02:00</dc:date>
   </channel>
 </rss>
