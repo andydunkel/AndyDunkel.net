@@ -32,9 +32,9 @@ Sofern nicht grad von Nürnberg oder München nach Berlin fährt, bekommt man ke
 
 Vom Aufwand abgesehen, ist das ganze dann nichtmal mehr billiger. Die Einzelstrecken summieren sich:
 
-Kaufbeuren -> Nürnberg: 18,55 Euro
-Nürnberg -> Berlin: 35,25 Euro mit Sparpreis und 25%
-Berlin -> Lübben: 7,50 Euro
+	Kaufbeuren -> Nürnberg: 18,55 Euro
+	Nürnberg -> Berlin: 35,25 Euro mit Sparpreis und 25%
+	Berlin -> Lübben: 7,50 Euro
 
 Von Berlin nach Lübben kann man online kein Ticket buchen, da VBB-Tarif. Hier muss ich dann in Berlin erstmal noch am Fahrkartenautomaten vorstellig werden.
 
