@@ -4,7 +4,7 @@ comments: true
 date: 2016-04-28 17:00:00+00:00
 layout: post
 slug: hp_compaq_dc7800_soundcard
-title: 'hP Compaq DC 7800 - kein Sound'
+title: 'HP Compaq DC 7800 - kein Sound mehr'
 categories:
 - Computer
 tags:
