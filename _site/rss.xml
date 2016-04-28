@@ -8,7 +8,31 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Fri, 08 Apr 2016 19:00:00 +0200</pubDate>
+    <pubDate>Thu, 28 Apr 2016 19:00:00 +0200</pubDate>
+    <item>
+      <title>hP Compaq DC 7800 - kein Sound</title>
+      <link>http://andydunkel.net/computer/2016/04/28/hp%20compaq_dc7800_soundcard.html</link>
+      <description>&lt;p&gt;Mein Arbeitsrechner für Windows ist ein älterer HP Compaq DC 7800. Hat gebraucht gerade mal 60 Euro gekostet, SSD rein die ich noch rumliegen hatte und etwas gebrauchten RAM und schon rennt die Kiste.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/4/hp0.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Windows 10 läuft ebenfalls super auf der Kiste. Mache damit alles was anfällt. Surfen, Programmieren, Bildbearbeitung, Videobearbeitung, Zocken.&lt;/p&gt;
+
+&lt;p&gt;Vor kurzem habe ich noch eine neue Grafikkarte eingebaut, da die alte die hohe Auflösung von meinem Monitor nicht unterstützt hat.&lt;/p&gt;
+
+&lt;p&gt;Irgendwann habe ich festgestellt, dass die interne Soundkarte nicht funktioniert. Ist mir nicht gleich aufgefallen, da der Monitor eine Soundbar mit integrierter USB-Soundkarte hat. &lt;/p&gt;
+
+&lt;p&gt;Erst dachte ich, ok Windows 10 hat keinen Treiber dafür. Nach etwas Nachforschen bin ich aber drauf gekommen, dass wohl der Einbau der Grafikkarte dafür gesorgt hat, dass die Onboard-Soundkarte deaktiviert worden ist.&lt;/p&gt;
+
+&lt;p&gt;Nachdem ich diese im Bios (F10 beim Start drücken) wieder aktiviert hatte, funktionierte es wieder ohne Probleme. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/4/hp1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Hintergrund ist, dass die Grafikkarte ebenfalls eine interne HDMI-Soundkarte installiert und dadurch die vom Mainboard deaktiviert hat.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 28 Apr 2016 19:00:00 +0200</pubDate>
+      <dc:date>2016-04-28T19:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>25% Unsinn mit der Bahncard 50</title>
       <link>http://andydunkel.net/mobilitaet/umwelt/2016/04/08/bahncard_50_25_prozent_sparpreis.html</link>
@@ -6474,6 +6498,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2016-04-08T19:00:00+02:00</dc:date>
+    <dc:date>2016-04-28T19:00:00+02:00</dc:date>
   </channel>
 </rss>
