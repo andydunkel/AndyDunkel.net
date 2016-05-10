@@ -137,6 +137,40 @@
      
 		
 		<h1>
+		  <a href="/java/2011/10/12/java-reading-output-from-a-consolestdout.html">Java: Reading output from the Console/StdOut</a>
+		</h1>
+		  <p class="small">Posted on 12 October 2011 by Andy</p>
+		  <p><p>Today I had a small problem. I wanted to start an external C++ console programm with some parameters and get the output back to my Java program.</p>
+
+<p>Here is a code snippet that reads the output from a console program:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+
+  public static void main(String[] args) throws IOException {
+        String cmd = &quot;cmd.exe /c dir c:\\temp&quot;;
+
+        String line;
+        Process p = Runtime.getRuntime().exec(cmd);
+        BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        while ((line = input.readLine()) != null) {
+          System.out.println(line);
+        }
+        input.close();
+  }
+}
+</code></pre></div>
+<p>The snippet just outputs the received information.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/10/image5.png" alt="image"></p>
+</p>		
+		  <p class="small">Tagged: cmd.exe, Console, Java, read, and StdOut by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/eclipse/java/swt/2011/10/06/jface-set-selection-index-in-tableviewer.html">JFace: Set selection index in TableViewer</a>
 		</h1>
 		  <p class="small">Posted on 06 October 2011 by Andy</p>
@@ -206,28 +240,6 @@ tableViewer.setSelection(new StructuredSelection(tableViewer.getElementAt(select
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/eclipse/java/2011/09/27/java-open-an-url-in-the-standard-browser.html">Java: Open an URL in the standard browser</a>
-		</h1>
-		  <p class="small">Posted on 27 September 2011 by Andy</p>
-		  <p><p>Here is short code snippet to open an URL with the systems standard browser:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">public void openUrl(String url) throws IOException, URISyntaxException {
-  if(java.awt.Desktop.isDesktopSupported() ) {
-        java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
-
-        if(desktop.isSupported(java.awt.Desktop.Action.BROWSE) ) {
-          java.net.URI uri = new java.net.URI(url);
-              desktop.browse(uri);
-        }
-      } 
-}
-</code></pre></div>
-<p>java.awt.Desktop is supported as of Java 6.</p>
-</p>		
-		  <p class="small">Tagged: brower, open, standard, and system by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -288,7 +300,7 @@ tableViewer.setSelection(new StructuredSelection(tableViewer.getElementAt(select
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (3)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (4)</a></li>
+<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (5)</a></li>
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
@@ -302,7 +314,7 @@ tableViewer.setSelection(new StructuredSelection(tableViewer.getElementAt(select
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (22)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (6)</a></li>
+<li class='category'><a href='/categories/umwelt/'>umwelt (7)</a></li>
 <li class='category'><a href='/categories/webdesign/'>webdesign (2)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (1)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (5)</a></li>

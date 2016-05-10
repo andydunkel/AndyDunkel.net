@@ -8,7 +8,33 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Thu, 28 Apr 2016 19:00:00 +0200</pubDate>
+    <pubDate>Tue, 10 May 2016 19:00:00 +0200</pubDate>
+    <item>
+      <title>Mobilität April 2016</title>
+      <link>http://andydunkel.net/mobilitaet/umwelt/2016/05/10/mobilitaet_april_2016.html</link>
+      <description>&lt;p&gt;Fast geschafft mit dem Rad mehr zu fahren als mit dem Auto. Wird diesen Monat wohl nix werden, da der Umzug ansteht.
+Schmerzlich waren auch wieder mal Werkstattkosten in Höhe von 400 Euro. Hauptuntersuchung + Reparaturen. &lt;/p&gt;
+
+&lt;h3&gt;Auto&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Gesamt km: 266&lt;/li&gt;
+&lt;li&gt;Fahrten: 11&lt;/li&gt;
+&lt;li&gt;Durchschnitt pro Fahrt: 24,2 km&lt;/li&gt;
+&lt;li&gt;Getankt: 41,6 Liter&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Fahrrad&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Gesamt km: 264,55 km&lt;/li&gt;
+&lt;li&gt;Fahrten: 51&lt;/li&gt;
+&lt;li&gt;Durchschnitt pro Fahrt: 5,18 km&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      <pubDate>Tue, 10 May 2016 19:00:00 +0200</pubDate>
+      <dc:date>2016-05-10T19:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>HP Compaq DC 7800 - kein Sound mehr</title>
       <link>http://andydunkel.net/computer/2016/04/28/hp%20compaq_dc7800_soundcard.html</link>
@@ -6498,6 +6524,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2016-04-28T19:00:00+02:00</dc:date>
+    <dc:date>2016-05-10T19:00:00+02:00</dc:date>
   </channel>
 </rss>
