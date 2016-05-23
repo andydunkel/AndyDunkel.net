@@ -137,104 +137,26 @@
      
 		
 		<h1>
-		  <a href="/2011/08/09/nichts-2.html">Ausgebrannt</a>
+		  <a href="/eclipse/java/2011/04/28/get-plugin-path.html">Get plugin path </a>
 		</h1>
-		  <p class="small">Posted on 09 August 2011 by Andy</p>
-		  <p><p><img src="http://andydunkel.net/assets/uploads/2011/08/image11.png" alt="image"></p>
-</p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/sonstiges/2011/08/08/katzenbilder-3.html">Katzenbilder #3</a>
-		</h1>
-		  <p class="small">Posted on 08 August 2011 by Andy</p>
-		  <p><p>Zum internationalen Tag der Katze: Wieder mal ein paar Katzenbilder:</p>
+		  <p class="small">Posted on 28 April 2011 by Andy</p>
+		  <p><p>This snippets gets the local folder for a plugin:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">public static File getPluginFolder() {
+    if(pluginFolder == null) {
+        URL url = Platform.getBundle(&quot;my.plugin.id&quot;).getEntry(&quot;/&quot;);
+        try {
+            url = Platform.resolve(url);
+        }
+        catch(IOException ex) {
+            ex.printStackTrace();
+        }
+        pluginFolder = new File(url.getPath());
+    }
 
-<p><a href="http://andydunkel.net/assets/uploads/2011/08/DSCN2261.jpg"><img src="http://andydunkel.net/assets/uploads/2011/08/DSCN2261_thumb.jpg" alt="DSCN2261"></a><a href="http://andydunkel.net/assets/uploads/2011/08/DSCN2262.jpg"><img src="http://andydunkel.net/assets/uploads/2011/08/DSCN2262_thumb.jpg" alt="DSCN2262"></a><a href="http://andydunkel.net/assets/uploads/2011/08/DSCN2264.jpg"><img src="http://andydunkel.net/assets/uploads/2011/08/DSCN2264_thumb.jpg" alt="DSCN2264"></a><a href="http://andydunkel.net/assets/uploads/2011/08/DSCN2450.jpg"><img src="http://andydunkel.net/assets/uploads/2011/08/DSCN2450_thumb.jpg" alt="DSCN2450"></a><a href="http://andydunkel.net/assets/uploads/2011/08/DSCN2453.jpg"><img src="http://andydunkel.net/assets/uploads/2011/08/DSCN2453_thumb.jpg" alt="DSCN2453"></a><a href="http://andydunkel.net/assets/uploads/2011/08/DSCN2472.jpg"><img src="http://andydunkel.net/assets/uploads/2011/08/DSCN2472_thumb.jpg" alt="DSCN2472"></a><a href="http://andydunkel.net/assets/uploads/2011/08/DSCN2474.jpg"><img src="http://andydunkel.net/assets/uploads/2011/08/DSCN2474_thumb.jpg" alt="DSCN2474"></a></p>
-</p>		
-		  <p class="small">Tagged: Katzen, Kitten, and Kitties by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/ipad/2011/08/07/taschenrechner-app-fr-das-ipad.html">Taschenrechner App für das iPad</a>
-		</h1>
-		  <p class="small">Posted on 07 August 2011 by Andy</p>
-		  <p><p>Zu den Dingen die man für mobile Geräte braucht gehört definitiv ein Taschenrechner. Man weiß ja nie, wann eine Funktion geplottet werden muss, ein Integral berechnet …</p>
-
-<p>Die beste App die ich für das iPad gefunden habe: <a href="http://itunes.apple.com/de/app/hicalc-hd-pro/id442665708?mt=8">HiCalc Pro</a>. Gab es kostenlos im App Store, scheint aber mittlerweile unglaubliche 79 Cent zu kosten. Eine Free-Version gibt es <a href="http://itunes.apple.com/de/app/hicalc-hd-free/id444409004?mt=8">auch</a>.</p>
-
-<p>Was kann die Software alles? Eigentlich fast alles was man so braucht. Funktionsplotter, wissenschaftlicher Taschenrechner, komplexe Zahlen. Einheitenrechner, Statistik. Das einzige was mir spontan fehlt, Matrizenrechnung. Aber gut, braucht man eher selten. <img src="http://andydunkel.net/assets/uploads/2011/08/wlEmoticon-smile.png" alt="Smiley"></p>
-
-<p>Hier ein paar Screenshots:</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2011/08/image5.png"><img src="http://andydunkel.net/assets/uploads/2011/08/image_thumb2.png" alt="image"></a><a href="http://andydunkel.net/assets/uploads/2011/08/image6.png"><img src="http://andydunkel.net/assets/uploads/2011/08/image_thumb3.png" alt="image"></a></p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2011/08/image7.png"><img src="http://andydunkel.net/assets/uploads/2011/08/image_thumb4.png" alt="image"></a><a href="http://andydunkel.net/assets/uploads/2011/08/image8.png"><img src="http://andydunkel.net/assets/uploads/2011/08/image_thumb5.png" alt="image"></a></p>
-</p>		
-		  <p class="small">Tagged: ipad and Taschenrechner by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/sonstiges/2011/08/04/kran-holt-rhre-von-radiologie-ab.html">Kran holt Röhre von Radiologie ab</a>
-		</h1>
-		  <p class="small">Posted on 04 August 2011 by Andy</p>
-		  <p><p><p>Wie aufregend, gestern wurde eine alte Röhre von der Radiologie nebenan abgeholt. Mit Kran!</p> <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:61b6c211-b1b9-4d7f-af05-89e204e55f09" class="wlWriterEditableSmartContent"><div><object width="607" height="341"><param name="movie" value="http://www.youtube.com/v/gF5FRSIWa1M?hl=en&amp;hd=1"></param><embed src="http://www.youtube.com/v/gF5FRSIWa1M?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="607" height="341"></embed></object></div></div></p>
-</p>		
-		  <p class="small">Tagged: Kaufbeuren, Kran, Orbeid, and Rofu by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/2011/08/03/windows-7-service-pack-1-unbekannter-fehler-0x8004401e.html">Windows 7 Service Pack 1-Unbekannter Fehler 0x8004401e</a>
-		</h1>
-		  <p class="small">Posted on 03 August 2011 by Andy</p>
-		  <p><p>Tja, nach meinem letzten Eintrag <a href="http://andydunkel.net/sonstiges/2011/07/31/kein-service-pack-1-frs-thinkpad-edge.html">zum Thema</a>, war ich recht optimistisch. Aber denkste, zwar tauchte das Service Pack nun in der Liste der Updates auf, lud herunter und tat so, als ob es sich installierte.</p>
-
-<p>Beim nächsten Neustart wurde dann wieder ein Fehler festgestellt und die Installation zurückgerollt:</p>
-
-<p><strong>Unbekannter Fehler 0x8004401e</strong></p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2011/08/image.png"><img src="http://andydunkel.net/assets/uploads/2011/08/image_thumb.png" alt="image"></a></p>
-
-<p>Na toll, Google und Foren gaben zum Thema nicht viel her. Außer probiere mal Voodoo XY, installiere Windows neu, deinstalliere alle Treiber und installiere alle neu, mit Linux wäre das nicht passiert…</p>
-
-<p>Irgendwie ließ sich dann das ganze auf “fehlerhafte Systemdateien” eingrenzen. Welche, keine Ahnung. Aber es wurde in “Inplace Upgrade” empfohlen. Dies hat letztendlich auch die Lösung gebracht.</p>
-
-<p><strong>Nun aber zur Lösung:</strong></p>
-
-<!-- more -->
-
-<p>Eins vorneweg: ob das wirklich für alle, welche das Problem haben, die Lösung ist, kann ich nicht sagen. Auf jeden Fall sollte man vorher seine Daten sichern.</p>
-
-<p>Prinzipiell bleiben beim &quot;Inplace Upgrade&quot; alle Daten und Programme erhalten. Lediglich Windows wird neu drüberinstalliert. </p>
-
-<p>Zuerst legt man eine Windows DVD ein. Wer keine hat, kann sich ein Image aus dem Internet ziehen (<a href="http://stadt-bremerhaven.de/windows-7-dvd-als-iso-downloaden">Infos z.B. hier</a>). Wichtig, die DVD muss den gleichen Stand haben wie das installierte Windows, d.h. ohne Service Pack in diesem Fall.</p>
-
-<p>Dann geht man auf Arbeitsplatz und das DVD-Laufwerk öffnet die DVD und klickt auf die <strong>setup.exe</strong>:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/08/image1.png" alt="image"></p>
-
-<p>Anschließend klickt man auf “Jetzt installieren”. Dann  geht’s weiter:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/08/image2.png" alt="image"></p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2011/08/image3.png"><img src="http://andydunkel.net/assets/uploads/2011/08/image_thumb1.png" alt="image"></a></p>
-
-<p>Updates wollen wir keine machen und wir machen ein “Upgrade”.</p>
-
-<p>Dann legt er auch schon los. Dauert eine Weile, Neustart, Weiterinstallation.</p>
-
-<p>Nachdem das ganze fertig war, hat dann auch die Service Pack 1 Installation geklappt.</p>
-
-<p>Tada:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/08/image4.png" alt="image"></p>
-</p>		
-		  <p class="small">Tagged: 0x8004401e, Inplace, Installation, Problem, SP1, Upgrade, and Windows by Andy</p>
+    return pluginFolder;
+}
+</code></pre></div></p>		
+		  <p class="small">Tagged: Plugin folder eclipse by Andy</p>
 		  <hr>
 		  
 		
@@ -329,11 +251,11 @@
 <!-- Pagination links -->
 <div class="pagination">
   
-    <a href="/page33" class="previous">Previous</a>
+    <a href="/page47" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 34 of 48</span>
+  <span class="page_number ">Page: 48 of 48</span>
   
-    <a href="/page35" class="next">Next</a>
+    <span class="next ">Next</span>
   
 </div>
 

@@ -137,6 +137,28 @@
      
 		
 		<h1>
+		  <a href="/linux/2012/12/15/linux-netzwerkauslastung-grafisch-auf-der-konsole-ausgeben.html">Linux: Netzwerkauslastung grafisch auf der Konsole ausgeben</a>
+		</h1>
+		  <p class="small">Posted on 15 December 2012 by Andy</p>
+		  <p><p>Mein neues Spielzeit ist ein <a href="http://www.raspberrypi.org">Raspberry Pi</a>. Nun wollte ich die Netzwerkauslastung auf der Konsole anzeigen lassen. Natürlich gibt es unter Linux ein Tool dafür, man muss nur wissen wie es heißt. :-)</p>
+
+<p>In diesem Fall: &quot;ethstatus&quot;.</p>
+
+<p>Also geschwind installiert mit:</p>
+
+<blockquote>
+<p>sudo apt-get install ethstatus</p>
+</blockquote>
+
+<p>Anschließend einfach das Tool starten, standardmäßig wird die Schnittstelle eth0 überwacht. Über den Parameter -i kann man eine andere Schnittstelle angeben.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/12/EthStatus.png" alt="EthStatus"></p>
+</p>		
+		  <p class="small">Tagged:  by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/ireland/2012/12/05/irland.html">Irland</a>
 		</h1>
 		  <p class="small">Posted on 05 December 2012 by Andy</p>
@@ -219,112 +241,6 @@ private InputStream convertStringToInputStream(String s) {
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/gadgets/2012/11/24/roomba-error-9-repair-guide-english-version-2.html">Roomba error 9 repair guide (English version)</a>
-		</h1>
-		  <p class="small">Posted on 24 November 2012 by Andy</p>
-		  <p><p><strong>Dies ist die englische Version, wer die Reparaturanleitung auf Deutsch lesen möchte, <a href="http://andydunkel.net/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html">hier klicken</a>.</strong></p>
-
-<p>Since I got a lot of feedback for my repair guide for the <a href="http://www.amazon.de/gp/product/B002P68ADQ/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B002P68ADQ&amp;linkCode=as2&amp;tag=ekiwide0b-21">Roomba</a><img src="http://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&amp;l=as2&amp;o=3&amp;a=B002P68ADQ" alt="">, I decided to write an english version of the guide.</p>
-
-<p>I am a happy owner of a Roomba 580 device for almost 3 years now. However some time ago my Roomba stopped working. Turned out to the &quot;error 9 problem&quot;. The Roomba just moves turns around in circles and ends up with and 9 beep error code.</p>
-
-<p>After some investigation on the Internet it turned out that the problem is related to the bumper sensor. The bumper is the big black thing on the Roomba&#39;s front. It detects hits to the wall. This results in a Roomba thinking constantly hitting a wall and acting stupid.</p>
-
-<p>The good news is, this can easily (and also cheap) be fixed by replacing some components with a soldering gun.</p>
-
-<p>Note: this guide is for a Roomba 580 device, but should be the same for all 5xx models.</p>
-
-<p>Let&#39;s start! In the first step we find out which of the two bumper sensors is causing the problem. iRobot reckons on their website, that something may mechanical block the sensor. So in the first step, try to push the bumper a few times in order to remove any obstacles. However in most cases the sensors are just not working</p>
-
-<p>To find out which sensor is not working, we have to activate the Roomba&#39;s diagnostic mode:</p>
-
-<ul>
-<li><p>turn of the Roomba, the CLEAN LED must of off</p></li>
-<li><p>now press DOCK and CLEAN together and hold them</p></li>
-<li><p>press the SPOT button 6 times</p></li>
-<li><p>now release DOCK and CLEAN</p></li>
-<li><p>the Roomba should play some melody and is now in the test-0 mode, also the LEDs are blinking</p></li>
-<li><p>press the DOCK button 2 times to go to the bumber test (test-2)</p></li>
-<li><p>the Dirt detect LED should be blinking now and the CLEAN LED should turn red</p></li>
-<li><p>now we can test the bumbers, if we push the bumper right, the the DOCK LED should turn on until the bumper is released, if the LED is not turning on the right sensor is broken. The left bumper turns on the SPOT LED. If one of the LED&#39;s is constantly on, the sensor is broken too.</p></li>
-<li><p>Press DOCK and SPOT for 10 seconds to leave the diagnostic mode</p></li>
-</ul>
-
-<p>Now that we know which sensor is broken, we can disassemble the Roomba.</p>
-
-<p>For the repair the following parts are needed:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/diode2.png" alt="Diode2"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/ir_diode.png" alt="Ir diode"></p>
-
-<p>These can be orderd at <a href="http://www.conrad.com">Conrad</a> (the order numbers here are from Conrad). The price is around 1 Euro each item. For every sensor on of each diodes is needed. I reckon to order some spare ones too, just in case if something goes wrong, or like in my case, the other sensor broke some month later.</p>
-
-<p>Now we have to disassemble the Roomba. I suggest that you put the screws from each step in a labelled box.</p>
-
-<p>First remove the dirt box and the brushes. Now remove the plate on the bottom:</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image1.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb1.png" alt="image"></a></p>
-
-<p>Now remove the <a href="http://www.amazon.de/gp/product/B001VHQ32U/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B001VHQ32U&amp;linkCode=as2&amp;tag=ekiwide0b-21">battery</a><img src="http://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&amp;l=as2&amp;o=3&amp;a=B001VHQ32U" alt=""> and the bumper, the bumper is fixed with 10 screws.</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image2.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb2.png" alt="image"></a></p>
-
-<p>To remove the bumper completly we have the remove the sensor for the base station on the top:</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image3.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb3.png" alt="image"></a></p>
-
-<p>Having removed the bumper, we can now see the bumper switches. Check if they can be pushed without problem. Of not there might be a mechanical problem.</p>
-
-<p>Now remove the upper plating. These plate is relativly hard to remove. Use &quot;careful force&quot; to remove it:</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image4.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb4.png" alt="image"></a></p>
-
-<p>In the next step we have to remove a lot of screws. Note that one is slightly smaller than the others.</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image5.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb5.png" alt="image"></a></p>
-
-<p>Now we can see the circuit board. Remove the grey ring in the middle.</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image6.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb6.png" alt="image"></a></p>
-
-<p>You may not be surprised, even more screws to remove:</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image7.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb7.png" alt="image"></a></p>
-
-<p>Remove the cable connector from the circuit board:</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image8.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb8.png" alt="image"></a></p>
-
-<p>Carefully flip over the circuit board, after that we can already see the bumper sensors:</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image9.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb9.png" alt="image"></a></p>
-
-<p>These are fixed with two screws. We remove these now. Now we have to disassemble the sensor. We need to be very careful here not to break anything of the plastic housing. Inside is a small spring which easily might get lost. We don&#39;t want this to happen.</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image10.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb10.png" alt="image"></a></p>
-
-<p>Inside you find a small PCB with the two diodes:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/03/image11.png" alt="image"></p>
-
-<p>Now grab your soldering gun and replace the two components:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/diode_pcb.jpg" alt="Diode pcb"></p>
-
-<p>The IR receiver it the &quot;upper&quot; one with the slight blue color.</p>
-
-<p>Well thats it. Now reassemble the Roomba and hopefully everthing should be working again. Check the function of the sensors by using the diagnostic program.</p>
-
-<p>I reckon to do the testing before completly reassembling the Roomba.</p>
-
-<p><strong>Good luck!</strong></p>
-</p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -385,7 +301,7 @@ private InputStream convertStringToInputStream(String s) {
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (3)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (5)</a></li>
+<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (6)</a></li>
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
@@ -399,7 +315,7 @@ private InputStream convertStringToInputStream(String s) {
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (22)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (7)</a></li>
+<li class='category'><a href='/categories/umwelt/'>umwelt (8)</a></li>
 <li class='category'><a href='/categories/webdesign/'>webdesign (2)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (1)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (5)</a></li>
@@ -418,7 +334,7 @@ private InputStream convertStringToInputStream(String s) {
   
     <a href="/page17" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 18 of 47</span>
+  <span class="page_number ">Page: 18 of 48</span>
   
     <a href="/page19" class="next">Next</a>
   

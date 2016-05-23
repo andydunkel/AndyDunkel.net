@@ -137,6 +137,420 @@
      
 		
 		<h1>
+		  <a href="/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html">Roomba Fehler 9–Reparaturanleitung</a>
+		</h1>
+		  <p class="small">Posted on 11 March 2012 by Andy</p>
+		  <p><p>Wie ich erst berichtet hatte, stellte mein Roomba vor kurzem seinen Dienst mit Fehler 9 ein. Ärgerlich, nach 2.5 Jahren ist die Garantie natürlich abgelaufen und der Roomba auch recht teuer. Nach etwas Recherche im Internet fand ich heraus, dass es sich bei Fehler 9 um einen defekten Stoßsensor handelt.</p>
+
+<p>Der Roomba denkt er fährt gegen eine Wand und dreht sich nur noch im Kreis. Die gute Nachricht, das Ganze lässt sich mit etwas Bastelei, ein paar Dioden und Lötkolben kostengünstig reparieren. Schuld sind ein paar Bauelemente die wohl nach ein paar Jahren an Leistungsfähigkeit nachlassen und dann tritt der Fehler auf.</p>
+
+<p>Hier ist eine Anleitung wie ich meinen Roomba wieder flott bekommen habe.</p>
+
+<p>Die Anleitung ist für einen Roomba 580. Sollte aber für alle Roomba 5xx Geräte analog sein. </p>
+
+<p>Fangen wir an. Im ersten Schritt finden wir erst mal heraus, ob und welcher Sensor kaputt ist. Der Roomba hat 2 Stoßsensoren. Auf der Herstellerseite wird geraten bei Fehler 9 zuerst die Stoßsensoren mehrmals von Hand zu betätigen, für den Fall, dass ein Fremdkörper diese verklemmt oder verunreinigt hat.</p>
+
+<p>Wenn das nicht hilft, starten wir die Selbstdiagnose des Roomba. Der Roomba hat mehrere interne Diagnoseprogramme. So geht’s:</p>
+
+<ul>
+<li>zuerst den Roomba ausschalten, Clean LED muss aus sein</li>
+<li>Dock und Clean Button gleichzeitig drücken und gedrückt halten</li>
+<li>nun den Spot Button 6 mal drucken</li>
+<li>Dock und Clean Button loslassen</li>
+<li>der Roomba spielt nun eine Melodie und ist im test-0 Modus, die LEDs fangen an zu blinken</li>
+<li>nun den Dock Button 2 mal drücken, damit gelangen wir zum Bumper-Test (test-2)</li>
+<li>Dirt detect blinkt nun blau und die Clean LED wird rot</li>
+<li>nun können wir testen, betätigen wir den Bumper rechts, sollte die Dock LED leuchten bis der Bumper wieder losgelassen wird, leuchtet die LED nicht, ist der Sensor defekt (war bei mir so)</li>
+<li>der linke Bumper sollte die Spot LED leuchten lassen, auch hier, leuchtet diese nicht, ist der linke Sensor defekt.</li>
+<li>Dock und Spot für 10 Sekunden drücken um den Testmodus zu verlassen</li>
+</ul>
+
+<p>Nachdem wir nun wissen welcher Sensor kaputt ist, geht es nun darum den Roomba zu zerlegen.</p>
+
+<p>Folgende Ersatzteile werden benötigt:</p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb.png" alt="image"></a></p>
+
+<p>Diese gibt es bei Conrad (hier auch die Bestellnummern von Conrad). Kostet ca. 1 Euro pro Bauteil. Für jeden Sensor werden jeweils eine Diode und ein Fototransistor benötigt.</p>
+
+<p>Nun geht es ans Zerlegen des Roomba. Kleiner Hinweis. Am besten die Schrauben nach Arbeitsschritt sortiert aufbewahren. Man kommt sonst sehr leicht auseinander.</p>
+
+<p>Zuerst Dreckbehälter und die Bürsten entfernen. Anschließend die Bodenplatte abschrauben:</p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image1.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb1.png" alt="image"></a></p>
+
+<p>Jetzt wird die Batterie entfernt und der Bumper abmontiert. Dieser ist mit 10 Schrauben befestigt.</p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image2.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb2.png" alt="image"></a></p>
+
+<p>Um den Bumper komplett abzunehmen muss noch der Empfänger für die Basisstation gelöst werden:</p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image3.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb3.png" alt="image"></a></p>
+
+<p>Bei der Gelegenheit können wir nun die Bumperschalter prüfen. </p>
+
+<p>Lassen sich diese betätigen oder hat sich eventuell ein Fremdkörper verhakt. Falls nichts auffällt, geht es nun weiter mit der oberen Abdeckung. Diese wird mit verschiedenen Plastiknasen fixiert Also vorsichtig von vorne die Abdeckung anheben und die Plastiknasen ggf. mit einem Schraubenzieher lösen. Dann kann die Abdeckung entfernt werden.</p>
+
+<p>Die Abdeckung sitzt in der Mitte recht fest, man muss schon etwas Kraft aufwenden.</p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image4.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb4.png" alt="image"></a></p>
+
+<p>Im nächsten Schritt sind nun wieder einige Schrauben zu lösen. Hinweis: Eine ist etwas kleiner.</p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image5.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb5.png" alt="image"></a></p>
+
+<p>Nun kommt auch schon die Platine zum Vorschein. Jetzt entfernen wir den grauen Ring und Abdeckung in der Mitte.</p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image6.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb6.png" alt="image"></a></p>
+
+<p>Es wird kaum überraschen, noch mehr Schrauben:</p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image7.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb7.png" alt="image"></a></p>
+
+<p>Nun lösen wir die oberen Stecker der Platine:</p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image8.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb8.png" alt="image"></a></p>
+
+<p>Die Platine nun vorsichtig nach oben ziehen und überklappen. Nun sieht man bereits die Bumpersensorbaugruppe. <a href="http://andydunkel.net/assets/uploads/2012/03/image9.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb9.png" alt="image"></a></p>
+
+<p>Die Baugruppe ist mit 2 Schrauben fixiert. Diese lösen. Diese muss nun zerlegt werden. Vorsichtig die Plastikverbindung lösen. Achtung, drinnen ist eine Feder die bei der Gelegenheit gerne wegfliegt.</p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image10.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb10.png" alt="image"></a></p>
+
+<p>Hat man den Bumperschalter zerlegt findet man auch schon die kleine Platine und die Übeltäter:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/03/image11.png" alt="image"></p>
+
+<p>Wie man sieht habe ich auch eine kleine Verletzung beim Zerlegen davongetragen. <img src="http://andydunkel.net/assets/uploads/2012/03/wlEmoticon-smile.png" alt="Smiley"></p>
+
+<p>Nun muss man zum Lötkolben greifen und den Fototransistor und die Diode ersetzen. Zuerst die alten auslöten und dann die neuen einlöten:</p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image12.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb11.png" alt="image"></a></p>
+
+<p>Der Fototransistor ist der obere bei den Kabel und ist oben etwas blau.</p>
+
+<p>Anschließend alles wieder rückwärts zusammensetzen. Wenn nun alles geklappt hat und kein sonstiger Defekt der Elektronik vorlag, funktioniert der Roomba nun wieder. Am besten dazu das Diagnoseprogramm starten.</p>
+
+<p>Ich empfehle das zu machen, bevor der Roomba komplett zusammengesetzt ist. </p>
+
+<h1>Spende</h1>
+
+<p>Wem die Anleitung geholfen hat seinen Roomba wieder flott zu bekommen, kann, wenn er oder sie will, mir einen kleinen Betrag für die Kaffeekasse zukommen lassen. :-)</p>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="T5XFPN596APVJ">
+<input type="image" src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal.">
+<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+<hr>
+
+<h1>Alte Kommentare:</h1>
+
+<p>Durch den Serverumzug, hier die alten Kommentare vom Blog:</p>
+
+<h3>Jens says:</h3>
+
+<p>April 4, 2012 at 12:44  </p>
+
+<p>Hi Andy,</p>
+
+<p>sehr schönes ausführlicher Artikel ! Ich muss die Tage auch den Bumper (zum Glück nur diesen) meines Roomba 581 tauschen. Kannst du mir vielleicht kurz schildern, welche Schraubendrehergrößen du für das Zerlegen genutzt hast ? Das wäre sehr hilfreich für mich, da ich nicht alle Schraubendrehergrößen zu Hause habe. Ich habe gesehen man kann auch die Oberseite des Roomba abnehmen. Gibt es diese als Ersatzteil zu kaufen ? Viele Frage, aber ich habe die Hoffnung, dass du mir weiterhelfen kannst.</p>
+
+<p>Danke + Grüße,
+Jens
+Reply   </p>
+
+<h3>Andy says:</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">April 4, 2012 at 16:46  
+
+Hi Jens,
+
+erstmal viel Erfolg bei der Reparatur. Du brauchst Kreuzschraubenzieher verschiedener Größe. Würde sagen, groß, mittel und einen kleinen. Eigentlich nix spezielles. Uhrmacherwerkzeug kann für die kleinen nicht schaden.
+
+Wegen der Oberseite, weiß ich nicht. Habe aber nirgends Ersatzteile für den Roomba gesehen. Habe aber nur nach dem Bumpersensor geschaut, aber nix gefunden.
+
+Gruß
+Andy
+</code></pre></div>
+<h3>Jens says:</h3>
+
+<p>April 5, 2012 at 07:22  </p>
+
+<p>Hi Andy,</p>
+
+<p>danke dir für deine Antwort. Ich habe mir ein Schraubendreherset mit unterschiedlichen Größen bestellt (Kreuz/Schlitz und Torx). Damit sollte es passen.</p>
+
+<p>Ich habe noch etwas weiter recherchiert. Es gibt eine Ersatzblende für die obere große Abdeckung für ca. 10 EUR beim iRobot Distributor DE. Den Bumper selbst habe ich bei Klein Robotics nachbestellt. So lange es nur um die “Standardteile” geht, scheint das problemlos zu sein. Vielleicht hilft dir ja diese Info auch.</p>
+
+<p>Grüße,
+Jens</p>
+
+<h3>Andy says:</h3>
+
+<p>April 6, 2012 at 07:43  </p>
+
+<p>Danke für die Info. Gut zu wissen, dass man im Zweifelsfall Ersatzteile bekommt. Hoffe zwar, dass erstmal keine weiteren Reparaturen notwendig sind. :-)</p>
+
+<h3>Markus Cennodosy says:</h3>
+
+<p>December 8, 2012 at 22:42   </p>
+
+<p>Vielen Dank für die Information hier. Es funktioniert jetzt bei mir einwandfrei. Danke Danke</p>
+
+<h3>Elke says:</h3>
+
+<p>December 11, 2012 at 21:43  </p>
+
+<p>Hallo Andi,
+kannst du mir vielleicht weiterhelfen? Bei der Selbstdiagnose hat die Dock LED permanent geleuchtet. Ich habe daher vermutet, dass beim rechten Bumper vielleicht etwas klemmt. Ich habe den Roomba daher nach deiner tollen Anleitung zerlegt, aber da war nichts. Meinem Roomba hängen jetzt die Eingeweide raus. Was ist zu tun?
+Viele Grüße,
+Elke</p>
+
+<h3>Elke says:</h3>
+
+<p>December 11, 2012 at 21:59  </p>
+
+<p>Sorry, wegen des falsch geschriebenen Namens.</p>
+
+<h3>Andy says:</h3>
+
+<p>December 12, 2012 at 00:28  </p>
+
+<p>HI Elke,</p>
+
+<p>genau, wenn die Dock LED dauerhaft an ist, dann sendet der Sensor ein dauerhaftes Signal. D.h. bei Dir ist auch der rechte Bumper defekt und muss ersetzt werden, bzw. die Ersatzteile eingelötet.</p>
+
+<p>War bei mir auch so, beim ersten Bumper ging das Licht nicht an und beim Zweiten Dauerlicht. Ohne Löten geht es jetzt hier denke nicht weiter.</p>
+
+<p>mfg
+Andy</p>
+
+<h3>bernhard says:</h3>
+
+<p>December 21, 2012 at 17:52  </p>
+
+<p>hallo
+habe trotz der bumper rep. anleitung
+fehler nachwievor
+was könnte da noch schuld sein
+Beim bumpertest leuchtet immer noch dock und spot dauernd auf
+reset hilft auch keines
+Bitte mail wenn wer eine idee hat
+danke Bernhard</p>
+
+<h3>Beni says:</h3>
+
+<p>December 29, 2012 at 16:41  </p>
+
+<p>Vielen Dank für die Anleitung. Bei meinem waren beide Bumpersensoren defekt. Im Conrad waren nicht die richtigen Dioden an Lager. Mit der 153692 IR-Diode Osram Components IRL 81 A Gehäuseart Kunststoffgehäuse Wellen-Länge 880 nm funktioniert es auch. Viele Grüsse! Beni</p>
+
+<h3>Steffen says:</h3>
+
+<p>January 4, 2013 at 15:07    </p>
+
+<p>Hi Andy,
+vielen vielen Dank für diese absolut geniale Anleitung!
+Ich war schon der Meinung, dass ich meinen Roomba in Rente schicken muss! Dank dir hab ich ihn aber wieder flott bekommen.</p>
+
+<p>Achja, noch ein Tipp:
+Ich kenn das zb. bei den Glühbirnen im Auto: Wenn die linke kaput ist, geht ein paar Tage später die rechte kaput.
+Bei mir war nur ein Sensor defekt, aber da der Versand bei Conrad das teuerste war hab ich beide Teile 2 mal bestellt, dann bin ich im Fall der Fälle gerüstet!</p>
+
+<p>Grüße aus Esslingen a.N.</p>
+
+<h3>Andy says:</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">January 5, 2013 at 09:56    
+
+Hi Steffen,
+
+danke für das Feedback. Kannn Dir nur recht geben, am Besten gleich beide Sensoren machen, wenn das Ding einmal aufgeschraubt ist. Der andere Sensor ging bei mir ein paar Monate später kaputt.
+
+Gruß
+Andy
+</code></pre></div>
+<h3>Markus says:</h3>
+
+<p>February 19, 2013 at 12:57  </p>
+
+<p>Hallo Andy,</p>
+
+<p>auch mein Roomba läuft wieder! Hatte ihn schon fast 6 Monate im Keller stehen und auch schon aufgegeben. Jetzt frisst er wieder Staub :-) Also, danke für die Anleitung !!</p>
+
+<p>Gruß
+Markus</p>
+
+<h3>Peter Tschannen says:</h3>
+
+<p>February 27, 2013 at 20:10  </p>
+
+<p>Hallo Andy
+Nachdem mein Roomba 560 unter den geschilderten Symptomen gelitten hatte, habe ich ihn an das CH-Repair-Center verbracht.
+Von dort habe ich – sehr schnell mitgeteilt bekommen, dass ein NICHT ZU REPARIERBARER ELEKTRONIKSCHADEN vorläge. Man hat mir einen sogenannten Service-Roboter (gleiches, fabrikneues Gerät ohne Zubehör wie Accu, Netzteil etc) zum Preis von CHF 250.00 oder alternativ für
+- CHF 399.00 Romba 770
+- CHF 450.00 Romba 780
+Habe dann meinen Roomba unrepariert zurückverlangt und bekommen.
+Im Internet bin ich auf Deine Reparturanleitung gestossen.
+Habe bei “Conrad” die benötigten Teile (gleich 2x für beide Seiten) bestellt und gestern erhalten (Materialkosten CHF 5.20, Transport, Verpackung und Kleinmengenzuschlag CHF 17.90 = total CHF 23.10).
+Des Lötens unkundig, habe ich mich via Youtube diesbezüglich “weitergebildet”.
+Heute nun habe ich unseren Roomba nach Deinen Vorgaben zerlegt, entlötet, gelötet und wieder zusammengesetzt und es hat alles geklappt. Roomba macht’s wieder, absolut SENSATONELL!!!!
+Auch als Amateur (Buchhalter in Rente) ist diese Reparatur möglich.
+Warum nur können (wollen) es die Profis nicht tun?????
+Herzlichen Dank für Deine Super-Anleitung</p>
+
+<h3>Andy says:</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">February 27, 2013 at 20:17  
+
+Hallo Peter,
+
+super! Freut mich, dass Dir die Anleitung geholfen hat.
+Ja Du hast Recht, es wäre schade, das Gerät wegen so einer Kleinigkeit wegwerfen zu müssen.
+
+Gruß
+Andy
+</code></pre></div>
+<h3>Peter Tschannen says:</h3>
+
+<p>February 28, 2013 at 13:30  </p>
+
+<p>Hallo Andy
+Ich bin’s nochmals. Habe meine frohe Botschaft dem Repair-Center auch gemailt und Antwort erhalten, die die Community vielleicht auch interessiert. Die Anschrift habe ich aus Diskretionsgründen weggelassen:</p>
+
+<p>“Sehr geehrte Damen und Herren
+Mein Roomba 560 läuft wieder.
+Ich konnte ihn selbst mithilfe einer Internet-Reparatur-Anleitung instand stellen. Das Problem “Error 9″ scheint ja allgegenwärtig zu sein.
+Die Materialkosten (CONRAD) dafür betrugen CHF 5.20. Die Arbeit für mich als Laien dauerte zwar etwas lang, musste ich mir doch auch noch das Löten (via Youtube) beibringen!
+Für einen Profi mit ausgerüsteter Werkstatt jedoch innert maximal einer Stunde zu bewerkstelligen.
+Für mich unverständlich, dass Sie die Reparatur nicht machen konnten/wollten. Mit der Bitte um Kenntnisnahme grüsse ich Sie freundlich.
+Peter Tschannen”</p>
+
+<p>Antwort:</p>
+
+<p>“Guten Tag Herr Tschannen
+Besten Dank für Ihre Bemerkungen. Natürlich ist es möglich die defekten Teile zu ersetzen, nur haben die wenigsten Personen (wir auch nicht) Zugriff auf das Kalibrierungsgerät welches erforderlich ist um die Sensoren mit dem Mainboard neu zu kalibrieren. Wenn dies nicht gemacht wird kann es zu Folgestörungen kommen. Aus diesem Grunde „verbietet“ uns der Hersteller eine Reparatur des Error 9 und wir können dies leider auch nicht anbieten.
+Mit freundlichen Grüssen”</p>
+
+<p>Nochmals besten Dank und viele Grüsse</p>
+
+<p>Peter Tschannen</p>
+
+<h3>Felix says:</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">August 25, 2013 at 18:55    
+
+Haha :) Sensoren Kalibrieren ^^ IR-Sensoren geben nur “Licht da” und “Licht nicht da” weiter. Da gibt es nichts zu kalibrieren.
+</code></pre></div>
+<h3>Andy says:</h3>
+
+<p>February 28, 2013 at 20:01  </p>
+
+<p>Interessante Antwort. OK, dass der Fachhändler vielleicht nicht löten möchte, aber zumindest sollte es möglich sein, dass die Baugruppe als Ganzes ersetzt wird.</p>
+
+<p>Um Folgeschäden mache ich mir keine Sorgen, ich denke nicht, dass es welche gibt und ohne die Reparatur wäre der Roomba schon im Elektroschrott. :-)</p>
+
+<h3>hans says:</h3>
+
+<p>March 11, 2013 at 22:35 </p>
+
+<p>Hallo Andy,
+es ist unglaublich. Vor drei Stunden wollten wir unseren geliebten wallE schon wegpacken. Mit einer Träne im Knopfloch dachte ich mir, wenn er eh schon hin ist, schraub ich ihn mal auf. Eigentlich wollte ich ja nur wissen, welche Schrauben die richtigen sind. Dass ich dann ne Komplettanleitung bekomme, hätte ich nicht erwartet. Mit meinem losbudenmultischraubendreher hab ich alles zerlegt, Unmengen Staub geschluckt, um dann endlich am defekten Sensor zu landen. Erstens hatte ich keine Lust zum Löten und zweitens keine Ersatzteile. Also hab ich mein Glück mit einem q-tip probiert und die beiden Teile gereinigt. Siehe da nach einigem Schwitzen ist wieder alles verschraubt, kein Teil übrig und er läuft wieder. Vielen Dank für die Anleitung.
+Grüße
+Hans</p>
+
+<h3>Mathias says:</h3>
+
+<p>April 7, 2013 at 14:22  </p>
+
+<p>Danke für die tolle Anleitung, mein Roomba funktioniert jetzt wieder.
+Super Service</p>
+
+<h3>Dirk says:</h3>
+
+<p>April 21, 2013 at 10:28 </p>
+
+<p>Hi Andy,
+Vielen dank für die Super-Anleitung! Ich habe auch ein ähnliches Problem. Bei der Selbstdiagnose kam heraus, dass der Spot-Led dauerhaft an war. Da ich keine Ersarzteile zur Hand hatte, habe ich gestern den Roomba einmal zur Übung auseinandergenommen. Und siehe, nach dem Zummensetzen hat der Roomba wieder eine halbe Stunde funktioniert ( auch Sensortest bestanden). Dann wieder das gleiche ( dreht sich nur noch im Kreis).
+Meine Frage: Sind dann eindeutig Fototransistor und Diode defekt oder kann noch etwas anderes an der Bumpersensorbaugruppe defekt sein ? (weil es nach dem Zusammensetzen eine weile funktioniert hat)
+Nochmals vielen Dank!
+Gruß
+Dirk</p>
+
+<h3>Andy says:</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">April 21, 2013 at 11:04 
+
+Hi,
+
+kann natürlich keinen 100% Rat geben, aber nach allem was ich so ein Rückmeldungen bekommen habe, waren es bei diesem Fehler immer die Dioden.
+
+Bei mir hatte ich ein ähnliches Verhalten nach dem ersten Zerlegen und Zusammenbauen der Roomba auch erstmal wieder ging. Nach einer Weile dann wieder der gleiche Fehler.
+
+Ich vermute, dass die Bauteile auch etwas temperaturabhängig sind.
+
+Viel Erfolg!
+
+Andy
+</code></pre></div>
+<h3>Nadim says:</h3>
+
+<p>July 7, 2013 at 13:57   </p>
+
+<p>Hallo Andy, eine sehr tolle Anleitung zu dem beheben des Fehlers.</p>
+
+<p>Bei meinem Roomba 560 habe ich den Test gemacht, und ergab das die Leuchte Spot dauerhaft leuchtet, also ist der Bumper auf der Linken Seite defekt ? Ich würde dann am liebsten beide seiten reparieren und die Sensoren neu rein löten.</p>
+
+<p>Eine Frage habe ich noch, und zwar wenn ich mit einer Kamera vorne am Roomba die Sensoren schaue leuchten nicht alle? Wie sieht das bei dir aus ? Ich habe die Befürchtung, das noch mehr kaputt ist :-(</p>
+
+<p>Ich habe auch noch 2 Sensoren gefunden, die vorne weiter hinten im Gerät sitzen, vorne mittig. Leuchten die bei dir auch ?</p>
+
+<p>so das war es erstmal :-)</p>
+
+<p>Hoffe auf eine Antwort. viele grüße und einen schönen Tag noch Nadim</p>
+
+<h3>Andy says:</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">July 9, 2013 at 09:01   
+
+Hallo,
+
+ja ist denke auf jeden Fall sinnvoll gleich beide zu ersetzen. Bei mir ging auch die andere Seite ein paar Monate danach kaputt.
+
+Bzgl. der anderen Sensoren, weiß ich nicht genau. Ich dachte zuerst diese hätten was mit dem Bumper zu tun, haben sie aber nicht. Ich meine bei mir haben alle geleuchtet, bin mir aber nicht sicher. Aber wie gesagt, ich weiß leider nichts über deren genaue Funktion.
+
+Kann jetzt leider auch nicht nachschauen ohne das Ding zu zerlegen.
+
+Gruß
+Andy
+</code></pre></div>
+<h3>Dirk says:</h3>
+
+<p>August 1, 2013 at 21:19 </p>
+
+<p>Moin Andy. Auch ich habe , dank der super Anleitung, einen 560er der wieder tut was er soll. Dank auch an Benni, denn bei mir im Conrad waren auch die richtigen Dioden nicht am Lager. Mit der 153692 IR-Diode Osram hat es dann auch geklappt. Also noch mal DANKE für die Anleitung.</p>
+
+<p>Gruß Dirk</p>
+
+<h3>Jürgen says:</h3>
+
+<p>October 12, 2013 at 07:23   </p>
+
+<p>Hallo Andy,</p>
+
+<p>SENSATIONELL!
+Vielen vielen vielen vielen Dank für deine Anleitung hier.
+Ich habe zwei Stunden geschraubt und gelötet; jetzt läuft er wieder, unser Robbie.
+Aber man braucht schon ein wenig Fingerspitzengefühl…</p>
+
+<h3>Maran says:</h3>
+
+<p>November 10, 2013 at 22:31  </p>
+
+<p>Hallo an alle,
+auch ich (Ingenieur) habe mich nach ausführlichem Studium der Berichte an die Reparatur gewagt, obwohl ich unseren Putzi schon abgeschrieben habe. Die Dioden habe ich mir einfach von Conrad schicken lassen und eingebaut (das löten war noch das kniffeligste, weil ich zunächst nicht wusste, wie ich 2 Kontakte mit einem Lötkolben gleichzeitig auslöten soll, aber dank der Hilfe einer 3.Hand (meiner Frau) hat es geklappt). Ich hätte nicht gedacht, dass das alles funktioniert. Aber Putzi tut jetzt wieder ! Echt spitze ! Vielen Dank, besonders an Andy. Ist immer schön, den “Fachhändlern” ein Schnäppchen zu schlagen.</p>
+</p>		
+		  <p class="small">Tagged: Error 9 and roomba by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/gadgets/2012/03/07/roomba-out-of-order.html">Roomba out of order</a>
 		</h1>
 		  <p class="small">Posted on 07 March 2012 by Andy</p>
@@ -210,16 +624,6 @@
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/science/2012/01/26/arduino-inbetriebnahme.html">Arduino Inbetriebnahme</a>
-		</h1>
-		  <p class="small">Posted on 26 January 2012 by Andy</p>
-		  <p><p><p>Läuft, der Anfang ist getan.</p> <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:38e96524-3066-4e9c-8193-4f4cd204b33d" class="wlWriterEditableSmartContent"><div><object width="529" height="297"><param name="movie" value="http://www.youtube.com/v/ABPhPnQlpyg?hl=en&amp;hd=1"></param><embed src="http://www.youtube.com/v/ABPhPnQlpyg?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="529" height="297"></embed></object></div></div></p>
-</p>		
-		  <p class="small">Tagged: Arduino by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -280,7 +684,7 @@
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (3)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (5)</a></li>
+<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (6)</a></li>
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
@@ -294,7 +698,7 @@
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (22)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (7)</a></li>
+<li class='category'><a href='/categories/umwelt/'>umwelt (8)</a></li>
 <li class='category'><a href='/categories/webdesign/'>webdesign (2)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (1)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (5)</a></li>
@@ -313,7 +717,7 @@
   
     <a href="/page23" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 24 of 47</span>
+  <span class="page_number ">Page: 24 of 48</span>
   
     <a href="/page25" class="next">Next</a>
   
