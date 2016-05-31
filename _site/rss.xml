@@ -8,7 +8,36 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Mon, 23 May 2016 19:00:00 +0200</pubDate>
+    <pubDate>Tue, 31 May 2016 19:00:00 +0200</pubDate>
+    <item>
+      <title>Mobilität Mai 2016</title>
+      <link>http://andydunkel.net/mobilitaet/umwelt/2016/05/31/mobilitaet_mai_2016.html</link>
+      <description>&lt;p&gt;Diesen Monat waren es durch meinen Umzug ein paar mehr Autofahrten. Einiges an Kram musste transportiert werden. &lt;/p&gt;
+
+&lt;p&gt;Da ich nun weiter weg von meiner Arbeitsstelle wohne, sollten es hoffentlich auch mehr Kilometer auf dem Rad werden. :-)&lt;/p&gt;
+
+&lt;p&gt;Auch mit dem Rad ist es mehr geworden, durch den Urlaub und entsprechende Radtouren mehr km pro Tour.&lt;/p&gt;
+
+&lt;h3&gt;Auto&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Gesamt km: 408&lt;/li&gt;
+&lt;li&gt;Fahrten: 19&lt;/li&gt;
+&lt;li&gt;Durchschnitt pro Fahrt: 21,5 km&lt;/li&gt;
+&lt;li&gt;Getankt: 46,12 Liter&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Fahrrad&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Gesamt km: 368 km&lt;/li&gt;
+&lt;li&gt;Fahrten: 32&lt;/li&gt;
+&lt;li&gt;Durchschnitt pro Fahrt: 11,5 km&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      <pubDate>Tue, 31 May 2016 19:00:00 +0200</pubDate>
+      <dc:date>2016-05-31T19:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>Brompton im Zug und ICE</title>
       <link>http://andydunkel.net/mobilitaet/umwelt/2016/05/23/brompton_im_ice.html</link>
@@ -6546,6 +6575,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2016-05-23T19:00:00+02:00</dc:date>
+    <dc:date>2016-05-31T19:00:00+02:00</dc:date>
   </channel>
 </rss>

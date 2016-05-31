@@ -137,6 +137,55 @@
      
 		
 		<h1>
+		  <a href="/eclipse/java/2011/05/16/remove-unwanted-actions-in-rcp-application.html">Remove unwanted actions in RCP application</a>
+		</h1>
+		  <p class="small">Posted on 16 May 2011 by Andy</p>
+		  <p><p>In my current RCP application some unwanted Eclipse actions showed up in the toolbar and menubar:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/05/image4.png" alt="image"></p>
+
+<p>How to get rid of these?</p>
+
+<p>The solution is “simple”. Add the following method and array to the “ApplicationActionBarAdvisor”  class:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">private static final String[] actionSetId = new String[] { &quot;org.eclipse.ui.WorkingSetActionSet&quot;, //$NON-NLS-1$
+    &quot;org.eclipse.ui.edit.text.actionSet.navigation&quot;, //$NON-NLS-1$
+    &quot;org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo&quot;, //$NON-NLS-1$
+    &quot;org.eclipse.ui.actionSet.openFiles&quot;, //$NON-NLS-1$
+    &quot;org.eclipse.ui.edit.text.actionSet.annotationNavigation&quot;, //$NON-NLS-1$
+    &quot;org.eclipse.ui.NavigateActionSet&quot;, //$NON-NLS-1$
+    &quot;org.eclipse.search.searchActionSet&quot;}; //$NON-NLS-1$
+
+
+
+
+    private void removeUnWantedActions() {
+       ActionSetRegistry asr = WorkbenchPlugin.getDefault().getActionSetRegistry();
+       IActionSetDescriptor[] actionSets = asr.getActionSets();
+
+       IExtension ext = null;
+       for (IActionSetDescriptor actionSet : actionSets) {
+          for (String element : actionSetId) {
+              System.out.println(element);
+
+             if (element.equals(actionSet.getId())) {
+                ext = actionSet.getConfigurationElement().getDeclaringExtension();
+                asr.removeExtension(ext, new Object[] { actionSet });
+             }
+          }
+       }
+    }
+</code></pre></div>
+<p>Call “removeUnWantedActions” from the constructor.</p>
+
+<p>The unwanted actions should be gone now:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/05/image5.png" alt="image"></p>
+</p>		
+		  <p class="small">Tagged: RCP unwanted Actions Eclipse by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/radfahren/2011/05/14/radtour-zur-mehlblockalpe-13-05-2011.html">Radtour zur Mehlblockalpe 13.05.2011</a>
 		</h1>
 		  <p class="small">Posted on 14 May 2011 by Andy</p>
@@ -232,16 +281,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011</p>
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/radfahren/2011/05/01/radtour-nach-speiden-30-04-2011.html">Radtour nach Speiden 30.04.2011</a>
-		</h1>
-		  <p class="small">Posted on 01 May 2011 by Andy</p>
-		  <p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:77fd9044-ad2e-426c-992e-9289e7e1ac2b" class="wlWriterEditableSmartContent"><div><object width="585" height="328"><param name="movie" value="http://www.youtube.com/v/wI407tXmm38?hl=en&amp;hd=1"></param><embed src="http://www.youtube.com/v/wI407tXmm38?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="585" height="328"></embed></object></div></div>
-</p>		
-		  <p class="small">Tagged: Speiden Radfahren by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -302,7 +341,7 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011</p>
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (3)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (6)</a></li>
+<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (7)</a></li>
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
@@ -316,7 +355,7 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011</p>
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (22)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (8)</a></li>
+<li class='category'><a href='/categories/umwelt/'>umwelt (9)</a></li>
 <li class='category'><a href='/categories/webdesign/'>webdesign (2)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (1)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (5)</a></li>
