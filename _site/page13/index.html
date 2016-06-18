@@ -137,6 +137,31 @@
      
 		
 		<h1>
+		  <a href="/windows/linux/mac/tools/2013/12/05/exfat_truecrypt_volume.html">exFAT für TrueCrypt Volume nutzen</a>
+		</h1>
+		  <p class="small">Posted on 05 December 2013 by Andy</p>
+		  <p><p>Externe Festplatten und USB-Sticks verschlüssele ich meist mit TrueCrypt. Geht der Datenträger verloren, kann man zumindest recht sicher sein, dass niemand etwas mit den Daten anfangen kann. Da ich privat Windows, OSX und Linux nutze, stellt sich die Frage, welches Dateisystem man verwendet. Schließlich will ich von allen Betriebssystemen problemlos darauf zugreifen können.</p>
+
+<p>Die beste Lösung in Dateisystemform kommt von Microsoft und nennt sich <a href="http://de.wikipedia.org/wiki/ExFAT#exFAT">exFat</a>. Windows kann es ab XP lesen, OSX hat auch keine Probleme damit und auch Linux lässt sich problemlos dazu <a href="http://andydunkel.net/linux/2012/12/18/exfat-unter-ubuntu-nutzen.html">überreden</a>.</p>
+
+<p>Der Vorteil von exFat ist die Möglichkeit der Speicherung von Dateien größer 4GB. Leider bietet TrueCrypt keine Möglichkeit bei der Erstellung von Containern exFat zu nutzen. Entweder das alte FAT oder NTFS. </p>
+
+<p>Macht aber nix, exFat lässt sich trotzdem nutzen: Zuerst wird der TrueCrypt Container ganz normal erstellt und formatiert. </p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/12/truecrypt/true_format.png" alt=""></p>
+
+<p>Nachdem der Container erstellt wurde, mountet man ihn. Nun kann man das geöffnete Laufwerk mit dem exFat-Dateisystem formatieren. Im Explorer geht dies allerdings nicht, hier erlaubt Windows das exFat-Dateisystem nur für mobile Datenträger.</p>
+
+<p>Über die Eingabeaufforderung (Windows-Taste und dann CMD eingeben), lässt sich das Laufwerk dann mit exFat-Dateisystem ausstatten:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">format &lt;drive letter&gt;: /FS:exfat /Q
+</code></pre></div>
+<p><img src="http://andydunkel.net/assets/uploads/2013/12/truecrypt/true_format2.png" alt=""></p>
+</p>		
+		  <p class="small">Tagged: truecrypt and exfat by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/sonstiges/2013/11/30/festo_bionicopter.html">Festo BionicOpter</a>
 		</h1>
 		  <p class="small">Posted on 30 November 2013 by Andy</p>
@@ -305,40 +330,6 @@ With that workaround the tab key is now working as expected, jumping to the next
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/eclipse/2013/10/27/eclipsercp-overwrite-a-default-handler-in-your-view.html">Eclipse/RCP: Overwrite a default handler in your view</a>
-		</h1>
-		  <p class="small">Posted on 27 October 2013 by Andy</p>
-		  <p><p>In my RCP application CTRL + S is assigned to the save function of the current editor. Addional I wanted to have the same shortcut for a save function in a view.</p>
-
-<p>This can be achieved very easy (as always, if you know the steps). :-)</p>
-
-<p>In the views plugin, add a handler to the org.eclipse.ui.handlers section of your plugin.xml:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/10/NewImage.png" alt="NewImage"></p>
-
-<p>This causes the command only to be active in our view. Next thing is to define the proper handler class which performs the operation:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/10/handler2.png" alt="Handler2"></p>
-
-<p>In XML it looks like that:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;extension point=&quot;org.eclipse.ui.handlers&quot;&gt;
-  &lt;handler class=&quot;com.my.awesome.SaveContentHandler&quot; commandid=&quot;org.eclipse.ui.file.save&quot;&gt;
-     &lt;activewhen&gt;
-        &lt;with variable=&quot;activePartId&quot;&gt;
-           &lt;equals value=&quot;com.my.awesome.view&quot;&gt;
-           &lt;/equals&gt;
-        &lt;/with&gt;
-     &lt;/activewhen&gt;
-  &lt;/handler&gt;
-&lt;/extension&gt;
-</code></pre></div>
-<p>Thats it!</p>
-</p>		
-		  <p class="small">Tagged: command, Eclipse, Handler, RCP, and View by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -399,7 +390,7 @@ With that workaround the tab key is now working as expected, jumping to the next
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (3)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (7)</a></li>
+<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (8)</a></li>
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
@@ -413,7 +404,7 @@ With that workaround the tab key is now working as expected, jumping to the next
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (22)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (9)</a></li>
+<li class='category'><a href='/categories/umwelt/'>umwelt (10)</a></li>
 <li class='category'><a href='/categories/webdesign/'>webdesign (2)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (1)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (5)</a></li>
