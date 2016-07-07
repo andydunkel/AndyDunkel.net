@@ -138,6 +138,31 @@
      
 		
 		<h1>
+		  <a href="/coding/eclipse/2012/11/02/rcp-switch-to-perspective-via-code.html">RCP: Switch to perspective via code</a>
+		</h1>
+		  <p class="small">Posted on 02 November 2012 by Andy</p>
+		  <p><p>A small snippet which switches to a certain perspective via code:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">IPerspectiveDescriptor[] perspectives =
+PlatformUI.getWorkbench().getPerspectiveRegistry().getPerspectives();
+
+IWorkbenchPage page =
+PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+    if(page != null) {
+      for (IPerspectiveDescriptor des : perspectives) {
+        if (des.getId().equals(&quot;my.perspective.id&quot;)) {
+          page.setPerspective(des);
+          break;
+        }
+      }
+    }
+
+return null;
+</code></pre></div></p>		
+		  <p class="small">Tagged:  by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/coding/eclipse/2012/11/01/rcp-remove-unwanted-preference-pages.html">RCP: Remove unwanted preference pages</a>
 		</h1>
 		  <p class="small">Posted on 01 November 2012 by Andy</p>
@@ -299,34 +324,6 @@ public void createInitialLayout(IPageLayout layout) {
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/hiking/ireland/2012/08/08/gougane-bara-irland.html">Gougane Bara Irland</a>
-		</h1>
-		  <p class="small">Posted on 08 August 2012 by Andy</p>
-		  <p><p><a href="http://de.wikipedia.org/wiki/Gougane_Barra">Gougane Bara</a> Irland, Wandertour</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/P1000046.jpg" alt="P1000046"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/P1000058.jpg" alt="P1000058"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/P1000065.jpg" alt="P1000065"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/SDC10308.jpg" alt="SDC10308"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/SDC10281.jpg" alt="SDC10281"></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/SDC10317.jpg" alt="SDC10317"></p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-</p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -386,7 +383,7 @@ public void createInitialLayout(IPageLayout layout) {
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (3)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (9)</a></li>
+<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (10)</a></li>
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
@@ -419,7 +416,7 @@ public void createInitialLayout(IPageLayout layout) {
   
     <a href="/page20" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 21 of 48</span>
+  <span class="page_number ">Page: 21 of 49</span>
   
     <a href="/page22" class="next">Next</a>
   
