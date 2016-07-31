@@ -138,6 +138,136 @@
      
 		
 		<h1>
+		  <a href="/lazarus/delphi/2015/09/09/lazarus_synapse_progress.html">Download with progress using Lazarus and Synapse</a>
+		</h1>
+		  <p class="small">Posted on 09 September 2015 by Andy</p>
+		  <p><p>The Synapse library provides a lot of TCP/IP functions for use in Delphi and Lazarus. </p>
+
+<p><img src="/assets/uploads/2015/9/laz1.png" alt=""></p>
+
+<p>I needed to download something from a HTTP server. The <a href="http://wiki.freepascal.org/Synapse">basic download</a> is very simple: </p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">HTTPGetResult := HTTPSender.HTTPMethod(&#39;GET&#39;, URL);
+if (HTTPSender.ResultCode &gt;= 100) and (HTTPSender.ResultCode&lt;=299) then begin
+   HTTPSender.Document.SaveToFile(TargetFile);
+</code></pre></div>
+<p>While this code works, it is blocking and there is no information on the progress, nor any information how big the file is, which is downloaded.</p>
+
+<p>So I started by implementing a class around the download function:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">type
+  { THttpDownloader }
+
+  THttpDownloader = class
+  public
+    function DownloadHTTP(URL, TargetFile: string; ProgressMonitor : IProgress): Boolean;
+  private
+    Bytes : Integer;
+    MaxBytes : Integer;
+    HTTPSender: THTTPSend;
+    ProgressMonitor : IProgress;
+    procedure Status(Sender: TObject; Reason: THookSocketReason; const Value: String);
+    function GetSizeFromHeader(Header: String):integer;
+  end; 
+</code></pre></div>
+<p>I also defined an interface to get the UI notified about the progress:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">type
+  IProgress = interface
+    procedure ProgressNotification(Text: String; CurrentProgress : integer; MaxProgress : integer);
+  end;  
+</code></pre></div>
+<p>The download code from above moves to the &quot;DownloadHTTP&quot; function:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">function THttpDownloader.DownloadHTTP(URL, TargetFile: string; ProgressMonitor : IProgress): Boolean;
+var
+  HTTPGetResult: Boolean;
+begin
+  Result := False;
+  Bytes:= 0;
+  MaxBytes:= -1;
+  Self.ProgressMonitor:= ProgressMonitor;
+
+  HTTPSender := THTTPSend.Create;
+  try
+    HTTPSender.Sock.OnStatus:= Status;
+    HTTPGetResult := HTTPSender.HTTPMethod(&#39;GET&#39;, URL);
+    if (HTTPSender.ResultCode &gt;= 100) and (HTTPSender.ResultCode&lt;=299) then begin
+      HTTPSender.Document.SaveToFile(TargetFile);
+      Result := True;
+    end;
+  finally
+    HTTPSender.Free;
+  end;
+end;
+</code></pre></div>
+<p>To get updates on the progress we need to implement a callback function, which we assign in the line <code>HTTPSender.Sock.OnStatus:= Status;</code>.</p>
+
+<p>This function looks like that:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">procedure THttpDownloader.Status(Sender: TObject; Reason: THookSocketReason; const Value: String);
+var
+  V, currentHeader: String;
+  i: integer;
+begin
+  //try to get filesize from headers
+  if (MaxBytes = -1) then
+  begin
+    for i:= 0 to HTTPSender.Headers.Count - 1 do
+    begin
+      currentHeader:= HTTPSender.Headers[i];
+      MaxBytes:= GetSizeFromHeader(currentHeader);
+      if MaxBytes &lt;&gt; -1 then break;
+    end;
+  end;
+
+  V := GetEnumName(TypeInfo(THookSocketReason), Integer(Reason)) + &#39; &#39; + Value;
+
+  if Reason = THookSocketReason.HR_ReadCount then
+  begin
+    Bytes:= Bytes + StrToInt(Value);
+    ProgressMonitor.ProgressNotification(V, Bytes, MaxBytes);
+  end;
+end;   
+
+function THttpDownloader.GetSizeFromHeader(Header: String): integer;
+var
+  item : TStringList;
+begin
+  Result:= -1;
+
+  if Pos(&#39;Content-Length:&#39;, Header) &lt;&gt; 0 then
+  begin
+    item:= TStringList.Create();
+    item.Delimiter:= &#39;:&#39;;
+    item.StrictDelimiter:=true;
+    item.DelimitedText:=Header;
+    if item.Count = 2 then
+    begin
+      Result:= StrToInt(Trim(item[1]));
+    end;
+  end;
+end;     
+</code></pre></div>
+<p>What are we doing here? </p>
+
+<p>First of all we look into the headers to get the file size. We have to wait and check if the header is there. The first events do not contain the <code>Content-Length:</code> information. </p>
+
+<p>Once found, we extract that information. There are several events popping up here, which you can react to. But we only check for <code>THookSocketReason.HR_ReadCount</code> in that example. </p>
+
+<p>&quot;HR_ReadCount&quot; provides us with the information how many bytes where read since the last event. </p>
+
+<p>The progress is then reported to the UI:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">procedure TMainForm.ProgressNotification(Text: String; CurrentProgress: integer; MaxProgress: integer);
+begin
+  if (MaxProgress &lt;&gt; -1) then ProgressBar.Max:= MaxProgress;
+  ProgressBar.Position:= CurrentProgress;
+  memoStatus.Lines.Add(Text);
+  Application.ProcessMessages;
+end;
+</code></pre></div>
+<p>Well thats it! The complete source code can be <a href="/assets/uploads/2015/9/laz_downloader.zip">downloaded here</a>.</p>
+</p>		
+		  <p class="small">Tagged: Synapse by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/computer/2015/08/09/windows_10_on_thinkpad_w500.html">Windows 10 auf Lenovo Thinkpad W500</a>
 		</h1>
 		  <p class="small">Posted on 09 August 2015 by Andy</p>
@@ -367,49 +497,6 @@ Auch die <a href="https://www.deinhandy.de/smartphones">Vielzahl an Smartphones<
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/computer/2015/05/07/thinkpad_w500_usb_30.html">USB 3.0 am Thinkpad W500 nachrüsten</a>
-		</h1>
-		  <p class="small">Posted on 07 May 2015 by Andy</p>
-		  <p><p>USB 2.0 ist nicht gerade schnell, wenn man große Datenmengen auf die externe Festplatte verschieben möchte. Da mein Thinkpad W500 über zwei PCMCIA-Slots verfügt, lag es nahe den Mangel durch eine entsprechende Karte zu beheben.</p>
-
-<p>Diese gibt es wie Sand am Meer und ich habe mich für die vergleichsweise günstige <a href="http://www.amazon.de/gp/product/B00C7NV69C/ref=as_li_tl?ie=UTF8&amp;camp=1638&amp;creative=6742&amp;creativeASIN=B00C7NV69C&amp;linkCode=as2&amp;tag=ekiwide0b-21&amp;linkId=YXMCVAQEPDUP5V4Y">Karte von CSL</a> entschieden.</p>
-
-<p><img src="/assets/uploads/2015/5/usb0.jpg" alt=""></p>
-
-<p>Es handelt sich um eine 34mm breite Karte, wobei das Thinkpad auch eine 54 Breite aufnehmen kann. Hier gibt es <a href="http://www.amazon.de/gp/product/B008BHN6MI/ref=as_li_tl?ie=UTF8&amp;camp=1638&amp;creative=6742&amp;creativeASIN=B008BHN6MI&amp;linkCode=as2&amp;tag=ekiwide0b-21&amp;linkId=HWTRAGVQV7EEK5I5">eine mit externer Spannungsversorgung</a>, diese könnte hier durchaus die bessere Wahl sein, wenn man externe Festplatten ohne Netzteil betreiben möchte. </p>
-
-<h2>Karte</h2>
-
-<p>Die Karte hat zwei USB 3.0 Ports und bringt Treiber für Windows mit. Linux habe ich 
-noch nicht getestet. Nach der Installation funktionierte die Karte auch problemlos.</p>
-
-<p>Zur Hardware kann man nicht viel sagen. Die Ränder sind etwas scharfkantig und die USB-Ports sind etwas schwergängig. Je nach Mechanik kann es sein, dass beim Ziehen vom USB-Stecker gleich die Karte mit aus dem Slot zieht.</p>
-
-<p>Während einige Leute auf Amazon klagen, dass die Karte bei Ihren Laptops etwas heraussteht, passt diese beim W500 ganz gut und steht auch nicht heraus.</p>
-
-<p><img src="/assets/uploads/2015/5/usb1.jpg" alt=""></p>
-
-<h2>Stromversorgung</h2>
-
-<p>Problematisch ist die Stromversorgung von externen 2.5 Zoll Platten. Getestet habe ich die Karte mit zwei verschiedenen Laptops. </p>
-
-<p>Hier kommt unter Umständen nicht genug Strom an und es kommt zu Lese- und Schreibfehlern oder die Platte läuft nicht an. Während die Fehler an einem Laptop auftraten, funktionierte die Platte am Thinkpad jedoch ohne Probleme. Abhilfe schafft hier eventuell die PCMCIA-Karte mit extra Stromversorgung, oder man verwendet externe Platten mit Netzeil oder Y-Kabel.</p>
-
-<h2>Geschwindigkeit</h2>
-
-<p>Die Geschwindigkeit kann sich sehen lassen und liegt konstant über USB 2.0:</p>
-
-<p><img src="/assets/uploads/2015/5/usb2.png" alt=""></p>
-
-<h2>Fazit</h2>
-
-<p>Die Karte funktioniert und ist eine günstige Möglichkeit ein älteres Laptop mit brauchbaren USB 3.0 Geschwindigkeiten auszustatten.</p>
-</p>		
-		  <p class="small">Tagged: Thinkpad and W500 by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -469,7 +556,7 @@ noch nicht getestet. Nach der Installation funktionierte die Karte auch probleml
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (3)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (10)</a></li>
+<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (11)</a></li>
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
@@ -483,7 +570,7 @@ noch nicht getestet. Nach der Installation funktionierte die Karte auch probleml
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (22)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (11)</a></li>
+<li class='category'><a href='/categories/umwelt/'>umwelt (12)</a></li>
 <li class='category'><a href='/categories/webdesign/'>webdesign (2)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (1)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (5)</a></li>
