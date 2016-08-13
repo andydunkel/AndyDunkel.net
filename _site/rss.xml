@@ -8,7 +8,99 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Sun, 31 Jul 2016 19:00:00 +0200</pubDate>
+    <pubDate>Sat, 13 Aug 2016 19:00:00 +0200</pubDate>
+    <item>
+      <title>ElTexto</title>
+      <link>http://andydunkel.net/coding/tools/2016/08/13/eltexto.html</link>
+      <description>&lt;p&gt;Vor einiger Zeit habe ich eine neue Software angefangen zu programmieren. Kam schon lange nicht mehr vor, da die meiste Zeit in die Pflege von unseren anderen Produkten wie &lt;a href=&quot;http://da-software.de/daform/daform_start.htm&quot;&gt;DA-Formmaker&lt;/a&gt; und &lt;a href=&quot;http://da-software.de/dabestell/index.htm&quot;&gt;DA-BestellFormular&lt;/a&gt; gewandert ist.&lt;/p&gt;
+
+&lt;p&gt;Ursprünglich sollte es eine Anwendung für den privaten Gebrauch werden. Hintergrund war, dass ich meine Notizgen bisher in Evernote verwaltet habe. Diese wollte ich aber lieber in meiner privaten Cloud haben.&lt;/p&gt;
+
+&lt;p&gt;Meine Anforderungen waren: Notizen sollten sich hierarchisch verwalten lassen. Als Syntax sollte Markdown zum Einsatz kommen. Markdown verwende ich z.B. auch hier auf dieser Webseite zum Verfassen von Artikeln. Bilder und andere Dateien sollten sich ebenfalls leicht einbinden lassen.&lt;/p&gt;
+
+&lt;p&gt;Da sich Markdown sehr leicht in HTML umwandeln lässt, könnte man die Einträge dann in der Vorschau schön formatiert und mit Bildern anschauen.&lt;/p&gt;
+
+&lt;p&gt;Irgendwann wurde aus der Software dann doch etwas mehr. Es entstand &lt;a href=&quot;http://eltexto.net/&quot;&gt;ElTexto&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/8/eltexto1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Die Software&lt;/h2&gt;
+
+&lt;p&gt;ElTexto wurde zu einer recht universellen Anwendung. Die Anforderungen an Notizen und Webseiten sind in etwa gleich: Es gibt &lt;a href=&quot;http://eltexto.net/Funktionen/Seitenverwaltung/index.html&quot;&gt;Seiten/Rubriken&lt;/a&gt;, die haben dann ggf. noch Unterseiten, welche wieder Unterseiten haben können. &lt;/p&gt;
+
+&lt;p&gt;Ob der Inhalt nun eine Notiz, Unterseite einer Webseite, Eintrag einer Online-Hilfe oder einer Dokumentation ist, letztendlich egal.&lt;/p&gt;
+
+&lt;p&gt;In ElTexto erstellt man also ein neues Projekt und wählt eine &lt;a href=&quot;http://eltexto.net/Funktionen/Templates/index.html&quot;&gt;HTML-Vorlage&lt;/a&gt; aus. Die Vorlage dient als Basis für die ElTexto-Webseite. Natürlich lässt sich die Vorlage anpassen.&lt;/p&gt;
+
+&lt;p&gt;Die Vorlagen basieren auf Bootstrap. Das hat den Vorteil, dass diese responsive sind und auch auf dem Smartphone schick aussehen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/8/eltexto2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Inhalte&lt;/h2&gt;
+
+&lt;p&gt;Die Eingabe erfolgt mittels &lt;a href=&quot;http://eltexto.net/Funktionen/Markdown/index.html&quot;&gt;Markdown&lt;/a&gt;. Damit kann man die Inhalte schnell eingeben, ohne sich mit HTML-Syntax auseinandersetzen zu müssen. Markdown kann zudem in jedem Texteditor bearbeitet werden.&lt;/p&gt;
+
+&lt;p&gt;Z.B. um eine Überschrift in Markdown zu setzen macht man einfach eine Raute an den Zeilenanfang:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;# Überschrift
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bei Bildern war es uns wichtig, dass diese sich besonders leicht integrieren lassen. Bilder in Dateiform lassen sich mittels Drag&amp;amp;Drop einfügen. Im Hintergrund werden diese automatisch ins Projekt kopiert.&lt;/p&gt;
+
+&lt;p&gt;Viele Bilder sind bei mir Screenshots. In vielen HTML-Editorn, muss ich die &lt;a href=&quot;http://eltexto.net/Funktionen/Bilder/index.html&quot;&gt;Bilder&lt;/a&gt; erstmal ins richtige Verzeichnis abspeichern und dann einbinden.&lt;/p&gt;
+
+&lt;p&gt;In ElTexto sollte das direkt aus der Zwischenablage funktionieren. Bild kopieren, in ElTexto einfügen anklicken und im Hintergrund wird die Bilddatei eingebunden in automatisch ins Projekt übernommen.&lt;/p&gt;
+
+&lt;h2&gt;Export&lt;/h2&gt;
+
+&lt;p&gt;Hat man alle Inhalte angelegt, klickt man auf den Export-Button und schon wird die Webseite erstellt. Einen &lt;a href=&quot;http://eltexto.net/Funktionen/FTP-Upload/index.html&quot;&gt;FTP-Upload&lt;/a&gt; haben wir auch eingebaut. Mit einem Klick geht die Seite dann online.&lt;/p&gt;
+
+&lt;p&gt;ElTexto lässt sich damit als Webseitengenerator beschreiben. In einfach. &lt;/p&gt;
+
+&lt;p&gt;Es gibt im OpenSource-Bereich ebenfalls solche Tools, z.B. Jekyll. Diese sind allerdings etwas umständlicher. Die Webseite, Vorlagen, Inhalte und Dateien müssen manuell erstellt werden und in der richtigen Struktur abgelegt werden. Anschließend generiert Jekyll daraus die Webseite. Diese muss man dann noch von Hand hochladen. &lt;/p&gt;
+
+&lt;p&gt;ElTexto nimmt einem diese ganze Arbeit ab.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/8/eltexto3.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;h3&gt;Makros&lt;/h3&gt;
+
+&lt;p&gt;Zu den ungeliebten und fehleranfälligen Elementen einer Webseite gehören Dinge wie Navigation, Sitemap, Menüs. Man legt eine neuen Seite an, lädt dann die Webseite hoch und stellt fest, das man die Verlinkung der neuen Seite irgendwo vergessen hat.&lt;/p&gt;
+
+&lt;p&gt;ElTexto nimmt diese Arbeit ab. Man fügt z.B. ein &lt;a href=&quot;http://eltexto.net/Funktionen/Makrofunktionen/index.html&quot;&gt;Makro&lt;/a&gt; für eine Sitemap ein. Beim Export werden diese Elemente automatisch mit erzeugt und sind damit immer aktuell.&lt;/p&gt;
+
+&lt;h3&gt;Offene Dateistruktur&lt;/h3&gt;
+
+&lt;p&gt;Ich mag Software nicht, welche meine Projekte in ein propäritäres Dateiformat packt. Bei ElTexto &lt;a href=&quot;http://eltexto.net/Funktionen/Dateistruktur/index.html&quot;&gt;geht es offen zu&lt;/a&gt;. Alle Inhalte sind reine Markdown- und damit Textdateien. Diese lassen sich mit jedem Texteditor bearbeiten und anzeigen. Auch ohne ElTexto. Die dazu gehörigen Dateien liegen ebenfalls im gleichen Verzeichnis wie die Markdowndatei. &lt;/p&gt;
+
+&lt;p&gt;Dies erlaubt es auch, die Projekte in Subversion oder GIT abzulegen. Versionsvergleiche auf einzelne Artikel sind damit möglich. &lt;/p&gt;
+
+&lt;p&gt;Fügt man manuell neue Verzeichnisse und Seiten dazu, werden diese automatisch ins ElTexto Projekt übernommen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/8/eltexto4.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Anwendungsgebiete&lt;/h2&gt;
+
+&lt;p&gt;Mittlerweile haben wir einige unser Webseiten auf ElTexto umgestellt:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://Acapio.de&quot;&gt;Acapio.de&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://faq.da-software.de&quot;&gt;FAQ.DA-Software.de&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://eltexto.net&quot;&gt;ElTexto.net&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://iwer.info&quot;&gt;Iwer.info&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Zusätzlich verwalte ich meinen Notizen damit, welche ich über Seafile synchronisiere. Bei neuen Projekten erstelle ich in ElTexto gleich eine &lt;a href=&quot;http://eltexto.net/Anwendungsgebiete/index.html&quot;&gt;Projektdokumentation&lt;/a&gt;, bzw. persönliches Wiki, mit. Dort kommen dann Projektnotizen und Information rein. Braucht jemand Zugriff auf die Informationen, kann ich die Inhalte einfach als HTML exportieren und zur Verfügung stellen.&lt;/p&gt;
+
+&lt;p&gt;Auch Spezifikationen und &lt;a href=&quot;http://eltexto.net/Anwendungsgebiete/index.html&quot;&gt;Online-Hilfen&lt;/a&gt; habe ich damit schon erstellt.&lt;/p&gt;
+
+&lt;h2&gt;Ende&lt;/h2&gt;
+
+&lt;p&gt;Wer die Software mal ausprobieren möchte, kann diese unter &lt;a href=&quot;http://www.eltexto.net&quot;&gt;www.ElTexto.net&lt;/a&gt; herunterladen. Wir haben bewusst nur geringe Einschränkungen in der Testversion eingebaut. Die Testversion läuft ohne Laufzeitbeschränkung. Beim Export wird ein Link zu uns eingebunden und ab und zu erscheint mal ein Hinweisfenster.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/8/eltexto5.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</description>
+      <pubDate>Sat, 13 Aug 2016 19:00:00 +0200</pubDate>
+      <dc:date>2016-08-13T19:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>Mobilität Juli 2016</title>
       <link>http://andydunkel.net/mobilitaet/umwelt/2016/07/31/mobilitaet_juli_2016.html</link>
@@ -6717,6 +6809,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2016-07-31T19:00:00+02:00</dc:date>
+    <dc:date>2016-08-13T19:00:00+02:00</dc:date>
   </channel>
 </rss>
