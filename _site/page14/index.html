@@ -139,6 +139,47 @@
      
 		
 		<h1>
+		  <a href="/mac/tools/2013/12/14/homebrew_link_errors.html">Homebrew - Could not link xz Fehler</a>
+		</h1>
+		  <p class="small">Posted on 14 December 2013 by Andy</p>
+		  <p><p><a href="http://brew.sh/">Homebrew</a> ist eine feine Sache. Ähnlich die unter Linux kann man so allerhand Pakete über die Konsole installieren. Leider brachte das Update auf OSX 10.9 ein paar Probleme mit sich.</p>
+
+<p>Zuerst lief die alte Brew-Version gar nicht mehr. Also geupdated. Dann fingen die Probleme an. Bei der Installation von Paketen wurden diese zwar heruntergeladen, allerdings konnten die Symlinks nicht erstellt werden, da bereits vorhanden aus einer alten Version. Eventuell habe ich beim Update ein paar Fehler gemacht und irgendwas nicht bereinigt, keine Ahnung. </p>
+
+<p>Die Fehlermeldung sah in etwa so aus:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Linking /usr/local/Cellar/... Warning: Could not link $foo. Unlinking...
+Error: Could not symlink file: /usr/local/Cellar/...
+/usr/local/... may already exist.
+/usr/local/... may not be writable.
+</code></pre></div>
+<p>Jedenfalls kann man die Symlinks in <code>/usr/local/share</code> von Hand löschen, was sehr viel Arbeit ist. Also etwas das Internet bemüht und das ganze mit folgenden Schritten gelöst:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"># Besitzer von /usr/local auf den aktuellen Benutzer setzen
+$ sudo chown -R `whoami` /usr/local
+
+# ggf. die fehlgeschlagene Installation entfernen
+$ brew uninstall -f $foo
+
+# Cache leeren
+$ rm -rf `brew --cache`
+
+# Aufräumen
+$ brew cleanup
+
+# nicht mehr aktuelle Symlinks löschen
+$ brew prune
+
+# der Homebrew Doktor:
+$ brew doctor
+</code></pre></div>
+<p>Im letzten Schritt wurden mir noch ein paar Hinweise ausgegeben, welche ich manuell auf der Konsole ausführen musste.</p>
+
+<p>Anschließend lief wieder alles ohne Probleme.</p>
+</p>		
+		  <p class="small">Tagged: homebrew by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/windows/linux/mac/tools/2013/12/05/exfat_truecrypt_volume.html">exFAT für TrueCrypt Volume nutzen</a>
 		</h1>
 		  <p class="small">Posted on 05 December 2013 by Andy</p>
@@ -308,30 +349,6 @@ With that workaround the tab key is now working as expected, jumping to the next
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/sonstiges/2013/11/17/server_umzug.html">Webseiten-Umzug vollbracht</a>
-		</h1>
-		  <p class="small">Posted on 17 November 2013 by Andy</p>
-		  <p><p>Endlich habe ich in den letzten Wochen mal die Zeit gefunden meine Webseite zu aktualisieren und es heute dann auch endlich geschafft online zu stellen.</p>
-
-<p>Geplant hatte ich das mehr oder weniger schon von Anfang an. Bisher lief alles unter Wordpress, was zum Bloggen natürlich top ist. War damals die einfachste Variante mal schnell eine Webseite online zu stellen, da ich noch nicht wusste, ob ich überhaupt regelmäßig Inhalte online stellen werde.</p>
-
-<p>Was mir aber bisher an Wordpress immer gefehlt hat, war die Möglichkeit weitere Inhalte, abseits vom Blogging irgendwie sinnvoll einzubinden. Gerade wenn man Dinge und Themen etwas strukturiert ablegen möchte, ist das im Blog nicht so einfach möglich. Letztendlich sedimentieren sich die einzelnen Themen einfach blogtypisch nach unten und sind dann nur noch über Google auffindbar.</p>
-
-<p>Es gibt in Wordpress zwar die Möglichkeit Seiten zu erstellen, aber wirklich überzeugt hat mich das nicht. Letztendlich war ich auf der Suche einer Kombination aus Blogsoftware und Webseiten CRM. Wobei ich hier auch nichts großes mit Datenbank und Programmierung haben wollte.</p>
-
-<p>Nun bin ich vor ein paar Monaten auf <a href="http://jekyllrb.com/">Jekyll</a> gestoßen. Jekyll ist eine Art Blog- und Webseitengenerator. Man erzeugt alles in reinem HTML- bzw. Markdownformat und Jekyll baut daraus die Webseite, erzeugt alle Seiten, Links, Navigation etc...</p>
-
-<p>Im Gegensatz zu Wordpress ist das natürlich etwas Handarbeit, dafür bekomme ich wesentlich mehr Flexibilität beim Erstellen der Webseite. Ein weiterer Vorteil: alle Seiten sind statisches HTML. Neben Performance, die hier nicht so wichtig ist, sehe ich hier vor allem Sicherheitstechnisch einen Gewinn. Bei Wordpress muss man eben immer auf die aktuellen Updates achten.</p>
-
-<p>Die ganzen Blogartikel habe ich alle übernommen und ich habe auch versucht alle Links soweit auf die jeweiligen Pendants hier umzuleiten, soweit das halt technisch und aufwandsmäßig geht. </p>
-
-<p><strong>Wer Fehler finden sollte: bitte benutzt einfach das Kontaktformular und teilt es mir mit.</strong></p>
-</p>		
-		  <p class="small">Tagged: server by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -372,7 +389,7 @@ With that workaround the tab key is now working as expected, jumping to the next
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
 <li class='category'><a href='/categories/coding/'>coding (26)</a></li>
-<li class='category'><a href='/categories/computer/'>computer (5)</a></li>
+<li class='category'><a href='/categories/computer/'>computer (6)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
 <li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
@@ -408,7 +425,7 @@ With that workaround the tab key is now working as expected, jumping to the next
 <li class='category'><a href='/categories/umwelt/'>umwelt (12)</a></li>
 <li class='category'><a href='/categories/webdesign/'>webdesign (2)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (1)</a></li>
-<li class='category'><a href='/categories/windows/'>windows (5)</a></li>
+<li class='category'><a href='/categories/windows/'>windows (6)</a></li>
 <li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>
 
 		</ul>

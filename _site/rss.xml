@@ -8,7 +8,55 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Sat, 13 Aug 2016 19:00:00 +0200</pubDate>
+    <pubDate>Sun, 21 Aug 2016 19:00:00 +0200</pubDate>
+    <item>
+      <title>Dell U2515H  Monitor mit voller Auflösung betreiben</title>
+      <link>http://andydunkel.net/windows/computer/2016/08/21/dell_monitor_aufloesung.html</link>
+      <description>&lt;p&gt;Letztes Jahr hatte ich mir einen &lt;a href=&quot;http://amzn.to/2aZ8K84&quot;&gt;Dell U2515H Monitor&lt;/a&gt; gekauft. Dieser hat eine maximale Auflösung von 2560x1440 Pixel, also mehr als die normalen Full-HD-Monitore. &lt;/p&gt;
+
+&lt;p&gt;Der Monitor ist top. Beim Programmieren kann man den zusätzlichen Platz gut gebrauchen. Das Bild ist super. Es gibt 2 HDMI-, 2 Displayport- und einen Mini-Display-Port-Eingang. Leute wie ich, können also ihren ganzen Computerzoo da anschließen. Ein USB-Hub ist ebenfalls integriert. Mittels &lt;a href=&quot;http://ekiwi-blog.de/?p=2511&quot;&gt;USB-Umschalter&lt;/a&gt;, kann ich so alles zwischen den Computern umschalten.&lt;/p&gt;
+
+&lt;p&gt;Der Monitor hat 24 Zoll. Damit ist er recht kompakt und nimmt nicht soviel Platz auf dem Schreibtisch weg. Vorher hatte ich einen 27 Zoll Display mit gleicher Auflösung. Das war mir zu klobig. Zusätzlich lässt sich &lt;a href=&quot;http://amzn.to/2b1VFuu&quot;&gt;eine Soundbar anschließen&lt;/a&gt;. Diese macht ganz guten Ton; reicht mir zum Musikhören, gelegentlichen Zocken und Skypen aus. So spare ich den Platz von zusätzlichen Lautsprechern auf dem Schreibtisch.&lt;/p&gt;
+
+&lt;p&gt;Probleme hatte ich allerdings mit der Auflösung. Windows bot mir die Auflösung gar nicht erst an. Schluss war bei 2048x1152 Pixeln. Meine Computer sind schon etwas älter. Bei einem neueren Computer + Grafikkarte sind keine Probleme zu erwarten.&lt;/p&gt;
+
+&lt;h2&gt;Neue Grafikkarte&lt;/h2&gt;
+
+&lt;p&gt;Zuerst habe ich die Grafikkarte ersetzt. Viel Geld wollte ich dafür nicht ausgeben. Es ist eine &lt;a href=&quot;http://amzn.to/2bp59AH&quot;&gt;Zotac GT 210 ZT mit GeForce-Chip&lt;/a&gt; geworden. Die Karte ist passiv gekühlt und lässt sich auch als Low-Profile einbauen. Die maximale Aufläsung wird mit 2560x1600 Pixel angegeben. Sollte also reichen.&lt;/p&gt;
+
+&lt;p&gt;Die Performance ist für Office-Kram und Programmieren mehr als OK. Ältere Spiele, wie z.B. Left 4 Dead, laufen auch flüssig.&lt;/p&gt;
+
+&lt;p&gt;Die Grafikkarte hat zwei Anschlüsse, einmal HDMI und einmal DVI. Leider kein Display-Port, was für den Monitor perfekt wäre, aber da gibt es in der Preisklasse nix.&lt;/p&gt;
+
+&lt;h2&gt;Das richtige DVI- oder HDMI-Kabel&lt;/h2&gt;
+
+&lt;p&gt;Nachdem die Grafikkarte eingebaut worden ist, die große Ernüchterung. Trotzdem war keine höhere Auflösung  möglich. Stellt sich heraus, dass das richtige DVI- bzw. HDMI-Kabel verwendet werden muss. Hier gibt es Unterschiede. &lt;/p&gt;
+
+&lt;p&gt;Zuerst bei DVI. Hier muss es sich um ein &lt;a href=&quot;http://amzn.to/2b1SyD2&quot;&gt;Dual-Link-Kabel&lt;/a&gt; handeln. Bei vielen Kabeln fehlen Pins, die haben dann nur Single-Link. Dies sieht man direkt, wenn man sich den Stecker anschaut. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/8/dvi.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Interessanterweise kosten die Dual-Link-Kabel nichtmal viel mehr und man fragt sich, warum überhaupt andere Kabel hergestellt werden.&lt;/p&gt;
+
+&lt;p&gt;Auch beim &lt;a href=&quot;http://amzn.to/2bC4hWM&quot;&gt;HDMI-Kabel&lt;/a&gt; hatte ich anfangs kein Glück. Ich hatte anfangs das von der Xbox genommen. Darüber ging jedoch auch nur maximal Full-HD-Auflösung. Für die Xbox reicht es, hier nicht. Die Lösung ist hier ein Kabel zu kaufen, welches &lt;a href=&quot;http://amzn.to/2bC4hWM&quot;&gt;HDMI 1.4&lt;/a&gt; unterstützt.&lt;/p&gt;
+
+&lt;p&gt;Was gar nicht funktioniert sind Kabel von HDMI auf Display-Port. Diese funktionieren nur in umgekehrter Richtung, also der Computer hat Display-Port und der Monitor hat HDMI. Ansonsten bleibt das Bild schwarz.&lt;/p&gt;
+
+&lt;h2&gt;Auflösung im Grafikkartentreiber einrichten&lt;/h2&gt;
+
+&lt;p&gt;Nachdem auch die Kabel als Ursache ausgeschlossen werden konnten, bot Windows immer noch nicht die richtige Auflösung an. Hier hilft es dann im Grafikkartentreiber die Auflösung manuell anzulegen:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/8/einstellung0.png&quot; alt=&quot;&quot;&gt;
+&lt;img src=&quot;/assets/uploads/2016/8/einstellung1.png&quot; alt=&quot;&quot;&gt;
+&lt;img src=&quot;/assets/uploads/2016/8/einstellung2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Fazit&lt;/h2&gt;
+
+&lt;p&gt;Nachdem dann alles passte, funktionierte die Grafikkarte mit dem Monitor ohne Probleme. Auch ein späteres anschließen eines weiteren Monitors (mit Full-HD-Auflösung) war kein Problem. Schafft die Grafikkarte ohne Probleme.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 21 Aug 2016 19:00:00 +0200</pubDate>
+      <dc:date>2016-08-21T19:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>ElTexto</title>
       <link>http://andydunkel.net/coding/tools/2016/08/13/eltexto.html</link>
@@ -6809,6 +6857,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2016-08-13T19:00:00+02:00</dc:date>
+    <dc:date>2016-08-21T19:00:00+02:00</dc:date>
   </channel>
 </rss>
