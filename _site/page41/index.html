@@ -139,6 +139,67 @@
      
 		
 		<h1>
+		  <a href="/coding/java/2011/07/07/java-handle-exceptions-from-threads.html">Java: Handle Exceptions from Threads</a>
+		</h1>
+		  <p class="small">Posted on 07 July 2011 by Andy</p>
+		  <p><p>In this post I want to describe handling exceptions from threads with the ThreadGroup class and the uncaughtExceptionHandler.</p>
+
+<p>First we create a Thread which does useful stuff and throws an exception at some time:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">public class PfostenThread implements Runnable {    
+    @Override
+    public void run() {
+        for (int i = 0; i &lt; 1000000; i++) {
+            System.out.println(&quot;Pfosten: &quot; + i);
+
+            if (i == 31456) {
+                //Cause an exception
+                i = i / 0;
+            }
+        }
+    }
+}
+</code></pre></div>
+<p>No we will start our thread from the main method of our Java program:
+&lt;!-- more --&gt;</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">import java.lang.Thread.UncaughtExceptionHandler;
+
+public class Main {
+    public static void main(String[] args) {
+        PfostenThreadGroup group = new PfostenThreadGroup(&quot;PfostenGruppe&quot;);
+        Thread t = new Thread(new PfostenThread(), &quot;Pfosten&quot;);
+        t.start();      
+    }
+}
+</code></pre></div>
+<p>This thread will throw a divide by zero exception:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/07/java_exception1.png" alt=""></p>
+
+<p>To catch the exception we will now extend the ThreadGroup class:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">public class PfostenThreadGroup extends ThreadGroup {
+
+    public PfostenThreadGroup(String name) {
+        super(name);
+    }
+
+    @Override
+    public void uncaughtException(Thread t, Throwable e) {
+            System.out.println(&quot;Error: &quot; + e.getMessage());
+    }
+}
+</code></pre></div>
+<p>If we start our Thread with this group, the exception will be caught by the &quot;uncaugtException&quot; method in our ThreadGroup:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">PfostenThreadGroup group = new PfostenThreadGroup(&quot;PfostenGruppe&quot;);
+Thread t = new Thread(new PfostenThread(), &quot;Pfosten&quot;);
+t.start();  
+</code></pre></div>
+<p><a href="http://andydunkel.net/assets/uploads/2011/07/java_exception2.png"><img src="http://andydunkel.net/assets/uploads/2011/07/java_exception2.png" alt=""></a></p>
+</p>		
+		  <p class="small">Tagged: Exception, Handling, Java, Thread, and ThreadGroup by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/coding/2011/07/04/dynamically-create-qr-codes-using-php.html">Dynamically create QR codes using PHP</a>
 		</h1>
 		  <p class="small">Posted on 04 July 2011 by Andy</p>
@@ -201,36 +262,6 @@
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/gadgets/2011/07/02/web-albums-fr-das-ipad-zugriff-auf-picasa.html">Web Albums für das iPad: Zugriff auf Picasa</a>
-		</h1>
-		  <p class="small">Posted on 02 July 2011 by Andy</p>
-		  <p><p>Kleine App-Vorstellung für das iPad. Wie ich bereits schrub, liegen meine Fotos allesamt bei Picasa im Internet. Zugriff von überall mit dem Browser möglich, Backup etc.</p>
-
-<p>Ganz überzeugt mich die Weboberfläche aber nicht, besonders beim Anschauen der Bilder. Da ist z.B. keine Vollbildanzeige möglich. Gerade das iPad ist für das Anschauen von Bildern geeignet, also entweder die Weboberfläche von Picasa nutzen oder die Bilder mittels iTunes synchronisieren (umständlich). Beides nicht ideal.</p>
-
-<p>Abhilfe schafft die App “<a href="http://itunes.apple.com/de/app/web-albums-for-ipad-a-picasa/id364824944?mt=8">Web Albums for iPad</a>”. Kostet 2,39 Euro, ist sein Geld aber wert. Nachdem man sein Picasa Account eingetragen hat sieht man sofort seine Alben:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image.png" alt="image"></p>
-
-<p>Wie geht’s weiter?  </p>
-
-<!-- more -->
-
-<p>Ein Klick/Touch auf das Album öffnet dieses, die Bilder werden dann als Thumbnails angezeigt. Ein weiterer Klick und schon wird das Bild Vollbild angezeigt.</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2011/07/image1.png"><img src="http://andydunkel.net/assets/uploads/2011/07/image_thumb.png" alt="image"></a></p>
-
-<p>Mit Klick auf den Play-Button startet das ganze als Vollbild-Slideshow. Durch Wischen kann man durch die Bilder navigieren. Über WLAN ist das ganze auch recht flott. Die Bilder werden im Hintergrund schon mal vorgeladen.</p>
-
-<p>Nachteil ist natürlich wie bei allen Cloud-Diensten. Funktioniert nur, wenn man Internetverbindung hat.</p>
-
-<p>Was gibt’s sonst noch? Facebook kann man einbinden, Bilder hochladen und verwalten. Kommentieren etc… eine genaue Funktionsbeschreibung findet man im <a href="http://itunes.apple.com/de/app/web-albums-for-ipad-a-picasa/id364824944?mt=8#">AppStore</a>.</p>
-</p>		
-		  <p class="small">Tagged: ipad, Picasa, Web Albums, WLAN, and Zugriff by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -276,7 +307,7 @@
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
 <li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
 <li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
-<li class='category'><a href='/categories/gadgets/'>gadgets (24)</a></li>
+<li class='category'><a href='/categories/gadgets/'>gadgets (25)</a></li>
 <li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
 <li class='category'><a href='/categories/html/'>html (1)</a></li>
 <li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
@@ -298,7 +329,7 @@
 <li class='category'><a href='/categories/radfahren/'>radfahren (31)</a></li>
 <li class='category'><a href='/categories/raspberry/'>raspberry (3)</a></li>
 <li class='category'><a href='/categories/repair/'>repair (1)</a></li>
-<li class='category'><a href='/categories/reparatur/'>reparatur (3)</a></li>
+<li class='category'><a href='/categories/reparatur/'>reparatur (4)</a></li>
 <li class='category'><a href='/categories/rezepte/'>rezepte (1)</a></li>
 <li class='category'><a href='/categories/science/'>science (3)</a></li>
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>

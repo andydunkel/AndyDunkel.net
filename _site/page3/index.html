@@ -139,6 +139,34 @@
      
 		
 		<h1>
+		  <a href="/mobilitaet/umwelt/2016/05/10/mobilitaet_april_2016.html">Mobilität April 2016</a>
+		</h1>
+		  <p class="small">Posted on 10 May 2016 by Andy</p>
+		  <p><p>Fast geschafft mit dem Rad mehr zu fahren als mit dem Auto. Wird diesen Monat wohl nix werden, da der Umzug ansteht.
+Schmerzlich waren auch wieder mal Werkstattkosten in Höhe von 400 Euro. Hauptuntersuchung + Reparaturen. </p>
+
+<h3>Auto</h3>
+
+<ul>
+<li>Gesamt km: 266</li>
+<li>Fahrten: 11</li>
+<li>Durchschnitt pro Fahrt: 24,2 km</li>
+<li>Getankt: 41,6 Liter</li>
+</ul>
+
+<h3>Fahrrad</h3>
+
+<ul>
+<li>Gesamt km: 264,55 km</li>
+<li>Fahrten: 51</li>
+<li>Durchschnitt pro Fahrt: 5,18 km</li>
+</ul>
+</p>		
+		  <p class="small">Tagged: Mobilitaet and Umwelt by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/computer/2016/04/28/hp%20compaq_dc7800_soundcard.html">HP Compaq DC 7800 - kein Sound mehr</a>
 		</h1>
 		  <p class="small">Posted on 28 April 2016 by Andy</p>
@@ -261,67 +289,6 @@ Das geht mit der Pumpe problemlos. Im Gegensatz zur alten Luftpumpe funktioniert
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/computer/2016/03/14/thunderbird_owncloud9.html">Owncloud 9 und Thunderbird / Lightning - Probleme beim Synchronisieren</a>
-		</h1>
-		  <p class="small">Posted on 14 March 2016 by Andy</p>
-		  <p><p>Durch Neueinrichtung meines Servers habe vor kurzem auf Owncloud 9 geupdatet. Leider wusste ich zu dem Zeitpunkt noch nicht, dass die neue Version noch nicht wirklich rund läuft. Die Kalender- und Kontakte-App wurden neu entwickelt. D.h. es fehlen noch Funktionen und auch sonst gibt es noch Probleme.</p>
-
-<p>Das erste Problem: Kontakte ließen sich nicht mehr über die Weboberfläche importieren. Dies ließ sich lösen, indem man diese in Thunderbird von einem Adressbuch ins Owncloud-Adressbuch kopierte. </p>
-
-<p>Ein weiteres Problem, die Synchronisation des Kalenders funktionierte im Thunderbird nicht mehr. In der Kalender-App bekommt man nun nicht mehr den Link zum jeweiligen Kalender, sondern einen CalDAV-Sammellink:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">https://server/owncloud/remote.php/dav/
-</code></pre></div>
-<p><img src="/assets/uploads/2016/3/cal1.png" alt=""></p>
-
-<p>Mein Verständnis ist, dass dort einfach alle Kalender angeboten werden und der Client bedient sich dann dort. Für IOS gibt es einen etwas anderen Link, aber im Prinzip das Gleiche. Dort hat es auch sofort funktioniert.</p>
-
-<p>Leider zeigte Thunderbird nur ein gelbes Ausrufezeichen an. </p>
-
-<p><img src="/assets/uploads/2016/3/cal2.png" alt=""></p>
-
-<p>Geht man in die Fehlerkonsole findet man die entsprechenden Fehlereinträge:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">Warning: There has been an error reading data for calendar: Owncloud.  However, this error is believed to be minor, so the program will attempt to continue. Error code: DAV_DAV_NOT_CALDAV. Description: The resource at https://mate.ekiwi.de/owncloud/remote.php/dav/ is a DAV collection but not a CalDAV calendar
-Source File: file:///C:/Users/da/AppData/Roaming/Thunderbird/Profiles/2kiixeal.default/extensions/%7Be2fda1a4-762b-4020-b5ad-a41df1933103%7D/calendar-js/calCalendarManager.js
-Line: 960
-
-Error: [calCachedCalendar] replay action failed: null, uri=https://mate.ekiwi.de/owncloud/remote.php/dav/, result=2147500037, op=[xpconnect wrapped calIOperation]
-Source File: file:///C:/Users/da/AppData/Roaming/Thunderbird/Profiles/2kiixeal.default/extensions/%7Be2fda1a4-762b-4020-b5ad-a41df1933103%7D/calendar-js/calCachedCalendar.js
-Line: 322
-</code></pre></div>
-<p>Im Internet findet man entsprechende Tipps, den richtigen Kalender in die URL einzufügen. Also z.B. so:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">https://server/owncloud/remote.php/caldav/calendars/admin/Andy/
-</code></pre></div>
-<p>Meinen Kalender habe ich &quot;Andy&quot; genannt und dies wird in der Weboberfläche auch so angezeigt. Leider kein Erfolg. </p>
-
-<h2>Lösung</h2>
-
-<p>Zeitintensives suchen im Internet hat dann doch noch eine Lösung gebracht. Der Kalender hatte intern einen anderen Namen als online angezeigt wurde.</p>
-
-<p>Doch wie findet man den richtigen Namen heraus? Dies geht mit folgendem Befehl, zumindest unter Linux oder auf dem Mac:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">curl -u admin -X PROPFIND https://server/remote.php/dav/calendars/admin  
-</code></pre></div>
-<p>Statt &quot;admin&quot; gibt man den entsprechenden Benutzernamen ein. Es kommt dann zu folgender Ausgabe:</p>
-
-<p><img src="/assets/uploads/2016/3/cal3.png" alt=""></p>
-
-<p>Rot habe ich den richtigen Namen des Kalenders markiert. Dies gibt dann die folgende URL:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">https://server/owncloud/remote.php/dav/calendars/admin/andy-1
-</code></pre></div>
-<p>Und siehe da, mit der neuen URL konnte Thunderbird den Kalender nun ohne Fehler synchronisieren.</p>
-
-<h2>Update</h2>
-
-<p>Ein Leser hat mich darauf hingewiesen, dass man die URL auch ohne <code>curl</code>-Befehl ermitteln kann. Man bleibt einfach mit der Maus auf dem Kalender, bis der Tooltip erscheint:</p>
-
-<p><img src="/assets/uploads/2016/3/cal4.png" alt=""></p>
-
-<p>Schon hat man fast die richtige URL. Bei der angezeigten URL muss noch der Teil &quot;dave.php/&quot; entfernt werden. Anschließend hat man auch so die korrekte URL.</p>
-</p>		
-		  <p class="small">Tagged: Thunderbird and Owncloud by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -367,7 +334,7 @@ Line: 322
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
 <li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
 <li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
-<li class='category'><a href='/categories/gadgets/'>gadgets (24)</a></li>
+<li class='category'><a href='/categories/gadgets/'>gadgets (25)</a></li>
 <li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
 <li class='category'><a href='/categories/html/'>html (1)</a></li>
 <li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
@@ -389,7 +356,7 @@ Line: 322
 <li class='category'><a href='/categories/radfahren/'>radfahren (31)</a></li>
 <li class='category'><a href='/categories/raspberry/'>raspberry (3)</a></li>
 <li class='category'><a href='/categories/repair/'>repair (1)</a></li>
-<li class='category'><a href='/categories/reparatur/'>reparatur (3)</a></li>
+<li class='category'><a href='/categories/reparatur/'>reparatur (4)</a></li>
 <li class='category'><a href='/categories/rezepte/'>rezepte (1)</a></li>
 <li class='category'><a href='/categories/science/'>science (3)</a></li>
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
