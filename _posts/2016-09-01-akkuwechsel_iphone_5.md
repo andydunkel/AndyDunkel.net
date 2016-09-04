@@ -30,3 +30,7 @@ Der Austausch war dann in einer halben Stunde erledigt. Das Hauptproblem war das
 
 Nach dem Zusammenbau dann die Erleichterung, Handy startet und alles funktioniert. Auf einen Hardreset, wie im Internet bei einigen Anleitungen empfohlen, habe ich verzichtet. Der neue Akku funktioniert prächtig und wird meinem Telefon hoffentlich noch weitere ein bis zwei Jahre ermöglichen.
 
+## Update
+
+Ein paar kleine Probleme gab es noch. So schaltete sich das Handy z.B. mal bei 30% einfach ab. So wie es aussieht, muss das iPhone sich erstmal auf den neuen Akku "gewöhnen" um den Ladezustand richtig anzuzeigen. Im Internet wird empfohlen das Handy entweder komplett zurückzusetzen oder mehrmals komplett leer zu fahren bis es sich abschaltet. Dies habe ich ein paar mal gemacht und jetzt funktioniert die Ladestandsanzeige wieder richtig.
+
