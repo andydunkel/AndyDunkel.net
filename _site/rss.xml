@@ -8,7 +8,57 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Sun, 04 Sep 2016 19:00:00 +0200</pubDate>
+    <pubDate>Mon, 12 Sep 2016 19:00:00 +0200</pubDate>
+    <item>
+      <title>Retrotrip: Computerviren</title>
+      <link>http://andydunkel.net/retrotrip/computer/2016/09/12/retro_computerviren.html</link>
+      <description>&lt;p&gt;Heute geht es computertechnisch etwas zurück in die Vergangenheit. Heute geht es eher ein unschönes Thema: Computerviren. Aber wie bei vielen, bzw. wie oft behauptet, früher war alles besser, auch die Computerviren. :-)&lt;/p&gt;
+
+&lt;h2&gt;Damals&lt;/h2&gt;
+
+&lt;p&gt;Den ersten Computer hatten wir damals so 1991. Der gehörte dienstlich meiner Oma und war eigentlich zum Arbeiten da. Meine Oma hatte damals ein kleines Steuerbüro und machte dann mit besagten Computer Buchhaltung und Steuererklärungen. Also nicht ganz unwichtig, dass die Maschine lief.&lt;/p&gt;
+
+&lt;p&gt;Dennoch hatte ich natürlich das Bedürfnis auf dem PC auch Spiele zu installieren. Diese kamen damals meist nicht als Originalspiel aus dem Laden, sondern über dubiose Wege und Schulhoftäusche in Form von dezentralen Sicherheitskopien.&lt;/p&gt;
+
+&lt;p&gt;So war es nur eine Frage der Zeit, bis sich auch der erste Computervirus einschlich.&lt;/p&gt;
+
+&lt;p&gt;Für einen Virenautor war dies damals keine triviale Sache. Internet gab es noch nicht. Verbreiten mussten sich Viren über Disketten, welche von einem Computer zum anderen gingen. Wurde die Diskette dort eingelegt und ein infiziertes Programm ausgeführt, installierte sich der Computervirus auch auf dem eigenen Computer. Erstmal nur im Arbeitsspeicher und im Hintergrund. Dort lauerte er darauf, dass man als Anwender ein anderes Programm startete. Dieses wurde dann ebenfalls infiziert.&lt;/p&gt;
+
+&lt;p&gt;Als Virenautor hatte man also gar nicht so richtig Ahnung, wie und ob sich das eigene Werk überhaupt verbreitete. Zum Glück für die Erschaffer der kleinen digitalen Biester, wurde damals viel raubkopiert. Einerseits aus Mangel an Geld und auch aus Mangel an Alternativen. Ein Amazon, bei welchem man sich Software XY bestellen konnte, gab es nicht. Wenn man Glück hatte, hatte man einen Computerladen in der Stadt.&lt;/p&gt;
+
+&lt;p&gt;Jedenfalls hatten wir irgendein einen Computervirus. Den wir anfangs nichtmal als solchen erkannten. In regelmäßigen Abständen wurde er aktiv und sortierte die Buchstaben am Bildschirm um. Mehr nicht. Nach einem Neustart lief alles wieder und man konnte weiterarbeiten. Deswegen war der Druck nicht so groß, etwas zu unternehmen. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/9/virus0.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Irgendwann wurde es dann aber doch ungeheuerlich. Schließlich musste nicht jeder Virus so harmlos sein. Ein Antivirenprogramm musste her. Damals auch nicht so einfach. Man musste es schriftlich bestellen, es kam per Briefpost und auf Diskette. Updates gab es alle paar Monate, ebenfalls auf Diskette. Der Update-Zeitraum ist für heutige Verhältnisse lang, aber damals dauerte es auch, bis neue Viren sich verbreiteten.&lt;/p&gt;
+
+&lt;p&gt;Das Antivirenprogramm lief damals noch nicht im Hintergrund. Eine ständige Echtzeitüberwachung wie heute üblich, gab es nicht. Die Computer damals waren zu langsam dafür. Ein Virenwächter im Hintergrund hätte zudem wichtigen Arbeitsspeicher belegt. &lt;/p&gt;
+
+&lt;p&gt;Stattdessen musste man neue Disketten vor den ersten Gebrauch erstmal überprüfen. Eine langwierige Prozedur und bei Ungeduld wurde darauf auch gerne mal verzichtet.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/9/virus1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Mittlerweile sind die Viren von damals sogar ein Teil der Computergeschichte. Es gibt Artikel auf &lt;a href=&quot;https://de.wikipedia.org/wiki/(c)Brain&quot;&gt;Wikipedia&lt;/a&gt; und auf &lt;a href=&quot;https://archive.org/details/malwaremuseum&quot;&gt;Archive.org&lt;/a&gt; kann man die Viren sogar gefahrlos in virtueller Umgebung ausprobieren. Wer hätte das gedacht.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://archive.org/details/malwaremuseum&quot;&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2016/9/malware.png&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Zum Glück blieb diese Virenerfahrung auf dem PC die einzige bisher. &lt;/p&gt;
+
+&lt;h2&gt;Heute&lt;/h2&gt;
+
+&lt;p&gt;Blickt man heute fast wehmütig auf solche Erfahrungen zurück, ist die Situation heute komplett anders. Gefahren lauern, dank Internet, überall. Einen falschen Anhang geöffnet, auf die falsche Webseite gesurft, schon hat man einen Virus oder Trojaner.   &lt;/p&gt;
+
+&lt;p&gt;Im Gegensatz zu früher, wo es primär um Aufmerksamtkeit und &amp;quot;Ruhm&amp;quot; ging, geht es jetzt  ums große Geschäft. Da wird die Festplatte verschlüsselt und nur gegen Lösegeld wieder freigegeben, der Computer Teil eines Botnetzes oder die Bankdaten werden abgefischt.  &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.netzsieger.de/k/antivirus&quot;&gt;Antivirenprogramme gibt es mittlerweile viele&lt;/a&gt; und sind auch als Pflicht anzusehen.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.netzsieger.de/k/antivirus&quot;&gt;&lt;img src=&quot;http://andydunkel.net/assets/uploads/2016/9/virus2.png&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Ob wir in 20 Jahren auf diese Zeit zurückblicken und uns sagen: &amp;quot;Ach dieser tolle Computervirus damals, der hat mir damals alle Urlaubsfotos verschlüsselt&amp;quot;. Denke das darf bezweifelt werden. :-)&lt;/p&gt;
+</description>
+      <pubDate>Mon, 12 Sep 2016 19:00:00 +0200</pubDate>
+      <dc:date>2016-09-12T19:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>Mobilität August 2016</title>
       <link>http://andydunkel.net/mobilitaet/umwelt/2016/09/04/mobilitaet_august_2016.html</link>
@@ -6908,6 +6958,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2016-09-04T19:00:00+02:00</dc:date>
+    <dc:date>2016-09-12T19:00:00+02:00</dc:date>
   </channel>
 </rss>
