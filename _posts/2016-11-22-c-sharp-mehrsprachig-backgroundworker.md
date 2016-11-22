@@ -1,7 +1,7 @@
 ---
 author: admin
 comments: true
-date: 2015-07-04 17:00:00+00:00
+date: 2016-11-22 17:00:00+00:00
 layout: post
 slug: c_sharp_nicht_lokalisierte_backgroundworker_und_threads
 title: 'Mehrsprache C# Anwendungen - nicht lokalisierte Backgroundworker und Threads'
@@ -11,8 +11,6 @@ tags:
 - C#
 
 ---
-
-![](/assets/uploads/2015/7/inter1.png)
 
 Vor einiger Zeit habe ich beschrieben, wie man [C#-Anwendungen lokalisieren](//andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html) kann.
 
