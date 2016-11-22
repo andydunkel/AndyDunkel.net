@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>C#-Dateiänderungen in Verzeichnissen überwachen</title>
+        <title>Mehrsprache C# Anwendungen - nicht lokalisierte Backgroundworker und Threads</title>
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="/css/syntax.min.css">
         <script src="/css/jquery.min.js"></script>
@@ -128,49 +128,34 @@
         <div class="row">
     	<div class="col-md-9">
 
-			<h2>C#-Dateiänderungen in Verzeichnissen überwachen</h2>
-			<p class="meta">12 Jul 2015</p>
+			<h2>Mehrsprache C# Anwendungen - nicht lokalisierte Backgroundworker und Threads</h2>
+			<p class="meta">04 Jul 2015</p>
 			
 			<div class="post">
-			<h1>C# - Dateiänderungen in Verzeichnissen überwachen</h1>
+			<p><img src="/assets/uploads/2015/7/inter1.png" alt=""></p>
 
-<p>Eine Aufgabe, die kompliziert klingt, es aber dann doch nicht ist: Überwachen von Verzeichnissen auf Änderungen. Egal, ob eine Datei umbenannt wird, eine Datei hinzukommt, Verzeichnisse verschoben werden etc.</p>
+<p>Vor einiger Zeit habe ich beschrieben, wie man <a href="//andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html">C#-Anwendungen lokalisieren</a> kann.</p>
 
-<p>Stellt sich heraus, dass dies in C#, bzw. mit dem .net-Framework, eine einfache Sache ist. Die Klasse <code>FileSystemWatcher</code> nimmt uns die Arbeit ab. Einmal gestartet, überwacht und benachrichtigt uns dieser über Änderungen. Hier eine Beschreibung wie man diesen einsetzt.</p>
-
-<p><img src="/assets/uploads/2015/7/fsw1.png" alt=""></p>
-
-<p>Zuerst legen wir uns das <code>FileSystemWatcher</code>-Object an und konfigurieren es:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">private FileSystemWatcher _watcher;
-
-_watcher = new FileSystemWatcher();
-_watcher.Path = &quot;c:\\temp&quot;;
-_watcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.DirectoryName;
-_watcher.Filter = &quot;*.*&quot;;
+<p>Die Sprache kann man z.B. so im Code festlegen:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">CultureInfo myCultureInfo = new CultureInfo(&quot;en&quot;);
+Thread.CurrentThread.CurrentCulture = myCultureInfo;
+Thread.CurrentThread.CurrentUICulture = myCultureInfo;
 </code></pre></div>
-<p>Neben dem Pfad können wir festlegen über welche Änderungen wir uns benachrichtigen lassen wollen. Ebenfalls können wir festlegen, welche Dateien wir überwachen wollen. In unserem Beispiel einfach alle.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">_watcher.Changed += new FileSystemEventHandler(OnChanged);
-_watcher.Created += new FileSystemEventHandler(OnChanged);
-_watcher.Deleted += new FileSystemEventHandler(OnChanged);
-_watcher.Renamed += new RenamedEventHandler(OnRenamed);
-</code></pre></div>
-<p>Nun müssen wir den <code>FileSystemWatcher</code> nur noch starten:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">_watcher.EnableRaisingEvents = true;
-</code></pre></div>
-<p>Die EventHandler sehen so aus:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">private void OnRenamed(object sender, RenamedEventArgs e)
-{
-    MessageBox.Show(&quot;Änderung: &quot; + e.FullPath + &quot; - &quot; + e.ChangeType.ToString());          
-}
+<p>Allerdings reicht dies nicht in allen Fällen aus. So trat das Problem auf, dass in Backgroundworkern und Threads in meinen Logik-Klassen, immer die deutschen Texte verwendet worden sind:</p>
 
-private void OnChanged(object source, FileSystemEventArgs e)
-{
-    MessageBox.Show(&quot;Änderung: &quot; + e.FullPath + &quot; - &quot; + e.ChangeType.ToString());
-}
-</code></pre></div>
-<p>Die übergebenen EventArgs enthalten Informationen zu den geänderten Datei, als auch Informationen über die Art der Änderung.</p>
+<p><img src="/assets/uploads/2016/11/trans_error1.png" alt=""></p>
 
-<p>Das war es auch schon. Wer will kann sich das <a href="/assets/uploads/2015/7/FileSystemWatcher.zip">Beispielprojekt hier herunterladen</a>.</p>
+<p>Hier sollte eigentlich der Text in englischer Sprache aus der Resourcendatei kommen.</p>
+
+<h2>Lösung</h2>
+
+<p>Die Lösung ist einfach, zumindest ab .net Version 4.5. Hier fügt man einfach die folgenden zwei Zeilen dem ursprünglichen Code hinzu:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">CultureInfo.DefaultThreadCurrentCulture = myCultureInfo;
+CultureInfo.DefaultThreadCurrentUICulture = myCultureInfo;
+</code></pre></div>
+<p>Der Code bewirkt das auch andere Threads und damit auch die Backgroundworker die richtige Sprache verwenden.</p>
+
+<p><img src="/assets/uploads/2016/11/trans_error1.png" alt=""></p>
 
 			</div>
 			
@@ -203,9 +188,9 @@ private void OnChanged(object source, FileSystemEventArgs e)
 			 	<div class="panel-heading">Verwandte Artikel:</div>
 				<div class="panel-body">
 				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html" title="C#-Anwendungen mehrsprachig gestalten">C#-Anwendungen mehrsprachig gestalten</a></li>
+				   <li class="list-unstyled"><a href="http://andydunkel.net/coding/2015/07/12/c_sharp_dateiaenderungen_ueberwachen.html" title="C#-Dateiänderungen in Verzeichnissen überwachen">C#-Dateiänderungen in Verzeichnissen überwachen</a></li>
 				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/coding/2015/07/04/c-sharp-mehrsprachig-backgroundworker.html" title="Mehrsprache C# Anwendungen - nicht lokalisierte Backgroundworker und Threads">Mehrsprache C# Anwendungen - nicht lokalisierte Backgroundworker und Threads</a></li>
+				   <li class="list-unstyled"><a href="http://andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html" title="C#-Anwendungen mehrsprachig gestalten">C#-Anwendungen mehrsprachig gestalten</a></li>
 				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/coding/2011/06/27/cread-stdout-from-a-console-application.html" title="C#–Read STDOUT from a console application">C#–Read STDOUT from a console application</a></li>
 				
