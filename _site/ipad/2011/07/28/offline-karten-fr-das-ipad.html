@@ -14,11 +14,29 @@
 		<link rel="alternate" type="application/rss+xml" title="AndyDunkel.net RSS Feed" href="http://andydunkel.net/rss.xml" /> 
 		
 		<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-	    <script type="text/javascript">
-		    window.cookieconsent_options = {"message":"Wir verwenden Cookies auf der Website, um Ihren Besuch effizienter zu machen und Ihnen Benutzerfreundlichkeit bieten zu können.","dismiss":"OK","learnMore":"Mehr Informationen","link":"http://ekiwi.de/datenschutzerklaerung.htm","theme":"light-bottom"};
-		</script>
-		
-		<script type="text/javascript" src="http://www.andydunkel.net/css/cookieconsent/cookieconsent.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#edeff5",
+          "text": "#838391"
+        },
+        "button": {
+          "background": "#4b81e8"
+        }
+      },
+      "theme": "edgeless",
+      "content": {
+        "message": "Wir verwenden Cookies auf der Website, um Ihren Besuch effizienter zu machen und Ihnen Benutzerfreundlichkeit bieten zu können.",
+        "dismiss": "OK",
+        "link": "Informationen",
+        "href": "http://ekiwi.de/datenschutzerklaerung.htm"
+      }
+    })});
+    </script>
 		<!-- End Cookie Consent plugin -->
 		
     </head>
