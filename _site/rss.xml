@@ -8,7 +8,61 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Tue, 22 Nov 2016 18:00:00 +0100</pubDate>
+    <pubDate>Fri, 25 Nov 2016 18:00:00 +0100</pubDate>
+    <item>
+      <title>LetsEncrypt Zertifikat bei Hosteurope eingerichtet</title>
+      <link>http://andydunkel.net/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope.html</link>
+      <description>&lt;p&gt;&lt;a href=&quot;https://letsencrypt.org/&quot;&gt;LetsEncrypt&lt;/a&gt; bietet nun schon seit einiger Zeit kostenlose SSL-Zertfikate an. Diese kann man auf dem eigenen Server relativ problemlos einrichten und konfigurieren. Bei normalem Webspace sieht es leider anders aus. Ein paar Webhoster unterstützen es mittlerweile. Allerdings gibt es da auch einen Interessenkonflikt, da die Anbieter gerne auch selbst SSL-Zertifikate verkaufen.&lt;/p&gt;
+
+&lt;p&gt;So auch bei &lt;a href=&quot;https://www.hosteurope.de&quot;&gt;Hosteurope&lt;/a&gt;. Direkte Unterstützung gibt es nicht und auch über den SSH-Zugang kann man es auch nicht installieren und konfigurieren. Ein SSL-Zertifikat kostet je nach Abstufung mindestens 2,49 Euro im Monat. Dieses ist dann allerdings nur für eine Domain gültig. Mehrere Domains und Subdomains gehen ins Geld.&lt;/p&gt;
+
+&lt;p&gt;Wir haben einen ganzen Zoo an Domains und Subdomains. Allerdings ist es bei den größeren Webspacepaketen möglich ein eigenes Zertifikat hochzuladen.&lt;/p&gt;
+
+&lt;p&gt;Dies ist auch der Ansatzpunkt wie man LetsEncrypt-Zertifikate nutzen kann.&lt;/p&gt;
+
+&lt;h2&gt;Einrichtung&lt;/h2&gt;
+
+&lt;p&gt;Als Clients für die Generierung funktionieren nur Web-Clients. Ich habe hierfür &lt;a href=&quot;https://zerossl.com/free-ssl/#crt&quot;&gt;ZeroSLL&lt;/a&gt; genutzt. Der Dienst ist leicht bedienbar und generiert alle benötigten Dateien im Prozess.&lt;/p&gt;
+
+&lt;p&gt;Im ersten Schritt generiert man den Account-Key und die CSR-Datei (Certificate Signing Request). &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/11/he_ssl1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Die CSR enthält alle Domains für die das Zertfikat gelten soll. Dies sollte alle Domains und auch Subdomains umfassen. Für jede Domain sollte auch die Subdomain www. mit angegeben werden. &lt;/p&gt;
+
+&lt;p&gt;Natürlich wird das Zertifikat nicht einfach so ausgestellt. Es muss noch überprüft werden, ob man wirklich Inhaber der Domain ist. Dies geht auf zwei Arten: HTTP-Überprüfung oder DNS-Überprüfung. Bei der DNS-Überprüfung fügt man einen DNS-TXT-Eintrag der jeweiligen Domain hinzu. Dieser enthält einen &amp;quot;Schlüssel&amp;quot; anhand dessen das Eigentum überprüft wird.&lt;/p&gt;
+
+&lt;p&gt;Ich habe mich für die Überprüfung mittels HTTP entschieden. Hierzu legt man eine Datei mit vom Wizard vorgegebenen Inhalt auf dem Webspace in einem speziellen Verzeichnis an.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/11/he_ssl3.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/11/he_ssl_http.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Bei vielen Domains und Subdomains artet das recht schnell in viel Arbeit aus. Für jede Domain und Subdomain muss eine entsprechende Datei mit Inhalt angelegt werden. Dieses wird anschließend überprüft. Passt alles, werden die Zertifikate erzeugt.&lt;/p&gt;
+
+&lt;p&gt;Diese kann man anschließend bei Hosteurope hochladen:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/11/he_ssl2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Nach wenigen Minuten ist die Einstellung übernommen und die Seite ist mit https:// und dem LetsEncrypt-Zertifikat erreichbar. So weit so gut.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;he_ssl4.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Fazit und Probleme&lt;/h2&gt;
+
+&lt;p&gt;Obwohl technisch alles funktioniert gibt es doch ein paar Nachteile:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Man kann nur ein Zertifikat bei Hosteurope hochladen. Kommt eine Domain oder Subdomain hinzu, muss man den Prozess erneut durchführen. Zeitaufwändig.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;SSL wird für alle Domains und Subdomains aktiviert. Hierbei spielt es keine Rolle, ob man nur eine bestimmte Domain mit SSL ausstatten wollte. Auch die anderen sind nun unter https:// erreichbar. Da das Zertifikat dann nicht passt, mit entsprechender Warnmeldung vom Browser. Deswegen sollte man gleich für alle Domains und Subdomains das Zertifikat mit erstellen.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Das Zertifikat ist 90 Tage gültig. Nach Ablauf der Zeit muss man also erneut tätig werden. Ich habe diesen Prozess noch nicht durchgeführt und kann nur hoffen, dass zumindest die Arbeit des Anlegens der Überprüfungsdateien erspart bleibt. Am Besten setzt man sich gleich einen Termin im Kalender dafür. Ansonsten bekommen die Benutzer die Warnmeldung eines abgelaufenen Zertifikats. &lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Insgesamt kann ich nur hoffen, dass der Konkurrenzdruck zunimmt und Hosteurope irgendwann eine Unterstützung für LetsEncrypt direkt einbaut. Ob das so schnell passiert, wohl eher nicht, da man ja selbst SSL-Zertifikate anbietet. &lt;/p&gt;
+</description>
+      <pubDate>Fri, 25 Nov 2016 18:00:00 +0100</pubDate>
+      <dc:date>2016-11-25T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Mehrsprache C# Anwendungen - nicht lokalisierte Backgroundworker und Threads</title>
       <link>http://andydunkel.net/coding/2016/11/22/c-sharp-mehrsprachig-backgroundworker.html</link>
@@ -7055,6 +7109,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2016-11-22T18:00:00+01:00</dc:date>
+    <dc:date>2016-11-25T18:00:00+01:00</dc:date>
   </channel>
 </rss>
