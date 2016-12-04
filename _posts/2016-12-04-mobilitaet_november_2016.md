@@ -27,8 +27,7 @@ Da sie allerdings Urlaub hatte, habe ich doch öfter zum Auto gegriffen. Früh u
 
 ### Auto
 
-- Gesamt km: 382
-- 
+- Gesamt km: 382 
 - Fahrten: 20
 - Durchschnitt pro Fahrt: 19,1 km
 - Getankt: 38,71 Liter
