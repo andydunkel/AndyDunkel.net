@@ -8,7 +8,52 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Fri, 25 Nov 2016 18:00:00 +0100</pubDate>
+    <pubDate>Sun, 04 Dec 2016 00:00:00 +0100</pubDate>
+    <item>
+      <title>Mobilitaet_november_2016</title>
+      <link>http://andydunkel.net/2016/12/04/mobilitaet_november_2016.html</link>
+      <description>&lt;hr&gt;
+
+&lt;p&gt;author: admin
+comments: true
+date: 2016-12-04 17:00:00+00:00
+layout: post
+slug: mobilitaet&lt;em&gt;november&lt;/em&gt;2016
+title: &amp;#39;Mobilität November 2016&amp;#39;
+categories:
+- Mobilitaet
+- Umwelt
+tags:
+- Mobilitaet
+- Umwelt&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Das Brompton leistet weiterhin gute Dienste. In der früh fahre ich meist bei meiner Freundin mit und Abends mit Zug und Brompton zurück.&lt;/p&gt;
+
+&lt;p&gt;Da sie allerdings Urlaub hatte, habe ich doch öfter zum Auto gegriffen. Früh und Abends mit dem Zug lohnt sich vom Aufwand und monetär her kaum. Zumindest solange das Auto vor der Tür steht. Die Fixkosten sind ja trotzdem da. Die Sache wird nicht besser, da die Bahncard 50 diesen Monat auch ausläuft. Dann muss ich etwas mehr pro Fahrt mit der Bahn zahlen.&lt;/p&gt;
+
+&lt;h3&gt;Fahrrad&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Gesamt km: 64 km&lt;/li&gt;
+&lt;li&gt;Fahrten: 23&lt;/li&gt;
+&lt;li&gt;Durchschnitt pro Fahrt: 2,78 km&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Auto&lt;/h3&gt;
+
+&lt;h2&gt;- Gesamt km: 382&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Fahrten: 20&lt;/li&gt;
+&lt;li&gt;Durchschnitt pro Fahrt: 19,1 km&lt;/li&gt;
+&lt;li&gt;Getankt: 38,71 Liter&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      <pubDate>Sun, 04 Dec 2016 00:00:00 +0100</pubDate>
+      <dc:date>2016-12-04T00:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>LetsEncrypt Zertifikat bei Hosteurope eingerichtet</title>
       <link>http://andydunkel.net/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope.html</link>
@@ -7109,6 +7154,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2016-11-25T18:00:00+01:00</dc:date>
+    <dc:date>2016-12-04T00:00:00+01:00</dc:date>
   </channel>
 </rss>

@@ -157,6 +157,32 @@
      
 		
 		<h1>
+		  <a href="/eclipse/java/swt/2011/10/04/eclipse-rcp-remove-tab-folder-from-view.html">Eclipse RCP: Remove tab folder from View</a>
+		</h1>
+		  <p class="small">Posted on 04 October 2011 by Andy</p>
+		  <p><p>If you create a new RCP application a view gets a tab like this:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/10/image3.png" alt="image"></p>
+
+<p>To remove the tab, use the “addStandaloneView” method in your perspective. Here is an example:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">public class Perspective implements IPerspectiveFactory {
+  public void createInitialLayout(IPageLayout layout) {       
+    String editorArea = layout.getEditorArea();
+    layout.setEditorAreaVisible(false);
+
+    layout.addStandaloneView(View.ID, false, IPageLayout.LEFT, 1.0f, editorArea);       
+  }
+}
+</code></pre></div>
+<p>The result:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/10/image4.png" alt="image"></p>
+</p>		
+		  <p class="small">Tagged: folder, RCP, remove, and tab by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/science/2011/10/03/infrarotlicht-sichtbar-machen.html">Infrarotlicht sichtbar machen</a>
 		</h1>
 		  <p class="small">Posted on 03 October 2011 by Andy</p>
@@ -215,24 +241,6 @@
 		  <p><p>Schon ein wenig her, aber ich kam erst jetzt dazu das Video zu schneiden. Diesmal <a href="http://de.wikipedia.org/wiki/Almabtrieb" target="_blank">Viehscheid</a> und Frühschoppen in Bad Hindelang. Beschwingt ging es danach mit Fahrrad auf die <a href="http://oberstdorf-online.info/alphuetten/kaeseralpe.htm" target="_blank">Käseralpe</a>.</p> <p>Das letzte Drittel hatte dann doch wieder ordentliche Steigungen von bis zu 20%. Aber irgendwie kommt man immer rauf, mit dem richtigen Ziel vor Augen: <img style="border-bottom-style: none; border-left-style: none; border-top-style: none; border-right-style: none" class="wlEmoticon wlEmoticon-mug" alt="Bierkrug" src="http://andydunkel.net/assets/uploads/2011/09/wlEmoticon-mug.png">.</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:2acd1fef-b149-43cf-92a5-26a172ce3c01" class="wlWriterEditableSmartContent"><div><object width="594" height="334"><param name="movie" value="http://www.youtube.com/v/GDf-v088Xak?hl=en&amp;hd=1"></param><embed src="http://www.youtube.com/v/GDf-v088Xak?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="594" height="334"></embed></object></div></div>  <p><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://andydunkel.net/assets/uploads/2011/09/image11.png" width="604" height="354"></p> <p>&nbsp;</p> <p><iframe height="400" marginheight="0" src="http://maps.google.de/maps/ms?msa=0&amp;msid=208324790998598431494.0004aca5d29f398cf319e&amp;ie=UTF8&amp;t=h&amp;vpsrc=0&amp;ll=47.438306,10.321655&amp;spn=0.185774,0.411301&amp;z=11&amp;output=embed" frameborder="0" width="600" marginwidth="0" scrolling="no"></iframe><br><small><a style="text-align: left; color: #0000ff" href="http://maps.google.de/maps/ms?msa=0&amp;msid=208324790998598431494.0004aca5d29f398cf319e&amp;ie=UTF8&amp;t=h&amp;vpsrc=0&amp;ll=47.438306,10.321655&amp;spn=0.185774,0.411301&amp;z=11&amp;source=embed">2011-09-10 09:13 - Viehscheid/Käseralm</a> auf einer größeren Karte anzeigen</small> </p> <p>Gesamtentfernung: 67,68 km (42,1 mi)<br>Zeit in Bewegung: 4:21:02<br>Durchschnittsgeschw.: 7,43 km/h (4,6 mi/h)<br>Durchschnitt in Bew.: 15,56 km/h (9,7 mi/h)<br>Max. Geschwindigkeit: 49,79 km/h (30,9 mi/h)<br>Niedrigste Höhenlage: 790 m (2591 Fuß)<br>Höchste Höhenlage: 1450 m (4757 Fuß)<br>Höhengewinn: 1591 m (5220 Fuß)<br>Maximale Steigung: 21 %<br>Minimale Steigung: -18 %<br>Aufgezeichnet am: Sa. Sep 10 09:13:10 MESZ 2011<br> <p><a href="http://andydunkel.net/assets/uploads/2011/09/DSCN2625.jpg"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2625" border="0" alt="DSCN2625" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2625_thumb.jpg" width="644" height="484"></a></p> <p>Weitere Bilder:</p><!--more--><p><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2607" border="0" alt="DSCN2607" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2607.jpg" width="644" height="484"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2609" border="0" alt="DSCN2609" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2609.jpg" width="644" height="484"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2612" border="0" alt="DSCN2612" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2612.jpg" width="644" height="484"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2614" border="0" alt="DSCN2614" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2614.jpg" width="644" height="484"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2615" border="0" alt="DSCN2615" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2615.jpg" width="644" height="484"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2618" border="0" alt="DSCN2618" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2618.jpg" width="644" height="484"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2620" border="0" alt="DSCN2620" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2620.jpg" width="644" height="484"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2630" border="0" alt="DSCN2630" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2630.jpg" width="644" height="484"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2634" border="0" alt="DSCN2634" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2634.jpg" width="644" height="484"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2635" border="0" alt="DSCN2635" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2635.jpg" width="644" height="484"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2638" border="0" alt="DSCN2638" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2638.jpg" width="644" height="484"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2639" border="0" alt="DSCN2639" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2639.jpg" width="644" height="484"></p>
 </p>		
 		  <p class="small">Tagged: Käseralpe, Oberstdorf, and Radtour by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/eclipse/java/2011/09/17/emf-object-is-not-contained-in-a-resource.html">EMF: Object is not contained in a resource</a>
-		</h1>
-		  <p class="small">Posted on 17 September 2011 by Andy</p>
-		  <p><p>I had a small problem <a href="http://andydunkel.net/eclipse/java/2011/08/02/save-and-load-an-emf-model-to-an-xml-file.html">saving my EMF model to XML</a>. I got the error message “The object … is not contained in a resource”.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/09/image9.png" alt="image"></p>
-
-<p>The solution is simple. In the EMF editor just set containment to true for the reference:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/09/image10.png" alt="image"></p>
-
-<p>Done! After that, the object was saved correctly in the XML file. </p>
-</p>		
-		  <p class="small">Tagged: EMF, Problem, Recource, and Save by Andy</p>
 		  <hr>
 		  
 		

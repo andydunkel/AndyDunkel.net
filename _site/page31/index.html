@@ -157,6 +157,18 @@
      
 		
 		<h1>
+		  <a href="/hiking/sonstiges/2011/11/01/speidenburgruinen-30-10-2011.html">Speiden/Burgruinen 30.10.2011</a>
+		</h1>
+		  <p class="small">Posted on 01 November 2011 by Andy</p>
+		  <p><p>Ein paar Fotos vom letzten Ausflug nach Speiden ins Sudhaus und Wanderung auf die Burgruine Eisenberg und Hohenfreyberg.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/11/DSCN2742.jpg" alt="DSCN2742"><img src="http://andydunkel.net/assets/uploads/2011/11/DSCN2723.jpg" alt="DSCN2723"><img src="http://andydunkel.net/assets/uploads/2011/11/DSCN2718.jpg" alt="DSCN2718"><img src="http://andydunkel.net/assets/uploads/2011/11/DSCN2724.jpg" alt="DSCN2724"><img src="http://andydunkel.net/assets/uploads/2011/11/DSCN2726.jpg" alt="DSCN2726"><img src="http://andydunkel.net/assets/uploads/2011/11/DSCN2728.jpg" alt="DSCN2728"><img src="http://andydunkel.net/assets/uploads/2011/11/DSCN2733.jpg" alt="DSCN2733"><img src="http://andydunkel.net/assets/uploads/2011/11/DSCN2738.jpg" alt="DSCN2738"></p>
+</p>		
+		  <p class="small">Tagged: Speiden by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/sonstiges/2011/10/25/this-week.html">This week</a>
 		</h1>
 		  <p class="small">Posted on 25 October 2011 by Andy</p>
@@ -221,32 +233,6 @@ public class Main {
 tableViewer.setSelection(new StructuredSelection(tableViewer.getElementAt(selection)),true);
 </code></pre></div></p>		
 		  <p class="small">Tagged: JFace, RCP, and tableViewer by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/eclipse/java/swt/2011/10/04/eclipse-rcp-remove-tab-folder-from-view.html">Eclipse RCP: Remove tab folder from View</a>
-		</h1>
-		  <p class="small">Posted on 04 October 2011 by Andy</p>
-		  <p><p>If you create a new RCP application a view gets a tab like this:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/10/image3.png" alt="image"></p>
-
-<p>To remove the tab, use the “addStandaloneView” method in your perspective. Here is an example:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">public class Perspective implements IPerspectiveFactory {
-  public void createInitialLayout(IPageLayout layout) {       
-    String editorArea = layout.getEditorArea();
-    layout.setEditorAreaVisible(false);
-
-    layout.addStandaloneView(View.ID, false, IPageLayout.LEFT, 1.0f, editorArea);       
-  }
-}
-</code></pre></div>
-<p>The result:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/10/image4.png" alt="image"></p>
-</p>		
-		  <p class="small">Tagged: folder, RCP, remove, and tab by Andy</p>
 		  <hr>
 		  
 		
