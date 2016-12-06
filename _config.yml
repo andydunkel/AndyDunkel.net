@@ -1,5 +1,5 @@
 name: AndyDunkel.net
-markdown: redcarpet
+markdown: kramdown
 pygments: true
 paginate: 5
 exclude: ['raw']
