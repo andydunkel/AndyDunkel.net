@@ -152,12 +152,13 @@
 			<div class="post">
 			<p>Recently I needed to start a console application from C#, wait until the execution has finished and read the output back. Here is a simple way this can be done.</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2011/06/image9.png" alt="image"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2011/06/image9.png" alt="image" /></p>
 
 <p>The first thing is to run the process and attach an EventHandler for the finish of the process:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">Process process = new Process();
-process.StartInfo.FileName = @&quot;ping.exe&quot;;
-process.StartInfo.Arguments = @&quot;www.ekiwi.de&quot;;
+
+<pre><code>Process process = new Process();
+process.StartInfo.FileName = @"ping.exe";
+process.StartInfo.Arguments = @"www.ekiwi.de";
 process.StartInfo.CreateNoWindow = true;
 process.StartInfo.UseShellExecute = false;
 process.StartInfo.RedirectStandardOutput = true;
@@ -167,11 +168,13 @@ process.StartInfo.RedirectStandardError = true;
 process.EnableRaisingEvents = true;
 process.Exited += processHasFinished;
 process.Start();
-</code></pre></div>
+</code></pre>
+
 <!-- more -->
 
 <p>Now we have to write the EventHandler, in the handler we have to use the “Invoke” command to execute the setting of the text in the GUI thread:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">private void processHasFinished(object sender, EventArgs e)
+
+<pre><code>private void processHasFinished(object sender, EventArgs e)
 {
     var process = (Process)sender;
     String output = process.StandardOutput.ReadToEnd();
@@ -184,7 +187,8 @@ private void UpdateText(string text)
 {
     textOut.Text = text;
 }
-</code></pre></div>
+</code></pre>
+
 <p>That’s it!</p>
 
 			</div>
@@ -219,6 +223,8 @@ private void UpdateText(string text)
 				<div class="panel-body">
 				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/java/2011/10/12/java-reading-output-from-a-consolestdout.html" title="Java: Reading output from the Console/StdOut">Java: Reading output from the Console/StdOut</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/coding/2016/12/15/wpf_anwendungen_mehrsprachig.html" title="WPF Anwendung lokalisieren und übersetzen">WPF Anwendung lokalisieren und übersetzen</a></li>
 				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/coding/2016/11/22/c-sharp-mehrsprachig-backgroundworker.html" title="Mehrsprache C# Anwendungen - nicht lokalisierte Backgroundworker und Threads">Mehrsprache C# Anwendungen - nicht lokalisierte Backgroundworker und Threads</a></li>
 				

@@ -153,25 +153,29 @@
 			<p>Vor einiger Zeit habe ich beschrieben, wie man <a href="//andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html">C#-Anwendungen lokalisieren</a> kann.</p>
 
 <p>Die Sprache kann man z.B. so im Code festlegen:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">CultureInfo myCultureInfo = new CultureInfo(&quot;en&quot;);
+
+<pre><code>CultureInfo myCultureInfo = new CultureInfo("en");
 Thread.CurrentThread.CurrentCulture = myCultureInfo;
 Thread.CurrentThread.CurrentUICulture = myCultureInfo;
-</code></pre></div>
+</code></pre>
+
 <p>Allerdings reicht dies nicht in allen Fällen aus. So trat das Problem auf, dass in Backgroundworkern und Threads in meinen Logik-Klassen, immer die deutschen Texte verwendet worden sind:</p>
 
-<p><img src="/assets/uploads/2016/11/trans_error1.png" alt=""></p>
+<p><img src="/assets/uploads/2016/11/trans_error1.png" alt="" /></p>
 
 <p>Hier sollte eigentlich der Text in englischer Sprache aus der Resourcendatei kommen.</p>
 
-<h2>Lösung</h2>
+<h2 id="lsung">Lösung</h2>
 
 <p>Die Lösung ist einfach, zumindest ab .net Version 4.5. Hier fügt man einfach die folgenden zwei Zeilen dem ursprünglichen Code hinzu:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">CultureInfo.DefaultThreadCurrentCulture = myCultureInfo;
+
+<pre><code>CultureInfo.DefaultThreadCurrentCulture = myCultureInfo;
 CultureInfo.DefaultThreadCurrentUICulture = myCultureInfo;
-</code></pre></div>
+</code></pre>
+
 <p>Der Code bewirkt das auch andere Threads und damit auch die Backgroundworker die richtige Sprache verwenden.</p>
 
-<p><img src="/assets/uploads/2016/11/trans_error1.png" alt=""></p>
+<p><img src="/assets/uploads/2016/11/trans_error1.png" alt="" /></p>
 
 			</div>
 			
@@ -203,6 +207,8 @@ CultureInfo.DefaultThreadCurrentUICulture = myCultureInfo;
 			 <div class="panel panel-default">
 			 	<div class="panel-heading">Verwandte Artikel:</div>
 				<div class="panel-body">
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/coding/2016/12/15/wpf_anwendungen_mehrsprachig.html" title="WPF Anwendung lokalisieren und übersetzen">WPF Anwendung lokalisieren und übersetzen</a></li>
 				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/coding/2015/07/12/c_sharp_dateiaenderungen_ueberwachen.html" title="C#-Dateiänderungen in Verzeichnissen überwachen">C#-Dateiänderungen in Verzeichnissen überwachen</a></li>
 				

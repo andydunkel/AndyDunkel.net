@@ -153,30 +153,33 @@
 			<p>I got a new Windows laptop and found out that there is an issue with my Firemonkey applications. 
 The laptop has two graphic cards. An Intel and a dedicated ATI chip.</p>
 
-<p>When the laptop is using the dedicated graphics card the application starts flickering, turned windows black and became more or less unuseable. </p>
+<p>When the laptop is using the dedicated graphics card the application starts flickering, turned windows black and became more or less unuseable.</p>
 
-<p>Forcing to use the internal graphic card solved the problem. However its not a solution a customer would have any understanding for. </p>
+<p>Forcing to use the internal graphic card solved the problem. However its not a solution a customer would have any understanding for.</p>
 
 <p>I do not really know the root cause, as this could be a bug in Firemonkey or some driver issue. I assume its a bug in Firemonkey as I have only seen it in FM applications. I was able to reproduce it with Delphi XE 4 and XE 7 on my computer.</p>
 
-<h2>Video</h2>
+<h2 id="video">Video</h2>
 
 <p>I made a small video which shows the issue. As you can see its more then small glitches:</p>
 
-<iframe width="750" height="422" src="https://www.youtube.com/embed/erBkqWToKag" frameborder="0" allowfullscreen></iframe>
+<iframe width="750" height="422" src="https://www.youtube.com/embed/erBkqWToKag" frameborder="0" allowfullscreen=""></iframe>
 
-<h2>Code and solution</h2>
+<h2 id="code-and-solution">Code and solution</h2>
 
 <p>Since Firemonkey uses the graphic card for rendering the UI, deactivating the acceleration should hopefully solve the problem. Its more a workaround, as it deactivates the hardware acceleration. Since I am not using any special effects it has now visible speed impact on the application.</p>
 
 <p>To disable the hardware foo in your application open the <code>*.dpr</code> file in Delphi. Add the two showed units to your uses clause:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">uses
+
+<pre><code>uses
   FMX.Forms,
   FMX.Types,
   ...
-</code></pre></div>
+</code></pre>
+
 <p>In the code add the following <code>{code}</code> section:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">begin
+
+<pre><code>begin
   Application.Initialize;
   {code}
   fmx.types.GlobalUseHWEffects:=false;
@@ -184,11 +187,12 @@ The laptop has two graphic cards. An Intel and a dedicated ATI chip.</p>
   FMX.Types.GlobalUseDirect2D:=false;
   FMX.Types.GlobalUseDX10Software:=false;
   {code}
-
+  
   ...
   Application.Run;
 end.
-</code></pre></div>
+</code></pre>
+
 <p>After a compile the problem was gone. I also tested the application on OSX after that, there was also no negative effect.</p>
 
 			</div>

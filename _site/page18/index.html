@@ -157,6 +157,36 @@
      
 		
 		<h1>
+		  <a href="/kochen/2013/08/22/ruhrei-in-der-mikrowelle.html">Rührei in der Mikrowelle</a>
+		</h1>
+		  <p class="small">Posted on 22 August 2013 by Andy</p>
+		  <p><p>Heute etwas aus dem Bereich Experiment. Problemstellung: ein Rührei sollte heute Abend zum Abendessen auf den Teller. </p>
+
+<p>Problem: mein Herd ist recht alt und hat langsame traditionelle Kochplatten, die brauchen einige Minuten um überhaupt richtig heiß zu werden. Dann benötigt man noch eine Pfanne, die danach fettig und eingesaut ist.</p>
+
+<p>Also warum nicht mal Rührei in der Mikrowelle, klappt mit Wienern doch auch, ausprobieren. Also kurz gegoogelt. Von klappt super bis zur Explosion in der Mikrowelle war alles an Erfahrungsberichten dabei.</p>
+
+<p>Also doch selbst probieren. Hier die Anleitung: Zuerst das Ei in ein geeignetes Behältnis schlagen, nach Gusto würzen und verrühren:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/08/ei1.png" alt="Ei 1" /></p>
+
+<p>Dann geht das Ganze mit Deckel (nur auflegen) in die Mikrowelle (die mal wieder geputzt werden könnte):</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/08/ei2.png" alt="Ei 2" /></p>
+
+<p>Dann mit volle Pulle (bei mir 750 Watt), etwa 1-2 Minuten erwärmen. Nach einer Minute habe ich sicherheitshalber mal geschaut, nach 1,5 Minuten war es dann fertig. Das Ergebnis:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/08/Ei3.png" alt="Ei 3" /></p>
+
+<p>Geschmacklich war das Rührei durchaus OK, aus der Pfanne ist es meiner Meinung nach noch besser. Kann aber auch einfach daran liegen, dass in der Pfanne noch ordentlich Butter dazu kommt. Fett ist ja bekanntlich Geschmacksträger. Beim nächsten Mal werde ich einfach noch etwas Butter beifügen. </p>
+
+<p>Insgesamt durchaus zur Nachahmung zu empfehlen, spart Abwasch, Zeit und Energie.</p>
+</p>		
+		  <p class="small">Tagged: Kochen and Mikrowelle by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/eclipse/java/2013/08/20/eclipse-rcp-remove-quick-access-from-toolbar.html">Eclipse / RCP: Remove Quick Access from toolbar</a>
 		</h1>
 		  <p class="small">Posted on 20 August 2013 by Andy</p>
@@ -164,22 +194,24 @@
 
 <p> </p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2013/08/quick_access.png" alt="Quick access"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2013/08/quick_access.png" alt="Quick access" /></p>
 
 <p>How to get rid of that? The workaround is to hide the item with some CSS code.</p>
 
-<p>First create a CSS file in your plugins root folder, for example &quot;default.css&quot;:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">#SearchField {
-    visibility: hidden; 
+<p>First create a CSS file in your plugins root folder, for example “default.css”:</p>
+
+<pre><code>#SearchField {
+	visibility: hidden;	
 }
-</code></pre></div>
+</code></pre>
+
 <p>Then add a property in the plugin.xml to your product extension point:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2013/08/property.png" alt="Property"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2013/08/property.png" alt="Property" /></p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2013/08/property2.png" alt="Property2"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2013/08/property2.png" alt="Property2" /></p>
 
-<p>The name for the property is &quot;applicationCSS&quot; and in the value field link to your CSS file.</p>
+<p>The name for the property is “applicationCSS” and in the value field link to your CSS file.</p>
 
 <p>The quick access should be gone next time you run your application with the product configuration.</p>
 </p>		
@@ -194,16 +226,18 @@
 		  <p><p>Heute wurde mir ein Update für Android Studio angezeigt. Also Update heruntergeladen und installiert. Wie immer erwartet man da natürlich Probleme mit bestehenden Projekten. :-)</p>
 
 <p>War natürlich der Fall: </p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">Gradle: &lt;br&gt;&lt;/br&gt;FAILURE: Could not determine which tasks to execute.&lt;br&gt;&lt;/br&gt;* What went wrong:&lt;br&gt;&lt;/br&gt;Task &#39;assemble&#39; not found in root project &#39;SomeProject&#39;.&lt;br&gt;&lt;/br&gt;* Try:&lt;br&gt;&lt;/br&gt;Run gradle tasks to get a list of available tasks.
+
+<pre><code>Gradle: &lt;br&gt;&lt;/br&gt;FAILURE: Could not determine which tasks to execute.&lt;br&gt;&lt;/br&gt;* What went wrong:&lt;br&gt;&lt;/br&gt;Task 'assemble' not found in root project 'SomeProject'.&lt;br&gt;&lt;/br&gt;* Try:&lt;br&gt;&lt;/br&gt;Run gradle tasks to get a list of available tasks.
 
 
 
 
-Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;&#39;/Users/da/.gradle/wrapper/dists/gradle-1.6-bin/.../gradle-1.6&#39;.
-</code></pre></div>
+Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;'/Users/da/.gradle/wrapper/dists/gradle-1.6-bin/.../gradle-1.6'.
+</code></pre>
+
 <p>Die Lösung ist in der *.iml Datei (liegt im Root-Verzeichnis, den folgenden Inhalt herauszulöschen:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2013/08/RausDamit.png" alt="Raus Damit"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2013/08/RausDamit.png" alt="Raus Damit" /></p>
 </p>		
 		  <p class="small">Tagged:  by Andy</p>
 		  <hr>
@@ -213,13 +247,13 @@ Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;&#39;/Use
 		  <a href="/tools/2013/08/07/mou-markdown-editor-fur-osx.html">Mou - Markdown Editor für OSX</a>
 		</h1>
 		  <p class="small">Posted on 07 August 2013 by Andy</p>
-		  <p><p>Markdown ist meine neue &quot;<a href="http://andydunkel.net/tools/2013/06/16/markdown.html">Lieblingsauszeichnungssprache</a>&quot; für Dokumente aller Art geworden. In der täglichen Arbeit fällt viel an was niedergeschrieben werden will: Notizen, kleinere und größere Dokumentationen. Da es im Prinzip nur Textdateien sind, sind diese auch sehr leicht auffindbar mittels Spotlight oder unter Windows mit der Desktop-Search.</p>
+		  <p><p>Markdown ist meine neue “<a href="http://andydunkel.net/tools/2013/06/16/markdown.html">Lieblingsauszeichnungssprache</a>” für Dokumente aller Art geworden. In der täglichen Arbeit fällt viel an was niedergeschrieben werden will: Notizen, kleinere und größere Dokumentationen. Da es im Prinzip nur Textdateien sind, sind diese auch sehr leicht auffindbar mittels Spotlight oder unter Windows mit der Desktop-Search.</p>
 
 <p>Evernote ist deswegen vor einiger Zeit von meinem Rechner geflogen.</p>
 
-<p>Als Editor verwende ich unter MacOS die Anwenung &quot;<a href="http://mouapp.com/">Mou</a>&quot;. Die Software ist derzeit kostenlos, Spende erwünscht. Ansonsten bietet die Software das klassische 2-Splaten Layout. Links der reine Text und rechts die Vorschau.</p>
+<p>Als Editor verwende ich unter MacOS die Anwenung “<a href="http://mouapp.com/">Mou</a>”. Die Software ist derzeit kostenlos, Spende erwünscht. Ansonsten bietet die Software das klassische 2-Splaten Layout. Links der reine Text und rechts die Vorschau.</p>
 
-<p><a href="http://mouapp.com/"><img src="http://andydunkel.net/assets/uploads/2013/08/Screen-Shot-2013-08-07-at-9.36.25-PM.png" alt="Screen Shot 2013 08 07 at 9 36 25 PM"></a></p>
+<p><a href="http://mouapp.com/"><img src="http://andydunkel.net/assets/uploads/2013/08/Screen-Shot-2013-08-07-at-9.36.25-PM.png" alt="Screen Shot 2013 08 07 at 9 36 25 PM" /></a></p>
 
 <p>Die Software bietet die üblichen Funktionen die man von einem Markdown-Editor erwartet: einen schönen Editor mit jeder Menge hilfreicher Shortcuts, HTML- und PDF-Export, Stylesheets, Themes etc.</p>
 
@@ -233,31 +267,13 @@ Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;&#39;/Use
 		  <a href="/sonstiges/2013/07/29/griechische-katze.html">Griechische Katze</a>
 		</h1>
 		  <p class="small">Posted on 29 July 2013 by Andy</p>
-		  <p><p>Zweite Woche in Folge: wir wollen in der Mittagspause zu unserem Stammgriechen. Restaurant ist offen, aber niemand da, wir warten etwas ab und brechen die Aktion nach 15 Minuten Wartezeit ab. </p>
+		  <p><p>Zweite Woche in Folge: wir wollen in der Mittagspause zu unserem Stammgriechen. Restaurant ist offen, aber niemand da, wir warten etwas ab und brechen die Aktion nach 15 Minuten Wartezeit ab.</p>
 
 <p>Heute war dann zumindest noch die hungrige Katze da:</p>
 
-<p><a href="http://andydunkel.net/assets/uploads/2013/07/20130729-145519.jpg"><img src="http://andydunkel.net/assets/uploads/2013/07/20130729-145519.jpg" alt="20130729-145519.jpg"></a></p>
+<p><a href="http://andydunkel.net/assets/uploads/2013/07/20130729-145519.jpg"><img src="http://andydunkel.net/assets/uploads/2013/07/20130729-145519.jpg" alt="20130729-145519.jpg" /></a></p>
 
 <p>Schauen wir mal nächste Woche.</p>
-</p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/meinung/2013/07/03/roaminggebuhren.html">Roaminggebühren</a>
-		</h1>
-		  <p class="small">Posted on 03 July 2013 by Andy</p>
-		  <p><p>Die EU hat zum Anfang des Monats die Roaming-Kosten gesenkt. Telefongespräche und SMS kosten nun weniger, aber das interessiert mich nicht wirklich. Wichtiger sind die mobilen Daten.</p>
-
-<p>Nichts ist nerviger als im Ausland auf Internet zu verzichten. Keine Handynavi, keine E-Mails, nichts mal eben auf der Karte nachschauen. Meistens habe ich mir dann vor Ort eine Prepaid-Karte geholt, wenn der Aufenthalt mal länger war.</p>
-
-<p>53 cent kostet jetzt das Megabyte im Ausland, zumindest bei Congstar. Da kann man schonmal kurz online gehen um irgendwas nachzuschauen. Dauerhaft anschalten, kann es zu diesen Preisen natürlich immer noch nicht.</p>
-
-<p>Zusätzlich wurden auch die <a href="https://www.congstar.de/hilfe-zu-tarifen/roaming/">Day-Passes</a> im Preis angepasst. Man bekommt jetzt für 2,90 Euro immerhin 50 MB pro Tag. Vorher hat es unverschämte 6,90 Euro gekostet.</p>
-
-<p>Immer noch viel zu teuer, aber wir bewegen uns in die richtige Richtung. Ich hege ja noch die ferne Hoffnung, dass ich irgendwann mein Handy einfach europaweit benutzen kann ohne mir irgendwelche Gedanken machen zu müssen.</p>
 </p>		
 		  <p class="small">Tagged:  by Andy</p>
 		  <hr>
@@ -302,7 +318,7 @@ Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;&#39;/Use
 		<section>
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (27)</a></li>
+<li class='category'><a href='/categories/coding/'>coding (28)</a></li>
 <li class='category'><a href='/categories/computer/'>computer (8)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>

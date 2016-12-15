@@ -157,6 +157,36 @@
      
 		
 		<h1>
+		  <a href="/gadgets/2012/12/03/macos-mauszeiger-beschleunigen.html">MacOS: Mauszeiger beschleunigen</a>
+		</h1>
+		  <p class="small">Posted on 03 December 2012 by Andy</p>
+		  <p><p>Ich habe mir letzte Woche eine <a href="http://www.amazon.de/gp/product/B002NX0M8C/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B002NX0M8C&amp;linkCode=as2&amp;tag=ekiwide0b-21">Apple Magic Maus</a> gekauft. Einrichtung war schnell erledigt. Die Maus selbst ist schick, die Touchbedienung erstmal gewöhnungsbedürftig. </p>
+
+<p>Allerdings war mir der Mauszeiger viel zu langsam, trotz höchster Einstellung in den Mauseinstellungen.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/12/Tracking.png" alt="Tracking" /></p>
+
+<p>Natürlich gibt es mit etwas Terminal-FU Abhilfe. Also Terminal aufmachen und folgende Zeile reinklopfen:</p>
+
+<blockquote>
+
+</blockquote>
+
+<blockquote>
+
+  <p>defaults write -g com.apple.mouse.scaling 8.0</p>
+
+</blockquote>
+
+<p>Wobei 8.0 die Geschwindigkeit der Maus ist. Die höchste Defaulteinstellung in der GUI ist 5.0. Also einfach mal etwas herum probieren. Damit die Änderung wirksam wird muss man sich noch Ausloggen und wieder Einloggen. Jetzt flitzt der Mauszeiger auch über den 27” Monitor. </p>
+
+<p><a href="http://www.amazon.de/gp/product/B002NX0M8C/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B002NX0M8C&amp;linkCode=as2&amp;tag=ekiwide0b-21"><img src="http://andydunkel.net/assets/uploads/2012/12/2012-11-30-21.19.13.jpg" alt="2012 11 30 21 19 13" /></a></p>
+</p>		
+		  <p class="small">Tagged:  by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/gadgets/2012/11/27/neue-leuchtmittel.html">Neue Leuchtmittel</a>
 		</h1>
 		  <p class="small">Posted on 27 November 2012 by Andy</p>
@@ -166,7 +196,7 @@
 
 <p>Gekauft habe ich Qualitätslampen der Firma Parlat.</p>
 
-<p><a href="http://www.amazon.de/gp/product/B005F2LZ0C/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B005F2LZ0C&amp;linkCode=as2&amp;tag=ekiwide0b-21"><img src="http://andydunkel.net/assets/uploads/2012/11/2012-11-27-18.01.58.jpg" alt="2012 11 27 18 01 58"></a></p>
+<p><a href="http://www.amazon.de/gp/product/B005F2LZ0C/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B005F2LZ0C&amp;linkCode=as2&amp;tag=ekiwide0b-21"><img src="http://andydunkel.net/assets/uploads/2012/11/2012-11-27-18.01.58.jpg" alt="2012 11 27 18 01 58" /></a></p>
 
 <p>Gibt es auf <a href="http://www.amazon.de/gp/product/B005F2LZ0C/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B005F2LZ0C&amp;linkCode=as2&amp;tag=ekiwide0b-21">Amazon</a> (Achtung Werbelink) für ca. 10 - 12 Euro das Stück. Jede Lampe verbraucht 4 Watt, diese sollen 40 Watt konventioneller Leuchtmittel entsprechen.</p>
 
@@ -180,7 +210,7 @@
 
 <p>Hier ein Foto, durch die Helligkeit der Lampen kann man es nicht so richtig fotografieren:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/DSCN3062.jpg" alt="DSCN3062"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/DSCN3062.jpg" alt="DSCN3062" /></p>
 </p>		
 		  <p class="small">Tagged:  by Andy</p>
 		  <hr>
@@ -191,7 +221,8 @@
 		</h1>
 		  <p class="small">Posted on 25 November 2012 by Andy</p>
 		  <p><p>Some methods want an InputStream, converting a String into an InputStream is very easy:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">/**
+
+<pre><code>/**
  * Converts a string into an inputstream
  * @param s
  * @return
@@ -200,7 +231,9 @@ private InputStream convertStringToInputStream(String s) {
   ByteArrayInputStream in = new ByteArrayInputStream(s.getBytes());
   return in;
 }
-</code></pre></div></p>		
+</code></pre>
+
+</p>		
 		  <p class="small">Tagged:  by Andy</p>
 		  <hr>
 		  
@@ -211,39 +244,57 @@ private InputStream convertStringToInputStream(String s) {
 		  <p class="small">Posted on 24 November 2012 by Andy</p>
 		  <p><p><strong>Dies ist die englische Version, wer die Reparaturanleitung auf Deutsch lesen möchte, <a href="http://andydunkel.net/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html">hier klicken</a>.</strong></p>
 
-<p>Since I got a lot of feedback for my repair guide for the <a href="http://www.amazon.de/gp/product/B002P68ADQ/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B002P68ADQ&amp;linkCode=as2&amp;tag=ekiwide0b-21">Roomba</a><img src="http://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&amp;l=as2&amp;o=3&amp;a=B002P68ADQ" alt="">, I decided to write an english version of the guide.</p>
+<p>Since I got a lot of feedback for my repair guide for the <a href="http://www.amazon.de/gp/product/B002P68ADQ/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B002P68ADQ&amp;linkCode=as2&amp;tag=ekiwide0b-21">Roomba</a><img src="http://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&amp;l=as2&amp;o=3&amp;a=B002P68ADQ" alt="" />, I decided to write an english version of the guide.</p>
 
-<p>I am a happy owner of a Roomba 580 device for almost 3 years now. However some time ago my Roomba stopped working. Turned out to the &quot;error 9 problem&quot;. The Roomba just moves turns around in circles and ends up with and 9 beep error code.</p>
+<p>I am a happy owner of a Roomba 580 device for almost 3 years now. However some time ago my Roomba stopped working. Turned out to the “error 9 problem”. The Roomba just moves turns around in circles and ends up with and 9 beep error code.</p>
 
-<p>After some investigation on the Internet it turned out that the problem is related to the bumper sensor. The bumper is the big black thing on the Roomba&#39;s front. It detects hits to the wall. This results in a Roomba thinking constantly hitting a wall and acting stupid.</p>
+<p>After some investigation on the Internet it turned out that the problem is related to the bumper sensor. The bumper is the big black thing on the Roomba’s front. It detects hits to the wall. This results in a Roomba thinking constantly hitting a wall and acting stupid.</p>
 
 <p>The good news is, this can easily (and also cheap) be fixed by replacing some components with a soldering gun.</p>
 
 <p>Note: this guide is for a Roomba 580 device, but should be the same for all 5xx models.</p>
 
-<p>Let&#39;s start! In the first step we find out which of the two bumper sensors is causing the problem. iRobot reckons on their website, that something may mechanical block the sensor. So in the first step, try to push the bumper a few times in order to remove any obstacles. However in most cases the sensors are just not working</p>
+<p>Let’s start! In the first step we find out which of the two bumper sensors is causing the problem. iRobot reckons on their website, that something may mechanical block the sensor. So in the first step, try to push the bumper a few times in order to remove any obstacles. However in most cases the sensors are just not working</p>
 
-<p>To find out which sensor is not working, we have to activate the Roomba&#39;s diagnostic mode:</p>
+<p>To find out which sensor is not working, we have to activate the Roomba’s diagnostic mode:</p>
 
 <ul>
-<li><p>turn of the Roomba, the CLEAN LED must of off</p></li>
-<li><p>now press DOCK and CLEAN together and hold them</p></li>
-<li><p>press the SPOT button 6 times</p></li>
-<li><p>now release DOCK and CLEAN</p></li>
-<li><p>the Roomba should play some melody and is now in the test-0 mode, also the LEDs are blinking</p></li>
-<li><p>press the DOCK button 2 times to go to the bumber test (test-2)</p></li>
-<li><p>the Dirt detect LED should be blinking now and the CLEAN LED should turn red</p></li>
-<li><p>now we can test the bumbers, if we push the bumper right, the the DOCK LED should turn on until the bumper is released, if the LED is not turning on the right sensor is broken. The left bumper turns on the SPOT LED. If one of the LED&#39;s is constantly on, the sensor is broken too.</p></li>
-<li><p>Press DOCK and SPOT for 10 seconds to leave the diagnostic mode</p></li>
+  <li>
+    <p>turn of the Roomba, the CLEAN LED must of off</p>
+  </li>
+  <li>
+    <p>now press DOCK and CLEAN together and hold them</p>
+  </li>
+  <li>
+    <p>press the SPOT button 6 times</p>
+  </li>
+  <li>
+    <p>now release DOCK and CLEAN</p>
+  </li>
+  <li>
+    <p>the Roomba should play some melody and is now in the test-0 mode, also the LEDs are blinking</p>
+  </li>
+  <li>
+    <p>press the DOCK button 2 times to go to the bumber test (test-2)</p>
+  </li>
+  <li>
+    <p>the Dirt detect LED should be blinking now and the CLEAN LED should turn red</p>
+  </li>
+  <li>
+    <p>now we can test the bumbers, if we push the bumper right, the the DOCK LED should turn on until the bumper is released, if the LED is not turning on the right sensor is broken. The left bumper turns on the SPOT LED. If one of the LED’s is constantly on, the sensor is broken too.</p>
+  </li>
+  <li>
+    <p>Press DOCK and SPOT for 10 seconds to leave the diagnostic mode</p>
+  </li>
 </ul>
 
 <p>Now that we know which sensor is broken, we can disassemble the Roomba.</p>
 
 <p>For the repair the following parts are needed:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/diode2.png" alt="Diode2"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/diode2.png" alt="Diode2" /></p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/ir_diode.png" alt="Ir diode"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/ir_diode.png" alt="Ir diode" /></p>
 
 <p>These can be orderd at <a href="http://www.conrad.com">Conrad</a> (the order numbers here are from Conrad). The price is around 1 Euro each item. For every sensor on of each diodes is needed. I reckon to order some spare ones too, just in case if something goes wrong, or like in my case, the other sensor broke some month later.</p>
 
@@ -251,55 +302,55 @@ private InputStream convertStringToInputStream(String s) {
 
 <p>First remove the dirt box and the brushes. Now remove the plate on the bottom:</p>
 
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image1.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb1.png" alt="image"></a></p>
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image1.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb1.png" alt="image" /></a></p>
 
-<p>Now remove the <a href="http://www.amazon.de/gp/product/B001VHQ32U/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B001VHQ32U&amp;linkCode=as2&amp;tag=ekiwide0b-21">battery</a><img src="http://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&amp;l=as2&amp;o=3&amp;a=B001VHQ32U" alt=""> and the bumper, the bumper is fixed with 10 screws.</p>
+<p>Now remove the <a href="http://www.amazon.de/gp/product/B001VHQ32U/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B001VHQ32U&amp;linkCode=as2&amp;tag=ekiwide0b-21">battery</a><img src="http://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&amp;l=as2&amp;o=3&amp;a=B001VHQ32U" alt="" /> and the bumper, the bumper is fixed with 10 screws.</p>
 
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image2.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb2.png" alt="image"></a></p>
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image2.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb2.png" alt="image" /></a></p>
 
 <p>To remove the bumper completly we have the remove the sensor for the base station on the top:</p>
 
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image3.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb3.png" alt="image"></a></p>
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image3.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb3.png" alt="image" /></a></p>
 
 <p>Having removed the bumper, we can now see the bumper switches. Check if they can be pushed without problem. Of not there might be a mechanical problem.</p>
 
-<p>Now remove the upper plating. These plate is relativly hard to remove. Use &quot;careful force&quot; to remove it:</p>
+<p>Now remove the upper plating. These plate is relativly hard to remove. Use “careful force” to remove it:</p>
 
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image4.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb4.png" alt="image"></a></p>
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image4.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb4.png" alt="image" /></a></p>
 
 <p>In the next step we have to remove a lot of screws. Note that one is slightly smaller than the others.</p>
 
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image5.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb5.png" alt="image"></a></p>
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image5.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb5.png" alt="image" /></a></p>
 
 <p>Now we can see the circuit board. Remove the grey ring in the middle.</p>
 
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image6.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb6.png" alt="image"></a></p>
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image6.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb6.png" alt="image" /></a></p>
 
 <p>You may not be surprised, even more screws to remove:</p>
 
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image7.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb7.png" alt="image"></a></p>
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image7.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb7.png" alt="image" /></a></p>
 
 <p>Remove the cable connector from the circuit board:</p>
 
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image8.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb8.png" alt="image"></a></p>
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image8.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb8.png" alt="image" /></a></p>
 
 <p>Carefully flip over the circuit board, after that we can already see the bumper sensors:</p>
 
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image9.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb9.png" alt="image"></a></p>
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image9.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb9.png" alt="image" /></a></p>
 
-<p>These are fixed with two screws. We remove these now. Now we have to disassemble the sensor. We need to be very careful here not to break anything of the plastic housing. Inside is a small spring which easily might get lost. We don&#39;t want this to happen.</p>
+<p>These are fixed with two screws. We remove these now. Now we have to disassemble the sensor. We need to be very careful here not to break anything of the plastic housing. Inside is a small spring which easily might get lost. We don’t want this to happen.</p>
 
-<p><a href="http://andydunkel.net/assets/uploads/2012/03/image10.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb10.png" alt="image"></a></p>
+<p><a href="http://andydunkel.net/assets/uploads/2012/03/image10.png"><img src="http://andydunkel.net/assets/uploads/2012/03/image_thumb10.png" alt="image" /></a></p>
 
 <p>Inside you find a small PCB with the two diodes:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2012/03/image11.png" alt="image"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2012/03/image11.png" alt="image" /></p>
 
 <p>Now grab your soldering gun and replace the two components:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/diode_pcb.jpg" alt="Diode pcb"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/diode_pcb.jpg" alt="Diode pcb" /></p>
 
-<p>The IR receiver it the &quot;upper&quot; one with the slight blue color.</p>
+<p>The IR receiver it the “upper” one with the slight blue color.</p>
 
 <p>Well thats it. Now reassemble the Roomba and hopefully everthing should be working again. Check the function of the sensors by using the diagnostic program.</p>
 
@@ -321,7 +372,7 @@ private InputStream convertStringToInputStream(String s) {
 
 <p>Daher meine Empfehlung, wenn das Ding einmal zerlegt ist, am Besten gleich beide Sensoren reparieren. </p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/2012-11-21-20.05.05.jpg" alt="2012 11 21 20 05 05"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/2012-11-21-20.05.05.jpg" alt="2012 11 21 20 05 05" /></p>
 
 <p>Also wieder das Standardprogramm, zerlegen und neue Dioden einlöten. Ging diesmal auch wesentlich flotter. Wieder zusammensetzen und schon tut er wieder seinen Dienst wie gewohnt. Jetzt hoffe ich, dass das das letzte Mal war, dass ich das Ding zerlegen muss. :-)</p>
 
@@ -329,41 +380,9 @@ private InputStream convertStringToInputStream(String s) {
 
 <p><strong>Hier die Übeltäter:</strong></p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/2012-11-21-20.15.48.jpg" alt="2012 11 21 20 15 48"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/2012-11-21-20.15.48.jpg" alt="2012 11 21 20 15 48" /></p>
 </p>		
 		  <p class="small">Tagged: Error 9 and roomba by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/coding/eclipse/2012/11/04/rcp-problems-when-generating-pdf-files-with-rcp.html">RCP: Problems when generating PDF files with RCP</a>
-		</h1>
-		  <p class="small">Posted on 04 November 2012 by Andy</p>
-		  <p><p>Recently I ran into a problem in my RCP application during the generation of a PDF file from a <a href="http://www.eclipse.org/birt/phoenix/">BIRT</a> report. This only happened when trying to run the export from the exported product:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/11.png" alt="1"></p>
-
-<p>The first problem was an &quot;Error.OutputFormatNotSupported&quot;.</p>
-
-<p>This was a little bit strange, since I would have expected some syntax errors in my project trying to use stuff from another plugin that is referenced to my project.</p>
-
-<p>Anyway, I was able to fix this by adding &quot;org.eclipse.birt.engine.emitter.pdf&quot; to my run configuration. After that I got another error:</p>
-
-<blockquote>
-<p>org.eclipse.birt.report.engine.api.engineexception cant create data engine</p>
-</blockquote>
-
-<p>Remembering that I am using JavaScript in my BIRT report, the approach was similar. Just a missing reference to &quot;org.eclipse.birt.report.engine.script.javascript&quot;.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/21.png" alt="2"></p>
-
-<p>After that, the report was working from Eclipse as well as from the exported project. </p>
-
-<p>Here is a kitten:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/31.png" alt="3"></p>
-</p>		
-		  <p class="small">Tagged: birt and RCP by Andy</p>
 		  <hr>
 		  
 		
@@ -406,7 +425,7 @@ private InputStream convertStringToInputStream(String s) {
 		<section>
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (27)</a></li>
+<li class='category'><a href='/categories/coding/'>coding (28)</a></li>
 <li class='category'><a href='/categories/computer/'>computer (8)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>

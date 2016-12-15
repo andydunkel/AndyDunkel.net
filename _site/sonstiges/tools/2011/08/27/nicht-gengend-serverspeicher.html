@@ -152,27 +152,27 @@
 			<div class="post">
 			<p>Momentan ziehe ich Windows Probleme magisch an. Heute habe ich auf meinem Server (eigentlich nur eine Windows XP Kiste mit ein paar Freigaben) Acronis True Image installiert. Backups sind ja wichtig und so…</p>
 
-<p>Nicht nur, dass es hierbei schon <a href="http://blog.ekiwi.de/?p=733">zu Problemen kam</a>, nein, ich konnte anschließend auch nicht mehr auf meine Netzwerkfreigaben zugreifen. Fehlermeldung: “Nicht genügend Serverspeicher”. Super! <img src="http://andydunkel.net/assets/uploads/2011/08/wlEmoticon-cryingface.png" alt="Weinendes Smiley"></p>
+<p>Nicht nur, dass es hierbei schon <a href="http://blog.ekiwi.de/?p=733">zu Problemen kam</a>, nein, ich konnte anschließend auch nicht mehr auf meine Netzwerkfreigaben zugreifen. Fehlermeldung: “Nicht genügend Serverspeicher”. Super! <img src="http://andydunkel.net/assets/uploads/2011/08/wlEmoticon-cryingface.png" alt="Weinendes Smiley" /></p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2011/08/image21.png" alt="image"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image21.png" alt="image" /></p>
 
-<p>Nach etwas Internetrecherche kam ich zu folgendem Lösungsvorschlag. In der Registry unter<br>
-“HKEY<em>LOCAL</em>MACHINE\SYSTEM\CurrentControlSet\Services<br>
+<p>Nach etwas Internetrecherche kam ich zu folgendem Lösungsvorschlag. In der Registry unter <br />
+“HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services<br />
 \lanmanserver\parameters”</p>
 
 <p>den Parameter “IRPStackSize” abändern. 32 hex, bzw. 50 ist das Maximum.</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2011/08/image22.png" alt="image"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image22.png" alt="image" /></p>
 
 <p>Bei mir war der Eintrag nicht vorhanden, also anlegen mit Rechtsklick:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2011/08/image23.png" alt="image"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image23.png" alt="image" /></p>
 
 <p>Anschließend den Wert eingeben:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2011/08/image24.png" alt="image"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image24.png" alt="image" /></p>
 
-<p>Nun noch neustarten und schon ging wieder alles. Easy oder? <img src="http://andydunkel.net/assets/uploads/2011/08/wlEmoticon-smile2.png" alt="Smiley"></p>
+<p>Nun noch neustarten und schon ging wieder alles. Easy oder? <img src="http://andydunkel.net/assets/uploads/2011/08/wlEmoticon-smile2.png" alt="Smiley" /></p>
 
 			</div>
 			

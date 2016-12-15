@@ -152,16 +152,19 @@
 			<div class="post">
 			<p><a href="http://brew.sh/">Homebrew</a> ist eine feine Sache. Ähnlich die unter Linux kann man so allerhand Pakete über die Konsole installieren. Leider brachte das Update auf OSX 10.9 ein paar Probleme mit sich.</p>
 
-<p>Zuerst lief die alte Brew-Version gar nicht mehr. Also geupdated. Dann fingen die Probleme an. Bei der Installation von Paketen wurden diese zwar heruntergeladen, allerdings konnten die Symlinks nicht erstellt werden, da bereits vorhanden aus einer alten Version. Eventuell habe ich beim Update ein paar Fehler gemacht und irgendwas nicht bereinigt, keine Ahnung. </p>
+<p>Zuerst lief die alte Brew-Version gar nicht mehr. Also geupdated. Dann fingen die Probleme an. Bei der Installation von Paketen wurden diese zwar heruntergeladen, allerdings konnten die Symlinks nicht erstellt werden, da bereits vorhanden aus einer alten Version. Eventuell habe ich beim Update ein paar Fehler gemacht und irgendwas nicht bereinigt, keine Ahnung.</p>
 
 <p>Die Fehlermeldung sah in etwa so aus:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">Linking /usr/local/Cellar/... Warning: Could not link $foo. Unlinking...
+
+<pre><code>Linking /usr/local/Cellar/... Warning: Could not link $foo. Unlinking...
 Error: Could not symlink file: /usr/local/Cellar/...
 /usr/local/... may already exist.
 /usr/local/... may not be writable.
-</code></pre></div>
+</code></pre>
+
 <p>Jedenfalls kann man die Symlinks in <code>/usr/local/share</code> von Hand löschen, was sehr viel Arbeit ist. Also etwas das Internet bemüht und das ganze mit folgenden Schritten gelöst:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"># Besitzer von /usr/local auf den aktuellen Benutzer setzen
+
+<pre><code># Besitzer von /usr/local auf den aktuellen Benutzer setzen
 $ sudo chown -R `whoami` /usr/local
 
 # ggf. die fehlgeschlagene Installation entfernen
@@ -178,10 +181,12 @@ $ brew prune
 
 # der Homebrew Doktor:
 $ brew doctor
-</code></pre></div>
+</code></pre>
+
 <p>Im letzten Schritt wurden mir noch ein paar Hinweise ausgegeben, welche ich manuell auf der Konsole ausführen musste.</p>
 
 <p>Anschließend lief wieder alles ohne Probleme.</p>
+
 
 			</div>
 			

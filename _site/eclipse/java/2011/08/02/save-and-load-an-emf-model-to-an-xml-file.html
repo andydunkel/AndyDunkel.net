@@ -152,29 +152,34 @@
 			<div class="post">
 			<p>Here are two code snippets which give you an example how to save and load an EMF model to an XML file.</p>
 
-<p>Note that &quot;Data&quot; is my EMF model object.</p>
+<p>Note that “Data” is my EMF model object.</p>
 
 <p>Save EMF to XML file:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">public void saveData(String fileName, Data data) throws IOException {  
+
+<pre><code>public void saveData(String fileName, Data data) throws IOException {  
   Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
   Map&lt;String, Object&gt; m = reg.getExtensionToFactoryMap();
-  m.put(&quot;daform&quot;, new XMIResourceFactoryImpl());
+  m.put("daform", new XMIResourceFactoryImpl());
 
   ResourceSet resSet = new ResourceSetImpl();
   Resource resource = resSet.createResource(URI.createFileURI(fileName));
   resource.getContents().add(data);
   resource.save(Collections.EMPTY_MAP);
 }
-</code></pre></div>
+</code></pre>
+
 <p>Load to EMF object:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">public Data loadData(String fileName) throws FileNotFoundException, IOException {
+
+<pre><code>public Data loadData(String fileName) throws FileNotFoundException, IOException {
   XMIResourceImpl resource = new XMIResourceImpl();
   File source = new File(fileName);
   resource.load( new FileInputStream(source), new HashMap&lt;Object,Object&gt;());
   Data data = (Data)resource.getContents().get(0);  
   return data;
 }
-</code></pre></div>
+</code></pre>
+
+
 			</div>
 			
 			<br>

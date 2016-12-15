@@ -153,24 +153,29 @@
 			<p>A thread in Java cannot directly access the GUI. With the following snippet the access is possible:</p>
 
 <p>Call from the thread:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">@Override
-public void run() {
-    html = &quot;&lt;h1&gt;Huhu&lt;/h1&gt;&quot;;
-    dlg.setSomeStuffToGui(html);    
-}
-</code></pre></div>
-<p>Method in the GUI:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">public void setSomeStuffToGui(final String html) {
-    Display display = getDisplay();
 
-    display.asyncExec(new Runnable() {
-        public void run() {
-            //your stuff goes here:
-            textField.setText(html);
-        }
-      });           
+<pre><code>@Override
+public void run() {
+	html = "&lt;h1&gt;Huhu&lt;/h1&gt;";
+	dlg.setSomeStuffToGui(html);	
 }
-</code></pre></div>
+</code></pre>
+
+<p>Method in the GUI:</p>
+
+<pre><code>public void setSomeStuffToGui(final String html) {
+	Display display = getDisplay();
+	
+	display.asyncExec(new Runnable() {
+        public void run() {
+        	//your stuff goes here:
+        	textField.setText(html);
+        }
+      });			
+}
+</code></pre>
+
+
 			</div>
 			
 			<br>

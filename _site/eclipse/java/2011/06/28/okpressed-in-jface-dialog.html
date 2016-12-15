@@ -150,22 +150,24 @@
 			<p class="meta">28 Jun 2011</p>
 			
 			<div class="post">
-			<p>Sometimes JFace and RCP are not straightforward. At least not for me. <a href="http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile5.png"><img src="http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile5.png" alt=""></a></p>
+			<p>Sometimes JFace and RCP are not straightforward. At least not for me. <a href="http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile5.png"><img src="http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile5.png" alt="" /></a></p>
 
 <p>For example the JFace dialog:</p>
 
-<p><a href="http://andydunkel.net/assets/uploads/2011/06/rcp_jface_dlg.png"><img src="http://andydunkel.net/assets/uploads/2011/06/rcp_jface_dlg.png" alt=""></a></p>
+<p><a href="http://andydunkel.net/assets/uploads/2011/06/rcp_jface_dlg.png"><img src="http://andydunkel.net/assets/uploads/2011/06/rcp_jface_dlg.png" alt="" /></a></p>
 
-<p>It features an OK and Cancel button by default. If you want to do something when the user clicks the OK button, for example save the values from control elements to variables, you can overwrite the &quot;okPressed&quot; method:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">    @Override
-    protected void okPressed() {
-        nameString = textBoxName.getText();
-        super.okPressed();
-    }
-</code></pre></div>
-<p>When the OK button is pressed, the &quot;okPressed&quot; method is executed. The &quot;open&quot; method of the dialog returns <em>IDialogConstants.OK</em>ID_ in that case (instead of SWT.OK).</p>
+<p>It features an OK and Cancel button by default. If you want to do something when the user clicks the OK button, for example save the values from control elements to variables, you can overwrite the “okPressed” method:</p>
 
-<p>Of course there is also a &quot;cancelPressed&quot; method for the Cancel button</p>
+<pre><code>	@Override
+	protected void okPressed() {
+		nameString = textBoxName.getText();
+		super.okPressed();
+	}
+</code></pre>
+
+<p>When the OK button is pressed, the “okPressed” method is executed. The “open” method of the dialog returns <em>IDialogConstants.OK_ID</em> in that case (instead of SWT.OK).</p>
+
+<p>Of course there is also a “cancelPressed” method for the Cancel button</p>
 
 			</div>
 			

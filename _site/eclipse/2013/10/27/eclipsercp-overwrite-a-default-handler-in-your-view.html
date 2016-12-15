@@ -156,24 +156,26 @@
 
 <p>In the views plugin, add a handler to the org.eclipse.ui.handlers section of your plugin.xml:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2013/10/NewImage.png" alt="NewImage"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2013/10/NewImage.png" alt="NewImage" /></p>
 
 <p>This causes the command only to be active in our view. Next thing is to define the proper handler class which performs the operation:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2013/10/handler2.png" alt="Handler2"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2013/10/handler2.png" alt="Handler2" /></p>
 
 <p>In XML it looks like that:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;extension point=&quot;org.eclipse.ui.handlers&quot;&gt;
-  &lt;handler class=&quot;com.my.awesome.SaveContentHandler&quot; commandid=&quot;org.eclipse.ui.file.save&quot;&gt;
-     &lt;activewhen&gt;
-        &lt;with variable=&quot;activePartId&quot;&gt;
-           &lt;equals value=&quot;com.my.awesome.view&quot;&gt;
-           &lt;/equals&gt;
-        &lt;/with&gt;
-     &lt;/activewhen&gt;
+
+<pre><code>&lt;extension point="org.eclipse.ui.handlers"&gt;
+  &lt;handler class="com.my.awesome.SaveContentHandler" commandid="org.eclipse.ui.file.save"&gt;
+	 &lt;activewhen&gt;
+		&lt;with variable="activePartId"&gt;
+		   &lt;equals value="com.my.awesome.view"&gt;
+		   &lt;/equals&gt;
+		&lt;/with&gt;
+	 &lt;/activewhen&gt;
   &lt;/handler&gt;
 &lt;/extension&gt;
-</code></pre></div>
+</code></pre>
+
 <p>Thats it!</p>
 
 			</div>

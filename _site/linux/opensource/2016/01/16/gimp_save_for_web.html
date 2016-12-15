@@ -152,36 +152,42 @@
 			<div class="post">
 			<p><em>Note: German versions of this article can be found <a href="http://ekiwi-blog.de/?p=2507">here</a> and <a href="http://ekiwi-blog.de/?p=2524">here</a>.</em></p>
 
-<p>One of my favorite features of Photoshop if the feature &quot;Save for web&quot;. Its a nice tool to optimize your image for the web. You can basically choose file format, compression, number of colors and see the results of the optimization in a preview image.</p>
+<p>One of my favorite features of Photoshop if the feature “Save for web”. Its a nice tool to optimize your image for the web. You can basically choose file format, compression, number of colors and see the results of the optimization in a preview image.</p>
 
 <p>In <a href="http://www.gimp.org">Gimp</a> there is no such feature by default yet. But there is a plugin that implements the feature. You can <a href="http://registry.gimp.org/node/33">download it here</a>.</p>
 
 <p>After installation the plugin becomes available in the file menu. The plugin offers the same functions as the Photoshop one:</p>
 
-<p><img src="/assets/uploads/2016/1/save_for_web_linux.png" alt=""></p>
+<p><img src="/assets/uploads/2016/1/save_for_web_linux.png" alt="" /></p>
 
-<p><img src="/assets/uploads/2016/1/save_for_web_linux_main.png" alt=""></p>
+<p><img src="/assets/uploads/2016/1/save_for_web_linux_main.png" alt="" /></p>
 
-<h2>Installation on Windows</h2>
+<h2 id="installation-on-windows">Installation on Windows</h2>
 
-<p>On Windows you just extract the .exe file of the plugin into the plugin directory of Gimp: <code>c:\Users\username.gimp-2.8\plug-ins</code>.</p>
+<p>On Windows you just extract the .exe file of the plugin into the plugin directory of Gimp: <code>c:\Users\username\.gimp-2.8\plug-ins</code>.</p>
 
-<h2>Installation on Linux</h2>
+<h2 id="installation-on-linux">Installation on Linux</h2>
 
 <p>After extraction of the archive on Linux the installation is done in three simple steps:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">./configure
+
+<pre><code>./configure
 make
 make install
-</code></pre></div>
-<p>However there where a few problems with that. The <code>configure</code> script exited with an error message:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">configure: error: Package requirements (gimp-2.0 &gt;= 2.3.0 gimpui-2.0 &gt;= 2.3.0) were not met:
+</code></pre>
 
-No package &#39;gimp-2.0&#39; found
-No package &#39;gimpui-2.0&#39; found
-</code></pre></div>
+<p>However there where a few problems with that. The <code>configure</code> script exited with an error message:</p>
+
+<pre><code>configure: error: Package requirements (gimp-2.0 &gt;= 2.3.0 gimpui-2.0 &gt;= 2.3.0) were not met:
+
+No package 'gimp-2.0' found
+No package 'gimpui-2.0' found
+</code></pre>
+
 <p>This looks like Gimp could not be found, but thats not true. Actually you need the <code>gimp2.0-dev</code> package installed:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo apt-get install gimp2.0-dev intltool
-</code></pre></div>
+
+<pre><code>sudo apt-get install gimp2.0-dev intltool
+</code></pre>
+
 <p>In my case it also needed the package <code>intltool</code>. After that the installation steps went without no further errors.</p>
 
 			</div>

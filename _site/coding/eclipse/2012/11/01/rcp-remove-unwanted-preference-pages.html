@@ -152,27 +152,32 @@
 			<div class="post">
 			<p>In my RCP application some unwanted sections in the preferences showed up:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/UnwantedPreferences.png" alt="Unwanted Preferences"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/UnwantedPreferences.png" alt="Unwanted Preferences" /></p>
 
-<p>How to get rid of them? Thats easy, in the &quot;ApplicationWorkbenchAdvisor&quot; class, override the &quot;postStartup&quot; method:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">@Override
-public void postStartup(){
-      PreferenceManager pm = PlatformUI.getWorkbench().getPreferenceManager();
-      pm.remove(&quot;org.eclipse.help.ui.browsersPreferencePage&quot;); //$NON-NLS-1$
-      pm.remove(&quot;org.eclipse.help.ui.contentPreferencePage&quot;); //$NON-NLS-1$
-}
-</code></pre></div>
-<p>What if you don&#39;t know the id of the preference page? No problem, you can output those with the following code snippet:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">@Override
-public void postStartup(){
-      PreferenceManager pm = PlatformUI.getWorkbench().getPreferenceManager();
-      IPreferenceNode[] arr = pm.getRootSubNodes();
+<p>How to get rid of them? Thats easy, in the “ApplicationWorkbenchAdvisor” class, override the “postStartup” method:</p>
 
-      for(IPreferenceNode pn:arr){
-          System.out.println(&quot;Label:&quot; + pn.getLabelText() + &quot; ID:&quot; + pn.getId());
-      }
+<pre><code>@Override
+public void postStartup(){
+	  PreferenceManager pm = PlatformUI.getWorkbench().getPreferenceManager();
+	  pm.remove("org.eclipse.help.ui.browsersPreferencePage"); //$NON-NLS-1$
+	  pm.remove("org.eclipse.help.ui.contentPreferencePage"); //$NON-NLS-1$
 }
-</code></pre></div>
+</code></pre>
+
+<p>What if you don’t know the id of the preference page? No problem, you can output those with the following code snippet:</p>
+
+<pre><code>@Override
+public void postStartup(){
+	  PreferenceManager pm = PlatformUI.getWorkbench().getPreferenceManager();
+	  IPreferenceNode[] arr = pm.getRootSubNodes();
+	          
+	  for(IPreferenceNode pn:arr){
+	      System.out.println("Label:" + pn.getLabelText() + " ID:" + pn.getId());
+	  }
+}
+</code></pre>
+
+
 			</div>
 			
 			<br>

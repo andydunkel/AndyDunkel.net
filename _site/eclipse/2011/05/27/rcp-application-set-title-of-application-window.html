@@ -151,19 +151,21 @@
 			
 			<div class="post">
 			<p>To dynamically set the title of a RCP application, the following code snippet is useful:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">private String fileName = &quot;unknown.daf&quot;;
 
+<pre><code>private String fileName = "unknown.daf";
+	
 public WorkbenchWindowAdvisor createWorkbenchWindowAdvisor(IWorkbenchWindowConfigurer configurer) {
-    IWorkbenchWindowConfigurer windowConfigurer = configurer;
-    String title = &quot;DA-FormMaker - &quot; + fileName;
-    windowConfigurer.setTitle(title);
-
+	IWorkbenchWindowConfigurer windowConfigurer = configurer;
+	String title = "DA-FormMaker - " + fileName;
+	windowConfigurer.setTitle(title);
+	
   return new ApplicationWorkbenchWindowAdvisor(configurer);
 }
-</code></pre></div>
-<p>The window title can be set via the “<em>IWorkbenchWindowConfigurer</em>”. You can get a reference to it in the “<em>ApplicationWorkbenchAdvisor</em>”. The result looks like this (obviously <img src="http://andydunkel.net/assets/uploads/2011/05/wlEmoticon-surprisedsmile.png" alt="Erstauntes Smiley">):</p>
+</code></pre>
 
-<p><img src="http://andydunkel.net/assets/uploads/2011/05/image10.png" alt="image"></p>
+<p>The window title can be set via the “<em>IWorkbenchWindowConfigurer</em>”. You can get a reference to it in the “<em>ApplicationWorkbenchAdvisor</em>”. The result looks like this (obviously <img src="http://andydunkel.net/assets/uploads/2011/05/wlEmoticon-surprisedsmile.png" alt="Erstauntes Smiley" />):</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/05/image10.png" alt="image" /></p>
 
 			</div>
 			

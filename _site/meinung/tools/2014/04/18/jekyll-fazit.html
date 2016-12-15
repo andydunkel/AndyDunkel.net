@@ -164,7 +164,7 @@ Designanpassungen erfordern eine Einarbeitung in das Template-System von Wordpre
 
 <p>Da die Webseite nur aus einfachen Textdateien besteht kann diese recht leicht in ein beliebiges Versionierungssystem gepackt werden. Backup der Webseite? Einfach alle Dateien Zippen und fertig.</p>
 
-<h2>Statische Seiten</h2>
+<h2 id="statische-seiten">Statische Seiten</h2>
 
 <p>Während Wordpress die Seiten beim Aufruf neu erzeugt, ist die Jekyll-Seite nichts weiter als HTML-Seiten. Serverseitig wird daher wenig benötigt: Einfacher Webspace genügt, PHP und Datenbank werden nicht gebraucht. Sicherheitslücken sind bei statischen HTML-Seiten auch kein Thema. Regelmäßige Updates wie bei Wordpress entfallen daher.</p>
 
@@ -173,7 +173,7 @@ Geht dies bei Klein-Webseiten noch einfach mit FTP, verkommt es bei größeren S
 
 <p>Dann gibt es Dinge die bei statischen Webseiten nicht gehen: Kommentarfunktion oder Suche sind zwei davon. Beides lässt sich mit externen Diensten nachrüsten, Kommentare mache ich bei Disqus und die Suche übernimmt Google. Allerdings ist mir auch klar, dass ich hier einen Teil meiner Webseite und Daten aus der Hand gebe.</p>
 
-<h2>Installation bis zur Ersten Webseite</h2>
+<h2 id="installation-bis-zur-ersten-webseite">Installation bis zur Ersten Webseite</h2>
 
 <p>Die Installation ist recht einfach, unter Linux und MacOS (mit Homebrew) ist das mit einer Handvoll Terminalbefehlen erledigt. Unter <a href="http://herbie79.de/development/web/2014/03/22/Running_Jekyll_on_Windows.html">Windows</a> ist der Aufwand etwas höher. Strafe muss sein liebe Windows-Nutzer.</p>
 
@@ -182,12 +182,12 @@ Im Gegenzug hat man volle Kontrolle über seine Webseite bis in den letzten HTML
 
 <p>Wer bereits einen Wordpress oder anderen Blog betreibt wird sich darüber freuen, dass man die Inhalte des alten Blogs übernehmen kann. Hier gibt es entsprechende Konverter.</p>
 
-<h2>Plugins</h2>
+<h2 id="plugins">Plugins</h2>
 
 <p>Sehr beliebt bei Wordpress, die Plugins. Welche man reichhaltig installiert, ohne sich Gedanken zu machen welche Änderungen diese an der Datenbank vornehmen oder welche Sicherheitslücken mit installiert werden. Natürlich müssen auch diese regelmäßig auf Updates überprüft werden.
 Für Jekyll gibt es auch Plugins. Diese kommen in Form von Ruby-Dateien daher, welche einfach in ein Verzeichnis gepackt werden. Macht ein Plugin mal nicht was es soll, kann man es mit etwas Programmierkenntnissen anpassen oder einfach löschen und Webseite neu erstellen. Fertig.</p>
 
-<h2>Bloggen mit Jekyll</h2>
+<h2 id="bloggen-mit-jekyll">Bloggen mit Jekyll</h2>
 
 <p>Bloggen geht einfach: Der Blogartikel wird in Markdownsyntax in eine Textdatei (mit einem speziellen Header) geschrieben. 
 Etwas umständlicher wird es beim Einbinden von Bildern.</p>
@@ -196,12 +196,12 @@ Etwas umständlicher wird es beim Einbinden von Bildern.</p>
 
 <p>Dieser Komfort steht bei Jekyll nicht zur Verfügung. Die Bilder müssen in der richtigen Größe in die Webseite gespeichert und dann von Hand im Artikel verlinkt werden. Kein großer Akt, aber etwas umständlicher.</p>
 
-<h2>Webseiten</h2>
+<h2 id="webseiten">Webseiten</h2>
 
 <p>Neben der reinen Blogfunktionalität, wollte ich auch eine Webseite bauen. Auch dafür ist Jekyll geeignet. Ein gemeinsames Menü für die gesamte Webseite? Kein Problem! Einfach im Template anlegen. Beim generieren wird alles automatisch richtig in alle Seiten eingefügt. Das gesamte Design der Webseite ist extrem schnell austauschbar, da alle Unterseiten und Artikel nur den Inhalt enthalten.
 Mittlerweile erstelle ich jede neue Webseite, egal ob klein oder groß, schnell in Jekyll.</p>
 
-<h2>Fazit</h2>
+<h2 id="fazit">Fazit</h2>
 
 <p>Um es kurz zu machen, ich bin sehr zufrieden mit Jekyll. Es gibt ein paar Nachteile, aber die Vorteile überwiegen zumindest für mich. Es war am Anfang etwas aufwändiger alles einzurichten und zu konfigurieren. Dafür habe ich, salopp formuliert, jetzt die Kontrolle über jedes Byte meiner Webseite.
 Hat man die diese Hürde genommen, ist die Pflege der Webseite eine Leichtigkeit.

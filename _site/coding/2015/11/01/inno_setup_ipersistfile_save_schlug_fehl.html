@@ -152,18 +152,21 @@
 			<div class="post">
 			<p>I use <a href="http://www.jrsoftware.org/isinfo.php">InnoSetup</a> to ship my <a href="http://da-software.de/">software</a>. Years everything went without any problems. Recently I got feedback from customers, saying that there where errors during the setup. I tried it myself serveral times and sometimes I got this error message:</p>
 
-<p><img src="/assets/uploads/2015/11/innosetup.png" alt="">  </p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">IPersistFile::Save schlug fehl; Code 0x80070003.
+<p><img src="/assets/uploads/2015/11/innosetup.png" alt="" /></p>
+
+<pre><code>IPersistFile::Save schlug fehl; Code 0x80070003.
 Das System kann den angegebenen Pfad nicht finden.
-</code></pre></div>
+</code></pre>
+
 <p>It always happened when the setup tried to create the first shortcut in the users start menu.</p>
 
 <p>What went wrong? After some investigation it turned out, that the uninstall routine of my setup was to blame. When my software is installed, the old version is removed automatically. This is done by some Pascal Script code in the setup.</p>
 
-<p>When this routine was removed, everything went fine. The problem seems to be, that there is timing issue. The uninstallation was finished, but the old shortcut was still &quot;in use&quot;. So the setup could not recreate it.</p>
+<p>When this routine was removed, everything went fine. The problem seems to be, that there is timing issue. The uninstallation was finished, but the old shortcut was still “in use”. So the setup could not recreate it.</p>
 
 <p>The solution was to add a small wait time after the uninstallation call in the setup script:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">procedure CurStepChanged(CurStep: TSetupStep);
+
+<pre><code>procedure CurStepChanged(CurStep: TSetupStep);
 begin
   if (CurStep=ssInstall) then
   begin
@@ -174,7 +177,8 @@ begin
     end;
   end;
 end;
-</code></pre></div>
+</code></pre>
+
 <p>After that the problem was gone.</p>
 
 			</div>

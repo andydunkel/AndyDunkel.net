@@ -153,16 +153,18 @@
 			<p>Heute wurde mir ein Update für Android Studio angezeigt. Also Update heruntergeladen und installiert. Wie immer erwartet man da natürlich Probleme mit bestehenden Projekten. :-)</p>
 
 <p>War natürlich der Fall: </p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">Gradle: &lt;br&gt;&lt;/br&gt;FAILURE: Could not determine which tasks to execute.&lt;br&gt;&lt;/br&gt;* What went wrong:&lt;br&gt;&lt;/br&gt;Task &#39;assemble&#39; not found in root project &#39;SomeProject&#39;.&lt;br&gt;&lt;/br&gt;* Try:&lt;br&gt;&lt;/br&gt;Run gradle tasks to get a list of available tasks.
+
+<pre><code>Gradle: &lt;br&gt;&lt;/br&gt;FAILURE: Could not determine which tasks to execute.&lt;br&gt;&lt;/br&gt;* What went wrong:&lt;br&gt;&lt;/br&gt;Task 'assemble' not found in root project 'SomeProject'.&lt;br&gt;&lt;/br&gt;* Try:&lt;br&gt;&lt;/br&gt;Run gradle tasks to get a list of available tasks.
 
 
 
 
-Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;&#39;/Users/da/.gradle/wrapper/dists/gradle-1.6-bin/.../gradle-1.6&#39;.
-</code></pre></div>
+Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;'/Users/da/.gradle/wrapper/dists/gradle-1.6-bin/.../gradle-1.6'.
+</code></pre>
+
 <p>Die Lösung ist in der *.iml Datei (liegt im Root-Verzeichnis, den folgenden Inhalt herauszulöschen:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2013/08/RausDamit.png" alt="Raus Damit"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2013/08/RausDamit.png" alt="Raus Damit" /></p>
 
 			</div>
 			

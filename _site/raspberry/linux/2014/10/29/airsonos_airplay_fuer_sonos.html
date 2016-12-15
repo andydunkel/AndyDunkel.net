@@ -153,65 +153,85 @@
 			<p>Vor kurzem habe ich mir ein <a href="http://www.sonos.com/shop/products/play1">Sonos Play1</a> zugelegt. Mein Kumpel Kiwi besitzt dieses bereits eine Weile und hat <a href="http://blog.ekiwi.de/?p=1927">das hier</a> vor einiger Zeit bereits getestet. Gegen Hardware und Technik ist nichts einzuwenden. Die Klang ist gut und die App funktioniert zuverlässig. Leider ist das auch der einzige Knackpunkt am Sonos-System: ohne Sonos-App kein Abspielen von Inhalten. 
 Problemlos funktioniert dies für vorhandene Inhalte auf dem Smartphone oder Tablett. Radiosender und diverse Musikdienste lassen sich ebenfalls über die App nutzen.</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2014/10/sonos.jpg" alt="image"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/10/sonos.jpg" alt="image" /></p>
 
-<p>IOS- und Mac-User, wie ich, vermissen die Unterstützung für Airplay. Diese erlaubt die Wiedergabe aus jeder App. Ich verwende <a href="http://vemedio.com/products/instacast">Instacast</a> als Podcastapp auf meinem Telefon. Mit dieser läuft jedoch nichts in Sachen Sonos. </p>
+<p>IOS- und Mac-User, wie ich, vermissen die Unterstützung für Airplay. Diese erlaubt die Wiedergabe aus jeder App. Ich verwende <a href="http://vemedio.com/products/instacast">Instacast</a> als Podcastapp auf meinem Telefon. Mit dieser läuft jedoch nichts in Sachen Sonos.</p>
 
 <p>Die Lösung in diesem Fall heißt <a href="https://github.com/stephen/airsonos">AirSonos</a>: AirSonos ist ein, in <a href="http://nodejs.org/">Node.js</a> geschriebener, AirPlay-Server, welche die Musik an das Sonos-System weiterleitet. Der Server läuft auf einem extra Rechner, welcher an das Heimnetzwerk angeschlossen sein muss. In Zeiten von Raspberry Pi und Co. ist damit zum Glück kein großer klobiger PC mehr notwendig. Die Software kommt zudem mit mehreren Lautsprechern im Netzwerk klar.</p>
 
 <p>Legen wir los: Ich beschreibe Installation und Einrichtung unter <a href="http://www.raspbian.org/">Raspbian</a> auf dem Raspberry Pi. Das ganze funktioniert aber auch mit etwas Variation auf anderen Linuxderivaten und Rechnertypen.</p>
 
-<h2>Übertakten</h2>
+<h2 id="bertakten">Übertakten</h2>
 
 <p>Mit der Standardtaktfrequenz vom RPI funktionierte bei mir die Musikwiedergabe leider nicht flüssig. Deswegen ist die Empfehlung den Kleinen auf 1000 Mhz zu übertakten. Dies geschieht entweder direkt bei der Installation von Raspbian oder später durch einfaches Bearbeiten der entsprechenden Config-Datei:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"> sudo vim /boot/config.txt
-</code></pre></div>
+
+<pre><code> sudo vim /boot/config.txt
+</code></pre>
+
 <p>In der Config-Datei kommentiert man die folgenden Zeilen ein (# Symbol am Anfang entfernen):</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"> #Turbo
+
+<pre><code> #Turbo
  arm_freq=1000
  core_freq=500
  sdram_freq=500
  over_voltage=6
-</code></pre></div>
+</code></pre>
+
 <p>Nach dem Neustart sollte der RPI in der neuen hohen Taktrate unterwegs sein.</p>
 
 <p>Installation von AirSonos</p>
 
 <p>Wie so oft beginnen wir die Installation mit einem Update der Paketquellen und der bereits installierten Software:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"> sudo apt-get update
+
+<pre><code> sudo apt-get update
  sudo apt-get upgrade
-</code></pre></div>
+</code></pre>
+
 <p>Nun installieren wir noch ein paar Dinge:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"> sudo apt-get install git-all libavahi-compat-libdnssd-dev
-</code></pre></div>
-<p>Es folgt Node.js, welches wir vorkompiliert herunterladen: </p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"> wget http://node-arm.herokuapp.com/node_latest_armhf.deb
-</code></pre></div>
+
+<pre><code> sudo apt-get install git-all libavahi-compat-libdnssd-dev
+</code></pre>
+
+<p>Es folgt Node.js, welches wir vorkompiliert herunterladen:</p>
+
+<pre><code> wget http://node-arm.herokuapp.com/node_latest_armhf.deb
+</code></pre>
+
 <p>und installieren:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"> sudo dpkg -i node_latest_armhf.deb
-</code></pre></div>
+
+<pre><code> sudo dpkg -i node_latest_armhf.deb
+</code></pre>
+
 <p>Das Ganze dauert ein wenig, also geduldig sein. :-)
 Im vorletzten Schritt folgt nun noch die Installation von AirSonos selbst:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"> sudo npm install airsonos -g
-</code></pre></div>
+
+<pre><code> sudo npm install airsonos -g
+</code></pre>
+
 <p>Auch das dauert eine Weile. Unschön: bei mir kam es vor, dass der Vorgang mit der Fehlermeldung <code>npm ERR! cb() never called</code> abgebrochen wurde. Hier hat es geholfen den letzten Schritt einfach nochmal durchzuführen.</p>
 
-<h2>Fertig!</h2>
+<h2 id="fertig">Fertig!</h2>
 
 <p>Ist alles installiert und eingerichtet, kann man AirSonos starten:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"> sudo airsonos
-</code></pre></div>
+
+<pre><code> sudo airsonos
+</code></pre>
+
 <p>Es sollten nun alle Sonos-Lautsprecher im Netzwerk gefunden und aufgelistet werden:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">Searching for Sonos devices on network...
+
+<pre><code>Searching for Sonos devices on network...
 Setting up AirSonos for Kitchen {192.168.1.108:1400}
-</code></pre></div>
+</code></pre>
+
 <p>Im IOS-Gerät der Wahl werden diese jetzt auch als AirPlay-Device angezeigt und können entsprechend genutzt werden.</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2014/10/airplay.png" alt="image"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/10/airplay.png" alt="image" /></p>
 
 <p>Kleiner Schönheitsfehler, schließt man die Konsole zum Rechner beendet sich AirSonos. Dies kann man verhindern indem man den Prozess von der Konsole entkoppelt:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"> $ airsonos &amp; disown
-</code></pre></div>
+
+<pre><code> $ airsonos &amp; disown
+</code></pre>
+
 <p>Viel Spaß beim Ausprobieren!</p>
 
 			</div>

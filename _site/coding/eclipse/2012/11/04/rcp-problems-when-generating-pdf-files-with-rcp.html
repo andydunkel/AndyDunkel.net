@@ -152,27 +152,33 @@
 			<div class="post">
 			<p>Recently I ran into a problem in my RCP application during the generation of a PDF file from a <a href="http://www.eclipse.org/birt/phoenix/">BIRT</a> report. This only happened when trying to run the export from the exported product:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/11.png" alt="1"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/11.png" alt="1" /></p>
 
-<p>The first problem was an &quot;Error.OutputFormatNotSupported&quot;.</p>
+<p>The first problem was an “Error.OutputFormatNotSupported”.</p>
 
 <p>This was a little bit strange, since I would have expected some syntax errors in my project trying to use stuff from another plugin that is referenced to my project.</p>
 
-<p>Anyway, I was able to fix this by adding &quot;org.eclipse.birt.engine.emitter.pdf&quot; to my run configuration. After that I got another error:</p>
+<p>Anyway, I was able to fix this by adding “org.eclipse.birt.engine.emitter.pdf” to my run configuration. After that I got another error:</p>
 
 <blockquote>
-<p>org.eclipse.birt.report.engine.api.engineexception cant create data engine</p>
+
 </blockquote>
 
-<p>Remembering that I am using JavaScript in my BIRT report, the approach was similar. Just a missing reference to &quot;org.eclipse.birt.report.engine.script.javascript&quot;.</p>
+<blockquote>
 
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/21.png" alt="2"></p>
+  <p>org.eclipse.birt.report.engine.api.engineexception cant create data engine</p>
+
+</blockquote>
+
+<p>Remembering that I am using JavaScript in my BIRT report, the approach was similar. Just a missing reference to “org.eclipse.birt.report.engine.script.javascript”.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/21.png" alt="2" /></p>
 
 <p>After that, the report was working from Eclipse as well as from the exported project. </p>
 
 <p>Here is a kitten:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/31.png" alt="3"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/31.png" alt="3" /></p>
 
 			</div>
 			

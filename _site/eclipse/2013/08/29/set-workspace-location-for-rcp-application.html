@@ -154,7 +154,7 @@
 
 <p>However, I needed file associations, so the user can just double click on file somewhere on his computer and open the file.</p>
 
-<p>If you do this, the working directory is set to the directory where the file is located. This resulted in the creation of a .metadata directy at the same location. Brrr...</p>
+<p>If you do this, the working directory is set to the directory where the file is located. This resulted in the creation of a .metadata directy at the same location. Brrr…</p>
 
 <p>Since I dont like the creation of .metadata in the working directory either, because thats usually the application folder and not writeable, this needed to be addressed anyway.</p>
 
@@ -162,7 +162,7 @@
 
 <p>To achieve this, two steps are neccessary. First we add an additional parameter in the Run configuration:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2013/08/working_dir1.png" alt="Working dir1"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2013/08/working_dir1.png" alt="Working dir1" /></p>
 
 <p> </p>
 
@@ -170,21 +170,23 @@
 
 <p>Which we do in the *Application class of our application:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2013/08/working_dir2.png" alt="Working dir2"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2013/08/working_dir2.png" alt="Working dir2" /></p>
 
 <p> </p>
 
 <p>Here is the example code for copy and paste:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">try {
-    Location instanceLoc = Platform.getInstanceLocation();
 
-    // set location to c:\temp
-    instanceLoc.set(new URL(&quot;file&quot;, null, &quot;c:\\temp&quot;), false);
+<pre><code>try {
+	Location instanceLoc = Platform.getInstanceLocation();
+
+	// set location to c:\temp
+	instanceLoc.set(new URL("file", null, "c:\\temp"), false);
 }
 catch (Exception err) {
-    System.out.println(err.getMessage());
+	System.out.println(err.getMessage());
 }
-</code></pre></div>
+</code></pre>
+
 <p>In the example we just use c:\temp, but you usually might want to set this path to the <a href="http://codedump.ekiwi.de/?p=46">application data</a> folder on the system.</p>
 
 			</div>

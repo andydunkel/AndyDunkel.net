@@ -151,21 +151,24 @@
 			
 			<div class="post">
 			<p>This snippets gets the local folder for a plugin:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">public static File getPluginFolder() {
-    if(pluginFolder == null) {
-        URL url = Platform.getBundle(&quot;my.plugin.id&quot;).getEntry(&quot;/&quot;);
-        try {
-            url = Platform.resolve(url);
-        }
-        catch(IOException ex) {
-            ex.printStackTrace();
-        }
-        pluginFolder = new File(url.getPath());
-    }
 
-    return pluginFolder;
+<pre><code>public static File getPluginFolder() {
+	if(pluginFolder == null) {
+	    URL url = Platform.getBundle("my.plugin.id").getEntry("/");
+	    try {
+	        url = Platform.resolve(url);
+	    }
+	    catch(IOException ex) {
+	        ex.printStackTrace();
+	    }
+	    pluginFolder = new File(url.getPath());
+	}
+	
+	return pluginFolder;
 }
-</code></pre></div>
+</code></pre>
+
+
 			</div>
 			
 			<br>

@@ -151,7 +151,8 @@
 			
 			<div class="post">
 			<p>Here is short code snippet to open an URL with the systems standard browser:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">public void openUrl(String url) throws IOException, URISyntaxException {
+
+<pre><code>public void openUrl(String url) throws IOException, URISyntaxException {
   if(java.awt.Desktop.isDesktopSupported() ) {
         java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
 
@@ -161,8 +162,10 @@
         }
       } 
 }
-</code></pre></div>
+</code></pre>
+
 <p>java.awt.Desktop is supported as of Java 6.</p>
+
 
 			</div>
 			

@@ -152,7 +152,7 @@
 			<div class="post">
 			<p>Firemonkey, the framework for cross plattform development, still seems to have some problems and bugs. :-( One of the problems I came across was that the TabOrder property was not working:</p>
 
-<iframe width="640" height="360" src="//www.youtube.com/embed/adnmXK3xzyE" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="//www.youtube.com/embed/adnmXK3xzyE" frameborder="0" allowfullscreen=""></iframe>
 
 <p>The problem starts with the inability to set the TabOrder correctly in the designer. They are reset all the time to their defaults. When the application is running, the TabOrder works for some basic dialogs. In others dialogs nothing happens, or the tab key focuses the wrong control.</p>
 
@@ -160,12 +160,13 @@
 
 <p>After a lot of trying, I found a workaround, that at least works for me. Since I could not set the TabOrder property, I used the HelpContext property (which I dont use in my application) to define the order of the controls:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2013/11/taborder/1.png" alt=""></p>
+<p><img src="http://andydunkel.net/assets/uploads/2013/11/taborder/1.png" alt="" /></p>
 
 <p><em>Note: You can also use the Tag value, but I am using that one for my translation logic.</em></p>
 
 <p>Next step was to create a class helper for TForm:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">unit FormHelper;
+
+<pre><code>unit FormHelper;
 
 interface
 
@@ -192,11 +193,11 @@ begin
       current := Self.Components[i];
       if (current is TStyledControl) then begin
           if ((current as TStyledControl).HelpContext &lt; currentNext) and 
-          ((current as TStyledControl).HelpContext &gt; tabOrder) then begin
+		  ((current as TStyledControl).HelpContext &gt; tabOrder) then begin
             currentNext := (current as TStyledControl).HelpContext;
           end;
       end;
-  end;  
+  end;	
 
   for i := 0 to c do begin
       current := Self.Components[i];
@@ -212,11 +213,13 @@ begin
   end;
 end;
 end.
-</code></pre></div>
+</code></pre>
+
 <p>I am sure there could be some optimizations done with that code, but it works. What we are doing here is to iterate over all controls of a given form and find the next higher value of the HelpContext. Thats the control we want to set focus, when the user hits the tab key.</p>
 
 <p>Of course the code does nothing to far, since the method is not called yet. So the next step is to implement the KeyDown event in the form:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">procedure TfrmEinzField.KeyDown(var Key: Word; var KeyChar: Char;
+
+<pre><code>procedure TfrmEinzField.KeyDown(var Key: Word; var KeyChar: Char;
   Shift: TShiftState);
 var
   control : TStyledControl;
@@ -231,9 +234,10 @@ begin
   end else
     inherited; //do default handling
 end;
-</code></pre></div>
+</code></pre>
+
 <p>In the code, we get the currently focused control. Then we call the method we wrote before with the current Form variable and the controls HelpContext value.
-With that workaround the tab key is now working as expected, jumping to the next control. </p>
+With that workaround the tab key is now working as expected, jumping to the next control.</p>
 
 			</div>
 			

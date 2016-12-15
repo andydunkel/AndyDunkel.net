@@ -153,15 +153,16 @@
 			<p>Today I had a small problem. I wanted to start an external C++ console programm with some parameters and get the output back to my Java program.</p>
 
 <p>Here is a code snippet that reads the output from a console program:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">import java.io.BufferedReader;
+
+<pre><code>import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
 
   public static void main(String[] args) throws IOException {
-        String cmd = &quot;cmd.exe /c dir c:\\temp&quot;;
-
+        String cmd = "cmd.exe /c dir c:\\temp";
+        
         String line;
         Process p = Runtime.getRuntime().exec(cmd);
         BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
@@ -171,10 +172,11 @@ public class Main {
         input.close();
   }
 }
-</code></pre></div>
+</code></pre>
+
 <p>The snippet just outputs the received information.</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2011/10/image5.png" alt="image"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2011/10/image5.png" alt="image" /></p>
 
 			</div>
 			

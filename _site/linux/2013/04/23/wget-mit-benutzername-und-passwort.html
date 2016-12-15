@@ -152,20 +152,33 @@
 			<div class="post">
 			<p>Auf meinem <a href="http://www.amazon.de/gp/product/B008PT4GGC/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B008PT4GGC&amp;linkCode=as2&amp;tag=ekiwide0b-21">RaspberryPi</a> läuft momentan ein Cronjob der alle 30 Minuten meinen Feedreader (<a href="http://tt-rss.org/redmine/projects/tt-rss/wiki">Tiny Tiny RSS</a>) aktualisiert. Dieser ist, aus Sicherheitsgründen, mittlerweile mit einem Passwort geschützt und läuft auf meinem Webspace. Etwas unpraktische Kombination, aber Cronjobs auf meinem Webspace haben so ihre Eigenheiten.</p>
 
-<p>Durch den Passwortschutz konnte der Cronjob nun nicht mehr das Aktualisierungscript mittels &quot;wget&quot; aufrufen. :-(</p>
+<p>Durch den Passwortschutz konnte der Cronjob nun nicht mehr das Aktualisierungscript mittels “wget” aufrufen. :-(</p>
 
 <p>Dafür müssen wir wget einfach ein paar Parameter mitgeben:</p>
 
 <blockquote>
-<p>--user=userName<br>
---password=passWord</p>
+
+</blockquote>
+
+<blockquote>
+
+  <p>–user=userName<br />
+–password=passWord</p>
+
 </blockquote>
 
 <p>Funktioniert für FTP- und HTTP-Passwörter. Hier ein Beispiel</p>
 
 <blockquote>
-<p>$ wget --user=andy --password=&#39;geheim&#39; http://ekiwi.de/foo.zip</p>
+
 </blockquote>
+
+<blockquote>
+
+  <p>$ wget –user=andy –password=’geheim’ http://ekiwi.de/foo.zip</p>
+
+</blockquote>
+
 
 			</div>
 			

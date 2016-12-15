@@ -157,33 +157,82 @@
      
 		
 		<h1>
+		  <a href="/coding/2015/11/01/inno_setup_ipersistfile_save_schlug_fehl.html">InnoSetup - IPersistFile error 0x80070003</a>
+		</h1>
+		  <p class="small">Posted on 01 November 2015 by Andy</p>
+		  <p><p>I use <a href="http://www.jrsoftware.org/isinfo.php">InnoSetup</a> to ship my <a href="http://da-software.de/">software</a>. Years everything went without any problems. Recently I got feedback from customers, saying that there where errors during the setup. I tried it myself serveral times and sometimes I got this error message:</p>
+
+<p><img src="/assets/uploads/2015/11/innosetup.png" alt="" /></p>
+
+<pre><code>IPersistFile::Save schlug fehl; Code 0x80070003.
+Das System kann den angegebenen Pfad nicht finden.
+</code></pre>
+
+<p>It always happened when the setup tried to create the first shortcut in the users start menu.</p>
+
+<p>What went wrong? After some investigation it turned out, that the uninstall routine of my setup was to blame. When my software is installed, the old version is removed automatically. This is done by some Pascal Script code in the setup.</p>
+
+<p>When this routine was removed, everything went fine. The problem seems to be, that there is timing issue. The uninstallation was finished, but the old shortcut was still “in use”. So the setup could not recreate it.</p>
+
+<p>The solution was to add a small wait time after the uninstallation call in the setup script:</p>
+
+<pre><code>procedure CurStepChanged(CurStep: TSetupStep);
+begin
+  if (CurStep=ssInstall) then
+  begin
+    if (IsUpgrade()) then
+    begin
+      UnInstallOldVersion();
+      Sleep(2000); //wait two seconds here
+    end;
+  end;
+end;
+</code></pre>
+
+<p>After that the problem was gone.</p>
+</p>		
+		  <p class="small">Tagged: InnoSetup by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/jekyll/2015/10/08/jekyll_auf_el_capitan.html">Jekyll auf El Capitan installieren</a>
 		</h1>
 		  <p class="small">Posted on 08 October 2015 by Andy</p>
 		  <p><p>Nach dem Update auf El Capitan, fehlte Jekyll zur Erstellung meiner Homepage. Ärgerlich. Laut Webseite lässt sich Jekyll mit einem einfachen</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">gem install jekyll
-</code></pre></div>
+
+<pre><code>gem install jekyll
+</code></pre>
+
 <p>installieren. Geklappt hat das bei mir allerdings noch nie. Mindestens ein <code>sudo</code> musste schon vorangestellt werden.</p>
 
 <p>Auch dieses brachte kein Glück, da die folgende Fehlermeldung die Installation jäh unterbrach:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">Building native extensions.  This could take a while...
+
+<pre><code>Building native extensions.  This could take a while...
 ERROR:  Error installing jekyll:
     ERROR: Failed to build gem native extension.
 
     /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb
-mkmf.rb can&#39;t find header files for ruby at /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/include/ruby.h
+mkmf.rb can't find header files for ruby at /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/include/ruby.h
 
 Gem files will remain installed in /Library/Ruby/Gems/2.0.0/gems/yajl-ruby-1.2.1 for inspection.
-</code></pre></div>
+</code></pre>
+
 <p>Na fein. Stellt sich heraus, dass man zuerst die XCode command line tools installieren muss:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">xcode-select --install
-</code></pre></div>
+
+<pre><code>xcode-select --install
+</code></pre>
+
 <p>Das dauert ein wenig. Ist das installiert, stimmen wir noch den Lizenzbedingungen zu:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo xcodebuild -license
-</code></pre></div>
+
+<pre><code>sudo xcodebuild -license
+</code></pre>
+
 <p>Nachdem auch das erledigt ist, installiert sich Jekyll hoffentlich ohne Probleme.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo gem install jekyll 
-</code></pre></div></p>		
+
+<pre><code>sudo gem install jekyll	
+</code></pre>
+</p>		
 		  <p class="small">Tagged: Jekyll by Andy</p>
 		  <hr>
 		  
@@ -192,19 +241,22 @@ Gem files will remain installed in /Library/Ruby/Gems/2.0.0/gems/yajl-ruby-1.2.1
 		  <a href="/lazarus/delphi/2015/09/09/lazarus_synapse_progress.html">Download with progress using Lazarus and Synapse</a>
 		</h1>
 		  <p class="small">Posted on 09 September 2015 by Andy</p>
-		  <p><p>The Synapse library provides a lot of TCP/IP functions for use in Delphi and Lazarus. </p>
+		  <p><p>The Synapse library provides a lot of TCP/IP functions for use in Delphi and Lazarus.</p>
 
-<p><img src="/assets/uploads/2015/9/laz1.png" alt=""></p>
+<p><img src="/assets/uploads/2015/9/laz1.png" alt="" /></p>
 
-<p>I needed to download something from a HTTP server. The <a href="http://wiki.freepascal.org/Synapse">basic download</a> is very simple: </p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">HTTPGetResult := HTTPSender.HTTPMethod(&#39;GET&#39;, URL);
+<p>I needed to download something from a HTTP server. The <a href="http://wiki.freepascal.org/Synapse">basic download</a> is very simple:</p>
+
+<pre><code>HTTPGetResult := HTTPSender.HTTPMethod('GET', URL);
 if (HTTPSender.ResultCode &gt;= 100) and (HTTPSender.ResultCode&lt;=299) then begin
    HTTPSender.Document.SaveToFile(TargetFile);
-</code></pre></div>
+</code></pre>
+
 <p>While this code works, it is blocking and there is no information on the progress, nor any information how big the file is, which is downloaded.</p>
 
 <p>So I started by implementing a class around the download function:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">type
+
+<pre><code>type
   { THttpDownloader }
 
   THttpDownloader = class
@@ -218,15 +270,19 @@ if (HTTPSender.ResultCode &gt;= 100) and (HTTPSender.ResultCode&lt;=299) then be
     procedure Status(Sender: TObject; Reason: THookSocketReason; const Value: String);
     function GetSizeFromHeader(Header: String):integer;
   end; 
-</code></pre></div>
+</code></pre>
+
 <p>I also defined an interface to get the UI notified about the progress:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">type
+
+<pre><code>type
   IProgress = interface
     procedure ProgressNotification(Text: String; CurrentProgress : integer; MaxProgress : integer);
   end;  
-</code></pre></div>
-<p>The download code from above moves to the &quot;DownloadHTTP&quot; function:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">function THttpDownloader.DownloadHTTP(URL, TargetFile: string; ProgressMonitor : IProgress): Boolean;
+</code></pre>
+
+<p>The download code from above moves to the “DownloadHTTP” function:</p>
+
+<pre><code>function THttpDownloader.DownloadHTTP(URL, TargetFile: string; ProgressMonitor : IProgress): Boolean;
 var
   HTTPGetResult: Boolean;
 begin
@@ -238,7 +294,7 @@ begin
   HTTPSender := THTTPSend.Create;
   try
     HTTPSender.Sock.OnStatus:= Status;
-    HTTPGetResult := HTTPSender.HTTPMethod(&#39;GET&#39;, URL);
+    HTTPGetResult := HTTPSender.HTTPMethod('GET', URL);
     if (HTTPSender.ResultCode &gt;= 100) and (HTTPSender.ResultCode&lt;=299) then begin
       HTTPSender.Document.SaveToFile(TargetFile);
       Result := True;
@@ -247,11 +303,13 @@ begin
     HTTPSender.Free;
   end;
 end;
-</code></pre></div>
+</code></pre>
+
 <p>To get updates on the progress we need to implement a callback function, which we assign in the line <code>HTTPSender.Sock.OnStatus:= Status;</code>.</p>
 
 <p>This function looks like that:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">procedure THttpDownloader.Status(Sender: TObject; Reason: THookSocketReason; const Value: String);
+
+<pre><code>procedure THttpDownloader.Status(Sender: TObject; Reason: THookSocketReason; const Value: String);
 var
   V, currentHeader: String;
   i: integer;
@@ -267,7 +325,7 @@ begin
     end;
   end;
 
-  V := GetEnumName(TypeInfo(THookSocketReason), Integer(Reason)) + &#39; &#39; + Value;
+  V := GetEnumName(TypeInfo(THookSocketReason), Integer(Reason)) + ' ' + Value;
 
   if Reason = THookSocketReason.HR_ReadCount then
   begin
@@ -282,10 +340,10 @@ var
 begin
   Result:= -1;
 
-  if Pos(&#39;Content-Length:&#39;, Header) &lt;&gt; 0 then
+  if Pos('Content-Length:', Header) &lt;&gt; 0 then
   begin
     item:= TStringList.Create();
-    item.Delimiter:= &#39;:&#39;;
+    item.Delimiter:= ':';
     item.StrictDelimiter:=true;
     item.DelimitedText:=Header;
     if item.Count = 2 then
@@ -294,24 +352,27 @@ begin
     end;
   end;
 end;     
-</code></pre></div>
-<p>What are we doing here? </p>
+</code></pre>
 
-<p>First of all we look into the headers to get the file size. We have to wait and check if the header is there. The first events do not contain the <code>Content-Length:</code> information. </p>
+<p>What are we doing here?</p>
 
-<p>Once found, we extract that information. There are several events popping up here, which you can react to. But we only check for <code>THookSocketReason.HR_ReadCount</code> in that example. </p>
+<p>First of all we look into the headers to get the file size. We have to wait and check if the header is there. The first events do not contain the <code>Content-Length:</code> information.</p>
 
-<p>&quot;HR_ReadCount&quot; provides us with the information how many bytes where read since the last event. </p>
+<p>Once found, we extract that information. There are several events popping up here, which you can react to. But we only check for <code>THookSocketReason.HR_ReadCount</code> in that example.</p>
+
+<p>“HR_ReadCount” provides us with the information how many bytes where read since the last event.</p>
 
 <p>The progress is then reported to the UI:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">procedure TMainForm.ProgressNotification(Text: String; CurrentProgress: integer; MaxProgress: integer);
+
+<pre><code>procedure TMainForm.ProgressNotification(Text: String; CurrentProgress: integer; MaxProgress: integer);
 begin
   if (MaxProgress &lt;&gt; -1) then ProgressBar.Max:= MaxProgress;
   ProgressBar.Position:= CurrentProgress;
   memoStatus.Lines.Add(Text);
   Application.ProcessMessages;
 end;
-</code></pre></div>
+</code></pre>
+
 <p>Well thats it! The complete source code can be <a href="/assets/uploads/2015/9/laz_downloader.zip">downloaded here</a>.</p>
 </p>		
 		  <p class="small">Tagged: Synapse by Andy</p>
@@ -322,23 +383,23 @@ end;
 		  <a href="/computer/2015/08/09/windows_10_on_thinkpad_w500.html">Windows 10 auf Lenovo Thinkpad W500</a>
 		</h1>
 		  <p class="small">Posted on 09 August 2015 by Andy</p>
-		  <p><h1>Windows 10 auf Lenovo Thinkpad W500</h1>
+		  <p><h1 id="windows-10-auf-lenovo-thinkpad-w500">Windows 10 auf Lenovo Thinkpad W500</h1>
 
 <p><strong>English Version below.</strong></p>
 
 <p>Vor kurzem habe ich mein Thinkpad W500 auf Windows 10 geupdated. Die Installation lief ohne Probleme durch und auch fast alle Treiber wurden installiert. Fast alle: nur die Grafikkarte machte Probleme. Das Thinkpad besitzt eine ATI Fire GL 5700 und eine integrierte Grafikeinheit von Intel.</p>
 
-<p>Beim ersten Start von Windows stimmte die Auflösung nicht und die Grafikkarte wurde als &quot;Microsoft Basic Graphics Display&quot; erkannt. Nach einiger Zeit besserte sich die Situation, Windows hat aus dem Internet den Treiber für die Intel-Grafikkarte nachgeladen. Damit war zumindest die korrekte Auflösung einstellbar.</p>
+<p>Beim ersten Start von Windows stimmte die Auflösung nicht und die Grafikkarte wurde als “Microsoft Basic Graphics Display” erkannt. Nach einiger Zeit besserte sich die Situation, Windows hat aus dem Internet den Treiber für die Intel-Grafikkarte nachgeladen. Damit war zumindest die korrekte Auflösung einstellbar.</p>
 
 <p>Prinzipiell benötige ich die 3D-Leistung der ATI-Grafikkarte nicht, aber leider funktioniert der Display-Port-Anschluss nicht mit der Intel-Grafikkarte. Damit ließe sich mein externes Display nicht mehr am Laptop betreiben. Keine Option.</p>
 
 <p>Wenig später wurde erneut ein Treiber nachgeladen, leider führte dieser dazu, dass der Bildschirm dauerhaft schwarz blieb. Auch nach dem Neustart. Ein Boot in den abgesicherten Modus offenbarte das Dilemma. Die ATI-Grafikkarte wurde als Radeon 3650 erkannt. Obwohl diese beiden Chips ungefähr baugleich sind, funktionierte der Treiber nicht in Verbindung mit dem Intel-Grafikchip.</p>
 
-<h3>Die Lösung</h3>
+<h3 id="die-lsung">Die Lösung</h3>
 
-<p>Die Lösung überhaupt ein Bild angezeigt zu bekommen lag nun darin, die Intel-Grafik im Bios abzustellen. Hierzu stellt man die Einstellung auf “Discrete”. Und siehe da, immerhin zeigte Windows wieder ein Bild ein. Leider nur bis zum nächsten Neustart. Ein Blick ins Bios: Windows hat die eben gemachte Einstellung rückgängig gemacht. Hierfür gibt es eine weitere Option, welches dem Betriebssystem die Anpassung der Einstellung erlaubt. </p>
+<p>Die Lösung überhaupt ein Bild angezeigt zu bekommen lag nun darin, die Intel-Grafik im Bios abzustellen. Hierzu stellt man die Einstellung auf “Discrete”. Und siehe da, immerhin zeigte Windows wieder ein Bild ein. Leider nur bis zum nächsten Neustart. Ein Blick ins Bios: Windows hat die eben gemachte Einstellung rückgängig gemacht. Hierfür gibt es eine weitere Option, welches dem Betriebssystem die Anpassung der Einstellung erlaubt.</p>
 
-<p><img src="/assets/uploads/2015/8/w500_1.jpg" alt=""></p>
+<p><img src="/assets/uploads/2015/8/w500_1.jpg" alt="" /></p>
 
 <p>Obwohl damit nun wieder ein Bild angezeigt wurde, funktionierte der falsche Treiber für die Radeon 3650 nicht korrekt. Die Auflösung des Displays und externen Monitors stimmte nicht und ließ sich auch nicht einstellen.</p>
 
@@ -346,9 +407,9 @@ end;
 
 <p>Damit läuft auch Windows 10 auf dem etwas betagten Gerät endlich ohne Probleme.</p>
 
-<p><img src="/assets/uploads/2015/8/w500_2.jpg" alt=""></p>
+<p><img src="/assets/uploads/2015/8/w500_2.jpg" alt="" /></p>
 
-<h2>English Version</h2>
+<h2 id="english-version">English Version</h2>
 
 <p>Some days ago I installed Windows 10 on my Lenovo Thinkpad W500. The installation had no problems, except no graphic drivers where installed. Just some “Basic Microsoft Display Adapter”. However with that thing you cannot set the correct resolution and most likely cannot use any special functions of the graphics card.
 After some time Windows automatically adjusted the display resolution, as in the background the driver for the Intel graphics card was installed.</p>
@@ -356,9 +417,9 @@ After some time Windows automatically adjusted the display resolution, as in the
 <p>The W500 has two graphic chips. An ATI Fire GL 5700 and an Intel graphic chip. The main problem with the Intel chip is, that the Display Port is not working with this option. 
 Some time later another driver was installed, but this time the display turned black. Even after restart the screen remained black.</p>
 
-<p>Starting Windows in Safe Mode made the problem visible. The ATI graphics was detected as Radion 3650 graphics. However this did not work well in combination with the Intel graphics. </p>
+<p>Starting Windows in Safe Mode made the problem visible. The ATI graphics was detected as Radion 3650 graphics. However this did not work well in combination with the Intel graphics.</p>
 
-<h3>Solution</h3>
+<h3 id="solution">Solution</h3>
 
 <p>The solution was to disable the Intel graphic card in the computers Bios. There is also an option that allows Windows to set this value, turn this off too. Otherwise Windows will reset the value and you will have a black screen again.</p>
 
@@ -374,122 +435,53 @@ Some time later another driver was installed, but this time the display turned b
 		  <a href="/coding/2015/07/12/c_sharp_dateiaenderungen_ueberwachen.html">C#-Dateiänderungen in Verzeichnissen überwachen</a>
 		</h1>
 		  <p class="small">Posted on 12 July 2015 by Andy</p>
-		  <p><h1>C# - Dateiänderungen in Verzeichnissen überwachen</h1>
-
+		  <p><h1 id="c---dateinderungen-in-verzeichnissen-berwachen">C# - Dateiänderungen in Verzeichnissen überwachen</h1>
 <p>Eine Aufgabe, die kompliziert klingt, es aber dann doch nicht ist: Überwachen von Verzeichnissen auf Änderungen. Egal, ob eine Datei umbenannt wird, eine Datei hinzukommt, Verzeichnisse verschoben werden etc.</p>
 
 <p>Stellt sich heraus, dass dies in C#, bzw. mit dem .net-Framework, eine einfache Sache ist. Die Klasse <code>FileSystemWatcher</code> nimmt uns die Arbeit ab. Einmal gestartet, überwacht und benachrichtigt uns dieser über Änderungen. Hier eine Beschreibung wie man diesen einsetzt.</p>
 
-<p><img src="/assets/uploads/2015/7/fsw1.png" alt=""></p>
+<p><img src="/assets/uploads/2015/7/fsw1.png" alt="" /></p>
 
 <p>Zuerst legen wir uns das <code>FileSystemWatcher</code>-Object an und konfigurieren es:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">private FileSystemWatcher _watcher;
+
+<pre><code>private FileSystemWatcher _watcher;
 
 _watcher = new FileSystemWatcher();
-_watcher.Path = &quot;c:\\temp&quot;;
+_watcher.Path = "c:\\temp";
 _watcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.DirectoryName;
-_watcher.Filter = &quot;*.*&quot;;
-</code></pre></div>
+_watcher.Filter = "*.*";
+</code></pre>
+
 <p>Neben dem Pfad können wir festlegen über welche Änderungen wir uns benachrichtigen lassen wollen. Ebenfalls können wir festlegen, welche Dateien wir überwachen wollen. In unserem Beispiel einfach alle.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">_watcher.Changed += new FileSystemEventHandler(OnChanged);
+
+<pre><code>_watcher.Changed += new FileSystemEventHandler(OnChanged);
 _watcher.Created += new FileSystemEventHandler(OnChanged);
 _watcher.Deleted += new FileSystemEventHandler(OnChanged);
 _watcher.Renamed += new RenamedEventHandler(OnRenamed);
-</code></pre></div>
+</code></pre>
+
 <p>Nun müssen wir den <code>FileSystemWatcher</code> nur noch starten:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">_watcher.EnableRaisingEvents = true;
-</code></pre></div>
+
+<pre><code>_watcher.EnableRaisingEvents = true;
+</code></pre>
+
 <p>Die EventHandler sehen so aus:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">private void OnRenamed(object sender, RenamedEventArgs e)
+
+<pre><code>private void OnRenamed(object sender, RenamedEventArgs e)
 {
-    MessageBox.Show(&quot;Änderung: &quot; + e.FullPath + &quot; - &quot; + e.ChangeType.ToString());          
+    MessageBox.Show("Änderung: " + e.FullPath + " - " + e.ChangeType.ToString());          
 }
 
 private void OnChanged(object source, FileSystemEventArgs e)
 {
-    MessageBox.Show(&quot;Änderung: &quot; + e.FullPath + &quot; - &quot; + e.ChangeType.ToString());
+    MessageBox.Show("Änderung: " + e.FullPath + " - " + e.ChangeType.ToString());
 }
-</code></pre></div>
+</code></pre>
+
 <p>Die übergebenen EventArgs enthalten Informationen zu den geänderten Datei, als auch Informationen über die Art der Änderung.</p>
 
 <p>Das war es auch schon. Wer will kann sich das <a href="/assets/uploads/2015/7/FileSystemWatcher.zip">Beispielprojekt hier herunterladen</a>.</p>
-</p>		
-		  <p class="small">Tagged: C# by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html">C#-Anwendungen mehrsprachig gestalten</a>
-		</h1>
-		  <p class="small">Posted on 04 July 2015 by Andy</p>
-		  <p><h1>C# Anwendungen lokalisieren</h1>
 
-<p>Im folgenden Artikel werde ich kurz die ersten Schritte beschreiben um eine C#-Anwendung mehrsprachig zu gestalten.</p>
-
-<p>Legen wir los und beginnen mit den Formularen. Im Designer setzen wir die Eigenschaft <code>Localizable</code> auf <code>true</code>:</p>
-
-<p><img src="/assets/uploads/2015/7/inter1.png" alt=""></p>
-
-<p>Anschließend können wir über die <code>Language</code>-Eigenschaft die Sprache umschalten. In Beispiel möchte ich die Sprachen Deutsch und Englisch implementieren. Im Hintergrund legt Visual Studio nun für die gewählte Sprache die entsprechende Resourcen-Datei an:</p>
-
-<p><img src="/assets/uploads/2015/7/inter2.png" alt=""></p>
-
-<p>Für jede Sprache können wir jetzt im Designer die Texte der Steuerelemente anpassen und übersetzen. Da für jede Sprache oft auch mehr oder weniger Platz benötigt wird um Texte oder Grafiken darzustellen, können wir auch für jede Sprache das Design abändern.</p>
-
-<p>Beim Start der Anwendung wird nun automatisch die Sprache des Systems ermittelt und die Anwendung automatisch in der passenden Sprache geöffnet. Oder alternativ die Default-Sprache.</p>
-
-<h2>Sprache manuell festlegen</h2>
-
-<p>Nicht immer will man sich auf die automatische Sprachwahl vom System verlassen. Daher können wir beim Start der Anwendung die Sprache auch manuell festlegen:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">CultureInfo myCultureInfo = new CultureInfo(&quot;en&quot;);
-Thread.CurrentThread.CurrentCulture = myCultureInfo;
-Thread.CurrentThread.CurrentUICulture = myCultureInfo;
-</code></pre></div>
-<p>Ein guter Platz für diese Einstellung ist z.B. die <code>Program.cs</code> Datei:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">/// &lt;summary&gt;
-/// The main entry point for the application.
-/// &lt;/summary&gt;
-[STAThread]
-static void Main()
-{
-    CultureInfo myCultureInfo = new CultureInfo(&quot;de&quot;);
-    Thread.CurrentThread.CurrentCulture = myCultureInfo;
-    Thread.CurrentThread.CurrentUICulture = myCultureInfo;
-
-    Application.EnableVisualStyles();
-    Application.SetCompatibleTextRenderingDefault(false);
-    Application.Run(new MainForm());
-}
-</code></pre></div>
-<p>Die Angabe der Sprache erfolgt in Form von <code>en</code> oder spezifischer mit <code>en-US</code>.</p>
-
-<h2>Strings im Code</h2>
-
-<p>Die Übersetzung der Anwendung im Designer gestaltet sich wie gesehen recht einfach. Doch was ist mit Strings im Code? </p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">MetroMessageBox.Show(this, &quot;Die Einstellungen werden nach Neustart der Anwendung übernommen.&quot;, &quot;Hinweis&quot;);
-</code></pre></div>
-<p>Auch diese müssen übersetzt werden. Auch dies ist sehr leicht möglich. Zuerst legen wir neue Resourcendateien für unsere Sprachen an:</p>
-
-<p><img src="/assets/uploads/2015/7/inter3.png" alt=""> </p>
-
-<p>In diesen Tragen wir jetzt unsere Strings ein, mit den jeweiligen Übersetzungen.</p>
-
-<p><img src="/assets/uploads/2015/7/inter4.png" alt=""></p>
-
-<p>Nun passen wir den Code unserer MessageBox noch an:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">MetroMessageBox.Show(this, AppResources.SettingsMessage, AppResources.SettingsTitle);
-</code></pre></div>
-<p>Das wars auch schon.</p>
-
-<h2>Abschluss</h2>
-
-<p>Neben den Texten gibt es noch weitere Dinge zu beachten, welche hier nicht besprochen wurden, wie Datum- und Zeitangaben, welche oft anders formatiert sind. </p>
-
-<p>Hier ein Beispiel:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">CultureInfo ci = new CultureInfo(&quot;de&quot;);
-MessageBox.Show(DateTime.Now.ToString(&quot;d&quot;, ci));
-</code></pre></div>
-<p>Wie man sieht, ist die grundsätzliche Mehrsprachigkeit einer Anwendung in C# sehr leicht möglich.</p>
 </p>		
 		  <p class="small">Tagged: C# by Andy</p>
 		  <hr>
@@ -534,7 +526,7 @@ MessageBox.Show(DateTime.Now.ToString(&quot;d&quot;, ci));
 		<section>
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (27)</a></li>
+<li class='category'><a href='/categories/coding/'>coding (28)</a></li>
 <li class='category'><a href='/categories/computer/'>computer (8)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>

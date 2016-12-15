@@ -151,40 +151,43 @@
 			
 			<div class="post">
 			<p>Most common in programming is to load text files to a string. Since this usually involves some lines of code, here is a snippet for that:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">/**
+
+<pre><code>/**
  * Loads a file to String
- * @param fileName - file name for example &quot;C:\\MeineFile.txt&quot;
+ * @param fileName - file name for example "C:\\MeineFile.txt"
  * @return
  * @throws IOException 
  */
 private String loadFileToString(String fileName) throws IOException {
-    File file = new File(fileName);
-    StringBuffer content = new StringBuffer();
-    BufferedReader reader = null;
+	File file = new File(fileName);
+	StringBuffer content = new StringBuffer();
+	BufferedReader reader = null;
 
-    try {
-        reader = new BufferedReader(new FileReader(file));
-        String s = null;
+	try {
+		reader = new BufferedReader(new FileReader(file));
+		String s = null;
 
-        while ((s = reader.readLine()) != null) {
-            content.append(s).append(System.getProperty(&quot;line.separator&quot;));
-        }
-    } catch (FileNotFoundException e) {
-        throw e;
-    } catch (IOException e) {
-        throw e;
-    } finally {
-        try {
-            if (reader != null) {
-                reader.close();
-            }
-        } catch (IOException e) {
-            throw e;
-        }
-    }   
-    return content.toString();
+		while ((s = reader.readLine()) != null) {
+			content.append(s).append(System.getProperty("line.separator"));
+		}
+	} catch (FileNotFoundException e) {
+		throw e;
+	} catch (IOException e) {
+		throw e;
+	} finally {
+		try {
+			if (reader != null) {
+				reader.close();
+			}
+		} catch (IOException e) {
+			throw e;
+		}
+	}	
+	return content.toString();
 }
-</code></pre></div>
+</code></pre>
+
+
 			</div>
 			
 			<br>

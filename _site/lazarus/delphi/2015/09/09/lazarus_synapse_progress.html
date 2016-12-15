@@ -150,19 +150,22 @@
 			<p class="meta">09 Sep 2015</p>
 			
 			<div class="post">
-			<p>The Synapse library provides a lot of TCP/IP functions for use in Delphi and Lazarus. </p>
+			<p>The Synapse library provides a lot of TCP/IP functions for use in Delphi and Lazarus.</p>
 
-<p><img src="/assets/uploads/2015/9/laz1.png" alt=""></p>
+<p><img src="/assets/uploads/2015/9/laz1.png" alt="" /></p>
 
-<p>I needed to download something from a HTTP server. The <a href="http://wiki.freepascal.org/Synapse">basic download</a> is very simple: </p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">HTTPGetResult := HTTPSender.HTTPMethod(&#39;GET&#39;, URL);
+<p>I needed to download something from a HTTP server. The <a href="http://wiki.freepascal.org/Synapse">basic download</a> is very simple:</p>
+
+<pre><code>HTTPGetResult := HTTPSender.HTTPMethod('GET', URL);
 if (HTTPSender.ResultCode &gt;= 100) and (HTTPSender.ResultCode&lt;=299) then begin
    HTTPSender.Document.SaveToFile(TargetFile);
-</code></pre></div>
+</code></pre>
+
 <p>While this code works, it is blocking and there is no information on the progress, nor any information how big the file is, which is downloaded.</p>
 
 <p>So I started by implementing a class around the download function:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">type
+
+<pre><code>type
   { THttpDownloader }
 
   THttpDownloader = class
@@ -176,15 +179,19 @@ if (HTTPSender.ResultCode &gt;= 100) and (HTTPSender.ResultCode&lt;=299) then be
     procedure Status(Sender: TObject; Reason: THookSocketReason; const Value: String);
     function GetSizeFromHeader(Header: String):integer;
   end; 
-</code></pre></div>
+</code></pre>
+
 <p>I also defined an interface to get the UI notified about the progress:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">type
+
+<pre><code>type
   IProgress = interface
     procedure ProgressNotification(Text: String; CurrentProgress : integer; MaxProgress : integer);
   end;  
-</code></pre></div>
-<p>The download code from above moves to the &quot;DownloadHTTP&quot; function:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">function THttpDownloader.DownloadHTTP(URL, TargetFile: string; ProgressMonitor : IProgress): Boolean;
+</code></pre>
+
+<p>The download code from above moves to the “DownloadHTTP” function:</p>
+
+<pre><code>function THttpDownloader.DownloadHTTP(URL, TargetFile: string; ProgressMonitor : IProgress): Boolean;
 var
   HTTPGetResult: Boolean;
 begin
@@ -196,7 +203,7 @@ begin
   HTTPSender := THTTPSend.Create;
   try
     HTTPSender.Sock.OnStatus:= Status;
-    HTTPGetResult := HTTPSender.HTTPMethod(&#39;GET&#39;, URL);
+    HTTPGetResult := HTTPSender.HTTPMethod('GET', URL);
     if (HTTPSender.ResultCode &gt;= 100) and (HTTPSender.ResultCode&lt;=299) then begin
       HTTPSender.Document.SaveToFile(TargetFile);
       Result := True;
@@ -205,11 +212,13 @@ begin
     HTTPSender.Free;
   end;
 end;
-</code></pre></div>
+</code></pre>
+
 <p>To get updates on the progress we need to implement a callback function, which we assign in the line <code>HTTPSender.Sock.OnStatus:= Status;</code>.</p>
 
 <p>This function looks like that:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">procedure THttpDownloader.Status(Sender: TObject; Reason: THookSocketReason; const Value: String);
+
+<pre><code>procedure THttpDownloader.Status(Sender: TObject; Reason: THookSocketReason; const Value: String);
 var
   V, currentHeader: String;
   i: integer;
@@ -225,7 +234,7 @@ begin
     end;
   end;
 
-  V := GetEnumName(TypeInfo(THookSocketReason), Integer(Reason)) + &#39; &#39; + Value;
+  V := GetEnumName(TypeInfo(THookSocketReason), Integer(Reason)) + ' ' + Value;
 
   if Reason = THookSocketReason.HR_ReadCount then
   begin
@@ -240,10 +249,10 @@ var
 begin
   Result:= -1;
 
-  if Pos(&#39;Content-Length:&#39;, Header) &lt;&gt; 0 then
+  if Pos('Content-Length:', Header) &lt;&gt; 0 then
   begin
     item:= TStringList.Create();
-    item.Delimiter:= &#39;:&#39;;
+    item.Delimiter:= ':';
     item.StrictDelimiter:=true;
     item.DelimitedText:=Header;
     if item.Count = 2 then
@@ -252,24 +261,27 @@ begin
     end;
   end;
 end;     
-</code></pre></div>
-<p>What are we doing here? </p>
+</code></pre>
 
-<p>First of all we look into the headers to get the file size. We have to wait and check if the header is there. The first events do not contain the <code>Content-Length:</code> information. </p>
+<p>What are we doing here?</p>
 
-<p>Once found, we extract that information. There are several events popping up here, which you can react to. But we only check for <code>THookSocketReason.HR_ReadCount</code> in that example. </p>
+<p>First of all we look into the headers to get the file size. We have to wait and check if the header is there. The first events do not contain the <code>Content-Length:</code> information.</p>
 
-<p>&quot;HR_ReadCount&quot; provides us with the information how many bytes where read since the last event. </p>
+<p>Once found, we extract that information. There are several events popping up here, which you can react to. But we only check for <code>THookSocketReason.HR_ReadCount</code> in that example.</p>
+
+<p>“HR_ReadCount” provides us with the information how many bytes where read since the last event.</p>
 
 <p>The progress is then reported to the UI:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">procedure TMainForm.ProgressNotification(Text: String; CurrentProgress: integer; MaxProgress: integer);
+
+<pre><code>procedure TMainForm.ProgressNotification(Text: String; CurrentProgress: integer; MaxProgress: integer);
 begin
   if (MaxProgress &lt;&gt; -1) then ProgressBar.Max:= MaxProgress;
   ProgressBar.Position:= CurrentProgress;
   memoStatus.Lines.Add(Text);
   Application.ProcessMessages;
 end;
-</code></pre></div>
+</code></pre>
+
 <p>Well thats it! The complete source code can be <a href="/assets/uploads/2015/9/laz_downloader.zip">downloaded here</a>.</p>
 
 			</div>

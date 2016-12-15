@@ -152,21 +152,23 @@
 			<div class="post">
 			<p>If you create a new RCP application a view gets a tab like this:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2011/10/image3.png" alt="image"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2011/10/image3.png" alt="image" /></p>
 
 <p>To remove the tab, use the “addStandaloneView” method in your perspective. Here is an example:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">public class Perspective implements IPerspectiveFactory {
+
+<pre><code>public class Perspective implements IPerspectiveFactory {
   public void createInitialLayout(IPageLayout layout) {       
     String editorArea = layout.getEditorArea();
     layout.setEditorAreaVisible(false);
-
+    
     layout.addStandaloneView(View.ID, false, IPageLayout.LEFT, 1.0f, editorArea);       
   }
 }
-</code></pre></div>
+</code></pre>
+
 <p>The result:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2011/10/image4.png" alt="image"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2011/10/image4.png" alt="image" /></p>
 
 			</div>
 			

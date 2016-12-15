@@ -150,38 +150,43 @@
 			<p class="meta">21 Jan 2016</p>
 			
 			<div class="post">
-			<p>Jekyll bietet über das die Variable <code>site.related_posts</code> eine Funktion um &quot;Verwandte Artikel&quot; zu einem Blogpost anzuzeigen. Standardmäßig ist die Funktion jedoch eher eingeschränkt und enthält nur die letzten 10 Artikel.</p>
+			<p>Jekyll bietet über das die Variable <code>site.related_posts</code> eine Funktion um “Verwandte Artikel” zu einem Blogpost anzuzeigen. Standardmäßig ist die Funktion jedoch eher eingeschränkt und enthält nur die letzten 10 Artikel.</p>
 
 <p>Das Ganze wird z.B. so verwendet:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">{% for post in site.related_posts %}
-   &lt;li&gt;&lt;a href=&quot;{{ site.url }}{{ post.url }}&quot; title=&quot;{{ post.title }}&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
-{% endfor %}
-</code></pre></div>
-<p>Da jeweils immer nur die letzten 10 Artikel angezeigt werden, ist das nicht wirklich &quot;related&quot;. Immerhin wird noch die Option angeboten das Ganze über einen Index etwas schlauer zu machen. Mit der Option <code>--lsi</code> wird beim Generieren der Seite ein Index angelegt und die Funktion arbeitet semantisch etwas schlauer. Bei mir hat das jedoch auch nicht funktioniert. Hier kam es leider nur zu einer Fehlermeldung. Außerdem wollte ich nicht stupide immer 10 Artikel angezeigt bekommen, obs passt oder nicht.</p>
 
-<p>Auf der Suche nach einer besseren Lösung bin ich auf <a href="h%0Attps://github.com/jumanji27/related-posts-jekyll-plugin">ein Github-Projekt</a> gestoßen. Das Plugin kopiert man einfach in das Plugin-Verzeichnis von Jekyll. Es ersetzt die Standardfunktion von Jekyll. Die Zuordnung der verwandten Artikel erfolgt beim Plugin über die Tags, gleicher Tag == verwandt.</p>
+<pre><code>{% for post in site.related_posts %}
+   &lt;li&gt;&lt;a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
+{% endfor %}
+</code></pre>
+
+<p>Da jeweils immer nur die letzten 10 Artikel angezeigt werden, ist das nicht wirklich “related”. Immerhin wird noch die Option angeboten das Ganze über einen Index etwas schlauer zu machen. Mit der Option <code>--lsi</code> wird beim Generieren der Seite ein Index angelegt und die Funktion arbeitet semantisch etwas schlauer. Bei mir hat das jedoch auch nicht funktioniert. Hier kam es leider nur zu einer Fehlermeldung. Außerdem wollte ich nicht stupide immer 10 Artikel angezeigt bekommen, obs passt oder nicht.</p>
+
+<p>Auf der Suche nach einer besseren Lösung bin ich auf <a href="h
+ttps://github.com/jumanji27/related-posts-jekyll-plugin">ein Github-Projekt</a> gestoßen. Das Plugin kopiert man einfach in das Plugin-Verzeichnis von Jekyll. Es ersetzt die Standardfunktion von Jekyll. Die Zuordnung der verwandten Artikel erfolgt beim Plugin über die Tags, gleicher Tag == verwandt.</p>
 
 <p>Zur Einbindung habe ich folgenden Code verwendet.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">{% if site.related_posts.size &gt; 0 %}
- &lt;div class=&quot;panel panel-default&quot;&gt;
-    &lt;div class=&quot;panel-heading&quot;&gt;Verwandte Artikel:&lt;/div&gt;
-    &lt;div class=&quot;panel-body&quot;&gt;
-    {% for post in site.related_posts %}
-       &lt;li&gt;&lt;a href=&quot;{{ site.url }}{{ post.url }}&quot; title=&quot;{{ post.title }}&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
-    {% endfor %}
-    &lt;/div&gt;
+
+<pre><code>{% if site.related_posts.size &gt; 0 %}
+ &lt;div class="panel panel-default"&gt;
+ 	&lt;div class="panel-heading"&gt;Verwandte Artikel:&lt;/div&gt;
+	&lt;div class="panel-body"&gt;
+	{% for post in site.related_posts %}
+	   &lt;li&gt;&lt;a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
+	{% endfor %}
+	&lt;/div&gt;
 &lt;/div&gt;
 {% endif %}
-</code></pre></div>
+</code></pre>
+
 <p>Das Ergebnis sieht dann z.B. so aus:</p>
 
-<p><img src="/assets/uploads/2016/1/related_posts.png" alt=""></p>
+<p><img src="/assets/uploads/2016/1/related_posts.png" alt="" /></p>
 
-<p>Der Code stellt die Box zudem nur dar, wenn es verwandte Artikel gibt. </p>
+<p>Der Code stellt die Box zudem nur dar, wenn es verwandte Artikel gibt.</p>
 
-<hr>
+<hr />
 
-<p>Beim Schreiben dieses Artikels ist es mir aufgefallen, dass es gar nicht so leicht ist &quot;Liquid code&quot; in Jekyll als Code darzustellen. Wie das geht, <a href="https://truongtx.me/2013/01/09/display-liquid-code-in-jekyll/">ist hier erklärt</a>.</p>
+<p>Beim Schreiben dieses Artikels ist es mir aufgefallen, dass es gar nicht so leicht ist “Liquid code” in Jekyll als Code darzustellen. Wie das geht, <a href="https://truongtx.me/2013/01/09/display-liquid-code-in-jekyll/">ist hier erklärt</a>.</p>
 
 			</div>
 			

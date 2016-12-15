@@ -153,55 +153,64 @@
 			<p>In this post I want to describe handling exceptions from threads with the ThreadGroup class and the uncaughtExceptionHandler.</p>
 
 <p>First we create a Thread which does useful stuff and throws an exception at some time:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">public class PfostenThread implements Runnable {    
-    @Override
-    public void run() {
-        for (int i = 0; i &lt; 1000000; i++) {
-            System.out.println(&quot;Pfosten: &quot; + i);
 
-            if (i == 31456) {
-                //Cause an exception
-                i = i / 0;
-            }
-        }
-    }
+<pre><code>public class PfostenThread implements Runnable {	
+	@Override
+	public void run() {
+		for (int i = 0; i &lt; 1000000; i++) {
+			System.out.println("Pfosten: " + i);
+			
+			if (i == 31456) {
+				//Cause an exception
+				i = i / 0;
+			}
+		}
+	}
 }
-</code></pre></div>
+</code></pre>
+
 <p>No we will start our thread from the main method of our Java program:
-&lt;!-- more --&gt;</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">import java.lang.Thread.UncaughtExceptionHandler;
+<!-- more --></p>
+
+<pre><code>import java.lang.Thread.UncaughtExceptionHandler;
 
 public class Main {
-    public static void main(String[] args) {
-        PfostenThreadGroup group = new PfostenThreadGroup(&quot;PfostenGruppe&quot;);
-        Thread t = new Thread(new PfostenThread(), &quot;Pfosten&quot;);
-        t.start();      
-    }
+	public static void main(String[] args) {
+		PfostenThreadGroup group = new PfostenThreadGroup("PfostenGruppe");
+		Thread t = new Thread(new PfostenThread(), "Pfosten");
+		t.start();		
+	}
 }
-</code></pre></div>
+</code></pre>
+
 <p>This thread will throw a divide by zero exception:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/java_exception1.png" alt=""></p>
+<p><img src="http://andydunkel.net/assets/uploads/2011/07/java_exception1.png" alt="" /></p>
 
 <p>To catch the exception we will now extend the ThreadGroup class:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">public class PfostenThreadGroup extends ThreadGroup {
 
-    public PfostenThreadGroup(String name) {
-        super(name);
-    }
+<pre><code>public class PfostenThreadGroup extends ThreadGroup {
 
-    @Override
-    public void uncaughtException(Thread t, Throwable e) {
-            System.out.println(&quot;Error: &quot; + e.getMessage());
-    }
+	public PfostenThreadGroup(String name) {
+		super(name);
+	}
+	
+	@Override
+	public void uncaughtException(Thread t, Throwable e) {
+			System.out.println("Error: " + e.getMessage());
+	}
 }
-</code></pre></div>
-<p>If we start our Thread with this group, the exception will be caught by the &quot;uncaugtException&quot; method in our ThreadGroup:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">PfostenThreadGroup group = new PfostenThreadGroup(&quot;PfostenGruppe&quot;);
-Thread t = new Thread(new PfostenThread(), &quot;Pfosten&quot;);
-t.start();  
-</code></pre></div>
-<p><a href="http://andydunkel.net/assets/uploads/2011/07/java_exception2.png"><img src="http://andydunkel.net/assets/uploads/2011/07/java_exception2.png" alt=""></a></p>
+</code></pre>
+
+<p>If we start our Thread with this group, the exception will be caught by the “uncaugtException” method in our ThreadGroup:</p>
+
+<pre><code>PfostenThreadGroup group = new PfostenThreadGroup("PfostenGruppe");
+Thread t = new Thread(new PfostenThread(), "Pfosten");
+t.start();	
+</code></pre>
+
+<p><a href="http://andydunkel.net/assets/uploads/2011/07/java_exception2.png"><img src="http://andydunkel.net/assets/uploads/2011/07/java_exception2.png" alt="" /></a></p>
+
 
 			</div>
 			

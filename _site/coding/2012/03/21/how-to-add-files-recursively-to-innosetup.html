@@ -150,19 +150,19 @@
 			<p class="meta">21 Mar 2012</p>
 			
 			<div class="post">
-			<p>Especially with my current RCP applications I had the problem how to add all these files to the installer. </p>
+			<p>Especially with my current RCP applications I had the problem how to add all these files to the installer.</p>
 
-<p>Here is an example how to add a complete folder recursively to your InnoSetup: </p>
+<p>Here is an example how to add a complete folder recursively to your InnoSetup:</p>
 
 <blockquote>
-<p>[Files]<br>
+  <p>[Files]<br />
 DestDir: {app}; Source: ..\files*; Flags: recursesubdirs</p>
 </blockquote>
 
 <p>Another hint, if you want to delete the application folder after uninstall (even if there are other files that are not uninstalled by default), add this to your setup:</p>
 
 <blockquote>
-<p>[UninstallDelete]<br>
+  <p>[UninstallDelete]<br />
 Name: {app}; Type: filesandordirs</p>
 </blockquote>
 

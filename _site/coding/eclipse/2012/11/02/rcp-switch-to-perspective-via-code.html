@@ -151,14 +151,15 @@
 			
 			<div class="post">
 			<p>A small snippet which switches to a certain perspective via code:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">IPerspectiveDescriptor[] perspectives =
+
+<pre><code>IPerspectiveDescriptor[] perspectives =
 PlatformUI.getWorkbench().getPerspectiveRegistry().getPerspectives();
 
 IWorkbenchPage page =
 PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
     if(page != null) {
       for (IPerspectiveDescriptor des : perspectives) {
-        if (des.getId().equals(&quot;my.perspective.id&quot;)) {
+        if (des.getId().equals("my.perspective.id")) {
           page.setPerspective(des);
           break;
         }
@@ -166,7 +167,9 @@ PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
     }
 
 return null;
-</code></pre></div>
+</code></pre>
+
+
 			</div>
 			
 			<br>

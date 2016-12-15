@@ -153,10 +153,12 @@
 			<p>Recent problem: customer wanted his <a href="http://www.google.com/recaptcha">reCatpcha</a> forced to german language. First attempt was to set the setting via the RecaptchaOption Script variable. Howewer, for some reason this did not work.</p>
 
 <p>Here is the solution:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;script type=&quot;text/javascript&quot; 
-src=&quot;http://api.recaptcha.net/challenge?k=apiKey&lt;strong&gt;&amp;hl=de&lt;/strong&gt;&quot;&gt; 
-</code></pre></div>
-<p>By adding &amp;hl=de to the &quot;src&quot; URL the language was forced to german.</p>
+
+<pre><code>&lt;script type="text/javascript" 
+src="http://api.recaptcha.net/challenge?k=apiKey&lt;strong&gt;&amp;hl=de&lt;/strong&gt;"&gt; 
+</code></pre>
+
+<p>By adding &amp;hl=de to the “src” URL the language was forced to german.</p>
 
 			</div>
 			

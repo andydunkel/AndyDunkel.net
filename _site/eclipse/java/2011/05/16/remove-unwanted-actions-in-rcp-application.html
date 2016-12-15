@@ -152,18 +152,19 @@
 			<div class="post">
 			<p>In my current RCP application some unwanted Eclipse actions showed up in the toolbar and menubar:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2011/05/image4.png" alt="image"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2011/05/image4.png" alt="image" /></p>
 
 <p>How to get rid of these?</p>
 
 <p>The solution is “simple”. Add the following method and array to the “ApplicationActionBarAdvisor”  class:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">private static final String[] actionSetId = new String[] { &quot;org.eclipse.ui.WorkingSetActionSet&quot;, //$NON-NLS-1$
-    &quot;org.eclipse.ui.edit.text.actionSet.navigation&quot;, //$NON-NLS-1$
-    &quot;org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo&quot;, //$NON-NLS-1$
-    &quot;org.eclipse.ui.actionSet.openFiles&quot;, //$NON-NLS-1$
-    &quot;org.eclipse.ui.edit.text.actionSet.annotationNavigation&quot;, //$NON-NLS-1$
-    &quot;org.eclipse.ui.NavigateActionSet&quot;, //$NON-NLS-1$
-    &quot;org.eclipse.search.searchActionSet&quot;}; //$NON-NLS-1$
+
+<pre><code>private static final String[] actionSetId = new String[] { "org.eclipse.ui.WorkingSetActionSet", //$NON-NLS-1$
+    "org.eclipse.ui.edit.text.actionSet.navigation", //$NON-NLS-1$
+    "org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo", //$NON-NLS-1$
+    "org.eclipse.ui.actionSet.openFiles", //$NON-NLS-1$
+    "org.eclipse.ui.edit.text.actionSet.annotationNavigation", //$NON-NLS-1$
+    "org.eclipse.ui.NavigateActionSet", //$NON-NLS-1$
+    "org.eclipse.search.searchActionSet"}; //$NON-NLS-1$
 
 
 
@@ -175,7 +176,7 @@
        IExtension ext = null;
        for (IActionSetDescriptor actionSet : actionSets) {
           for (String element : actionSetId) {
-              System.out.println(element);
+        	  System.out.println(element);
 
              if (element.equals(actionSet.getId())) {
                 ext = actionSet.getConfigurationElement().getDeclaringExtension();
@@ -184,12 +185,13 @@
           }
        }
     }
-</code></pre></div>
+</code></pre>
+
 <p>Call “removeUnWantedActions” from the constructor.</p>
 
 <p>The unwanted actions should be gone now:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2011/05/image5.png" alt="image"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2011/05/image5.png" alt="image" /></p>
 
 			</div>
 			

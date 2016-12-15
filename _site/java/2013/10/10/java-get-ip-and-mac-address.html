@@ -150,26 +150,28 @@
 			<p class="meta">10 Oct 2013</p>
 			
 			<div class="post">
-			<p>A small code snippet that reads the computers IP and MAC address:    </p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">try {
-    InetAddress ip = InetAddress.getLocalHost();
-    NetworkInterface network;
-    network = NetworkInterface.getByInetAddress(ip);
-    byte[] macaddr = network.getHardwareAddress();
+			<p>A small code snippet that reads the computers IP and MAC address:</p>
 
-    String mac = &quot;&quot;;
-
-    for (int i = 0; i &lt; macaddr.length; i++) {
-        mac += String.format(&quot;%02X%s&quot;, macaddr[i], (i &lt; macaddr.length - 1) ? &quot;-&quot; : &quot;&quot;);    
-    }
-
-    System.out.println(&quot;IP-Address: &quot; + ip.toString());
-    System.out.println(&quot;Mac-Address: &quot; + mac);
-
+<pre><code>try {
+	InetAddress ip = InetAddress.getLocalHost();
+	NetworkInterface network;
+	network = NetworkInterface.getByInetAddress(ip);
+	byte[] macaddr = network.getHardwareAddress();
+	
+	String mac = "";
+	
+	for (int i = 0; i &lt; macaddr.length; i++) {
+		mac += String.format("%02X%s", macaddr[i], (i &lt; macaddr.length - 1) ? "-" : "");	
+	}
+	
+	System.out.println("IP-Address: " + ip.toString());
+	System.out.println("Mac-Address: " + mac);
+	
 } catch (SocketException | UnknownHostException e) {
-    e.printStackTrace();
-}       
-</code></pre></div>
+	e.printStackTrace();
+}		
+</code></pre>
+
 			</div>
 			
 			<br>

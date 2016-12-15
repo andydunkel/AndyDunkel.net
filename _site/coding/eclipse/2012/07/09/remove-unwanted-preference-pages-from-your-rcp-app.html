@@ -152,21 +152,44 @@
 			<div class="post">
 			<p>In my recent RCP app some unwanted preferences, contributed from other plugins showed up:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2012/07/RCP_preferences1.png" alt="NewImage"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2012/07/RCP_preferences1.png" alt="NewImage" /></p>
 
 <p>To remove them, just add the following code to your WorkbenchAdvisor class:</p>
 
 <blockquote>
-<p>public void postStartup(){</p>
 
-<p>  PreferenceManagerpm=PlatformUI.getWorkbench().getPreferenceManager();</p>
-
-<p>  pm.remove( &quot;org.eclipse.help.ui.browsersPreferencePage&quot; ); //remove single contribution</p>
-
-<p>  pm.removeAll(); //just remove all</p>
-
-<p>}</p>
 </blockquote>
+
+<blockquote>
+
+  <p>public void postStartup(){</p>
+
+</blockquote>
+
+<blockquote>
+
+  <p>  PreferenceManagerpm=PlatformUI.getWorkbench().getPreferenceManager();</p>
+
+</blockquote>
+
+<blockquote>
+
+  <p>  pm.remove( “org.eclipse.help.ui.browsersPreferencePage” ); //remove single contribution</p>
+
+</blockquote>
+
+<blockquote>
+
+  <p>  pm.removeAll(); //just remove all</p>
+
+</blockquote>
+
+<blockquote>
+
+  <p>}</p>
+
+</blockquote>
+
 
 			</div>
 			

@@ -157,6 +157,87 @@
      
 		
 		<h1>
+		  <a href="/delphi/firemonkey/2014/03/05/delphi_and_firemonkey_experience.html">My experiences with Delphi XE and Firemonkey</a>
+		</h1>
+		  <p class="small">Posted on 05 March 2014 by Andy</p>
+		  <p><p>In that posting I want to write a little bit about my experience with the new Delphi and the Firemonkey Framework.</p>
+
+<p>I am using Delphi for over 10 years now, mostly in my own <a href="http://www.da-software.de">small business</a>. The two main applications are over 10 years old now, the code base is very outdated. To be frank, most of the code was developed when I had not the experience as today. But the applications are working.</p>
+
+<p>I tried to rewrite everything in Java with Eclipse RCP. Clean, shiny and platform independent, even with support for Linux!
+I rewrote about 80% of the application, then I decided to throw it away and use the old code base instead, because I got the feeling the the remaining 20% would take me more time than the first 80% of the application. It was a big waste of time, but also a very good lesson learned. <a href="http://joelonsoftware.com/articles/fog0000000069.html">Never rewrite everything from scratch</a>. :-)</p>
+
+<p>There are more issues with Java. You have to ship the JRE with the application if you don’t want to have your users install them by themselves. The JRE is about 100MB, getting bigger in each new version.</p>
+
+<p>This might seem to not be be an issue today, but thats not true. It still makes a difference if the user has to download 100 megabytes or just 10. Especially if the users uses a mobile connection.</p>
+
+<p>And Apple won’t let you in the Mac App Store if you use Java.</p>
+
+<p>Don’t get me wrong, Java is great. In my main job I am writing Java / Eclipse RCP applications most of the day. Its great for big applications, with plugins, there are lot of components you can use. And you can find a lot of information on the internet. But if you are a small company and want to get stuff done fast and sell your software on the App Store, then Delphi can be a very good choice. Even if it costs money.</p>
+
+<p>So I decided to return to Delphi. During the last releases of Delphi the Firemonkey framework was added. Firemonkey allows the creation of applications both for Windows and MacOS (no Linux). In the ads this all looks very shiny and when you ran the demo version it all looks good, it compiles and it runs on Windows and on the Mac.</p>
+
+<p>And you can publish your apps to the App Store!!! Hooray.</p>
+
+<p>Delphi still only runs on Windows. But you need a Mac to debug and deploy your applications on OSX.</p>
+
+<p>To summarise, I don’t regret switching back to Delphi and Firemonkey. The code base is still a mess, but I plan to refactor each part at a time in the future. By the time the first application is ported, working and approved on the app store.</p>
+
+<h2 id="converting-to-firemonkey">Converting to Firemonkey</h2>
+
+<p>Converting to a new Delphi version was never really a problem. I started with Delphi 6, moved to 7 and some years later to Delphi 2010. Usually upgrading a project means just open it. And if all components are installed the project is opened, you click the compile button and you are done. Its still true if you stay with the VCL, which is of course still part of Delphi. But the VCL only works on Windows.</p>
+
+<p>If you want to switch to Firemonkey, well then … you have to start from scratch. Create a new project, recreate the GUI, copy over the code, wire it up and there you go. There is no converter shipped with Delphi itself.</p>
+
+<p>But there is at least some hope: the Mida Converter. A third party tool which tries to convert the application to Firemonkey. It costs about 100 Dollars. It saves you a lot of work, as it converts all your VLC forms to Firemonkey forms. It works like 90%, there is still some manual work to do. Like there are now two combo boxes, one editable and one thats not. All of my combo boxes got replaced by the non editable one. You have to clean that up by yourself.</p>
+
+<p>Before you start converting your application, I recommend to get rid of all third party components like Jedi VCL. These are not available for Firemonkey and are only causing trouble.</p>
+
+<h2 id="platforms">Platforms</h2>
+
+<p>Once you have created and converted your application to Firemonkey and it opens without any errors in the IDE, you are not done yet. I found out how many functions are platform dependant. You have to replace all calls to the WinApi. In my case these where mostly “ShellExecute”, “MessageBox”, things that used the Windows registry, drag and drop and Windows specific functions, like getting the temporary directory.</p>
+
+<p>For some things Firemonkey provides equivalents in the framework, which will work on both platforms. For some others you will have to write your own functions, with IFDEF commands for each platform. Its not much, but in the beginning it takes a lot time to find that out. The second application of mine was converted much quicker than the first.</p>
+
+<p>You should also be aware of the fact, that Firemonkey does the rendering of its controls completely on its own. If a new version of OSX has a different look and feel, your application will look the same. That is not completely bad, you can change the look and feel of your app. Want to have some part of your application look like on Windows? No problem! But that also means that a Firemonkey application will always look some sort on alien.</p>
+
+<h2 id="bugs-and-issues">Bugs and Issues</h2>
+
+<p>While the VCL is stable, aged and mature, Firemonkey is very new, with a lot of bugs. For example I found out, that Firemonkeys message dialogs where always displaying in english language on OSX. On Windows they worked perfectly. There are workarounds, so I wrote a class which just displays the native message box with my own internatioliziation. But all of that takes time. You need to find out that you are having an issue. Then find a workaround.</p>
+
+<p>There are also sometimes glitches in the GUI and I had trouble get my application code signed as Apple changed the procedure in Mavericks.</p>
+
+<p>Debugging OSX applications from the Windows machine over the network does not work most of the time. Thats a pain if you want to debug platform specific code.</p>
+
+<p>Embarcadero is closing the issues, but usually they are fixed in the next version of Delphi. Which means that you will have to pay the update price to benefit from them. Depending on the amount of money you are making with your applications its not always worth the price.</p>
+
+<h2 id="missing-stuff">Missing stuff</h2>
+
+<p>There are also components missing and not yet available. For example, there is no browser control, no HTML edit control. If you want to display and edit HTML content in your app, well thats not possible.</p>
+
+<p>Want to display and edit rich text in your application. Not possible. Hopefully the situation will improve over time.</p>
+
+<p>One big thing missing is the online help. Back in the good old days of Delphi 7, the online help system was really good. For every class, method and function there was a description in the help. Usually with examples how to use it.</p>
+
+<p>With Firemonkey a lot of classes are still not documented. There is an online wiki where often no content is shown at all, instead you get a message that you should extend the topic so others can benefit. Not my job I’d say.</p>
+
+<p>Unfortunately it seems that not many people are using Delphi today. So its much harder to find information online.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Did I regret switching back to Delphi and Firemonkey? In short no. At first I had some trouble converting the application to Firemonkey and rewriting the platform dependant parts. There where also issues with bugs in Firemonkey which did cost me some time. But in the end I was able to solve most of the things. The update policy could also be improved. If bugs are fixed in the Firemonkey framework, they should be made available for older versions too. Paying hundread of Euros for a new release every year is too much for most small companies.</p>
+
+<p>In the end I got the application working and its now approved for the app store and its selling. The application is a native application and the compiled version is not too big in size (around 10 MB for my normal application).</p>
+
+<p>The second application was converted in several weeks. Once you know how to do it, you are getting things done very fast. In the end its still the good old delphi where you create your application, drop the controls onto your forms and implement the logic and get results very fast.</p>
+
+<p>So I would also use Delphi and Firemonkey for new applications.</p>
+</p>		
+		  <p class="small">Tagged: Delphi and Firemonkey by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/raspberry/linux/2014/02/11/raspberry_pi_als_vpn_server_einrichten.html">VPN für mobile Geräte auf dem Raspberry PI einrichten</a>
 		</h1>
 		  <p class="small">Posted on 11 February 2014 by Andy</p>
@@ -166,102 +247,137 @@
 
 <p>Also los geht es: Wir gehen davon aus, dass auf dem RPI bereits ein Linux installiert ist, z.B. Raspbian. <a href="http://blog.ekiwi.de/?p=1757">Hier gibt es eine gute Anleitung</a> für die erste Einrichtung.</p>
 
-<h2>PPTP</h2>
+<h2 id="pptp">PPTP</h2>
 
 <p>Als VPN verwenden wir <a href="http://de.wikipedia.org/wiki/PPTP">PPTP</a>. Dieses wird praktischerweise auf dem iPhone, iPad und Co direkt unterstützt.</p>
 
-<h2>Updates</h2>
+<h2 id="updates">Updates</h2>
 
 <p>Zuerst updaten wir mal die Software auf unserem RPI:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo apt-get update
+
+<pre><code>sudo apt-get update
 sudo apt-get upgrade
-</code></pre></div>
+</code></pre>
+
 <p>Das kann je nach Stand der Software eine Weile dauern.</p>
 
-<h2>Installation und Konfiguration</h2>
+<h2 id="installation-und-konfiguration">Installation und Konfiguration</h2>
 
 <p>Die PPTP-Software installieren wir mit:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo apt-get install pptpd
-</code></pre></div>
+
+<pre><code>sudo apt-get install pptpd
+</code></pre>
+
 <p>Anschließend bearbeiten wir die Config mit Nano:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo nano /etc/pptpd.conf
-</code></pre></div>
+
+<pre><code>sudo nano /etc/pptpd.conf
+</code></pre>
+
 <p>Man kann alternativ auch VIM verwenden. Im Nano-Editor speichern wir mit STRG+X und anschließend Y.</p>
 
-<p>In der &quot;pptdp.conf&quot; Datei tragen wir die lokale IP des Raspberry ein:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">localip 192.168.1.5
-</code></pre></div>
+<p>In der “pptdp.conf” Datei tragen wir die lokale IP des Raspberry ein:</p>
+
+<pre><code>localip 192.168.1.5
+</code></pre>
+
 <p>Außerdem die Remote-IP-Adressen. Diese werden unseren VPN-Clients zugeteilt. Hier vergibt man einen Adressbereich, je nachdem wieviele Geräte man plant zu nutzen:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">remoteip 192.168.1.234-238
-</code></pre></div>
+
+<pre><code>remoteip 192.168.1.234-238
+</code></pre>
+
 <p>Nach dem Speichern, konfigurieren wir jetzt die Optionen von PPTDP:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo nano /etc/ppp/pptpd-options
-</code></pre></div>
+
+<pre><code>sudo nano /etc/ppp/pptpd-options
+</code></pre>
+
 <p>Am Ender Datei tragen wir folgende Zeilen ein:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">ms-dns 192.168.1.1
+
+<pre><code>ms-dns 192.168.1.1
 noipx
 mtu 1490
 mru 1490
-</code></pre></div>
-<p>Nach &quot;ms-dns&quot; muss ein gültiger DNS-Server eingetragen werden. In den meisten Fällen verwendet man hier die Adresse seines Routers oder man trägt einen <a href="http://www.ccc.de/de/censorship/dns-howto">öffentlichen DNS-Server</a> ein.</p>
+</code></pre>
 
-<h3>Benutzer hinzufügen</h3>
+<p>Nach “ms-dns” muss ein gültiger DNS-Server eingetragen werden. In den meisten Fällen verwendet man hier die Adresse seines Routers oder man trägt einen <a href="http://www.ccc.de/de/censorship/dns-howto">öffentlichen DNS-Server</a> ein.</p>
+
+<h3 id="benutzer-hinzufgen">Benutzer hinzufügen</h3>
 
 <p>Nun noch die VPN-Benutzer hinzufügen; dazu bearbeiten wir die folgende Datei:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo nano /etc/ppp/chap-secrets
-</code></pre></div>
+
+<pre><code>sudo nano /etc/ppp/chap-secrets
+</code></pre>
+
 <p>Das Anlegen von Benutzern ist sehr einfach:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">Benutzername[TAB]*[TAB]Passwort[Tab]*
-</code></pre></div>
+
+<pre><code>Benutzername[TAB]*[TAB]Passwort[Tab]*
+</code></pre>
+
 <p>Beispiel:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">Andy    *   GeheimesPasswort    *
-</code></pre></div>
+
+<pre><code>Andy	*	GeheimesPasswort	*
+</code></pre>
+
 <p>Nach dem Bearbeiten muss der PPTP-Server neu gestartet werden:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo service pptpd restart
-</code></pre></div>
-<h2>Sonstige Konfiguration</h2>
+
+<pre><code>sudo service pptpd restart
+</code></pre>
+
+<h2 id="sonstige-konfiguration">Sonstige Konfiguration</h2>
 
 <p>Wir wollen nicht nur auf den RPI zugreifen, sondern auch auf das Internet und sonstige Resourcen. Das richten wir jetzt ein:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo nano /etc/sysctl.conf
-</code></pre></div>
+
+<pre><code>sudo nano /etc/sysctl.conf
+</code></pre>
+
 <p>Hier tragen wir die folgende Zeile ein:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">net.ipv4.ip_forward=1
-</code></pre></div>
+
+<pre><code>net.ipv4.ip_forward=1
+</code></pre>
+
 <p>Die Änderung übernehmen wir mit:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo sysctl -p
-</code></pre></div>
-<h3>Firewall konfigurieren</h3>
+
+<pre><code>sudo sysctl -p
+</code></pre>
+
+<h3 id="firewall-konfigurieren">Firewall konfigurieren</h3>
 
 <p>Zuletzt aktualisieren wir noch die Firewall des RPI:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-</code></pre></div>
+
+<pre><code>sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+</code></pre>
+
 <p>Bei mir kam an der Stelle die Fehlermeldung <code>iptables: Table does not exist (do you need to insmod?)</code>. Ein Neustart des RPI nach den Updates, vom Anfang, schaffte hier  Abhilfe. Wichtig: Dieser Befehl muss nach jedem Start des RPI neu ausgeführt werden. Also am Besten gleich einen Cronjob einrichten:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo crontab -e
-</code></pre></div>
+
+<pre><code>sudo crontab -e
+</code></pre>
+
 <p>Am Ende fügen wir die folgende Zeile ein:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">@reboot sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-</code></pre></div>
+
+<pre><code>@reboot sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+</code></pre>
+
 <p>Speichern und fertig.</p>
 
-<h3>Portforwarding auf dem Router aktivieren</h3>
+<h3 id="portforwarding-auf-dem-router-aktivieren">Portforwarding auf dem Router aktivieren</h3>
 
 <p>PPTP verwendet den Port 1723. Damit der RPI Anfragen auf diesem Port entgegen nehmen kann, muss dieser vom Router weitergeleitet werden. Dazu loggen wir uns auf unserem Router ein und konfigurieren die Weiterleitung.</p>
 
 <p>Hier für eine FritzBox:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2014/02/vpn/vpn2.png" alt=""> </p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/02/vpn/vpn2.png" alt="" /></p>
 
-<h3>Einrichten auf dem iPhone</h3>
+<h3 id="einrichten-auf-dem-iphone">Einrichten auf dem iPhone</h3>
 
 <p>Die Einrichtung auf dem iPhone und anderen Geräten ist einfach. Zuerst gehen wir in die VPN-Einstellungen und legt ein neues VPN-Profil an:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2014/02/vpn/vpn1.png" alt=""></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/02/vpn/vpn1.png" alt="" /></p>
 
 <p>PPTP auswählen, Servernamen, Benutzername und Passwort eingeben.</p>
 
 <p>Als Servernamen gibt man den Servernamen oder die IP-Adresse seines Internetzugangs ein. Da die IP-Adresse bei einem DSL-Anschluss oft dynamisch ist, sollte man einen DynDNS-Dienst nutzen.</p>
 
 <p>Das war es auch schon. Wenn alles korrekt konfiguriert ist, sollte die Verbindung nach dem Speichern funktionieren.</p>
+
 </p>		
 		  <p class="small">Tagged: RPI and VPN by Andy</p>
 		  <hr>
@@ -278,17 +394,20 @@ mru 1490
 <p>After the signing you usually want to check if the signature of the application is correct.</p>
 
 <p>You can of course do that on the command line (if you have XCode installed):</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">codesign -dv /Applications/Awesome.app
-</code></pre></div>
-<p>but I also found a tool with a neat GUI: <a href="http://brockerhoff.net/RB/AppCheckerLite/">RB App Checker</a>.  </p>
 
-<p>Its available for free on the <a href="https://itunes.apple.com/us/app/rb-app-checker-lite/id519421117?mt=12">Mac App Store</a>. </p>
+<pre><code>codesign -dv /Applications/Awesome.app
+</code></pre>
+
+<p>but I also found a tool with a neat GUI: <a href="http://brockerhoff.net/RB/AppCheckerLite/">RB App Checker</a>.</p>
+
+<p>Its available for free on the <a href="https://itunes.apple.com/us/app/rb-app-checker-lite/id519421117?mt=12">Mac App Store</a>.</p>
 
 <p>You just drag and drop the application on the tool and it shows you very detailed information of the signature.</p>
 
 <p>It also checks entitlements, application receipts and requirements.</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2014/02/rbappchecker/1.png" alt=""></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/02/rbappchecker/1.png" alt="" /></p>
+
 </p>		
 		  <p class="small">Tagged: Code Signing and OSX by Andy</p>
 		  <hr>
@@ -303,29 +422,32 @@ mru 1490
 <p>For app store applications Delphi automatically runs the code signing procedure for you and creates a PKG file. Handy!</p>
 
 <p>Since Apples new Mavericks release the code signing has changed a little bit and the command now needs an additional parameter: <code>--deep</code>. Delphi does not add the parameter, which results in an error building the application:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">[PAClient Error] Error: E0264 Unable to execute &#39;&quot;/usr/bin/
-codesign&quot; --en &quot;/Users/.../daform.app/Contents/Entitlements.plist&quot; 
--s &quot;Mac Developer&quot; -f &quot;/Users/.../daform.app&quot;&#39; (Error 1)
+
+<pre><code>[PAClient Error] Error: E0264 Unable to execute '"/usr/bin/
+codesign" --en "/Users/.../daform.app/Contents/Entitlements.plist" 
+-s "Mac Developer" -f "/Users/.../daform.app"' (Error 1)
 
 daform.app code object is not signed at all
-</code></pre></div>
+</code></pre>
+
 <p>OK what to do? The first problem is, that you cannot tell Delphi to add the parameter.</p>
 
-<p>So I created a workaround for that. I wrote a small C++ command line tool, which replaces the original &quot;codesign&quot; program. When launched is parses all the parameters from the call and adds the <code>--deep</code> option if its not present.</p>
+<p>So I created a workaround for that. I wrote a small C++ command line tool, which replaces the original “codesign” program. When launched is parses all the parameters from the call and adds the <code>--deep</code> option if its not present.</p>
 
-<p>Then it runs the original &quot;codesign&quot; tool. The project is <a href="https://github.com/andydunkel/DelphiXE4-Mavericks-Codesign-Helper">available on Github</a>.</p>
+<p>Then it runs the original “codesign” tool. The project is <a href="https://github.com/andydunkel/DelphiXE4-Mavericks-Codesign-Helper">available on Github</a>.</p>
 
-<h2>Installation</h2>
+<h2 id="installation">Installation</h2>
 
 <ul>
-<li>Download the <a href="https://github.com/andydunkel/DelphiXE4-Mavericks-Codesign-Helper/blob/master/codesign?raw=true">binary</a> or compile your own version with XCode</li>
-<li>Rename the original codesign tool in /usr/bin to codesign_original</li>
-<li>Copy the codesign binary to /usr/bin</li>
+  <li>Download the <a href="https://github.com/andydunkel/DelphiXE4-Mavericks-Codesign-Helper/blob/master/codesign?raw=true">binary</a> or compile your own version with XCode</li>
+  <li>Rename the original codesign tool in /usr/bin to codesign_original</li>
+  <li>Copy the codesign binary to /usr/bin</li>
 </ul>
 
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/codesigning_app_store/files.png" alt=""></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/codesigning_app_store/files.png" alt="" /></p>
 
 <p>After that Delphi is able to run and build the application with code signing for the app store.</p>
+
 </p>		
 		  <p class="small">Tagged: XE4, Firemonkey, and OSX by Andy</p>
 		  <hr>
@@ -341,112 +463,27 @@ daform.app code object is not signed at all
 
 <p>Der Wechsel geht sehr einfach. Kreuzschraubenzieher, mehr wird nicht benötigt. Zuerst entfernt man die Bodenplatte und die Seitenbürste:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/roomba/roomba_motor1.png" alt=""></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/roomba/roomba_motor1.png" alt="" /></p>
 
 <p>Anschließend löst man noch zwei Schrauben und dann dann den Motor einfach herausnehmen:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/roomba/roomba_motor2.png" alt=""></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/roomba/roomba_motor2.png" alt="" /></p>
 
 <p>Neuen Motor einsetzen und alles wieder zuschrauben, das wars auch schon. Schon funktionierte der Roomba wieder.</p>
 
 <p>Hier gibt es die Anleitung auch als Video:</p>
 
-<iframe width="640" height="360" src="//www.youtube.com/embed/PAw2A-MawK0" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="//www.youtube.com/embed/PAw2A-MawK0" frameborder="0" allowfullscreen=""></iframe>
 
-<h2>Nachtrag</h2>
+<h2 id="nachtrag">Nachtrag</h2>
 
 <p>Ich habe jetzt noch das defekte Seitenmodul zerlegt:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/roomba/roomba_motor3.png" alt=""></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/roomba/roomba_motor3.png" alt="" /></p>
 
-<p>Theoretisch könnte man das Modul vielleicht kostengünstiger ersetzen, wenn man an den entsprechenden Motor kommen würde. Auf dem Motor, von S.M.C. Motors, steht eine Art Typennummer: &quot;RC500-KW/14440/DV&quot;. Leider habe ich bei Google nicht wirklich etwas gefunden.</p>
+<p>Theoretisch könnte man das Modul vielleicht kostengünstiger ersetzen, wenn man an den entsprechenden Motor kommen würde. Auf dem Motor, von S.M.C. Motors, steht eine Art Typennummer: “RC500-KW/14440/DV”. Leider habe ich bei Google nicht wirklich etwas gefunden.</p>
 </p>		
 		  <p class="small">Tagged: Roomba, Motor, and Reparatur by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/delphi/firemonkey/2014/01/22/signing_delphi_xe_applications_for_osx.html">Signing Firemonkey Applications on OSX</a>
-		</h1>
-		  <p class="small">Posted on 22 January 2014 by Andy</p>
-		  <p><p>Some time ago I started porting my application <a href="http://da-software.de/daform/daform_start.htm">DA-FormMaker</a> for the Mac. After finishing the development, the app needs to be signed with the Developer ID. Otherwise your users will end up with some message like:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign0.png" alt=""></p>
-
-<p>OK its german, but it means: I don&#39;t know that developer and I will not start that application. So the app needs to be signed. Fair enough.</p>
-
-<p>It took me some time to find out the steps needed for that, thats the reason why I am documenting it here. :-)</p>
-
-<p><em>Note: That procedure here is not for App Store applications.</em></p>
-
-<h2>Preparations</h2>
-
-<p>OK lets start!</p>
-
-<p>The first thing is, you need to have <a href="https://developer.apple.com/">Mac Developer Account</a> for 100$ a year to get the certificates to sign the application.</p>
-
-<p>If you have a developer account you have to create the developer certificates. Easiest way to do that is the XCode Organizer:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign1.png" alt=""></p>
-
-<p>Click on your Mac and &quot;Add to member center&quot;. The next dialog will ask you if you want to create/request the certificates needed.</p>
-
-<p>The procedures takes some time and it told me that the process is still ongoing and I&#39;d like to refresh the certificates in the accounts section of the Xcode preferences. OK lets do that.</p>
-
-<p>If you have not done that before, enter your Apple ID first. Then hit the refresh button. It should show the certificates that are not installed:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign2.png" alt=""></p>
-
-<p>Install the certificates in XCode. I am not 100% sure if that step it really needed. In order to sign the Firemonkey application via command line, we have to install the certificates in our key chain. </p>
-
-<p>To do that, we have to download the cerficate from the certificates section in the developer account:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign3.png" alt=""></p>
-
-<p>Save the file to your local disk and open &quot;Keychain Access&quot;. Select &quot;File&quot; -&gt; &quot;Import Items&quot;. Now select the *.cer file you just downloaded and the destination. I choosed system. The certificate should now show up in the list:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign4.png" alt=""></p>
-
-<p>If you right click and select &quot;Get Info&quot; on the certificate, you see the properties of the certificate:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign5.png" alt=""></p>
-
-<p>You can copy the common name here, which we will later use on the command line to sign the application.</p>
-
-<h2>Firemonkey</h2>
-
-<p>The next step is the release build of your Firemonkey Application. Select the settings for the build and compile the application.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign6.png" alt=""></p>
-
-<p>After complilation the application should be on your Macs file system in /Users/username/RASPASever/scratch-dir/...</p>
-
-<p>If the application runs correctly then its time to finally sign the application.</p>
-
-<h2>Signing</h2>
-
-<p>To do that open a console and switch to the applications folder. Sign the application with the following command:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">codesign -f -s &quot;Common Name&quot; -v &quot;application_name.app&quot; --deep
-</code></pre></div>
-<p>Enter the common name mentioned above and the application name. Here is an example:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">da$ codesign -f -s &quot;Developer ID Application: Andy Dunkel&quot; -v &quot;daform.app&quot; --deep
-daform.app: signed bundle with Mach-O thin (i386) [daform]
-</code></pre></div>
-<p>You can check the validity of the signing with the following command:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">spctl --verbose=4 --assess --type execute DA-yourapp
-</code></pre></div>
-<p>It should return something like:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">DA-FormMaker.app: accepted
-source=Developer ID
-</code></pre></div>
-<p>I first run into a problem. The app was not signed correctly. It told me that &quot;my.app is damaged and can&#39;t be opened. You should move it to the trash.&quot;. And the check above returned:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">DA-FormMaker.app: a sealed resource is missing or invalid
-</code></pre></div>
-<p>The problem? Turned out that I made a mistake and had other files in the &quot;MacOS&quot; folder of the bundle. I moved those to &quot;Resources&quot; and everything was OK.</p>
-
-<p><strong>Congratulations: After that your app is signed with your developer id!</strong></p>
-</p>		
-		  <p class="small">Tagged: OSX, Signing, Firemonkey, and Delphi by Andy</p>
 		  <hr>
 		  
 		
@@ -489,7 +526,7 @@ source=Developer ID
 		<section>
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (27)</a></li>
+<li class='category'><a href='/categories/coding/'>coding (28)</a></li>
 <li class='category'><a href='/categories/computer/'>computer (8)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>

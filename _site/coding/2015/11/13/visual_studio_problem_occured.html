@@ -151,15 +151,17 @@
 			
 			<div class="post">
 			<p>This morning I had a strange error message, when I tried to start Visual Studio (version 2015, but it seems this also affects older versions):</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">A problem occurred when loading the Microsoft Visual Studio menu. To fix this problem, run &#39;devenv.exe /resetsettings&#39; from the command prompt. Note: this command resets your environment settings.
-</code></pre></div>
-<p><img src="/assets/uploads/2015/11/vs1.png" alt="">    </p>
 
-<p>Needless to say that the proposed command did not do the trick. After some digging in the internet I found the solution. Turned out that Visual Studio has problems, when the <code>PATH</code> variable becomes bigger than 2048 character. </p>
+<pre><code>A problem occurred when loading the Microsoft Visual Studio menu. To fix this problem, run 'devenv.exe /resetsettings' from the command prompt. Note: this command resets your environment settings.
+</code></pre>
+
+<p><img src="/assets/uploads/2015/11/vs1.png" alt="" /></p>
+
+<p>Needless to say that the proposed command did not do the trick. After some digging in the internet I found the solution. Turned out that Visual Studio has problems, when the <code>PATH</code> variable becomes bigger than 2048 character.</p>
 
 <p>The solution was to remove some items from the <code>PATH</code> variable:</p>
 
-<p><img src="/assets/uploads/2015/11/vs2.png" alt=""></p>
+<p><img src="/assets/uploads/2015/11/vs2.png" alt="" /></p>
 
 <p>Doing this and restarting the computer brought Visual Studio back to life.</p>
 

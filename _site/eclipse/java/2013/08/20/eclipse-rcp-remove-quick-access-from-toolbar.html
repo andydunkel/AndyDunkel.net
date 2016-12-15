@@ -154,22 +154,24 @@
 
 <p> </p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2013/08/quick_access.png" alt="Quick access"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2013/08/quick_access.png" alt="Quick access" /></p>
 
 <p>How to get rid of that? The workaround is to hide the item with some CSS code.</p>
 
-<p>First create a CSS file in your plugins root folder, for example &quot;default.css&quot;:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">#SearchField {
-    visibility: hidden; 
+<p>First create a CSS file in your plugins root folder, for example “default.css”:</p>
+
+<pre><code>#SearchField {
+	visibility: hidden;	
 }
-</code></pre></div>
+</code></pre>
+
 <p>Then add a property in the plugin.xml to your product extension point:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2013/08/property.png" alt="Property"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2013/08/property.png" alt="Property" /></p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2013/08/property2.png" alt="Property2"></p>
+<p><img src="http://andydunkel.net/assets/uploads/2013/08/property2.png" alt="Property2" /></p>
 
-<p>The name for the property is &quot;applicationCSS&quot; and in the value field link to your CSS file.</p>
+<p>The name for the property is “applicationCSS” and in the value field link to your CSS file.</p>
 
 <p>The quick access should be gone next time you run your application with the product configuration.</p>
 
