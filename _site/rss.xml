@@ -8,7 +8,44 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Thu, 15 Dec 2016 18:00:00 +0100</pubDate>
+    <pubDate>Sat, 17 Dec 2016 18:00:00 +0100</pubDate>
+    <item>
+      <title>SSH bei Hosteurope - Midnight Commander ausführen</title>
+      <link>http://andydunkel.net/webdesign/linux/2016/12/17/midnight_commander_ssh_hosteurope.html</link>
+      <description>&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/12/mc1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Der SSH-Zugang bei Managed Servern ist bei Hosteurope naturgemäß eingeschränkt. Man kann seine eigenen Dateien verwalten, das wars.&lt;/p&gt;
+
+&lt;p&gt;Ausführen kann man die installierten Programme. Aber auch hier gibt es Einschränkungen. So läuft der Midnight Commander standardmäßig erstmal nicht. Stattdessen erscheint die folgende Fehlermeldung:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;user@hosteurope:~$ mc
+Failed to run:
+Cannot create /is/htdocs/wp_koko/.config/mc directory
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Dies ist einfach nur ein Berechtigungsproblem. Auf dieses Verzeichnis hat standardmäßig nur der FTP-User Zugriff. Es gibt aber eine Lösung. Man legt das Verzeichnis einfach von Hand über FTP an.&lt;/p&gt;
+
+&lt;p&gt;Angelegt werden müssen drei Verzeichnisse:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.config
+.cache
+.local	
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/12/mc1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Anschließend ändert man über die Dateiverwaltung im KIS die Berechtigung für diese drei Ordner. Dies muss dann der SSH-Benutzer sein. Dieser fängt mit &lt;code&gt;wp&lt;/code&gt; an.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/12/mc2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Anschließend klappt der Start vom Midnight Commander-&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/12/mc3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+      <pubDate>Sat, 17 Dec 2016 18:00:00 +0100</pubDate>
+      <dc:date>2016-12-17T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>WPF Anwendung lokalisieren und übersetzen</title>
       <link>http://andydunkel.net/coding/2016/12/15/wpf_anwendungen_mehrsprachig.html</link>
@@ -7963,6 +8000,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2016-12-15T18:00:00+01:00</dc:date>
+    <dc:date>2016-12-17T18:00:00+01:00</dc:date>
   </channel>
 </rss>
