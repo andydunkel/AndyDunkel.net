@@ -12,9 +12,7 @@
     <item>
       <title>SSH bei Hosteurope - Midnight Commander ausführen</title>
       <link>http://andydunkel.net/webdesign/linux/2016/12/17/midnight_commander_ssh_hosteurope.html</link>
-      <description>&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/12/mc1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Der SSH-Zugang bei Managed Servern ist bei Hosteurope naturgemäß eingeschränkt. Man kann seine eigenen Dateien verwalten, das wars.&lt;/p&gt;
+      <description>&lt;p&gt;Der SSH-Zugang bei Managed Servern ist bei Hosteurope naturgemäß eingeschränkt. Man kann seine eigenen Dateien verwalten, das wars.&lt;/p&gt;
 
 &lt;p&gt;Ausführen kann man die installierten Programme. Aber auch hier gibt es Einschränkungen. So läuft der Midnight Commander standardmäßig erstmal nicht. Stattdessen erscheint die folgende Fehlermeldung:&lt;/p&gt;
 

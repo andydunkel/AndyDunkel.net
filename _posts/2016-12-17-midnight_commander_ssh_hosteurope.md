@@ -13,7 +13,6 @@ tags:
 
 ---
 
-![](/assets/uploads/2016/12/mc1.png)
 
 Der SSH-Zugang bei Managed Servern ist bei Hosteurope naturgemäß eingeschränkt. Man kann seine eigenen Dateien verwalten, das wars.
 
