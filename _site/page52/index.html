@@ -157,130 +157,29 @@
      
 		
 		<h1>
-		  <a href="/katzen/2011/07/12/pause.html">Pause</a>
+		  <a href="/eclipse/java/2011/04/28/get-plugin-path.html">Get plugin path </a>
 		</h1>
-		  <p class="small">Posted on 12 July 2011 by Andy</p>
-		  <p><p>Werde eine Weile nicht schreiben können (aus Gründen), daher gibt es jetzt zum Abschied noch ein Katzenvideo:</p>
+		  <p class="small">Posted on 28 April 2011 by Andy</p>
+		  <p><p>This snippets gets the local folder for a plugin:</p>
+
+<pre><code>public static File getPluginFolder() {
+	if(pluginFolder == null) {
+	    URL url = Platform.getBundle("my.plugin.id").getEntry("/");
+	    try {
+	        url = Platform.resolve(url);
+	    }
+	    catch(IOException ex) {
+	        ex.printStackTrace();
+	    }
+	    pluginFolder = new File(url.getPath());
+	}
+	
+	return pluginFolder;
+}
+</code></pre>
+
 </p>		
-		  <p class="small">Tagged: Katze by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/radfahren/2011/07/11/radtour-mit-orbeidskollegen06-07-2011.html">Radtour mit Orbeidskollegen–06.07.2011</a>
-		</h1>
-		  <p class="small">Posted on 11 July 2011 by Andy</p>
-		  <p><p>Fast schon Tradition, die jährliche Radtour im Sommer mit den Kollegen. Diesmal ging es nicht nach Katzbrui, sondern eine Runde um Kaufbeuren und anschließender Einkehr in Gennachhausen: <a href="http://www.gasthaus-zum-hack.de/" target="_blank">Zum Hack</a>.</p>
-<p>Zum Abschluss gab es noch einen Abstecher <a href="http://www.mccallionsirishpub.de/" target="_blank">in den Irish Pub</a>.</p>
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:8fadd103-0f20-49ec-bf5c-939b0d33b34f" class="wlWriterEditableSmartContent"><div><object width="585" height="329"><param name="movie" value="http://www.youtube.com/v/WONCZtcfrqw?hl=en&amp;hd=1" /><embed src="http://www.youtube.com/v/WONCZtcfrqw?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="585" height="329" /></object></div></div>
-<!--more-->
-<p>Erstellt von My Tracks für Android.<br />Gesamtentfernung: 45,57 km (28,3 mi)<br />Gesamtzeit: 5:46:43<br />Zeit in Bewegung: 2:09:08<br />Durchschnitt in Bew.: 21,17 km/h (13,2 mi/h)<br />Max. Geschwindigkeit: 56,70 km/h (35,2 mi/h)<br />Niedrigste Höhenlage: 726 m (2383 Fuß)<br />Höchste Höhenlage: 913 m (2994 Fuß)<br />Höhengewinn: 696 m (2283 Fuß)<br />Maximale Steigung: 10 %<br />Minimale Steigung: -18 %<br />Aufgezeichnet am: Mi. Jul 06 17:13:07 MESZ 2011</p>
-<iframe height="430" marginheight="0" src="http://maps.google.de/maps/ms?msa=0&amp;msid=208324790998598431494.0004a76dc0051643cd7ff&amp;ie=UTF8&amp;t=h&amp;ll=47.86178,10.702744&amp;spn=0.099047,0.20565&amp;z=12&amp;output=embed" frameborder="0" width="600" marginwidth="0" scrolling="no"></iframe>
-<p><br /><small><a style="text-align: left; color: #0000ff" href="http://maps.google.de/maps/ms?msa=0&amp;msid=208324790998598431494.0004a76dc0051643cd7ff&amp;ie=UTF8&amp;t=h&amp;ll=47.86178,10.702744&amp;spn=0.099047,0.20565&amp;z=12&amp;source=embed">2011-07-06 17:13 - Feierabendrunde mit Kollegen</a> auf einer größeren Karte anzeigen</small>  &lt;p&gt;<img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="route" border="0" alt="route" src="http://andydunkel.net/assets/uploads/2011/07/route.png" width="604" height="354" />&lt;/p&gt;</p>
-</p>		
-		  <p class="small">Tagged: Radfahren by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/tools/2011/07/10/videos-frs-ipad-konvertieren.html">Videos fürs iPad konvertieren</a>
-		</h1>
-		  <p class="small">Posted on 10 July 2011 by Andy</p>
-		  <p><p>Das iPad ist ne feine Sache, allerdings ist es etwas heikel beim Umgang mit Videoformaten. Mit anderen Worten, alles was nicht im MP4-Format mit H.264 Video und AAC Ton vorliegt wird nicht abgespielt. <img src="http://andydunkel.net/assets/uploads/2011/07/wlEmoticon-smile2.png" alt="Smiley" /></p>
-
-<p>Also konvertieren. Zum Glück gibt es kostenlose Tools, wie den FreeMake Video Konverter. Habe ich bereits im <a href="http://blog.ekiwi.de/?p=241">eKiwi.de Blog vorgestellt</a>.</p>
-
-<p>Bedienung ist einfach, erst mal Videos hinzufügen:</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2011/07/image8.png"><img src="http://andydunkel.net/assets/uploads/2011/07/image_thumb2.png" alt="image" /></a></p>
-
-<p>Man kann gleich beliebig viele Videos in einem Rutsch konvertieren. Wie geht es weiter?</p>
-
-<!-- more -->
-
-<p>Das Programm bietet gleich ein Profil für Apple an:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image9.png" alt="image" /></p>
-
-<p>In diesem kann man gleich das gewünschte Format festlegen:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image10.png" alt="image" /></p>
-
-<p>Jede Menge Auswahl. Ich kann direkt das iPad auswählen.</p>
-
-<p>Da ich aber auch ein Apple-TV habe macht es keinen Sinn iPad auszuwählen, da sich dabei die Auflösung des Videos ändert, welche dann für das Apple-TV u.U. nicht passt. Daher habe ich ein eigenes Profil angelegt:</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2011/07/image11.png"><img src="http://andydunkel.net/assets/uploads/2011/07/image_thumb3.png" alt="image" /></a></p>
-
-<p>Was ist der Unterschied? Ich lasse einfach die Originalauflösung, d.h. 720p bleibt 720p. Kleinere Auslösungen bleiben kleiner und werden trotzdem vernünftig abgespielt.</p>
-
-<p>Lediglich bei höheren Auflösungen (z.B. 1080p) lohnt sich die Verkleinerung da es Speicherplatz spart und Ruckler vermeidet.</p>
-
-<p>Die Software gibt es kostenlos zum Download: <a href="http://www.freemake.com/free_video_converter/">HIER!</a></p>
-</p>		
-		  <p class="small">Tagged: 720p, AAC, ipad, Konvertierung, MP4, and Video by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/radfahren/2011/07/09/radtour-kemptener-wald-03-07-2011.html">Radtour Kemptener Wald-03.07.2011</a>
-		</h1>
-		  <p class="small">Posted on 09 July 2011 by Andy</p>
-		  <p><p>Kleine Runde im Kemptener Wald, nichts besonderes.</p>
-
-<p>Wetter war eher schlecht, daher lag der Fokus auf Begutachtung der Einkehrmöglichkeiten: <a href="http://www.gasthaus-mittelallgaeu.de/">Gasthaus Mittelallgäu</a>, Alpe Beilstein und die <a href="http://andydunkel.net/hiking/radfahren/sonstiges/2011/06/18/mehlblockalpe-im-kempter-wald-anfahrt-und-infos.html">Mehlblockalpe</a>.</p>
-
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:514ea4bc-41f8-4d94-ae15-8feae6e71c4e" class="wlWriterEditableSmartContent"><div><object width="587" height="330"><param name="movie" value="http://www.youtube.com/v/r-k14h7xorE?hl=en&amp;hd=1" /><embed src="http://www.youtube.com/v/r-k14h7xorE?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="587" height="330" /></object></div></div>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/DSCN2241.jpg" alt="DSCN2241" /></p>
-
-<!-- more -->
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/DSCN2243.jpg" alt="DSCN2243" /></p>
-
-<p>Schinken-Käse-Brot in der Mehlblockalpe:<img src="http://andydunkel.net/assets/uploads/2011/07/DSCN2244.jpg" alt="DSCN2244" /></p>
-</p>		
-		  <p class="small">Tagged: Beilsteinalpe, Kemptener Wald, and Mehlblockalpe by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/gadgets/tools/2011/07/09/screenshots-unter-android-erstellen-ohne-root.html">Screenshots unter Android erstellen (ohne Root)</a>
-		</h1>
-		  <p class="small">Posted on 09 July 2011 by Andy</p>
-		  <p><p>Screenshots unter Android erstellen, gar nicht so trivial. Es gibt einige Apps, diese benötigen aber Root-Rechte. Habe ich keinen Bock drauf. Geht bei <a href="http://andydunkel.net/ipad/2011/06/25/quicktipp-screenshot-auf-dem-ipad-erstellen.html">Apple Geräten</a> leichter.</p>
-
-<p>Wie es doch mit halbwegs vernünftigen Aufwand geht, möchte ich hier kurz erklären. Das ganze habe ich mit meinem HTC Desire getestet, bei anderen Phones kann es etwas anders aussehen.</p>
-
-<p>Zuerst müssen wir das USB-Debugging aktivieren. Also in die Einstellungen, Anwendungen gehen, dort dann auf Entwicklung:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image3.png" alt="image" /></p>
-
-<p>Nun brauchen wir noch das Android SDK.</p>
-
-<!-- more -->
-
-<p>Dieses gibt’s unter <a href="http://developer.android.com/sdk/index.html">http://developer.android.com/sdk/index.html</a></p>
-
-<p>Einfach runterladen und entpacken. Nun das Handy mittels USB an den Rechner anschließen. Unter Umständen verlangt das System einen Treiber. Also in der Windows Treiberinstallation eigenen Ordner festlegen. Den finden wir im Ordner vom SDK:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image4.png" alt="image" /></p>
-
-<p>Nachdem das erledigt ist, starten wir den Android Debugger, der ist im Verzeichnis Tools vom SDK:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image5.png" alt="image" /></p>
-
-<p>Nach dem Start sollte das Handy im Debugger sichtbar sein. Dieses nun markieren und dann im Menü “Device” auf “Screen Capture” gehen.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image6.png" alt="image" /></p>
-
-<p>Es öffnet sich nun ein Fenster, welches den aktuellen Bildschirminhalt vom Handy wiedergibt:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image7.png" alt="image" /></p>
-
-<p>Der Rest dürfte dann selbsterklärend sein. <img src="http://andydunkel.net/assets/uploads/2011/07/wlEmoticon-smile1.png" alt="Smiley" /></p>
-</p>		
-		  <p class="small">Tagged: Android, No Root, Root, and Screenshot by Andy</p>
+		  <p class="small">Tagged: Plugin folder eclipse by Andy</p>
 		  <hr>
 		  
 		
@@ -375,11 +274,11 @@
 <!-- Pagination links -->
 <div class="pagination">
   
-    <a href="/page41" class="previous">Previous</a>
+    <a href="/page51" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 42 of 52</span>
+  <span class="page_number ">Page: 52 of 52</span>
   
-    <a href="/page43" class="next">Next</a>
+    <span class="next ">Next</span>
   
 </div>
 

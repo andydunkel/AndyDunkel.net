@@ -8,7 +8,35 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Sat, 17 Dec 2016 18:00:00 +0100</pubDate>
+    <pubDate>Sun, 08 Jan 2017 18:00:00 +0100</pubDate>
+    <item>
+      <title>Mobilität Dezember 2016</title>
+      <link>http://andydunkel.net/mobilitaet/umwelt/2017/01/08/mobilitaet_dezember_2016.html</link>
+      <description>&lt;p&gt;Der Monat war etwas lau, was das Radfahren anging. Meine Freundin hatte bereits Urlaub und die Kombination Zug und Brompton in der Früh und am Abend ist dann wenig optimal. Neben den zeitlichen Aspekt, kostet es mit Bahncard 25 knappe 10 Euro hin und zurück. Solange das Auto da steht, nehme ich dieses. Die Fixkosten beim Auto hat man eh, ob man fährt oder nicht.&lt;/p&gt;
+
+&lt;p&gt;Trotz allem haben die Kilometer beim Auto auch nicht sonderlich erhöht. Dies ist aber eher dem Urlaub Ende des Monats geschuldet.&lt;/p&gt;
+
+&lt;h3 id=&quot;fahrrad&quot;&gt;Fahrrad&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gesamt km: 26 km&lt;/li&gt;
+  &lt;li&gt;Fahrten: 11&lt;/li&gt;
+  &lt;li&gt;Durchschnitt pro Fahrt: 2,36 km&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;auto&quot;&gt;Auto&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gesamt km: 372&lt;/li&gt;
+  &lt;li&gt;Fahrten: 19&lt;/li&gt;
+  &lt;li&gt;Durchschnitt pro Fahrt: 19,57 km&lt;/li&gt;
+  &lt;li&gt;Getankt: 0 Liter&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+      <pubDate>Sun, 08 Jan 2017 18:00:00 +0100</pubDate>
+      <dc:date>2017-01-08T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>SSH bei Hosteurope - Midnight Commander ausführen</title>
       <link>http://andydunkel.net/webdesign/linux/2016/12/17/midnight_commander_ssh_hosteurope.html</link>
@@ -7998,6 +8026,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2016-12-17T18:00:00+01:00</dc:date>
+    <dc:date>2017-01-08T18:00:00+01:00</dc:date>
   </channel>
 </rss>
