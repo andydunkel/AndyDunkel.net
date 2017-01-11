@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Backups mit Grsync</title>
+        <title>Virtual Box - "Failed to open directory" bei Shared Foldern unter Linux</title>
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="/css/syntax.min.css">
         <script src="/css/jquery.min.js"></script>
@@ -146,19 +146,25 @@
         <div class="row">
     	<div class="col-md-9">
 
-			<h2>Backups mit Grsync</h2>
-			<p class="meta">28 Aug 2013</p>
+			<h2>Virtual Box - "Failed to open directory" bei Shared Foldern unter Linux</h2>
+			<p class="meta">11 Jan 2017</p>
 			
 			<div class="post">
-			<p>Für Backups verwende ich gerne rsync, das ist zuverlässig, ausgereift und schnell. Das Programm arbeitet auf der Kommandozeile, prinzipiell toll, aber ich habe immer so meine Probleme irgendwelche Sachen auswendig zu lernen. Also ging die Suche nach den richtigen Parametern immer wieder aufs neue los.</p>
+			<p>Ich habe ein Linux in VirtualBox am Laufen. Für den Datenaustausch habe ich einen “Shared Folder” bzw. einen “Gemeinsamen Ordner” definiert.</p>
 
-<p>Also musste eine GUI her: <a href="http://www.opbyte.it/grsync/">Grsync</a>:</p>
+<p>Dieser taucht auch im Dateimanager unter Linux auf, allerdings kam beim Zugriff nur diese Meldung:</p>
 
-<p><a href="http://www.opbyte.it/grsync/"><img src="http://andydunkel.net/assets/uploads/2013/08/grsync.png" alt="Grsync" /></a></p>
+<p>![](/assets/uploads/2017/1/virtualbox.png “”)</p>
 
-<p>Die Anwendung gibt es für Linux, Windows und Mac. Perfekt. Man legt in der GUI die Parameter fest, Start- und Zielverzeichnis und schon geht es los. Die Einstellungen lassen sich zu dem als Profil abspeichern und so schnell wieder abrufen und starten.</p>
+<pre><code>Failed to open directory - Permission denied
+</code></pre>
 
-<p>Während rsync kann man sich die Ausgaben anzeigen lassen, dies habe ich bei anderen Programmen wie arRsync vermisst.  </p>
+<p>Was tun? Die Lösung zu diesem Berechtigungsproblem ist, den eigenen Benutzer der Gruppe <kbd>vboxsf</kbd> hinzuzufügen:</p>
+
+<pre><code>sudo usermod -aG vboxsf $(whoami)
+</code></pre>
+
+<p>Anschließend muss man die virtuelle Maschine noch neu starten. Danach lief der Zugriff ohne Probleme.</p>
 
 			</div>
 			
@@ -191,21 +197,23 @@
 			 	<div class="panel-heading">Verwandte Artikel:</div>
 				<div class="panel-body">
 				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/windows/computer/2016/01/31/thinkpad_w500_integrated_graphic_card_on_windows10.html" title="Thinkpad W500 - Integrierte Grafikkarte - Treiber für Windows 10">Thinkpad W500 - Integrierte Grafikkarte - Treiber für Windows 10</a></li>
+				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/linux/windows/programmierung/2016/01/29/sublime_text.html" title="Sublime Text">Sublime Text</a></li>
 				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/linux/2016/01/26/remote_backup_mit_ftp.html" title="Linux: Remote Backup mit FTP">Linux: Remote Backup mit FTP</a></li>
 				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/raspberry/2014/08/29/backup_sd_card_of_your_rpi.html" title="Backup of an SD card on OSX">Backup of an SD card on OSX</a></li>
+				   <li class="list-unstyled"><a href="http://andydunkel.net/raspberry/linux/2014/10/29/airsonos_airplay_fuer_sonos.html" title="AirSonos - Airplay für Sonos mit dem Raspberry Pi">AirSonos - Airplay für Sonos mit dem Raspberry Pi</a></li>
 				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/linux/computer/2017/01/11/virtual_box_shared_folders.html" title="Virtual Box - "Failed to open directory" bei Shared Foldern unter Linux">Virtual Box - "Failed to open directory" bei Shared Foldern unter Linux</a></li>
+				   <li class="list-unstyled"><a href="http://andydunkel.net/linux/2013/03/12/linux-mint-mit-full-disk-encryption.html" title="Linux Mint mit Full Disk Encryption">Linux Mint mit Full Disk Encryption</a></li>
 				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/windows/computer/2016/08/21/dell_monitor_aufloesung.html" title="Dell U2515H  Monitor mit voller Auflösung betreiben">Dell U2515H  Monitor mit voller Auflösung betreiben</a></li>
-				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/windows/computer/2016/01/31/thinkpad_w500_integrated_graphic_card_on_windows10.html" title="Thinkpad W500 - Integrierte Grafikkarte - Treiber für Windows 10">Thinkpad W500 - Integrierte Grafikkarte - Treiber für Windows 10</a></li>
 				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/computer/2015/08/09/windows_10_on_thinkpad_w500.html" title="Windows 10 auf Lenovo Thinkpad W500">Windows 10 auf Lenovo Thinkpad W500</a></li>
 				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/windows/2015/02/28/geraeterschluesselung_windows_8_1.html" title="Die Geräteverschlüsselung ist vorübergehend unterbrochen und wird beim nächsten Neustart des Gerätes fortgesetzt.">Die Geräteverschlüsselung ist vorübergehend unterbrochen und wird beim nächsten Neustart des Gerätes fortgesetzt.</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/tools/2013/08/28/backups-mit-grsync.html" title="Backups mit Grsync">Backups mit Grsync</a></li>
 				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/sonstiges/2013/05/17/windows-defender-deaktivieren-in-windows-8.html" title="Windows Defender deaktivieren in Windows 8">Windows Defender deaktivieren in Windows 8</a></li>
 				

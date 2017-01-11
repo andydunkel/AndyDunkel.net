@@ -157,6 +157,38 @@
      
 		
 		<h1>
+		  <a href="/sonstiges/tools/2011/08/27/nicht-gengend-serverspeicher.html">Nicht genügend Serverspeicher</a>
+		</h1>
+		  <p class="small">Posted on 27 August 2011 by Andy</p>
+		  <p><p>Momentan ziehe ich Windows Probleme magisch an. Heute habe ich auf meinem Server (eigentlich nur eine Windows XP Kiste mit ein paar Freigaben) Acronis True Image installiert. Backups sind ja wichtig und so…</p>
+
+<p>Nicht nur, dass es hierbei schon <a href="http://blog.ekiwi.de/?p=733">zu Problemen kam</a>, nein, ich konnte anschließend auch nicht mehr auf meine Netzwerkfreigaben zugreifen. Fehlermeldung: “Nicht genügend Serverspeicher”. Super! <img src="http://andydunkel.net/assets/uploads/2011/08/wlEmoticon-cryingface.png" alt="Weinendes Smiley" /></p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image21.png" alt="image" /></p>
+
+<p>Nach etwas Internetrecherche kam ich zu folgendem Lösungsvorschlag. In der Registry unter <br />
+“HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services<br />
+\lanmanserver\parameters”</p>
+
+<p>den Parameter “IRPStackSize” abändern. 32 hex, bzw. 50 ist das Maximum.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image22.png" alt="image" /></p>
+
+<p>Bei mir war der Eintrag nicht vorhanden, also anlegen mit Rechtsklick:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image23.png" alt="image" /></p>
+
+<p>Anschließend den Wert eingeben:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image24.png" alt="image" /></p>
+
+<p>Nun noch neustarten und schon ging wieder alles. Easy oder? <img src="http://andydunkel.net/assets/uploads/2011/08/wlEmoticon-smile2.png" alt="Smiley" /></p>
+</p>		
+		  <p class="small">Tagged: Acronis, Netzwerkfreigaben, and Serverspeicher by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/sonstiges/2011/08/25/strom-bei-der-arbeit.html">Strom bei der Arbeit</a>
 		</h1>
 		  <p class="small">Posted on 25 August 2011 by Andy</p>
@@ -227,16 +259,6 @@
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/sonstiges/2011/08/15/schwan.html">Schwan</a>
-		</h1>
-		  <p class="small">Posted on 15 August 2011 by Andy</p>
-		  <p><p><img src="http://andydunkel.net/assets/uploads/2011/08/image16.png" alt="image" /></p>
-</p>		
-		  <p class="small">Tagged: Schwan by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -277,7 +299,7 @@
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
 <li class='category'><a href='/categories/coding/'>coding (28)</a></li>
-<li class='category'><a href='/categories/computer/'>computer (8)</a></li>
+<li class='category'><a href='/categories/computer/'>computer (9)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
 <li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
@@ -292,7 +314,7 @@
 <li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
 <li class='category'><a href='/categories/kochen/'>kochen (2)</a></li>
 <li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
-<li class='category'><a href='/categories/linux/'>linux (13)</a></li>
+<li class='category'><a href='/categories/linux/'>linux (14)</a></li>
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (3)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
