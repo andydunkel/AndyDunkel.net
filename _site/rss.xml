@@ -16,7 +16,7 @@
 
 &lt;p&gt;Dieser taucht auch im Dateimanager unter Linux auf, allerdings kam beim Zugriff nur diese Meldung:&lt;/p&gt;
 
-&lt;p&gt;![](/assets/uploads/2017/1/virtualbox.png “”)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2017/1/virtualbox.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;Failed to open directory - Permission denied
 &lt;/code&gt;&lt;/pre&gt;
