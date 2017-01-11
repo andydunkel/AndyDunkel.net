@@ -157,6 +157,55 @@
      
 		
 		<h1>
+		  <a href="/coding/eclipse/2012/07/09/remove-unwanted-preference-pages-from-your-rcp-app.html">Remove unwanted preference pages from your RCP app</a>
+		</h1>
+		  <p class="small">Posted on 09 July 2012 by Andy</p>
+		  <p><p>In my recent RCP app some unwanted preferences, contributed from other plugins showed up:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/07/RCP_preferences1.png" alt="NewImage" /></p>
+
+<p>To remove them, just add the following code to your WorkbenchAdvisor class:</p>
+
+<blockquote>
+
+</blockquote>
+
+<blockquote>
+
+  <p>public void postStartup(){</p>
+
+</blockquote>
+
+<blockquote>
+
+  <p>  PreferenceManagerpm=PlatformUI.getWorkbench().getPreferenceManager();</p>
+
+</blockquote>
+
+<blockquote>
+
+  <p>  pm.remove( “org.eclipse.help.ui.browsersPreferencePage” ); //remove single contribution</p>
+
+</blockquote>
+
+<blockquote>
+
+  <p>  pm.removeAll(); //just remove all</p>
+
+</blockquote>
+
+<blockquote>
+
+  <p>}</p>
+
+</blockquote>
+
+</p>		
+		  <p class="small">Tagged: PreferencePage and RCP by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/ireland/2012/06/25/irland-impressionen-1.html">Irland Impressionen #1</a>
 		</h1>
 		  <p class="small">Posted on 25 June 2012 by Andy</p>
@@ -258,21 +307,6 @@ Aufgezeichnet: 07.06.2012 12:53</p>
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/radfahren/2012/06/16/kenzenhtte-27-05-2012.html">Kenzenhütte 27.05.2012</a>
-		</h1>
-		  <p class="small">Posted on 16 June 2012 by Andy</p>
-		  <p><p>Wie jedes Jahr: die Standardtour zur <a href="http://www.berggasthof-kenzenhuette.de/" target="_blank">Kenzenhütte</a>. Am 27.05. ging es zuerst ins <a href="http://www.schlossbrauhaus.de/" target="_blank">Schwangauer Brauhaus</a>. Nach entsprechender fester und flüssiger Stärkung ging es anschließend den Anstieg zur Kenzenhütte hinauf. Wie immer etwas anstrengend. <img style="border-bottom-style: none; border-left-style: none; border-top-style: none; border-right-style: none" class="wlEmoticon wlEmoticon-smile" alt="Smiley" src="http://andydunkel.net/assets/uploads/2012/06/wlEmoticon-smile1.png" /></p>
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:906ef1f9-ed6f-4fbe-b0d1-2ae0e2969c8b" class="wlWriterEditableSmartContent"><div><object width="613" height="344"><param name="movie" value="http://www.youtube.com/v/aElqidjT-Yk?hl=en&amp;hd=1" /><embed src="http://www.youtube.com/v/aElqidjT-Yk?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="613" height="344" /></object></div></div>
-<p><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="2012-05-27 15.44.42" border="0" alt="2012-05-27 15.44.42" src="http://andydunkel.net/assets/uploads/2012/06/2012-05-27-15.44.42.jpg" width="644" height="484" /></p>
-<p>&nbsp;</p>
-<iframe height="400" marginheight="0" src="https://maps.google.de/maps/ms?msa=0&amp;msid=208324790998598431494.0004c1192def3d439bdf5&amp;hl=de&amp;ie=UTF8&amp;t=h&amp;ll=47.621438,10.779648&amp;spn=0.185127,0.342636&amp;z=11&amp;output=embed" frameborder="0" width="500" marginwidth="0" scrolling="no"></iframe>
-<p><br /><small><a style="text-align: left; color: #0000ff" href="https://maps.google.de/maps/ms?msa=0&amp;msid=208324790998598431494.0004c1192def3d439bdf5&amp;hl=de&amp;ie=UTF8&amp;t=h&amp;ll=47.621438,10.779648&amp;spn=0.185127,0.342636&amp;z=11&amp;source=embed">27.05.2012 11:33 - Kenzenhütte</a> auf einer größeren Karte anzeigen</small>  &lt;p&gt; &lt;/p&gt; &lt;p&gt;Gesamtstrecke: 63,05 km (39,2 Meile/n)<br />Zeit in Bewegung: 3:31:57<br />Durchschnittliche Geschwindigkeit in Bewegung: 17,85 km/h (11,1 Meile/h)<br />Maximale Geschwindigkeit: 48,63 km/h (30,2 Meile/h)<br />Durchschnittliches Tempo in Bewegung: 3,36 min/km (5,4 min/Meile)<br />Minimales Tempo: 1,23 min/km (2,0 min/Meile)<br />Maximale Höhe: 1358 m (4455 Fuß)<br />Minimale Höhe: 825 m (2708 Fuß)<br />Höhenunterschied: 1179 m (3867 Fuß)<br />Maximales Gefälle: 15 %<br />Minimales Gefälle: -20 %<br />&lt;/p&gt; &lt;p&gt;<img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="chart" border="0" alt="chart" src="http://andydunkel.net/assets/uploads/2012/06/chart.png" width="644" height="377" />&lt;/p&gt;</p>
-</p>		
-		  <p class="small">Tagged: Kenzenhütte, Radfahren, and Radtour by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -313,7 +347,7 @@ Aufgezeichnet: 07.06.2012 12:53</p>
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
 <li class='category'><a href='/categories/coding/'>coding (28)</a></li>
-<li class='category'><a href='/categories/computer/'>computer (8)</a></li>
+<li class='category'><a href='/categories/computer/'>computer (9)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
 <li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
@@ -328,7 +362,7 @@ Aufgezeichnet: 07.06.2012 12:53</p>
 <li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
 <li class='category'><a href='/categories/kochen/'>kochen (2)</a></li>
 <li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
-<li class='category'><a href='/categories/linux/'>linux (13)</a></li>
+<li class='category'><a href='/categories/linux/'>linux (14)</a></li>
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (3)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>

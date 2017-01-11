@@ -8,7 +8,30 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Sun, 08 Jan 2017 18:00:00 +0100</pubDate>
+    <pubDate>Wed, 11 Jan 2017 18:00:00 +0100</pubDate>
+    <item>
+      <title>Virtual Box - &quot;Failed to open directory&quot; bei Shared Foldern unter Linux</title>
+      <link>http://andydunkel.net/linux/computer/2017/01/11/virtual_box_shared_folders.html</link>
+      <description>&lt;p&gt;Ich habe ein Linux in VirtualBox am Laufen. Für den Datenaustausch habe ich einen “Shared Folder” bzw. einen “Gemeinsamen Ordner” definiert.&lt;/p&gt;
+
+&lt;p&gt;Dieser taucht auch im Dateimanager unter Linux auf, allerdings kam beim Zugriff nur diese Meldung:&lt;/p&gt;
+
+&lt;p&gt;![](/assets/uploads/2017/1/virtualbox.png “”)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Failed to open directory - Permission denied
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Was tun? Die Lösung zu diesem Berechtigungsproblem ist, den eigenen Benutzer der Gruppe &lt;kbd&gt;vboxsf&lt;/kbd&gt; hinzuzufügen:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo usermod -aG vboxsf $(whoami)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Anschließend muss man die virtuelle Maschine noch neu starten. Danach lief der Zugriff ohne Probleme.&lt;/p&gt;
+
+</description>
+      <pubDate>Wed, 11 Jan 2017 18:00:00 +0100</pubDate>
+      <dc:date>2017-01-11T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Mobilität Dezember 2016</title>
       <link>http://andydunkel.net/mobilitaet/umwelt/2017/01/08/mobilitaet_dezember_2016.html</link>
@@ -8026,6 +8049,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2017-01-08T18:00:00+01:00</dc:date>
+    <dc:date>2017-01-11T18:00:00+01:00</dc:date>
   </channel>
 </rss>
