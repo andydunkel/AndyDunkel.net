@@ -19,7 +19,7 @@ Ich habe ein Linux in VirtualBox am Laufen. Für den Datenaustausch habe ich ein
 
 Dieser taucht auch im Dateimanager unter Linux auf, allerdings kam beim Zugriff nur diese Meldung:
 
-![](/assets/uploads/2017/1/virtualbox.png "")
+![](/assets/uploads/2017/1/virtualbox.png)
 
 	Failed to open directory - Permission denied
 	
