@@ -157,6 +157,48 @@
      
 		
 		<h1>
+		  <a href="/tools/2011/08/10/der-befehl-ping-konnte-nicht-gefunden-werden.html">Der Befehl “ping” konnte nicht gefunden werden</a>
+		</h1>
+		  <p class="small">Posted on 10 August 2011 by Andy</p>
+		  <p><p>Windows schafft es auch nach vielen Jahren mich zu überraschen. Diesmal auf der Kommandozeile, die man ab und zu mal braucht um Befehle wie “ping”, “ipconfig” oder ein “tracert” abzusetzen.</p>
+
+<p>Nun wollte Windows keine dieser Befehle mehr kennen:</p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2011/08/image12.png"><img src="http://andydunkel.net/assets/uploads/2011/08/image_thumb6.png" alt="image" /></a></p>
+
+<p><strong>Was kann man tun?</strong></p>
+
+<!-- more -->
+
+<p>Nach etwas Überlegungszeit war mein erster Ansatz die PATH Umgebungsvariable. Diese legt fest, welche Pfadinhalte überall verfügbar sind auf der Kommandozeile. Und siehe da, dort waren die Windows-Systemverzeichnisse nicht mehr drinnen, in denen die kleinen Tools liegen.</p>
+
+<p>Hier nun die Abhilfe: Zuerst in die Systemsteuerung gehen, dort dann auf “System” und anschließend auf “Erweiterte Systemeinstellungen”:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image13.png" alt="image" /></p>
+
+<p>Dort klickt man dann auf den Button “Umgebungsvariablen” woraufhin sich dann dieser schöne Dialog öffnet:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image14.png" alt="image" /></p>
+
+<p>Nun einfach zur Variable “path” scrollen und bearbeiten klicken. Bei mir haben dann die folgenden Einträge gefehlt:</p>
+
+<blockquote>
+  <p>%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\</p>
+</blockquote>
+
+<p>Diese fügt man nun einfach am Ende der Liste hinzu (Trennung der Einträge mit Semikolon. Die bestehenden Einträge nicht löschen.</p>
+
+<p>Anschließend ist auch Windows wieder lieb:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image15.png" alt="image" /></p>
+
+<p>Leider konnte ich keine Ursache herausfinden, warum die Einträge weg waren. Meine Vermutung liegt in einer fehlerhaften Installation eines anderen Programms.</p>
+</p>		
+		  <p class="small">Tagged: command, found, ipconfig, not, ping, and tracert by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/sonstiges/2011/08/09/gelingt-immer.html">Gelingt immer</a>
 		</h1>
 		  <p class="small">Posted on 09 August 2011 by Andy</p>
@@ -209,17 +251,6 @@
 <p><a href="http://andydunkel.net/assets/uploads/2011/08/image7.png"><img src="http://andydunkel.net/assets/uploads/2011/08/image_thumb4.png" alt="image" /></a><a href="http://andydunkel.net/assets/uploads/2011/08/image8.png"><img src="http://andydunkel.net/assets/uploads/2011/08/image_thumb5.png" alt="image" /></a></p>
 </p>		
 		  <p class="small">Tagged: ipad and Taschenrechner by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/sonstiges/2011/08/04/kran-holt-rhre-von-radiologie-ab.html">Kran holt Röhre von Radiologie ab</a>
-		</h1>
-		  <p class="small">Posted on 04 August 2011 by Andy</p>
-		  <p><p>Wie aufregend, gestern wurde eine alte Röhre von der Radiologie nebenan abgeholt. Mit Kran!</p>
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:61b6c211-b1b9-4d7f-af05-89e204e55f09" class="wlWriterEditableSmartContent"><div><object width="607" height="341"><param name="movie" value="http://www.youtube.com/v/gF5FRSIWa1M?hl=en&amp;hd=1" /><embed src="http://www.youtube.com/v/gF5FRSIWa1M?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="607" height="341" /></object></div></div>
-</p>		
-		  <p class="small">Tagged: Kaufbeuren, Kran, Orbeid, and Rofu by Andy</p>
 		  <hr>
 		  
 		
@@ -282,7 +313,7 @@
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (3)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (17)</a></li>
+<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (18)</a></li>
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
@@ -297,7 +328,7 @@
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (23)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (18)</a></li>
+<li class='category'><a href='/categories/umwelt/'>umwelt (19)</a></li>
 <li class='category'><a href='/categories/webdesign/'>webdesign (3)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (2)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (6)</a></li>
