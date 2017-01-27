@@ -8,7 +8,48 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Sun, 22 Jan 2017 18:00:00 +0100</pubDate>
+    <pubDate>Sat, 28 Jan 2017 18:00:00 +0100</pubDate>
+    <item>
+      <title>Webseiten mit Templates erstellen</title>
+      <link>http://andydunkel.net/webdesign/webseiten/meinung/2017/01/28/webseiten_mit_templates_erstellen.html</link>
+      <description>&lt;p&gt;Gelegentlich werde ich gefragt, da ich ja auch Webseiten betreibe, ob ich nicht ein paar Tipps für die Erstellung einer solche habe. Meist geht es darum eine Webseite für die kleine Nebenbeifirma, den Verein oder das Hobby zu erstellen. Eventuell kann ich die Webseite ja gleich erstellen. Gleich vorneweg, mache ich nicht mehr.&lt;/p&gt;
+
+&lt;p&gt;Da sich Leute oft noch gar nicht so richtig mit dem Thema &lt;a href=&quot;https://www.templatemonster.com/de/&quot;&gt;Website erstellen&lt;/a&gt; auseinandergesetzt haben, stehen diese auch erstmal, wie der sprichwörtliche Ochs vorm Berg. Dabei ist es heute wesentlich leichter als früher eine Webseite ins Netz zu bringen als früher.&lt;/p&gt;
+
+&lt;p&gt;![](/assets/uploads/2017/1/design2.jpg “”)&lt;/p&gt;
+
+&lt;p&gt;Meine ersten Webseiten habe ich komplett von Hand programmiert. Ich hatte zwar Hilfe von Tools wie Frontpage oder Dreamweaver, aber im Grund ließen diese einen allein. Man konnte zwar Tabellen, Schriftformatierungen recht leicht umsetzen, das komplette Grundgerüst in HTML, CSS und die Grafiken mussten erstellt selbst erstellt werden.&lt;/p&gt;
+
+&lt;p&gt;Will man heute eine Webseite komplett selbst erstellen, wird es noch komplizierter. Schließlich will das Design responsiv sein, da immer mehr Benutzer mit mobilen Geräten das Internet bereisen. Auch die Ansprüche an Design und Optik sind gestiegen.&lt;/p&gt;
+
+&lt;p&gt;![](/assets/uploads/2017/1/design.jpg “”)&lt;/p&gt;
+
+&lt;p&gt;Klingt erstmal wie ein Widerspruch zu meiner Aussage, dass es eigentlich leichter sei. Kommt drauf an! Erstelle ich heute eine neue Webseite, greife ich heute gerne auf bestehende Software, Frameworks für Webseiten zurück. Gleiches gilt für Templates und das Design. Statt alles selbst zu erstellen bediene ich mich aus einem Baukasten, welchen ich nur anpassen muss.&lt;/p&gt;
+
+&lt;h2 id=&quot;baukasten&quot;&gt;Baukasten&lt;/h2&gt;
+
+&lt;p&gt;Neue Webseite mit Blog? Hier kommen entweder Wordpress, ElTexto oder Jekyll zum Einsatz. Alternativ kann auch ein CMS wie Joomla verwendet werden.&lt;/p&gt;
+
+&lt;p&gt;Das passende Design? Hier gibt es viele Templates, bereits erprobt, getestet und  responsiv. Von Profidesignern erstellt. Teilweise kostenlos, teilweise nicht. Das Design noch an die eigenen Bedürfnisse angepasst, fertig. Die Designs lassen sich in der Regel leicht anpassen: Texte ändern, Bilder austauschen, Farben anpassen.&lt;/p&gt;
+
+&lt;p&gt;Will ich einen &lt;a href=&quot;https://www.templatemonster.com/de/onlineshop-erstellen.php&quot;&gt;Onlineshop erstellen&lt;/a&gt;? Kein Problem für die meisten Shopsysteme gibt es auch hier passende Templates.&lt;/p&gt;
+
+&lt;p&gt;Ein wenig Handarbeit ist immer noch angesagt. Bilder austauschen, Design und Farben anpassen. Aber 90% der Arbeit wird einem heutzutage abgenommen.&lt;/p&gt;
+
+&lt;h2 id=&quot;planung&quot;&gt;Planung&lt;/h2&gt;
+
+&lt;p&gt;Dies ist auch der Tipp den Leute von mir bekommen, wenn diese eine Webseite erstellen möchten. Zuerst sollte man sich Gedanken machen, was man genau erstellen möchte. Einen Blog? Eine Webseite, welche die Firma vorstellt? Einen Online-Shop? Für alle diese Dinge gibt es fertige Lösungen und Software die nur auf dem Webspace installiert werden muss. Zahlreiche Webhoster bieten die Installation auch gleich mit an. Hier klickt man im Admin-Bereich einfach Wordpress installieren an und bekommt die Anwendung komplett installiert.&lt;/p&gt;
+
+&lt;p&gt;Anschließend passt man das Design an und füllt die Webseite mit Inhalt. Fertig ist der eigene Internetauftritt. Statt einem teueren Webdesigner, kann man fertige Templates auf &lt;a href=&quot;https://www.templatemonster.com/de&quot; target=&quot;_blank&quot;&gt;spezialisierten Webseiten &lt;/a&gt;herunterladen und auch kaufen. Meist ist man bereits mit zweistelligen Preisen dabei. Teilweise werden gegen Aufpreis auch weitere Dienste mit angeboten, wie Installation, Anpassung. Hier muss man abwägen, ob man das wahrnimmt oder selbst macht.&lt;/p&gt;
+
+&lt;h2 id=&quot;fazit&quot;&gt;Fazit&lt;/h2&gt;
+
+&lt;p&gt;Insgesamt ist es heute recht einfach etwas ins Netz zu stellen. Software auswählen, passenden Webspace buchen, Template auswählen, anpassen und fertig. Auch für diese Webseite habe ich eine Basis ausgewählt und für meine Befürfnisse angepasst. Etwas Einarbeitung ist immer notwendig. Aber die Eigenarbeit spart jede Menge Geld.&lt;/p&gt;
+
+</description>
+      <pubDate>Sat, 28 Jan 2017 18:00:00 +0100</pubDate>
+      <dc:date>2017-01-28T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Mobilität Zusammenfassung 2016</title>
       <link>http://andydunkel.net/mobilitaet/umwelt/2017/01/22/mobilitaet_2016.html</link>
@@ -8113,6 +8154,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2017-01-22T18:00:00+01:00</dc:date>
+    <dc:date>2017-01-28T18:00:00+01:00</dc:date>
   </channel>
 </rss>

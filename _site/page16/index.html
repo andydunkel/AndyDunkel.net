@@ -157,6 +157,102 @@
      
 		
 		<h1>
+		  <a href="/delphi/firemonkey/2014/01/22/signing_delphi_xe_applications_for_osx.html">Signing Firemonkey Applications on OSX</a>
+		</h1>
+		  <p class="small">Posted on 22 January 2014 by Andy</p>
+		  <p><p>Some time ago I started porting my application <a href="http://da-software.de/daform/daform_start.htm">DA-FormMaker</a> for the Mac. After finishing the development, the app needs to be signed with the Developer ID. Otherwise your users will end up with some message like:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign0.png" alt="" /></p>
+
+<p>OK its german, but it means: I don’t know that developer and I will not start that application. So the app needs to be signed. Fair enough.</p>
+
+<p>It took me some time to find out the steps needed for that, thats the reason why I am documenting it here. :-)</p>
+
+<p><em>Note: That procedure here is not for App Store applications.</em></p>
+
+<h2 id="preparations">Preparations</h2>
+
+<p>OK lets start!</p>
+
+<p>The first thing is, you need to have <a href="https://developer.apple.com/">Mac Developer Account</a> for 100$ a year to get the certificates to sign the application.</p>
+
+<p>If you have a developer account you have to create the developer certificates. Easiest way to do that is the XCode Organizer:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign1.png" alt="" /></p>
+
+<p>Click on your Mac and “Add to member center”. The next dialog will ask you if you want to create/request the certificates needed.</p>
+
+<p>The procedures takes some time and it told me that the process is still ongoing and I’d like to refresh the certificates in the accounts section of the Xcode preferences. OK lets do that.</p>
+
+<p>If you have not done that before, enter your Apple ID first. Then hit the refresh button. It should show the certificates that are not installed:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign2.png" alt="" /></p>
+
+<p>Install the certificates in XCode. I am not 100% sure if that step it really needed. In order to sign the Firemonkey application via command line, we have to install the certificates in our key chain.</p>
+
+<p>To do that, we have to download the cerficate from the certificates section in the developer account:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign3.png" alt="" /></p>
+
+<p>Save the file to your local disk and open “Keychain Access”. Select “File” -&gt; “Import Items”. Now select the *.cer file you just downloaded and the destination. I choosed system. The certificate should now show up in the list:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign4.png" alt="" /></p>
+
+<p>If you right click and select “Get Info” on the certificate, you see the properties of the certificate:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign5.png" alt="" /></p>
+
+<p>You can copy the common name here, which we will later use on the command line to sign the application.</p>
+
+<h2 id="firemonkey">Firemonkey</h2>
+
+<p>The next step is the release build of your Firemonkey Application. Select the settings for the build and compile the application.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign6.png" alt="" /></p>
+
+<p>After complilation the application should be on your Macs file system in /Users/username/RASPASever/scratch-dir/…</p>
+
+<p>If the application runs correctly then its time to finally sign the application.</p>
+
+<h2 id="signing">Signing</h2>
+
+<p>To do that open a console and switch to the applications folder. Sign the application with the following command:</p>
+
+<pre><code>codesign -f -s "Common Name" -v "application_name.app" --deep
+</code></pre>
+
+<p>Enter the common name mentioned above and the application name. Here is an example:</p>
+
+<pre><code>da$ codesign -f -s "Developer ID Application: Andy Dunkel" -v "daform.app" --deep
+daform.app: signed bundle with Mach-O thin (i386) [daform]
+</code></pre>
+
+<p>You can check the validity of the signing with the following command:</p>
+
+<pre><code>spctl --verbose=4 --assess --type execute DA-yourapp
+</code></pre>
+
+<p>It should return something like:</p>
+
+<pre><code>DA-FormMaker.app: accepted
+source=Developer ID
+</code></pre>
+
+<p>I first run into a problem. The app was not signed correctly. It told me that “my.app is damaged and can’t be opened. You should move it to the trash.”. And the check above returned:</p>
+
+<pre><code>DA-FormMaker.app: a sealed resource is missing or invalid
+</code></pre>
+
+<p>The problem? Turned out that I made a mistake and had other files in the “MacOS” folder of the bundle. I moved those to “Resources” and everything was OK.</p>
+
+<p><strong>Congratulations: After that your app is signed with your developer id!</strong></p>
+
+</p>		
+		  <p class="small">Tagged: OSX, Signing, Firemonkey, and Delphi by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/eclipse/2014/01/16/branding_of_eclipse_applications.html">Branding of Eclipse/RCP Applications</a>
 		</h1>
 		  <p class="small">Posted on 16 January 2014 by Andy</p>
@@ -352,52 +448,6 @@ Everything up-to-date
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/mac/tools/2013/12/14/homebrew_link_errors.html">Homebrew - Could not link xz Fehler</a>
-		</h1>
-		  <p class="small">Posted on 14 December 2013 by Andy</p>
-		  <p><p><a href="http://brew.sh/">Homebrew</a> ist eine feine Sache. Ähnlich die unter Linux kann man so allerhand Pakete über die Konsole installieren. Leider brachte das Update auf OSX 10.9 ein paar Probleme mit sich.</p>
-
-<p>Zuerst lief die alte Brew-Version gar nicht mehr. Also geupdated. Dann fingen die Probleme an. Bei der Installation von Paketen wurden diese zwar heruntergeladen, allerdings konnten die Symlinks nicht erstellt werden, da bereits vorhanden aus einer alten Version. Eventuell habe ich beim Update ein paar Fehler gemacht und irgendwas nicht bereinigt, keine Ahnung.</p>
-
-<p>Die Fehlermeldung sah in etwa so aus:</p>
-
-<pre><code>Linking /usr/local/Cellar/... Warning: Could not link $foo. Unlinking...
-Error: Could not symlink file: /usr/local/Cellar/...
-/usr/local/... may already exist.
-/usr/local/... may not be writable.
-</code></pre>
-
-<p>Jedenfalls kann man die Symlinks in <code>/usr/local/share</code> von Hand löschen, was sehr viel Arbeit ist. Also etwas das Internet bemüht und das ganze mit folgenden Schritten gelöst:</p>
-
-<pre><code># Besitzer von /usr/local auf den aktuellen Benutzer setzen
-$ sudo chown -R `whoami` /usr/local
-
-# ggf. die fehlgeschlagene Installation entfernen
-$ brew uninstall -f $foo
-
-# Cache leeren
-$ rm -rf `brew --cache`
-
-# Aufräumen
-$ brew cleanup
-
-# nicht mehr aktuelle Symlinks löschen
-$ brew prune
-
-# der Homebrew Doktor:
-$ brew doctor
-</code></pre>
-
-<p>Im letzten Schritt wurden mir noch ein paar Hinweise ausgegeben, welche ich manuell auf der Konsole ausführen musste.</p>
-
-<p>Anschließend lief wieder alles ohne Probleme.</p>
-
-</p>		
-		  <p class="small">Tagged: homebrew by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -455,7 +505,7 @@ $ brew doctor
 <li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
 <li class='category'><a href='/categories/linux/'>linux (14)</a></li>
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
-<li class='category'><a href='/categories/meinung/'>meinung (3)</a></li>
+<li class='category'><a href='/categories/meinung/'>meinung (4)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
 <li class='category'><a href='/categories/mobilitaet/'>mobilitaet (18)</a></li>
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
@@ -473,8 +523,8 @@ $ brew doctor
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (23)</a></li>
 <li class='category'><a href='/categories/umwelt/'>umwelt (19)</a></li>
-<li class='category'><a href='/categories/webdesign/'>webdesign (3)</a></li>
-<li class='category'><a href='/categories/webseiten/'>webseiten (2)</a></li>
+<li class='category'><a href='/categories/webdesign/'>webdesign (4)</a></li>
+<li class='category'><a href='/categories/webseiten/'>webseiten (3)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (6)</a></li>
 <li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>
 
