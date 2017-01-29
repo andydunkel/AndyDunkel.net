@@ -65,9 +65,11 @@ Obwohl technisch alles funktioniert gibt es doch ein paar Nachteile:
 Insgesamt kann ich nur hoffen, dass der Konkurrenzdruck zunimmt und Hosteurope irgendwann eine Unterstützung für LetsEncrypt direkt einbaut. Ob das so schnell passiert, wohl eher nicht, da man ja selbst SSL-Zertifikate anbietet. 
 
 
-
-
+### Update 29.01.2017
  
+Inzwischen hat Hosteurope die Situation geringfügig verbessert. Neben dem globalen Template, kann man jetzt für jede Domain ein eigenes Zertifikat hochladen. Allerdings ist das erste Zertifikat immer noch global und für alle Domains gültig. In der Praxis hat dies zumindest den Vorteil, dass man nun die Zertifikate unabhängig voneinander erstellen und hochladen kann.
+ 
+![](/assets/uploads/2016/11/he_ssl_update.png)
 
 
 
