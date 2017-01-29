@@ -361,6 +361,12 @@ Cannot create /is/htdocs/wp_koko/.config/mc directory
 
 &lt;p&gt;Insgesamt kann ich nur hoffen, dass der Konkurrenzdruck zunimmt und Hosteurope irgendwann eine Unterstützung für LetsEncrypt direkt einbaut. Ob das so schnell passiert, wohl eher nicht, da man ja selbst SSL-Zertifikate anbietet.&lt;/p&gt;
 
+&lt;h3 id=&quot;update-29012017&quot;&gt;Update 29.01.2017&lt;/h3&gt;
+
+&lt;p&gt;Inzwischen hat Hosteurope die Situation geringfügig verbessert. Neben dem globalen Template, kann man jetzt für jede Domain ein eigenes Zertifikat hochladen. Allerdings ist das erste Zertifikat immer noch global und für alle Domains gültig. In der Praxis hat dies zumindest den Vorteil, dass man nun die Zertifikate unabhängig voneinander erstellen und hochladen kann.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2016/11/he_ssl_update.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
 </description>
       <pubDate>Fri, 25 Nov 2016 18:00:00 +0100</pubDate>
       <dc:date>2016-11-25T18:00:00+01:00</dc:date>
