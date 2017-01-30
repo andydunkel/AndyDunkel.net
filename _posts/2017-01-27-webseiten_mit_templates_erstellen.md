@@ -44,7 +44,7 @@ Ein wenig Handarbeit ist immer noch angesagt. Bilder austauschen, Design und Far
 
 Dies ist auch der Tipp den Leute von mir bekommen, wenn diese eine Webseite erstellen möchten. Zuerst sollte man sich Gedanken machen, was man genau erstellen möchte. Einen Blog? Eine Webseite, welche die Firma vorstellt? Einen Online-Shop? Für alle diese Dinge gibt es fertige Lösungen und Software die nur auf dem Webspace installiert werden muss. Zahlreiche Webhoster bieten die Installation auch gleich mit an. Hier klickt man im Admin-Bereich einfach Wordpress installieren an und bekommt die Anwendung komplett installiert.
 
-Anschließend passt man das Design an und füllt die Webseite mit Inhalt. Fertig ist der eigene Internetauftritt. Statt einem teueren Webdesigner, kann man fertige Templates auf <a href="https://www.templatemonster.com/de" target="_blank">spezialisierten Webseiten </a>herunterladen und auch kaufen. Meist ist man bereits mit zweistelligen Preisen dabei. Teilweise werden gegen Aufpreis auch weitere Dienste mit angeboten, wie Installation, Anpassung. Hier muss man abwägen, ob man das wahrnimmt oder selbst macht.
+Anschließend passt man das Design an und füllt die Webseite mit Inhalt. Fertig ist der eigene Internetauftritt. Statt einem teueren Webdesigner, kann man fertige Templates auf spezialisierten Webseiten herunterladen und auch kaufen. Meist ist man bereits mit zweistelligen Preisen dabei. Teilweise werden gegen Aufpreis auch weitere Dienste mit angeboten, wie Installation, Anpassung. Hier muss man abwägen, ob man das wahrnimmt oder selbst macht.
 
 ## Fazit
 
