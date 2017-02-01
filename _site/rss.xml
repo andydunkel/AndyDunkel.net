@@ -8,7 +8,40 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Sat, 28 Jan 2017 18:00:00 +0100</pubDate>
+    <pubDate>Wed, 01 Feb 2017 18:00:00 +0100</pubDate>
+    <item>
+      <title>ResXManager - Übersetzungstool für .net Anwendungen</title>
+      <link>http://andydunkel.net/coding/programmierung/2017/02/01/02-resxmanager_fuer_c_charp.html</link>
+      <description>&lt;p&gt;Die Übersetzung von .net-Anwendungen ist in Visual Studio bereits ganz gut umgesetzt. Ich hatte bereits darüber geschrieben:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html&quot;&gt;C#-Anwendungen mehrsprachig gestalten&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.andydunkel.net/coding/2016/12/15/wpf_anwendungen_mehrsprachig.html&quot;&gt;WPF-Anwendungen mehrsprachig&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Allerdings gibt es auch ein paar Schattenseiten. Die Übersetzungen sind in diverse Resourcendateien verteilt. Mit Visual Studio ist das Bearbeiten einfach möglich. Will man Übersetzungen extern machen lassen, ist das schwierig.&lt;/p&gt;
+
+&lt;p&gt;Auch mehrere Sprachen gleichzeitig zu übersetzen ist umständlich. Man muss jede Resourcendatei öffnen, die Texte anlegen und übersetzen.&lt;/p&gt;
+
+&lt;p&gt;In diese Bresche springt das kostenlose Plugin &lt;a href=&quot;https://resxresourcemanager.codeplex.com/&quot;&gt;ResXManager&lt;/a&gt;. Es sammelt die Resourcen aus dem gesamten Projekt zusammen, welche anschließend in einer Liste gleich in alle Sprachen übersetzt werden kann. Auch werden fehlende Übersetzungen gleich farblich markiert. Somit können fehlende Texte und Lücken schnell indentifiziert werden.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2017/2/resx_1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Export und späterer Import mit Excel ist möglich. Damit kann man die Übersetzungen jemand anderem überlassen.&lt;/p&gt;
+
+&lt;p&gt;Wer, wie ich, die Übersetzungen selbst machen muss, freut sich über Integration von Übersetzungsdiensten, wie Bing. Mit diesen kann man die Übersetzung ermitteln lassen. Man muss anschließend nur die Übersetzung überprüfen, sofern man der jeweiligen Sprache mächtig ist. Zumindest erleichtert dies schonmal jede Menge Arbeit.&lt;/p&gt;
+
+&lt;p&gt;In jedem Fall eine gute Erweiterung für Visual Studio. Sie erleichtert den Umgang mit Übersetzungen enorm. Kostenlos ist das Plugin auch noch. Perfekt.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://resxresourcemanager.codeplex.com/&quot;&gt;Hier geht es zur Webseite&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager&quot;&gt;Download für Visual Studio im Marketplace&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+      <pubDate>Wed, 01 Feb 2017 18:00:00 +0100</pubDate>
+      <dc:date>2017-02-01T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Webseiten mit Templates erstellen</title>
       <link>http://andydunkel.net/webdesign/webseiten/meinung/2017/01/28/webseiten_mit_templates_erstellen.html</link>
@@ -40,7 +73,7 @@
 
 &lt;p&gt;Dies ist auch der Tipp den Leute von mir bekommen, wenn diese eine Webseite erstellen möchten. Zuerst sollte man sich Gedanken machen, was man genau erstellen möchte. Einen Blog? Eine Webseite, welche die Firma vorstellt? Einen Online-Shop? Für alle diese Dinge gibt es fertige Lösungen und Software die nur auf dem Webspace installiert werden muss. Zahlreiche Webhoster bieten die Installation auch gleich mit an. Hier klickt man im Admin-Bereich einfach Wordpress installieren an und bekommt die Anwendung komplett installiert.&lt;/p&gt;
 
-&lt;p&gt;Anschließend passt man das Design an und füllt die Webseite mit Inhalt. Fertig ist der eigene Internetauftritt. Statt einem teueren Webdesigner, kann man fertige Templates auf &lt;a href=&quot;https://www.templatemonster.com/de&quot; target=&quot;_blank&quot;&gt;spezialisierten Webseiten &lt;/a&gt;herunterladen und auch kaufen. Meist ist man bereits mit zweistelligen Preisen dabei. Teilweise werden gegen Aufpreis auch weitere Dienste mit angeboten, wie Installation, Anpassung. Hier muss man abwägen, ob man das wahrnimmt oder selbst macht.&lt;/p&gt;
+&lt;p&gt;Anschließend passt man das Design an und füllt die Webseite mit Inhalt. Fertig ist der eigene Internetauftritt. Statt einem teueren Webdesigner, kann man fertige Templates auf spezialisierten Webseiten herunterladen und auch kaufen. Meist ist man bereits mit zweistelligen Preisen dabei. Teilweise werden gegen Aufpreis auch weitere Dienste mit angeboten, wie Installation, Anpassung. Hier muss man abwägen, ob man das wahrnimmt oder selbst macht.&lt;/p&gt;
 
 &lt;h2 id=&quot;fazit&quot;&gt;Fazit&lt;/h2&gt;
 
@@ -8160,6 +8193,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2017-01-28T18:00:00+01:00</dc:date>
+    <dc:date>2017-02-01T18:00:00+01:00</dc:date>
   </channel>
 </rss>

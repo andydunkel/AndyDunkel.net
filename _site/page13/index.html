@@ -157,6 +157,67 @@
      
 		
 		<h1>
+		  <a href="/linux/2014/12/02/ubuntu_owncloud_wurde_entfernt.html">Owncloud - automatische Deinstallation unter Ubuntu und Passwort zurücksetzen</a>
+		</h1>
+		  <p class="small">Posted on 02 December 2014 by Andy</p>
+		  <p><p>Das es unter Linux ab und zu mal etwas Gefrickel ist, diverse Dinge und Dienste einzurichten und in Betrieb zu halten ist ja nix neues. Für die Synchronisierung von Kontakten und Kalender verwende ich Owncloud. Dieses lief anfangs auf einem Raspberry Pi, mittlerweile auf einem etwas größeren Server der mit Ubuntu arbeitet.</p>
+
+<p>Ich war auch einigermaßen froh, dass sich unter Ubuntu die Owncloud-Software direkt mit “apt-get install owncloud” einrichten ließ. Bis vor ein paar Tagen.
+Da kam ich auf die Idee, dass man ja mal die neuesten Updates einspielen kann. Eigentlich Routine. 
+Im Laufe der Einrichtung wurde mir dann lapidar mitgeteilt, dass in der installierten Version von Owncloud eine Sicherheitslücke vorhanden ist und man Owncloud deswegen einfach deinstalliert hat.</p>
+
+<p><strong>Bravo!</strong></p>
+
+<p>Der Aufruf im Browser brachte die Gewissheit, in der Tat war Owncloud einfach weg. IPhone und Thunderbird synchronisierten sich auch gleich brav und so leerten sich Kontakte und Kalender auf den Geräten. Auch war nicht klar, ob die Daten auch gleich mit “deinstalliert” worden sind.</p>
+
+<p>Nachdem der erste Ärger verflogen war,  machte ich mich daran Owncloud neu zu installieren. Dies gelang auch recht flott. Allerdings begrüßte mich die neueste Version mit dem Assistenten zur Neueinrichtung. Im Besten Fall wären also alle Daten weg?</p>
+
+<p>Zum Glück nicht.</p>
+
+<h2 id="daten-einspielen">Daten einspielen</h2>
+
+<p>Ob ich nur Glück hatte oder ob die Daten auch einfach hätten überschrieben werden können und damit weg wären, kann ich leider gar nicht mehr sagen. In jedem Fall lagen die bisherigen Daten unter:</p>
+
+<pre><code>/var/lib/owncloud/data
+</code></pre>
+
+<p>Die neue Installation legte die Datenbank jedoch unter:</p>
+
+<pre><code>/var/www/owncloud/data
+</code></pre>
+
+<p>an. Also habe ich einfach das bisherige Datenverzeichnis einfach über die neuen drüberkopiert. Die Datenbank wurde auch brav erkannt beim nächsten Aufruf. Inklusive der Option zum Datenbankupgrade auf die aktuelle Version. Hier sei noch erwähnt, dass ich SQLite als Datenbank verwende. Bei MySQL ist das nochmal etwas anders.</p>
+
+<p>Allerdings konnte ich mich danach nicht mehr einloggen. Trotz richtiger Zugangsdaten.</p>
+
+<h2 id="passwort-zurcksetzen">Passwort zurücksetzen</h2>
+
+<p>Prinzipiell kann man zwar das Passwort via E-Mail zurücksetzen, allerdings habe ich bei meinem Account dummerweise keine E-Mail-Adresse hinterlegt. 
+Zum Glück gibt es die Möglichkeit das Passwort auf der Kommandozeile zurückzusetzen. Hierfür wechselt man in das Owncloud-Verzeichnis:</p>
+
+<pre><code>cd /var/www/owncloud/
+</code></pre>
+
+<p>Mit dem folgenden Befehl kann das Passwort neu gesetzt werden:</p>
+
+<pre><code>sudo ./occ user:resetpassword admin
+</code></pre>
+
+<p>Bei mir war die Datei standardmäßig “nicht ausführbar”, was zu einer Fehlermeldung führte. Hier hilft dann folgender Befehl weiter:</p>
+
+<pre><code>sudo chmod +x occ
+</code></pre>
+
+<h2 id="fazit">Fazit</h2>
+
+<p>Auch wenn nun alles wieder lief, ist es natürlich sehr nervig, wenn Software einfach so ohne großartige Benutzerinteraktion bei einem Update deinstalliert wird. 
+Für mich war es in erster Linie nervig, da nur ich die Synchronisation mit dem Server nutze. Wer das ganze für seine Familie oder gar professionell nutzt steht da erstmal recht dumm da und darf sich mit sicher schnell mit jeder Menge Supportanfragen herumärgern. Zumindest eine Abfrage ob die Software wirklich entfernt werden soll wäre hier hilfreich.</p>
+</p>		
+		  <p class="small">Tagged: Owncloud by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/sonstiges/2014/11/21/sealife_muenchen.html">Sealife München</a>
 		</h1>
 		  <p class="small">Posted on 21 November 2014 by Andy</p>
@@ -391,31 +452,6 @@ Setting up AirSonos for Kitchen {192.168.1.108:1400}
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/coding/2014/08/05/icon_scaling_for_osx_ios_and_windows.html">Icon scaling tool for OSX, IOS, Android and Windows</a>
-		</h1>
-		  <p class="small">Posted on 05 August 2014 by Andy</p>
-		  <p><p>Some time ago me and my friend finished some apps for IOS. One problem is, when you are finished with programming, a lot of work still needs to be done in order to publish the app: writing the decription for the App Store, create screenshots and of course create an icon for the app.</p>
-
-<p>Especially for IOS apps creating the icon and use it in XCode is not that easy. A lot of different sizes need to be created:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/08/icon1.png" alt="image" /></p>
-
-<p>Doing that manually involves a lot of work with your favorite image editing tool. So we created a small software tool for that. The Icon Scaler:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/08/icon2.png" alt="image" /></p>
-
-<p>Just drop your icon image into the tool, select the output formats and click the export button. The tool can create icons for IOS (iPhone and iPad), OSX, Android and Windows.</p>
-
-<p>The app is available in the <a href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=866537106">Mac App Store</a>.</p>
-
-<p>If you only need to resize icons for IOS and OSX you can have a look to our tool <a href="https://itunes.apple.com/de/app/asset-scaler/id901167651?mt=12">Asset Scaler</a>.</p>
-
-</p>		
-		  <p class="small">Tagged: Icon, Assets, and xcassets by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -455,7 +491,7 @@ Setting up AirSonos for Kitchen {192.168.1.108:1400}
 		<section>
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (28)</a></li>
+<li class='category'><a href='/categories/coding/'>coding (29)</a></li>
 <li class='category'><a href='/categories/computer/'>computer (9)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
@@ -479,7 +515,7 @@ Setting up AirSonos for Kitchen {192.168.1.108:1400}
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
-<li class='category'><a href='/categories/programmierung/'>programmierung (1)</a></li>
+<li class='category'><a href='/categories/programmierung/'>programmierung (2)</a></li>
 <li class='category'><a href='/categories/radfahren/'>radfahren (31)</a></li>
 <li class='category'><a href='/categories/raspberry/'>raspberry (3)</a></li>
 <li class='category'><a href='/categories/repair/'>repair (1)</a></li>
