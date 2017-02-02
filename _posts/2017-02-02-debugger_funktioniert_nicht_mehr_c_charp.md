@@ -1,7 +1,7 @@
 ---
 author: admin
 comments: true
-date: 2017-02-01 17:00:00+00:00
+date: 2017-02-02 17:00:00+00:00
 layout: post
 slug: debugger_geht_nicht_mehr_c_sharp
 title: 'Visual Studio - Debugger geht nicht mehr'
