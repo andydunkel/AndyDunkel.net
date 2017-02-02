@@ -8,7 +8,28 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Wed, 01 Feb 2017 18:00:00 +0100</pubDate>
+    <pubDate>Thu, 02 Feb 2017 18:00:00 +0100</pubDate>
+    <item>
+      <title>Visual Studio - Debugger geht nicht mehr</title>
+      <link>http://andydunkel.net/coding/programmierung/2017/02/02/debugger_funktioniert_nicht_mehr_c_charp.html</link>
+      <description>&lt;p&gt;Was tun, wenn der Debugger nicht richtig funktioniert? Ich hatte das Problem, dass der Debugger innerhalb Threads und in Verbindung mit Code aus verschiedenen Projekten nicht mehr wollte. Es wurden keine Autos, keien Lokals und auch keine überwachten Variablen mehr angezeigt.&lt;/p&gt;
+
+&lt;p&gt;Stattdessen wurde nur der Fehler “Internal error in the expression evaluator” angezeigt. Auch mit der Maus über der Variable bleiben half nix.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2017/2/debugger1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Den genauen Grund was da los ist, habe ich nicht herausgefunden. Aber ich habe es zumindest wieder zum Laufen bekommen. In meinem Fall musste ich “Used Managed Compatibility Mode” in den Einstellungen des Debuggers aktivieren:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2017/2/debugger1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Und siehe da, schon ging es wieder:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2017/2/debugger1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+      <pubDate>Thu, 02 Feb 2017 18:00:00 +0100</pubDate>
+      <dc:date>2017-02-02T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>ResXManager - Übersetzungstool für .net Anwendungen</title>
       <link>http://andydunkel.net/coding/programmierung/2017/02/01/resxmanager_fuer_c_charp.html</link>
@@ -37,27 +58,6 @@
   &lt;li&gt;&lt;a href=&quot;https://resxresourcemanager.codeplex.com/&quot;&gt;Hier geht es zur Webseite&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager&quot;&gt;Download für Visual Studio im Marketplace&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-</description>
-      <pubDate>Wed, 01 Feb 2017 18:00:00 +0100</pubDate>
-      <dc:date>2017-02-01T18:00:00+01:00</dc:date>
-    </item>
-    <item>
-      <title>Visual Studio - Debugger geht nicht mehr</title>
-      <link>http://andydunkel.net/coding/programmierung/2017/02/01/debugger_funktioniert_nicht_mehr_c_charp.html</link>
-      <description>&lt;p&gt;Was tun, wenn der Debugger nicht richtig funktioniert? Ich hatte das Problem, dass der Debugger innerhalb Threads und in Verbindung mit Code aus verschiedenen Projekten nicht mehr wollte. Es wurden keine Autos, keien Lokals und auch keine überwachten Variablen mehr angezeigt.&lt;/p&gt;
-
-&lt;p&gt;Stattdessen wurde nur der Fehler “Internal error in the expression evaluator” angezeigt. Auch mit der Maus über der Variable bleiben half nix.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/uploads/2017/2/debugger1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Den genauen Grund was da los ist, habe ich nicht herausgefunden. Aber ich habe es zumindest wieder zum Laufen bekommen. In meinem Fall musste ich “Used Managed Compatibility Mode” in den Einstellungen des Debuggers aktivieren:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/uploads/2017/2/debugger1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Und siehe da, schon ging es wieder:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/uploads/2017/2/debugger1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 </description>
       <pubDate>Wed, 01 Feb 2017 18:00:00 +0100</pubDate>
@@ -8214,6 +8214,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2017-02-01T18:00:00+01:00</dc:date>
+    <dc:date>2017-02-02T18:00:00+01:00</dc:date>
   </channel>
 </rss>
