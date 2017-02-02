@@ -157,6 +157,33 @@
      
 		
 		<h1>
+		  <a href="/eclipse/java/2011/06/28/okpressed-in-jface-dialog.html">Java/RCP - okPressed in JFace dialog</a>
+		</h1>
+		  <p class="small">Posted on 28 June 2011 by Andy</p>
+		  <p><p>Sometimes JFace and RCP are not straightforward. At least not for me. <a href="http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile5.png"><img src="http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile5.png" alt="" /></a></p>
+
+<p>For example the JFace dialog:</p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2011/06/rcp_jface_dlg.png"><img src="http://andydunkel.net/assets/uploads/2011/06/rcp_jface_dlg.png" alt="" /></a></p>
+
+<p>It features an OK and Cancel button by default. If you want to do something when the user clicks the OK button, for example save the values from control elements to variables, you can overwrite the “okPressed” method:</p>
+
+<pre><code>	@Override
+	protected void okPressed() {
+		nameString = textBoxName.getText();
+		super.okPressed();
+	}
+</code></pre>
+
+<p>When the OK button is pressed, the “okPressed” method is executed. The “open” method of the dialog returns <em>IDialogConstants.OK_ID</em> in that case (instead of SWT.OK).</p>
+
+<p>Of course there is also a “cancelPressed” method for the Cancel button</p>
+</p>		
+		  <p class="small">Tagged: cancelPressed, Dialog, JFace, OK, and okPressed by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/coding/2011/06/27/cread-stdout-from-a-console-application.html">C#–Read STDOUT from a console application</a>
 		</h1>
 		  <p class="small">Posted on 27 June 2011 by Andy</p>
@@ -288,44 +315,6 @@ private void UpdateText(string text)
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/java/2011/06/22/java-check-if-your-code-is-running-in-eclipse.html">Java: Check if your code is running in Eclipse</a>
-		</h1>
-		  <p class="small">Posted on 22 June 2011 by Andy</p>
-		  <p><p>Sometimes, for example during debugging, it is useful to check if your code is running from the <a href="http://eclipse.org/">Eclipse</a> IDE to exclude certain code from execution.</p>
-
-<p>How can this be done? Here is an example:</p>
-
-<pre><code>public class mainClass {
-
-	public static void main(String[] args) {
-		String inEclipse = System.getProperty("ineclipse");
-		
-		if ((inEclipse == null) || (!inEclipse.equals("true"))) {
-			System.out.println("Not running from Eclipse");
-			System.out.println(inEclipse);			
-		} else {
-			System.out.println("Running from Eclipse");
-			System.out.println(inEclipse);
-		}			
-	}
-}
-</code></pre>
-
-<!-- more -->
-
-<p>The other thing we need to do here is to set the VM argument “ineclipse” in the “Run Configurations”:</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2011/06/image5.png"><img src="http://andydunkel.net/assets/uploads/2011/06/image_thumb.png" alt="image" /></a></p>
-
-<p>Here is the output from the example from within Eclipse and from the command line:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/06/compare_output.png" alt="compare_output" /></p>
-</p>		
-		  <p class="small">Tagged: Check, Command Line, Debugging, Eclipse, Java, and Running by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -365,7 +354,7 @@ private void UpdateText(string text)
 		<section>
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (29)</a></li>
+<li class='category'><a href='/categories/coding/'>coding (30)</a></li>
 <li class='category'><a href='/categories/computer/'>computer (9)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
@@ -389,7 +378,7 @@ private void UpdateText(string text)
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
-<li class='category'><a href='/categories/programmierung/'>programmierung (2)</a></li>
+<li class='category'><a href='/categories/programmierung/'>programmierung (3)</a></li>
 <li class='category'><a href='/categories/radfahren/'>radfahren (31)</a></li>
 <li class='category'><a href='/categories/raspberry/'>raspberry (3)</a></li>
 <li class='category'><a href='/categories/repair/'>repair (1)</a></li>
@@ -419,7 +408,7 @@ private void UpdateText(string text)
   
     <a href="/page45" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 46 of 52</span>
+  <span class="page_number ">Page: 46 of 53</span>
   
     <a href="/page47" class="next">Next</a>
   

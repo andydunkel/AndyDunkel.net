@@ -157,83 +157,29 @@
      
 		
 		<h1>
-		  <a href="/sonstiges/2011/07/19/die-guten-alten-zeiten.html">Die guten alten Zeiten</a>
+		  <a href="/eclipse/java/2011/04/28/get-plugin-path.html">Get plugin path </a>
 		</h1>
-		  <p class="small">Posted on 19 July 2011 by Andy</p>
-		  <p>
+		  <p class="small">Posted on 28 April 2011 by Andy</p>
+		  <p><p>This snippets gets the local folder for a plugin:</p>
+
+<pre><code>public static File getPluginFolder() {
+	if(pluginFolder == null) {
+	    URL url = Platform.getBundle("my.plugin.id").getEntry("/");
+	    try {
+	        url = Platform.resolve(url);
+	    }
+	    catch(IOException ex) {
+	        ex.printStackTrace();
+	    }
+	    pluginFolder = new File(url.getPath());
+	}
+	
+	return pluginFolder;
+}
+</code></pre>
+
 </p>		
-		  <p class="small">Tagged: Amiga and Games by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/java/2011/07/18/eclipse-rcp-forms-section-not-expanded.html">Eclipse RCP: Forms Section not expanded</a>
-		</h1>
-		  <p class="small">Posted on 18 July 2011 by Andy</p>
-		  <p><p>Sometimes strange things happen in Eclipse. Like this one in <a href="http://www.eclipse.org/windowbuilder/">WindowBuilder</a>, the best tool for designing GUIs in Eclipse (<a href="http://twitter.com/#!/hrb79/status/92941011923374080">via</a>).</p>
-
-<p>I created a Forms API section in the program, but when I executed the program, the section was not expanded, not content was shown:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image15.png" alt="image" /></p>
-
-<p>In the properties editor, expanded was set to true. What to do??</p>
-
-<!-- more -->
-
-<p>The solution is simple, it appears that the order of commands in the source code has some importance. The setExpanded Method must be called after the setClient method of the Section.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image16.png" alt="image" /></p>
-
-<p>After that, the section is expanded properly:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/07/image17.png" alt="image" /></p>
-</p>		
-		  <p class="small">Tagged: API, expanded, Forms, Section, setExpanded, and WindowBuilder by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/ireland/2011/07/18/ireland-july-2011.html">Ireland-July 2011</a>
-		</h1>
-		  <p class="small">Posted on 18 July 2011 by Andy</p>
-		  <p><p>Well, Ireland again. Short trip, we where over for 5 days (from Tuesday to Saturday). Same procedure... </p>
-<p>Short stop in the Airbräu at the Munich AirPort, then flying to Cork. In Cork visiting our local pubs, having some Beamish ... the usual.<br />Despite the risk that Anthony is even more convinced that this is just holidays for us, here is the video and some pictures:</p>
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:9383fbd8-62bb-4acc-a619-9a54c429fbb1" class="wlWriterEditableSmartContent"><div><object width="633" height="356"><param name="movie" value="http://www.youtube.com/v/8TEqwf9EcEI?hl=en&amp;hd=1" /><embed src="http://www.youtube.com/v/8TEqwf9EcEI?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="633" height="356" /></object></div></div>
-<p><a href="http://andydunkel.net/assets/uploads/2011/07/IMAG0300.jpg"><img style="background-image: none; border-right-width: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="IMAG0300" border="0" alt="IMAG0300" src="http://andydunkel.net/assets/uploads/2011/07/IMAG0300_thumb.jpg" width="644" height="387" /></a></p>
-<!--more-->
-<p><a href="http://andydunkel.net/assets/uploads/2011/07/IMAG0282.jpg"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="IMAG0282" border="0" alt="IMAG0282" src="http://andydunkel.net/assets/uploads/2011/07/IMAG0282_thumb.jpg" width="644" height="387" /></a><a href="http://andydunkel.net/assets/uploads/2011/07/IMAG0297.jpg"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="IMAG0297" border="0" alt="IMAG0297" src="http://andydunkel.net/assets/uploads/2011/07/IMAG0297_thumb.jpg" width="644" height="387" /></a><a href="http://andydunkel.net/assets/uploads/2011/07/IMAG0299.jpg"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="IMAG0299" border="0" alt="IMAG0299" src="http://andydunkel.net/assets/uploads/2011/07/IMAG0299_thumb.jpg" width="644" height="387" /></a></p>
-</p>		
-		  <p class="small">Tagged: 2011, Beamish, Ireland, and July by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/radfahren/2011/07/17/rennradtour-nach-speiden10-07-2011.html">Rennradtour nach Speiden–10.07.2011</a>
-		</h1>
-		  <p class="small">Posted on 17 July 2011 by Andy</p>
-		  <p><p>Diesmal ging es, endlich mal wieder, mit Rennrad nach Speiden ins <a href="http://www.koessel-braeu.de/" target="_blank">Sudhaus</a>. Unterwegs mussten wir aufgrund von Regen einen ungeplanten Zwischenstopp in einem Biergarten einlegen.</p>
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:eb1da107-e9e4-43b6-9366-1149b33572b8" class="wlWriterEditableSmartContent"><div><object width="607" height="341"><param name="movie" value="http://www.youtube.com/v/K88PNcbiZ5A?hl=en&amp;hd=1" /><embed src="http://www.youtube.com/v/K88PNcbiZ5A?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="607" height="341" /></object></div></div>
-<!--more-->
-<p><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="sudhaus" border="0" alt="sudhaus" src="http://andydunkel.net/assets/uploads/2011/07/sudhaus.png" width="559" height="328" /> <iframe height="400" marginheight="0" src="http://maps.google.de/maps/ms?msa=0&amp;msid=208324790998598431494.0004a7bb4436bc61744fd&amp;ie=UTF8&amp;t=h&amp;ll=47.768868,10.664978&amp;spn=0.369208,0.822601&amp;z=10&amp;output=embed" frameborder="0" width="600" marginwidth="0" scrolling="no"></iframe><br /><small><a style="text-align: left; color: #0000ff" href="http://maps.google.de/maps/ms?msa=0&amp;msid=208324790998598431494.0004a7bb4436bc61744fd&amp;ie=UTF8&amp;t=h&amp;ll=47.768868,10.664978&amp;spn=0.369208,0.822601&amp;z=10&amp;source=embed">2011-07-10 13:07 - Sudhaustour</a> auf einer größeren Karte anzeigen</small>  <p>&nbsp; <p>Gesamtentfernung: 101,20 km (62,9 mi)<br />Gesamtzeit: 7:23:19<br />Zeit in Bewegung: 4:53:59<br />Durchschnitt in Bew.: 20,65 km/h (12,8 mi/h)<br />Max. Geschwindigkeit: 45,04 km/h (28,0 mi/h)<br />Niedrigste Höhenlage: 700 m (2295 Fuß)<br />Höchste Höhenlage: 916 m (3004 Fuß)<br />Höhengewinn: 896 m (2939 Fuß)<br />Maximale Steigung: 10 %<br />Minimale Steigung: -10 %<br />Aufgezeichnet am: So. Jul 10 13:07:04 MESZ 2011
-</p></p></p>
-</p>		
-		  <p class="small">Tagged: Rennrad, Speiden, and Sudhaus by Andy</p>
-		  <hr>
-		  
-		
-		<h1>
-		  <a href="/gadgets/tools/2011/07/16/android-welche-gerte-sind-im-netzwerk.html">Android: Welche Geräte sind im Netzwerk?</a>
-		</h1>
-		  <p class="small">Posted on 16 July 2011 by Andy</p>
-		  <p><p>Heute im <a href="http://www.ekiwi.de">eKiwi.de</a> Blog vorgestellt, eine App zum <a href="http://blog.ekiwi.de/?p=583">Anzeigen der Geräte im aktuellen Netzwerk</a>. Was ähnliches gibt es auch als kostenlose App für Android, <a href="https://market.android.com/details?id=com.overlook.android.fing">Overlook Fing</a>:</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2011/07/image12.png"><img src="http://andydunkel.net/assets/uploads/2011/07/image_thumb4.png" alt="image" /></a></p>
-
-<p>Neben der Anzeige wer und was sich alles im aktuellen Netzwerk, bzw. WLAN tummelt, gibt es noch einen Portscanner, Ping und Traceroute.</p>
-
-<p>Sicher eine interessante App für das nächste offene WLAN. <img src="http://andydunkel.net/assets/uploads/2011/07/wlEmoticon-smile3.png" alt="Smiley" /></p>
-</p>		
-		  <p class="small">Tagged: Android, Network, Portscanner, and Scanner by Andy</p>
+		  <p class="small">Tagged: Plugin folder eclipse by Andy</p>
 		  <hr>
 		  
 		
@@ -328,11 +274,11 @@
 <!-- Pagination links -->
 <div class="pagination">
   
-    <a href="/page41" class="previous">Previous</a>
+    <a href="/page52" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 42 of 53</span>
+  <span class="page_number ">Page: 53 of 53</span>
   
-    <a href="/page43" class="next">Next</a>
+    <span class="next ">Next</span>
   
 </div>
 
