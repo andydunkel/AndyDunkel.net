@@ -11,7 +11,7 @@ categories:
 tags:
 - Csharp
 - Coding
-- Internatiolization
+- Debugger
 
 ---
 
