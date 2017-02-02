@@ -157,6 +157,53 @@
      
 		
 		<h1>
+		  <a href="/eclipse/2013/08/29/set-workspace-location-for-rcp-application.html">Set workspace location for RCP application</a>
+		</h1>
+		  <p class="small">Posted on 29 August 2013 by Andy</p>
+		  <p><p>In my Eclipse / RCP application the .metadata directory was always created in the working directory. This worked fine when I was opening the application normally.</p>
+
+<p>However, I needed file associations, so the user can just double click on file somewhere on his computer and open the file.</p>
+
+<p>If you do this, the working directory is set to the directory where the file is located. This resulted in the creation of a .metadata directy at the same location. Brrr…</p>
+
+<p>Since I dont like the creation of .metadata in the working directory either, because thats usually the application folder and not writeable, this needed to be addressed anyway.</p>
+
+<p>So I looked for a solution to change the workspace location for the application.</p>
+
+<p>To achieve this, two steps are neccessary. First we add an additional parameter in the Run configuration:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/08/working_dir1.png" alt="Working dir1" /></p>
+
+<p> </p>
+
+<p>The paramater is <em>-data @noDefault</em> and makes it possible for us to set up our own location.</p>
+
+<p>Which we do in the *Application class of our application:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/08/working_dir2.png" alt="Working dir2" /></p>
+
+<p> </p>
+
+<p>Here is the example code for copy and paste:</p>
+
+<pre><code>try {
+	Location instanceLoc = Platform.getInstanceLocation();
+
+	// set location to c:\temp
+	instanceLoc.set(new URL("file", null, "c:\\temp"), false);
+}
+catch (Exception err) {
+	System.out.println(err.getMessage());
+}
+</code></pre>
+
+<p>In the example we just use c:\temp, but you usually might want to set this path to the <a href="http://codedump.ekiwi.de/?p=46">application data</a> folder on the system.</p>
+</p>		
+		  <p class="small">Tagged: appdata, RCP, and Workspace by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/tools/2013/08/28/backups-mit-grsync.html">Backups mit Grsync</a>
 		</h1>
 		  <p class="small">Posted on 28 August 2013 by Andy</p>
@@ -261,26 +308,6 @@ Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;'/Users/d
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/tools/2013/08/07/mou-markdown-editor-fur-osx.html">Mou - Markdown Editor für OSX</a>
-		</h1>
-		  <p class="small">Posted on 07 August 2013 by Andy</p>
-		  <p><p>Markdown ist meine neue “<a href="http://andydunkel.net/tools/2013/06/16/markdown.html">Lieblingsauszeichnungssprache</a>” für Dokumente aller Art geworden. In der täglichen Arbeit fällt viel an was niedergeschrieben werden will: Notizen, kleinere und größere Dokumentationen. Da es im Prinzip nur Textdateien sind, sind diese auch sehr leicht auffindbar mittels Spotlight oder unter Windows mit der Desktop-Search.</p>
-
-<p>Evernote ist deswegen vor einiger Zeit von meinem Rechner geflogen.</p>
-
-<p>Als Editor verwende ich unter MacOS die Anwenung “<a href="http://mouapp.com/">Mou</a>”. Die Software ist derzeit kostenlos, Spende erwünscht. Ansonsten bietet die Software das klassische 2-Splaten Layout. Links der reine Text und rechts die Vorschau.</p>
-
-<p><a href="http://mouapp.com/"><img src="http://andydunkel.net/assets/uploads/2013/08/Screen-Shot-2013-08-07-at-9.36.25-PM.png" alt="Screen Shot 2013 08 07 at 9 36 25 PM" /></a></p>
-
-<p>Die Software bietet die üblichen Funktionen die man von einem Markdown-Editor erwartet: einen schönen Editor mit jeder Menge hilfreicher Shortcuts, HTML- und PDF-Export, Stylesheets, Themes etc.</p>
-
-<p>Meiner Meinung nach der momentan beste Markdown-Editor für OSX.</p>
-</p>		
-		  <p class="small">Tagged: Markdown by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -320,7 +347,7 @@ Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;'/Users/d
 		<section>
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (29)</a></li>
+<li class='category'><a href='/categories/coding/'>coding (30)</a></li>
 <li class='category'><a href='/categories/computer/'>computer (9)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
@@ -344,7 +371,7 @@ Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;'/Users/d
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
-<li class='category'><a href='/categories/programmierung/'>programmierung (2)</a></li>
+<li class='category'><a href='/categories/programmierung/'>programmierung (3)</a></li>
 <li class='category'><a href='/categories/radfahren/'>radfahren (31)</a></li>
 <li class='category'><a href='/categories/raspberry/'>raspberry (3)</a></li>
 <li class='category'><a href='/categories/repair/'>repair (1)</a></li>
@@ -374,7 +401,7 @@ Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;'/Users/d
   
     <a href="/page18" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 19 of 52</span>
+  <span class="page_number ">Page: 19 of 53</span>
   
     <a href="/page20" class="next">Next</a>
   
