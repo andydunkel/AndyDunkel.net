@@ -8,7 +8,33 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Thu, 02 Feb 2017 18:00:00 +0100</pubDate>
+    <pubDate>Sun, 05 Feb 2017 18:00:00 +0100</pubDate>
+    <item>
+      <title>Mobilität Januar 2017</title>
+      <link>http://andydunkel.net/mobilitaet/umwelt/2017/02/05/mobilitaet_januar_2017.html</link>
+      <description>&lt;p&gt;Kurze Zusammenfassung der Mobiblität vom Januar. Viel Auto, wenig Rad. Mehr lässt sich zu dem Monat nicht sagen. Ich denke das wird sich im Februar noch nicht wesentlich ändern.&lt;/p&gt;
+
+&lt;h3 id=&quot;fahrrad&quot;&gt;Fahrrad&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gesamt km: 36 km&lt;/li&gt;
+  &lt;li&gt;Fahrten: 10&lt;/li&gt;
+  &lt;li&gt;Durchschnitt pro Fahrt: 3,6 km&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;auto&quot;&gt;Auto&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gesamt km: 459&lt;/li&gt;
+  &lt;li&gt;Fahrten: 22&lt;/li&gt;
+  &lt;li&gt;Durchschnitt pro Fahrt: 20,86 km&lt;/li&gt;
+  &lt;li&gt;Getankt: 34,63 Liter&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+      <pubDate>Sun, 05 Feb 2017 18:00:00 +0100</pubDate>
+      <dc:date>2017-02-05T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Visual Studio - Debugger geht nicht mehr</title>
       <link>http://andydunkel.net/coding/programmierung/2017/02/02/debugger_funktioniert_nicht_mehr_c_charp.html</link>
@@ -8214,6 +8240,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2017-02-02T18:00:00+01:00</dc:date>
+    <dc:date>2017-02-05T18:00:00+01:00</dc:date>
   </channel>
 </rss>

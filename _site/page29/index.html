@@ -157,6 +157,30 @@
      
 		
 		<h1>
+		  <a href="/coding/2012/03/21/how-to-add-files-recursively-to-innosetup.html">How to add files recursively to InnoSetup</a>
+		</h1>
+		  <p class="small">Posted on 21 March 2012 by Andy</p>
+		  <p><p>Especially with my current RCP applications I had the problem how to add all these files to the installer.</p>
+
+<p>Here is an example how to add a complete folder recursively to your InnoSetup:</p>
+
+<blockquote>
+  <p>[Files]<br />
+DestDir: {app}; Source: ..\files*; Flags: recursesubdirs</p>
+</blockquote>
+
+<p>Another hint, if you want to delete the application folder after uninstall (even if there are other files that are not uninstalled by default), add this to your setup:</p>
+
+<blockquote>
+  <p>[UninstallDelete]<br />
+Name: {app}; Type: filesandordirs</p>
+</blockquote>
+</p>		
+		  <p class="small">Tagged: InnoSetup by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html">Roomba Fehler 9–Reparaturanleitung</a>
 		</h1>
 		  <p class="small">Posted on 11 March 2012 by Andy</p>
@@ -621,17 +645,6 @@ auch ich (Ingenieur) habe mich nach ausführlichem Studium der Berichte an die R
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/sonstiges/2012/02/02/doku-hackerportrait-einer-gegenkultur.html">Doku: Hacker–Portrait einer Gegenkultur</a>
-		</h1>
-		  <p class="small">Posted on 02 February 2012 by Andy</p>
-		  <p><p>Eine kleine und interessante Dokumentation über die Anfänge des CCC und Hackern im Allgemeinen.</p>
-<p> <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:4da15fc2-1716-425a-88ef-25685d68ece6" class="wlWriterEditableSmartContent"><div><object width="651" height="365"><param name="movie" value="http://www.youtube.com/v/VAypNOTczfI?hl=en&amp;hd=1" /><embed src="http://www.youtube.com/v/VAypNOTczfI?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="651" height="365" /></object></div></div></p>
-</p>		
-		  <p class="small">Tagged: Hacker by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -691,7 +704,7 @@ auch ich (Ingenieur) habe mich nach ausführlichem Studium der Berichte an die R
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (4)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (18)</a></li>
+<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (19)</a></li>
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
@@ -706,7 +719,7 @@ auch ich (Ingenieur) habe mich nach ausführlichem Studium der Berichte an die R
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (23)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (19)</a></li>
+<li class='category'><a href='/categories/umwelt/'>umwelt (20)</a></li>
 <li class='category'><a href='/categories/webdesign/'>webdesign (4)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (3)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (6)</a></li>
