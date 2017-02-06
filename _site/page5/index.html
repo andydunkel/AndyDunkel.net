@@ -157,6 +157,102 @@
      
 		
 		<h1>
+		  <a href="/coding/tools/2016/08/13/eltexto.html">ElTexto</a>
+		</h1>
+		  <p class="small">Posted on 13 August 2016 by Andy</p>
+		  <p><p>Vor einiger Zeit habe ich eine neue Software angefangen zu programmieren. Kam schon lange nicht mehr vor, da die meiste Zeit in die Pflege von unseren anderen Produkten wie <a href="http://da-software.de/daform/daform_start.htm">DA-Formmaker</a> und <a href="http://da-software.de/dabestell/index.htm">DA-BestellFormular</a> gewandert ist.</p>
+
+<p>Ursprünglich sollte es eine Anwendung für den privaten Gebrauch werden. Hintergrund war, dass ich meine Notizgen bisher in Evernote verwaltet habe. Diese wollte ich aber lieber in meiner privaten Cloud haben.</p>
+
+<p>Meine Anforderungen waren: Notizen sollten sich hierarchisch verwalten lassen. Als Syntax sollte Markdown zum Einsatz kommen. Markdown verwende ich z.B. auch hier auf dieser Webseite zum Verfassen von Artikeln. Bilder und andere Dateien sollten sich ebenfalls leicht einbinden lassen.</p>
+
+<p>Da sich Markdown sehr leicht in HTML umwandeln lässt, könnte man die Einträge dann in der Vorschau schön formatiert und mit Bildern anschauen.</p>
+
+<p>Irgendwann wurde aus der Software dann doch etwas mehr. Es entstand <a href="http://eltexto.net/">ElTexto</a>.</p>
+
+<p><img src="/assets/uploads/2016/8/eltexto1.png" alt="" /></p>
+
+<h2 id="die-software">Die Software</h2>
+
+<p>ElTexto wurde zu einer recht universellen Anwendung. Die Anforderungen an Notizen und Webseiten sind in etwa gleich: Es gibt <a href="http://eltexto.net/Funktionen/Seitenverwaltung/index.html">Seiten/Rubriken</a>, die haben dann ggf. noch Unterseiten, welche wieder Unterseiten haben können.</p>
+
+<p>Ob der Inhalt nun eine Notiz, Unterseite einer Webseite, Eintrag einer Online-Hilfe oder einer Dokumentation ist, letztendlich egal.</p>
+
+<p>In ElTexto erstellt man also ein neues Projekt und wählt eine <a href="http://eltexto.net/Funktionen/Templates/index.html">HTML-Vorlage</a> aus. Die Vorlage dient als Basis für die ElTexto-Webseite. Natürlich lässt sich die Vorlage anpassen.</p>
+
+<p>Die Vorlagen basieren auf Bootstrap. Das hat den Vorteil, dass diese responsive sind und auch auf dem Smartphone schick aussehen.</p>
+
+<p><img src="/assets/uploads/2016/8/eltexto2.png" alt="" /></p>
+
+<h2 id="inhalte">Inhalte</h2>
+
+<p>Die Eingabe erfolgt mittels <a href="http://eltexto.net/Funktionen/Markdown/index.html">Markdown</a>. Damit kann man die Inhalte schnell eingeben, ohne sich mit HTML-Syntax auseinandersetzen zu müssen. Markdown kann zudem in jedem Texteditor bearbeitet werden.</p>
+
+<p>Z.B. um eine Überschrift in Markdown zu setzen macht man einfach eine Raute an den Zeilenanfang:</p>
+
+<pre><code># Überschrift
+</code></pre>
+
+<p>Bei Bildern war es uns wichtig, dass diese sich besonders leicht integrieren lassen. Bilder in Dateiform lassen sich mittels Drag&amp;Drop einfügen. Im Hintergrund werden diese automatisch ins Projekt kopiert.</p>
+
+<p>Viele Bilder sind bei mir Screenshots. In vielen HTML-Editorn, muss ich die <a href="http://eltexto.net/Funktionen/Bilder/index.html">Bilder</a> erstmal ins richtige Verzeichnis abspeichern und dann einbinden.</p>
+
+<p>In ElTexto sollte das direkt aus der Zwischenablage funktionieren. Bild kopieren, in ElTexto einfügen anklicken und im Hintergrund wird die Bilddatei eingebunden in automatisch ins Projekt übernommen.</p>
+
+<h2 id="export">Export</h2>
+
+<p>Hat man alle Inhalte angelegt, klickt man auf den Export-Button und schon wird die Webseite erstellt. Einen <a href="http://eltexto.net/Funktionen/FTP-Upload/index.html">FTP-Upload</a> haben wir auch eingebaut. Mit einem Klick geht die Seite dann online.</p>
+
+<p>ElTexto lässt sich damit als Webseitengenerator beschreiben. In einfach.</p>
+
+<p>Es gibt im OpenSource-Bereich ebenfalls solche Tools, z.B. Jekyll. Diese sind allerdings etwas umständlicher. Die Webseite, Vorlagen, Inhalte und Dateien müssen manuell erstellt werden und in der richtigen Struktur abgelegt werden. Anschließend generiert Jekyll daraus die Webseite. Diese muss man dann noch von Hand hochladen.</p>
+
+<p>ElTexto nimmt einem diese ganze Arbeit ab.</p>
+
+<p><img src="/assets/uploads/2016/8/eltexto3.jpg" alt="" /></p>
+
+<h3 id="makros">Makros</h3>
+
+<p>Zu den ungeliebten und fehleranfälligen Elementen einer Webseite gehören Dinge wie Navigation, Sitemap, Menüs. Man legt eine neuen Seite an, lädt dann die Webseite hoch und stellt fest, das man die Verlinkung der neuen Seite irgendwo vergessen hat.</p>
+
+<p>ElTexto nimmt diese Arbeit ab. Man fügt z.B. ein <a href="http://eltexto.net/Funktionen/Makrofunktionen/index.html">Makro</a> für eine Sitemap ein. Beim Export werden diese Elemente automatisch mit erzeugt und sind damit immer aktuell.</p>
+
+<h3 id="offene-dateistruktur">Offene Dateistruktur</h3>
+
+<p>Ich mag Software nicht, welche meine Projekte in ein propäritäres Dateiformat packt. Bei ElTexto <a href="http://eltexto.net/Funktionen/Dateistruktur/index.html">geht es offen zu</a>. Alle Inhalte sind reine Markdown- und damit Textdateien. Diese lassen sich mit jedem Texteditor bearbeiten und anzeigen. Auch ohne ElTexto. Die dazu gehörigen Dateien liegen ebenfalls im gleichen Verzeichnis wie die Markdowndatei.</p>
+
+<p>Dies erlaubt es auch, die Projekte in Subversion oder GIT abzulegen. Versionsvergleiche auf einzelne Artikel sind damit möglich.</p>
+
+<p>Fügt man manuell neue Verzeichnisse und Seiten dazu, werden diese automatisch ins ElTexto Projekt übernommen.</p>
+
+<p><img src="/assets/uploads/2016/8/eltexto4.png" alt="" /></p>
+
+<h2 id="anwendungsgebiete">Anwendungsgebiete</h2>
+
+<p>Mittlerweile haben wir einige unser Webseiten auf ElTexto umgestellt:</p>
+
+<ul>
+  <li><a href="http://Acapio.de">Acapio.de</a></li>
+  <li><a href="http://faq.da-software.de">FAQ.DA-Software.de</a></li>
+  <li><a href="http://eltexto.net">ElTexto.net</a></li>
+  <li><a href="http://iwer.info">Iwer.info</a></li>
+</ul>
+
+<p>Zusätzlich verwalte ich meinen Notizen damit, welche ich über Seafile synchronisiere. Bei neuen Projekten erstelle ich in ElTexto gleich eine <a href="http://eltexto.net/Anwendungsgebiete/index.html">Projektdokumentation</a>, bzw. persönliches Wiki, mit. Dort kommen dann Projektnotizen und Information rein. Braucht jemand Zugriff auf die Informationen, kann ich die Inhalte einfach als HTML exportieren und zur Verfügung stellen.</p>
+
+<p>Auch Spezifikationen und <a href="http://eltexto.net/Anwendungsgebiete/index.html">Online-Hilfen</a> habe ich damit schon erstellt.</p>
+
+<h2 id="ende">Ende</h2>
+
+<p>Wer die Software mal ausprobieren möchte, kann diese unter <a href="http://www.eltexto.net">www.ElTexto.net</a> herunterladen. Wir haben bewusst nur geringe Einschränkungen in der Testversion eingebaut. Die Testversion läuft ohne Laufzeitbeschränkung. Beim Export wird ein Link zu uns eingebunden und ab und zu erscheint mal ein Hinweisfenster.</p>
+
+<p><img src="/assets/uploads/2016/8/eltexto5.png" alt="" /></p>
+</p>		
+		  <p class="small">Tagged: ElTexto by Andy</p>
+		  <hr>
+		  
+		
+		<h1>
 		  <a href="/mobilitaet/umwelt/2016/07/31/mobilitaet_juli_2016.html">Mobilität Juli 2016</a>
 		</h1>
 		  <p class="small">Posted on 31 July 2016 by Andy</p>
@@ -263,52 +359,6 @@
 		  <hr>
 		  
 		
-		<h1>
-		  <a href="/mobilitaet/umwelt/2016/06/18/neuer_arbeitsweg.html">Neuer Arbeitsweg</a>
-		</h1>
-		  <p class="small">Posted on 18 June 2016 by Andy</p>
-		  <p><p>Letzten Monat bin ich umgezogen. Von Kaufbeuren, wo ich auch arbeite, nach Obergünzburg. 
-Bisher bin ich fast immer mit dem Rad zur Arbeit gefahren. Waren ca. 2,5 km. Lediglich bei starkem Regen war die Verlockung des Autos größer.</p>
-
-<p>Durch den Umzug hat sich der Arbeitsweg auf knapp 20 km, und ein paar schöne Steigungen, verlängert. Trotzdem habe ich versucht, so oft wie möglich mit dem Rad zu fahren. 
-In den letzten 3 Wochen habe ich das 3 mal pro Woche geschafft.</p>
-
-<p>Mit dem Auto will ich ungern fahren, das kostet Geld in Form von Sprit, Parkplatzprobleme, kleine Staus. Habe ich keine Lust drauf.</p>
-
-<p>20 km sind für mich eigentlich kein Problem zu radeln. In der Früh sieht es doch etwas anders aus. Man ist gerade aus dem Bett, müde, leicht fröstelnd. Kommt dann noch schlechtes Wetter, wie in der letzten Zeit, hinzu, wird es nicht leichter.</p>
-
-<p><img src="/assets/uploads/2016/6/arbeitsweg1.png" alt="" /></p>
-
-<p>Sobald man sich aber überwunden hat die Radklamotten anzuziehen und aufs Rad zu steigen läuft es. Spätestens an der ersten Steigung wirds warm. Regen ist nicht schön, aber auch machbar. Dank Regenjacke und Regenhose muss man nicht frieren.</p>
-
-<p>Zeitmäßig brauche ich natürlich etwas länger. Mit meinem Tourenrad, welches ich bei schlechtem Wetter nehme, benötige ich etwas unter einer Stunde. Bei schönem Wetter geht es mit dem Rennrad in etwas über 45 Minuten. Die Autofahrt würde ca. 20 Minuten dauern.</p>
-
-<p><img src="/assets/uploads/2016/6/arbeitsweg2.png" alt="" /></p>
-
-<p>Praktischerweise haben wir in der Arbeit eine Dusche. Ohne würde es nicht gehen, ich bin nach der Strecke komplett durchgeschwitzt. Anschließend geht es frisch an die Arbeit.</p>
-
-<p>Der Rückweg ist es dann eigentlich kein Problem mehr. Bis jetzt war das Wetter am Nachmittag tendentiell wärmer und besser.</p>
-
-<p>Mein Fazit? Bis jetzt bin ich motiviert die Sache weiter durchzuziehen. Es ist einfach ein gutes Gefühl vor der Arbeit schonmal eine knappe Stunde Sport zu machen. Ich bin den ganzen Tag wacher und fitter.</p>
-
-<p>Durch die Rückfahrt habe ich auch gleich mein Sportpensum abgearbeitet. In der Vergangenheit kam es oft vor, dass ich daheim angekommen bin und mich zu nix mehr aufraffen konnte.</p>
-
-<p>Oft fahre ich nach der Arbeit einen anderen längeren Weg zurück. Die Radtour nach der Arbeit sozusagen.</p>
-
-<p>Spannend wird es denke im Herbst und Winter werden. Denke da wird es schwierig die ganze Strecke mit dem Rad durchzuziehen. Die Motivation wird dann wohl eher sinken.</p>
-
-<p>Mein Hinweg führt mich zudem direkt an einer Hauptstraße entlang. Hier wird man leider recht oft von Autofahrern sehr knapp überholt. Das wird sicher im Winter mit schlecht geräumten Straße nicht besser. Einen vernünftigen Radweg gibt es leider nicht.</p>
-
-<p>Mein Vorteil ist, dass ich Alternativen habe. Sollte das Wetter mal dermaßen schlecht sein, steige ich einfach den Zug. Der nächste Bahnhof ist ca. 3 km weg von Obergünzburg. Mit dem <a href="http://andydunkel.net/radfahren/umwelt/2016/02/28/brompton_faltrad.html">Brompton</a> kommt man da auch ohne Auto problemlos hin. Und etwas Bewegung hat man so auch noch.</p>
-
-<p>Alternativ kann mich meine Freundin morgens meist mitnehmen. Dann gehts zurück mit Zug und Brompton.</p>
-
-<p>Eine Alternative wäre eventuell noch ein E-Bike. Dies würde die Strecke bei schlechtem Wetter leichter machen. Regen und starker Gegenwind wären damit etwas ausgeglichen. Aber dann ist ja immer noch die Zugoption. Schauen wir mal. Noch ist ja Sommer. :-)</p>
-</p>		
-		  <p class="small">Tagged: Mobilitaet and Umwelt by Andy</p>
-		  <hr>
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -366,7 +416,7 @@ In den letzten 3 Wochen habe ich das 3 mal pro Woche geschafft.</p>
 <li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
 <li class='category'><a href='/categories/linux/'>linux (14)</a></li>
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
-<li class='category'><a href='/categories/meinung/'>meinung (4)</a></li>
+<li class='category'><a href='/categories/meinung/'>meinung (5)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
 <li class='category'><a href='/categories/mobilitaet/'>mobilitaet (19)</a></li>
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
@@ -384,8 +434,8 @@ In den letzten 3 Wochen habe ich das 3 mal pro Woche geschafft.</p>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (23)</a></li>
 <li class='category'><a href='/categories/umwelt/'>umwelt (20)</a></li>
-<li class='category'><a href='/categories/webdesign/'>webdesign (4)</a></li>
-<li class='category'><a href='/categories/webseiten/'>webseiten (3)</a></li>
+<li class='category'><a href='/categories/webdesign/'>webdesign (5)</a></li>
+<li class='category'><a href='/categories/webseiten/'>webseiten (4)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (6)</a></li>
 <li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>
 
