@@ -1,10 +1,10 @@
 ---
 author: admin
 comments: true
-date: 2017-01-28 17:00:00+00:00
+date: 2017-02-06 17:00:00+00:00
 layout: post
-slug: webseiten_mit_templates_erstellen
-title: 'Webseiten mit Templates erstellen'
+slug: homepagebau_und_radfahren
+title: 'Homepagebau und Radfahren'
 categories:
 - Webdesign
 - Webseiten
@@ -12,6 +12,7 @@ categories:
 tags:
 - Webdesign
 - Onlineshop
+- Blog
 - Templates
 
 ---
@@ -64,7 +65,7 @@ Für die Unterseiten machen sich Fotos der Umgebung und der Hütte gut. Vielleic
 
 Da Liebe durch den Magen geht, kommt natürlich auch mein berühmtes Schinken-Brot in die Gallerie.
 
-![](/assets/uploads/2017/2/schinken.jpg "")
+![](/assets/uploads/2017/2/schinken.jpg)
 
 Für den Anfang bin ich fertig. Die Homepage kann online gehen. Mit der Anmeldung bei Google sollte es von nun an kein Problem sein, dass Leute mich finden. Später könnte ich noch einen [Blog erstellen](http://de.wix.com/start/blog-erstellen). In diesem kann ich aktuelle Wandertouren und andere Neuigkeiten vorstellen.
 
@@ -74,7 +75,7 @@ Für den Anfang bin ich fertig. Die Homepage kann online gehen. Mit der Anmeldun
 
 Meine Reise als Webmaster ist hier noch nicht zu Ende. Man muss kreativ sein. Alle zwei Wochen gibt es Freitag-Abend bei mir Live-Musik. Damit möglichst viele Leute kommen, richte ich einen Newsletter ein. Leute können sich anmelden und ich informiere sie dann. Wix.com bietet hierfür gleich ein Online-Tool an, die Shoutout-Funktion.
 
-![](/assets/uploads/2017/2/shoutout.jpg "")
+![](/assets/uploads/2017/2/shoutout.jpg)
 
 Die Newsletter lassen sich online designen und versenden. 
 
@@ -82,7 +83,7 @@ Die Newsletter lassen sich online designen und versenden.
 
 Der Hüttenkäse schmeckt den Leute so gut, da komme ich auf die Idee diesen auch online zu verkaufen. Also noch einen <a href="http://de.wix.com/ecommerce/onlineshop-erstellen" target="_blank">Online-Shop eingerichtet</a>. Auch das geht zum Glück recht leicht. Design passen. 
 
-![](/assets/uploads/2017/2/shop.jpg "")
+![](/assets/uploads/2017/2/shop.jpg)
 
 ## Fazit
 
