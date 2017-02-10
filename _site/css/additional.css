@@ -45,3 +45,7 @@ img {
 	display:block; 
 	height: auto;
 }
+
+.postdiv {
+  padding-bottom: 40px;
+}
