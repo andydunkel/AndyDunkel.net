@@ -81,13 +81,13 @@ Die Newsletter lassen sich online designen und versenden.
 
 ### Online Shop
 
-Der Hüttenkäse schmeckt den Leute so gut, da komme ich auf die Idee diesen auch online zu verkaufen. Also noch einen <a href="http://de.wix.com/ecommerce/onlineshop-erstellen" target="_blank">Online-Shop eingerichtet</a>. Auch das geht zum Glück recht leicht. Design passen. 
+Der Hüttenkäse schmeckt den Leute so gut, da komme ich auf die Idee diesen auch online zu verkaufen. Also noch einen <a href="http://de.wix.com/ecommerce/onlineshop-erstellen" target="_blank" rel="nofollow">Online-Shop eingerichtet</a>. Auch das geht zum Glück recht leicht. Design passen. 
 
 ![](/assets/uploads/2017/2/shop.jpg)
 
 ## Fazit
 
-Wie man sieht geht es recht schnell heute eine Homepage ins Netz zu bringen. Anbieter wie [Wix.com](https://de.wix.com) machen den Einstieg auch für Leute interessant die sich nicht um die technischen Details kümmern wollen.
+Wie man sieht geht es recht schnell heute eine Homepage ins Netz zu bringen. Anbieter wie Wix.com machen den Einstieg auch für Leute interessant die sich nicht um die technischen Details kümmern wollen.
 
 Auch wenn vieles sehr leicht von der Hand geht, etwas Zeit sollte man dennoch mitbringen. Das erste Aufsetzen, sammeln und Schreiben der Informationen nimmt etwas Zeit in Anspruch. Aber es lohnt sich. Eine gute Homepage lockt neue Besucher und Kunden an.
 
