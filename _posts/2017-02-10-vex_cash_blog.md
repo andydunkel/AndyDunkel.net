@@ -15,8 +15,6 @@ tags:
 
 ---
 
-![](/assets/uploads/2017/2/design2.jpg)
-
 Regelmäßig verfolge ich im Internet einige Finanzblogs. Getreu dem Motto über Geld redet man. Als nebenberuflicher Webunternehmer, muss ich mich ja auch ums Finanzielle kümmern. Hierbei bin ich vor kurzem auf den <a href="https://www.vexcash.com/blog/" target="_blank">Vexcash-Blog</a> gestoßen. Vexcash selbst ist ein interessanter Anbieter für Kurzeitkredite. Dazu später mehr.
 
 Im Blog geht es wie erwartet um Finanzthemen. Im Gegensatz zu meiner Erwartung wird dieses Blog jedoch nicht bevorzugt dafür verwendet, um die eigenen Kredite an den Markt zu bringen. Beiträge drehen sicher eher um allgemeine Finanzthemen, z.B. wie [gibt der Deutsche sein Geld aus](https://www.vexcash.com/blog/konsumausgaben-ausgehen-party/), was ist[ beim ersten Auto zu beachten](https://www.vexcash.com/blog/tipps-erstes-eigenes-auto/), [wie gehe ich richtig mit Geld um](https://www.vexcash.com/blog/anregungen-zum-richtigen-umgang-mit-geld/). Auch angehende Unternehmen finden Tipps für den erfolgreichen Start. 
@@ -42,7 +40,7 @@ Dies kann ich als Web-Designer sein, dem sein MacBook kurz vor der Fertigstellun
 
 Auch wenn im Haushalt mal etwas unverhofft kaputt geht und ersetzt werden muss, kann so ein Minikredit weiterhelfen. Ich habe zwar schon allerlei Sachen günstig reparieren können, aber nicht immer klappt das.
 
-![](/assets/uploads/2017/2/1.jpg)
+![](/assets/uploads/2017/2/vex1.jpg)
 
 Durch den kurzen Zeitraum halten sich auch die Zinsen im Rahmen und bewegen sich je nach Summe bei wenigen Euro. Allerdings sollte man sich sicher sein, dass man den Betrag auch am Ende der Laufzeit zurückzahlen kann. Für gelegentliche Inanspruchnahme ist die Nutzung völlig ok. Es ist ein Werkzeug, welches kurzfristig und schnell zu Kapital verschafft. Eine Dauerlösung bei Geldsorgen sollte es nicht sein, hier sollte man dann besser die Hinweise aus dem Vexcash-Blog befolgen, ein Haushaltsbuch führen und seine Ausgaben überprüfen.
 

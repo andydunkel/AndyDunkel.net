@@ -17,8 +17,6 @@ tags:
 
 ---
 
-![](/assets/uploads/2017/2/design2.jpg)
-
 Als passionierter Radfahrer <del>quäle</del> erfreue ich mich im Sommer gerne mit langen Radfahrten. Der Weg ist das Ziel. Meistens. Gerne plane ich meine Touren auch so, dass auf den Weg die ein oder andere Einkehrmöglichkeit liegt. Dies ist hier im Allgäu nicht weiter schwierig. Zahlreiche Berghütten und Almen warten auf ihre Gäste.
 
 Leider kommt es gelegentlich vor, dass man voller Vorfreude eine Hütte ansteuert, diese dann jedoch geschlossen hat. Sei es Ruhetag, Betriebsurlaub, Saisonanfang oder Ende.
