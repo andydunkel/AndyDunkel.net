@@ -50,7 +50,7 @@ Diese kann man anschließend bei Hosteurope hochladen:
 
 Nach wenigen Minuten ist die Einstellung übernommen und die Seite ist mit https:// und dem LetsEncrypt-Zertifikat erreichbar. So weit so gut.
 
-![](he_ssl4.png)
+![](/assets/uploads/2016/11/he_ssl4.png)
 
 ## Fazit und Probleme
 
