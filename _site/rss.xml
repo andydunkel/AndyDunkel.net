@@ -8,7 +8,32 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Fri, 10 Feb 2017 18:00:00 +0100</pubDate>
+    <pubDate>Mon, 20 Feb 2017 18:00:00 +0100</pubDate>
+    <item>
+      <title>Letsencrypt bei Hosteurope verlängern</title>
+      <link>http://andydunkel.net/webseiten/computer/2017/02/20/hosteurope_ssl_verlaengerung.html</link>
+      <description>&lt;p&gt;Letzte Woche stand nun die Verlängerung des Letsencrypt-Zertifikates an. Die Einrichtung hatte ich in einem &lt;a href=&quot;http://andydunkel.net/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope.html&quot;&gt;anderen Blogartikel&lt;/a&gt; beschrieben. Die Einrichtung ist, gelinde gesagt, umständlich. Bei einer Domain ist das Ganze noch überschaubar, bei vielen Domains und Subdomains wirds umständlich.&lt;/p&gt;
+
+&lt;p&gt;Man muss sich als Eigentümer der Domain verifizieren. Hierbei hat man zwei Möglichkeiten. Entweder man legt eine spezielle Datei auf dem Webspace an oder man hinterlegt einen TXT-Eintrag im DNS. Ich hatte mich für die erste Variante entschieden. Ich hatte die Hoffnung, dass bei der Verlängerung einfach die gleichen Daten bzw. Dateien nochmals abgefragt werden. Leider ist dem nicht so, man muss sich neu verifizieren. Inklusive neuer Dateien mit neuen Inhalten.&lt;/p&gt;
+
+&lt;h2 id=&quot;verlngern-ber-zerossll&quot;&gt;Verlängern über ZeroSSLL&lt;/h2&gt;
+
+&lt;p&gt;Das Prozedere gleicht dem &lt;a href=&quot;http://andydunkel.net/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope.html&quot;&gt;der ersten Erstellung&lt;/a&gt;. Man kann wahlweise seinen Letsencrypt-Key und Domains CSR-Datei einbinden. Damit spart man sich allerdings nur etwas Tipparbeit. Hat man die Dateien nicht mehr, keine Panik, einfach neu einrichten und fertig.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2017/2/ssl2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Nach der ganzen manuellen Arbeit mit der Verifikation hat es dann auch schon geklappt. Nach dem Upload wurde das neue Zertifikat von Hosteurope übernommen und nach wenigen Minuten war es aktualisiert. Jetzt habe ich wieder für 3 Monate Ruhe. Bei der nächsten Verlängerung werde ich statt der Dateien versuchen die DNS-Authentifizierung zu verwenden. Vielleicht spart das noch etwas Zeit.&lt;/p&gt;
+
+&lt;h2 id=&quot;geht-auch-besser&quot;&gt;Geht auch besser&lt;/h2&gt;
+
+&lt;p&gt;Wie es besser geht zeigt der Anbieter Uberspace. Bei dem Webspace dort ist die &lt;a href=&quot;https://wiki.uberspace.de/webserver:https&quot;&gt;Einrichtung von Letsencrypt&lt;/a&gt; für alle Domains und Subdomains in wenigen Minuten eingerichtet. Außerdem gibt es die Möglichkeit die Erneuerung über einen Cron-Job zu automatisieren.&lt;/p&gt;
+
+&lt;p&gt;Bleibt zu hoffen, dass Hosteurope das irgendwann auch anbieten wird. Etwas Verbesserungen gibt es bereits. So kann man jetzt für jede Domain und Subdomain eigene Zertifikate hinterlegen. Kommt eine Domain oder Subdomain hinzu, kann man dieses nun zusätzlich erstellen und einbinden. Vorher musste man das Zertifikat für alle Domains erneuern.&lt;/p&gt;
+
+</description>
+      <pubDate>Mon, 20 Feb 2017 18:00:00 +0100</pubDate>
+      <dc:date>2017-02-20T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Vexcash Blog und Kurzzeitkredite</title>
       <link>http://andydunkel.net/webseiten/finanzen/meinung/2017/02/10/vex_cash_blog.html</link>
@@ -8363,6 +8388,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2017-02-10T18:00:00+01:00</dc:date>
+    <dc:date>2017-02-20T18:00:00+01:00</dc:date>
   </channel>
 </rss>
