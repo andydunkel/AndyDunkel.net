@@ -22,7 +22,7 @@ Man muss sich als Eigentümer der Domain verifizieren. Hierbei hat man zwei Mög
 
 Das Prozedere gleicht dem [der ersten Erstellung](http://andydunkel.net/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope.html). Man kann wahlweise seinen Letsencrypt-Key und Domains CSR-Datei einbinden. Damit spart man sich allerdings nur etwas Tipparbeit. Hat man die Dateien nicht mehr, keine Panik, einfach neu einrichten und fertig. 
 
-![](/assets/uploads/2017/2/ssl2.jpg)
+![](/assets/uploads/2017/2/ssl2.png)
 
 
 Nach der ganzen manuellen Arbeit mit der Verifikation hat es dann auch schon geklappt. Nach dem Upload wurde das neue Zertifikat von Hosteurope übernommen und nach wenigen Minuten war es aktualisiert. Jetzt habe ich wieder für 3 Monate Ruhe. Bei der nächsten Verlängerung werde ich statt der Dateien versuchen die DNS-Authentifizierung zu verwenden. Vielleicht spart das noch etwas Zeit.
