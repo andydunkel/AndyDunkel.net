@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Check code signing of applications on OSX</title>
+        <title>Windows Forms on OSX - Clipboard not working</title>
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="/css/syntax.min.css">
         <script src="/css/jquery.min.js"></script>
@@ -146,31 +146,129 @@
         <div class="row">
     	<div class="col-md-9">
 
-			<h2>Check code signing of applications on OSX</h2>
-			<p class="meta">04 Feb 2014</p>
+			<h2>Windows Forms on OSX - Clipboard not working</h2>
+			<p class="meta">23 Feb 2017</p>
 			
 			<div class="post">
-			<p>The last days I was busy signing my Delphi applications on my Mac. One version was signed with my Developer ID, the other one with the third party developer ID for the Mac App Store.</p>
+			<p>You can run Winforms applications on OSX by using Mono. Its looking sort of ugly, but most stuff works out of box. However there are some bugs, which make the usage of the application an annoyance. For example the clipboard is not working as expected. Copy and paste works in the application itself, but if you copy anything from another application on OSX. This means, that the application has its own clipboard. Setting the clipboard with <code>Clipboard.SetText("schlurps")</code> only sets the application internal clipboard.</p>
 
-<p>Maybe its all very easy if you use XCode for that, but I had my issues with Delphi, where I had to do many steps manually on the command line.</p>
+<p>This is a known issue (see <a href="https://bugzilla.xamarin.com/show_bug.cgi?id=3106">here</a>) and looking to the reported dates, I would not expect any</p>
 
-<p>After the signing you usually want to check if the signature of the application is correct.</p>
+<h2 id="the-workaround">The workaround</h2>
 
-<p>You can of course do that on the command line (if you have XCode installed):</p>
+<p>On Stackoverflow is a <a href="http://stackoverflow.com/questions/28611112/mono-clipboard-fix">proposed and working solution</a> to copy data from the OSX clipboard and also retrieve data from it. It uses the <code>pbcopy</code> command for that.</p>
 
-<pre><code>codesign -dv /Applications/Awesome.app
+<p>While that works this is manual action. You can access the clipboard, but you cannot just paste from OSX. I made a workaround which involves a timer. The timer checks every 250ms if the content of the Mac-Clipboard has been changed. In that case the application clipboard is set.</p>
+
+<p>Here is the class:</p>
+
+<pre><code>public class MacClipboard
+{
+    private static String _osxClipboard = "";
+
+    private static Timer _timer = new Timer();
+
+    public static string OsxClipboard
+    {
+        get
+        {
+            return _osxClipboard;
+        }
+
+        set
+        {
+            _osxClipboard = value;
+        }
+    }
+    
+    public static void Init()
+    {
+        _timer.Interval = 250;
+        _timer.Enabled = true;
+        _timer.Tick += Timer_Tick;
+    }
+
+    private static void Timer_Tick(object sender, EventArgs e)
+    {
+        UpdateClipboard();
+    }
+
+    public static void UpdateClipboard()
+    {
+        String s = Paste();
+
+        if (_osxClipboard != s)
+        {
+            _osxClipboard = s;
+            Clipboard.SetText(s);
+        }
+    }
+
+
+    /// &lt;summary&gt;
+    /// Copy on MAC OS X using pbcopy commandline
+    /// &lt;/summary&gt;
+    /// &lt;param name="textToCopy"&gt;&lt;/param&gt;
+    public static void Copy(string textToCopy)
+    {
+        try
+        {
+            using (var p = new Process())
+            {
+
+                p.StartInfo = new ProcessStartInfo("pbcopy", "-pboard general -Prefer txt");
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.RedirectStandardOutput = false;
+                p.StartInfo.RedirectStandardInput = true;
+                p.Start();
+                p.StandardInput.Write(textToCopy);
+                p.StandardInput.Close();
+                p.WaitForExit();
+            }
+        }
+        catch (Exception ex)
+        {
+            Trace.WriteLine(ex.Message);
+        }
+
+
+    }
+
+    /// &lt;summary&gt;
+    /// Paste on MAC OS X using pbpaste commandline
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public static string Paste()
+    {
+        try
+        {
+            string pasteText;
+            using (var p = new Process())
+            {
+
+                p.StartInfo = new ProcessStartInfo("pbpaste", "-pboard general");
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.RedirectStandardOutput = true;
+                p.Start();
+                pasteText = p.StandardOutput.ReadToEnd();
+                p.WaitForExit();
+            }
+
+            return pasteText;
+        }
+        catch (Exception ex)
+        {
+            Trace.WriteLine(ex.Message);
+            return null;
+        }
+
+    }
+}
 </code></pre>
 
-<p>but I also found a tool with a neat GUI: <a href="http://brockerhoff.net/RB/AppCheckerLite/">RB App Checker</a>.</p>
+<p>I am only starting the timer on OSX in my application. If the user copies something into the clipboard it will be made available in the application clipboard. You can also set or the OSX clipboard manually. It should also be easy to extend the code for the other way around. If the application clipboard changes, the content could be copied back to the OSX clipboard.</p>
 
-<p>Its available for free on the <a href="https://itunes.apple.com/us/app/rb-app-checker-lite/id519421117?mt=12">Mac App Store</a>.</p>
-
-<p>You just drag and drop the application on the tool and it shows you very detailed information of the signature.</p>
-
-<p>It also checks entitlements, application receipts and requirements.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/02/rbappchecker/1.png" alt="" /></p>
-
+<p>Its not a very good implementation, but it works.</p>
 
 			</div>
 			
@@ -200,9 +298,13 @@
 			 	<div class="panel-heading">Verwandte Artikel:</div>
 				<div class="panel-body">
 				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/coding/programmierung/2017/02/23/clipboard_problem_with_winforms.html" title="Windows Forms on OSX - Clipboard not working">Windows Forms on OSX - Clipboard not working</a></li>
+				   <li class="list-unstyled"><a href="http://andydunkel.net/coding/programmierung/2017/02/02/debugger_funktioniert_nicht_mehr_c_charp.html" title="Visual Studio - Debugger geht nicht mehr">Visual Studio - Debugger geht nicht mehr</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/coding/programmierung/2017/02/01/resxmanager_fuer_c_charp.html" title="ResXManager - Übersetzungstool für .net Anwendungen">ResXManager - Übersetzungstool für .net Anwendungen</a></li>
 				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/delphi/osx/2015/04/15/code_signing_problems_with_delphi.html" title="Code signing problems with Delphi: Entitlements.plist">Code signing problems with Delphi: Entitlements.plist</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/coding/tools/2014/02/04/check_code_signing_of_osx_applications.html" title="Check code signing of applications on OSX">Check code signing of applications on OSX</a></li>
 				
 				   <li class="list-unstyled"><a href="http://andydunkel.net/delphi/firemonkey/2014/01/28/code_signing_problems_with_delphi_xe4_and_mavericks.html" title="Code signing problems with Delphi XE4 Mavericks">Code signing problems with Delphi XE4 Mavericks</a></li>
 				
@@ -253,7 +355,7 @@
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'andydunkelnet'; // required: replace example with your forum shortname
  		var disqus_config = function () {	        
-    	    this.page.identifier = 'check_code_signing_of_applications_on_osx';
+    	    this.page.identifier = 'windows_forms_on_osx_clipboard_not_working';
     	};
 
 

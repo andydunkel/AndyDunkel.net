@@ -157,6 +157,44 @@
      
 		
 		<h1>
+		  <a href="/eclipse/java/2011/08/02/save-and-load-an-emf-model-to-an-xml-file.html">Save and load an EMF model to an XML file</a>
+		</h1>
+		  <p class="small">Posted on 02 August 2011 by Andy</p>
+		  <p><p>Here are two code snippets which give you an example how to save and load an EMF model to an XML file.</p>
+
+<p>Note that “Data” is my EMF model object.</p>
+
+<p>Save EMF to XML file:</p>
+
+<pre><code>public void saveData(String fileName, Data data) throws IOException {  
+  Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+  Map&lt;String, Object&gt; m = reg.getExtensionToFactoryMap();
+  m.put("daform", new XMIResourceFactoryImpl());
+
+  ResourceSet resSet = new ResourceSetImpl();
+  Resource resource = resSet.createResource(URI.createFileURI(fileName));
+  resource.getContents().add(data);
+  resource.save(Collections.EMPTY_MAP);
+}
+</code></pre>
+
+<p>Load to EMF object:</p>
+
+<pre><code>public Data loadData(String fileName) throws FileNotFoundException, IOException {
+  XMIResourceImpl resource = new XMIResourceImpl();
+  File source = new File(fileName);
+  resource.load( new FileInputStream(source), new HashMap&lt;Object,Object&gt;());
+  Data data = (Data)resource.getContents().get(0);  
+  return data;
+}
+</code></pre>
+
+</p>		
+		  <p class="small">Tagged: EMF, load, Save, and XML by Andy</p>
+		  <hr class="postdiv">
+		  
+		
+		<h1>
 		  <a href="/sonstiges/2011/07/31/kein-service-pack-1-frs-thinkpad-edge.html">Kein Service Pack 1 fürs ThinkPad Edge</a>
 		</h1>
 		  <p class="small">Posted on 31 July 2011 by Andy</p>
@@ -256,23 +294,6 @@
 		  <hr class="postdiv">
 		  
 		
-		<h1>
-		  <a href="/hiking/sonstiges/2011/07/27/waldhof-spreewald-bei-lbbentreppendorf.html">Waldhof Spreewald bei Lübben/Treppendorf</a>
-		</h1>
-		  <p class="small">Posted on 27 July 2011 by Andy</p>
-		  <p><p>Ich war wieder mal ein paar Tage in Lübben. Hier ein Video der Radtour zum Waldhof und etwas Werbung für den selbigen. Mehr Infos zum Waldhof gibt’s <a href="http://www.waldhof-spreewald.de/Waldhof-Spreewald/Home.html" target="_blank">auf der Homepage</a>.</p>
-<p>Insgesamt: sehr empfehlenswert. Liegt etwas abseits im Wald, etwas schwer zu finden. Wenn keiner da ist, Glocke läuten. <img style="border-bottom-style: none; border-left-style: none; border-top-style: none; border-right-style: none" class="wlEmoticon wlEmoticon-smile" alt="Smiley" src="http://andydunkel.net/assets/uploads/2011/07/wlEmoticon-smile5.png" /></p>
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:6b8794cb-1063-47cb-bb5f-30d8f0db108c" class="wlWriterEditableSmartContent"><div><object width="616" height="346"><param name="movie" value="http://www.youtube.com/v/-5NBqzAhj5w?hl=en&amp;hd=1" /><embed src="http://www.youtube.com/v/-5NBqzAhj5w?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="616" height="346" /></object></div></div>
-<p>Preise sind günstig, Hefeweizen für 1,30 Euro!!!</p>
-<p><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="" border="0" alt="" src="http://andydunkel.net/assets/uploads/2011/07/image19.png" width="303" height="501" /></p>
-<p>Brotzeiten gibt es auch. </p>
-<p>Wie gesagt, mehr Infos gibt es auf der Homepage:</p>
-<p><a href="http://www.waldhof-spreewald.de/">http://www.waldhof-spreewald.de</a></p>
-</p>		
-		  <p class="small">Tagged: Lübben, Spreewald, and Spreewaldhof by Andy</p>
-		  <hr class="postdiv">
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -312,7 +333,7 @@
 		<section>
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (30)</a></li>
+<li class='category'><a href='/categories/coding/'>coding (31)</a></li>
 <li class='category'><a href='/categories/computer/'>computer (10)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
@@ -337,7 +358,7 @@
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
-<li class='category'><a href='/categories/programmierung/'>programmierung (3)</a></li>
+<li class='category'><a href='/categories/programmierung/'>programmierung (4)</a></li>
 <li class='category'><a href='/categories/radfahren/'>radfahren (31)</a></li>
 <li class='category'><a href='/categories/raspberry/'>raspberry (3)</a></li>
 <li class='category'><a href='/categories/repair/'>repair (1)</a></li>
@@ -367,7 +388,7 @@
   
     <a href="/page40" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 41 of 53</span>
+  <span class="page_number ">Page: 41 of 54</span>
   
     <a href="/page42" class="next">Next</a>
   

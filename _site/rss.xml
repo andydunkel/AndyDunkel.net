@@ -8,7 +8,134 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Mon, 20 Feb 2017 18:00:00 +0100</pubDate>
+    <pubDate>Thu, 23 Feb 2017 18:00:00 +0100</pubDate>
+    <item>
+      <title>Windows Forms on OSX - Clipboard not working</title>
+      <link>http://andydunkel.net/coding/programmierung/2017/02/23/clipboard_problem_with_winforms.html</link>
+      <description>&lt;p&gt;You can run Winforms applications on OSX by using Mono. Its looking sort of ugly, but most stuff works out of box. However there are some bugs, which make the usage of the application an annoyance. For example the clipboard is not working as expected. Copy and paste works in the application itself, but if you copy anything from another application on OSX. This means, that the application has its own clipboard. Setting the clipboard with &lt;code&gt;Clipboard.SetText(&quot;schlurps&quot;)&lt;/code&gt; only sets the application internal clipboard.&lt;/p&gt;
+
+&lt;p&gt;This is a known issue (see &lt;a href=&quot;https://bugzilla.xamarin.com/show_bug.cgi?id=3106&quot;&gt;here&lt;/a&gt;) and looking to the reported dates, I would not expect any&lt;/p&gt;
+
+&lt;h2 id=&quot;the-workaround&quot;&gt;The workaround&lt;/h2&gt;
+
+&lt;p&gt;On Stackoverflow is a &lt;a href=&quot;http://stackoverflow.com/questions/28611112/mono-clipboard-fix&quot;&gt;proposed and working solution&lt;/a&gt; to copy data from the OSX clipboard and also retrieve data from it. It uses the &lt;code&gt;pbcopy&lt;/code&gt; command for that.&lt;/p&gt;
+
+&lt;p&gt;While that works this is manual action. You can access the clipboard, but you cannot just paste from OSX. I made a workaround which involves a timer. The timer checks every 250ms if the content of the Mac-Clipboard has been changed. In that case the application clipboard is set.&lt;/p&gt;
+
+&lt;p&gt;Here is the class:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public class MacClipboard
+{
+    private static String _osxClipboard = &quot;&quot;;
+
+    private static Timer _timer = new Timer();
+
+    public static string OsxClipboard
+    {
+        get
+        {
+            return _osxClipboard;
+        }
+
+        set
+        {
+            _osxClipboard = value;
+        }
+    }
+    
+    public static void Init()
+    {
+        _timer.Interval = 250;
+        _timer.Enabled = true;
+        _timer.Tick += Timer_Tick;
+    }
+
+    private static void Timer_Tick(object sender, EventArgs e)
+    {
+        UpdateClipboard();
+    }
+
+    public static void UpdateClipboard()
+    {
+        String s = Paste();
+
+        if (_osxClipboard != s)
+        {
+            _osxClipboard = s;
+            Clipboard.SetText(s);
+        }
+    }
+
+
+    /// &amp;lt;summary&amp;gt;
+    /// Copy on MAC OS X using pbcopy commandline
+    /// &amp;lt;/summary&amp;gt;
+    /// &amp;lt;param name=&quot;textToCopy&quot;&amp;gt;&amp;lt;/param&amp;gt;
+    public static void Copy(string textToCopy)
+    {
+        try
+        {
+            using (var p = new Process())
+            {
+
+                p.StartInfo = new ProcessStartInfo(&quot;pbcopy&quot;, &quot;-pboard general -Prefer txt&quot;);
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.RedirectStandardOutput = false;
+                p.StartInfo.RedirectStandardInput = true;
+                p.Start();
+                p.StandardInput.Write(textToCopy);
+                p.StandardInput.Close();
+                p.WaitForExit();
+            }
+        }
+        catch (Exception ex)
+        {
+            Trace.WriteLine(ex.Message);
+        }
+
+
+    }
+
+    /// &amp;lt;summary&amp;gt;
+    /// Paste on MAC OS X using pbpaste commandline
+    /// &amp;lt;/summary&amp;gt;
+    /// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt;
+    public static string Paste()
+    {
+        try
+        {
+            string pasteText;
+            using (var p = new Process())
+            {
+
+                p.StartInfo = new ProcessStartInfo(&quot;pbpaste&quot;, &quot;-pboard general&quot;);
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.RedirectStandardOutput = true;
+                p.Start();
+                pasteText = p.StandardOutput.ReadToEnd();
+                p.WaitForExit();
+            }
+
+            return pasteText;
+        }
+        catch (Exception ex)
+        {
+            Trace.WriteLine(ex.Message);
+            return null;
+        }
+
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I am only starting the timer on OSX in my application. If the user copies something into the clipboard it will be made available in the application clipboard. You can also set or the OSX clipboard manually. It should also be easy to extend the code for the other way around. If the application clipboard changes, the content could be copied back to the OSX clipboard.&lt;/p&gt;
+
+&lt;p&gt;Its not a very good implementation, but it works.&lt;/p&gt;
+
+</description>
+      <pubDate>Thu, 23 Feb 2017 18:00:00 +0100</pubDate>
+      <dc:date>2017-02-23T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Letsencrypt bei Hosteurope verlängern</title>
       <link>http://andydunkel.net/webseiten/computer/2017/02/20/hosteurope_ssl_verlaengerung.html</link>
@@ -8388,6 +8515,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2017-02-20T18:00:00+01:00</dc:date>
+    <dc:date>2017-02-23T18:00:00+01:00</dc:date>
   </channel>
 </rss>
