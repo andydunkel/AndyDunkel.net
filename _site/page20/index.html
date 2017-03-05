@@ -157,6 +157,36 @@
      
 		
 		<h1>
+		  <a href="/java/2013/10/10/java-get-ip-and-mac-address.html">Java: Get IP and Mac address</a>
+		</h1>
+		  <p class="small">Posted on 10 October 2013 by Andy</p>
+		  <p><p>A small code snippet that reads the computers IP and MAC address:</p>
+
+<pre><code>try {
+	InetAddress ip = InetAddress.getLocalHost();
+	NetworkInterface network;
+	network = NetworkInterface.getByInetAddress(ip);
+	byte[] macaddr = network.getHardwareAddress();
+	
+	String mac = "";
+	
+	for (int i = 0; i &lt; macaddr.length; i++) {
+		mac += String.format("%02X%s", macaddr[i], (i &lt; macaddr.length - 1) ? "-" : "");	
+	}
+	
+	System.out.println("IP-Address: " + ip.toString());
+	System.out.println("Mac-Address: " + mac);
+	
+} catch (SocketException | UnknownHostException e) {
+	e.printStackTrace();
+}		
+</code></pre>
+</p>		
+		  <p class="small">Tagged: ip, Java, and Mac by Andy</p>
+		  <hr class="postdiv">
+		  
+		
+		<h1>
 		  <a href="/eclipse/2013/08/29/set-workspace-location-for-rcp-application.html">Set workspace location for RCP application</a>
 		</h1>
 		  <p class="small">Posted on 29 August 2013 by Andy</p>
@@ -284,30 +314,6 @@ catch (Exception err) {
 		  <hr class="postdiv">
 		  
 		
-		<h1>
-		  <a href="/coding/2013/08/18/android-studio-nach-update-lasst-sich-das-projekt-nicht-starten.html">Android Studio: Nach Update lässt sich das Projekt nicht starten</a>
-		</h1>
-		  <p class="small">Posted on 18 August 2013 by Andy</p>
-		  <p><p>Heute wurde mir ein Update für Android Studio angezeigt. Also Update heruntergeladen und installiert. Wie immer erwartet man da natürlich Probleme mit bestehenden Projekten. :-)</p>
-
-<p>War natürlich der Fall: </p>
-
-<pre><code>Gradle: &lt;br&gt;&lt;/br&gt;FAILURE: Could not determine which tasks to execute.&lt;br&gt;&lt;/br&gt;* What went wrong:&lt;br&gt;&lt;/br&gt;Task 'assemble' not found in root project 'SomeProject'.&lt;br&gt;&lt;/br&gt;* Try:&lt;br&gt;&lt;/br&gt;Run gradle tasks to get a list of available tasks.
-
-
-
-
-Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;'/Users/da/.gradle/wrapper/dists/gradle-1.6-bin/.../gradle-1.6'.
-</code></pre>
-
-<p>Die Lösung ist in der *.iml Datei (liegt im Root-Verzeichnis, den folgenden Inhalt herauszulöschen:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/08/RausDamit.png" alt="Raus Damit" /></p>
-</p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr class="postdiv">
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -368,7 +374,7 @@ Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;'/Users/d
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (6)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (19)</a></li>
+<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (20)</a></li>
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
@@ -383,7 +389,7 @@ Could not execute build using Gradle installation &lt;br&gt;&lt;/br&gt;'/Users/d
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (23)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (20)</a></li>
+<li class='category'><a href='/categories/umwelt/'>umwelt (21)</a></li>
 <li class='category'><a href='/categories/webdesign/'>webdesign (5)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (6)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (6)</a></li>

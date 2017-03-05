@@ -8,7 +8,37 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Thu, 23 Feb 2017 18:00:00 +0100</pubDate>
+    <pubDate>Sun, 05 Mar 2017 18:00:00 +0100</pubDate>
+    <item>
+      <title>Mobilität Februar 2017</title>
+      <link>http://andydunkel.net/mobilitaet/umwelt/2017/03/05/mobilitaet_februar_2017.html</link>
+      <description>&lt;p&gt;Das Auto ist mal wieder in der Werkstatt mit seltsamen Symptomen. Das ist ärgerlich und vermutlich auch nicht ganz billig, aber auf die Statistik hat es keinen Einfluss. Etwas frühlingshaftes Wetter konnte ich nutzen um mit dem &lt;a href=&quot;https://andydunkel.net/radfahren/umwelt/2016/02/28/brompton_faltrad.html&quot;&gt;Brompton&lt;/a&gt; ein paar Mal den Heimweg von der Arbeitsstelle anzutreten.&lt;/p&gt;
+
+&lt;p&gt;Obwohl das Brompton auch längere Strecken ohne Probleme meistert, kommt man mit den 6 Gängen bei einigen Steigungen an die Grenzen. Die mangelhafte Kondition im Winter tut da ihr übriges. Für die Strecke von 25 km, benötige ich ca 1h 20 Minuten.&lt;/p&gt;
+
+&lt;p&gt;Die Statistik ist dadurch wieder etwas mehr aufs Fahrrad verlagert. Beim Auto sind mehr Fahrten bei weniger Kilometer zusammen gekommen.&lt;/p&gt;
+
+&lt;h3 id=&quot;fahrrad&quot;&gt;Fahrrad&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gesamt km: 123 km&lt;/li&gt;
+  &lt;li&gt;Fahrten: 19&lt;/li&gt;
+  &lt;li&gt;Durchschnitt pro Fahrt: 6,47 km&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;auto&quot;&gt;Auto&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gesamt km: 277&lt;/li&gt;
+  &lt;li&gt;Fahrten: 20&lt;/li&gt;
+  &lt;li&gt;Durchschnitt pro Fahrt: 13,85 km&lt;/li&gt;
+  &lt;li&gt;Getankt: 30,74 Liter&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+      <pubDate>Sun, 05 Mar 2017 18:00:00 +0100</pubDate>
+      <dc:date>2017-03-05T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Windows Forms on OSX - Clipboard not working</title>
       <link>http://andydunkel.net/coding/programmierung/2017/02/23/clipboard_problem_with_winforms.html</link>
@@ -8515,6 +8545,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2017-02-23T18:00:00+01:00</dc:date>
+    <dc:date>2017-03-05T18:00:00+01:00</dc:date>
   </channel>
 </rss>
