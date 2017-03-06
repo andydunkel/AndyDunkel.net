@@ -30,6 +30,6 @@ Die Statistik ist dadurch wieder etwas mehr aufs Fahrrad verlagert. Beim Auto si
 ### Auto
 
 - Gesamt km: 277 
-- Fahrten: 20
-- Durchschnitt pro Fahrt: 13,85 km
+- Fahrten: 15
+- Durchschnitt pro Fahrt: 18,46 km
 - Getankt: 30,74 Liter
