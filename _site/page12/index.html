@@ -157,6 +157,48 @@
      
 		
 		<h1>
+		  <a href="/jekyll/2015/10/08/jekyll_auf_el_capitan.html">Jekyll auf El Capitan installieren</a>
+		</h1>
+		  <p class="small">Posted on 08 October 2015 by Andy</p>
+		  <p><p>Nach dem Update auf El Capitan, fehlte Jekyll zur Erstellung meiner Homepage. Ärgerlich. Laut Webseite lässt sich Jekyll mit einem einfachen</p>
+
+<pre><code>gem install jekyll
+</code></pre>
+
+<p>installieren. Geklappt hat das bei mir allerdings noch nie. Mindestens ein <code>sudo</code> musste schon vorangestellt werden.</p>
+
+<p>Auch dieses brachte kein Glück, da die folgende Fehlermeldung die Installation jäh unterbrach:</p>
+
+<pre><code>Building native extensions.  This could take a while...
+ERROR:  Error installing jekyll:
+    ERROR: Failed to build gem native extension.
+
+    /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb
+mkmf.rb can't find header files for ruby at /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/include/ruby.h
+
+Gem files will remain installed in /Library/Ruby/Gems/2.0.0/gems/yajl-ruby-1.2.1 for inspection.
+</code></pre>
+
+<p>Na fein. Stellt sich heraus, dass man zuerst die XCode command line tools installieren muss:</p>
+
+<pre><code>xcode-select --install
+</code></pre>
+
+<p>Das dauert ein wenig. Ist das installiert, stimmen wir noch den Lizenzbedingungen zu:</p>
+
+<pre><code>sudo xcodebuild -license
+</code></pre>
+
+<p>Nachdem auch das erledigt ist, installiert sich Jekyll hoffentlich ohne Probleme.</p>
+
+<pre><code>sudo gem install jekyll	
+</code></pre>
+</p>		
+		  <p class="small">Tagged: Jekyll by Andy</p>
+		  <hr class="postdiv">
+		  
+		
+		<h1>
 		  <a href="/lazarus/delphi/2015/09/09/lazarus_synapse_progress.html">Download with progress using Lazarus and Synapse</a>
 		</h1>
 		  <p class="small">Posted on 09 September 2015 by Andy</p>
@@ -493,59 +535,6 @@ MessageBox.Show(DateTime.Now.ToString("d", ci));
 		  <hr class="postdiv">
 		  
 		
-		<h1>
-		  <a href="/webdesign/2015/05/28/typische_webdesign_fehler.html">Typische Webdesign Fehler - Fehlende Optimierung für Mobilgeräte</a>
-		</h1>
-		  <p class="small">Posted on 28 May 2015 by Andy</p>
-		  <p><p>Früher war die Webdesignwelt noch einfach. Man erstellte die Homepage und konnte sich sicher sein, dass diese an einem PC oder Notebook mit einem großen Bildschirm angeschaut wurde.</p>
-
-<p>Naja so schön war es dann doch nicht. Jeder Browser stellte die Webseite anders dar, weil jeder Browser die Standards anders interpretierte. Aber das ist ein anderes Thema.</p>
-
-<p>Mittlerweile sind die Browser alle auf einem Stand in der sie die aktuellen Standards unterstützen und die Webseite auch bei allen gleich aussieht. Ich teste meine Webseiten immer noch ab und zu mit verschiedenen Browsern, aber mittlerweile haut das eigentlich immer hin.</p>
-
-<p>Inzwischen zeichnet sich, seit ein paar Jahren, ein anderer Trend ab. Statt am Computer werden Webseiten mehr und mehr an mobilen Endgeräten konsumiert. Kein Wunder, die kleinen Dinger hat man immer dabei und so können Wartezeiten im Alltag durch surfen im Netz überbrückt und genutzt werden.</p>
-
-<p>Google gibt an, dass mittlerweile mehr Leute die Google Suche über Smartphones und Co benutzen als klassisch am Desktop.</p>
-
-<p><img src="/assets/uploads/2015/5/opt.jpg" alt="" /></p>
-
-<p>Die Sache geht sogar so weit, dass Webseiten ohne mobile Unterstützung in der Google-Suche abgestraft werden. Derzeit nur auf mobilen Geräten, aber in Zukunft eventuell auch auf dem Desktop.</p>
-
-<p>Aus diesem Grund sollte (oder sagen wir muss) die eigene Webseite auch für das mobile Internet ausgerüstet sein. Ansonsten kostet das langfristig Besucher.</p>
-
-<p>Doch wie geht man vor? Ist die Webseite bereits online, kann man zuerst eine Bestandsaufnahme machen. Google stellt hierfür den “<a href="https://www.google.com/webmasters/tools/mobile-friendly/">Mobile-Friendly Test</a>” zur Verfügung.</p>
-
-<p>Neben der Analyse werden auch gleich Tipps zur Umsetzung angeboten. Doch wie macht man eine Homepage “Mobile-Friendly”?</p>
-
-<p>Während man früher gerne eine extra Webseite mit Browserweiche erstellt hat, designt man das Design heute “Responsive”. So spart man sich den Aufwand die Webseite in verschiedenen Versionen erstellen zu müssen.</p>
-
-<p><strong>Was heißt das?</strong> Vereinfacht: Das erstellte Design passt sich dem verfügbaren Platz automatisch an und ist so sowohl für den Desktop-User als auch den mobilen Surfer gewappnet.
-Auch die <a href="https://www.deinhandy.de/smartphones">Vielzahl an Smartphones</a>, die es am Markt gibt, werden unterstützt und man muss sich keine Gedanken machen, ob Smartphone XY mit Auflösung Z die Webseite vernünftig darstellen kann.</p>
-
-<h2 id="responsive-frameworks">Responsive Frameworks</h2>
-
-<p>Da die Erstellung eines responsiven Designs mit dem ganzen HTML- und CSS-Kram recht komplex ist, verwendet man am Besten ein fertiges Framework und passt dieses an seine Bedürfnisse an. Hier gibt es zahlreiche Frameworks. Ich habe mich auf dieser Webseite für <a href="http://getbootstrap.com/">Bootstrap</a> entschieden. Wem das Standarddesign nicht gefällt findet hier zahlreiche Designs, welche sich mit etwas Aufwand anpassen lassen.</p>
-
-<p>Auch für Wordpress und die ganzen CMS-Systeme gibt es responsive Designs zum Download. Viele kostenlos.</p>
-
-<p>Ist die Webseite auf das entsprechende Framework umgesetzt, ist man meist noch nicht fertig. Gerade alte Webseiten verwenden an vielen Stellen starre Großenangaben mit festen Pixelangaben. Wer eine bestehende Webseite angepasst hat, geht im nächsten Schritt über alle Unterseiten und kontrolliert diese.</p>
-
-<h2 id="grafiken">Grafiken</h2>
-
-<p>Nachdem dies erledigt ist, sollte man sein Hauptaugenmerk auf Grafiken und Co lenken. Obwohl man heute unterwegs teilweise recht flotte Geschwindigkeiten erreicht, ist das leider nicht immer und überall der Fall. Zu oft gibt es nur Edge in ländlichen Gebieten.</p>
-
-<p>Deswegen sollte man die Grafiken nicht nur aus Geschwindigkeitsgründen überprüfen und ggf. verkleinern oder stärker komprimieren. Neben der schnelleren Ladezeit freut sich der Benutzer auch darüber, dass sein Datenvolumen nicht zu stark belastet wird.</p>
-
-<h2 id="berprfen-der-arbeit">Überprüfen der Arbeit</h2>
-
-<p>Während der ganzen Zeit empfielt es sich seine Arbeit regelmäßig mit dem Smartphone oder den Google-Tools überprüfen und überwachen. So beugt man Entwicklungen in die falsche Richtung vor.</p>
-
-<p>Hat man alle Schritte befolgt, erhält man am Ende eine Webseite die nicht nur auf dem Desktop eine gute Figur macht, sondern auch auf mobilen Geräten ohne Scrollen und Zoomen eine gute Figur macht. Die Besucher werden es danken! :-)</p>
-</p>		
-		  <p class="small">Tagged: Optimierung and Mobil by Andy</p>
-		  <hr class="postdiv">
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -592,7 +581,7 @@ Auch die <a href="https://www.deinhandy.de/smartphones">Vielzahl an Smartphones<
 <li class='category'><a href='/categories/finanzen/'>finanzen (1)</a></li>
 <li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
 <li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
-<li class='category'><a href='/categories/gadgets/'>gadgets (25)</a></li>
+<li class='category'><a href='/categories/gadgets/'>gadgets (26)</a></li>
 <li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
 <li class='category'><a href='/categories/html/'>html (1)</a></li>
 <li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>

@@ -8,7 +8,40 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Sun, 05 Mar 2017 18:00:00 +0100</pubDate>
+    <pubDate>Thu, 16 Mar 2017 18:00:00 +0100</pubDate>
+    <item>
+      <title>Nikon WU-1a Funkadapter für D3300</title>
+      <link>http://andydunkel.net/gadgets/2017/03/16/nikon_wifi.html</link>
+      <description>&lt;p&gt;Vor kurzem habe ich eine &lt;a href=&quot;http://amzn.to/2nK26UO&quot;&gt;Nikon D3300 Spiegelreflexkamera&lt;/a&gt; gekauft. Diese macht sehr schicke Bilder. Diese landen auf der Speicherkarte. In einer Zeit in der man gleich alle Erlebnisse über soziale Netzwerke teilen möchte ist es ein untragbarer Zustand, wenn man erstmal daheim das USB-Kabel anschließen, die Bilder auf den Computer übertragen muss und dann erst teilen kann.&lt;/p&gt;
+
+&lt;h2 id=&quot;wifi-fr-die-kamera&quot;&gt;WIFI für die Kamera&lt;/h2&gt;
+
+&lt;p&gt;Der &lt;a href=&quot;http://amzn.to/2nJCp7d&quot;&gt;Nikon WU-1a Funkadapter&lt;/a&gt; löst das Problem. Dieser wird auf Amazon für die Nikon D3200 ausgewiesen, funktioniert aber ohne Probleme an der D3300. Er kostet knapp 60 Euro.&lt;/p&gt;
+
+&lt;p&gt;Der Adapter ist recht klein. Damit er nicht verloren geht, kann er an der Kamera befestigt werden, ohne dass er angesteckt sein muss.&lt;/p&gt;
+
+&lt;p&gt;Man muss ihn nur anstecken und schon kann es losgehen. Der Adapter macht einen eigenen Hotspot auf (ungesichert). Zu diesem kann man sich anschließend mit dem Handy oder Tablett verbinden. Dies ist auch gleichzeitig der große Nachteil des Adapters. Während der Verbingung, geht Internet nur noch über das Datennetzwerk. Die Reichweite des Adapters ist eher gering, was aufgrund der ungesicherten Verbindung auch gut ist.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2017/3/wifi1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Zur Übertragung der Bilder benötigt man eine spezielle App. Diese gibt es für Android und Apple-Geräte. Mit dieser kann man nun auf die Kamera zugreifen, Bilder verwalten und übertragen. Bilder lassen sich verkleinert oder im Original übertragen. Die Übertragung der großen Originalbilder dauert recht lange. Für den Versand über Whatsapp oder Facebook reichen die kleinen Bilder aber locker aus.&lt;/p&gt;
+
+&lt;p&gt;Am Computer kann man die kostenlose Software “&lt;a href=&quot;https://dslrdashboard.info/&quot; target=&quot;_blank&quot;&gt;qDslrDashboard&lt;/a&gt;” nutzen. Hier kann man potentiell auch einfach einen weiteren WIFI-Stick am Computer anschließen und so eine parallele Verbindung aufbauen. Damit bleibt man zumindest im Internet. Außer die nicht änderbare IP-Adresse des Nikon-Adapters macht hier einen Strich durch die Rechnung.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2017/3/wifi2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;fazit&quot;&gt;Fazit&lt;/h2&gt;
+
+&lt;p&gt;Ob sich der Kauf lohnt hängt sehr vom Einsatzzweck ab. Um Bilder schnell ans Smartphone zu übertragen ist der Adapter sehr gut geeignet. Anstecken, WLAN verbinden und die Bilder mit der App übertragen. Hier wäre aber Bluetooth der bessere Standard gewesen, da man so im Internet via WLAN bleiben kann. Allerdings ist Bluetooth auch langsamer.&lt;/p&gt;
+
+&lt;p&gt;Der Adapter lässt sich leider nur als extra Hotspot betreiben. Die Verbindung zur heimischen Fritzbox ist nicht möglich. Ideal wäre gewesen, wenn man dies konfigurieren könnte um dann z.B. Bilder automatisch auf eine NAS zu kopieren. So ist man am Computer mit dem normalen USB-Kabel oder SD-Kartenleser wesentlich schneller. Auch benötigt man immer eine extra Software um auf die Bilder zugreifen zu können.&lt;/p&gt;
+
+&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;amp;OneJS=1&amp;amp;Operation=GetAdHtml&amp;amp;MarketPlace=DE&amp;amp;source=ss&amp;amp;ref=as_ss_li_til&amp;amp;ad_type=product_link&amp;amp;tracking_id=ekiwide0b-21&amp;amp;marketplace=amazon&amp;amp;region=DE&amp;amp;placement=B007VGGIB6&amp;amp;asins=B007VGGIB6&amp;amp;linkId=e389f2e44fa2468ab31a2cd81c5218c2&amp;amp;show_border=true&amp;amp;link_opens_in_new_window=true&quot;&gt;&lt;/iframe&gt;
+
+</description>
+      <pubDate>Thu, 16 Mar 2017 18:00:00 +0100</pubDate>
+      <dc:date>2017-03-16T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Mobilität Februar 2017</title>
       <link>http://andydunkel.net/mobilitaet/umwelt/2017/03/05/mobilitaet_februar_2017.html</link>
@@ -8545,6 +8578,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2017-03-05T18:00:00+01:00</dc:date>
+    <dc:date>2017-03-16T18:00:00+01:00</dc:date>
   </channel>
 </rss>
