@@ -157,6 +157,52 @@
      
 		
 		<h1>
+		  <a href="/java/2011/05/25/java-load-text-file-to-string.html">Java - Load text file to string</a>
+		</h1>
+		  <p class="small">Posted on 25 May 2011 by Andy</p>
+		  <p><p>Most common in programming is to load text files to a string. Since this usually involves some lines of code, here is a snippet for that:</p>
+
+<pre><code>/**
+ * Loads a file to String
+ * @param fileName - file name for example "C:\\MeineFile.txt"
+ * @return
+ * @throws IOException 
+ */
+private String loadFileToString(String fileName) throws IOException {
+	File file = new File(fileName);
+	StringBuffer content = new StringBuffer();
+	BufferedReader reader = null;
+
+	try {
+		reader = new BufferedReader(new FileReader(file));
+		String s = null;
+
+		while ((s = reader.readLine()) != null) {
+			content.append(s).append(System.getProperty("line.separator"));
+		}
+	} catch (FileNotFoundException e) {
+		throw e;
+	} catch (IOException e) {
+		throw e;
+	} finally {
+		try {
+			if (reader != null) {
+				reader.close();
+			}
+		} catch (IOException e) {
+			throw e;
+		}
+	}	
+	return content.toString();
+}
+</code></pre>
+
+</p>		
+		  <p class="small">Tagged: Java, load, string, and text by Andy</p>
+		  <hr class="postdiv">
+		  
+		
+		<h1>
 		  <a href="/radfahren/tools/2011/05/23/google-maps-karten-kml-datei-exportierenspeichern.html">Google Maps Karten KML Datei exportieren/speichern</a>
 		</h1>
 		  <p class="small">Posted on 23 May 2011 by Andy</p>
@@ -262,26 +308,6 @@ Aufgezeichnet am: Fr. Mai 20 13:57:10 MESZ 2011</p>
 		  <hr class="postdiv">
 		  
 		
-		<h1>
-		  <a href="/fotos/radfahren/2011/05/18/fotos-vom-radfahren-18-05-2011.html">Fotos vom Radfahren 18.05.2011</a>
-		</h1>
-		  <p class="small">Posted on 18 May 2011 by Andy</p>
-		  <p><p>Aufgenommen währen einer Feierabendrunde mit dem Fahrrad.</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2011/05/DSCN16231.jpg"><img src="http://andydunkel.net/assets/uploads/2011/05/DSCN1623_thumb1.jpg" alt="DSCN1623" /></a></p>
-
-<!-- more -->
-
-<p><a href="http://andydunkel.net/assets/uploads/2011/05/DSCN1624.jpg"><img src="http://andydunkel.net/assets/uploads/2011/05/DSCN1624_thumb.jpg" alt="DSCN1624" /></a></p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2011/05/DSCN1625.jpg"><img src="http://andydunkel.net/assets/uploads/2011/05/DSCN1625_thumb.jpg" alt="DSCN1625" /></a></p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2011/05/DSCN1628.jpg"><img src="http://andydunkel.net/assets/uploads/2011/05/DSCN1628_thumb.jpg" alt="DSCN1628" /></a><a href="http://andydunkel.net/assets/uploads/2011/05/DSCN1637.jpg"><img src="http://andydunkel.net/assets/uploads/2011/05/DSCN1637_thumb.jpg" alt="DSCN1637" /></a><a href="http://andydunkel.net/assets/uploads/2011/05/DSCN1638.jpg"><img src="http://andydunkel.net/assets/uploads/2011/05/DSCN1638_thumb.jpg" alt="DSCN1638" /></a><a href="http://andydunkel.net/assets/uploads/2011/05/DSCN1639.jpg"><img src="http://andydunkel.net/assets/uploads/2011/05/DSCN1639_thumb.jpg" alt="DSCN1639" /></a><a href="http://andydunkel.net/assets/uploads/2011/05/DSCN1641.jpg"><img src="http://andydunkel.net/assets/uploads/2011/05/DSCN1641_thumb.jpg" alt="DSCN1641" /></a><a href="http://andydunkel.net/assets/uploads/2011/05/DSCN1643.jpg"><img src="http://andydunkel.net/assets/uploads/2011/05/DSCN1643_thumb.jpg" alt="DSCN1643" /></a><a href="http://andydunkel.net/assets/uploads/2011/05/DSCN1645.jpg"><img src="http://andydunkel.net/assets/uploads/2011/05/DSCN1645_thumb.jpg" alt="DSCN1645" /></a></p>
-</p>		
-		  <p class="small">Tagged: Alpen Radeln Fotos by Andy</p>
-		  <hr class="postdiv">
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -338,7 +364,7 @@ Aufgezeichnet am: Fr. Mai 20 13:57:10 MESZ 2011</p>
 <li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
 <li class='category'><a href='/categories/kochen/'>kochen (2)</a></li>
 <li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
-<li class='category'><a href='/categories/linux/'>linux (14)</a></li>
+<li class='category'><a href='/categories/linux/'>linux (15)</a></li>
 <li class='category'><a href='/categories/mac/'>mac (3)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (6)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
@@ -358,7 +384,7 @@ Aufgezeichnet am: Fr. Mai 20 13:57:10 MESZ 2011</p>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (23)</a></li>
 <li class='category'><a href='/categories/umwelt/'>umwelt (21)</a></li>
-<li class='category'><a href='/categories/webdesign/'>webdesign (5)</a></li>
+<li class='category'><a href='/categories/webdesign/'>webdesign (6)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (6)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (6)</a></li>
 <li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>

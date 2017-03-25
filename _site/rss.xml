@@ -8,7 +8,26 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Thu, 16 Mar 2017 18:00:00 +0100</pubDate>
+    <pubDate>Sat, 25 Mar 2017 18:00:00 +0100</pubDate>
+    <item>
+      <title>Uberspace: .html Dateien als PHP ausführen</title>
+      <link>http://andydunkel.net/linux/webdesign/2017/03/25/uberspace_html_als_php.html</link>
+      <description>&lt;p&gt;HTML-Dateien als PHP-Dateien ausführen zu lassen, lässt sich über die &lt;code&gt;.htaccess&lt;/code&gt; Datei leicht umsetzen. Dies ist meist folgender Code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;AddType application/x-httpd-php .html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Bei Uberspace funktioniert das leider nicht so. Hier musste ich etwas tüfteln. Funktionieren tut der folgende Code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;AddHandler php-fcgid .html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hintergrund ist, dass PHP hier als &lt;a href=&quot;https://wiki.uberspace.de/webserver:fastcgi&quot;&gt;Fast-CGI&lt;/a&gt; läuft.&lt;/p&gt;
+
+</description>
+      <pubDate>Sat, 25 Mar 2017 18:00:00 +0100</pubDate>
+      <dc:date>2017-03-25T18:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Nikon WU-1a Funkadapter für D3300</title>
       <link>http://andydunkel.net/gadgets/2017/03/16/nikon_wifi.html</link>
@@ -8578,6 +8597,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2017-03-16T18:00:00+01:00</dc:date>
+    <dc:date>2017-03-25T18:00:00+01:00</dc:date>
   </channel>
 </rss>
