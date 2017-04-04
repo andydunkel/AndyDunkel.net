@@ -157,6 +157,160 @@
      
 		
 		<h1>
+		  <a href="/coding/programmierung/2017/02/23/clipboard_problem_with_winforms.html">Windows Forms on OSX - Clipboard not working</a>
+		</h1>
+		  <p class="small">Posted on 23 February 2017 by Andy</p>
+		  <p><p>You can run Winforms applications on OSX by using Mono. Its looking sort of ugly, but most stuff works out of box. However there are some bugs, which make the usage of the application an annoyance. For example the clipboard is not working as expected. Copy and paste works in the application itself, but if you copy anything from another application on OSX. This means, that the application has its own clipboard. Setting the clipboard with <code>Clipboard.SetText("schlurps")</code> only sets the application internal clipboard.</p>
+
+<p>This is a known issue (see <a href="https://bugzilla.xamarin.com/show_bug.cgi?id=3106">here</a>) and looking to the reported dates, I would not expect any</p>
+
+<h2 id="the-workaround">The workaround</h2>
+
+<p>On Stackoverflow is a <a href="http://stackoverflow.com/questions/28611112/mono-clipboard-fix">proposed and working solution</a> to copy data from the OSX clipboard and also retrieve data from it. It uses the <code>pbcopy</code> command for that.</p>
+
+<p>While that works this is manual action. You can access the clipboard, but you cannot just paste from OSX. I made a workaround which involves a timer. The timer checks every 250ms if the content of the Mac-Clipboard has been changed. In that case the application clipboard is set.</p>
+
+<p>Here is the class:</p>
+
+<pre><code>public class MacClipboard
+{
+    private static String _osxClipboard = "";
+
+    private static Timer _timer = new Timer();
+
+    public static string OsxClipboard
+    {
+        get
+        {
+            return _osxClipboard;
+        }
+
+        set
+        {
+            _osxClipboard = value;
+        }
+    }
+    
+    public static void Init()
+    {
+        _timer.Interval = 250;
+        _timer.Enabled = true;
+        _timer.Tick += Timer_Tick;
+    }
+
+    private static void Timer_Tick(object sender, EventArgs e)
+    {
+        UpdateClipboard();
+    }
+
+    public static void UpdateClipboard()
+    {
+        String s = Paste();
+
+        if (_osxClipboard != s)
+        {
+            _osxClipboard = s;
+            Clipboard.SetText(s);
+        }
+    }
+
+
+    /// &lt;summary&gt;
+    /// Copy on MAC OS X using pbcopy commandline
+    /// &lt;/summary&gt;
+    /// &lt;param name="textToCopy"&gt;&lt;/param&gt;
+    public static void Copy(string textToCopy)
+    {
+        try
+        {
+            using (var p = new Process())
+            {
+
+                p.StartInfo = new ProcessStartInfo("pbcopy", "-pboard general -Prefer txt");
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.RedirectStandardOutput = false;
+                p.StartInfo.RedirectStandardInput = true;
+                p.Start();
+                p.StandardInput.Write(textToCopy);
+                p.StandardInput.Close();
+                p.WaitForExit();
+            }
+        }
+        catch (Exception ex)
+        {
+            Trace.WriteLine(ex.Message);
+        }
+
+
+    }
+
+    /// &lt;summary&gt;
+    /// Paste on MAC OS X using pbpaste commandline
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public static string Paste()
+    {
+        try
+        {
+            string pasteText;
+            using (var p = new Process())
+            {
+
+                p.StartInfo = new ProcessStartInfo("pbpaste", "-pboard general");
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.RedirectStandardOutput = true;
+                p.Start();
+                pasteText = p.StandardOutput.ReadToEnd();
+                p.WaitForExit();
+            }
+
+            return pasteText;
+        }
+        catch (Exception ex)
+        {
+            Trace.WriteLine(ex.Message);
+            return null;
+        }
+
+    }
+}
+</code></pre>
+
+<p>I am only starting the timer on OSX in my application. If the user copies something into the clipboard it will be made available in the application clipboard. You can also set or the OSX clipboard manually. It should also be easy to extend the code for the other way around. If the application clipboard changes, the content could be copied back to the OSX clipboard.</p>
+
+<p>Its not a very good implementation, but it works.</p>
+</p>		
+		  <p class="small">Tagged: Csharp, OSX, and Winforms by Andy</p>
+		  <hr class="postdiv">
+		  
+		
+		<h1>
+		  <a href="/webseiten/computer/2017/02/20/hosteurope_ssl_verlaengerung.html">Letsencrypt bei Hosteurope verlängern</a>
+		</h1>
+		  <p class="small">Posted on 20 February 2017 by Andy</p>
+		  <p><p>Letzte Woche stand nun die Verlängerung des Letsencrypt-Zertifikates an. Die Einrichtung hatte ich in einem <a href="http://andydunkel.net/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope.html">anderen Blogartikel</a> beschrieben. Die Einrichtung ist, gelinde gesagt, umständlich. Bei einer Domain ist das Ganze noch überschaubar, bei vielen Domains und Subdomains wirds umständlich.</p>
+
+<p>Man muss sich als Eigentümer der Domain verifizieren. Hierbei hat man zwei Möglichkeiten. Entweder man legt eine spezielle Datei auf dem Webspace an oder man hinterlegt einen TXT-Eintrag im DNS. Ich hatte mich für die erste Variante entschieden. Ich hatte die Hoffnung, dass bei der Verlängerung einfach die gleichen Daten bzw. Dateien nochmals abgefragt werden. Leider ist dem nicht so, man muss sich neu verifizieren. Inklusive neuer Dateien mit neuen Inhalten.</p>
+
+<h2 id="verlngern-ber-zerossll">Verlängern über ZeroSSLL</h2>
+
+<p>Das Prozedere gleicht dem <a href="http://andydunkel.net/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope.html">der ersten Erstellung</a>. Man kann wahlweise seinen Letsencrypt-Key und Domains CSR-Datei einbinden. Damit spart man sich allerdings nur etwas Tipparbeit. Hat man die Dateien nicht mehr, keine Panik, einfach neu einrichten und fertig.</p>
+
+<p><img src="/assets/uploads/2017/2/ssl2.png" alt="" /></p>
+
+<p>Nach der ganzen manuellen Arbeit mit der Verifikation hat es dann auch schon geklappt. Nach dem Upload wurde das neue Zertifikat von Hosteurope übernommen und nach wenigen Minuten war es aktualisiert. Jetzt habe ich wieder für 3 Monate Ruhe. Bei der nächsten Verlängerung werde ich statt der Dateien versuchen die DNS-Authentifizierung zu verwenden. Vielleicht spart das noch etwas Zeit.</p>
+
+<h2 id="geht-auch-besser">Geht auch besser</h2>
+
+<p>Wie es besser geht zeigt der Anbieter Uberspace. Bei dem Webspace dort ist die <a href="https://wiki.uberspace.de/webserver:https">Einrichtung von Letsencrypt</a> für alle Domains und Subdomains in wenigen Minuten eingerichtet. Außerdem gibt es die Möglichkeit die Erneuerung über einen Cron-Job zu automatisieren.</p>
+
+<p>Bleibt zu hoffen, dass Hosteurope das irgendwann auch anbieten wird. Etwas Verbesserungen gibt es bereits. So kann man jetzt für jede Domain und Subdomain eigene Zertifikate hinterlegen. Kommt eine Domain oder Subdomain hinzu, kann man dieses nun zusätzlich erstellen und einbinden. Vorher musste man das Zertifikat für alle Domains erneuern.</p>
+</p>		
+		  <p class="small">Tagged: LetsEncrypt and SSL by Andy</p>
+		  <hr class="postdiv">
+		  
+		
+		<h1>
 		  <a href="/webseiten/finanzen/meinung/2017/02/10/vex_cash_blog.html">Vexcash Blog und Kurzzeitkredite</a>
 		</h1>
 		  <p class="small">Posted on 10 February 2017 by Andy</p>
@@ -309,62 +463,6 @@ Dies kann ich als Web-Designer sein, dem sein MacBook kurz vor der Fertigstellun
 		  <hr class="postdiv">
 		  
 		
-		<h1>
-		  <a href="/coding/programmierung/2017/02/02/debugger_funktioniert_nicht_mehr_c_charp.html">Visual Studio - Debugger geht nicht mehr</a>
-		</h1>
-		  <p class="small">Posted on 02 February 2017 by Andy</p>
-		  <p><p>Was tun, wenn der Debugger nicht richtig funktioniert? Ich hatte das Problem, dass der Debugger innerhalb Threads und in Verbindung mit Code aus verschiedenen Projekten nicht mehr wollte. Es wurden keine Autos, keien Lokals und auch keine überwachten Variablen mehr angezeigt.</p>
-
-<p>Stattdessen wurde nur der Fehler “Internal error in the expression evaluator” angezeigt. Auch mit der Maus über der Variable bleiben half nix.</p>
-
-<p><img src="/assets/uploads/2017/2/debugger1.png" alt="" /></p>
-
-<p>Den genauen Grund was da los ist, habe ich nicht herausgefunden. Aber ich habe es zumindest wieder zum Laufen bekommen. In meinem Fall musste ich “Used Managed Compatibility Mode” in den Einstellungen des Debuggers aktivieren:</p>
-
-<p><img src="/assets/uploads/2017/2/debugger1.png" alt="" /></p>
-
-<p>Und siehe da, schon ging es wieder:</p>
-
-<p><img src="/assets/uploads/2017/2/debugger1.png" alt="" /></p>
-</p>		
-		  <p class="small">Tagged: Csharp, Coding, and Debugger by Andy</p>
-		  <hr class="postdiv">
-		  
-		
-		<h1>
-		  <a href="/coding/programmierung/2017/02/01/resxmanager_fuer_c_charp.html">ResXManager - Übersetzungstool für .net Anwendungen</a>
-		</h1>
-		  <p class="small">Posted on 01 February 2017 by Andy</p>
-		  <p><p>Die Übersetzung von .net-Anwendungen ist in Visual Studio bereits ganz gut umgesetzt. Ich hatte bereits darüber geschrieben:</p>
-
-<ul>
-  <li><a href="http://www.andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html">C#-Anwendungen mehrsprachig gestalten</a></li>
-  <li><a href="http://www.andydunkel.net/coding/2016/12/15/wpf_anwendungen_mehrsprachig.html">WPF-Anwendungen mehrsprachig</a></li>
-</ul>
-
-<p>Allerdings gibt es auch ein paar Schattenseiten. Die Übersetzungen sind in diverse Resourcendateien verteilt. Mit Visual Studio ist das Bearbeiten einfach möglich. Will man Übersetzungen extern machen lassen, ist das schwierig.</p>
-
-<p>Auch mehrere Sprachen gleichzeitig zu übersetzen ist umständlich. Man muss jede Resourcendatei öffnen, die Texte anlegen und übersetzen.</p>
-
-<p>In diese Bresche springt das kostenlose Plugin <a href="https://resxresourcemanager.codeplex.com/">ResXManager</a>. Es sammelt die Resourcen aus dem gesamten Projekt zusammen, welche anschließend in einer Liste gleich in alle Sprachen übersetzt werden kann. Auch werden fehlende Übersetzungen gleich farblich markiert. Somit können fehlende Texte und Lücken schnell indentifiziert werden.</p>
-
-<p><img src="/assets/uploads/2017/2/resx_1.png" alt="" /></p>
-
-<p>Export und späterer Import mit Excel ist möglich. Damit kann man die Übersetzungen jemand anderem überlassen.</p>
-
-<p>Wer, wie ich, die Übersetzungen selbst machen muss, freut sich über Integration von Übersetzungsdiensten, wie Bing. Mit diesen kann man die Übersetzung ermitteln lassen. Man muss anschließend nur die Übersetzung überprüfen, sofern man der jeweiligen Sprache mächtig ist. Zumindest erleichtert dies schonmal jede Menge Arbeit.</p>
-
-<p>In jedem Fall eine gute Erweiterung für Visual Studio. Sie erleichtert den Umgang mit Übersetzungen enorm. Kostenlos ist das Plugin auch noch. Perfekt.</p>
-
-<ul>
-  <li><a href="https://resxresourcemanager.codeplex.com/">Hier geht es zur Webseite</a></li>
-  <li><a href="https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager">Download für Visual Studio im Marketplace</a></li>
-</ul>
-</p>		
-		  <p class="small">Tagged: Csharp, Coding, and Internatiolization by Andy</p>
-		  <hr class="postdiv">
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -405,7 +503,7 @@ Dies kann ich als Web-Designer sein, dem sein MacBook kurz vor der Fertigstellun
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
 <li class='category'><a href='/categories/coding/'>coding (31)</a></li>
-<li class='category'><a href='/categories/computer/'>computer (10)</a></li>
+<li class='category'><a href='/categories/computer/'>computer (11)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
 <li class='category'><a href='/categories/finanzen/'>finanzen (1)</a></li>
@@ -422,14 +520,14 @@ Dies kann ich als Web-Designer sein, dem sein MacBook kurz vor der Fertigstellun
 <li class='category'><a href='/categories/kochen/'>kochen (2)</a></li>
 <li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
 <li class='category'><a href='/categories/linux/'>linux (15)</a></li>
-<li class='category'><a href='/categories/mac/'>mac (3)</a></li>
+<li class='category'><a href='/categories/mac/'>mac (4)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (6)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (20)</a></li>
+<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (21)</a></li>
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
-<li class='category'><a href='/categories/programmierung/'>programmierung (4)</a></li>
+<li class='category'><a href='/categories/programmierung/'>programmierung (5)</a></li>
 <li class='category'><a href='/categories/radfahren/'>radfahren (31)</a></li>
 <li class='category'><a href='/categories/raspberry/'>raspberry (3)</a></li>
 <li class='category'><a href='/categories/repair/'>repair (1)</a></li>
@@ -440,7 +538,7 @@ Dies kann ich als Web-Designer sein, dem sein MacBook kurz vor der Fertigstellun
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (23)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (21)</a></li>
+<li class='category'><a href='/categories/umwelt/'>umwelt (22)</a></li>
 <li class='category'><a href='/categories/webdesign/'>webdesign (6)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (6)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (6)</a></li>
@@ -459,7 +557,7 @@ Dies kann ich als Web-Designer sein, dem sein MacBook kurz vor der Fertigstellun
   
     <a href="/page1" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 2 of 54</span>
+  <span class="page_number ">Page: 2 of 55</span>
   
     <a href="/page3" class="next">Next</a>
   

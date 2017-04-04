@@ -157,6 +157,238 @@
      
 		
 		<h1>
+		  <a href="/objectivec/coding/xcode/2014/05/04/mapkit_introduction.html">Introduction to MapKit on IOS</a>
+		</h1>
+		  <p class="small">Posted on 04 May 2014 by Andy</p>
+		  <p><p>MapKit offers an easy way to integrate Apple maps into your app. Wether you want to show where your company is located, where the next pub is or track your cats GPS location in an app.</p>
+
+<p>In this tutorial I want to describe how you can add maps to your application. Position, zoom the map and add annotations.</p>
+
+<h2 id="create-the-project">Create the project</h2>
+
+<p>In XCode create a new project, select iOS and single view application and enter the details for project. Once the project is created. The first thing we are doing, is adding the MapKit to the linked frameworks:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_1.png" alt="image" /></p>
+
+<p>Otherwise the application will crash instantaneously. Once we have done that, we go to the main storyboard and drag the map view into our view.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_2.png" alt="image" /></p>
+
+<p>In the properties of the MapView you can configure some basic settings, like showing the users location, activate / deactive zooming, rotating, scrolling etc…</p>
+
+<p>The next step is to create the Outlet for the map view in our application. This can be done using the Assistant editor and CTRL dragging the MKMapView onto the header file and enter a name for the variable:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_3.png" alt="image" /></p>
+
+<p>We also need to add MapKit to the imports. While we are doing that we also add the map delegate:</p>
+
+<pre><code>#import &lt;MapKit/MapKit.h&gt;
+
+@interface DASViewController : UIViewController &lt;MKMapViewDelegate&gt;
+</code></pre>
+
+<p>Lets run the app for the first time. It should now display the map.</p>
+
+<h2 id="setting-the-map-type">Setting the Map Type</h2>
+
+<p>For maps there are three types how to display the map: Standard, Satellite and Hybrid. While you can set these in the properties, you might want the user to be able to choose the type.</p>
+
+<p>For that we are adding a segmented control to the view and CTRL drag an IBAction to our .m file:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_4.png" alt="image" /></p>
+
+<p>…and implement the action method:</p>
+
+<pre><code>	- (IBAction)setType:(UISegmentedControl *)sender {
+    switch (sender.selectedSegmentIndex) {
+        case 0:
+            self.mapView.mapType = MKMapTypeStandard;
+            break;
+        case 1:
+            self.mapView.mapType = MKMapTypeSatellite;
+            break;
+        case 2:
+            self.mapView.mapType = MKMapTypeHybrid;
+            break;
+        default:
+            break;
+    }
+}
+</code></pre>
+
+<p>When we start the application we are now able to switch between the different map types.</p>
+
+<h2 id="zoom-to-a-specific-location">Zoom to a specific location</h2>
+
+<p>While the map currently defaults to specific position, we now want to set a location / area on our own by default.</p>
+
+<p>To do that, we add the following code to our <code>viewDidLoad</code> method:</p>
+
+<pre><code>- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Create your coordinate
+    CLLocationCoordinate2D myCoordinate = {47.879854, 10.641000};
+    
+    //set location and zoom level
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(myCoordinate, 1000, 1000);
+    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
+    [self.mapView setRegion:adjustedRegion animated:YES];
+    
+}
+</code></pre>
+
+<p>Lets have a look to the details:</p>
+
+<pre><code>CLLocationCoordinate2D myCoordinate = {47.879854, 10.641000};
+</code></pre>
+
+<p>Coordinates are longitude and latitude of the position. Best way to find out for a place is Google Maps. The zoom level is adjusted in the following line:</p>
+
+<pre><code>MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(myCoordinate, 1000, 1000);
+</code></pre>
+
+<p>This is defined in metres, in our case we want to have a 1000 meters zoom level. When we launch the app now, it should default to the given position.</p>
+
+<h2 id="add-annotation">Add annotation</h2>
+
+<p>The next step for us is to add an annotation to the map. We add the following code to the <code>viewDidLoad</code> method:</p>
+
+<pre><code> //Create your annotation
+MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+// Set your annotation to point at your coordinate
+point.coordinate = myCoordinate;
+point.title = @"Andys Home";
+
+//Drop pin on map
+[self.mapView addAnnotation:point];
+</code></pre>
+
+<p>The code is best added before we do the zoom we did before.</p>
+
+<h3 id="remove-all-annotations">Remove all annotations</h3>
+
+<p>To remove all annotations from the map:</p>
+
+<pre><code>for (id annotation in self.mapView.annotations) {
+    [self.mapView removeAnnotation:annotation];
+}
+</code></pre>
+
+<h3 id="showing-the-users-location">Showing the users location</h3>
+
+<p>The last thing we want to do is do something with users location. The users location is only available if the user enabled the function. The user is asked wether he wants to share his location or not, when the function is first called. To enable that in XCode activate “Show Users Location” in the MapViews properties.</p>
+
+<p>Also drop a label on the view and create an outlet for it:</p>
+
+<pre><code>@property (weak, nonatomic) IBOutlet UILabel *labelPosition;
+</code></pre>
+
+<p>To update the user location, we are using the delegate we defined in our header file and assign the delegate to the mapView:</p>
+
+<pre><code>self.mapView.delegate = self;
+</code></pre>
+
+<p>Now we implement the method for the update:</p>
+
+<pre><code>-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    
+    CLLocationCoordinate2D myCoordinate = {47.879854, 10.641000};
+    CLLocationCoordinate2D userCoordinate = [[[self.mapView userLocation]
+                                              location] coordinate];
+    
+    CLLocation *myLoc = [[CLLocation alloc] initWithLatitude:myCoordinate.latitude
+                                                   longitude:myCoordinate.longitude];
+    CLLocation *userLoc = [[CLLocation alloc] initWithLatitude:userCoordinate.latitude
+                                                     longitude:userCoordinate.longitude];
+    
+    CLLocationDistance distance = [myLoc distanceFromLocation:userLoc];
+    
+    NSString *labelText = [NSString stringWithFormat:@"%lf km", distance / 1000];
+    
+    [self.labelPosition setText:labelText];
+}
+</code></pre>
+
+<p>The method gets called everytime the user position gets updated. It calculates the distance between the users position and the predefined location. The result is then shown on the label we just dropped on the view:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_5.png" alt="image" /></p>
+
+<h2 id="the-end">The end</h2>
+
+<p>Well thats it for some quickstart with MapKit. You can download the source code of the <a href="http://andydunkel.net/assets/uploads/2014/05/mapkit/MapKitExample.zip">example here</a>.</p>
+
+</p>		
+		  <p class="small">Tagged: MapKit by Andy</p>
+		  <hr class="postdiv">
+		  
+		
+		<h1>
+		  <a href="/meinung/tools/2014/04/18/jekyll-fazit.html">Umstellung auf Jekyll</a>
+		</h1>
+		  <p class="small">Posted on 18 April 2014 by Andy</p>
+		  <p><p>Seit ein paar Monaten verwende <a href="http://jekyllrb.com/">Jekyll</a> für meine Webseite/Blog. Zeit genug um ein Fazit zu ziehen. Als ich meinen Blog startete habe ich klassisch mit Wordpress begonnen.
+Da ich damals noch nicht wusste wie weit meine Blogausdauer gehen würde, war das eine gute Lösung. Wordpress ist schnell installiert und recht leicht durch Plugins und Themes anpassbar.  Zugegeben, damals hatte ich mich auch nicht weiter mit Alternativen oder anderen Systemen beschäftigt.</p>
+
+<p>Für einen reinen Blog ist Wordpress gut genug. Aber irgendwann sollte meine Webseite eine Mischung aus Webseite und Blog werden. Wordpress stößt hier, trotz anlegbarer Seiten und Unterseiten, an seine Grenzen. Die Inhalte wandern allesamt in eine MySQL-Datenbank an die man zwar problemlos rankommt, aber irgendwie sind die Inhalte doch darin gefangen.
+Designanpassungen erfordern eine Einarbeitung in das Template-System von Wordpress. Spaß, nicht!</p>
+
+<p>Also Alternativen gesucht, bis ich irgendwann auf Jekyll gestoßen bin. Jekyll lässt sich als eine Art Generator für Webseiten und Blogs beschreiben. Statt dynamischer serverseitiger Scriptsprache mit Datenbank und Gedöns, wird das Blog offline erstellt und besteht nur aus Text- und HTML-Dateien. Blogartikel und HTML-Seiten lassen sich sehr leicht als Markdowndatei verfassen.</p>
+
+<p>Jekyll generiert daraus dann die eigentliche Webseite. Diese besteht nur noch aus HTML-Seiten, den Bildern und sonstigen Dateien und wird dann nur noch auf den Server gepackt. Fertig!</p>
+
+<p>Damit die Webseite auch so aussieht wie Webseitenbetreiber sich das wünscht, steht vorher noch eine Anpassung des Templates an.</p>
+
+<p>Da die Webseite nur aus einfachen Textdateien besteht kann diese recht leicht in ein beliebiges Versionierungssystem gepackt werden. Backup der Webseite? Einfach alle Dateien Zippen und fertig.</p>
+
+<h2 id="statische-seiten">Statische Seiten</h2>
+
+<p>Während Wordpress die Seiten beim Aufruf neu erzeugt, ist die Jekyll-Seite nichts weiter als HTML-Seiten. Serverseitig wird daher wenig benötigt: Einfacher Webspace genügt, PHP und Datenbank werden nicht gebraucht. Sicherheitslücken sind bei statischen HTML-Seiten auch kein Thema. Regelmäßige Updates wie bei Wordpress entfallen daher.</p>
+
+<p>Dennoch: Bei größeren Webseiten / Blogs zieht das auch Probleme nach sich. Bei jeder Aktualisierung ändern sich viele, wenn nicht gar alle, HTML-Seiten. Die müssen auf den Webspace transferiert werden.
+Geht dies bei Klein-Webseiten noch einfach mit FTP, verkommt es bei größeren Seiten schnell zu einer Langwierigkeit. Da ich Shell-Zugang habe, mache ich hier einen Umweg über Git. Dies funktioniert so: Offline Webseite erstellen, git push auf den Server. Zuletzt wird auf dem Webserver die neue Version abgerufen. Ein Update der Webseite auf dem Server dauert so nur eine knappe Minute.</p>
+
+<p>Dann gibt es Dinge die bei statischen Webseiten nicht gehen: Kommentarfunktion oder Suche sind zwei davon. Beides lässt sich mit externen Diensten nachrüsten, Kommentare mache ich bei Disqus und die Suche übernimmt Google. Allerdings ist mir auch klar, dass ich hier einen Teil meiner Webseite und Daten aus der Hand gebe.</p>
+
+<h2 id="installation-bis-zur-ersten-webseite">Installation bis zur Ersten Webseite</h2>
+
+<p>Die Installation ist recht einfach, unter Linux und MacOS (mit Homebrew) ist das mit einer Handvoll Terminalbefehlen erledigt. Unter <a href="http://herbie79.de/development/web/2014/03/22/Running_Jekyll_on_Windows.html">Windows</a> ist der Aufwand etwas höher. Strafe muss sein liebe Windows-Nutzer.</p>
+
+<p>Jetzt beginnt der eigentliche Aufwand. Im Gegensatz zu Wordpress  hieß das: etwas mehr Aufwand hineinstecken bis das Design meinen Wünschen angepasst war. Ein guter Mittelweg war für mich einfach Bootstrap zu verwenden und an meine Bedürfnisse anzupassen.
+Im Gegenzug hat man volle Kontrolle über seine Webseite bis in den letzten HTML-Tag.</p>
+
+<p>Wer bereits einen Wordpress oder anderen Blog betreibt wird sich darüber freuen, dass man die Inhalte des alten Blogs übernehmen kann. Hier gibt es entsprechende Konverter.</p>
+
+<h2 id="plugins">Plugins</h2>
+
+<p>Sehr beliebt bei Wordpress, die Plugins. Welche man reichhaltig installiert, ohne sich Gedanken zu machen welche Änderungen diese an der Datenbank vornehmen oder welche Sicherheitslücken mit installiert werden. Natürlich müssen auch diese regelmäßig auf Updates überprüft werden.
+Für Jekyll gibt es auch Plugins. Diese kommen in Form von Ruby-Dateien daher, welche einfach in ein Verzeichnis gepackt werden. Macht ein Plugin mal nicht was es soll, kann man es mit etwas Programmierkenntnissen anpassen oder einfach löschen und Webseite neu erstellen. Fertig.</p>
+
+<h2 id="bloggen-mit-jekyll">Bloggen mit Jekyll</h2>
+
+<p>Bloggen geht einfach: Der Blogartikel wird in Markdownsyntax in eine Textdatei (mit einem speziellen Header) geschrieben. 
+Etwas umständlicher wird es beim Einbinden von Bildern.</p>
+
+<p>Bei Wordpress verwendete ich nicht das Webinterface sondern einen lokales Programm (MarsEdit). Hier fügt man die Bilder mit Copy &amp; Paste ein. Der Editor kümmert sich dann um die Größenanpassung, Upload und Verlinkung.</p>
+
+<p>Dieser Komfort steht bei Jekyll nicht zur Verfügung. Die Bilder müssen in der richtigen Größe in die Webseite gespeichert und dann von Hand im Artikel verlinkt werden. Kein großer Akt, aber etwas umständlicher.</p>
+
+<h2 id="webseiten">Webseiten</h2>
+
+<p>Neben der reinen Blogfunktionalität, wollte ich auch eine Webseite bauen. Auch dafür ist Jekyll geeignet. Ein gemeinsames Menü für die gesamte Webseite? Kein Problem! Einfach im Template anlegen. Beim generieren wird alles automatisch richtig in alle Seiten eingefügt. Das gesamte Design der Webseite ist extrem schnell austauschbar, da alle Unterseiten und Artikel nur den Inhalt enthalten.
+Mittlerweile erstelle ich jede neue Webseite, egal ob klein oder groß, schnell in Jekyll.</p>
+
+<h2 id="fazit">Fazit</h2>
+
+<p>Um es kurz zu machen, ich bin sehr zufrieden mit Jekyll. Es gibt ein paar Nachteile, aber die Vorteile überwiegen zumindest für mich. Es war am Anfang etwas aufwändiger alles einzurichten und zu konfigurieren. Dafür habe ich, salopp formuliert, jetzt die Kontrolle über jedes Byte meiner Webseite.
+Hat man die diese Hürde genommen, ist die Pflege der Webseite eine Leichtigkeit.
+Nachts kann ich ruhig schlafen, um Sicherheitsupdates für die Webseite muss ich mir keine Gedanken mehr machen. Gleiches gilt für Backups. Die Nachteile, wie fehlende Suche oder fehlende Kommentarfunktion lassen sich umgehen.</p>
+</p>		
+		  <p class="small">Tagged: Jekyll and Webseite by Andy</p>
+		  <hr class="postdiv">
+		  
+		
+		<h1>
 		  <a href="/delphi/firemonkey/2014/03/05/delphi_and_firemonkey_experience.html">My experiences with Delphi XE and Firemonkey</a>
 		</h1>
 		  <p class="small">Posted on 05 March 2014 by Andy</p>
@@ -413,80 +645,6 @@ mru 1490
 		  <hr class="postdiv">
 		  
 		
-		<h1>
-		  <a href="/delphi/firemonkey/2014/01/28/code_signing_problems_with_delphi_xe4_and_mavericks.html">Code signing problems with Delphi XE4 Mavericks</a>
-		</h1>
-		  <p class="small">Posted on 28 January 2014 by Andy</p>
-		  <p><p>Some days ago I wrote a <a href="http://andydunkel.net/delphi/firemonkey/2014/01/22/signing_delphi_xe_applications_for_osx.html">blog post</a> about signing a Firemonkey application manually with the developer ID.</p>
-
-<p>For app store applications Delphi automatically runs the code signing procedure for you and creates a PKG file. Handy!</p>
-
-<p>Since Apples new Mavericks release the code signing has changed a little bit and the command now needs an additional parameter: <code>--deep</code>. Delphi does not add the parameter, which results in an error building the application:</p>
-
-<pre><code>[PAClient Error] Error: E0264 Unable to execute '"/usr/bin/
-codesign" --en "/Users/.../daform.app/Contents/Entitlements.plist" 
--s "Mac Developer" -f "/Users/.../daform.app"' (Error 1)
-
-daform.app code object is not signed at all
-</code></pre>
-
-<p>OK what to do? The first problem is, that you cannot tell Delphi to add the parameter.</p>
-
-<p>So I created a workaround for that. I wrote a small C++ command line tool, which replaces the original “codesign” program. When launched is parses all the parameters from the call and adds the <code>--deep</code> option if its not present.</p>
-
-<p>Then it runs the original “codesign” tool. The project is <a href="https://github.com/andydunkel/DelphiXE4-Mavericks-Codesign-Helper">available on Github</a>.</p>
-
-<h2 id="installation">Installation</h2>
-
-<ul>
-  <li>Download the <a href="https://github.com/andydunkel/DelphiXE4-Mavericks-Codesign-Helper/blob/master/codesign?raw=true">binary</a> or compile your own version with XCode</li>
-  <li>Rename the original codesign tool in /usr/bin to codesign_original</li>
-  <li>Copy the codesign binary to /usr/bin</li>
-</ul>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/codesigning_app_store/files.png" alt="" /></p>
-
-<p>After that Delphi is able to run and build the application with code signing for the app store.</p>
-
-</p>		
-		  <p class="small">Tagged: XE4, Firemonkey, and OSX by Andy</p>
-		  <hr class="postdiv">
-		  
-		
-		<h1>
-		  <a href="/reparatur/2014/01/25/roomba_seitenmotor_wechseln.html">Roomba: Motor für die Seitenbürste wechseln</a>
-		</h1>
-		  <p class="small">Posted on 25 January 2014 by Andy</p>
-		  <p><p>Nachdem der Roomba (580) seit seiner <a href="http://andydunkel.net/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html">letzten Reparatur</a> problemlos lief, hat sich letzte Woche ein Kopfhörerkabel in der Seitenbürste verfangen. Dies hatte dann vermutlich den Motor überlastet, so dass dieser nur noch sporadisch lief. Na toll.</p>
-
-<p>Gute Nachricht, es gibt die passenden Ersatzteile im Internet zu bestellen (einfach nach Seitenbürstenmodul googlen) und diese sind sehr leicht zu wechseln. So kam wenige Tage später der passende Motor für knapp 40 Euro ins Haus. Nicht gerade billig, aber immerhin ist auch eine neue Seitenbürste mit dabei.</p>
-
-<p>Der Wechsel geht sehr einfach. Kreuzschraubenzieher, mehr wird nicht benötigt. Zuerst entfernt man die Bodenplatte und die Seitenbürste:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/roomba/roomba_motor1.png" alt="" /></p>
-
-<p>Anschließend löst man noch zwei Schrauben und dann dann den Motor einfach herausnehmen:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/roomba/roomba_motor2.png" alt="" /></p>
-
-<p>Neuen Motor einsetzen und alles wieder zuschrauben, das wars auch schon. Schon funktionierte der Roomba wieder.</p>
-
-<p>Hier gibt es die Anleitung auch als Video:</p>
-
-<iframe width="640" height="360" src="//www.youtube.com/embed/PAw2A-MawK0" frameborder="0" allowfullscreen=""></iframe>
-
-<h2 id="nachtrag">Nachtrag</h2>
-
-<p>Ich habe jetzt noch das defekte Seitenmodul zerlegt:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/roomba/roomba_motor3.png" alt="" /></p>
-
-<p>Theoretisch könnte man das Modul vielleicht kostengünstiger ersetzen, wenn man an den entsprechenden Motor kommen würde. Auf dem Motor, von S.M.C. Motors, steht eine Art Typennummer: “RC500-KW/14440/DV”. Leider habe ich bei Google nicht wirklich etwas gefunden.</p>
-</p>		
-		  <p class="small">Tagged: Roomba, Motor, and Reparatur by Andy</p>
-		  <hr class="postdiv">
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -527,7 +685,7 @@ daform.app code object is not signed at all
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
 <li class='category'><a href='/categories/coding/'>coding (31)</a></li>
-<li class='category'><a href='/categories/computer/'>computer (10)</a></li>
+<li class='category'><a href='/categories/computer/'>computer (11)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
 <li class='category'><a href='/categories/finanzen/'>finanzen (1)</a></li>
@@ -544,14 +702,14 @@ daform.app code object is not signed at all
 <li class='category'><a href='/categories/kochen/'>kochen (2)</a></li>
 <li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
 <li class='category'><a href='/categories/linux/'>linux (15)</a></li>
-<li class='category'><a href='/categories/mac/'>mac (3)</a></li>
+<li class='category'><a href='/categories/mac/'>mac (4)</a></li>
 <li class='category'><a href='/categories/meinung/'>meinung (6)</a></li>
 <li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (20)</a></li>
+<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (21)</a></li>
 <li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
 <li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
 <li class='category'><a href='/categories/osx/'>osx (1)</a></li>
-<li class='category'><a href='/categories/programmierung/'>programmierung (4)</a></li>
+<li class='category'><a href='/categories/programmierung/'>programmierung (5)</a></li>
 <li class='category'><a href='/categories/radfahren/'>radfahren (31)</a></li>
 <li class='category'><a href='/categories/raspberry/'>raspberry (3)</a></li>
 <li class='category'><a href='/categories/repair/'>repair (1)</a></li>
@@ -562,7 +720,7 @@ daform.app code object is not signed at all
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (23)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (21)</a></li>
+<li class='category'><a href='/categories/umwelt/'>umwelt (22)</a></li>
 <li class='category'><a href='/categories/webdesign/'>webdesign (6)</a></li>
 <li class='category'><a href='/categories/webseiten/'>webseiten (6)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (6)</a></li>
@@ -581,7 +739,7 @@ daform.app code object is not signed at all
   
     <a href="/page16" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 17 of 54</span>
+  <span class="page_number ">Page: 17 of 55</span>
   
     <a href="/page18" class="next">Next</a>
   

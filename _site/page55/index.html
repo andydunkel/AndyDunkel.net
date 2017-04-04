@@ -157,93 +157,29 @@
      
 		
 		<h1>
-		  <a href="/2011/08/12/morgen-geht-die-bombe-hoch.html">Morgen geht die Bombe hoch</a>
+		  <a href="/eclipse/java/2011/04/28/get-plugin-path.html">Get plugin path </a>
 		</h1>
-		  <p class="small">Posted on 12 August 2011 by Andy</p>
-		  <p><iframe width="600" height="480" src="http://www.youtube.com/embed/KcyzF06ridc" frameborder="0" allowfullscreen=""></iframe>
+		  <p class="small">Posted on 28 April 2011 by Andy</p>
+		  <p><p>This snippets gets the local folder for a plugin:</p>
+
+<pre><code>public static File getPluginFolder() {
+	if(pluginFolder == null) {
+	    URL url = Platform.getBundle("my.plugin.id").getEntry("/");
+	    try {
+	        url = Platform.resolve(url);
+	    }
+	    catch(IOException ex) {
+	        ex.printStackTrace();
+	    }
+	    pluginFolder = new File(url.getPath());
+	}
+	
+	return pluginFolder;
+}
+</code></pre>
+
 </p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr class="postdiv">
-		  
-		
-		<h1>
-		  <a href="/sonstiges/2011/08/12/handyfotos-3-2.html">Handyfotos #3</a>
-		</h1>
-		  <p class="small">Posted on 12 August 2011 by Andy</p>
-		  <p><p>Wieder mal Handyfotos zur Archivierung:</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2011/08/IMAG0248.jpg"><img src="http://andydunkel.net/assets/uploads/2011/08/IMAG0248_thumb.jpg" alt="IMAG0248" /></a><a href="http://andydunkel.net/assets/uploads/2011/08/IMAG0260.jpg"><img src="http://andydunkel.net/assets/uploads/2011/08/IMAG0260_thumb.jpg" alt="IMAG0260" /></a><a href="http://andydunkel.net/assets/uploads/2011/08/IMAG0324.jpg"><img src="http://andydunkel.net/assets/uploads/2011/08/IMAG0324_thumb.jpg" alt="IMAG0324" /></a><a href="http://andydunkel.net/assets/uploads/2011/08/IMAG0329.jpg"><img src="http://andydunkel.net/assets/uploads/2011/08/IMAG0329_thumb.jpg" alt="IMAG0329" /></a><a href="http://andydunkel.net/assets/uploads/2011/08/IMAG0333.jpg"><img src="http://andydunkel.net/assets/uploads/2011/08/IMAG0333_thumb.jpg" alt="IMAG0333" /></a><a href="http://andydunkel.net/assets/uploads/2011/08/IMAG0335.jpg"><img src="http://andydunkel.net/assets/uploads/2011/08/IMAG0335_thumb.jpg" alt="IMAG0335" /></a><a href="http://andydunkel.net/assets/uploads/2011/08/IMAG0351.jpg"><img src="http://andydunkel.net/assets/uploads/2011/08/IMAG0351_thumb.jpg" alt="IMAG0351" /></a><a href="http://andydunkel.net/assets/uploads/2011/08/IMAG0353.jpg"><img src="http://andydunkel.net/assets/uploads/2011/08/IMAG0353_thumb.jpg" alt="IMAG0353" /></a><a href="http://andydunkel.net/assets/uploads/2011/08/IMAG0400.jpg"><img src="http://andydunkel.net/assets/uploads/2011/08/IMAG0400_thumb.jpg" alt="IMAG0400" /></a><a href="http://andydunkel.net/assets/uploads/2011/08/IMAG0403.jpg"><img src="http://andydunkel.net/assets/uploads/2011/08/IMAG0403_thumb.jpg" alt="IMAG0403" /></a></p>
-</p>		
-		  <p class="small">Tagged: Handyfotos by Andy</p>
-		  <hr class="postdiv">
-		  
-		
-		<h1>
-		  <a href="/sonstiges/2011/08/11/nchste-lieferung.html">Nächste Lieferung</a>
-		</h1>
-		  <p class="small">Posted on 11 August 2011 by Andy</p>
-		  <p><p>Spannend: Heute kam wieder der große Kran und hat eine Röhre für die Radiologie nebenan geliefert. Ich hab das ganze als Zeitraffer festgehalten:</p>
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:507db742-21eb-4d84-ae10-96123dcd8635" class="wlWriterEditableSmartContent"><div><object width="566" height="318"><param name="movie" value="http://www.youtube.com/v/XQPAsx1ZMaE?hl=en&amp;hd=1" /><embed src="http://www.youtube.com/v/XQPAsx1ZMaE?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="566" height="318" /></object></div></div>
-<p>Gut, so spannend ist das dann doch nicht, hauptsächlich wollte ich mal die Zeitrafferanwendung vom iPad testen. <img style="border-bottom-style: none; border-left-style: none; border-top-style: none; border-right-style: none" class="wlEmoticon wlEmoticon-smile" alt="Smiley" src="http://andydunkel.net/assets/uploads/2011/08/wlEmoticon-smile1.png" />&nbsp;</p>
-<p>Wie das geht, habe ich unter&nbsp; <a href="http://blog.ekiwi.de/?p=687">http://blog.ekiwi.de/?p=687</a> beschrieben.</p>
-</p>		
-		  <p class="small">Tagged: ipad, Kaufbeuren, Lieferung, Radiologie, and Zeitraffer by Andy</p>
-		  <hr class="postdiv">
-		  
-		
-		<h1>
-		  <a href="/tools/2011/08/10/der-befehl-ping-konnte-nicht-gefunden-werden.html">Der Befehl “ping” konnte nicht gefunden werden</a>
-		</h1>
-		  <p class="small">Posted on 10 August 2011 by Andy</p>
-		  <p><p>Windows schafft es auch nach vielen Jahren mich zu überraschen. Diesmal auf der Kommandozeile, die man ab und zu mal braucht um Befehle wie “ping”, “ipconfig” oder ein “tracert” abzusetzen.</p>
-
-<p>Nun wollte Windows keine dieser Befehle mehr kennen:</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2011/08/image12.png"><img src="http://andydunkel.net/assets/uploads/2011/08/image_thumb6.png" alt="image" /></a></p>
-
-<p><strong>Was kann man tun?</strong></p>
-
-<!-- more -->
-
-<p>Nach etwas Überlegungszeit war mein erster Ansatz die PATH Umgebungsvariable. Diese legt fest, welche Pfadinhalte überall verfügbar sind auf der Kommandozeile. Und siehe da, dort waren die Windows-Systemverzeichnisse nicht mehr drinnen, in denen die kleinen Tools liegen.</p>
-
-<p>Hier nun die Abhilfe: Zuerst in die Systemsteuerung gehen, dort dann auf “System” und anschließend auf “Erweiterte Systemeinstellungen”:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/08/image13.png" alt="image" /></p>
-
-<p>Dort klickt man dann auf den Button “Umgebungsvariablen” woraufhin sich dann dieser schöne Dialog öffnet:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/08/image14.png" alt="image" /></p>
-
-<p>Nun einfach zur Variable “path” scrollen und bearbeiten klicken. Bei mir haben dann die folgenden Einträge gefehlt:</p>
-
-<blockquote>
-  <p>%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\</p>
-</blockquote>
-
-<p>Diese fügt man nun einfach am Ende der Liste hinzu (Trennung der Einträge mit Semikolon. Die bestehenden Einträge nicht löschen.</p>
-
-<p>Anschließend ist auch Windows wieder lieb:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/08/image15.png" alt="image" /></p>
-
-<p>Leider konnte ich keine Ursache herausfinden, warum die Einträge weg waren. Meine Vermutung liegt in einer fehlerhaften Installation eines anderen Programms.</p>
-</p>		
-		  <p class="small">Tagged: command, found, ipconfig, not, ping, and tracert by Andy</p>
-		  <hr class="postdiv">
-		  
-		
-		<h1>
-		  <a href="/sonstiges/2011/08/09/gelingt-immer.html">Gelingt immer</a>
-		</h1>
-		  <p class="small">Posted on 09 August 2011 by Andy</p>
-		  <p><p><img src="http://andydunkel.net/assets/uploads/2011/08/image10.png" alt="image" /></p>
-
-<blockquote>
-  <p>“Zu den wenigen Dingen, welche im Leben immer gelingen, gehört zweifelsohne das Rührei.”</p>
-</blockquote>
-</p>		
-		  <p class="small">Tagged: Gelingt and Immer by Andy</p>
+		  <p class="small">Tagged: Plugin folder eclipse by Andy</p>
 		  <hr class="postdiv">
 		  
 		
@@ -339,11 +275,11 @@
 <!-- Pagination links -->
 <div class="pagination">
   
-    <a href="/page39" class="previous">Previous</a>
+    <a href="/page54" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 40 of 55</span>
+  <span class="page_number ">Page: 55 of 55</span>
   
-    <a href="/page41" class="next">Next</a>
+    <span class="next ">Next</span>
   
 </div>
 
