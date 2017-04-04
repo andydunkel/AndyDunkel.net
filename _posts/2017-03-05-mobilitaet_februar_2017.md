@@ -22,7 +22,7 @@ Die Statistik ist dadurch wieder etwas mehr aufs Fahrrad verlagert. Beim Auto si
 
 ### Fahrrad
 
-- Gesamt km: 123 km
+- Gesamt km: 87 km
 - Fahrten: 19
 - Durchschnitt pro Fahrt: 6,47 km
 
