@@ -16,17 +16,17 @@ tags:
 
 ---
 
-Für die Erstellung dieser Homepage verwende ich [Jekyll](https://jekyllrb.com/ ""). Vorher hatte ich Wordpress im Einsatz. Der Vorteil von Jekyll ist, dass es sich um statische Webseiten handelt. Das heißt es kommt keine Datenbank und keine Scriptsprache zum Einsatz. Prinzipbedingt muss ich nicht auf Sicherheitsupdates achten und diese regelmäßig einspielen. Jekyll erzeugt einfache HTML-Dateien, welche auf den Webspace geladen werden. Fertig.
+Für die Erstellung dieser Homepage verwende ich [Jekyll](https://jekyllrb.com/). Vorher hatte ich Wordpress im Einsatz. Der Vorteil von Jekyll ist, dass es sich um statische Webseiten handelt. Das heißt es kommt keine Datenbank und keine Scriptsprache zum Einsatz. Prinzipbedingt muss ich nicht auf Sicherheitsupdates achten und diese regelmäßig einspielen. Jekyll erzeugt einfache HTML-Dateien, welche auf den Webspace geladen werden. Fertig.
 
 Jekyll ist recht leistungsfähig und hat jede Menge Funktionen. Leistungsfähigkeit und Flexibilität bringen allerdings auch mit sich, dass die Bedienung relativ komplex ist. Zudem kümmert sich Jekyll auch "nur" um die eigentliche Generierung der Inhalte. 
 
 Bearbeitung, Erstellung und Upload der Inhalte bleiben dem Anwender überlassen. Neben Jekyll benötigt man also noch mindestens einen Texteditor, ein FTP-Upload-Programm und ein Grafiktool.
 
-Da es sich eher um eine Software aus dem Linux/Unix-Umfeld ist, ist auch die Installation für Windows-Benutzer nicht einfach. Als Basis wird Ruby verwendet, welches auf dem System vorhanden sein muss. Wer Jekyll unter Windows installieren will, dem [sei diese Anleitung empfohlen](https://davidburela.wordpress.com/2015/11/28/easily-install-jekyll-on-windows-with-3-command-prompt-entries-and-chocolatey/ "").
+Da es sich eher um eine Software aus dem Linux/Unix-Umfeld ist, ist auch die Installation für Windows-Benutzer nicht einfach. Als Basis wird Ruby verwendet, welches auf dem System vorhanden sein muss. Wer Jekyll unter Windows installieren will, dem [sei diese Anleitung empfohlen](https://davidburela.wordpress.com/2015/11/28/easily-install-jekyll-on-windows-with-3-command-prompt-entries-and-chocolatey/).
 
 ## ElTexto
 
-Die Alternative für Windows-Benutzer, die ich hier vorstelle, heißt "[ElTexto](http://eltexto.net "")". Genauso wie Jekyll generiert die Software statische Webseiten. 
+Die Alternative für Windows-Benutzer, die ich hier vorstelle, heißt "[ElTexto](http://eltexto.net)". Genauso wie Jekyll generiert die Software statische Webseiten. 
 
 Im Gegensatz zu Jekyll handelt es sich um eine Windows-Anwendung. Diese stellt alle Funktionen zur Erstellung, Bearbeitung, Export und Upload der Webseite in der Programmoberfläche bereit.
 
