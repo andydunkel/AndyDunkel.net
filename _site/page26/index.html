@@ -157,6 +157,28 @@
      
 		
 		<h1>
+		  <a href="/java/2012/11/25/java-convert-string-to-input-stream.html">Java: Convert String to InputStream</a>
+		</h1>
+		  <p class="small">Posted on 25 November 2012 by Andy</p>
+		  <p><p>Some methods want an InputStream, converting a String into an InputStream is very easy:</p>
+
+<pre><code>/**
+ * Converts a string into an inputstream
+ * @param s
+ * @return
+ */
+private InputStream convertStringToInputStream(String s) {
+  ByteArrayInputStream in = new ByteArrayInputStream(s.getBytes());
+  return in;
+}
+</code></pre>
+
+</p>		
+		  <p class="small">Tagged:  by Andy</p>
+		  <hr class="postdiv">
+		  
+		
+		<h1>
 		  <a href="/gadgets/2012/11/24/roomba-error-9-repair-guide-english-version-2.html">Roomba error 9 repair guide (English version)</a>
 		</h1>
 		  <p class="small">Posted on 24 November 2012 by Andy</p>
@@ -360,38 +382,6 @@ while(i &lt; args.length) {
 		  <hr class="postdiv">
 		  
 		
-		<h1>
-		  <a href="/coding/eclipse/2012/11/02/easy-logging-for-rcp-applications.html">Easy logging for RCP applications</a>
-		</h1>
-		  <p class="small">Posted on 02 November 2012 by Andy</p>
-		  <p><p>A small class for easy logging in RCP applications by using the Activators logging functions. This class mainly wraps the need of creating an IStatus object each time we want to log something.</p>
-
-<pre><code>import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
-
-public class LoggerUtil {
-    public static void info(String message){
-        IStatus status = new Status(IStatus.INFO,Activator.PLUGIN_ID, message);
-        Activator.getDefault().getLog().log(status);
-    }
-
-    public static void error(String message){
-        IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, message);
-        Activator.getDefault().getLog().log(status);
-    }
-
-    public static void warning(String message){
-        IStatus status = new Status(IStatus.WARNING,.PLUGIN_ID, message);
-        Activator.getDefault().getLog().log(status);
-    }
-}
-</code></pre>
-
-</p>		
-		  <p class="small">Tagged:  by Andy</p>
-		  <hr class="postdiv">
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -466,10 +456,10 @@ public class LoggerUtil {
 <li class='category'><a href='/categories/science/'>science (3)</a></li>
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
-<li class='category'><a href='/categories/tools/'>tools (23)</a></li>
+<li class='category'><a href='/categories/tools/'>tools (24)</a></li>
 <li class='category'><a href='/categories/umwelt/'>umwelt (22)</a></li>
-<li class='category'><a href='/categories/webdesign/'>webdesign (6)</a></li>
-<li class='category'><a href='/categories/webseiten/'>webseiten (6)</a></li>
+<li class='category'><a href='/categories/webdesign/'>webdesign (7)</a></li>
+<li class='category'><a href='/categories/webseiten/'>webseiten (7)</a></li>
 <li class='category'><a href='/categories/windows/'>windows (6)</a></li>
 <li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>
 
