@@ -157,6 +157,34 @@
      
 		
 		<h1>
+		  <a href="/eclipse/java/swt/2011/10/04/eclipse-rcp-remove-tab-folder-from-view.html">Eclipse RCP: Remove tab folder from View</a>
+		</h1>
+		  <p class="small">Posted on 04 October 2011 by Andy</p>
+		  <p><p>If you create a new RCP application a view gets a tab like this:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/10/image3.png" alt="image" /></p>
+
+<p>To remove the tab, use the “addStandaloneView” method in your perspective. Here is an example:</p>
+
+<pre><code>public class Perspective implements IPerspectiveFactory {
+  public void createInitialLayout(IPageLayout layout) {       
+    String editorArea = layout.getEditorArea();
+    layout.setEditorAreaVisible(false);
+    
+    layout.addStandaloneView(View.ID, false, IPageLayout.LEFT, 1.0f, editorArea);       
+  }
+}
+</code></pre>
+
+<p>The result:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/10/image4.png" alt="image" /></p>
+</p>		
+		  <p class="small">Tagged: folder, RCP, remove, and tab by Andy</p>
+		  <hr class="postdiv">
+		  
+		
+		<h1>
 		  <a href="/science/2011/10/03/infrarotlicht-sichtbar-machen.html">Infrarotlicht sichtbar machen</a>
 		</h1>
 		  <p class="small">Posted on 03 October 2011 by Andy</p>
@@ -230,24 +258,6 @@
 		  <hr class="postdiv">
 		  
 		
-		<h1>
-		  <a href="/eclipse/java/2011/09/17/emf-object-is-not-contained-in-a-resource.html">EMF: Object is not contained in a resource</a>
-		</h1>
-		  <p class="small">Posted on 17 September 2011 by Andy</p>
-		  <p><p>I had a small problem <a href="http://andydunkel.net/eclipse/java/2011/08/02/save-and-load-an-emf-model-to-an-xml-file.html">saving my EMF model to XML</a>. I got the error message “The object … is not contained in a resource”.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/09/image9.png" alt="image" /></p>
-
-<p>The solution is simple. In the EMF editor just set containment to true for the reference:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/09/image10.png" alt="image" /></p>
-
-<p>Done! After that, the object was saved correctly in the XML file.</p>
-</p>		
-		  <p class="small">Tagged: EMF, Problem, Recource, and Save by Andy</p>
-		  <hr class="postdiv">
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -288,7 +298,7 @@
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
 <li class='category'><a href='/categories/coding/'>coding (31)</a></li>
-<li class='category'><a href='/categories/computer/'>computer (11)</a></li>
+<li class='category'><a href='/categories/computer/'>computer (12)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
 <li class='category'><a href='/categories/finanzen/'>finanzen (1)</a></li>
