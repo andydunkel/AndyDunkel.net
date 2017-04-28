@@ -1,7 +1,7 @@
 ---
 author: admin
 comments: true
-date: 2017-04-24 17:00:00+00:00
+date: 2017-04-28 17:00:00+00:00
 layout: post
 slug: power_button_reparatur_dell_vostro
 title: 'Power Button Reparatur Dell Vostro 2520'
