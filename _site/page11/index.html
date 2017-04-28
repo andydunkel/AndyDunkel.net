@@ -157,6 +157,66 @@
      
 		
 		<h1>
+		  <a href="/windows/computer/2016/01/31/thinkpad_w500_integrated_graphic_card_on_windows10.html">Thinkpad W500 - Integrierte Grafikkarte - Treiber für Windows 10</a>
+		</h1>
+		  <p class="small">Posted on 31 January 2016 by Andy</p>
+		  <p><p><em>English Version below</em></p>
+
+<p>Mein Thinkpad W500, mit SSD und 6GB RAM, ist immer noch eine veritable Workstation für alles was ich so mache. Neuere Notebooks haben leider oft auch noch eine kleinere Displayauflösung als das W500. Deswegen hoffe ich, dass ich das Ding noch eine ganze Weile verwenden kann. Windows 10 läuft ebenfalls ohne Probleme, wenn man von etwas Treiberproblemen absieht. Aber die sind lösbar.</p>
+
+<p>Leider liefert Lenovo keine neuen Treiber für das Notebook. Man will da <a href="http://www.heise.de/newsticker/meldung/Lenovo-Chef-Windows-10-Gratis-Upgrade-war-ein-Fehler-3067578.html">lieber neue Geräte verkaufen</a>, als sich um den alten Kram zu kümmern. Übrigens läuft Linux ohne Probleme.</p>
+
+<p>Hauptsächlich macht die Grafikkarte Probleme. hier gibt es keinen Treiber für Windows 10. Ich hatte bereits geschrieben, wie man die <a href="http://andydunkel.net/computer/2015/08/09/windows_10_on_thinkpad_w500.html">ATI Fire GL 5700 Grafikkarte</a> unter Windows 10 zum Laufen bekommt. Dies funktioniert auch problemlos, allerdings läuft dann immer die ATI-Grafikkarte. Diese verbraucht allerdings mehr Strom, was zu geringerer Akkulaufzeit führt.</p>
+
+<p>Also die integrierte Grafik im Bios aktiviert. Linux bootet ohne Probleme, unter Windows wird erstmal nur der Standardtreiber installiert. Bei der integrierten Grafik handelt es sich um einen “Intel Graphics Media Accelerator 4500MHD”-Grafikkarte. Leider gibt es von Haus aus keinen Treiber für Windows 10. Auch hier führt der Weg über den Windows 7 Treiber zum Erfolg. Nach mehreren Versuchen mit diversen Treibern, die nicht funktioniert haben (ließen sich gar nicht installieren), habe ich den folgenden Treiber von der Intel-Webseite ausprobiert <a href="https://downloadcenter.intel.com/download/18402">Win7Vista_64_151717bb.zip</a>.</p>
+
+<p>Statt diesen über das Setup zu installieren, habe ich den manuell über den Gerätemanager ausgewählt. Im Gerätemanager die Eigenschaften des Video-Adapters anzeigen lassen und dann dort Treiber aktualisieren auswählen.</p>
+
+<p><img src="/assets/uploads/2016/1/intel_treiber.png" alt="" /></p>
+
+<p>Der Treiber befindet sich im Downloadarchiv im Unterordner “Graphics”:</p>
+
+<p><img src="/assets/uploads/2016/1/intel_treiber1.png" alt="" /></p>
+
+<p>Gleich nach der Installation der erste Erfolg, Auflösung und Darstellung passen und der Gerätemanager meldet keine Probleme mehr. Leider musste ich kurz darauf feststellen, dass es doch noch zu Grafikproblemen kam. Ab und zu wurden Elemente von Windows mit Artefakten dargestellt:</p>
+
+<p><img src="/assets/uploads/2016/1/intel_grafikfehler.png" alt="" /></p>
+
+<p>Mein Verdacht war, dass der Treiber doch nicht so gut unter Windows 10 funktioniert. Das <a href="http://thinkwiki.de/W500">Thinkpad-Wiki</a> brachte hier aber die Lösung:</p>
+
+<blockquote>
+  <p>Artefakte beim Betrieb der Intel Grafikkarte in Verbindung mit zwei verschiedenen Arbeitsspeichermodulen und aktiviertem Intel VT-d</p>
+</blockquote>
+
+<p>Und siehe da, kaum hatte ich dies im Bios deaktiviert, lief es ohne Probleme. Damit lässt sich nun auch die interne Grafik unter Windows nutzen. Wie sich das auf die Akkuleistung auswirkt muss ich noch testen. Das Notebook läuft zumindest mit weniger Lüfter und wird weniger warm, als mit der ATI-Grafikkarte. Wer die meiste Zeit am Notebook arbeitet und keine 3D-Leistung benötigt, spart so Strom und Akku. Momentan beim Tippen dieses Textes meldet Windows derzeit knappe 5 Stunden, mit Auslastung wird es weniger sein. Mit der ATI-Grafik bin ich mit Müh und Not auf 2,5 Stunden gekommen.</p>
+
+<p>Für den Betrieb eines externen Monitors am Display-Port wird allerdings die ATI-Grafik benötigt.</p>
+
+<hr />
+
+<h1 id="thinkpad-w500---use-integrated-graphic-card-on-windows-100">Thinkpad W500 - Use Integrated Graphic Card on Windows 100</h1>
+
+<p>My Thinkpad W500 is still a very powerful workstation for everything I am doing. New notebooks often lack the display resolution of the W500. Windows 10 is running without any problems, if you have solved the driver problems.</p>
+
+<p>Lenovo does not provide any Windows 10 support for the W500. Selling new laptops seems more important for them than supporting older models. By the way: Linux runs without any problems. The biggest driver problem is the graphic card. There is no driver for Windows 10.</p>
+
+<p>I wrote an <a href="http://andydunkel.net/computer/2015/08/09/windows_10_on_thinkpad_w500.html">article</a> in the past how to get the “ATI Fire GL 5700 Grafikkarte running on Windows 10. This works without problems, however the ATI card needs a lot of power, which results in bad battery life.</p>
+
+<p>To get more battery life I switched to the integrated graphics card in the Bios. Linux runs without problems, Windows does not have a driver for the “Intel Graphics Media Accelerator 4500MHD” and runs only the standard driver. As for the ATI card installing the Windows 7 driver is the solution. Finding the correct driver was a bit of an issue. Several drivers did not work, however the following worked: <a href="https://downloadcenter.intel.com/download/18402">Win7Vista_64_151717bb.zip</a>.</p>
+
+<p>I did not install the driver with the Setup. In the device manager I selected the graphics card and installed the driver manually. After unzipping the driver package, you can find the driver in the “graphics” directory. See images above.</p>
+
+<p>After installation the display resolution was correct and everthiny seemed fine. However I had some graphic issues, some windows where showing artifacts. Turned out that this happens, if you have different memory modules installed and Intel VT-d actived in the Bios. Deactivating VT-d in the Bios and everything worked fine.</p>
+
+<p><img src="/assets/uploads/2016/1/intel_grafikfehler.png" alt="" /></p>
+
+<p>Now I can use the integrated graphic card on Windows 10. How much more battery life I will get out of that, I have not tried yet. But first tests showed that the fan is running much less and the noteboo is much cooler. Currently Windows is saying something about 5 hours of battery life. With the ATI card is was usually 2,5 hours. For using an external display the ATI graphic card must be actived. The display port is only working with the ATI graphic card.</p>
+</p>		
+		  <p class="small">Tagged: Thinkpad, W500, Linux, and Windows by Andy</p>
+		  <hr class="postdiv">
+		  
+		
+		<h1>
 		  <a href="/linux/windows/programmierung/2016/01/29/sublime_text.html">Sublime Text</a>
 		</h1>
 		  <p class="small">Posted on 29 January 2016 by Andy</p>
@@ -301,54 +361,6 @@ ttps://github.com/jumanji27/related-posts-jekyll-plugin">ein Github-Projekt</a> 
 		  <hr class="postdiv">
 		  
 		
-		<h1>
-		  <a href="/linux/opensource/2016/01/16/gimp_save_for_web.html">Gimp - Save for Web Plugin</a>
-		</h1>
-		  <p class="small">Posted on 16 January 2016 by Andy</p>
-		  <p><p><em>Note: German versions of this article can be found <a href="http://ekiwi-blog.de/?p=2507">here</a> and <a href="http://ekiwi-blog.de/?p=2524">here</a>.</em></p>
-
-<p>One of my favorite features of Photoshop if the feature “Save for web”. Its a nice tool to optimize your image for the web. You can basically choose file format, compression, number of colors and see the results of the optimization in a preview image.</p>
-
-<p>In <a href="http://www.gimp.org">Gimp</a> there is no such feature by default yet. But there is a plugin that implements the feature. You can <a href="http://registry.gimp.org/node/33">download it here</a>.</p>
-
-<p>After installation the plugin becomes available in the file menu. The plugin offers the same functions as the Photoshop one:</p>
-
-<p><img src="/assets/uploads/2016/1/save_for_web_linux.png" alt="" /></p>
-
-<p><img src="/assets/uploads/2016/1/save_for_web_linux_main.png" alt="" /></p>
-
-<h2 id="installation-on-windows">Installation on Windows</h2>
-
-<p>On Windows you just extract the .exe file of the plugin into the plugin directory of Gimp: <code>c:\Users\username\.gimp-2.8\plug-ins</code>.</p>
-
-<h2 id="installation-on-linux">Installation on Linux</h2>
-
-<p>After extraction of the archive on Linux the installation is done in three simple steps:</p>
-
-<pre><code>./configure
-make
-make install
-</code></pre>
-
-<p>However there where a few problems with that. The <code>configure</code> script exited with an error message:</p>
-
-<pre><code>configure: error: Package requirements (gimp-2.0 &gt;= 2.3.0 gimpui-2.0 &gt;= 2.3.0) were not met:
-
-No package 'gimp-2.0' found
-No package 'gimpui-2.0' found
-</code></pre>
-
-<p>This looks like Gimp could not be found, but thats not true. Actually you need the <code>gimp2.0-dev</code> package installed:</p>
-
-<pre><code>sudo apt-get install gimp2.0-dev intltool
-</code></pre>
-
-<p>In my case it also needed the package <code>intltool</code>. After that the installation steps went without no further errors.</p>
-</p>		
-		  <p class="small">Tagged: Gimp by Andy</p>
-		  <hr class="postdiv">
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -389,7 +401,7 @@ No package 'gimpui-2.0' found
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
 <li class='category'><a href='/categories/coding/'>coding (31)</a></li>
-<li class='category'><a href='/categories/computer/'>computer (12)</a></li>
+<li class='category'><a href='/categories/computer/'>computer (13)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
 <li class='category'><a href='/categories/finanzen/'>finanzen (1)</a></li>
@@ -416,8 +428,8 @@ No package 'gimpui-2.0' found
 <li class='category'><a href='/categories/programmierung/'>programmierung (5)</a></li>
 <li class='category'><a href='/categories/radfahren/'>radfahren (31)</a></li>
 <li class='category'><a href='/categories/raspberry/'>raspberry (3)</a></li>
-<li class='category'><a href='/categories/repair/'>repair (1)</a></li>
-<li class='category'><a href='/categories/reparatur/'>reparatur (4)</a></li>
+<li class='category'><a href='/categories/repair/'>repair (2)</a></li>
+<li class='category'><a href='/categories/reparatur/'>reparatur (5)</a></li>
 <li class='category'><a href='/categories/retrotrip/'>retrotrip (1)</a></li>
 <li class='category'><a href='/categories/rezepte/'>rezepte (1)</a></li>
 <li class='category'><a href='/categories/science/'>science (3)</a></li>
