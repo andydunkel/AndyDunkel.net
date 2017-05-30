@@ -157,6 +157,62 @@
      
 		
 		<h1>
+		  <a href="/coding/2015/07/12/c_sharp_dateiaenderungen_ueberwachen.html">C#-Dateiänderungen in Verzeichnissen überwachen</a>
+		</h1>
+		  <p class="small">Posted on 12 July 2015 by Andy</p>
+		  <p><h1 id="c---dateinderungen-in-verzeichnissen-berwachen">C# - Dateiänderungen in Verzeichnissen überwachen</h1>
+<p>Eine Aufgabe, die kompliziert klingt, es aber dann doch nicht ist: Überwachen von Verzeichnissen auf Änderungen. Egal, ob eine Datei umbenannt wird, eine Datei hinzukommt, Verzeichnisse verschoben werden etc.</p>
+
+<p>Stellt sich heraus, dass dies in C#, bzw. mit dem .net-Framework, eine einfache Sache ist. Die Klasse <code>FileSystemWatcher</code> nimmt uns die Arbeit ab. Einmal gestartet, überwacht und benachrichtigt uns dieser über Änderungen. Hier eine Beschreibung wie man diesen einsetzt.</p>
+
+<p><img src="/assets/uploads/2015/7/fsw1.png" alt="" /></p>
+
+<p>Zuerst legen wir uns das <code>FileSystemWatcher</code>-Object an und konfigurieren es:</p>
+
+<pre><code>private FileSystemWatcher _watcher;
+
+_watcher = new FileSystemWatcher();
+_watcher.Path = "c:\\temp";
+_watcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.DirectoryName;
+_watcher.Filter = "*.*";
+</code></pre>
+
+<p>Neben dem Pfad können wir festlegen über welche Änderungen wir uns benachrichtigen lassen wollen. Ebenfalls können wir festlegen, welche Dateien wir überwachen wollen. In unserem Beispiel einfach alle.</p>
+
+<pre><code>_watcher.Changed += new FileSystemEventHandler(OnChanged);
+_watcher.Created += new FileSystemEventHandler(OnChanged);
+_watcher.Deleted += new FileSystemEventHandler(OnChanged);
+_watcher.Renamed += new RenamedEventHandler(OnRenamed);
+</code></pre>
+
+<p>Nun müssen wir den <code>FileSystemWatcher</code> nur noch starten:</p>
+
+<pre><code>_watcher.EnableRaisingEvents = true;
+</code></pre>
+
+<p>Die EventHandler sehen so aus:</p>
+
+<pre><code>private void OnRenamed(object sender, RenamedEventArgs e)
+{
+    MessageBox.Show("Änderung: " + e.FullPath + " - " + e.ChangeType.ToString());          
+}
+
+private void OnChanged(object source, FileSystemEventArgs e)
+{
+    MessageBox.Show("Änderung: " + e.FullPath + " - " + e.ChangeType.ToString());
+}
+</code></pre>
+
+<p>Die übergebenen EventArgs enthalten Informationen zu den geänderten Datei, als auch Informationen über die Art der Änderung.</p>
+
+<p>Das war es auch schon. Wer will kann sich das <a href="/assets/uploads/2015/7/FileSystemWatcher.zip">Beispielprojekt hier herunterladen</a>.</p>
+
+</p>		
+		  <p class="small">Tagged: C# by Andy</p>
+		  <hr class="postdiv">
+		  
+		
+		<h1>
 		  <a href="/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html">C#-Anwendungen mehrsprachig gestalten</a>
 		</h1>
 		  <p class="small">Posted on 04 July 2015 by Andy</p>
@@ -364,58 +420,6 @@ noch nicht getestet. Nach der Installation funktionierte die Karte auch probleml
 		  <hr class="postdiv">
 		  
 		
-		<h1>
-		  <a href="/webseiten/html/2015/03/30/homepageerstellung_mit_wix_com.html">Homepageerstellung mit Wix.com</a>
-		</h1>
-		  <p class="small">Posted on 30 March 2015 by Andy</p>
-		  <p><p>Ich werde ab und zu gefragt, wie man eine eigene Homepage für Privat/Verein oder die eigene Firma erstellt. Meine Antwort lautete bisher immer in Richtung: naja, nicht so einfach*.</p>
-
-<p>Aus diesem Grund habe ich mich mal umgeschaut, was es so gibt für Leute, die Ihre Inhalte online stellen wollen, ohne sich viel mit Technik, Webspace, FTP etc. auseinandersetzen wollen. Angeschaut habe ich mir den Anbieter <a href="http://de.wix.com">Wix.com</a>.</p>
-
-<p>Wix.com bietet eine Art Baukastensystem mit welchem man sich schnell einen Internetauftritt zusammenstellen kann.</p>
-
-<h2 id="warum-ein-baukastensystem">Warum ein Baukastensystem?</h2>
-
-<p>*Wer eine Homepage erstellen will, muss sich nicht nur Webspace besorgen. Ferner sollte man sich HTML- und CSS-Kenntnisse aneignen; Java-Script kann auch nicht schaden. Und wer die Webseite auch für mobile Nutzer nutzbar machen will, sollte sich in die Grundlagen für responsives Webdesign einarbeiten. Es gibt zwar Frameworks, die einem solche Arbeiten abnehmen, aber auch diese erfordern erstmal eine Einarbeitung bevor man davon profitieren kann. Selbst ein fertiges CMS-System macht mehr Arbeit als man denkt. Ständig sollte man darauf achten, dass man immer die aktuellen Sicherheitsupdates installiert hat.</p>
-
-<h2 id="wixcom">Wix.com</h2>
-
-<p><a href="http://de.wix.com">Wix.com</a> nimmt einem diese Arbeit ab und man kann sich auf das Wesentliche konzentrieren: die Inhalte.</p>
-
-<p>Schön: Die Anmeldung ist kostenlos. Damit kann man sich die Sache in aller Ruhe anschauen und testen. Zur Anmeldung wird nur die E-Mail-Adresse benötigt.</p>
-
-<p>Gleich nach der Anmeldung kann es losgehen mit der Erstellung der Homepage. Hierfür wählt man aus zahlreichen Vorlagen die passende aus. Ob private Homepage mit Blog, Firmenhomepage oder für den Verein: die Auswahl ist riesig.</p>
-
-<p><img src="/assets/uploads/2015/3/wix2.png" alt="" /></p>
-
-<p>Alle Designs sind von Haus aus responsive und damit auch für die Darstellung auf Handy und Tablett optimiert. Nachdem man sich für ein Design entschieden hat, geht es an die Bearbeitung der Webseite.</p>
-
-<p>So gut wie alle Elemente der Webseite lassen sich online bearbeiten und anpassen. Der Editor funktioniert komplett im Browser. Es ist keine Installation von Software auf dem PC notwendig. So kann man die Webseite von jedem Computer mit dem Browser bearbeiten.</p>
-
-<p>Neue Unterseiten sind mit einem Klick erstellt und dem Webseitenmenü hinzugefügt.</p>
-
-<p><img src="/assets/uploads/2015/3/wix3.png" alt="" /></p>
-
-<p>Neben den Standardfunktionen für Webseiten, lässt sich die Webseite mit jeder Menge Funktionen ausrüsten. Kontaktformular?, Bildergalerie?, Blog? Kein Problem! Mit einem Klick erstellt.</p>
-
-<p><img src="/assets/uploads/2015/3/wix4.png" alt="" /></p>
-
-<p>Bereits mit dem kostenlosen Account kann man jede Menge machen. Wer mehr will, der kann sich einen <a href="http://de.wix.com/upgrade/website">Premium-Account</a> klicken. Neben einer eigenen Domain, gibt es Werbefreiheit, mehr Speicherplatz und andere Zusatzfunktionen wie Statistiken und sogar <a href="http://de.wix.com/ecommerce/website">Online-Shops</a> sind möglich.</p>
-
-<h2 id="fazit">Fazit</h2>
-
-<p>Für jeden, der ohne Umstände eine Homepage erstellen will ohne sich über Technik, CSS, Grafikdesign und Java-Script Gedanken machen zu muessen, für den bietet Wix.com eine komplette Lösung. Die Vorlagen sind allesamt schön anzusehen und funktionieren bereits von Haus aus auch auf mobilen Geräten.</p>
-
-<p>Die Homepage bleibt jederzeit skalierbar. Soll die Webseite mal größer werden, kein Problem.</p>
-
-<p>Da alles im Browser funktioniert muss man auch keine extra Software kaufen und installieren. Es funktioniert einfach und man muss sich auch nicht um irgendwelche Updates kümmern.</p>
-
-<p>Wer einen kleinen Einblick haben will, wie schnell das Erstellen einer Webseite funktioniert. Hier <a href="http://andydunkel.wix.com/irland">ein Beispiel für einen Blog</a> welches ich in 15 Minuten erstellt habe.</p>
-</p>		
-		  <p class="small">Tagged: HTML and Homepage by Andy</p>
-		  <hr class="postdiv">
-		  
-		
 
     </div>
     <div class="col-md-3">    
@@ -456,7 +460,7 @@ noch nicht getestet. Nach der Installation funktionierte die Karte auch probleml
 		<ul id="categories" class="list-unstyled">
 		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
 <li class='category'><a href='/categories/coding/'>coding (31)</a></li>
-<li class='category'><a href='/categories/computer/'>computer (13)</a></li>
+<li class='category'><a href='/categories/computer/'>computer (14)</a></li>
 <li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
 <li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
 <li class='category'><a href='/categories/finanzen/'>finanzen (1)</a></li>
@@ -488,6 +492,7 @@ noch nicht getestet. Nach der Installation funktionierte die Karte auch probleml
 <li class='category'><a href='/categories/retrotrip/'>retrotrip (1)</a></li>
 <li class='category'><a href='/categories/rezepte/'>rezepte (1)</a></li>
 <li class='category'><a href='/categories/science/'>science (3)</a></li>
+<li class='category'><a href='/categories/software/'>software (1)</a></li>
 <li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
 <li class='category'><a href='/categories/swt/'>swt (4)</a></li>
 <li class='category'><a href='/categories/tools/'>tools (24)</a></li>

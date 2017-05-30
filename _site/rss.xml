@@ -8,7 +8,60 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Fri, 28 Apr 2017 19:00:00 +0200</pubDate>
+    <pubDate>Tue, 30 May 2017 19:00:00 +0200</pubDate>
+    <item>
+      <title>Umstieg auf TheBat! E-Mail-Client</title>
+      <link>http://andydunkel.net/computer/software/2017/05/30/the_bat.html</link>
+      <description>&lt;p&gt;Zu den meist genutzten Programmen auf meinem Rechner gehört der E-Mail-Client. Ich bekomme täglich viele Mails, auf mehren Konten. Angefangen habe ich vor vielen Jahren mit Outlook. Erst Express und dann das Normale. Nachdem das Outlook von 2002 irgendwann veraltet war, bin ich auf Thunderbird umgestiegen. Dank Imap ist das ja Problem zu wechseln oder gleich mehrere Clients zu verwenden. Es gibt viele Kritiker von E-Mail, aber ich halte es immer noch für das beste und offenste Kommunikationsmedium im Internet.&lt;/p&gt;
+
+&lt;p&gt;Thunderbird ist leider mittlerweile das ungeliebte Kind der Mozilla Foundation. Es funktioniert zwar meistens ganz gut, aber Weiterentwicklung gibt es nur noch minimal. Zusätzlich gibt es ein paar Bugs die mich schon seit Jahren nerven und nicht behoben werden. Aus Sicht der Mozilla Foundation, die Thunderbird ja ganz los haben wollte, macht die Weiterentwicklung wohl keinen Sinn. Die meisten Leute verwenden die Weboberfläche ihres Mailproviders und gut ist.&lt;/p&gt;
+
+&lt;p&gt;Da Thunderbird sich eher auf der Stelle bewegt, habe ich mir &lt;a href=&quot;https://www.ritlabs.com/de/products/thebat/&quot;&gt;TheBat&lt;/a&gt; angeschaut. Das Programm kannte ich vom Namen her bereits seit vielen Jahren, Nutzerberichte waren stets des Lobes. Angeschaut habe ich es mir bisher nie. Es kostet auch knapp 50 Euro. In Zeiten von 1 Euro Apps, welche als zu teuer bewertet werden, ertappte ich mich auch es als viel zu teuer zum empfinden. Der Preis bezieht sich auf die Pro-Version, die Home-Version kostet die Hälfte. Aber wer will schon Home? :-)&lt;/p&gt;
+
+&lt;p&gt;Doch nun war es vor ein paar Wochen so weit. Man kann es sich ja als Alternative mal anschauen. Es gibt eine Testversion die man mal für 30 Tage nutzen kann. Und bei Imap richtet man einfach mal seine Konten ein, lässt die Mails herunterladen und kann ja den alten Client problemlos nebenbei weiterverwenden. Nach dem Test kann man die Software einfach löschen und macht weiter wie zuvor.&lt;/p&gt;
+
+&lt;h2 id=&quot;einrichtung&quot;&gt;Einrichtung&lt;/h2&gt;
+
+&lt;p&gt;Die Einrichtung der Software geht schnell von der Hand. Netterweise fragt die Software bei der Einrichtung nach einem Datenverzeichnis. Somit liegen die Daten nicht irgendwo auf der Platte und lassen sich so leichter ins Sicherungskonzept einbeziehen.&lt;/p&gt;
+
+&lt;p&gt;Mailaccounts von größeren Anbietern, werden wie bei Thunderbird automatisch konfiguriert. Bei meinem Server musste ich die Serveradressen von Hand eingeben. Dann geht es auch schon los.&lt;/p&gt;
+
+&lt;p&gt;Die Benutzeroberfläche wirkt am Anfang etwas überladen, was auch daran liegt, dass heutige Software eher Funktionalität vor dem Benutzer versteckt. Könnte ja überfordern.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2017/5/thebat1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Nach kurzer Einarbeitungszeit hat man sich eingewöhnt und freut sich über schnell erreichbare Funktionen. Text- statt HTML-Mail ist schnell über die Statusleiste umschaltbar. Es gibt verschiedene Editoren zur Ausgestaltung. Wo hat man schon zwei verschiedene Texteditoren für Text-Mails. Die Programmoberfläche reagiert fluffig und etwas fixer als Thunderbird.&lt;/p&gt;
+
+&lt;p&gt;Mails lassen sich mit allen möglichen Header-Optionen versenden. Kann Thunderbird auch alles, muss aber oft im Menü zusammengesucht werden. Die Benutzeroberfläche kann an allen Ecken und Enden konfiguriert werden. Wer seine Workflows optimieren will, kann das also tun. Es gibt zahlreiche Makrofunktionen, über die man Mails schnell vorgefertigt beantworten kann. Ideal, für Supportmails. Für fast alles was man irgendwie machen will, gibt es Funktionen oder Möglichkeiten. Eine Art Schweizer Taschenmesser für Mails.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2017/5/thebat2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Meine Owncloud ist ebenfalls schnell eingebunden. CardDav geht von Haus aus. Gut. Einen Kalender gibt es auch, dieser kann allerdings kein CalDav. Schlecht. Ich habe sowas gerne in einer Anwendung. Bis dahin lasse ich das über den Windows-Kalender laufen.&lt;/p&gt;
+
+&lt;p&gt;Es gibt noch diverese kleine Tools, wie ein Notizbuch. Kann man nutzen oder nicht. Insgesamt macht es trotz der Funktionsvielfalt selten einen überladenen Eindruck.&lt;/p&gt;
+
+&lt;p&gt;Somit viel die Entscheidung relativ leicht die 50 Euro einzuwerfen. Im Endeffekt ein sehr angemessener Preis für ein Program, welches ich täglich intensiv nutze. Und natürlich hofft man, dass der Betrag die Weiterentwicklung in irgendeiner Form sichert. Das nix kosten zu keiner Weiterentwicklung wie bei Thunderbird führt sieht man ja. Man kann zwar was spenden, aber da wird denke auch nicht viel bei herumkommen. Ich werfe auch gerne hin und wieder was bei Open-Source Projekte ein, aber auch eher kleinere Beträge.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2017/5/thebat3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Käufer der Pro-Version erhalten zudem TheBat Voyager. Dies ist eine portable Variante des Clients, welche man auf einen USB-Stick packen kann. Hier werden die Daten verschlüsselt abgelegt und beim Start muss man zuerst ein Kennwort eingeben. Das funktioniert auch alles ganz prima. Das Datenverzeichnis ist schnell importiert und der Client eingerichtet. Er funktioniert wie der normale Client.&lt;/p&gt;
+
+&lt;p&gt;Einziger Nachteil, das Ding hat einen Kopierschutz. Die Freischaltung funktioniert für den jeweiligen USB-Stick und erfordert eine Online-Aktivierung. Das ist blöd, geht der Stick mal kaputt oder verloren, muss man erneut aktivieren. 5 Aktivierungen hat man frei, das reicht zumindest erstmal. Danach muss man sich an den Support wenden. Ich mag solche Einschränkungen nicht. Aber darüber kann ich zumindest momentan hinwegsehen.&lt;/p&gt;
+
+&lt;h2 id=&quot;fazit&quot;&gt;Fazit&lt;/h2&gt;
+
+&lt;p&gt;Als Fazit bleibt festzuhalten, dass der Umstieg sich gelohnt hat. Die Software läuft rund, der Funktionsumfang ist recht groß und besonders für Leute interessant, die ein paar Mails mehr am Tag erhalten. Die Portable App ist abgesehen vom Kopierschutz ebenfalls ein nettes Gimmick, besonders durch die Verschlüsselung. Wobei ich meinen USB-Stick mit wichtigen Daten ohnehin komplett verschlüsselt habe.&lt;/p&gt;
+
+&lt;p&gt;Am Ende bleibt auch das gute Gefühl mit einer Software zu arbeiten, bei denen sich der Entwickler um die Weiterentwicklung kümmert. Wenn jetzt noch CalDav in den Kalender Einzug hält wäre ich vollends zufrieden.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/uploads/2017/5/thebat4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.ritlabs.com/de/products/thebat/&quot;&gt;Link zum Hersteller RitLabs&lt;/a&gt;&lt;/p&gt;
+
+</description>
+      <pubDate>Tue, 30 May 2017 19:00:00 +0200</pubDate>
+      <dc:date>2017-05-30T19:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>Power Button Reparatur Dell Vostro 2520</title>
       <link>http://andydunkel.net/computer/repair/reparatur/2017/04/28/dell_vostro_2520_power_button.html</link>
@@ -8831,6 +8884,6 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011&lt;/p&gt;
       <pubDate>Thu, 28 Apr 2011 22:59:35 +0200</pubDate>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2017-04-28T19:00:00+02:00</dc:date>
+    <dc:date>2017-05-30T19:00:00+02:00</dc:date>
   </channel>
 </rss>
