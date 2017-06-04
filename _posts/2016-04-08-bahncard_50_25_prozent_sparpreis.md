@@ -3,7 +3,7 @@ author: admin
 comments: true
 date: 2016-04-08 17:00:00+00:00
 layout: post
-slug: 25_prozent_mit_bahncard_50
+slug: bahncard_50_25_prozent_sparpreis
 title: '25% Unsinn mit der Bahncard 50'
 categories:
 - Mobilitaet

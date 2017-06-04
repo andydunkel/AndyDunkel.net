@@ -125,7 +125,7 @@ Am Ende bleibt auch das gute Gefühl mit einer Software zu arbeiten, bei denen s
     </item>
     <item>
       <title>Power Button Reparatur Dell Vostro 2520</title>
-      <link>http://andydunkel.net/computer/repair/reparatur/2017/04/28/power_button_reparatur_dell_vostro.html</link>
+      <link>http://andydunkel.net/computer/repair/reparatur/2017/04/28/dell_vostro_2520_power_button.html</link>
       <description><![CDATA[
 
 Der Laptop meiner Mutter machte Probleme, der Einschaltknopf ging nicht mehr, das Laptop ließ sich nur mit viel probieren und herumdrücken einschalten. Das ganze Laptop deswegen zu entsorgen war natürlich keine Option. Die gute Nachricht, es ließ sich reparieren. Es war aber auch etwas fummelige Arbeit. Dies betraf weniger das Auseinandernehmen des Laptops, als die Lötarbeiten.
@@ -134,7 +134,7 @@ Wer nicht löten will, sollte einfach auf eBay nach dem Power Button Board für 
 
 ]]></description>
       <pubDate>Fri, 28 Apr 2017 19:00:00 +0200</pubDate>
-      <guid>http://andydunkel.net/computer/repair/reparatur/2017/04/28/power_button_reparatur_dell_vostro.html</guid>
+      <guid>http://andydunkel.net/computer/repair/reparatur/2017/04/28/dell_vostro_2520_power_button.html</guid>
       <content:encoded><![CDATA[<img src="/assets/uploads/2017/4/laptop_logo.jpg" class="imagelogo">
 
 Der Laptop meiner Mutter machte Probleme, der Einschaltknopf ging nicht mehr, das Laptop ließ sich nur mit viel probieren und herumdrücken einschalten. Das ganze Laptop deswegen zu entsorgen war natürlich keine Option. Die gute Nachricht, es ließ sich reparieren. Es war aber auch etwas fummelige Arbeit. Dies betraf weniger das Auseinandernehmen des Laptops, als die Lötarbeiten.
@@ -1740,7 +1740,7 @@ Da sie allerdings Urlaub hatte, habe ich doch öfter zum Auto gegriffen. Früh u
     </item>
     <item>
       <title>LetsEncrypt Zertifikat bei Hosteurope eingerichtet</title>
-      <link>http://andydunkel.net/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope_nutzen.html</link>
+      <link>http://andydunkel.net/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope.html</link>
       <description><![CDATA[LetsEncrypt bietet nun schon seit einiger Zeit kostenlose SSL-Zertfikate an. Diese kann man auf dem eigenen Server relativ problemlos einrichten und konfigurieren. Bei normalem Webspace sieht es leider anders aus. Ein paar Webhoster unterstützen es mittlerweile. Allerdings gibt es da auch einen Interessenkonflikt, da die Anbieter gerne auch selbst SSL-Zertifikate verkaufen.
 
 So auch bei Hosteurope. Direkte Unterstützung gibt es nicht und auch über den SSH-Zugang kann man es auch nicht installieren und konfigurieren. Ein SSL-Zertifikat kostet je nach Abstufung mindestens 2,49 Euro im Monat. Dieses ist dann allerdings nur für eine Domain gültig. Mehrere Domains und Subdomains gehen ins Geld.
@@ -1803,7 +1803,7 @@ Inzwischen hat Hosteurope die Situation geringfügig verbessert. Neben dem globa
 
 ]]></description>
       <pubDate>Fri, 25 Nov 2016 18:00:00 +0100</pubDate>
-      <guid>http://andydunkel.net/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope_nutzen.html</guid>
+      <guid>http://andydunkel.net/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope.html</guid>
       <content:encoded><![CDATA[[LetsEncrypt](https://letsencrypt.org/) bietet nun schon seit einiger Zeit kostenlose SSL-Zertfikate an. Diese kann man auf dem eigenen Server relativ problemlos einrichten und konfigurieren. Bei normalem Webspace sieht es leider anders aus. Ein paar Webhoster unterstützen es mittlerweile. Allerdings gibt es da auch einen Interessenkonflikt, da die Anbieter gerne auch selbst SSL-Zertifikate verkaufen.
 
 So auch bei [Hosteurope](https://www.hosteurope.de). Direkte Unterstützung gibt es nicht und auch über den SSH-Zugang kann man es auch nicht installieren und konfigurieren. Ein SSL-Zertifikat kostet je nach Abstufung mindestens 2,49 Euro im Monat. Dieses ist dann allerdings nur für eine Domain gültig. Mehrere Domains und Subdomains gehen ins Geld.
@@ -1868,7 +1868,7 @@ Inzwischen hat Hosteurope die Situation geringfügig verbessert. Neben dem globa
     </item>
     <item>
       <title>Mehrsprache C# Anwendungen - nicht lokalisierte Backgroundworker und Threads</title>
-      <link>http://andydunkel.net/coding/2016/11/22/c_sharp_nicht_lokalisierte_backgroundworker_und_threads.html</link>
+      <link>http://andydunkel.net/coding/2016/11/22/c-sharp-mehrsprachig-backgroundworker.html</link>
       <description><![CDATA[Vor einiger Zeit habe ich beschrieben, wie man C#-Anwendungen lokalisieren kann.
 
 Die Sprache kann man z.B. so im Code festlegen:
@@ -1899,7 +1899,7 @@ Der Code bewirkt das auch andere Threads und damit auch die Backgroundworker die
 
 ]]></description>
       <pubDate>Tue, 22 Nov 2016 18:00:00 +0100</pubDate>
-      <guid>http://andydunkel.net/coding/2016/11/22/c_sharp_nicht_lokalisierte_backgroundworker_und_threads.html</guid>
+      <guid>http://andydunkel.net/coding/2016/11/22/c-sharp-mehrsprachig-backgroundworker.html</guid>
       <content:encoded><![CDATA[Vor einiger Zeit habe ich beschrieben, wie man [C#-Anwendungen lokalisieren](//andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html) kann.
 
 Die Sprache kann man z.B. so im Code festlegen:
@@ -2606,7 +2606,7 @@ Autofahrten gab es nur 4. Das waren größere Einkäufe und das Auto muss ja auc
     </item>
     <item>
       <title>Bahncard 50: Rabatt auf Sparpreise</title>
-      <link>http://andydunkel.net/mobilitaet/2016/07/07/bahncard_50_rabatt_auf_sparpreise.html</link>
+      <link>http://andydunkel.net/mobilitaet/2016/07/07/bahncard_50.html</link>
       <description><![CDATA[Ich fand es immer schon blöd, dass ich als Bahncard 50 Kunde keinen Rabatt auf Sparpreise bekomme wie Bahncard 25 Kunden. Die bekommen 25% auch auf Sparpreise.
 
 Als Bahncard 50 Kunde schaute man in die Röhre, obwohl man das teurere Produkt hat. Konsequenterweise wurden, bei ausgewählter Bahncard in der Reiseaufkunft, auch nie die meist billigeren Sparpreise der zweiten Klasse angezeigt.
@@ -2626,7 +2626,7 @@ So nun ist es soweit. Leider nicht so wie erwartet und erhofft. Die bisherige Re
 Die Benachteiligung für Bahncard 50 Inhaber geht also weiter.
 ]]></description>
       <pubDate>Thu, 07 Jul 2016 19:00:00 +0200</pubDate>
-      <guid>http://andydunkel.net/mobilitaet/2016/07/07/bahncard_50_rabatt_auf_sparpreise.html</guid>
+      <guid>http://andydunkel.net/mobilitaet/2016/07/07/bahncard_50.html</guid>
       <content:encoded><![CDATA[Ich fand es [immer](http://andydunkel.net/mobilitaet/umwelt/2016/04/08/bahncard_50_25_prozent_sparpreis.html) schon blöd, dass ich als Bahncard 50 Kunde keinen Rabatt auf Sparpreise bekomme wie Bahncard 25 Kunden. Die bekommen 25% auch auf Sparpreise.
 
 Als Bahncard 50 Kunde schaute man in die Röhre, obwohl man das teurere Produkt hat. Konsequenterweise wurden, bei ausgewählter Bahncard in der Reiseaufkunft, auch nie die meist billigeren Sparpreise der zweiten Klasse angezeigt. 
@@ -2979,7 +2979,7 @@ Hintergrund ist, dass die Grafikkarte ebenfalls eine interne HDMI-Soundkarte ins
     </item>
     <item>
       <title>25% Unsinn mit der Bahncard 50</title>
-      <link>http://andydunkel.net/mobilitaet/umwelt/2016/04/08/25_prozent_mit_bahncard_50.html</link>
+      <link>http://andydunkel.net/mobilitaet/umwelt/2016/04/08/bahncard_50_25_prozent_sparpreis.html</link>
       <description><![CDATA[Allen Widrigkeiten die die Bahn gelegentlich zu bieten hat, fahre ich besonders längere Strecken lieber mit der Bahn, als mit Auto. Verspätungen gibt es hier und da, mit dem Auto steht man aber auch mal Stau. Man kann zudem unterwegs pennen, lesen, was am Laptop machen. Und natürlich hat man das gute Gewissen noch etwas für die Umwelt zu tun.
 
 Aus diesem Grund habe ich eine Bahncard 50. Mit dieser gibt es im Gegensatz zur billigen Bahncard 25 keinen Rabatt auf Sparpreise. Etwas was ich bisher nicht verstanden habe: ein teueres Produkt hat Nachteile gegenüber dem Kleineren. Ich würde auch keine 50% Rabatt erwarten, 25% wie bei der Bahncard 25 auf den Sparpreis wären ok.
@@ -3009,7 +3009,7 @@ Von Berlin nach Lübben kann man online kein Ticket buchen, da VBB-Tarif. Hier m
 Rechnet man alles zusammen sind das 61,30 Euro. Das ist teurer als der reguläre Sparpreis. Wer denkt sich sowas aus? Warum muss man bei solchen Werbeaktionen noch solche Einschränkungen machen? Verstehe wer will. Stattdessen könnte man den Bahncard 50 Kunden auch einfach generell die 25% Rabatt auf Sparpreise geben, welche Besitzer der Bahncard 25 haben.
 ]]></description>
       <pubDate>Fri, 08 Apr 2016 19:00:00 +0200</pubDate>
-      <guid>http://andydunkel.net/mobilitaet/umwelt/2016/04/08/25_prozent_mit_bahncard_50.html</guid>
+      <guid>http://andydunkel.net/mobilitaet/umwelt/2016/04/08/bahncard_50_25_prozent_sparpreis.html</guid>
       <content:encoded><![CDATA[Allen Widrigkeiten die die Bahn gelegentlich zu bieten hat, fahre ich besonders längere Strecken lieber mit der Bahn, als mit Auto. Verspätungen gibt es hier und da, mit dem Auto steht man aber auch mal Stau. Man kann zudem unterwegs pennen, lesen, was am Laptop machen. Und natürlich hat man das gute Gewissen noch etwas für die Umwelt zu tun.
 
 Aus diesem Grund habe ich eine Bahncard 50. Mit dieser gibt es im Gegensatz zur billigen Bahncard 25 keinen Rabatt auf Sparpreise. Etwas was ich bisher nicht verstanden habe: ein teueres Produkt hat Nachteile gegenüber dem Kleineren. Ich würde auch keine 50% Rabatt erwarten, 25% wie bei der Bahncard 25 auf den Sparpreis wären ok.
@@ -4357,7 +4357,7 @@ On the down side, I am not sure if a Lazarus OSX application can be published on
     </item>
     <item>
       <title>Festplatte eines Dell Vostro 2520 wechseln</title>
-      <link>http://andydunkel.net/repair/reparatur/2015/12/04/change_harddisk_dell_2520.html</link>
+      <link>http://andydunkel.net/repair/reparatur/2015/12/04/festplatte_dell_2520.html</link>
       <description><![CDATA[Das Dell Vostro 2520 gehört zu den preiswerteren Laptops. Standardmäßig  gerade 2 GB RAM und langsamer Festplatte ausgestattet ist es eher langsam.
 
 Da die Preise für SSD-Festplatten mittlerweile ganz passabel sind, lohnt es sich die Aufrüstung des Laptops um mehr Geschwindigkeit zu erzielen.
@@ -4413,7 +4413,7 @@ Wer den Arbeitsspeicher wechseln oder erweitern möchte. Dieser befindet sich li
 
 ]]></description>
       <pubDate>Fri, 04 Dec 2015 18:00:00 +0100</pubDate>
-      <guid>http://andydunkel.net/repair/reparatur/2015/12/04/change_harddisk_dell_2520.html</guid>
+      <guid>http://andydunkel.net/repair/reparatur/2015/12/04/festplatte_dell_2520.html</guid>
       <content:encoded><![CDATA[Das Dell Vostro 2520 gehört zu den preiswerteren Laptops. Standardmäßig  gerade 2 GB RAM und langsamer Festplatte ausgestattet ist es eher langsam.
 
 Da die Preise für [SSD-Festplatten](https://www.amazon.de/s/ref=as_li_ss_tl?_encoding=UTF8&camp=1638&creative=19454&field-keywords=ssd&linkCode=ur2&site-redirect=de&tag=ekiwide0b-21&url=search-alias%3Daps) mittlerweile ganz passabel sind, lohnt es sich die Aufrüstung des Laptops um mehr Geschwindigkeit zu erzielen. 
@@ -4925,7 +4925,7 @@ Well thats it! The complete source code can be [downloaded here](/assets/uploads
     </item>
     <item>
       <title>Windows 10 auf Lenovo Thinkpad W500</title>
-      <link>http://andydunkel.net/computer/2015/08/09/windows_10_auf_lenovo_thinkpad_w500_installieren.html</link>
+      <link>http://andydunkel.net/computer/2015/08/09/windows_10_on_thinkpad_w500.html</link>
       <description><![CDATA[Windows 10 auf Lenovo Thinkpad W500
 
 English Version below.
@@ -4971,7 +4971,7 @@ After that, at least Windows was showing the screen again. However the correct g
 Now Windows 10 runs without any further problems on the device!
 ]]></description>
       <pubDate>Sun, 09 Aug 2015 19:00:00 +0200</pubDate>
-      <guid>http://andydunkel.net/computer/2015/08/09/windows_10_auf_lenovo_thinkpad_w500_installieren.html</guid>
+      <guid>http://andydunkel.net/computer/2015/08/09/windows_10_on_thinkpad_w500.html</guid>
       <content:encoded><![CDATA[# Windows 10 auf Lenovo Thinkpad W500
 
 
@@ -5126,7 +5126,7 @@ Das war es auch schon. Wer will kann sich das [Beispielprojekt hier herunterlade
     </item>
     <item>
       <title>C#-Anwendungen mehrsprachig gestalten</title>
-      <link>http://andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_anwendungen_mehrsprachig.html</link>
+      <link>http://andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html</link>
       <description><![CDATA[C# Anwendungen lokalisieren
 
 Im folgenden Artikel werde ich kurz die ersten Schritte beschreiben um eine C#-Anwendung mehrsprachig zu gestalten.
@@ -5212,7 +5212,7 @@ MessageBox.Show(DateTime.Now.ToString("d", ci));
 Wie man sieht, ist die grundsätzliche Mehrsprachigkeit einer Anwendung in C# sehr leicht möglich.
 ]]></description>
       <pubDate>Sat, 04 Jul 2015 19:00:00 +0200</pubDate>
-      <guid>http://andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_anwendungen_mehrsprachig.html</guid>
+      <guid>http://andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html</guid>
       <content:encoded><![CDATA[# C# Anwendungen lokalisieren
 
 Im folgenden Artikel werde ich kurz die ersten Schritte beschreiben um eine C#-Anwendung mehrsprachig zu gestalten.
@@ -5386,7 +5386,7 @@ Hat man alle Schritte befolgt, erhält man am Ende eine Webseite die nicht nur a
     </item>
     <item>
       <title>USB 3.0 am Thinkpad W500 nachrüsten</title>
-      <link>http://andydunkel.net/computer/2015/05/07/thinkpad_w500_usb_30_nachruesten.html</link>
+      <link>http://andydunkel.net/computer/2015/05/07/thinkpad_w500_usb_30.html</link>
       <description><![CDATA[USB 2.0 ist nicht gerade schnell, wenn man große Datenmengen auf die externe Festplatte verschieben möchte. Da mein Thinkpad W500 über zwei PCMCIA-Slots verfügt, lag es nahe den Mangel durch eine entsprechende Karte zu beheben.
 
 Diese gibt es wie Sand am Meer und ich habe mich für die vergleichsweise günstige Karte von CSL entschieden.
@@ -5424,7 +5424,7 @@ Die Karte funktioniert und ist eine günstige Möglichkeit ein älteres Laptop m
 
 ]]></description>
       <pubDate>Thu, 07 May 2015 19:00:00 +0200</pubDate>
-      <guid>http://andydunkel.net/computer/2015/05/07/thinkpad_w500_usb_30_nachruesten.html</guid>
+      <guid>http://andydunkel.net/computer/2015/05/07/thinkpad_w500_usb_30.html</guid>
       <content:encoded><![CDATA[USB 2.0 ist nicht gerade schnell, wenn man große Datenmengen auf die externe Festplatte verschieben möchte. Da mein Thinkpad W500 über zwei PCMCIA-Slots verfügt, lag es nahe den Mangel durch eine entsprechende Karte zu beheben.
 
 Diese gibt es wie Sand am Meer und ich habe mich für die vergleichsweise günstige [Karte von CSL](http://www.amazon.de/gp/product/B00C7NV69C/ref=as_li_tl?ie=UTF8&camp=1638&creative=6742&creativeASIN=B00C7NV69C&linkCode=as2&tag=ekiwide0b-21&linkId=YXMCVAQEPDUP5V4Y) entschieden.
@@ -5632,7 +5632,7 @@ Ist letztendlich Abwägungssache und zumindest wenn man den Key verliert kann ma
     </item>
     <item>
       <title>Delphi XE / Firemonkey - Problem with switchable graphic card</title>
-      <link>http://andydunkel.net/delphi/2015/02/04/delphi_firemonkey_problem_with_switchable_graphic_card.html</link>
+      <link>http://andydunkel.net/delphi/2015/02/04/firemonkey_switchable_graphics_problem.html</link>
       <description><![CDATA[I got a new Windows laptop and found out that there is an issue with my Firemonkey applications. 
 The laptop has two graphic cards. An Intel and a dedicated ATI chip.
 
@@ -5681,7 +5681,7 @@ end.
 After a compile the problem was gone. I also tested the application on OSX after that, there was also no negative effect.
 ]]></description>
       <pubDate>Wed, 04 Feb 2015 18:00:00 +0100</pubDate>
-      <guid>http://andydunkel.net/delphi/2015/02/04/delphi_firemonkey_problem_with_switchable_graphic_card.html</guid>
+      <guid>http://andydunkel.net/delphi/2015/02/04/firemonkey_switchable_graphics_problem.html</guid>
       <content:encoded><![CDATA[I got a new Windows laptop and found out that there is an issue with my Firemonkey applications. 
 The laptop has two graphic cards. An Intel and a dedicated ATI chip.
 
@@ -7167,7 +7167,7 @@ Nachts kann ich ruhig schlafen, um Sicherheitsupdates für die Webseite muss ich
     </item>
     <item>
       <title>My experiences with Delphi XE and Firemonkey</title>
-      <link>http://andydunkel.net/delphi/firemonkey/2014/03/05/delphi_and_firemonkey_experiences.html</link>
+      <link>http://andydunkel.net/delphi/firemonkey/2014/03/05/delphi_and_firemonkey_experience.html</link>
       <description><![CDATA[In that posting I want to write a little bit about my experience with the new Delphi and the Firemonkey Framework.
 
 I am using Delphi for over 10 years now, mostly in my own small business. The two main applications are over 10 years old now, the code base is very outdated. To be frank, most of the code was developed when I had not the experience as today. But the applications are working.
@@ -7242,7 +7242,7 @@ The second application was converted in several weeks. Once you know how to do i
 So I would also use Delphi and Firemonkey for new applications.
 ]]></description>
       <pubDate>Wed, 05 Mar 2014 18:00:00 +0100</pubDate>
-      <guid>http://andydunkel.net/delphi/firemonkey/2014/03/05/delphi_and_firemonkey_experiences.html</guid>
+      <guid>http://andydunkel.net/delphi/firemonkey/2014/03/05/delphi_and_firemonkey_experience.html</guid>
       <content:encoded><![CDATA[In that posting I want to write a little bit about my experience with the new Delphi and the Firemonkey Framework.
 
 I am using Delphi for over 10 years now, mostly in my own [small business](http://www.da-software.de). The two main applications are over 10 years old now, the code base is very outdated. To be frank, most of the code was developed when I had not the experience as today. But the applications are working.
@@ -7664,7 +7664,7 @@ It also checks entitlements, application receipts and requirements.
     </item>
     <item>
       <title>Code signing problems with Delphi XE4 Mavericks</title>
-      <link>http://andydunkel.net/delphi/firemonkey/2014/01/28/code_signing_problems_with_delphi_xe4_mavericks.html</link>
+      <link>http://andydunkel.net/delphi/firemonkey/2014/01/28/code_signing_problems_with_delphi_xe4_and_mavericks.html</link>
       <description><![CDATA[Some days ago I wrote a blog post about signing a Firemonkey application manually with the developer ID.
 
 For app store applications Delphi automatically runs the code signing procedure for you and creates a PKG file. Handy!
@@ -7699,7 +7699,7 @@ After that Delphi is able to run and build the application with code signing for
 
 ]]></description>
       <pubDate>Tue, 28 Jan 2014 18:00:00 +0100</pubDate>
-      <guid>http://andydunkel.net/delphi/firemonkey/2014/01/28/code_signing_problems_with_delphi_xe4_mavericks.html</guid>
+      <guid>http://andydunkel.net/delphi/firemonkey/2014/01/28/code_signing_problems_with_delphi_xe4_and_mavericks.html</guid>
       <content:encoded><![CDATA[Some days ago I wrote a [blog post](http://andydunkel.net/delphi/firemonkey/2014/01/22/signing_delphi_xe_applications_for_osx.html) about signing a Firemonkey application manually with the developer ID.
 
 For app store applications Delphi automatically runs the code signing procedure for you and creates a PKG file. Handy!
@@ -7794,7 +7794,7 @@ Theoretisch könnte man das Modul vielleicht kostengünstiger ersetzen, wenn man
     </item>
     <item>
       <title>Signing Firemonkey Applications on OSX</title>
-      <link>http://andydunkel.net/delphi/firemonkey/2014/01/22/sign_firemonkey_applications_on_osx.html</link>
+      <link>http://andydunkel.net/delphi/firemonkey/2014/01/22/signing_delphi_xe_applications_for_osx.html</link>
       <description><![CDATA[Some time ago I started porting my application DA-FormMaker for the Mac. After finishing the development, the app needs to be signed with the Developer ID. Otherwise your users will end up with some message like:
 
 
@@ -7889,7 +7889,7 @@ Congratulations: After that your app is signed with your developer id!
 
 ]]></description>
       <pubDate>Wed, 22 Jan 2014 18:00:00 +0100</pubDate>
-      <guid>http://andydunkel.net/delphi/firemonkey/2014/01/22/sign_firemonkey_applications_on_osx.html</guid>
+      <guid>http://andydunkel.net/delphi/firemonkey/2014/01/22/signing_delphi_xe_applications_for_osx.html</guid>
       <content:encoded><![CDATA[Some time ago I started porting my application [DA-FormMaker](http://da-software.de/daform/daform_start.htm) for the Mac. After finishing the development, the app needs to be signed with the Developer ID. Otherwise your users will end up with some message like:
 
 ![](http://andydunkel.net/assets/uploads/2014/01/signing/sign0.png)
@@ -8484,7 +8484,7 @@ Nachdem der Container erstellt wurde, mountet man ihn. Nun kann man das geöffne
     </item>
     <item>
       <title>Delphi XE4/Firemonkey - Taborder not working + Workaround</title>
-      <link>http://andydunkel.net/delphi/coding/2013/11/23/delphi_xe4_firemonkey_taborder_not_working.html</link>
+      <link>http://andydunkel.net/delphi/coding/2013/11/23/firemonkey_xe_4_taborder_workaround.html</link>
       <description><![CDATA[Firemonkey, the framework for cross plattform development, still seems to have some problems and bugs. :-( One of the problems I came across was that the TabOrder property was not working:
 
 
@@ -8577,7 +8577,7 @@ In the code, we get the currently focused control. Then we call the method we wr
 With that workaround the tab key is now working as expected, jumping to the next control.
 ]]></description>
       <pubDate>Sat, 23 Nov 2013 18:00:00 +0100</pubDate>
-      <guid>http://andydunkel.net/delphi/coding/2013/11/23/delphi_xe4_firemonkey_taborder_not_working.html</guid>
+      <guid>http://andydunkel.net/delphi/coding/2013/11/23/firemonkey_xe_4_taborder_workaround.html</guid>
       <content:encoded><![CDATA[Firemonkey, the framework for cross plattform development, still seems to have some problems and bugs. :-( One of the problems I came across was that the TabOrder property was not working:
 
 <iframe width="640" height="360" src="//www.youtube.com/embed/adnmXK3xzyE" frameborder="0" allowfullscreen></iframe>
@@ -8668,7 +8668,7 @@ With that workaround the tab key is now working as expected, jumping to the next
     </item>
     <item>
       <title>Sanyo Z5 Beamer - Thermoschalter zurücksetzen</title>
-      <link>http://andydunkel.net/gadgets/sonstiges/reparatur/2013/11/19/sanyo-z5-beamer-thermoschalter_reset.html</link>
+      <link>http://andydunkel.net/gadgets/sonstiges/reparatur/2013/11/19/sanyo_z5_thermoschalter.html</link>
       <description><![CDATA[Am Samstagabend hatte ich mal wieder Zeit für einen Film. Dafür hatte ich mir einigen Jahren mal ein kleines Heimkinosystem eingerichtet: Beamer + 5.1 Boxen. Prima Sache!
 
 Leider ließ sich der Beamer, ein Sanyo Z5, nicht zum mehr Betrieb überreden. Nach dem Einschalten lief zwar der Lüfter, nach wenigen Sekunden schaltete sich der Beamer aber wieder ab. Zusätzlich blinkte die LED zum Lampenwechsel. Ganz toll.
@@ -8702,7 +8702,7 @@ Der Schaltet befindet sich hinten rechts am Gerät. Diesen nun vorsichtig rein d
 Nach dem Zusammenbau lief der Beamer wieder.
 ]]></description>
       <pubDate>Tue, 19 Nov 2013 18:00:00 +0100</pubDate>
-      <guid>http://andydunkel.net/gadgets/sonstiges/reparatur/2013/11/19/sanyo-z5-beamer-thermoschalter_reset.html</guid>
+      <guid>http://andydunkel.net/gadgets/sonstiges/reparatur/2013/11/19/sanyo_z5_thermoschalter.html</guid>
       <content:encoded><![CDATA[Am Samstagabend hatte ich mal wieder Zeit für einen Film. Dafür hatte ich mir einigen Jahren mal ein kleines Heimkinosystem eingerichtet: Beamer + 5.1 Boxen. Prima Sache!
 
 Leider ließ sich der Beamer, ein Sanyo Z5, nicht zum mehr Betrieb überreden. Nach dem Einschalten lief zwar der Lüfter, nach wenigen Sekunden schaltete sich der Beamer aber wieder ab. Zusätzlich blinkte die LED zum Lampenwechsel. Ganz toll.

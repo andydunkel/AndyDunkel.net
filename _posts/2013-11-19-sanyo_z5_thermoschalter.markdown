@@ -3,7 +3,7 @@ author: admin
 comments: true
 date: 2013-11-19 17:00:00+00:00
 layout: post
-slug: sanyo-z5-beamer-thermoschalter_reset
+slug: sanyo_z5_thermoschalter
 title: 'Sanyo Z5 Beamer - Thermoschalter zurücksetzen'
 categories:
 - Gadgets

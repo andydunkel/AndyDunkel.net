@@ -3,7 +3,7 @@ author: admin
 comments: true
 date: 2015-07-04 17:00:00+00:00
 layout: post
-slug: c_sharp_anwendungen_anwendungen_mehrsprachig
+slug: c_sharp_anwendungen_mehrsprachig
 title: 'C#-Anwendungen mehrsprachig gestalten'
 categories:
 - Coding

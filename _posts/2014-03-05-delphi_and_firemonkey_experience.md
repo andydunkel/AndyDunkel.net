@@ -3,7 +3,7 @@ author: admin
 comments: true
 date: 2014-03-05 17:00:00+00:00
 layout: post
-slug: delphi_and_firemonkey_experiences
+slug: delphi_and_firemonkey_experience
 title: 'My experiences with Delphi XE and Firemonkey'
 categories:
 - Delphi

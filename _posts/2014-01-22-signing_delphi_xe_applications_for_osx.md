@@ -3,7 +3,7 @@ author: admin
 comments: true
 date: 2014-01-22 17:00:00+00:00
 layout: post
-slug: sign_firemonkey_applications_on_osx
+slug: signing_delphi_xe_applications_for_osx
 title: 'Signing Firemonkey Applications on OSX'
 categories:
 - Delphi

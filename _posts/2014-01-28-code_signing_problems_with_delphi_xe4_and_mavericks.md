@@ -3,7 +3,7 @@ author: admin
 comments: true
 date: 2014-01-28 17:00:00+00:00
 layout: post
-slug: code_signing_problems_with_delphi_xe4_mavericks
+slug: code_signing_problems_with_delphi_xe4_and_mavericks
 title: 'Code signing problems with Delphi XE4 Mavericks'
 categories:
 - Delphi

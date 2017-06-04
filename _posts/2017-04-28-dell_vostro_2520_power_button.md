@@ -3,7 +3,7 @@ author: admin
 comments: true
 date: 2017-04-28 17:00:00+00:00
 layout: post
-slug: power_button_reparatur_dell_vostro
+slug: dell_vostro_2520_power_button
 title: 'Power Button Reparatur Dell Vostro 2520'
 categories:
 - Computer

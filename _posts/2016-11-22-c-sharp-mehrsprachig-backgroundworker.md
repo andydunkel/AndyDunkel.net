@@ -3,7 +3,7 @@ author: admin
 comments: true
 date: 2016-11-22 17:00:00+00:00
 layout: post
-slug: c_sharp_nicht_lokalisierte_backgroundworker_und_threads
+slug: c-sharp-mehrsprachig-backgroundworker
 title: 'Mehrsprache C# Anwendungen - nicht lokalisierte Backgroundworker und Threads'
 categories:
 - Coding

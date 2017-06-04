@@ -3,7 +3,7 @@ author: admin
 comments: true
 date: 2015-08-09 17:00:00+00:00
 layout: post
-slug: windows_10_auf_lenovo_thinkpad_w500_installieren
+slug: windows_10_on_thinkpad_w500
 title: 'Windows 10 auf Lenovo Thinkpad W500'
 categories:
 - Computer

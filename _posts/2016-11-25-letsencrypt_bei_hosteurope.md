@@ -3,7 +3,7 @@ author: admin
 comments: true
 date: 2016-11-25 17:00:00+00:00
 layout: post
-slug: letsencrypt_bei_hosteurope_nutzen
+slug: letsencrypt_bei_hosteurope
 title: 'LetsEncrypt Zertifikat bei Hosteurope eingerichtet'
 categories:
 - Webseiten

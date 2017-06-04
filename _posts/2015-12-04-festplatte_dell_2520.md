@@ -3,7 +3,7 @@ author: admin
 comments: true
 date: 2015-12-04 17:00:00+00:00
 layout: post
-slug: change_harddisk_dell_2520
+slug: festplatte_dell_2520
 title: 'Festplatte eines Dell Vostro 2520 wechseln'
 categories:
 - Repair

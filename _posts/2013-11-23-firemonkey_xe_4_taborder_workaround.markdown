@@ -3,7 +3,7 @@ author: admin
 comments: true
 date: 2013-11-23 17:00:00+00:00
 layout: post
-slug: delphi_xe4_firemonkey_taborder_not_working
+slug: firemonkey_xe_4_taborder_workaround
 title: 'Delphi XE4/Firemonkey - Taborder not working + Workaround'
 categories:
 - Delphi
