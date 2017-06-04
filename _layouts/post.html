@@ -3,7 +3,8 @@ layout: default
 ---
 
     <div class="row">
-    	<div class="col-md-9">
+    	<div class="col-md-9"> 
+    	<div class="postpost">
 
 			<h2>{{ page.title }}</h2>
 			<p class="meta">{{ page.date | date_to_string }}</p>
@@ -35,7 +36,7 @@ layout: default
 
 			{% if site.related_posts.size > 0 %}
 			 <div class="panel panel-default">
-			 	<div class="panel-heading">Verwandte Artikel:</div>
+			 	<div class="panel-heading">Weitere Artikel:</div>
 				<div class="panel-body">
 				{% for post in site.related_posts %}
 				   <li class="list-unstyled"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
@@ -55,12 +56,12 @@ layout: default
 			<script type="text/javascript"
 			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 			</script>
+		</div><!--end postpost-->
     	</div>
     	
-    	<div class="col-md-3" align="center">  
+    	<div class="col-md-3">  
     	  	
-    		<div class="panel panel-default">
-	    		<div class="panel-body">
+    		<div class="sidebarpanel" align="center">
 				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				<!-- Seitenleiste -->
 				<ins class="adsbygoogle"
@@ -69,11 +70,12 @@ layout: default
 				     data-ad-slot="1909195079"></ins>
 				<script>
 				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>		    	
-	    		</div>
+				</script>	
+
     		</div>
+
+    		{% include sidebar.html %}
     	</div>    	
-    	
     </div>			
 
 <hr>

@@ -10,7 +10,8 @@
         <link rel="stylesheet" href="/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/bootstrap-theme.min.css">		
 		<script src="/css/bootstrap.min.js"></script>
-		<link href="/css/additional.min.css" rel="stylesheet">
+		<!--<link href="/css/additional.min.css" rel="stylesheet">-->
+    <link href="/css/additional.css" rel="stylesheet">
 		<link rel="alternate" type="application/rss+xml" title="AndyDunkel.net RSS Feed" href="http://andydunkel.net/rss.xml" /> 
 		
 		<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
@@ -141,7 +142,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container maincontainer">
 
     <section>
 <h1>Willkommen</h1>
@@ -154,13 +155,86 @@
 <div class="row">
     <div class="col-md-9">
       <h2>Blog Posts</h2>
+
      
 		
-		<h1>
-		  <a href="/coding/2014/08/05/icon_scaling_for_osx_ios_and_windows.html">Icon scaling tool for OSX, IOS, Android and Windows</a>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/raspberry/2014/08/29/backup_of_an_sd_card_on_osx.html">Backup of an SD card on OSX</a>
+		</h1>
+		  <p class="small">Posted on 29 August 2014 by Andy</p>
+		  <p>I own a RaspberryPi which I mainly use for <a href="https://owncloud.org/">Owncloud</a> and <a href="http://seafile.com">Seafile</a> as my personal Cloud-Storage. One of my concern is the backup. Lets face it, its a cheap device and it holds all its data on a cheap SD-Card.</p>
+
+<p>In the past I was using a backup script which backups all the data and puts it into a ZIP file. However if something happens to the device or SD card, this means that I have to reinstall everything from scratch.</p>
+
+<p>So I my idea was to buy another RPI and SD card and make an image of the original one every week. If the card in the RPI fails, I just have to plug in the backup card.</p>
+
+<h2 id="creating-the-image">Creating the image</h2>
+
+<h3 id="windows">Windows</h3>
+
+<p>On Windows the easiest way to do a complete backup/image of your SD card is the “Win 32 Disk Imager” tool. Its free and you can <a href="http://sourceforge.net/projects/win32diskimager/">download it here</a>.</p>
+
+<p>The usage is very simple: put the SD card into your card reader, select folder and filename for the image file and select the correct drive number from the list.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/08/win_disk_imager.png" alt="image" /></p>
+
+<p>To start the backup just click the “Read” button. The process takes some time, depending on the size and speed of your SD card.</p>
+
+<p>The restore is also very simple. Insert the new SD card, select the drive number and hit the “Write” button.</p>
+
+<p><strong>Done!</strong></p>
+
+<h3 id="osx-and-linux">OSX and Linux</h3>
+
+<p>On OSX creating an image of the SD card is also very simple. Just open the “Disk Utility”, select the SD card on the left and click “New Image”. The system prompts you for a location of the image.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/08/backup_osx.png" alt="image" /></p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/08/sdcard1.png" alt="image" /></p>
+
+<p>On Linux (and OSX too), you can also backup from the command line using the DD command.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo dd if=/dev/rdisk1 of=~/Desktop/pi.img bs=1m
+</code></pre>
+</div>
+
+<p>To find the correct device, you can use the <code>diskutil</code> command (OSX only):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>diskutil list
+</code></pre>
+</div>
+
+<p>This will output something like that:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/08/backup_osx_1.png" alt="image" /></p>
+
+<p>You can find the correct device by looking for a Linux partition.</p>
+
+<p>Note: There is no output of the DD command during the process. Also the image has the same size as the original SD card. So it makes sense to compress the image with ZIP or GZIP.</p>
+
+<h4 id="restore">Restore</h4>
+
+<p>The restore is similar:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo dd if=/path/to/backup.img of=/dev/rdisk1 bs=1m
+</code></pre>
+</div>
+
+<p>Once the restore is done to the new SD card, just put it into your Raspberry Pi and the system should boot as nothing happened.</p>
+
+	
+      <p><a class="btn btn-success" href="/raspberry/2014/08/29/backup_of_an_sd_card_on_osx.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: Backup by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/coding/2014/08/05/icon_scaling_for_osx_ios_android_and_windows.html">Icon scaling tool for OSX, IOS, Android and Windows</a>
 		</h1>
 		  <p class="small">Posted on 05 August 2014 by Andy</p>
-		  <p><p>Some time ago me and my friend finished some apps for IOS. One problem is, when you are finished with programming, a lot of work still needs to be done in order to publish the app: writing the decription for the App Store, create screenshots and of course create an icon for the app.</p>
+		  <p>Some time ago me and my friend finished some apps for IOS. One problem is, when you are finished with programming, a lot of work still needs to be done in order to publish the app: writing the decription for the App Store, create screenshots and of course create an icon for the app.</p>
 
 <p>Especially for IOS apps creating the icon and use it in XCode is not that easy. A lot of different sizes need to be created:</p>
 
@@ -176,16 +250,18 @@
 
 <p>If you only need to resize icons for IOS and OSX you can have a look to our tool <a href="https://itunes.apple.com/de/app/asset-scaler/id901167651?mt=12">Asset Scaler</a>.</p>
 
-</p>		
+	
+      <p><a class="btn btn-success" href="/coding/2014/08/05/icon_scaling_for_osx_ios_android_and_windows.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: Icon, Assets, and xcassets by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
-		  <a href="/sonstiges/2014/07/21/vobis_denkzettel.html">Vobis - Denkzettel von 1991</a>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/sonstiges/2014/07/21/vobis_denkzettel_von_1991.html">Vobis - Denkzettel von 1991</a>
 		</h1>
 		  <p class="small">Posted on 21 July 2014 by Andy</p>
-		  <p><p>Ich miste derzeit daheim aus. Mache ich mehr oder weniger unregelmäßig. Alter Kram der nicht mehr verwendet wird kommt auf eBay oder gleich auf den Müll. Ich mag es nicht, wenn Dinge unnütz herumliegen.</p>
+		  <p>Ich miste derzeit daheim aus. Mache ich mehr oder weniger unregelmäßig. Alter Kram der nicht mehr verwendet wird kommt auf eBay oder gleich auf den Müll. Ich mag es nicht, wenn Dinge unnütz herumliegen.</p>
 
 <p>Dieses Jahr ist es etwas gründlicher. Es gibt viele Dinge, welche man Jahr für Jahr in die Hand nimmt, feststellt das sie komplett überflüssig sind, es jedoch nicht übers Herz bringt diese endgültig zu entsorgen.</p>
 
@@ -207,16 +283,18 @@ Die hatte meine Oma damals gesammelt, da sie einen PC brauchte für die Buchhalt
 <p>Danach wanderte der Schnellhefter wieder in die Ablage für ein paar Jahre. Jetzt hatte ich ihn wieder in den Händen und ich habe mich entschieden, dass Ding einfach mal einzuscannen, hier online zu stellen und anschließend das Original zu entsorgen. Nimmt am Ende doch nur Platz weg.</p>
 
 <p><a href="http://andydunkel.net/assets/uploads/2014/07/vobis_denkzettel_1991.pdf">Hier gehts zum PDF</a>. Viel Spaß. :-)</p>
-</p>		
+	
+      <p><a class="btn btn-success" href="/sonstiges/2014/07/21/vobis_denkzettel_von_1991.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: Computer by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/minimalismus/2014/07/07/we_the_tiny_house_people.html">Dokumentation: We the tiny house people</a>
 		</h1>
 		  <p class="small">Posted on 07 July 2014 by Andy</p>
-		  <p><p>Eher durch Zufall bin ich über einen Podcast auf die Dokumentation “<a href="https://www.youtube.com/watch?v=lDcVrVA4bSQ">We the tiny house people</a>” gestoßen. Die “Tiny House” Bewegung kommt ursprünglich aus den USA und findet anscheinend weltweit einige Anhänger.</p>
+		  <p>Eher durch Zufall bin ich über einen Podcast auf die Dokumentation “<a href="https://www.youtube.com/watch?v=lDcVrVA4bSQ">We the tiny house people</a>” gestoßen. Die “Tiny House” Bewegung kommt ursprünglich aus den USA und findet anscheinend weltweit einige Anhänger.</p>
 
 <p>Statt beim Wohnen und Hausbau auf immer größer und mehr zu setzen, geht es bei den “Tiny Houses” darum sich klein, kompakt und funktionell einzurichten. Einige sind sogar mobil.</p>
 
@@ -229,16 +307,18 @@ Die hatte meine Oma damals gesammelt, da sie einen PC brauchte für die Buchhalt
 <p>Ich gebe zu, viele der dargestellten Häuser und Wohnstätten wären mir doch zu klein, dennoch zeigen die Beispiele wie man sich auch mit wenig Platz äußerst komfortabel einrichten kann, wenn man sich auf das Wesentliche konzentriert. Probieren würde ich es mal für einige Zeit.</p>
 
 <iframe width="640" height="360" src="//www.youtube.com/embed/lDcVrVA4bSQ" frameborder="0" allowfullscreen=""></iframe>
-</p>		
+	
+      <p><a class="btn btn-success" href="/minimalismus/2014/07/07/we_the_tiny_house_people.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: Tiny Houses by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
-		  <a href="/eclipse/2014/05/24/introduction_to_cnf.html">Introduction to the common navigator framework</a>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/eclipse/2014/05/24/introduction_to_the_common_navigator_framework.html">Introduction to the common navigator framework</a>
 		</h1>
 		  <p class="small">Posted on 24 May 2014 by Andy</p>
-		  <p><p>The common navigator framework is one of the more complex things in Eclipse RCP. This article describes how to get started with the common navigator framework (CNF). So its just the basic stuff to get started and play around more on your own.</p>
+		  <p>The common navigator framework is one of the more complex things in Eclipse RCP. This article describes how to get started with the common navigator framework (CNF). So its just the basic stuff to get started and play around more on your own.</p>
 
 <p>Enough <a href="http://youtu.be/oHoeXFbc1PA?t=10s">chitchat</a>, lets get started.</p>
 
@@ -266,7 +346,7 @@ Die hatte meine Oma damals gesammelt, da sie einen PC brauchte für die Buchhalt
 
 <p>After that, add the following method to the <code>NavigatorRoot</code> class:</p>
 
-<pre><code>public Set&lt;ParentNode&gt; getParentNodes() {					
+<div class="highlighter-rouge"><pre class="highlight"><code>public Set&lt;ParentNode&gt; getParentNodes() {					
 	ParentNode node = new ParentNode();
 	node.setName("Hello World");
 			
@@ -279,16 +359,18 @@ Die hatte meine Oma damals gesammelt, da sie einen PC brauchte für die Buchhalt
 	return list;
 }	
 </code></pre>
+</div>
 
 <p>This just creates and returns two nodes, which should show up in the navigator later.</p>
 
 <p>The last step is to add the data to the MyNavigator class we created before:</p>
 
-<pre><code>@Override
+<div class="highlighter-rouge"><pre class="highlight"><code>@Override
 protected Object getInitialInput() {
 	return new NavigatorRoot();
 }
 </code></pre>
+</div>
 
 <p>Usually you would not statically set the input like in the example, but thats just an example to get it working.</p>
 
@@ -327,184 +409,21 @@ protected Object getInitialInput() {
 <h2 id="code">Code</h2>
 
 <p>The code for the example can be found on <a href="https://github.com/andydunkel/RCP-Demo-Application">GitHub</a>.</p>
-</p>		
+	
+      <p><a class="btn btn-success" href="/eclipse/2014/05/24/introduction_to_the_common_navigator_framework.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: CNF by Andy</p>
-		  <hr class="postdiv">
-		  
-		
-		<h1>
-		  <a href="/objectivec/coding/xcode/2014/05/04/mapkit_introduction.html">Introduction to MapKit on IOS</a>
-		</h1>
-		  <p class="small">Posted on 04 May 2014 by Andy</p>
-		  <p><p>MapKit offers an easy way to integrate Apple maps into your app. Wether you want to show where your company is located, where the next pub is or track your cats GPS location in an app.</p>
-
-<p>In this tutorial I want to describe how you can add maps to your application. Position, zoom the map and add annotations.</p>
-
-<h2 id="create-the-project">Create the project</h2>
-
-<p>In XCode create a new project, select iOS and single view application and enter the details for project. Once the project is created. The first thing we are doing, is adding the MapKit to the linked frameworks:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_1.png" alt="image" /></p>
-
-<p>Otherwise the application will crash instantaneously. Once we have done that, we go to the main storyboard and drag the map view into our view.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_2.png" alt="image" /></p>
-
-<p>In the properties of the MapView you can configure some basic settings, like showing the users location, activate / deactive zooming, rotating, scrolling etc…</p>
-
-<p>The next step is to create the Outlet for the map view in our application. This can be done using the Assistant editor and CTRL dragging the MKMapView onto the header file and enter a name for the variable:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_3.png" alt="image" /></p>
-
-<p>We also need to add MapKit to the imports. While we are doing that we also add the map delegate:</p>
-
-<pre><code>#import &lt;MapKit/MapKit.h&gt;
-
-@interface DASViewController : UIViewController &lt;MKMapViewDelegate&gt;
-</code></pre>
-
-<p>Lets run the app for the first time. It should now display the map.</p>
-
-<h2 id="setting-the-map-type">Setting the Map Type</h2>
-
-<p>For maps there are three types how to display the map: Standard, Satellite and Hybrid. While you can set these in the properties, you might want the user to be able to choose the type.</p>
-
-<p>For that we are adding a segmented control to the view and CTRL drag an IBAction to our .m file:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_4.png" alt="image" /></p>
-
-<p>…and implement the action method:</p>
-
-<pre><code>	- (IBAction)setType:(UISegmentedControl *)sender {
-    switch (sender.selectedSegmentIndex) {
-        case 0:
-            self.mapView.mapType = MKMapTypeStandard;
-            break;
-        case 1:
-            self.mapView.mapType = MKMapTypeSatellite;
-            break;
-        case 2:
-            self.mapView.mapType = MKMapTypeHybrid;
-            break;
-        default:
-            break;
-    }
-}
-</code></pre>
-
-<p>When we start the application we are now able to switch between the different map types.</p>
-
-<h2 id="zoom-to-a-specific-location">Zoom to a specific location</h2>
-
-<p>While the map currently defaults to specific position, we now want to set a location / area on our own by default.</p>
-
-<p>To do that, we add the following code to our <code>viewDidLoad</code> method:</p>
-
-<pre><code>- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Create your coordinate
-    CLLocationCoordinate2D myCoordinate = {47.879854, 10.641000};
-    
-    //set location and zoom level
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(myCoordinate, 1000, 1000);
-    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
-    [self.mapView setRegion:adjustedRegion animated:YES];
-    
-}
-</code></pre>
-
-<p>Lets have a look to the details:</p>
-
-<pre><code>CLLocationCoordinate2D myCoordinate = {47.879854, 10.641000};
-</code></pre>
-
-<p>Coordinates are longitude and latitude of the position. Best way to find out for a place is Google Maps. The zoom level is adjusted in the following line:</p>
-
-<pre><code>MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(myCoordinate, 1000, 1000);
-</code></pre>
-
-<p>This is defined in metres, in our case we want to have a 1000 meters zoom level. When we launch the app now, it should default to the given position.</p>
-
-<h2 id="add-annotation">Add annotation</h2>
-
-<p>The next step for us is to add an annotation to the map. We add the following code to the <code>viewDidLoad</code> method:</p>
-
-<pre><code> //Create your annotation
-MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-// Set your annotation to point at your coordinate
-point.coordinate = myCoordinate;
-point.title = @"Andys Home";
-
-//Drop pin on map
-[self.mapView addAnnotation:point];
-</code></pre>
-
-<p>The code is best added before we do the zoom we did before.</p>
-
-<h3 id="remove-all-annotations">Remove all annotations</h3>
-
-<p>To remove all annotations from the map:</p>
-
-<pre><code>for (id annotation in self.mapView.annotations) {
-    [self.mapView removeAnnotation:annotation];
-}
-</code></pre>
-
-<h3 id="showing-the-users-location">Showing the users location</h3>
-
-<p>The last thing we want to do is do something with users location. The users location is only available if the user enabled the function. The user is asked wether he wants to share his location or not, when the function is first called. To enable that in XCode activate “Show Users Location” in the MapViews properties.</p>
-
-<p>Also drop a label on the view and create an outlet for it:</p>
-
-<pre><code>@property (weak, nonatomic) IBOutlet UILabel *labelPosition;
-</code></pre>
-
-<p>To update the user location, we are using the delegate we defined in our header file and assign the delegate to the mapView:</p>
-
-<pre><code>self.mapView.delegate = self;
-</code></pre>
-
-<p>Now we implement the method for the update:</p>
-
-<pre><code>-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-    
-    CLLocationCoordinate2D myCoordinate = {47.879854, 10.641000};
-    CLLocationCoordinate2D userCoordinate = [[[self.mapView userLocation]
-                                              location] coordinate];
-    
-    CLLocation *myLoc = [[CLLocation alloc] initWithLatitude:myCoordinate.latitude
-                                                   longitude:myCoordinate.longitude];
-    CLLocation *userLoc = [[CLLocation alloc] initWithLatitude:userCoordinate.latitude
-                                                     longitude:userCoordinate.longitude];
-    
-    CLLocationDistance distance = [myLoc distanceFromLocation:userLoc];
-    
-    NSString *labelText = [NSString stringWithFormat:@"%lf km", distance / 1000];
-    
-    [self.labelPosition setText:labelText];
-}
-</code></pre>
-
-<p>The method gets called everytime the user position gets updated. It calculates the distance between the users position and the predefined location. The result is then shown on the label we just dropped on the view:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_5.png" alt="image" /></p>
-
-<h2 id="the-end">The end</h2>
-
-<p>Well thats it for some quickstart with MapKit. You can download the source code of the <a href="http://andydunkel.net/assets/uploads/2014/05/mapkit/MapKitExample.zip">example here</a>.</p>
-
-</p>		
-		  <p class="small">Tagged: MapKit by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
 
     </div>
     <div class="col-md-3">    
+            	<div class="sidebarpanel">
     	<h4>Partnerlink</h4>
     	<a target="_blank" href="http://www.amazon.de/?_encoding=UTF8&camp=1638&creative=19454&linkCode=ur2&site-redirect=de&tag=ekiwide0b-21">Einkaufen bei Amazon.de</a><img src="https://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&l=ur2&o=3" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />	
+    	</div>
     	
+    	<div class="sidebarpanel">
     	<h4>Werbung</h4>
     	
     	<div align="left">
@@ -520,69 +439,129 @@ point.title = @"Andys Home";
 		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		</script>
 		</div>
+		</div>
 		
+		<div class="sidebarpanel">
 		<h4>Links</h4>
     	<ul class="list-unstyled">
     		<li><a href="http://andydunkel.net/da.asc.zip">Andys PGP-Key</a></li>
     		<li><a href="https://github.com/andydunkel">Me on GitHub</a></li> 	
     		<li><a href="http://stackoverflow.com/users/285039/da">Me on StackOverflow</a></li>    			
     	</ul>
+    	</div>
     	
+    	<div class="sidebarpanel">
     	<h4>Webseiten</h4>
     	<ul class="list-unstyled">
     		<li><a href="http://www.ekiwi.de">eKiwi.de</a></li>
     		<li><a href="http://ekiwi-blog.de">eKiwi.de Blog</a></li>
     		<li><a href="http://www.da-software.de">DA-Software.de</a></li>    		
     	</ul>
+    	</div>
+
+    	<div class="sidebarpanel">
     	<h4>Categories</h4>    	
 		<section>
 		<ul id="categories" class="list-unstyled">
-		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (31)</a></li>
-<li class='category'><a href='/categories/computer/'>computer (14)</a></li>
-<li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
-<li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
-<li class='category'><a href='/categories/finanzen/'>finanzen (1)</a></li>
-<li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
-<li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
-<li class='category'><a href='/categories/gadgets/'>gadgets (26)</a></li>
-<li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
-<li class='category'><a href='/categories/html/'>html (1)</a></li>
-<li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
-<li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
-<li class='category'><a href='/categories/java/'>java (23)</a></li>
-<li class='category'><a href='/categories/jekyll/'>jekyll (2)</a></li>
-<li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
-<li class='category'><a href='/categories/kochen/'>kochen (2)</a></li>
-<li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
-<li class='category'><a href='/categories/linux/'>linux (15)</a></li>
-<li class='category'><a href='/categories/mac/'>mac (4)</a></li>
-<li class='category'><a href='/categories/meinung/'>meinung (6)</a></li>
-<li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (21)</a></li>
-<li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
-<li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
-<li class='category'><a href='/categories/osx/'>osx (1)</a></li>
-<li class='category'><a href='/categories/programmierung/'>programmierung (5)</a></li>
-<li class='category'><a href='/categories/radfahren/'>radfahren (31)</a></li>
-<li class='category'><a href='/categories/raspberry/'>raspberry (3)</a></li>
-<li class='category'><a href='/categories/repair/'>repair (2)</a></li>
-<li class='category'><a href='/categories/reparatur/'>reparatur (5)</a></li>
-<li class='category'><a href='/categories/retrotrip/'>retrotrip (1)</a></li>
-<li class='category'><a href='/categories/rezepte/'>rezepte (1)</a></li>
-<li class='category'><a href='/categories/science/'>science (3)</a></li>
-<li class='category'><a href='/categories/software/'>software (1)</a></li>
-<li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
-<li class='category'><a href='/categories/swt/'>swt (4)</a></li>
-<li class='category'><a href='/categories/tools/'>tools (24)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (22)</a></li>
-<li class='category'><a href='/categories/webdesign/'>webdesign (7)</a></li>
-<li class='category'><a href='/categories/webseiten/'>webseiten (7)</a></li>
-<li class='category'><a href='/categories/windows/'>windows (6)</a></li>
-<li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>
+
+  
+  
+     
+      <li class="category"><a href="/categories/eclipse">Eclipse <span>(26)</span></a></li>
+     
+      <li class="category"><a href="/categories/java">Java <span>(23)</span></a></li>
+     
+      <li class="category"><a href="/categories/radfahren">Radfahren <span>(31)</span></a></li>
+     
+      <li class="category"><a href="/categories/hiking">Hiking <span>(9)</span></a></li>
+     
+      <li class="category"><a href="/categories/ireland">Ireland <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/swt">Swt <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/fotos">Fotos <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/katzen">Katzen <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/tools">Tools <span>(24)</span></a></li>
+     
+      <li class="category"><a href="/categories/gadgets">Gadgets <span>(27)</span></a></li>
+     
+      <li class="category"><a href="/categories/rezepte">Rezepte <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
+     
+      <li class="category"><a href="/categories/ipad">Ipad <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/coding">Coding <span>(31)</span></a></li>
+     
+      <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/linux">Linux <span>(15)</span></a></li>
+     
+      <li class="category"><a href="/categories/windows">Windows <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/meinung">Meinung <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/mac">Mac <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/kochen">Kochen <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/reparatur">Reparatur <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/delphi">Delphi <span>(9)</span></a></li>
+     
+      <li class="category"><a href="/categories/firemonkey">Firemonkey <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/raspberry">Raspberry <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/xcode">Xcode <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/minimalismus">Minimalismus <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/webseiten">Webseiten <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/html">Html <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/osx">Osx <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/computer">Computer <span>(14)</span></a></li>
+     
+      <li class="category"><a href="/categories/webdesign">Webdesign <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/lazarus">Lazarus <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/jekyll">Jekyll <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/repair">Repair <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/ccc">Ccc <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/opensource">Opensource <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/programmierung">Programmierung <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/mobilitaet">Mobilitaet <span>(21)</span></a></li>
+     
+      <li class="category"><a href="/categories/umwelt">Umwelt <span>(22)</span></a></li>
+     
+      <li class="category"><a href="/categories/retrotrip">Retrotrip <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/finanzen">Finanzen <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/software">Software <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/hardware">Hardware <span>(1)</span></a></li>
+    
+  
+
+
 
 		</ul>
 		</section>
+		</div>
    </div>
 </div>
 
@@ -594,7 +573,7 @@ point.title = @"Andys Home";
   
     <a href="/page16" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 17 of 55</span>
+  <span class="page_number ">Page: 17 of 56</span>
   
     <a href="/page18" class="next">Next</a>
   

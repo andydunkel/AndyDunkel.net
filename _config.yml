@@ -1,6 +1,8 @@
 name: AndyDunkel.net
 markdown: kramdown
-pygments: true
+highligther: true
 paginate: 5
 exclude: ['raw']
 url: http://andydunkel.net
+gems: [jekyll-paginate]
+excerpt_separator: <!--more-->

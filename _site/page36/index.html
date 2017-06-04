@@ -10,7 +10,8 @@
         <link rel="stylesheet" href="/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/bootstrap-theme.min.css">		
 		<script src="/css/bootstrap.min.js"></script>
-		<link href="/css/additional.min.css" rel="stylesheet">
+		<!--<link href="/css/additional.min.css" rel="stylesheet">-->
+    <link href="/css/additional.css" rel="stylesheet">
 		<link rel="alternate" type="application/rss+xml" title="AndyDunkel.net RSS Feed" href="http://andydunkel.net/rss.xml" /> 
 		
 		<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
@@ -141,7 +142,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container maincontainer">
 
     <section>
 <h1>Willkommen</h1>
@@ -154,17 +155,37 @@
 <div class="row">
     <div class="col-md-9">
       <h2>Blog Posts</h2>
+
      
 		
-		<h1>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/2011/10/20/wanderung-falkenstein-saloberalm16-10-2011.html">Wanderung Falkenstein, Saloberalm–16.10.2011</a>
+		</h1>
+		  <p class="small">Posted on 20 October 2011 by Andy</p>
+		  <p>Denke das war eines der letzten schönen Wochenenden dieses Jahres. Zumindest wandertechnisch. </p>
+<p>Diesmal ging es zur Burgruine <a href="http://de.wikipedia.org/wiki/Falkenstein_(Manzenberg)" target="_blank">Falkenstein</a>. Bei bestem Wetter erst zur Burg, anschließend ging es weiter zur <a href="http://www.saloberalm.de/" target="_blank">Saloberalm</a>. Dort kurze Einkehr, lange konnten wir dort nicht bleiben, da die Dunkelheit nahte. Insgesamt eine schöne Tour mit ca. 3 Stunden Gehzeit.</p>
+<p>Hier ein paar Fotos und die übliche Statistik:</p>
+<p><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2699" border="0" alt="DSCN2699" src="http://andydunkel.net/assets/uploads/2011/10/DSCN2699.jpg" width="604" height="454" /></p>
+<iframe height="350" marginheight="0" src="http://maps.google.de/maps/ms?vpsrc=0&amp;ctz=-120&amp;ie=UTF8&amp;msa=0&amp;msid=208324790998598431494.0004af70322d6233c5f45&amp;t=h&amp;ll=47.566276,10.606441&amp;spn=0.02027,0.051498&amp;z=14&amp;output=embed" frameborder="0" width="600" marginwidth="0" scrolling="no"></iframe>
+<p><br /><small>View <a style="text-align: left; color: #0000ff" href="http://maps.google.de/maps/ms?vpsrc=0&amp;ctz=-120&amp;ie=UTF8&amp;msa=0&amp;msid=208324790998598431494.0004af70322d6233c5f45&amp;t=h&amp;ll=47.566276,10.606441&amp;spn=0.02027,0.051498&amp;z=14&amp;source=embed">2011-10-16 14:14 - Falkenstein</a> in a larger map</small>  &lt;p&gt;Gesamtentfernung: 11,00 km (6,8 mi)<br />Gesamtzeit: 4:01:53<br />Durchschnittsgeschw.: 2,73 km/h (1,7 mi/h)<br />Durchschnitt in Bew.: 5,90 km/h (3,7 mi/h)<br />Max. Geschwindigkeit: 12,89 km/h (8,0 mi/h)<br />Niedrigste Höhenlage: 1124 m (3688 Fuß)<br />Höchste Höhenlage: 1350 m (4430 Fuß)<br />Höhengewinn: 803 m (2636 Fuß)<br />Maximale Steigung: 30 %<br />Minimale Steigung: 2 %<br />Aufgezeichnet am: So. Okt 16 14:14:52 MESZ 2011<br />&lt;/p&gt; &lt;p&gt;<img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="chart" border="0" alt="chart" src="http://andydunkel.net/assets/uploads/2011/10/chart.png" width="604" height="354" />&lt;/p&gt; &lt;p&gt;Weitere Fotos:&lt;/p&gt;</p>
+
+	
+      <p><a class="btn btn-success" href="/2011/10/20/wanderung-falkenstein-saloberalm16-10-2011.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: Falkenstein, Saloberalm, and Wandern by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/java/2011/10/12/java-reading-output-from-a-consolestdout.html">Java: Reading output from the Console/StdOut</a>
 		</h1>
 		  <p class="small">Posted on 12 October 2011 by Andy</p>
-		  <p><p>Today I had a small problem. I wanted to start an external C++ console programm with some parameters and get the output back to my Java program.</p>
+		  <p>Today I had a small problem. I wanted to start an external C++ console programm with some parameters and get the output back to my Java program.</p>
 
 <p>Here is a code snippet that reads the output from a console program:</p>
 
-<pre><code>import java.io.BufferedReader;
+<div class="highlighter-rouge"><pre class="highlight"><code>import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -183,43 +204,49 @@ public class Main {
   }
 }
 </code></pre>
+</div>
 
 <p>The snippet just outputs the received information.</p>
 
 <p><img src="http://andydunkel.net/assets/uploads/2011/10/image5.png" alt="image" /></p>
-</p>		
+	
+      <p><a class="btn btn-success" href="/java/2011/10/12/java-reading-output-from-a-consolestdout.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: cmd.exe, Console, Java, read, and StdOut by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/eclipse/java/swt/2011/10/06/jface-set-selection-index-in-tableviewer.html">JFace: Set selection index in TableViewer</a>
 		</h1>
 		  <p class="small">Posted on 06 October 2011 by Andy</p>
-		  <p><p>Selecting a row by index in a table viewer isn’t very straightforward. There is no method like tableViewer.setSelectionIndex.</p>
+		  <p>Selecting a row by index in a table viewer isn’t very straightforward. There is no method like tableViewer.setSelectionIndex.</p>
 
 <p>Here is a snippet how its done:</p>
 
-<pre><code>int selection = 5; //row we want to select
+<div class="highlighter-rouge"><pre class="highlight"><code>int selection = 5; //row we want to select
 tableViewer.setSelection(new StructuredSelection(tableViewer.getElementAt(selection)),true);
 </code></pre>
+</div>
 
-</p>		
+	
+      <p><a class="btn btn-success" href="/eclipse/java/swt/2011/10/06/jface-set-selection-index-in-tableviewer.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: JFace, RCP, and tableViewer by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/eclipse/java/swt/2011/10/04/eclipse-rcp-remove-tab-folder-from-view.html">Eclipse RCP: Remove tab folder from View</a>
 		</h1>
 		  <p class="small">Posted on 04 October 2011 by Andy</p>
-		  <p><p>If you create a new RCP application a view gets a tab like this:</p>
+		  <p>If you create a new RCP application a view gets a tab like this:</p>
 
 <p><img src="http://andydunkel.net/assets/uploads/2011/10/image3.png" alt="image" /></p>
 
 <p>To remove the tab, use the “addStandaloneView” method in your perspective. Here is an example:</p>
 
-<pre><code>public class Perspective implements IPerspectiveFactory {
+<div class="highlighter-rouge"><pre class="highlight"><code>public class Perspective implements IPerspectiveFactory {
   public void createInitialLayout(IPageLayout layout) {       
     String editorArea = layout.getEditorArea();
     layout.setEditorAreaVisible(false);
@@ -228,53 +255,40 @@ tableViewer.setSelection(new StructuredSelection(tableViewer.getElementAt(select
   }
 }
 </code></pre>
+</div>
 
 <p>The result:</p>
 
 <p><img src="http://andydunkel.net/assets/uploads/2011/10/image4.png" alt="image" /></p>
-</p>		
+	
+      <p><a class="btn btn-success" href="/eclipse/java/swt/2011/10/04/eclipse-rcp-remove-tab-folder-from-view.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: folder, RCP, remove, and tab by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/science/2011/10/03/infrarotlicht-sichtbar-machen.html">Infrarotlicht sichtbar machen</a>
 		</h1>
 		  <p class="small">Posted on 03 October 2011 by Andy</p>
-		  <p><p>Fernbedienungen für Fernseher, DVD-Player etc. arbeiten mit infrarotem Licht. Dieses können wir Menschen nicht sehen.&nbsp; Interessanterweise kann man mit einem Handy bzw. einer Digitalkamera dieses Licht sichtbar machen:</p>
-<p> <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:f4995228-0d34-45ca-a579-165df6a0b727" class="wlWriterEditableSmartContent"><div><object width="605" height="339"><param name="movie" value="http://www.youtube.com/v/KgPFJlVNGzY?hl=en&amp;hd=1" /><embed src="http://www.youtube.com/v/KgPFJlVNGzY?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="605" height="339" /></object></div></div></p>
+		  <p>Fernbedienungen für Fernseher, DVD-Player etc. arbeiten mit infrarotem Licht. Dieses können wir Menschen nicht sehen.&nbsp; Interessanterweise kann man mit einem Handy bzw. einer Digitalkamera dieses Licht sichtbar machen:</p>
+<p> <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:f4995228-0d34-45ca-a579-165df6a0b727" class="wlWriterEditableSmartContent"><div><object width="605" height="339"><param name="movie" value="http://www.youtube.com/v/KgPFJlVNGzY?hl=en&amp;hd=1" />&lt;/param&gt;<embed src="http://www.youtube.com/v/KgPFJlVNGzY?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="605" height="339" />&lt;/embed&gt;</object></div></div></p>
 <p>Praktischer Nutzen? So kann man recht leicht überprüfen, ob die Fernbedienung noch funktioniert oder die Batterien ausgetauscht werden müssen.</p>
-</p>		
+	
+      <p><a class="btn btn-success" href="/science/2011/10/03/infrarotlicht-sichtbar-machen.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: Fernbedienung, Infrarot, and Sichtbarkeit by Andy</p>
-		  <hr class="postdiv">
-		  
-		
-		<h1>
-		  <a href="/eclipse/java/2011/10/01/emf-setting-an-empty-string-as-default-value.html">EMF: Setting an empty string as default value</a>
-		</h1>
-		  <p class="small">Posted on 01 October 2011 by Andy</p>
-		  <p><p>If you create a string in an EMF model, its null by default:</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2011/10/image.png"><img src="http://andydunkel.net/assets/uploads/2011/10/image_thumb.png" alt="image" /></a></p>
-
-<p>If you want to have an empty string, instead of null, you have to enter a “Default Value Literal”. For an empty string, just click on the value and hit enter (very obvious):</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/10/image1.png" alt="image" /></p>
-
-<p>To get the null value back, just click on “Restore Default Value” in the toolbar of the properties view.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/10/image2.png" alt="image" /></p>
-</p>		
-		  <p class="small">Tagged: default, EMF, null, string, and value by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
 
     </div>
     <div class="col-md-3">    
+            	<div class="sidebarpanel">
     	<h4>Partnerlink</h4>
     	<a target="_blank" href="http://www.amazon.de/?_encoding=UTF8&camp=1638&creative=19454&linkCode=ur2&site-redirect=de&tag=ekiwide0b-21">Einkaufen bei Amazon.de</a><img src="https://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&l=ur2&o=3" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />	
+    	</div>
     	
+    	<div class="sidebarpanel">
     	<h4>Werbung</h4>
     	
     	<div align="left">
@@ -290,69 +304,129 @@ tableViewer.setSelection(new StructuredSelection(tableViewer.getElementAt(select
 		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		</script>
 		</div>
+		</div>
 		
+		<div class="sidebarpanel">
 		<h4>Links</h4>
     	<ul class="list-unstyled">
     		<li><a href="http://andydunkel.net/da.asc.zip">Andys PGP-Key</a></li>
     		<li><a href="https://github.com/andydunkel">Me on GitHub</a></li> 	
     		<li><a href="http://stackoverflow.com/users/285039/da">Me on StackOverflow</a></li>    			
     	</ul>
+    	</div>
     	
+    	<div class="sidebarpanel">
     	<h4>Webseiten</h4>
     	<ul class="list-unstyled">
     		<li><a href="http://www.ekiwi.de">eKiwi.de</a></li>
     		<li><a href="http://ekiwi-blog.de">eKiwi.de Blog</a></li>
     		<li><a href="http://www.da-software.de">DA-Software.de</a></li>    		
     	</ul>
+    	</div>
+
+    	<div class="sidebarpanel">
     	<h4>Categories</h4>    	
 		<section>
 		<ul id="categories" class="list-unstyled">
-		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (31)</a></li>
-<li class='category'><a href='/categories/computer/'>computer (14)</a></li>
-<li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
-<li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
-<li class='category'><a href='/categories/finanzen/'>finanzen (1)</a></li>
-<li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
-<li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
-<li class='category'><a href='/categories/gadgets/'>gadgets (26)</a></li>
-<li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
-<li class='category'><a href='/categories/html/'>html (1)</a></li>
-<li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
-<li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
-<li class='category'><a href='/categories/java/'>java (23)</a></li>
-<li class='category'><a href='/categories/jekyll/'>jekyll (2)</a></li>
-<li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
-<li class='category'><a href='/categories/kochen/'>kochen (2)</a></li>
-<li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
-<li class='category'><a href='/categories/linux/'>linux (15)</a></li>
-<li class='category'><a href='/categories/mac/'>mac (4)</a></li>
-<li class='category'><a href='/categories/meinung/'>meinung (6)</a></li>
-<li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (21)</a></li>
-<li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
-<li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
-<li class='category'><a href='/categories/osx/'>osx (1)</a></li>
-<li class='category'><a href='/categories/programmierung/'>programmierung (5)</a></li>
-<li class='category'><a href='/categories/radfahren/'>radfahren (31)</a></li>
-<li class='category'><a href='/categories/raspberry/'>raspberry (3)</a></li>
-<li class='category'><a href='/categories/repair/'>repair (2)</a></li>
-<li class='category'><a href='/categories/reparatur/'>reparatur (5)</a></li>
-<li class='category'><a href='/categories/retrotrip/'>retrotrip (1)</a></li>
-<li class='category'><a href='/categories/rezepte/'>rezepte (1)</a></li>
-<li class='category'><a href='/categories/science/'>science (3)</a></li>
-<li class='category'><a href='/categories/software/'>software (1)</a></li>
-<li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
-<li class='category'><a href='/categories/swt/'>swt (4)</a></li>
-<li class='category'><a href='/categories/tools/'>tools (24)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (22)</a></li>
-<li class='category'><a href='/categories/webdesign/'>webdesign (7)</a></li>
-<li class='category'><a href='/categories/webseiten/'>webseiten (7)</a></li>
-<li class='category'><a href='/categories/windows/'>windows (6)</a></li>
-<li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>
+
+  
+  
+     
+      <li class="category"><a href="/categories/eclipse">Eclipse <span>(26)</span></a></li>
+     
+      <li class="category"><a href="/categories/java">Java <span>(23)</span></a></li>
+     
+      <li class="category"><a href="/categories/radfahren">Radfahren <span>(31)</span></a></li>
+     
+      <li class="category"><a href="/categories/hiking">Hiking <span>(9)</span></a></li>
+     
+      <li class="category"><a href="/categories/ireland">Ireland <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/swt">Swt <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/fotos">Fotos <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/katzen">Katzen <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/tools">Tools <span>(24)</span></a></li>
+     
+      <li class="category"><a href="/categories/gadgets">Gadgets <span>(27)</span></a></li>
+     
+      <li class="category"><a href="/categories/rezepte">Rezepte <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
+     
+      <li class="category"><a href="/categories/ipad">Ipad <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/coding">Coding <span>(31)</span></a></li>
+     
+      <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/linux">Linux <span>(15)</span></a></li>
+     
+      <li class="category"><a href="/categories/windows">Windows <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/meinung">Meinung <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/mac">Mac <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/kochen">Kochen <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/reparatur">Reparatur <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/delphi">Delphi <span>(9)</span></a></li>
+     
+      <li class="category"><a href="/categories/firemonkey">Firemonkey <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/raspberry">Raspberry <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/xcode">Xcode <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/minimalismus">Minimalismus <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/webseiten">Webseiten <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/html">Html <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/osx">Osx <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/computer">Computer <span>(14)</span></a></li>
+     
+      <li class="category"><a href="/categories/webdesign">Webdesign <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/lazarus">Lazarus <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/jekyll">Jekyll <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/repair">Repair <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/ccc">Ccc <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/opensource">Opensource <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/programmierung">Programmierung <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/mobilitaet">Mobilitaet <span>(21)</span></a></li>
+     
+      <li class="category"><a href="/categories/umwelt">Umwelt <span>(22)</span></a></li>
+     
+      <li class="category"><a href="/categories/retrotrip">Retrotrip <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/finanzen">Finanzen <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/software">Software <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/hardware">Hardware <span>(1)</span></a></li>
+    
+  
+
+
 
 		</ul>
 		</section>
+		</div>
    </div>
 </div>
 
@@ -364,7 +438,7 @@ tableViewer.setSelection(new StructuredSelection(tableViewer.getElementAt(select
   
     <a href="/page35" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 36 of 55</span>
+  <span class="page_number ">Page: 36 of 56</span>
   
     <a href="/page37" class="next">Next</a>
   

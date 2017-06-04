@@ -24,8 +24,7 @@ Das Ganze wird z.B. so verwendet:
 
 Da jeweils immer nur die letzten 10 Artikel angezeigt werden, ist das nicht wirklich "related". Immerhin wird noch die Option angeboten das Ganze über einen Index etwas schlauer zu machen. Mit der Option <code>--lsi</code> wird beim Generieren der Seite ein Index angelegt und die Funktion arbeitet semantisch etwas schlauer. Bei mir hat das jedoch auch nicht funktioniert. Hier kam es leider nur zu einer Fehlermeldung. Außerdem wollte ich nicht stupide immer 10 Artikel angezeigt bekommen, obs passt oder nicht.
 
-Auf der Suche nach einer besseren Lösung bin ich auf [ein Github-Projekt](h
-ttps://github.com/jumanji27/related-posts-jekyll-plugin) gestoßen. Das Plugin kopiert man einfach in das Plugin-Verzeichnis von Jekyll. Es ersetzt die Standardfunktion von Jekyll. Die Zuordnung der verwandten Artikel erfolgt beim Plugin über die Tags, gleicher Tag == verwandt.
+Auf der Suche nach einer besseren Lösung bin ich auf [ein Github-Projekt](https://github.com/jumanji27/related-posts-jekyll-plugin) gestoßen. Das Plugin kopiert man einfach in das Plugin-Verzeichnis von Jekyll. Es ersetzt die Standardfunktion von Jekyll. Die Zuordnung der verwandten Artikel erfolgt beim Plugin über die Tags, gleicher Tag == verwandt.
 
 Zur Einbindung habe ich folgenden Code verwendet.
 

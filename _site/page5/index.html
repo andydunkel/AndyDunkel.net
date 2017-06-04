@@ -10,7 +10,8 @@
         <link rel="stylesheet" href="/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/bootstrap-theme.min.css">		
 		<script src="/css/bootstrap.min.js"></script>
-		<link href="/css/additional.min.css" rel="stylesheet">
+		<!--<link href="/css/additional.min.css" rel="stylesheet">-->
+    <link href="/css/additional.css" rel="stylesheet">
 		<link rel="alternate" type="application/rss+xml" title="AndyDunkel.net RSS Feed" href="http://andydunkel.net/rss.xml" /> 
 		
 		<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
@@ -141,7 +142,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container maincontainer">
 
     <section>
 <h1>Willkommen</h1>
@@ -154,29 +155,64 @@
 <div class="row">
     <div class="col-md-9">
       <h2>Blog Posts</h2>
+
      
 		
-		<h1>
-		  <a href="/webdesign/linux/2016/12/17/midnight_commander_ssh_hosteurope.html">SSH bei Hosteurope - Midnight Commander ausführen</a>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/mobilitaet/umwelt/2017/01/08/mobilitaet_dezember_2016.html">Mobilität Dezember 2016</a>
+		</h1>
+		  <p class="small">Posted on 08 January 2017 by Andy</p>
+		  <p>Der Monat war etwas lau, was das Radfahren anging. Meine Freundin hatte bereits Urlaub und die Kombination Zug und Brompton in der Früh und am Abend ist dann wenig optimal. Neben den zeitlichen Aspekt, kostet es mit Bahncard 25 knappe 10 Euro hin und zurück. Solange das Auto da steht, nehme ich dieses. Die Fixkosten beim Auto hat man eh, ob man fährt oder nicht.</p>
+
+<p>Trotz allem haben die Kilometer beim Auto auch nicht sonderlich erhöht. Dies ist aber eher dem Urlaub Ende des Monats geschuldet.</p>
+
+<h3 id="fahrrad">Fahrrad</h3>
+
+<ul>
+  <li>Gesamt km: 26 km</li>
+  <li>Fahrten: 11</li>
+  <li>Durchschnitt pro Fahrt: 2,36 km</li>
+</ul>
+
+<h3 id="auto">Auto</h3>
+
+<ul>
+  <li>Gesamt km: 372</li>
+  <li>Fahrten: 19</li>
+  <li>Durchschnitt pro Fahrt: 19,57 km</li>
+  <li>Getankt: 0 Liter</li>
+</ul>
+	
+      <p><a class="btn btn-success" href="/mobilitaet/umwelt/2017/01/08/mobilitaet_dezember_2016.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: Mobilitaet and Umwelt by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/webdesign/linux/2016/12/17/ssh_bei_hosteurope_midknight_commander.html">SSH bei Hosteurope - Midnight Commander ausführen</a>
 		</h1>
 		  <p class="small">Posted on 17 December 2016 by Andy</p>
-		  <p><p>Der SSH-Zugang bei Managed Servern ist bei Hosteurope naturgemäß eingeschränkt. Man kann seine eigenen Dateien verwalten, das wars.</p>
+		  <p>Der SSH-Zugang bei Managed Servern ist bei Hosteurope naturgemäß eingeschränkt. Man kann seine eigenen Dateien verwalten, das wars.</p>
 
 <p>Ausführen kann man die installierten Programme. Aber auch hier gibt es Einschränkungen. So läuft der Midnight Commander standardmäßig erstmal nicht. Stattdessen erscheint die folgende Fehlermeldung:</p>
 
-<pre><code>user@hosteurope:~$ mc
+<div class="highlighter-rouge"><pre class="highlight"><code>user@hosteurope:~$ mc
 Failed to run:
 Cannot create /is/htdocs/wp_koko/.config/mc directory
 </code></pre>
+</div>
 
 <p>Dies ist einfach nur ein Berechtigungsproblem. Auf dieses Verzeichnis hat standardmäßig nur der FTP-User Zugriff. Es gibt aber eine Lösung. Man legt das Verzeichnis einfach von Hand über FTP an.</p>
 
 <p>Angelegt werden müssen drei Verzeichnisse:</p>
 
-<pre><code>.config
+<div class="highlighter-rouge"><pre class="highlight"><code>.config
 .cache
 .local	
 </code></pre>
+</div>
 
 <p><img src="/assets/uploads/2016/12/mc1.png" alt="" /></p>
 
@@ -187,16 +223,18 @@ Cannot create /is/htdocs/wp_koko/.config/mc directory
 <p>Anschließend klappt der Start vom Midnight Commander-</p>
 
 <p><img src="/assets/uploads/2016/12/mc3.png" alt="" /></p>
-</p>		
+	
+      <p><a class="btn btn-success" href="/webdesign/linux/2016/12/17/ssh_bei_hosteurope_midknight_commander.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: Hosteurope by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/coding/2016/12/15/wpf_anwendungen_mehrsprachig.html">WPF Anwendung lokalisieren und übersetzen</a>
 		</h1>
 		  <p class="small">Posted on 15 December 2016 by Andy</p>
-		  <p><p>WPF-Anwendungen bzw. Formulare zu übersetzungen funktioniert etwas anders als bei Windows-Forms-Dialogen. Bei diesen kann man bequem die Sprache in der IDE umschalten und anschließend die Texte übersetzen.</p>
+		  <p>WPF-Anwendungen bzw. Formulare zu übersetzungen funktioniert etwas anders als bei Windows-Forms-Dialogen. Bei diesen kann man bequem die Sprache in der IDE umschalten und anschließend die Texte übersetzen.</p>
 
 <p>Bei WPF-Anwendungen hat man den Komfort nicht ganz. Aber auch hier lässt sich die Übersetzung recht schnell bewerkstelligen.</p>
 
@@ -220,15 +258,17 @@ Cannot create /is/htdocs/wp_koko/.config/mc directory
 
 <p>Nun müssen wir in der Formulardatei die Texte noch zuweisen. Im Quelltext der XAML-Datei machen wir zuerst den Namespace des Properties Namespaces bekannt:</p>
 
-<pre><code>xmlns:p = "clr-namespace:WPFLocExample.Properties"
+<div class="highlighter-rouge"><pre class="highlight"><code>xmlns:p = "clr-namespace:WPFLocExample.Properties"
 </code></pre>
+</div>
 
 <p><img src="/assets/uploads/2016/12/trans6.png" alt="" /></p>
 
 <p>Anschließend können die Texte ersetzt werden. Dies geschieht z.B. so, dass wir für den “Content” des Schließen-Buttons folgenden Code einsetzen:</p>
 
-<pre><code>{x:Static p:Resources.buttonClose}
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">x:Static</span><span class="w"> </span><span class="err">p:Resources.buttonClose</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
 
 <p>Dies wird für alle Elemente gemacht:</p>
 
@@ -236,7 +276,7 @@ Cannot create /is/htdocs/wp_koko/.config/mc directory
 
 <p>Um der Anwendung zu sagen, welche Sprache genutzt werden soll, wird abschließend noch die Datei “App.xml.cs” bearbeitet:</p>
 
-<pre><code>public partial class App : Application
+<div class="highlighter-rouge"><pre class="highlight"><code>public partial class App : Application
 {
     App()
     {
@@ -245,6 +285,7 @@ Cannot create /is/htdocs/wp_koko/.config/mc directory
     }
 }
 </code></pre>
+</div>
 
 <p>Starten wir die Anwendung, sollte diese in der gewählten Sprache, im Beispiel Deutsch erscheinen:</p>
 
@@ -258,22 +299,24 @@ Cannot create /is/htdocs/wp_koko/.config/mc directory
 
 <p>Das Beispielprojekt kann <a href="/assets/wp-custom/wpflocexample.zip">hier heruntergeladen werden</a>.</p>
 
-<h3 id="weiterfhrende-links">Weiterführende Links</h3>
+<h3 id="weiterführende-links">Weiterführende Links</h3>
 
 <ul>
   <li><a href="http://andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html">C#-Anwendungen mehrsprachig gestalten</a></li>
   <li><a href="http://andydunkel.net/coding/2016/11/22/c-sharp-mehrsprachig-backgroundworker.html">C# Backgroundworker und Threads lokalisieren</a></li>
 </ul>
-</p>		
+	
+      <p><a class="btn btn-success" href="/coding/2016/12/15/wpf_anwendungen_mehrsprachig.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: C# and WPF by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/mobilitaet/umwelt/2016/12/04/mobilitaet_november_2016.html">Mobilität November 2016</a>
 		</h1>
 		  <p class="small">Posted on 04 December 2016 by Andy</p>
-		  <p><p>Das Brompton leistet weiterhin gute Dienste. In der früh fahre ich meist bei meiner Freundin mit und Abends mit Zug und Brompton zurück.</p>
+		  <p>Das Brompton leistet weiterhin gute Dienste. In der früh fahre ich meist bei meiner Freundin mit und Abends mit Zug und Brompton zurück.</p>
 
 <p>Da sie allerdings Urlaub hatte, habe ich doch öfter zum Auto gegriffen. Früh und Abends mit dem Zug lohnt sich vom Aufwand und monetär her kaum. Zumindest solange das Auto vor der Tür steht. Die Fixkosten sind ja trotzdem da. Die Sache wird nicht besser, da die Bahncard 50 diesen Monat auch ausläuft. Dann muss ich etwas mehr pro Fahrt mit der Bahn zahlen.</p>
 
@@ -293,16 +336,18 @@ Cannot create /is/htdocs/wp_koko/.config/mc directory
   <li>Durchschnitt pro Fahrt: 19,1 km</li>
   <li>Getankt: 38,71 Liter</li>
 </ul>
-</p>		
+	
+      <p><a class="btn btn-success" href="/mobilitaet/umwelt/2016/12/04/mobilitaet_november_2016.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: Mobilitaet and Umwelt by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
-		  <a href="/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope.html">LetsEncrypt Zertifikat bei Hosteurope eingerichtet</a>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope_nutzen.html">LetsEncrypt Zertifikat bei Hosteurope eingerichtet</a>
 		</h1>
 		  <p class="small">Posted on 25 November 2016 by Andy</p>
-		  <p><p><a href="https://letsencrypt.org/">LetsEncrypt</a> bietet nun schon seit einiger Zeit kostenlose SSL-Zertfikate an. Diese kann man auf dem eigenen Server relativ problemlos einrichten und konfigurieren. Bei normalem Webspace sieht es leider anders aus. Ein paar Webhoster unterstützen es mittlerweile. Allerdings gibt es da auch einen Interessenkonflikt, da die Anbieter gerne auch selbst SSL-Zertifikate verkaufen.</p>
+		  <p><a href="https://letsencrypt.org/">LetsEncrypt</a> bietet nun schon seit einiger Zeit kostenlose SSL-Zertfikate an. Diese kann man auf dem eigenen Server relativ problemlos einrichten und konfigurieren. Bei normalem Webspace sieht es leider anders aus. Ein paar Webhoster unterstützen es mittlerweile. Allerdings gibt es da auch einen Interessenkonflikt, da die Anbieter gerne auch selbst SSL-Zertifikate verkaufen.</p>
 
 <p>So auch bei <a href="https://www.hosteurope.de">Hosteurope</a>. Direkte Unterstützung gibt es nicht und auch über den SSH-Zugang kann man es auch nicht installieren und konfigurieren. Ein SSL-Zertifikat kostet je nach Abstufung mindestens 2,49 Euro im Monat. Dieses ist dann allerdings nur für eine Domain gültig. Mehrere Domains und Subdomains gehen ins Geld.</p>
 
@@ -362,52 +407,21 @@ Cannot create /is/htdocs/wp_koko/.config/mc directory
 
 <p><img src="/assets/uploads/2016/11/he_ssl_update.png" alt="" /></p>
 
-</p>		
+	
+      <p><a class="btn btn-success" href="/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope_nutzen.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: LetsEncrypt and SSL by Andy</p>
-		  <hr class="postdiv">
-		  
-		
-		<h1>
-		  <a href="/coding/2016/11/22/c-sharp-mehrsprachig-backgroundworker.html">Mehrsprache C# Anwendungen - nicht lokalisierte Backgroundworker und Threads</a>
-		</h1>
-		  <p class="small">Posted on 22 November 2016 by Andy</p>
-		  <p><p>Vor einiger Zeit habe ich beschrieben, wie man <a href="//andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html">C#-Anwendungen lokalisieren</a> kann.</p>
-
-<p>Die Sprache kann man z.B. so im Code festlegen:</p>
-
-<pre><code>CultureInfo myCultureInfo = new CultureInfo("en");
-Thread.CurrentThread.CurrentCulture = myCultureInfo;
-Thread.CurrentThread.CurrentUICulture = myCultureInfo;
-</code></pre>
-
-<p>Allerdings reicht dies nicht in allen Fällen aus. So trat das Problem auf, dass in Backgroundworkern und Threads in meinen Logik-Klassen, immer die deutschen Texte verwendet worden sind:</p>
-
-<p><img src="/assets/uploads/2016/11/trans_error1.png" alt="" /></p>
-
-<p>Hier sollte eigentlich der Text in englischer Sprache aus der Resourcendatei kommen.</p>
-
-<h2 id="lsung">Lösung</h2>
-
-<p>Die Lösung ist einfach, zumindest ab .net Version 4.5. Hier fügt man einfach die folgenden zwei Zeilen dem ursprünglichen Code hinzu:</p>
-
-<pre><code>CultureInfo.DefaultThreadCurrentCulture = myCultureInfo;
-CultureInfo.DefaultThreadCurrentUICulture = myCultureInfo;
-</code></pre>
-
-<p>Der Code bewirkt das auch andere Threads und damit auch die Backgroundworker die richtige Sprache verwenden.</p>
-
-<p><img src="/assets/uploads/2016/11/trans_error1.png" alt="" /></p>
-</p>		
-		  <p class="small">Tagged: C# by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
 
     </div>
     <div class="col-md-3">    
+            	<div class="sidebarpanel">
     	<h4>Partnerlink</h4>
     	<a target="_blank" href="http://www.amazon.de/?_encoding=UTF8&camp=1638&creative=19454&linkCode=ur2&site-redirect=de&tag=ekiwide0b-21">Einkaufen bei Amazon.de</a><img src="https://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&l=ur2&o=3" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />	
+    	</div>
     	
+    	<div class="sidebarpanel">
     	<h4>Werbung</h4>
     	
     	<div align="left">
@@ -423,69 +437,129 @@ CultureInfo.DefaultThreadCurrentUICulture = myCultureInfo;
 		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		</script>
 		</div>
+		</div>
 		
+		<div class="sidebarpanel">
 		<h4>Links</h4>
     	<ul class="list-unstyled">
     		<li><a href="http://andydunkel.net/da.asc.zip">Andys PGP-Key</a></li>
     		<li><a href="https://github.com/andydunkel">Me on GitHub</a></li> 	
     		<li><a href="http://stackoverflow.com/users/285039/da">Me on StackOverflow</a></li>    			
     	</ul>
+    	</div>
     	
+    	<div class="sidebarpanel">
     	<h4>Webseiten</h4>
     	<ul class="list-unstyled">
     		<li><a href="http://www.ekiwi.de">eKiwi.de</a></li>
     		<li><a href="http://ekiwi-blog.de">eKiwi.de Blog</a></li>
     		<li><a href="http://www.da-software.de">DA-Software.de</a></li>    		
     	</ul>
+    	</div>
+
+    	<div class="sidebarpanel">
     	<h4>Categories</h4>    	
 		<section>
 		<ul id="categories" class="list-unstyled">
-		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (31)</a></li>
-<li class='category'><a href='/categories/computer/'>computer (14)</a></li>
-<li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
-<li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
-<li class='category'><a href='/categories/finanzen/'>finanzen (1)</a></li>
-<li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
-<li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
-<li class='category'><a href='/categories/gadgets/'>gadgets (26)</a></li>
-<li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
-<li class='category'><a href='/categories/html/'>html (1)</a></li>
-<li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
-<li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
-<li class='category'><a href='/categories/java/'>java (23)</a></li>
-<li class='category'><a href='/categories/jekyll/'>jekyll (2)</a></li>
-<li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
-<li class='category'><a href='/categories/kochen/'>kochen (2)</a></li>
-<li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
-<li class='category'><a href='/categories/linux/'>linux (15)</a></li>
-<li class='category'><a href='/categories/mac/'>mac (4)</a></li>
-<li class='category'><a href='/categories/meinung/'>meinung (6)</a></li>
-<li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (21)</a></li>
-<li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
-<li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
-<li class='category'><a href='/categories/osx/'>osx (1)</a></li>
-<li class='category'><a href='/categories/programmierung/'>programmierung (5)</a></li>
-<li class='category'><a href='/categories/radfahren/'>radfahren (31)</a></li>
-<li class='category'><a href='/categories/raspberry/'>raspberry (3)</a></li>
-<li class='category'><a href='/categories/repair/'>repair (2)</a></li>
-<li class='category'><a href='/categories/reparatur/'>reparatur (5)</a></li>
-<li class='category'><a href='/categories/retrotrip/'>retrotrip (1)</a></li>
-<li class='category'><a href='/categories/rezepte/'>rezepte (1)</a></li>
-<li class='category'><a href='/categories/science/'>science (3)</a></li>
-<li class='category'><a href='/categories/software/'>software (1)</a></li>
-<li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
-<li class='category'><a href='/categories/swt/'>swt (4)</a></li>
-<li class='category'><a href='/categories/tools/'>tools (24)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (22)</a></li>
-<li class='category'><a href='/categories/webdesign/'>webdesign (7)</a></li>
-<li class='category'><a href='/categories/webseiten/'>webseiten (7)</a></li>
-<li class='category'><a href='/categories/windows/'>windows (6)</a></li>
-<li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>
+
+  
+  
+     
+      <li class="category"><a href="/categories/eclipse">Eclipse <span>(26)</span></a></li>
+     
+      <li class="category"><a href="/categories/java">Java <span>(23)</span></a></li>
+     
+      <li class="category"><a href="/categories/radfahren">Radfahren <span>(31)</span></a></li>
+     
+      <li class="category"><a href="/categories/hiking">Hiking <span>(9)</span></a></li>
+     
+      <li class="category"><a href="/categories/ireland">Ireland <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/swt">Swt <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/fotos">Fotos <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/katzen">Katzen <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/tools">Tools <span>(24)</span></a></li>
+     
+      <li class="category"><a href="/categories/gadgets">Gadgets <span>(27)</span></a></li>
+     
+      <li class="category"><a href="/categories/rezepte">Rezepte <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
+     
+      <li class="category"><a href="/categories/ipad">Ipad <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/coding">Coding <span>(31)</span></a></li>
+     
+      <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/linux">Linux <span>(15)</span></a></li>
+     
+      <li class="category"><a href="/categories/windows">Windows <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/meinung">Meinung <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/mac">Mac <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/kochen">Kochen <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/reparatur">Reparatur <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/delphi">Delphi <span>(9)</span></a></li>
+     
+      <li class="category"><a href="/categories/firemonkey">Firemonkey <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/raspberry">Raspberry <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/xcode">Xcode <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/minimalismus">Minimalismus <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/webseiten">Webseiten <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/html">Html <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/osx">Osx <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/computer">Computer <span>(14)</span></a></li>
+     
+      <li class="category"><a href="/categories/webdesign">Webdesign <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/lazarus">Lazarus <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/jekyll">Jekyll <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/repair">Repair <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/ccc">Ccc <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/opensource">Opensource <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/programmierung">Programmierung <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/mobilitaet">Mobilitaet <span>(21)</span></a></li>
+     
+      <li class="category"><a href="/categories/umwelt">Umwelt <span>(22)</span></a></li>
+     
+      <li class="category"><a href="/categories/retrotrip">Retrotrip <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/finanzen">Finanzen <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/software">Software <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/hardware">Hardware <span>(1)</span></a></li>
+    
+  
+
+
 
 		</ul>
 		</section>
+		</div>
    </div>
 </div>
 
@@ -497,7 +571,7 @@ CultureInfo.DefaultThreadCurrentUICulture = myCultureInfo;
   
     <a href="/page4" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 5 of 55</span>
+  <span class="page_number ">Page: 5 of 56</span>
   
     <a href="/page6" class="next">Next</a>
   

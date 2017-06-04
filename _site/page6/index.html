@@ -10,7 +10,8 @@
         <link rel="stylesheet" href="/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/bootstrap-theme.min.css">		
 		<script src="/css/bootstrap.min.js"></script>
-		<link href="/css/additional.min.css" rel="stylesheet">
+		<!--<link href="/css/additional.min.css" rel="stylesheet">-->
+    <link href="/css/additional.css" rel="stylesheet">
 		<link rel="alternate" type="application/rss+xml" title="AndyDunkel.net RSS Feed" href="http://andydunkel.net/rss.xml" /> 
 		
 		<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
@@ -141,7 +142,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container maincontainer">
 
     <section>
 <h1>Willkommen</h1>
@@ -154,13 +155,54 @@
 <div class="row">
     <div class="col-md-9">
       <h2>Blog Posts</h2>
+
      
 		
-		<h1>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/coding/2016/11/22/c_sharp_nicht_lokalisierte_backgroundworker_und_threads.html">Mehrsprache C# Anwendungen - nicht lokalisierte Backgroundworker und Threads</a>
+		</h1>
+		  <p class="small">Posted on 22 November 2016 by Andy</p>
+		  <p>Vor einiger Zeit habe ich beschrieben, wie man <a href="//andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html">C#-Anwendungen lokalisieren</a> kann.</p>
+
+<p>Die Sprache kann man z.B. so im Code festlegen:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>CultureInfo myCultureInfo = new CultureInfo("en");
+Thread.CurrentThread.CurrentCulture = myCultureInfo;
+Thread.CurrentThread.CurrentUICulture = myCultureInfo;
+</code></pre>
+</div>
+
+<p>Allerdings reicht dies nicht in allen Fällen aus. So trat das Problem auf, dass in Backgroundworkern und Threads in meinen Logik-Klassen, immer die deutschen Texte verwendet worden sind:</p>
+
+<p><img src="/assets/uploads/2016/11/trans_error1.png" alt="" /></p>
+
+<p>Hier sollte eigentlich der Text in englischer Sprache aus der Resourcendatei kommen.</p>
+
+<h2 id="lösung">Lösung</h2>
+
+<p>Die Lösung ist einfach, zumindest ab .net Version 4.5. Hier fügt man einfach die folgenden zwei Zeilen dem ursprünglichen Code hinzu:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>CultureInfo.DefaultThreadCurrentCulture = myCultureInfo;
+CultureInfo.DefaultThreadCurrentUICulture = myCultureInfo;
+</code></pre>
+</div>
+
+<p>Der Code bewirkt das auch andere Threads und damit auch die Backgroundworker die richtige Sprache verwenden.</p>
+
+<p><img src="/assets/uploads/2016/11/trans_error1.png" alt="" /></p>
+	
+      <p><a class="btn btn-success" href="/coding/2016/11/22/c_sharp_nicht_lokalisierte_backgroundworker_und_threads.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: C# by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/mobilitaet/umwelt/2016/11/03/mobilitaet_oktober_2016.html">Mobilität Oktober 2016</a>
 		</h1>
 		  <p class="small">Posted on 03 November 2016 by Andy</p>
-		  <p><p>Das Wetter ist kalt, nebelig und verregnet. Das wirkt sich auch aufs Radfahren aus. Radfahren zur Arbeit hat sich erstmal erledigt. Eventuell werde ich mich irgendwann dazu aufraffen, aber regelmäßig wird das nix im Winter.0</p>
+		  <p>Das Wetter ist kalt, nebelig und verregnet. Das wirkt sich auch aufs Radfahren aus. Radfahren zur Arbeit hat sich erstmal erledigt. Eventuell werde ich mich irgendwann dazu aufraffen, aber regelmäßig wird das nix im Winter.0</p>
 
 <p>Gefahren bin ich im Wesentlichen nur noch mit dem Brompton zum und vom Bahnhof. Dennoch bleibt die Autofahrerei niedrig. 217km bin ich gefahren. Der Rest war dann mitfahren, bzw. Zug und Brompton.</p>
 
@@ -182,16 +224,18 @@
   <li>Durchschnitt pro Fahrt: 21,7 km</li>
   <li>Getankt: 0 Liter</li>
 </ul>
-</p>		
+	
+      <p><a class="btn btn-success" href="/mobilitaet/umwelt/2016/11/03/mobilitaet_oktober_2016.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: Mobilitaet and Umwelt by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
-		  <a href="/mobilitaet/umwelt/2016/10/01/mobilitaet_septembert_2016.html">Mobilität September 2016</a>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/mobilitaet/umwelt/2016/10/01/mobilitaet_september_2016.html">Mobilität September 2016</a>
 		</h1>
 		  <p class="small">Posted on 01 October 2016 by Andy</p>
-		  <p><p>Die Hälfte vom Monat war Urlaub angesagt, daher wurde weniger geradelt und etwas mehr Auto gefahren. Leider wird das Wetter langsam ungemütlich, besonders am Morgen kostet es einiges an Überwindung die 20km zur Arbeit herunter zu radeln. Daher wird die Fahrradleistung eher weiter nach unten gehen.</p>
+		  <p>Die Hälfte vom Monat war Urlaub angesagt, daher wurde weniger geradelt und etwas mehr Auto gefahren. Leider wird das Wetter langsam ungemütlich, besonders am Morgen kostet es einiges an Überwindung die 20km zur Arbeit herunter zu radeln. Daher wird die Fahrradleistung eher weiter nach unten gehen.</p>
 
 <p>Das das <a href="http://andydunkel.net/radfahren/umwelt/2016/02/28/brompton_faltrad.html">Brompton Faltrad</a> auch für längere Strecken geeignet ist, habe ich diesen Monat getestet. Eine spontane 80 km Radtour war kein Problem. Lediglich die wenigen Gänge machen sich bei stärkeren Steigungen bemerkbar. Ich war ja anfangs skeptisch, ob es nicht doch zu anstrengend und zu unpraktisch ist, aber das Brompton erweist sich als vollwertiges Fahrrad ohne große Einschränkungen.</p>
 
@@ -215,16 +259,18 @@
 <h3 id="urlaub">Urlaub</h3>
 
 <p><img src="/assets/uploads/2016/10/urlaub.jpg" alt="" /></p>
-</p>		
+	
+      <p><a class="btn btn-success" href="/mobilitaet/umwelt/2016/10/01/mobilitaet_september_2016.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: Mobilitaet and Umwelt by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
-		  <a href="/mobilitaet/umwelt/2016/09/18/bahncard_50_gekuendigt.html">Bahncard 50 gekündigt</a>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/mobilitaet/umwelt/2016/09/18/bahncard_50_gekuedingt.html">Bahncard 50 gekündigt</a>
 		</h1>
 		  <p class="small">Posted on 18 September 2016 by Andy</p>
-		  <p><p>Vor kurzem habe ich meine Bahncard 50 gekündigt. Ich hatte diese viele Jahre. Ich fahre öfter mit der Bahn. Und eigentlich auch gerne. Allerdings fühlte ich mich <a href="http://andydunkel.net/mobilitaet/2016/07/07/bahncard_50.html">in der letzten Zeit immer mehr benachteiligt</a>.</p>
+		  <p>Vor kurzem habe ich meine Bahncard 50 gekündigt. Ich hatte diese viele Jahre. Ich fahre öfter mit der Bahn. Und eigentlich auch gerne. Allerdings fühlte ich mich <a href="http://andydunkel.net/mobilitaet/2016/07/07/bahncard_50.html">in der letzten Zeit immer mehr benachteiligt</a>.</p>
 
 <p>Gegenüber den Sparpreisen kann man als Bahncard 50 Kunde kaum sparen. Klar, man verzichtet auf das flexible Ticket und hat Zugbindung, auch stornieren geht nicht ohne Gebühr. Aber den meisten Fällen habe ich den geplanten Zug genommen und storniert habe ich bis jetzt auch nur einmal.</p>
 
@@ -242,21 +288,23 @@
 
 <p>Bei Kurzstrecken nehme ich den höheren Preis in Kauf. Für die Preisdifferenz von 193 Euro, hat man da Spielraum bevor man effektiv mehr zahlt. Meine Standard-Kurzstrecke verteuert sich durch die Umstellung von 3,10 Euro 4,65 Euro. Sind bei der Preisdifferenz immer noch knapp 124 Fahrten. So oft fahre ich nicht und zur Not wirds dann leider doch wieder öfter das Auto. Das steht ja auch noch rum.</p>
 
-<h2 id="was-ich-mir-wnschen-wrde">Was ich mir wünschen würde</h2>
+<h2 id="was-ich-mir-wünschen-würde">Was ich mir wünschen würde</h2>
 
 <p>Statt Sparpreise, welche ich monatelang vorher buchen muss, günstigere Normalpreise. Die sind ja ohne Bahncard jenseits von gut und böse. Der Kauf einer teuren Bahncard muss sich zudem lohnen. Immerhin legt der Kunde bereits ordentlich Geld auf den Tisch, bevor überhaupt die erste Zugfahrt begonnen hat.</p>
 
 <p>Ein Anfang wäre es, die gleiche Vorteile der billigen Bahncard auch für das teurere Modell zu übernehmen. Wäre das so gekommen; ich hätte die Bahncard 50 nicht gekündigt. Aber ich hoffe einfach auf auf Besserung in der Zukunft.</p>
-</p>		
+	
+      <p><a class="btn btn-success" href="/mobilitaet/umwelt/2016/09/18/bahncard_50_gekuedingt.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: Umwelt, Bahn, and Bahncard by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
-		  <a href="/retrotrip/computer/2016/09/12/retro_computerviren.html">Retrotrip: Computerviren</a>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/retrotrip/computer/2016/09/12/retro_trip_computerviren.html">Retrotrip: Computerviren</a>
 		</h1>
 		  <p class="small">Posted on 12 September 2016 by Andy</p>
-		  <p><p>Heute geht es computertechnisch etwas zurück in die Vergangenheit. Heute geht es eher ein unschönes Thema: Computerviren. Aber wie bei vielen, bzw. wie oft behauptet, früher war alles besser, auch die Computerviren. :-)</p>
+		  <p>Heute geht es computertechnisch etwas zurück in die Vergangenheit. Heute geht es eher ein unschönes Thema: Computerviren. Aber wie bei vielen, bzw. wie oft behauptet, früher war alles besser, auch die Computerviren. :-)</p>
 
 <h2 id="damals">Damals</h2>
 
@@ -299,45 +347,21 @@
 <p><a href="https://www.netzsieger.de/k/antivirus"><img src="http://andydunkel.net/assets/uploads/2016/9/virus2.png" /></a></p>
 
 <p>Ob wir in 20 Jahren auf diese Zeit zurückblicken und uns sagen: “Ach dieser tolle Computervirus damals, der hat mir damals alle Urlaubsfotos verschlüsselt”. Denke das darf bezweifelt werden. :-)</p>
-</p>		
+	
+      <p><a class="btn btn-success" href="/retrotrip/computer/2016/09/12/retro_trip_computerviren.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: Viren, Trojaner, and Sicherheit by Andy</p>
-		  <hr class="postdiv">
-		  
-		
-		<h1>
-		  <a href="/mobilitaet/umwelt/2016/09/04/mobilitaet_august_2016.html">Mobilität August 2016</a>
-		</h1>
-		  <p class="small">Posted on 04 September 2016 by Andy</p>
-		  <p><p>Der August lief fahrradmäßig, dank gutem Wetter, nochmal recht gut. Mal schauen wie es im September wird. Leider wurde auch das Auto mehr bewegt, was vermutlich die nächsten Monate noch mehr wird. Trotzdem doppelt soviel mit dem Rad unterwegs gewesen als mit dem Auto.</p>
-
-<h3 id="fahrrad">Fahrrad</h3>
-
-<ul>
-  <li>Gesamt km: 625 km</li>
-  <li>Fahrten: 32</li>
-  <li>Durchschnitt pro Fahrt: 19,5 km</li>
-</ul>
-
-<h3 id="auto">Auto</h3>
-
-<ul>
-  <li>Gesamt km: 296</li>
-  <li>Fahrten: 13</li>
-  <li>Durchschnitt pro Fahrt: 22,77 km</li>
-  <li>Getankt: 0 Liter</li>
-</ul>
-
-</p>		
-		  <p class="small">Tagged: Mobilitaet and Umwelt by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
 
     </div>
     <div class="col-md-3">    
+            	<div class="sidebarpanel">
     	<h4>Partnerlink</h4>
     	<a target="_blank" href="http://www.amazon.de/?_encoding=UTF8&camp=1638&creative=19454&linkCode=ur2&site-redirect=de&tag=ekiwide0b-21">Einkaufen bei Amazon.de</a><img src="https://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&l=ur2&o=3" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />	
+    	</div>
     	
+    	<div class="sidebarpanel">
     	<h4>Werbung</h4>
     	
     	<div align="left">
@@ -353,69 +377,129 @@
 		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		</script>
 		</div>
+		</div>
 		
+		<div class="sidebarpanel">
 		<h4>Links</h4>
     	<ul class="list-unstyled">
     		<li><a href="http://andydunkel.net/da.asc.zip">Andys PGP-Key</a></li>
     		<li><a href="https://github.com/andydunkel">Me on GitHub</a></li> 	
     		<li><a href="http://stackoverflow.com/users/285039/da">Me on StackOverflow</a></li>    			
     	</ul>
+    	</div>
     	
+    	<div class="sidebarpanel">
     	<h4>Webseiten</h4>
     	<ul class="list-unstyled">
     		<li><a href="http://www.ekiwi.de">eKiwi.de</a></li>
     		<li><a href="http://ekiwi-blog.de">eKiwi.de Blog</a></li>
     		<li><a href="http://www.da-software.de">DA-Software.de</a></li>    		
     	</ul>
+    	</div>
+
+    	<div class="sidebarpanel">
     	<h4>Categories</h4>    	
 		<section>
 		<ul id="categories" class="list-unstyled">
-		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (31)</a></li>
-<li class='category'><a href='/categories/computer/'>computer (14)</a></li>
-<li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
-<li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
-<li class='category'><a href='/categories/finanzen/'>finanzen (1)</a></li>
-<li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
-<li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
-<li class='category'><a href='/categories/gadgets/'>gadgets (26)</a></li>
-<li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
-<li class='category'><a href='/categories/html/'>html (1)</a></li>
-<li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
-<li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
-<li class='category'><a href='/categories/java/'>java (23)</a></li>
-<li class='category'><a href='/categories/jekyll/'>jekyll (2)</a></li>
-<li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
-<li class='category'><a href='/categories/kochen/'>kochen (2)</a></li>
-<li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
-<li class='category'><a href='/categories/linux/'>linux (15)</a></li>
-<li class='category'><a href='/categories/mac/'>mac (4)</a></li>
-<li class='category'><a href='/categories/meinung/'>meinung (6)</a></li>
-<li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (21)</a></li>
-<li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
-<li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
-<li class='category'><a href='/categories/osx/'>osx (1)</a></li>
-<li class='category'><a href='/categories/programmierung/'>programmierung (5)</a></li>
-<li class='category'><a href='/categories/radfahren/'>radfahren (31)</a></li>
-<li class='category'><a href='/categories/raspberry/'>raspberry (3)</a></li>
-<li class='category'><a href='/categories/repair/'>repair (2)</a></li>
-<li class='category'><a href='/categories/reparatur/'>reparatur (5)</a></li>
-<li class='category'><a href='/categories/retrotrip/'>retrotrip (1)</a></li>
-<li class='category'><a href='/categories/rezepte/'>rezepte (1)</a></li>
-<li class='category'><a href='/categories/science/'>science (3)</a></li>
-<li class='category'><a href='/categories/software/'>software (1)</a></li>
-<li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
-<li class='category'><a href='/categories/swt/'>swt (4)</a></li>
-<li class='category'><a href='/categories/tools/'>tools (24)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (22)</a></li>
-<li class='category'><a href='/categories/webdesign/'>webdesign (7)</a></li>
-<li class='category'><a href='/categories/webseiten/'>webseiten (7)</a></li>
-<li class='category'><a href='/categories/windows/'>windows (6)</a></li>
-<li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>
+
+  
+  
+     
+      <li class="category"><a href="/categories/eclipse">Eclipse <span>(26)</span></a></li>
+     
+      <li class="category"><a href="/categories/java">Java <span>(23)</span></a></li>
+     
+      <li class="category"><a href="/categories/radfahren">Radfahren <span>(31)</span></a></li>
+     
+      <li class="category"><a href="/categories/hiking">Hiking <span>(9)</span></a></li>
+     
+      <li class="category"><a href="/categories/ireland">Ireland <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/swt">Swt <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/fotos">Fotos <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/katzen">Katzen <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/tools">Tools <span>(24)</span></a></li>
+     
+      <li class="category"><a href="/categories/gadgets">Gadgets <span>(27)</span></a></li>
+     
+      <li class="category"><a href="/categories/rezepte">Rezepte <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
+     
+      <li class="category"><a href="/categories/ipad">Ipad <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/coding">Coding <span>(31)</span></a></li>
+     
+      <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/linux">Linux <span>(15)</span></a></li>
+     
+      <li class="category"><a href="/categories/windows">Windows <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/meinung">Meinung <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/mac">Mac <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/kochen">Kochen <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/reparatur">Reparatur <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/delphi">Delphi <span>(9)</span></a></li>
+     
+      <li class="category"><a href="/categories/firemonkey">Firemonkey <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/raspberry">Raspberry <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/xcode">Xcode <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/minimalismus">Minimalismus <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/webseiten">Webseiten <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/html">Html <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/osx">Osx <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/computer">Computer <span>(14)</span></a></li>
+     
+      <li class="category"><a href="/categories/webdesign">Webdesign <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/lazarus">Lazarus <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/jekyll">Jekyll <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/repair">Repair <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/ccc">Ccc <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/opensource">Opensource <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/programmierung">Programmierung <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/mobilitaet">Mobilitaet <span>(21)</span></a></li>
+     
+      <li class="category"><a href="/categories/umwelt">Umwelt <span>(22)</span></a></li>
+     
+      <li class="category"><a href="/categories/retrotrip">Retrotrip <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/finanzen">Finanzen <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/software">Software <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/hardware">Hardware <span>(1)</span></a></li>
+    
+  
+
+
 
 		</ul>
 		</section>
+		</div>
    </div>
 </div>
 
@@ -427,7 +511,7 @@
   
     <a href="/page5" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 6 of 55</span>
+  <span class="page_number ">Page: 6 of 56</span>
   
     <a href="/page7" class="next">Next</a>
   

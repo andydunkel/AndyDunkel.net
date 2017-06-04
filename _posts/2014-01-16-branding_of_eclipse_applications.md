@@ -42,7 +42,7 @@ Lets start with the plugins:
 
 The application code resides in "com.da.branding.example". In addition we create 3 more plugins, one generic branding plugin, which is the "gateway" to the specific branding plugins. If we look at the dependencies, we can see, that our application only depends on the branding plugin:
 
-![](packages.png)
+![]({{ site.url }}/assets/uploads/2014/01/branding/packages.png)
 
 This allows us to add new brandings, as well as removing brandings, without having our main application depending on a specific branding. The main branding plugin contains the branding logic, the specific plugins mostly contain the spefific branding information, like images, texts etc: 
 
@@ -56,7 +56,7 @@ OK lets brand the software. There are certain tasks that can be achieved easily 
 
 A lot of stuff can be done in the product configuration, like splash, about and icons. So we create a product configuration for each output software. The first step is to create an extension point for the products in the specific branding plugins:
 
-![](product_plugin.png) 
+![]({{ site.url }}/assets/uploads/2014/01/branding/product_plugin.png) 
 
 *As you can see, there is also a specific splash screen in each plugin.*
 

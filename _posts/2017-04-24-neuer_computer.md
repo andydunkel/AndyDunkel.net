@@ -12,11 +12,13 @@ tags:
 - Hardware
 
 ---
-
+<img src="/assets/uploads/2017/4/computer_logo.jpg" class="imagelogo">
 
 Eins meiner Hobbys ist meine Computer möglichst billig zusammen zu schrauben. Irgendwo fällt immer mal ein alter Computer  oder ein paar Teile ab. Dies ist allerdings in den letzten Jahren auch weniger geworden. Desktop-Computer werden im Privatbereich eigentlich so gut wie gar nicht mehr gekauft. Hier greift man dann zum Notebook oder zum Tablett.
 
 Zur Not gibt auch der Gebrauchtmarkt sehr günstig was her. Mein letzter PC hat knapp 100 Euro gekostet und hat mir über viele Jahre gute Dienste geleistet. Mit SSD werden auch ältere Computer wieder flott. Auch das aktuelle Windows 10 läuft ohne Probleme auf betagten Computern. Hier kommt den Anwendern zugute, dass Windows 10 auch auf lahmen Tabletts und Netbooks gut performen muss. 
+
+<!--more-->
 
 Von einem Arbeitskollegen habe ich vor einiger Zeit einen ausrangierten Computer erhalten. Dieser sollte eigentlich im Müll landen, was ich immer etwas schade bei funktionierender Technik finde. Der PC ist bereits älter: knappe 10 Jahre dürfte er bereits auf dem Buckel haben. Der Computer kam ohne Grafikkarte und Festplatte, aber diese Dinge konnte ich von meinem bisherigen PC übernehmen. Auch ein Vorteil von klassischen Desktopcomputern. Man kann Komponenten leicht aufrüsten oder bei Defekt ersetzen. 
 

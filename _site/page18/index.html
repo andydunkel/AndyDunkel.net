@@ -10,7 +10,8 @@
         <link rel="stylesheet" href="/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/bootstrap-theme.min.css">		
 		<script src="/css/bootstrap.min.js"></script>
-		<link href="/css/additional.min.css" rel="stylesheet">
+		<!--<link href="/css/additional.min.css" rel="stylesheet">-->
+    <link href="/css/additional.css" rel="stylesheet">
 		<link rel="alternate" type="application/rss+xml" title="AndyDunkel.net RSS Feed" href="http://andydunkel.net/rss.xml" /> 
 		
 		<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
@@ -141,7 +142,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container maincontainer">
 
     <section>
 <h1>Willkommen</h1>
@@ -154,13 +155,194 @@
 <div class="row">
     <div class="col-md-9">
       <h2>Blog Posts</h2>
+
      
 		
-		<h1>
-		  <a href="/meinung/tools/2014/04/18/jekyll-fazit.html">Umstellung auf Jekyll</a>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/objectivec/coding/xcode/2014/05/04/jekyll_fuer_die_webseite.html">Introduction to MapKit on IOS</a>
+		</h1>
+		  <p class="small">Posted on 04 May 2014 by Andy</p>
+		  <p>MapKit offers an easy way to integrate Apple maps into your app. Wether you want to show where your company is located, where the next pub is or track your cats GPS location in an app.</p>
+
+<p>In this tutorial I want to describe how you can add maps to your application. Position, zoom the map and add annotations.</p>
+
+<h2 id="create-the-project">Create the project</h2>
+
+<p>In XCode create a new project, select iOS and single view application and enter the details for project. Once the project is created. The first thing we are doing, is adding the MapKit to the linked frameworks:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_1.png" alt="image" /></p>
+
+<p>Otherwise the application will crash instantaneously. Once we have done that, we go to the main storyboard and drag the map view into our view.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_2.png" alt="image" /></p>
+
+<p>In the properties of the MapView you can configure some basic settings, like showing the users location, activate / deactive zooming, rotating, scrolling etc…</p>
+
+<p>The next step is to create the Outlet for the map view in our application. This can be done using the Assistant editor and CTRL dragging the MKMapView onto the header file and enter a name for the variable:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_3.png" alt="image" /></p>
+
+<p>We also need to add MapKit to the imports. While we are doing that we also add the map delegate:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#import &lt;MapKit/MapKit.h&gt;
+
+@interface DASViewController : UIViewController &lt;MKMapViewDelegate&gt;
+</code></pre>
+</div>
+
+<p>Lets run the app for the first time. It should now display the map.</p>
+
+<h2 id="setting-the-map-type">Setting the Map Type</h2>
+
+<p>For maps there are three types how to display the map: Standard, Satellite and Hybrid. While you can set these in the properties, you might want the user to be able to choose the type.</p>
+
+<p>For that we are adding a segmented control to the view and CTRL drag an IBAction to our .m file:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_4.png" alt="image" /></p>
+
+<p>…and implement the action method:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	- (IBAction)setType:(UISegmentedControl *)sender {
+    switch (sender.selectedSegmentIndex) {
+        case 0:
+            self.mapView.mapType = MKMapTypeStandard;
+            break;
+        case 1:
+            self.mapView.mapType = MKMapTypeSatellite;
+            break;
+        case 2:
+            self.mapView.mapType = MKMapTypeHybrid;
+            break;
+        default:
+            break;
+    }
+}
+</code></pre>
+</div>
+
+<p>When we start the application we are now able to switch between the different map types.</p>
+
+<h2 id="zoom-to-a-specific-location">Zoom to a specific location</h2>
+
+<p>While the map currently defaults to specific position, we now want to set a location / area on our own by default.</p>
+
+<p>To do that, we add the following code to our <code>viewDidLoad</code> method:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Create your coordinate
+    CLLocationCoordinate2D myCoordinate = {47.879854, 10.641000};
+    
+    //set location and zoom level
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(myCoordinate, 1000, 1000);
+    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
+    [self.mapView setRegion:adjustedRegion animated:YES];
+    
+}
+</code></pre>
+</div>
+
+<p>Lets have a look to the details:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>CLLocationCoordinate2D myCoordinate = {47.879854, 10.641000};
+</code></pre>
+</div>
+
+<p>Coordinates are longitude and latitude of the position. Best way to find out for a place is Google Maps. The zoom level is adjusted in the following line:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(myCoordinate, 1000, 1000);
+</code></pre>
+</div>
+
+<p>This is defined in metres, in our case we want to have a 1000 meters zoom level. When we launch the app now, it should default to the given position.</p>
+
+<h2 id="add-annotation">Add annotation</h2>
+
+<p>The next step for us is to add an annotation to the map. We add the following code to the <code>viewDidLoad</code> method:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> //Create your annotation
+MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+// Set your annotation to point at your coordinate
+point.coordinate = myCoordinate;
+point.title = @"Andys Home";
+
+//Drop pin on map
+[self.mapView addAnnotation:point];
+</code></pre>
+</div>
+
+<p>The code is best added before we do the zoom we did before.</p>
+
+<h3 id="remove-all-annotations">Remove all annotations</h3>
+
+<p>To remove all annotations from the map:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>for (id annotation in self.mapView.annotations) {
+    [self.mapView removeAnnotation:annotation];
+}
+</code></pre>
+</div>
+
+<h3 id="showing-the-users-location">Showing the users location</h3>
+
+<p>The last thing we want to do is do something with users location. The users location is only available if the user enabled the function. The user is asked wether he wants to share his location or not, when the function is first called. To enable that in XCode activate “Show Users Location” in the MapViews properties.</p>
+
+<p>Also drop a label on the view and create an outlet for it:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">weak</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">IBOutlet</span> <span class="n">UILabel</span> <span class="o">*</span><span class="n">labelPosition</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p>To update the user location, we are using the delegate we defined in our header file and assign the delegate to the mapView:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>self.mapView.delegate = self;
+</code></pre>
+</div>
+
+<p>Now we implement the method for the update:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    
+    CLLocationCoordinate2D myCoordinate = {47.879854, 10.641000};
+    CLLocationCoordinate2D userCoordinate = [[[self.mapView userLocation]
+                                              location] coordinate];
+    
+    CLLocation *myLoc = [[CLLocation alloc] initWithLatitude:myCoordinate.latitude
+                                                   longitude:myCoordinate.longitude];
+    CLLocation *userLoc = [[CLLocation alloc] initWithLatitude:userCoordinate.latitude
+                                                     longitude:userCoordinate.longitude];
+    
+    CLLocationDistance distance = [myLoc distanceFromLocation:userLoc];
+    
+    NSString *labelText = [NSString stringWithFormat:@"%lf km", distance / 1000];
+    
+    [self.labelPosition setText:labelText];
+}
+</code></pre>
+</div>
+
+<p>The method gets called everytime the user position gets updated. It calculates the distance between the users position and the predefined location. The result is then shown on the label we just dropped on the view:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_5.png" alt="image" /></p>
+
+<h2 id="the-end">The end</h2>
+
+<p>Well thats it for some quickstart with MapKit. You can download the source code of the <a href="http://andydunkel.net/assets/uploads/2014/05/mapkit/MapKitExample.zip">example here</a>.</p>
+
+	
+      <p><a class="btn btn-success" href="/objectivec/coding/xcode/2014/05/04/jekyll_fuer_die_webseite.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: MapKit by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/meinung/tools/2014/04/18/jekyll_fuer_die_webseite.html">Umstellung auf Jekyll</a>
 		</h1>
 		  <p class="small">Posted on 18 April 2014 by Andy</p>
-		  <p><p>Seit ein paar Monaten verwende <a href="http://jekyllrb.com/">Jekyll</a> für meine Webseite/Blog. Zeit genug um ein Fazit zu ziehen. Als ich meinen Blog startete habe ich klassisch mit Wordpress begonnen.
+		  <p>Seit ein paar Monaten verwende <a href="http://jekyllrb.com/">Jekyll</a> für meine Webseite/Blog. Zeit genug um ein Fazit zu ziehen. Als ich meinen Blog startete habe ich klassisch mit Wordpress begonnen.
 Da ich damals noch nicht wusste wie weit meine Blogausdauer gehen würde, war das eine gute Lösung. Wordpress ist schnell installiert und recht leicht durch Plugins und Themes anpassbar.  Zugegeben, damals hatte ich mich auch nicht weiter mit Alternativen oder anderen Systemen beschäftigt.</p>
 
 <p>Für einen reinen Blog ist Wordpress gut genug. Aber irgendwann sollte meine Webseite eine Mischung aus Webseite und Blog werden. Wordpress stößt hier, trotz anlegbarer Seiten und Unterseiten, an seine Grenzen. Die Inhalte wandern allesamt in eine MySQL-Datenbank an die man zwar problemlos rankommt, aber irgendwie sind die Inhalte doch darin gefangen.
@@ -216,16 +398,18 @@ Mittlerweile erstelle ich jede neue Webseite, egal ob klein oder groß, schnell 
 <p>Um es kurz zu machen, ich bin sehr zufrieden mit Jekyll. Es gibt ein paar Nachteile, aber die Vorteile überwiegen zumindest für mich. Es war am Anfang etwas aufwändiger alles einzurichten und zu konfigurieren. Dafür habe ich, salopp formuliert, jetzt die Kontrolle über jedes Byte meiner Webseite.
 Hat man die diese Hürde genommen, ist die Pflege der Webseite eine Leichtigkeit.
 Nachts kann ich ruhig schlafen, um Sicherheitsupdates für die Webseite muss ich mir keine Gedanken mehr machen. Gleiches gilt für Backups. Die Nachteile, wie fehlende Suche oder fehlende Kommentarfunktion lassen sich umgehen.</p>
-</p>		
+	
+      <p><a class="btn btn-success" href="/meinung/tools/2014/04/18/jekyll_fuer_die_webseite.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: Jekyll and Webseite by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
-		  <a href="/delphi/firemonkey/2014/03/05/delphi_and_firemonkey_experience.html">My experiences with Delphi XE and Firemonkey</a>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/delphi/firemonkey/2014/03/05/delphi_and_firemonkey_experiences.html">My experiences with Delphi XE and Firemonkey</a>
 		</h1>
 		  <p class="small">Posted on 05 March 2014 by Andy</p>
-		  <p><p>In that posting I want to write a little bit about my experience with the new Delphi and the Firemonkey Framework.</p>
+		  <p>In that posting I want to write a little bit about my experience with the new Delphi and the Firemonkey Framework.</p>
 
 <p>I am using Delphi for over 10 years now, mostly in my own <a href="http://www.da-software.de">small business</a>. The two main applications are over 10 years old now, the code base is very outdated. To be frank, most of the code was developed when I had not the experience as today. But the applications are working.</p>
 
@@ -297,16 +481,18 @@ I rewrote about 80% of the application, then I decided to throw it away and use 
 <p>The second application was converted in several weeks. Once you know how to do it, you are getting things done very fast. In the end its still the good old delphi where you create your application, drop the controls onto your forms and implement the logic and get results very fast.</p>
 
 <p>So I would also use Delphi and Firemonkey for new applications.</p>
-</p>		
+	
+      <p><a class="btn btn-success" href="/delphi/firemonkey/2014/03/05/delphi_and_firemonkey_experiences.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: Delphi and Firemonkey by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/raspberry/linux/2014/02/11/raspberry_pi_als_vpn_server_einrichten.html">VPN für mobile Geräte auf dem Raspberry PI einrichten</a>
 		</h1>
 		  <p class="small">Posted on 11 February 2014 by Andy</p>
-		  <p><p>Ich hatte schon eine Weile mal vor, mir einen VPN-Server auf dem Raspberry Pi einzurichten. Zum einen will ich von unterwegs in irgendwelchen WLANs nicht unverschlüsselt kommunizieren und zum Anderen wird bei mobilen Internettarifen gern der ein oder andere Dienst blockiert. So funktioniert bei Congstar kein VOIP mit Skype. Richtet man hingegen ein VPN ein, funktioniert es, da der Anbieter nicht mehr in die Kommunikation reinschauen kann.</p>
+		  <p>Ich hatte schon eine Weile mal vor, mir einen VPN-Server auf dem Raspberry Pi einzurichten. Zum einen will ich von unterwegs in irgendwelchen WLANs nicht unverschlüsselt kommunizieren und zum Anderen wird bei mobilen Internettarifen gern der ein oder andere Dienst blockiert. So funktioniert bei Congstar kein VOIP mit Skype. Richtet man hingegen ein VPN ein, funktioniert es, da der Anbieter nicht mehr in die Kommunikation reinschauen kann.</p>
 
 <p>Bisher hatte ich den Dienst <a href="http://www.swissvpn.net/">SwissVPN</a> benutzt. Wer öfter unterwegs ist und regelmäßig einen VPN-Dienst benötigt fährt mit so einem Dienst besser, beim Home-VPN ist der Upload vom DSL ein limitierender Faktor. Außerdem geht damit Youtube. :-) Da ich geizig bin, will ich mir das Geld aber sparen und mein VPN-Server selbst betreiben.</p>
 
@@ -320,9 +506,10 @@ I rewrote about 80% of the application, then I decided to throw it away and use 
 
 <p>Zuerst updaten wir mal die Software auf unserem RPI:</p>
 
-<pre><code>sudo apt-get update
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get update
 sudo apt-get upgrade
 </code></pre>
+</div>
 
 <p>Das kann je nach Stand der Software eine Weile dauern.</p>
 
@@ -330,96 +517,112 @@ sudo apt-get upgrade
 
 <p>Die PPTP-Software installieren wir mit:</p>
 
-<pre><code>sudo apt-get install pptpd
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install pptpd
 </code></pre>
+</div>
 
 <p>Anschließend bearbeiten wir die Config mit Nano:</p>
 
-<pre><code>sudo nano /etc/pptpd.conf
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo nano /etc/pptpd.conf
 </code></pre>
+</div>
 
 <p>Man kann alternativ auch VIM verwenden. Im Nano-Editor speichern wir mit STRG+X und anschließend Y.</p>
 
 <p>In der “pptdp.conf” Datei tragen wir die lokale IP des Raspberry ein:</p>
 
-<pre><code>localip 192.168.1.5
+<div class="highlighter-rouge"><pre class="highlight"><code>localip 192.168.1.5
 </code></pre>
+</div>
 
 <p>Außerdem die Remote-IP-Adressen. Diese werden unseren VPN-Clients zugeteilt. Hier vergibt man einen Adressbereich, je nachdem wieviele Geräte man plant zu nutzen:</p>
 
-<pre><code>remoteip 192.168.1.234-238
+<div class="highlighter-rouge"><pre class="highlight"><code>remoteip 192.168.1.234-238
 </code></pre>
+</div>
 
 <p>Nach dem Speichern, konfigurieren wir jetzt die Optionen von PPTDP:</p>
 
-<pre><code>sudo nano /etc/ppp/pptpd-options
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo nano /etc/ppp/pptpd-options
 </code></pre>
+</div>
 
 <p>Am Ender Datei tragen wir folgende Zeilen ein:</p>
 
-<pre><code>ms-dns 192.168.1.1
+<div class="highlighter-rouge"><pre class="highlight"><code>ms-dns 192.168.1.1
 noipx
 mtu 1490
 mru 1490
 </code></pre>
+</div>
 
 <p>Nach “ms-dns” muss ein gültiger DNS-Server eingetragen werden. In den meisten Fällen verwendet man hier die Adresse seines Routers oder man trägt einen <a href="http://www.ccc.de/de/censorship/dns-howto">öffentlichen DNS-Server</a> ein.</p>
 
-<h3 id="benutzer-hinzufgen">Benutzer hinzufügen</h3>
+<h3 id="benutzer-hinzufügen">Benutzer hinzufügen</h3>
 
 <p>Nun noch die VPN-Benutzer hinzufügen; dazu bearbeiten wir die folgende Datei:</p>
 
-<pre><code>sudo nano /etc/ppp/chap-secrets
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo nano /etc/ppp/chap-secrets
 </code></pre>
+</div>
 
 <p>Das Anlegen von Benutzern ist sehr einfach:</p>
 
-<pre><code>Benutzername[TAB]*[TAB]Passwort[Tab]*
+<div class="highlighter-rouge"><pre class="highlight"><code>Benutzername[TAB]*[TAB]Passwort[Tab]*
 </code></pre>
+</div>
 
 <p>Beispiel:</p>
 
-<pre><code>Andy	*	GeheimesPasswort	*
+<div class="highlighter-rouge"><pre class="highlight"><code>Andy	*	GeheimesPasswort	*
 </code></pre>
+</div>
 
 <p>Nach dem Bearbeiten muss der PPTP-Server neu gestartet werden:</p>
 
-<pre><code>sudo service pptpd restart
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo service pptpd restart
 </code></pre>
+</div>
 
 <h2 id="sonstige-konfiguration">Sonstige Konfiguration</h2>
 
 <p>Wir wollen nicht nur auf den RPI zugreifen, sondern auch auf das Internet und sonstige Resourcen. Das richten wir jetzt ein:</p>
 
-<pre><code>sudo nano /etc/sysctl.conf
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo nano /etc/sysctl.conf
 </code></pre>
+</div>
 
 <p>Hier tragen wir die folgende Zeile ein:</p>
 
-<pre><code>net.ipv4.ip_forward=1
+<div class="highlighter-rouge"><pre class="highlight"><code>net.ipv4.ip_forward=1
 </code></pre>
+</div>
 
 <p>Die Änderung übernehmen wir mit:</p>
 
-<pre><code>sudo sysctl -p
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo sysctl -p
 </code></pre>
+</div>
 
 <h3 id="firewall-konfigurieren">Firewall konfigurieren</h3>
 
 <p>Zuletzt aktualisieren wir noch die Firewall des RPI:</p>
 
-<pre><code>sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 </code></pre>
+</div>
 
 <p>Bei mir kam an der Stelle die Fehlermeldung <code>iptables: Table does not exist (do you need to insmod?)</code>. Ein Neustart des RPI nach den Updates, vom Anfang, schaffte hier  Abhilfe. Wichtig: Dieser Befehl muss nach jedem Start des RPI neu ausgeführt werden. Also am Besten gleich einen Cronjob einrichten:</p>
 
-<pre><code>sudo crontab -e
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo crontab -e
 </code></pre>
+</div>
 
 <p>Am Ende fügen wir die folgende Zeile ein:</p>
 
-<pre><code>@reboot sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+<div class="highlighter-rouge"><pre class="highlight"><code>@reboot sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 </code></pre>
+</div>
 
 <p>Speichern und fertig.</p>
 
@@ -443,16 +646,18 @@ mru 1490
 
 <p>Das war es auch schon. Wenn alles korrekt konfiguriert ist, sollte die Verbindung nach dem Speichern funktionieren.</p>
 
-</p>		
+	
+      <p><a class="btn btn-success" href="/raspberry/linux/2014/02/11/raspberry_pi_als_vpn_server_einrichten.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: RPI and VPN by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
-		  <a href="/coding/tools/2014/02/04/check_code_signing_of_osx_applications.html">Check code signing of applications on OSX</a>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/coding/tools/2014/02/04/check_code_signing_of_applications_on_osx.html">Check code signing of applications on OSX</a>
 		</h1>
 		  <p class="small">Posted on 04 February 2014 by Andy</p>
-		  <p><p>The last days I was busy signing my Delphi applications on my Mac. One version was signed with my Developer ID, the other one with the third party developer ID for the Mac App Store.</p>
+		  <p>The last days I was busy signing my Delphi applications on my Mac. One version was signed with my Developer ID, the other one with the third party developer ID for the Mac App Store.</p>
 
 <p>Maybe its all very easy if you use XCode for that, but I had my issues with Delphi, where I had to do many steps manually on the command line.</p>
 
@@ -460,8 +665,9 @@ mru 1490
 
 <p>You can of course do that on the command line (if you have XCode installed):</p>
 
-<pre><code>codesign -dv /Applications/Awesome.app
+<div class="highlighter-rouge"><pre class="highlight"><code>codesign -dv /Applications/Awesome.app
 </code></pre>
+</div>
 
 <p>but I also found a tool with a neat GUI: <a href="http://brockerhoff.net/RB/AppCheckerLite/">RB App Checker</a>.</p>
 
@@ -473,57 +679,21 @@ mru 1490
 
 <p><img src="http://andydunkel.net/assets/uploads/2014/02/rbappchecker/1.png" alt="" /></p>
 
-</p>		
+	
+      <p><a class="btn btn-success" href="/coding/tools/2014/02/04/check_code_signing_of_applications_on_osx.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: Code Signing and OSX by Andy</p>
-		  <hr class="postdiv">
-		  
-		
-		<h1>
-		  <a href="/delphi/firemonkey/2014/01/28/code_signing_problems_with_delphi_xe4_and_mavericks.html">Code signing problems with Delphi XE4 Mavericks</a>
-		</h1>
-		  <p class="small">Posted on 28 January 2014 by Andy</p>
-		  <p><p>Some days ago I wrote a <a href="http://andydunkel.net/delphi/firemonkey/2014/01/22/signing_delphi_xe_applications_for_osx.html">blog post</a> about signing a Firemonkey application manually with the developer ID.</p>
-
-<p>For app store applications Delphi automatically runs the code signing procedure for you and creates a PKG file. Handy!</p>
-
-<p>Since Apples new Mavericks release the code signing has changed a little bit and the command now needs an additional parameter: <code>--deep</code>. Delphi does not add the parameter, which results in an error building the application:</p>
-
-<pre><code>[PAClient Error] Error: E0264 Unable to execute '"/usr/bin/
-codesign" --en "/Users/.../daform.app/Contents/Entitlements.plist" 
--s "Mac Developer" -f "/Users/.../daform.app"' (Error 1)
-
-daform.app code object is not signed at all
-</code></pre>
-
-<p>OK what to do? The first problem is, that you cannot tell Delphi to add the parameter.</p>
-
-<p>So I created a workaround for that. I wrote a small C++ command line tool, which replaces the original “codesign” program. When launched is parses all the parameters from the call and adds the <code>--deep</code> option if its not present.</p>
-
-<p>Then it runs the original “codesign” tool. The project is <a href="https://github.com/andydunkel/DelphiXE4-Mavericks-Codesign-Helper">available on Github</a>.</p>
-
-<h2 id="installation">Installation</h2>
-
-<ul>
-  <li>Download the <a href="https://github.com/andydunkel/DelphiXE4-Mavericks-Codesign-Helper/blob/master/codesign?raw=true">binary</a> or compile your own version with XCode</li>
-  <li>Rename the original codesign tool in /usr/bin to codesign_original</li>
-  <li>Copy the codesign binary to /usr/bin</li>
-</ul>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/codesigning_app_store/files.png" alt="" /></p>
-
-<p>After that Delphi is able to run and build the application with code signing for the app store.</p>
-
-</p>		
-		  <p class="small">Tagged: XE4, Firemonkey, and OSX by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
 
     </div>
     <div class="col-md-3">    
+            	<div class="sidebarpanel">
     	<h4>Partnerlink</h4>
     	<a target="_blank" href="http://www.amazon.de/?_encoding=UTF8&camp=1638&creative=19454&linkCode=ur2&site-redirect=de&tag=ekiwide0b-21">Einkaufen bei Amazon.de</a><img src="https://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&l=ur2&o=3" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />	
+    	</div>
     	
+    	<div class="sidebarpanel">
     	<h4>Werbung</h4>
     	
     	<div align="left">
@@ -539,69 +709,129 @@ daform.app code object is not signed at all
 		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		</script>
 		</div>
+		</div>
 		
+		<div class="sidebarpanel">
 		<h4>Links</h4>
     	<ul class="list-unstyled">
     		<li><a href="http://andydunkel.net/da.asc.zip">Andys PGP-Key</a></li>
     		<li><a href="https://github.com/andydunkel">Me on GitHub</a></li> 	
     		<li><a href="http://stackoverflow.com/users/285039/da">Me on StackOverflow</a></li>    			
     	</ul>
+    	</div>
     	
+    	<div class="sidebarpanel">
     	<h4>Webseiten</h4>
     	<ul class="list-unstyled">
     		<li><a href="http://www.ekiwi.de">eKiwi.de</a></li>
     		<li><a href="http://ekiwi-blog.de">eKiwi.de Blog</a></li>
     		<li><a href="http://www.da-software.de">DA-Software.de</a></li>    		
     	</ul>
+    	</div>
+
+    	<div class="sidebarpanel">
     	<h4>Categories</h4>    	
 		<section>
 		<ul id="categories" class="list-unstyled">
-		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (31)</a></li>
-<li class='category'><a href='/categories/computer/'>computer (14)</a></li>
-<li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
-<li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
-<li class='category'><a href='/categories/finanzen/'>finanzen (1)</a></li>
-<li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
-<li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
-<li class='category'><a href='/categories/gadgets/'>gadgets (26)</a></li>
-<li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
-<li class='category'><a href='/categories/html/'>html (1)</a></li>
-<li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
-<li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
-<li class='category'><a href='/categories/java/'>java (23)</a></li>
-<li class='category'><a href='/categories/jekyll/'>jekyll (2)</a></li>
-<li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
-<li class='category'><a href='/categories/kochen/'>kochen (2)</a></li>
-<li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
-<li class='category'><a href='/categories/linux/'>linux (15)</a></li>
-<li class='category'><a href='/categories/mac/'>mac (4)</a></li>
-<li class='category'><a href='/categories/meinung/'>meinung (6)</a></li>
-<li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (21)</a></li>
-<li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
-<li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
-<li class='category'><a href='/categories/osx/'>osx (1)</a></li>
-<li class='category'><a href='/categories/programmierung/'>programmierung (5)</a></li>
-<li class='category'><a href='/categories/radfahren/'>radfahren (31)</a></li>
-<li class='category'><a href='/categories/raspberry/'>raspberry (3)</a></li>
-<li class='category'><a href='/categories/repair/'>repair (2)</a></li>
-<li class='category'><a href='/categories/reparatur/'>reparatur (5)</a></li>
-<li class='category'><a href='/categories/retrotrip/'>retrotrip (1)</a></li>
-<li class='category'><a href='/categories/rezepte/'>rezepte (1)</a></li>
-<li class='category'><a href='/categories/science/'>science (3)</a></li>
-<li class='category'><a href='/categories/software/'>software (1)</a></li>
-<li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
-<li class='category'><a href='/categories/swt/'>swt (4)</a></li>
-<li class='category'><a href='/categories/tools/'>tools (24)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (22)</a></li>
-<li class='category'><a href='/categories/webdesign/'>webdesign (7)</a></li>
-<li class='category'><a href='/categories/webseiten/'>webseiten (7)</a></li>
-<li class='category'><a href='/categories/windows/'>windows (6)</a></li>
-<li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>
+
+  
+  
+     
+      <li class="category"><a href="/categories/eclipse">Eclipse <span>(26)</span></a></li>
+     
+      <li class="category"><a href="/categories/java">Java <span>(23)</span></a></li>
+     
+      <li class="category"><a href="/categories/radfahren">Radfahren <span>(31)</span></a></li>
+     
+      <li class="category"><a href="/categories/hiking">Hiking <span>(9)</span></a></li>
+     
+      <li class="category"><a href="/categories/ireland">Ireland <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/swt">Swt <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/fotos">Fotos <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/katzen">Katzen <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/tools">Tools <span>(24)</span></a></li>
+     
+      <li class="category"><a href="/categories/gadgets">Gadgets <span>(27)</span></a></li>
+     
+      <li class="category"><a href="/categories/rezepte">Rezepte <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
+     
+      <li class="category"><a href="/categories/ipad">Ipad <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/coding">Coding <span>(31)</span></a></li>
+     
+      <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/linux">Linux <span>(15)</span></a></li>
+     
+      <li class="category"><a href="/categories/windows">Windows <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/meinung">Meinung <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/mac">Mac <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/kochen">Kochen <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/reparatur">Reparatur <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/delphi">Delphi <span>(9)</span></a></li>
+     
+      <li class="category"><a href="/categories/firemonkey">Firemonkey <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/raspberry">Raspberry <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/xcode">Xcode <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/minimalismus">Minimalismus <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/webseiten">Webseiten <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/html">Html <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/osx">Osx <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/computer">Computer <span>(14)</span></a></li>
+     
+      <li class="category"><a href="/categories/webdesign">Webdesign <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/lazarus">Lazarus <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/jekyll">Jekyll <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/repair">Repair <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/ccc">Ccc <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/opensource">Opensource <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/programmierung">Programmierung <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/mobilitaet">Mobilitaet <span>(21)</span></a></li>
+     
+      <li class="category"><a href="/categories/umwelt">Umwelt <span>(22)</span></a></li>
+     
+      <li class="category"><a href="/categories/retrotrip">Retrotrip <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/finanzen">Finanzen <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/software">Software <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/hardware">Hardware <span>(1)</span></a></li>
+    
+  
+
+
 
 		</ul>
 		</section>
+		</div>
    </div>
 </div>
 
@@ -613,7 +843,7 @@ daform.app code object is not signed at all
   
     <a href="/page17" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 18 of 55</span>
+  <span class="page_number ">Page: 18 of 56</span>
   
     <a href="/page19" class="next">Next</a>
   

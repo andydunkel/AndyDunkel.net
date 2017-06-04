@@ -52,7 +52,7 @@ Nachdem auch die Kabel als Ursache ausgeschlossen werden konnten, bot Windows im
 
 ![](/assets/uploads/2016/8/einstellung0.png)
 ![](/assets/uploads/2016/8/einstellung1.png)
-![](/assets/uploads/2016/8/einstellung2.png)
+![](/assets/uploads/2016/8/einstellung3.png)
 
 
 ## Fazit

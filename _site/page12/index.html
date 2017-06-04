@@ -10,7 +10,8 @@
         <link rel="stylesheet" href="/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/bootstrap-theme.min.css">		
 		<script src="/css/bootstrap.min.js"></script>
-		<link href="/css/additional.min.css" rel="stylesheet">
+		<!--<link href="/css/additional.min.css" rel="stylesheet">-->
+    <link href="/css/additional.css" rel="stylesheet">
 		<link rel="alternate" type="application/rss+xml" title="AndyDunkel.net RSS Feed" href="http://andydunkel.net/rss.xml" /> 
 		
 		<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
@@ -141,7 +142,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container maincontainer">
 
     <section>
 <h1>Willkommen</h1>
@@ -154,13 +155,64 @@
 <div class="row">
     <div class="col-md-9">
       <h2>Blog Posts</h2>
+
      
 		
-		<h1>
-		  <a href="/coding/2016/01/17/icon_experience_set.html">IconExperience - Icons für Softwareentwickler</a>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/jekyll/webdesign/2016/01/21/jekyll_related_posts.html">Jekyll - Related Posts / Verwandte Artikel</a>
+		</h1>
+		  <p class="small">Posted on 21 January 2016 by Andy</p>
+		  <p>Jekyll bietet über das die Variable <code>site.related_posts</code> eine Funktion um “Verwandte Artikel” zu einem Blogpost anzuzeigen. Standardmäßig ist die Funktion jedoch eher eingeschränkt und enthält nur die letzten 10 Artikel.</p>
+
+<p>Das Ganze wird z.B. so verwendet:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">post</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">site.related_posts</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+   </span><span class="err">&lt;li&gt;&lt;a</span><span class="w"> </span><span class="err">href=</span><span class="s2">"{{ site.url }}{{ post.url }}"</span><span class="w"> </span><span class="err">title="</span><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">post.title</span><span class="w"> </span><span class="p">}</span><span class="err">}&gt;</span><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">post.title</span><span class="w"> </span><span class="p">}</span><span class="err">}&lt;/a&gt;&lt;/li&gt;</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>Da jeweils immer nur die letzten 10 Artikel angezeigt werden, ist das nicht wirklich “related”. Immerhin wird noch die Option angeboten das Ganze über einen Index etwas schlauer zu machen. Mit der Option <code>--lsi</code> wird beim Generieren der Seite ein Index angelegt und die Funktion arbeitet semantisch etwas schlauer. Bei mir hat das jedoch auch nicht funktioniert. Hier kam es leider nur zu einer Fehlermeldung. Außerdem wollte ich nicht stupide immer 10 Artikel angezeigt bekommen, obs passt oder nicht.</p>
+
+<p>Auf der Suche nach einer besseren Lösung bin ich auf <a href="https://github.com/jumanji27/related-posts-jekyll-plugin">ein Github-Projekt</a> gestoßen. Das Plugin kopiert man einfach in das Plugin-Verzeichnis von Jekyll. Es ersetzt die Standardfunktion von Jekyll. Die Zuordnung der verwandten Artikel erfolgt beim Plugin über die Tags, gleicher Tag == verwandt.</p>
+
+<p>Zur Einbindung habe ich folgenden Code verwendet.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">site.related_posts.size</span><span class="w"> </span><span class="err">&gt;</span><span class="w"> </span><span class="err">0</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+ </span><span class="err">&lt;div</span><span class="w"> </span><span class="err">class=</span><span class="s2">"panel panel-default"</span><span class="err">&gt;</span><span class="w">
+ 	</span><span class="err">&lt;div</span><span class="w"> </span><span class="err">class=</span><span class="s2">"panel-heading"</span><span class="err">&gt;Verwandte</span><span class="w"> </span><span class="err">Artikel:&lt;/div&gt;</span><span class="w">
+	</span><span class="err">&lt;div</span><span class="w"> </span><span class="err">class=</span><span class="s2">"panel-body"</span><span class="err">&gt;</span><span class="w">
+	</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">post</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">site.related_posts</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+	   </span><span class="err">&lt;li&gt;&lt;a</span><span class="w"> </span><span class="err">href=</span><span class="s2">"{{ site.url }}{{ post.url }}"</span><span class="w"> </span><span class="err">title="</span><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">post.title</span><span class="w"> </span><span class="p">}</span><span class="err">}&gt;</span><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">post.title</span><span class="w"> </span><span class="p">}</span><span class="err">}&lt;/a&gt;&lt;/li&gt;</span><span class="w">
+	</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+	</span><span class="err">&lt;/div&gt;</span><span class="w">
+</span><span class="err">&lt;/div&gt;</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>Das Ergebnis sieht dann z.B. so aus:</p>
+
+<p><img src="/assets/uploads/2016/1/related_posts.png" alt="" /></p>
+
+<p>Der Code stellt die Box zudem nur dar, wenn es verwandte Artikel gibt.</p>
+
+<hr />
+
+<p>Beim Schreiben dieses Artikels ist es mir aufgefallen, dass es gar nicht so leicht ist “Liquid code” in Jekyll als Code darzustellen. Wie das geht, <a href="https://truongtx.me/2013/01/09/display-liquid-code-in-jekyll/">ist hier erklärt</a>.</p>
+	
+      <p><a class="btn btn-success" href="/jekyll/webdesign/2016/01/21/jekyll_related_posts.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: Jekyll and Webdesign by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/coding/2016/01/17/iconexperience_icon_set.html">IconExperience - Icons für Softwareentwickler</a>
 		</h1>
 		  <p class="small">Posted on 17 January 2016 by Andy</p>
-		  <p><p>Als Softwareentwickler benötige ich für die GUI meiner Anwendungen Icons, idealerweise hat man ein Set, welches optisch gut zusammenpasst und für jeden Anwendungsfall ein passendes Icon bereitstellt. Da die bisherige Icon Sammlung aus dem Jahr 2006 stammte und grafisch nicht mehr auf den aktuellen Stand war, haben wir ein neues Icon-Set gesucht.</p>
+		  <p>Als Softwareentwickler benötige ich für die GUI meiner Anwendungen Icons, idealerweise hat man ein Set, welches optisch gut zusammenpasst und für jeden Anwendungsfall ein passendes Icon bereitstellt. Da die bisherige Icon Sammlung aus dem Jahr 2006 stammte und grafisch nicht mehr auf den aktuellen Stand war, haben wir ein neues Icon-Set gesucht.</p>
 
 <p>Gefunden haben wir die “<a href="https://www.iconexperience.com/o_collection/">O-Collection</a>” von <a href="https://www.iconexperience.com">IconExperience</a>. Die Sammlung enthält über 1700 Icons, deckt damit alles ab, was man so für Standardanwendungen so braucht. Das Design entspricht dem aktuellen Flat-Design. Die Icons kommen zudem in 7 verschiedenen Farbstilen.</p>
 
@@ -182,16 +234,18 @@
 
 <p><img src="/assets/uploads/2016/1/iconexperience2.png" alt="" /></p>
 
-</p>		
+	
+      <p><a class="btn btn-success" href="/coding/2016/01/17/iconexperience_icon_set.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: Icons by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/linux/opensource/2016/01/16/gimp_save_for_web.html">Gimp - Save for Web Plugin</a>
 		</h1>
 		  <p class="small">Posted on 16 January 2016 by Andy</p>
-		  <p><p><em>Note: German versions of this article can be found <a href="http://ekiwi-blog.de/?p=2507">here</a> and <a href="http://ekiwi-blog.de/?p=2524">here</a>.</em></p>
+		  <p><em>Note: German versions of this article can be found <a href="http://ekiwi-blog.de/?p=2507">here</a> and <a href="http://ekiwi-blog.de/?p=2524">here</a>.</em></p>
 
 <p>One of my favorite features of Photoshop if the feature “Save for web”. Its a nice tool to optimize your image for the web. You can basically choose file format, compression, number of colors and see the results of the optimization in a preview image.</p>
 
@@ -211,35 +265,40 @@
 
 <p>After extraction of the archive on Linux the installation is done in three simple steps:</p>
 
-<pre><code>./configure
+<div class="highlighter-rouge"><pre class="highlight"><code>./configure
 make
 make install
 </code></pre>
+</div>
 
 <p>However there where a few problems with that. The <code>configure</code> script exited with an error message:</p>
 
-<pre><code>configure: error: Package requirements (gimp-2.0 &gt;= 2.3.0 gimpui-2.0 &gt;= 2.3.0) were not met:
+<div class="highlighter-rouge"><pre class="highlight"><code>configure: error: Package requirements (gimp-2.0 &gt;= 2.3.0 gimpui-2.0 &gt;= 2.3.0) were not met:
 
 No package 'gimp-2.0' found
 No package 'gimpui-2.0' found
 </code></pre>
+</div>
 
 <p>This looks like Gimp could not be found, but thats not true. Actually you need the <code>gimp2.0-dev</code> package installed:</p>
 
-<pre><code>sudo apt-get install gimp2.0-dev intltool
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install gimp2.0-dev intltool
 </code></pre>
+</div>
 
 <p>In my case it also needed the package <code>intltool</code>. After that the installation steps went without no further errors.</p>
-</p>		
+	
+      <p><a class="btn btn-success" href="/linux/opensource/2016/01/16/gimp_save_for_web.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: Gimp by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/ccc/2016/01/09/32c3.html">32c3</a>
 		</h1>
 		  <p class="small">Posted on 09 January 2016 by Andy</p>
-		  <p><p>Wohl zum vorläufig vorletzten Mal war der Chaos Communication Congress in Hamburg. Diesmal war der Congress aufverkauft, 13000 Leute sollen wohl da gewesen sein. Gefühlt war es aber nicht voller als letztes Jahr. Die Sääle waren zwar voll, aber wir sind immer reingekommen. Mit etwas Wehmut denkt man an den ersten Congress in Hamburg vor 4 Jahren zurück, da waren knapp die Hälfte an Leuten da und es gab jede Menge Platz.</p>
+		  <p>Wohl zum vorläufig vorletzten Mal war der Chaos Communication Congress in Hamburg. Diesmal war der Congress aufverkauft, 13000 Leute sollen wohl da gewesen sein. Gefühlt war es aber nicht voller als letztes Jahr. Die Sääle waren zwar voll, aber wir sind immer reingekommen. Mit etwas Wehmut denkt man an den ersten Congress in Hamburg vor 4 Jahren zurück, da waren knapp die Hälfte an Leuten da und es gab jede Menge Platz.</p>
 
 <p>Sicher wird der Andrang beim Ticketkauf dieses Jahr noch größer sein. Bleibt zu hoffen, dass es nicht zur Lotterie wird, wie zuletzt in Berlin.</p>
 
@@ -247,7 +306,7 @@ No package 'gimpui-2.0' found
 
 <p>Die Stimmung war wie immer friedlich und relaxt. Perfekt.</p>
 
-<h2 id="vortrge">Vorträge</h2>
+<h2 id="vorträge">Vorträge</h2>
 
 <p>Zu den Vorträgen: wie immer gab es interessante Vorträge. Ab und zu gibt es mal Ausrutscher, wenn der Sprecher nicht so gut ist. Es gilt immer der Grundsatz, das Thema kann noch so interessant sein, ist der Präsentator schlecht ruiniert das das interessanteste Thema. Hier ein paar Vorträge die ich gut fand und die man sich mal anschauen kann. Ich bin noch nicht fertig mit dem Durchschauen. Vor Ort schafft man nur eine begrenzte Anzahl, zum Glück gibts alles Online zum Nachschauen.</p>
 
@@ -259,13 +318,13 @@ No package 'gimpui-2.0' found
 
 <p><a href="https://media.ccc.de/v/32c3-7360-un_sicherheit_von_app-basierten_tan-verfahren_im_onlinebanking">Link</a></p>
 
-<h3 id="fnord-jahresrckblick">Fnord-Jahresrückblick</h3>
+<h3 id="fnord-jahresrückblick">Fnord-Jahresrückblick</h3>
 
 <p>Zum ersten Mal live gesehen, da dieser traditionell immer sehr spät gehalten wird. So genau kann man den Inhalt gar nicht beschreiben, ich denke skurille Dinge die im letzten Jahr passiert sind und durch die Medien gegangen sind. Hoher Unterhaltungswert, was sicher auch am Bier lag, welches wir vorher genossen haben.</p>
 
 <p><a href="https://media.ccc.de/v/32c3-7282-fnord-jahresruckblick">Link</a></p>
 
-<h3 id="jahresrckblick-des-ccc">Jahresrückblick des CCC</h3>
+<h3 id="jahresrückblick-des-ccc">Jahresrückblick des CCC</h3>
 
 <p>Der Jahresrückblick gehört auch zu den interessanten Vorträgen. Hier wird kurz gezeigt, was im letzten Jahr vom CCC so gemacht und unternommen worden ist. Leider teilweise etwas zu große Selbstbeweihräucherung, aber dennoch sehenswert.</p>
 
@@ -277,7 +336,7 @@ No package 'gimpui-2.0' found
 
 <p><a href="https://media.ccc.de/v/32c3-7229-plc-blaster">Link</a></p>
 
-<h3 id="stromtankstellen--eine-neue-ffentliche-infrastruktur">Stromtankstellen – eine neue öffentliche Infrastruktur</h3>
+<h3 id="stromtankstellen--eine-neue-öffentliche-infrastruktur">Stromtankstellen – eine neue öffentliche Infrastruktur</h3>
 
 <p>Elektroautos, verschiedene Ladestandards und Stecker der unterschiedlichen Hersteller, Abrechnungsprobleme und anderer Wirrwarr werden hier gezeigt. Leider nur eine halbe Stunde Zeit.</p>
 
@@ -306,16 +365,18 @@ No package 'gimpui-2.0' found
 <p>Max Schrems zeigt, wie er juristisch gegen Facebook und dessen Datenschutzbestimmungen vorgegangen ist. Es ist amüsant und auch erschreckend zu sehen, gegen welche juristischen Windmühlen er kämpfen musste um am Ende das Safe Harbor Abkommen der USA mit der EU scheitern zu lassen.</p>
 
 <p><a href="https://media.ccc.de/v/32c3-7513-safe_harbor">Link</a></p>
-</p>		
+	
+      <p><a class="btn btn-success" href="/ccc/2016/01/09/32c3.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: 32c3 and CCC by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
-		  <a href="/delphi/lazarus/2016/01/06/delphi_lazarus.html">Moving from Delphi to Lazarus</a>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/delphi/lazarus/2016/01/06/moving_from_delphi_to_lazarus.html">Moving from Delphi to Lazarus</a>
 		</h1>
 		  <p class="small">Posted on 06 January 2016 by Andy</p>
-		  <p><p>Some time ago I wrote a blog post about <a href="http://andydunkel.net/delphi/firemonkey/2014/03/05/delphi_and_firemonkey_experience.html">my experiences</a> migrating my Delphi VLC applications to Firemonkey. Firemonkey allows you to create multi platform applications. Multi platform means Windows and OSX here. In my blog post I was somehow optimistic about the way Delphi is moving. It was a lot of work to move from an VCL application to the Firemonkey framework. But in the end I decided to leave Delphi behind me and move to <a href="http://www.lazarus-ide.org/">Lazarus</a>. I used Delphi for about 15 years, so that was not an easy decision.</p>
+		  <p>Some time ago I wrote a blog post about <a href="http://andydunkel.net/delphi/firemonkey/2014/03/05/delphi_and_firemonkey_experience.html">my experiences</a> migrating my Delphi VLC applications to Firemonkey. Firemonkey allows you to create multi platform applications. Multi platform means Windows and OSX here. In my blog post I was somehow optimistic about the way Delphi is moving. It was a lot of work to move from an VCL application to the Firemonkey framework. But in the end I decided to leave Delphi behind me and move to <a href="http://www.lazarus-ide.org/">Lazarus</a>. I used Delphi for about 15 years, so that was not an easy decision.</p>
 
 <p>In this blog post I want to describe some of my thoughts to give some ideas, for people facing similar problems. My last Delphi experience is based on Delphi XE4 which is some years old. Newer versions sure will have many bugs fixed and will be more stable. This is mostly based on the Firemonkey part of Delphi.</p>
 
@@ -363,80 +424,22 @@ No package 'gimpui-2.0' found
 
 <p>The documentation of the Lazarus / Free Pascal is very good. Most stuff you will find in the <a href="http://wiki.freepascal.org/">Wiki</a> and the forums. The sources on the internet are somehow limited as Lazarus is not so wide spread, but the same goes for Delphi. Since Lazarus and the LCL is platform independant, I also ported my applications to Linux now. The same code base is now working on Windows, Linux and OSX with just a few IFDEFs. Most platform dependant things are handled by LCL functions.</p>
 
-<p>On the down side, I am not sure if a Lazarus OSX application can be published on the Mac App Store right now. I have not found enough information if Carbon applications will be accepted. Looking at the wiki its seems possible to <a href="wiki.lazarus.freepascal.org/Code_Signing_for_Mac_OS_X">sandbox the application</a>, but I have not tried this yet.</p>
-</p>		
+<p>On the down side, I am not sure if a Lazarus OSX application can be published on the Mac App Store right now. I have not found enough information if Carbon applications will be accepted. Looking at the wiki its seems possible to <a href="http://wiki.lazarus.freepascal.org/Code_Signing_for_Mac_OS_X">sandbox the application</a>, but I have not tried this yet.</p>
+	
+      <p><a class="btn btn-success" href="/delphi/lazarus/2016/01/06/moving_from_delphi_to_lazarus.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: Delphi and Lazarus by Andy</p>
-		  <hr class="postdiv">
-		  
-		
-		<h1>
-		  <a href="/repair/reparatur/2015/12/04/festplatte_dell_2520.html">Festplatte eines Dell Vostro 2520 wechseln</a>
-		</h1>
-		  <p class="small">Posted on 04 December 2015 by Andy</p>
-		  <p><p>Das Dell Vostro 2520 gehört zu den preiswerteren Laptops. Standardmäßig  gerade 2 GB RAM und langsamer Festplatte ausgestattet ist es eher langsam.</p>
-
-<p>Da die Preise für <a href="https://www.amazon.de/s/ref=as_li_ss_tl?_encoding=UTF8&amp;camp=1638&amp;creative=19454&amp;field-keywords=ssd&amp;linkCode=ur2&amp;site-redirect=de&amp;tag=ekiwide0b-21&amp;url=search-alias%3Daps">SSD-Festplatten</a> mittlerweile ganz passabel sind, lohnt es sich die Aufrüstung des Laptops um mehr Geschwindigkeit zu erzielen.</p>
-
-<p>Im Folgenden beschreibe ich die notwendigen Schritte. Das ganze ist nicht sonderlich kompliziert, wenn man weiß wie es geht.</p>
-
-<p>Die Schritte lassen sich auch für die Erweiterung des Arbeitsspeichers nutzen. Dieser sitzt unter der Tastatur, welche wir auch für die Festplatte entfernen müssen.</p>
-
-<h2 id="legen-wir-los">Legen wir los</h2>
-
-<p>Als Werkzeit genügt ein Kreuzschraubendreher und eventuell noch ein normaler, um diverse Plastikschnapper wegdrücken zu können.</p>
-
-<p>Zuerst entfernen wir den Akku und drehen den Laptop auf die Rückseite. Auf der Unterseite gibt es jede Menge Schrauben. Diese entfernen wir alle:</p>
-
-<p><img src="/assets/uploads/2015/12/lap0.jpg" alt="" /></p>
-
-<p>Ist das erledigt, drehen wir das Laptop wieder um und öffnen den Display-Deckel. Nun muss die Tastatur entfernt werden. Diese ist am oberen Ende mit vier Plastiknasen fixiert:</p>
-
-<p><img src="/assets/uploads/2015/12/lap1.jpg" alt="" /></p>
-
-<p><img src="/assets/uploads/2015/12/lap2.jpg" alt="" /></p>
-
-<p>Am Besten geht man so vor, dass man mit einem flachen spitzen Gegenstand den Schnapper nach oben wegdrückt und dann mit einem anderen flachen Werkzeug unter die Tastatur hebelt und diese dann nach oben drückt:</p>
-
-<p><img src="/assets/uploads/2015/12/lap3.jpg" alt="" /></p>
-
-<p>Nachdem alle vier Schnapper gelöst sind, können wir die Tastatur nach oben wegziehen. Da die Tastatur mit einem Flachbandkabel mit dem Mainboard verbunden ist, sollte das vorsichtig geschehen.</p>
-
-<p><img src="/assets/uploads/2015/12/lap4.jpg" alt="" /></p>
-
-<p>Das Flachbandkabel ist lang genug, so dass wir es nicht  unbedingt entfernen müssen. Im Inneren müssen zwei weitere Schrauben gelöst werden:</p>
-
-<p><img src="/assets/uploads/2015/12/lap5.jpg" alt="" /></p>
-
-<p>Anschließend kann die Handballenablage (bzw. oberer Rahmen) entfernt werden. Zuvor entfernen wir noch die zwei Flachbandkabel von Ein-/Ausschalter und dem Touchpad:</p>
-
-<p><img src="/assets/uploads/2015/12/lap6.jpg" alt="" /></p>
-
-<p><img src="/assets/uploads/2015/12/lap7.jpg" alt="" /></p>
-
-<p>Die Flachbandkabel lassen sich leicht entfernen und wieder anbringen.</p>
-
-<p>Im letzten Schritt entfernen wir jetzt die Festplatte. Diese wird durch eine Schraube fixiert, welche wir bereits im ersten Schritt entfernt haben.</p>
-
-<p>Somit kann diese einfach durch Ziehen nach rechts entfernt werden:</p>
-
-<p><img src="/assets/uploads/2015/12/lap9.jpg" alt="" /></p>
-
-<p>Nun kann die neue Platte eingesetzt werden. Es folgt der Zusammenbau. Hierfür sind einfach die Schritte rückwärts durchzuführen.</p>
-
-<p>Wer den Arbeitsspeicher wechseln oder erweitern möchte. Dieser befindet sich links neben dem Flachbandkabel der Tastatur:</p>
-
-<p><img src="/assets/uploads/2015/12/lap8.jpg" alt="" /></p>
-</p>		
-		  <p class="small">Tagged: Laptop and Reparatur by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
 
     </div>
     <div class="col-md-3">    
+            	<div class="sidebarpanel">
     	<h4>Partnerlink</h4>
     	<a target="_blank" href="http://www.amazon.de/?_encoding=UTF8&camp=1638&creative=19454&linkCode=ur2&site-redirect=de&tag=ekiwide0b-21">Einkaufen bei Amazon.de</a><img src="https://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&l=ur2&o=3" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />	
+    	</div>
     	
+    	<div class="sidebarpanel">
     	<h4>Werbung</h4>
     	
     	<div align="left">
@@ -452,69 +455,129 @@ No package 'gimpui-2.0' found
 		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		</script>
 		</div>
+		</div>
 		
+		<div class="sidebarpanel">
 		<h4>Links</h4>
     	<ul class="list-unstyled">
     		<li><a href="http://andydunkel.net/da.asc.zip">Andys PGP-Key</a></li>
     		<li><a href="https://github.com/andydunkel">Me on GitHub</a></li> 	
     		<li><a href="http://stackoverflow.com/users/285039/da">Me on StackOverflow</a></li>    			
     	</ul>
+    	</div>
     	
+    	<div class="sidebarpanel">
     	<h4>Webseiten</h4>
     	<ul class="list-unstyled">
     		<li><a href="http://www.ekiwi.de">eKiwi.de</a></li>
     		<li><a href="http://ekiwi-blog.de">eKiwi.de Blog</a></li>
     		<li><a href="http://www.da-software.de">DA-Software.de</a></li>    		
     	</ul>
+    	</div>
+
+    	<div class="sidebarpanel">
     	<h4>Categories</h4>    	
 		<section>
 		<ul id="categories" class="list-unstyled">
-		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (31)</a></li>
-<li class='category'><a href='/categories/computer/'>computer (14)</a></li>
-<li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
-<li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
-<li class='category'><a href='/categories/finanzen/'>finanzen (1)</a></li>
-<li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
-<li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
-<li class='category'><a href='/categories/gadgets/'>gadgets (26)</a></li>
-<li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
-<li class='category'><a href='/categories/html/'>html (1)</a></li>
-<li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
-<li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
-<li class='category'><a href='/categories/java/'>java (23)</a></li>
-<li class='category'><a href='/categories/jekyll/'>jekyll (2)</a></li>
-<li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
-<li class='category'><a href='/categories/kochen/'>kochen (2)</a></li>
-<li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
-<li class='category'><a href='/categories/linux/'>linux (15)</a></li>
-<li class='category'><a href='/categories/mac/'>mac (4)</a></li>
-<li class='category'><a href='/categories/meinung/'>meinung (6)</a></li>
-<li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (21)</a></li>
-<li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
-<li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
-<li class='category'><a href='/categories/osx/'>osx (1)</a></li>
-<li class='category'><a href='/categories/programmierung/'>programmierung (5)</a></li>
-<li class='category'><a href='/categories/radfahren/'>radfahren (31)</a></li>
-<li class='category'><a href='/categories/raspberry/'>raspberry (3)</a></li>
-<li class='category'><a href='/categories/repair/'>repair (2)</a></li>
-<li class='category'><a href='/categories/reparatur/'>reparatur (5)</a></li>
-<li class='category'><a href='/categories/retrotrip/'>retrotrip (1)</a></li>
-<li class='category'><a href='/categories/rezepte/'>rezepte (1)</a></li>
-<li class='category'><a href='/categories/science/'>science (3)</a></li>
-<li class='category'><a href='/categories/software/'>software (1)</a></li>
-<li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
-<li class='category'><a href='/categories/swt/'>swt (4)</a></li>
-<li class='category'><a href='/categories/tools/'>tools (24)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (22)</a></li>
-<li class='category'><a href='/categories/webdesign/'>webdesign (7)</a></li>
-<li class='category'><a href='/categories/webseiten/'>webseiten (7)</a></li>
-<li class='category'><a href='/categories/windows/'>windows (6)</a></li>
-<li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>
+
+  
+  
+     
+      <li class="category"><a href="/categories/eclipse">Eclipse <span>(26)</span></a></li>
+     
+      <li class="category"><a href="/categories/java">Java <span>(23)</span></a></li>
+     
+      <li class="category"><a href="/categories/radfahren">Radfahren <span>(31)</span></a></li>
+     
+      <li class="category"><a href="/categories/hiking">Hiking <span>(9)</span></a></li>
+     
+      <li class="category"><a href="/categories/ireland">Ireland <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/swt">Swt <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/fotos">Fotos <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/katzen">Katzen <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/tools">Tools <span>(24)</span></a></li>
+     
+      <li class="category"><a href="/categories/gadgets">Gadgets <span>(27)</span></a></li>
+     
+      <li class="category"><a href="/categories/rezepte">Rezepte <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
+     
+      <li class="category"><a href="/categories/ipad">Ipad <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/coding">Coding <span>(31)</span></a></li>
+     
+      <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/linux">Linux <span>(15)</span></a></li>
+     
+      <li class="category"><a href="/categories/windows">Windows <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/meinung">Meinung <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/mac">Mac <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/kochen">Kochen <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/reparatur">Reparatur <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/delphi">Delphi <span>(9)</span></a></li>
+     
+      <li class="category"><a href="/categories/firemonkey">Firemonkey <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/raspberry">Raspberry <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/xcode">Xcode <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/minimalismus">Minimalismus <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/webseiten">Webseiten <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/html">Html <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/osx">Osx <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/computer">Computer <span>(14)</span></a></li>
+     
+      <li class="category"><a href="/categories/webdesign">Webdesign <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/lazarus">Lazarus <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/jekyll">Jekyll <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/repair">Repair <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/ccc">Ccc <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/opensource">Opensource <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/programmierung">Programmierung <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/mobilitaet">Mobilitaet <span>(21)</span></a></li>
+     
+      <li class="category"><a href="/categories/umwelt">Umwelt <span>(22)</span></a></li>
+     
+      <li class="category"><a href="/categories/retrotrip">Retrotrip <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/finanzen">Finanzen <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/software">Software <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/hardware">Hardware <span>(1)</span></a></li>
+    
+  
+
+
 
 		</ul>
 		</section>
+		</div>
    </div>
 </div>
 
@@ -526,7 +589,7 @@ No package 'gimpui-2.0' found
   
     <a href="/page11" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 12 of 55</span>
+  <span class="page_number ">Page: 12 of 56</span>
   
     <a href="/page13" class="next">Next</a>
   

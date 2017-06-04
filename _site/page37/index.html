@@ -10,7 +10,8 @@
         <link rel="stylesheet" href="/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/bootstrap-theme.min.css">		
 		<script src="/css/bootstrap.min.js"></script>
-		<link href="/css/additional.min.css" rel="stylesheet">
+		<!--<link href="/css/additional.min.css" rel="stylesheet">-->
+    <link href="/css/additional.css" rel="stylesheet">
 		<link rel="alternate" type="application/rss+xml" title="AndyDunkel.net RSS Feed" href="http://andydunkel.net/rss.xml" /> 
 		
 		<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
@@ -141,7 +142,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container maincontainer">
 
     <section>
 <h1>Willkommen</h1>
@@ -154,15 +155,39 @@
 <div class="row">
     <div class="col-md-9">
       <h2>Blog Posts</h2>
+
      
 		
-		<h1>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/eclipse/java/2011/10/01/emf-setting-an-empty-string-as-default-value.html">EMF: Setting an empty string as default value</a>
+		</h1>
+		  <p class="small">Posted on 01 October 2011 by Andy</p>
+		  <p>If you create a string in an EMF model, its null by default:</p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2011/10/image.png"><img src="http://andydunkel.net/assets/uploads/2011/10/image_thumb.png" alt="image" /></a></p>
+
+<p>If you want to have an empty string, instead of null, you have to enter a “Default Value Literal”. For an empty string, just click on the value and hit enter (very obvious):</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/10/image1.png" alt="image" /></p>
+
+<p>To get the null value back, just click on “Restore Default Value” in the toolbar of the properties view.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/10/image2.png" alt="image" /></p>
+	
+      <p><a class="btn btn-success" href="/eclipse/java/2011/10/01/emf-setting-an-empty-string-as-default-value.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: default, EMF, null, string, and value by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/eclipse/java/2011/09/27/java-open-an-url-in-the-standard-browser.html">Java: Open an URL in the standard browser</a>
 		</h1>
 		  <p class="small">Posted on 27 September 2011 by Andy</p>
-		  <p><p>Here is short code snippet to open an URL with the systems standard browser:</p>
+		  <p>Here is short code snippet to open an URL with the systems standard browser:</p>
 
-<pre><code>public void openUrl(String url) throws IOException, URISyntaxException {
+<div class="highlighter-rouge"><pre class="highlight"><code>public void openUrl(String url) throws IOException, URISyntaxException {
   if(java.awt.Desktop.isDesktopSupported() ) {
         java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
 
@@ -173,36 +198,42 @@
       } 
 }
 </code></pre>
+</div>
 
 <p>java.awt.Desktop is supported as of Java 6.</p>
 
-</p>		
+	
+      <p><a class="btn btn-success" href="/eclipse/java/2011/09/27/java-open-an-url-in-the-standard-browser.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: brower, open, standard, and system by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/radfahren/2011/09/18/viehscheid-bad-hindelang-radtour-zur-kseralm.html">Viehscheid Bad Hindelang / Radtour zur Käseralpe</a>
 		</h1>
 		  <p class="small">Posted on 18 September 2011 by Andy</p>
-		  <p><p>Schon ein wenig her, aber ich kam erst jetzt dazu das Video zu schneiden. Diesmal <a href="http://de.wikipedia.org/wiki/Almabtrieb" target="_blank">Viehscheid</a> und Frühschoppen in Bad Hindelang. Beschwingt ging es danach mit Fahrrad auf die <a href="http://oberstdorf-online.info/alphuetten/kaeseralpe.htm" target="_blank">Käseralpe</a>.</p>
+		  <p>Schon ein wenig her, aber ich kam erst jetzt dazu das Video zu schneiden. Diesmal <a href="http://de.wikipedia.org/wiki/Almabtrieb" target="_blank">Viehscheid</a> und Frühschoppen in Bad Hindelang. Beschwingt ging es danach mit Fahrrad auf die <a href="http://oberstdorf-online.info/alphuetten/kaeseralpe.htm" target="_blank">Käseralpe</a>.</p>
 <p>Das letzte Drittel hatte dann doch wieder ordentliche Steigungen von bis zu 20%. Aber irgendwie kommt man immer rauf, mit dem richtigen Ziel vor Augen: <img style="border-bottom-style: none; border-left-style: none; border-top-style: none; border-right-style: none" class="wlEmoticon wlEmoticon-mug" alt="Bierkrug" src="http://andydunkel.net/assets/uploads/2011/09/wlEmoticon-mug.png" />.</p>
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:2acd1fef-b149-43cf-92a5-26a172ce3c01" class="wlWriterEditableSmartContent"><div><object width="594" height="334"><param name="movie" value="http://www.youtube.com/v/GDf-v088Xak?hl=en&amp;hd=1" /><embed src="http://www.youtube.com/v/GDf-v088Xak?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="594" height="334" /></object></div></div>
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:2acd1fef-b149-43cf-92a5-26a172ce3c01" class="wlWriterEditableSmartContent"><div><object width="594" height="334"><param name="movie" value="http://www.youtube.com/v/GDf-v088Xak?hl=en&amp;hd=1" />&lt;/param&gt;<embed src="http://www.youtube.com/v/GDf-v088Xak?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="594" height="334" />&lt;/embed&gt;</object></div></div>
 <p><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://andydunkel.net/assets/uploads/2011/09/image11.png" width="604" height="354" /></p>
 <p>&nbsp;</p>
 <p><iframe height="400" marginheight="0" src="http://maps.google.de/maps/ms?msa=0&amp;msid=208324790998598431494.0004aca5d29f398cf319e&amp;ie=UTF8&amp;t=h&amp;vpsrc=0&amp;ll=47.438306,10.321655&amp;spn=0.185774,0.411301&amp;z=11&amp;output=embed" frameborder="0" width="600" marginwidth="0" scrolling="no"></iframe><br /><small><a style="text-align: left; color: #0000ff" href="http://maps.google.de/maps/ms?msa=0&amp;msid=208324790998598431494.0004aca5d29f398cf319e&amp;ie=UTF8&amp;t=h&amp;vpsrc=0&amp;ll=47.438306,10.321655&amp;spn=0.185774,0.411301&amp;z=11&amp;source=embed">2011-09-10 09:13 - Viehscheid/Käseralm</a> auf einer größeren Karte anzeigen</small> </p>
-<p>Gesamtentfernung: 67,68 km (42,1 mi)<br />Zeit in Bewegung: 4:21:02<br />Durchschnittsgeschw.: 7,43 km/h (4,6 mi/h)<br />Durchschnitt in Bew.: 15,56 km/h (9,7 mi/h)<br />Max. Geschwindigkeit: 49,79 km/h (30,9 mi/h)<br />Niedrigste Höhenlage: 790 m (2591 Fuß)<br />Höchste Höhenlage: 1450 m (4757 Fuß)<br />Höhengewinn: 1591 m (5220 Fuß)<br />Maximale Steigung: 21 %<br />Minimale Steigung: -18 %<br />Aufgezeichnet am: Sa. Sep 10 09:13:10 MESZ 2011<br /> <p><a href="http://andydunkel.net/assets/uploads/2011/09/DSCN2625.jpg"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2625" border="0" alt="DSCN2625" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2625_thumb.jpg" width="644" height="484" /></a></p> <p>Weitere Bilder:</p><!--more--><p><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2607" border="0" alt="DSCN2607" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2607.jpg" width="644" height="484" /><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2609" border="0" alt="DSCN2609" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2609.jpg" width="644" height="484" /><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2612" border="0" alt="DSCN2612" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2612.jpg" width="644" height="484" /><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2614" border="0" alt="DSCN2614" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2614.jpg" width="644" height="484" /><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2615" border="0" alt="DSCN2615" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2615.jpg" width="644" height="484" /><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2618" border="0" alt="DSCN2618" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2618.jpg" width="644" height="484" /><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2620" border="0" alt="DSCN2620" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2620.jpg" width="644" height="484" /><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2630" border="0" alt="DSCN2630" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2630.jpg" width="644" height="484" /><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2634" border="0" alt="DSCN2634" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2634.jpg" width="644" height="484" /><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2635" border="0" alt="DSCN2635" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2635.jpg" width="644" height="484" /><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2638" border="0" alt="DSCN2638" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2638.jpg" width="644" height="484" /><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2639" border="0" alt="DSCN2639" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2639.jpg" width="644" height="484" /></p>
+<p>Gesamtentfernung: 67,68 km (42,1 mi)<br />Zeit in Bewegung: 4:21:02<br />Durchschnittsgeschw.: 7,43 km/h (4,6 mi/h)<br />Durchschnitt in Bew.: 15,56 km/h (9,7 mi/h)<br />Max. Geschwindigkeit: 49,79 km/h (30,9 mi/h)<br />Niedrigste Höhenlage: 790 m (2591 Fuß)<br />Höchste Höhenlage: 1450 m (4757 Fuß)<br />Höhengewinn: 1591 m (5220 Fuß)<br />Maximale Steigung: 21 %<br />Minimale Steigung: -18 %<br />Aufgezeichnet am: Sa. Sep 10 09:13:10 MESZ 2011<br /> <p><a href="http://andydunkel.net/assets/uploads/2011/09/DSCN2625.jpg"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCN2625" border="0" alt="DSCN2625" src="http://andydunkel.net/assets/uploads/2011/09/DSCN2625_thumb.jpg" width="644" height="484" /></a></p> <p>Weitere Bilder:</p>
+
 </p>
-</p>		
+	
+      <p><a class="btn btn-success" href="/radfahren/2011/09/18/viehscheid-bad-hindelang-radtour-zur-kseralm.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: Käseralpe, Oberstdorf, and Radtour by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/eclipse/java/2011/09/17/emf-object-is-not-contained-in-a-resource.html">EMF: Object is not contained in a resource</a>
 		</h1>
 		  <p class="small">Posted on 17 September 2011 by Andy</p>
-		  <p><p>I had a small problem <a href="http://andydunkel.net/eclipse/java/2011/08/02/save-and-load-an-emf-model-to-an-xml-file.html">saving my EMF model to XML</a>. I got the error message “The object … is not contained in a resource”.</p>
+		  <p>I had a small problem <a href="http://andydunkel.net/eclipse/java/2011/08/02/save-and-load-an-emf-model-to-an-xml-file.html">saving my EMF model to XML</a>. I got the error message “The object … is not contained in a resource”.</p>
 
 <p><img src="http://andydunkel.net/assets/uploads/2011/09/image9.png" alt="image" /></p>
 
@@ -211,16 +242,18 @@
 <p><img src="http://andydunkel.net/assets/uploads/2011/09/image10.png" alt="image" /></p>
 
 <p>Done! After that, the object was saved correctly in the XML file.</p>
-</p>		
+	
+      <p><a class="btn btn-success" href="/eclipse/java/2011/09/17/emf-object-is-not-contained-in-a-resource.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: EMF, Problem, Recource, and Save by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/java/2011/09/16/setacceleratorswt-ctrl-o-not-working.html">setAccelerator(SWT.CTRL | 'O'); //not working!</a>
 		</h1>
 		  <p class="small">Posted on 16 September 2011 by Andy</p>
-		  <p><p>In my current RCP application I had a problem that the menu key shortcuts did not work correctly:</p>
+		  <p>In my current RCP application I had a problem that the menu key shortcuts did not work correctly:</p>
 
 <p><img src="http://andydunkel.net/assets/uploads/2011/09/image8.png" alt="image" /></p>
 
@@ -241,36 +274,31 @@
 
 <p>So what is the problem? It came up, that in an RCP application the menu and the items are loaded, when the user opens it for the first time. There is not really a solution for that, just a workaround: I had to call “updateAll(true)” on the menu manager:</p>
 
-<pre><code>IWorkbenchWindow window = Workbench.getInstance().getActiveWorkbenchWindow();
+<div class="highlighter-rouge"><pre class="highlight"><code>IWorkbenchWindow window = Workbench.getInstance().getActiveWorkbenchWindow();
 
 if(window instanceof WorkbenchWindow) {
     MenuManager menuManager = ((WorkbenchWindow)window).getMenuManager();
     menuManager.updateAll(true);
 }
 </code></pre>
+</div>
 
 <p>I called this from my main application window. After that the key bindings worked correctly.</p>
-</p>		
+	
+      <p><a class="btn btn-success" href="/java/2011/09/16/setacceleratorswt-ctrl-o-not-working.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: binding, Key, menu, Problem, and RCP by Andy</p>
-		  <hr class="postdiv">
-		  
-		
-		<h1>
-		  <a href="/sonstiges/2011/09/15/parkplatzschranke-wird-aufgebaut.html">Parkplatzschranke wird aufgebaut</a>
-		</h1>
-		  <p class="small">Posted on 15 September 2011 by Andy</p>
-		  <p><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:72f4a9cb-7758-4442-aa0c-32a87e99b541" class="wlWriterEditableSmartContent"><div><object width="620" height="348"><param name="movie" value="http://www.youtube.com/v/uMVuaDpOC48?hl=en&amp;hd=1" /><embed src="http://www.youtube.com/v/uMVuaDpOC48?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="620" height="348" /></object></div></div>
-</p>		
-		  <p class="small">Tagged: Parkplatz, Schranke, and Zeitraffer by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
 
     </div>
     <div class="col-md-3">    
+            	<div class="sidebarpanel">
     	<h4>Partnerlink</h4>
     	<a target="_blank" href="http://www.amazon.de/?_encoding=UTF8&camp=1638&creative=19454&linkCode=ur2&site-redirect=de&tag=ekiwide0b-21">Einkaufen bei Amazon.de</a><img src="https://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&l=ur2&o=3" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />	
+    	</div>
     	
+    	<div class="sidebarpanel">
     	<h4>Werbung</h4>
     	
     	<div align="left">
@@ -286,69 +314,129 @@ if(window instanceof WorkbenchWindow) {
 		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		</script>
 		</div>
+		</div>
 		
+		<div class="sidebarpanel">
 		<h4>Links</h4>
     	<ul class="list-unstyled">
     		<li><a href="http://andydunkel.net/da.asc.zip">Andys PGP-Key</a></li>
     		<li><a href="https://github.com/andydunkel">Me on GitHub</a></li> 	
     		<li><a href="http://stackoverflow.com/users/285039/da">Me on StackOverflow</a></li>    			
     	</ul>
+    	</div>
     	
+    	<div class="sidebarpanel">
     	<h4>Webseiten</h4>
     	<ul class="list-unstyled">
     		<li><a href="http://www.ekiwi.de">eKiwi.de</a></li>
     		<li><a href="http://ekiwi-blog.de">eKiwi.de Blog</a></li>
     		<li><a href="http://www.da-software.de">DA-Software.de</a></li>    		
     	</ul>
+    	</div>
+
+    	<div class="sidebarpanel">
     	<h4>Categories</h4>    	
 		<section>
 		<ul id="categories" class="list-unstyled">
-		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (31)</a></li>
-<li class='category'><a href='/categories/computer/'>computer (14)</a></li>
-<li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
-<li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
-<li class='category'><a href='/categories/finanzen/'>finanzen (1)</a></li>
-<li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
-<li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
-<li class='category'><a href='/categories/gadgets/'>gadgets (26)</a></li>
-<li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
-<li class='category'><a href='/categories/html/'>html (1)</a></li>
-<li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
-<li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
-<li class='category'><a href='/categories/java/'>java (23)</a></li>
-<li class='category'><a href='/categories/jekyll/'>jekyll (2)</a></li>
-<li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
-<li class='category'><a href='/categories/kochen/'>kochen (2)</a></li>
-<li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
-<li class='category'><a href='/categories/linux/'>linux (15)</a></li>
-<li class='category'><a href='/categories/mac/'>mac (4)</a></li>
-<li class='category'><a href='/categories/meinung/'>meinung (6)</a></li>
-<li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (21)</a></li>
-<li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
-<li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
-<li class='category'><a href='/categories/osx/'>osx (1)</a></li>
-<li class='category'><a href='/categories/programmierung/'>programmierung (5)</a></li>
-<li class='category'><a href='/categories/radfahren/'>radfahren (31)</a></li>
-<li class='category'><a href='/categories/raspberry/'>raspberry (3)</a></li>
-<li class='category'><a href='/categories/repair/'>repair (2)</a></li>
-<li class='category'><a href='/categories/reparatur/'>reparatur (5)</a></li>
-<li class='category'><a href='/categories/retrotrip/'>retrotrip (1)</a></li>
-<li class='category'><a href='/categories/rezepte/'>rezepte (1)</a></li>
-<li class='category'><a href='/categories/science/'>science (3)</a></li>
-<li class='category'><a href='/categories/software/'>software (1)</a></li>
-<li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
-<li class='category'><a href='/categories/swt/'>swt (4)</a></li>
-<li class='category'><a href='/categories/tools/'>tools (24)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (22)</a></li>
-<li class='category'><a href='/categories/webdesign/'>webdesign (7)</a></li>
-<li class='category'><a href='/categories/webseiten/'>webseiten (7)</a></li>
-<li class='category'><a href='/categories/windows/'>windows (6)</a></li>
-<li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>
+
+  
+  
+     
+      <li class="category"><a href="/categories/eclipse">Eclipse <span>(26)</span></a></li>
+     
+      <li class="category"><a href="/categories/java">Java <span>(23)</span></a></li>
+     
+      <li class="category"><a href="/categories/radfahren">Radfahren <span>(31)</span></a></li>
+     
+      <li class="category"><a href="/categories/hiking">Hiking <span>(9)</span></a></li>
+     
+      <li class="category"><a href="/categories/ireland">Ireland <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/swt">Swt <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/fotos">Fotos <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/katzen">Katzen <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/tools">Tools <span>(24)</span></a></li>
+     
+      <li class="category"><a href="/categories/gadgets">Gadgets <span>(27)</span></a></li>
+     
+      <li class="category"><a href="/categories/rezepte">Rezepte <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
+     
+      <li class="category"><a href="/categories/ipad">Ipad <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/coding">Coding <span>(31)</span></a></li>
+     
+      <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/linux">Linux <span>(15)</span></a></li>
+     
+      <li class="category"><a href="/categories/windows">Windows <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/meinung">Meinung <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/mac">Mac <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/kochen">Kochen <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/reparatur">Reparatur <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/delphi">Delphi <span>(9)</span></a></li>
+     
+      <li class="category"><a href="/categories/firemonkey">Firemonkey <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/raspberry">Raspberry <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/xcode">Xcode <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/minimalismus">Minimalismus <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/webseiten">Webseiten <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/html">Html <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/osx">Osx <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/computer">Computer <span>(14)</span></a></li>
+     
+      <li class="category"><a href="/categories/webdesign">Webdesign <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/lazarus">Lazarus <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/jekyll">Jekyll <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/repair">Repair <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/ccc">Ccc <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/opensource">Opensource <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/programmierung">Programmierung <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/mobilitaet">Mobilitaet <span>(21)</span></a></li>
+     
+      <li class="category"><a href="/categories/umwelt">Umwelt <span>(22)</span></a></li>
+     
+      <li class="category"><a href="/categories/retrotrip">Retrotrip <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/finanzen">Finanzen <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/software">Software <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/hardware">Hardware <span>(1)</span></a></li>
+    
+  
+
+
 
 		</ul>
 		</section>
+		</div>
    </div>
 </div>
 
@@ -360,7 +448,7 @@ if(window instanceof WorkbenchWindow) {
   
     <a href="/page36" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 37 of 55</span>
+  <span class="page_number ">Page: 37 of 56</span>
   
     <a href="/page38" class="next">Next</a>
   

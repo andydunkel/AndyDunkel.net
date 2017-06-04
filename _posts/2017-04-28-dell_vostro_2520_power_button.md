@@ -16,9 +16,13 @@ tags:
 
 ---
 
+<img src="/assets/uploads/2017/4/laptop_logo.jpg" class="imagelogo">
+
 Der Laptop meiner Mutter machte Probleme, der Einschaltknopf ging nicht mehr, das Laptop ließ sich nur mit viel probieren und herumdrücken einschalten. Das ganze Laptop deswegen zu entsorgen war natürlich keine Option. Die gute Nachricht, es ließ sich reparieren. Es war aber auch etwas fummelige Arbeit. Dies betraf weniger das Auseinandernehmen des Laptops, als die Lötarbeiten.
 
 Wer nicht löten will, sollte einfach auf eBay nach dem Power Button Board für das Gerät suchen. Dieses ist zwar etwas teurer als der reine Schalter aber man spart sich Arbeit.
+
+<!--more-->
 
 ## Los geht es!
 

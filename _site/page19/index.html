@@ -10,7 +10,8 @@
         <link rel="stylesheet" href="/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/bootstrap-theme.min.css">		
 		<script src="/css/bootstrap.min.js"></script>
-		<link href="/css/additional.min.css" rel="stylesheet">
+		<!--<link href="/css/additional.min.css" rel="stylesheet">-->
+    <link href="/css/additional.css" rel="stylesheet">
 		<link rel="alternate" type="application/rss+xml" title="AndyDunkel.net RSS Feed" href="http://andydunkel.net/rss.xml" /> 
 		
 		<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
@@ -141,7 +142,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container maincontainer">
 
     <section>
 <h1>Willkommen</h1>
@@ -154,13 +155,58 @@
 <div class="row">
     <div class="col-md-9">
       <h2>Blog Posts</h2>
+
      
 		
-		<h1>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/delphi/firemonkey/2014/01/28/code_signing_problems_with_delphi_xe4_mavericks.html">Code signing problems with Delphi XE4 Mavericks</a>
+		</h1>
+		  <p class="small">Posted on 28 January 2014 by Andy</p>
+		  <p>Some days ago I wrote a <a href="http://andydunkel.net/delphi/firemonkey/2014/01/22/signing_delphi_xe_applications_for_osx.html">blog post</a> about signing a Firemonkey application manually with the developer ID.</p>
+
+<p>For app store applications Delphi automatically runs the code signing procedure for you and creates a PKG file. Handy!</p>
+
+<p>Since Apples new Mavericks release the code signing has changed a little bit and the command now needs an additional parameter: <code>--deep</code>. Delphi does not add the parameter, which results in an error building the application:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[PAClient Error] Error: E0264 Unable to execute '"/usr/bin/
+codesign" --en "/Users/.../daform.app/Contents/Entitlements.plist" 
+-s "Mac Developer" -f "/Users/.../daform.app"' (Error 1)
+
+daform.app code object is not signed at all
+</code></pre>
+</div>
+
+<p>OK what to do? The first problem is, that you cannot tell Delphi to add the parameter.</p>
+
+<p>So I created a workaround for that. I wrote a small C++ command line tool, which replaces the original “codesign” program. When launched is parses all the parameters from the call and adds the <code>--deep</code> option if its not present.</p>
+
+<p>Then it runs the original “codesign” tool. The project is <a href="https://github.com/andydunkel/DelphiXE4-Mavericks-Codesign-Helper">available on Github</a>.</p>
+
+<h2 id="installation">Installation</h2>
+
+<ul>
+  <li>Download the <a href="https://github.com/andydunkel/DelphiXE4-Mavericks-Codesign-Helper/blob/master/codesign?raw=true">binary</a> or compile your own version with XCode</li>
+  <li>Rename the original codesign tool in /usr/bin to codesign_original</li>
+  <li>Copy the codesign binary to /usr/bin</li>
+</ul>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/codesigning_app_store/files.png" alt="" /></p>
+
+<p>After that Delphi is able to run and build the application with code signing for the app store.</p>
+
+	
+      <p><a class="btn btn-success" href="/delphi/firemonkey/2014/01/28/code_signing_problems_with_delphi_xe4_mavericks.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: XE4, Firemonkey, and OSX by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/reparatur/2014/01/25/roomba_seitenmotor_wechseln.html">Roomba: Motor für die Seitenbürste wechseln</a>
 		</h1>
 		  <p class="small">Posted on 25 January 2014 by Andy</p>
-		  <p><p>Nachdem der Roomba (580) seit seiner <a href="http://andydunkel.net/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html">letzten Reparatur</a> problemlos lief, hat sich letzte Woche ein Kopfhörerkabel in der Seitenbürste verfangen. Dies hatte dann vermutlich den Motor überlastet, so dass dieser nur noch sporadisch lief. Na toll.</p>
+		  <p>Nachdem der Roomba (580) seit seiner <a href="http://andydunkel.net/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html">letzten Reparatur</a> problemlos lief, hat sich letzte Woche ein Kopfhörerkabel in der Seitenbürste verfangen. Dies hatte dann vermutlich den Motor überlastet, so dass dieser nur noch sporadisch lief. Na toll.</p>
 
 <p>Gute Nachricht, es gibt die passenden Ersatzteile im Internet zu bestellen (einfach nach Seitenbürstenmodul googlen) und diese sind sehr leicht zu wechseln. So kam wenige Tage später der passende Motor für knapp 40 Euro ins Haus. Nicht gerade billig, aber immerhin ist auch eine neue Seitenbürste mit dabei.</p>
 
@@ -185,16 +231,18 @@
 <p><img src="http://andydunkel.net/assets/uploads/2014/01/roomba/roomba_motor3.png" alt="" /></p>
 
 <p>Theoretisch könnte man das Modul vielleicht kostengünstiger ersetzen, wenn man an den entsprechenden Motor kommen würde. Auf dem Motor, von S.M.C. Motors, steht eine Art Typennummer: “RC500-KW/14440/DV”. Leider habe ich bei Google nicht wirklich etwas gefunden.</p>
-</p>		
+	
+      <p><a class="btn btn-success" href="/reparatur/2014/01/25/roomba_seitenmotor_wechseln.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: Roomba, Motor, and Reparatur by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
-		  <a href="/delphi/firemonkey/2014/01/22/signing_delphi_xe_applications_for_osx.html">Signing Firemonkey Applications on OSX</a>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/delphi/firemonkey/2014/01/22/sign_firemonkey_applications_on_osx.html">Signing Firemonkey Applications on OSX</a>
 		</h1>
 		  <p class="small">Posted on 22 January 2014 by Andy</p>
-		  <p><p>Some time ago I started porting my application <a href="http://da-software.de/daform/daform_start.htm">DA-FormMaker</a> for the Mac. After finishing the development, the app needs to be signed with the Developer ID. Otherwise your users will end up with some message like:</p>
+		  <p>Some time ago I started porting my application <a href="http://da-software.de/daform/daform_start.htm">DA-FormMaker</a> for the Mac. After finishing the development, the app needs to be signed with the Developer ID. Otherwise your users will end up with some message like:</p>
 
 <p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign0.png" alt="" /></p>
 
@@ -252,45 +300,52 @@
 
 <p>To do that open a console and switch to the applications folder. Sign the application with the following command:</p>
 
-<pre><code>codesign -f -s "Common Name" -v "application_name.app" --deep
+<div class="highlighter-rouge"><pre class="highlight"><code>codesign -f -s "Common Name" -v "application_name.app" --deep
 </code></pre>
+</div>
 
 <p>Enter the common name mentioned above and the application name. Here is an example:</p>
 
-<pre><code>da$ codesign -f -s "Developer ID Application: Andy Dunkel" -v "daform.app" --deep
+<div class="highlighter-rouge"><pre class="highlight"><code>da$ codesign -f -s "Developer ID Application: Andy Dunkel" -v "daform.app" --deep
 daform.app: signed bundle with Mach-O thin (i386) [daform]
 </code></pre>
+</div>
 
 <p>You can check the validity of the signing with the following command:</p>
 
-<pre><code>spctl --verbose=4 --assess --type execute DA-yourapp
+<div class="highlighter-rouge"><pre class="highlight"><code>spctl --verbose=4 --assess --type execute DA-yourapp
 </code></pre>
+</div>
 
 <p>It should return something like:</p>
 
-<pre><code>DA-FormMaker.app: accepted
+<div class="highlighter-rouge"><pre class="highlight"><code>DA-FormMaker.app: accepted
 source=Developer ID
 </code></pre>
+</div>
 
 <p>I first run into a problem. The app was not signed correctly. It told me that “my.app is damaged and can’t be opened. You should move it to the trash.”. And the check above returned:</p>
 
-<pre><code>DA-FormMaker.app: a sealed resource is missing or invalid
+<div class="highlighter-rouge"><pre class="highlight"><code>DA-FormMaker.app: a sealed resource is missing or invalid
 </code></pre>
+</div>
 
 <p>The problem? Turned out that I made a mistake and had other files in the “MacOS” folder of the bundle. I moved those to “Resources” and everything was OK.</p>
 
 <p><strong>Congratulations: After that your app is signed with your developer id!</strong></p>
 
-</p>		
+	
+      <p><a class="btn btn-success" href="/delphi/firemonkey/2014/01/22/sign_firemonkey_applications_on_osx.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: OSX, Signing, Firemonkey, and Delphi by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
-		  <a href="/eclipse/2014/01/16/branding_of_eclipse_applications.html">Branding of Eclipse/RCP Applications</a>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
+		  <a href="/eclipse/2014/01/16/branding_of_eclipse_rcp_applications.html">Branding of Eclipse/RCP Applications</a>
 		</h1>
 		  <p class="small">Posted on 16 January 2014 by Andy</p>
-		  <p><h2 id="introduction">Introduction</h2>
+		  <h2 id="introduction">Introduction</h2>
 
 <p>In this document I want to describe some ideas how branding of an Eclipse RCP application can be implemenented. Since I never done this before, there might be better ways to do that, so feel free to contact me.</p>
 
@@ -318,7 +373,7 @@ source=Developer ID
 
 <p>The application code resides in “com.da.branding.example”. In addition we create 3 more plugins, one generic branding plugin, which is the “gateway” to the specific branding plugins. If we look at the dependencies, we can see, that our application only depends on the branding plugin:</p>
 
-<p><img src="packages.png" alt="" /></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/packages.png" alt="" /></p>
 
 <p>This allows us to add new brandings, as well as removing brandings, without having our main application depending on a specific branding. The main branding plugin contains the branding logic, the specific plugins mostly contain the spefific branding information, like images, texts etc:</p>
 
@@ -332,7 +387,7 @@ source=Developer ID
 
 <p>A lot of stuff can be done in the product configuration, like splash, about and icons. So we create a product configuration for each output software. The first step is to create an extension point for the products in the specific branding plugins:</p>
 
-<p><img src="product_plugin.png" alt="" /></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/product_plugin.png" alt="" /></p>
 
 <p><em>As you can see, there is also a specific splash screen in each plugin.</em></p>
 
@@ -364,24 +419,27 @@ source=Developer ID
 
 <p>When we create the singleton, we have to check which product configuration we are running:</p>
 
-<pre><code>String product = Platform.getProduct().getId();
+<div class="highlighter-rouge"><pre class="highlight"><code>String product = Platform.getProduct().getId();
 </code></pre>
+</div>
 
 <p>We store that information in the Branding object. By that we now can distinguish the current software we are running, for example to display different images, like that:</p>
 
-<pre><code>public Image getImage() {		
+<div class="highlighter-rouge"><pre class="highlight"><code>public Image getImage() {		
 	return ResourceManager.getPluginImage(_brandingPlugin, "res/cat.png");
 }	
 </code></pre>
+</div>
 
 <p>_brandingPlugin contains the name of the specific branding plugin. We can use the same mechanism for files, strings and other things. Even more complex things like returning a perspective. Goal is to implement the differences for each application here.</p>
 
 <p>In our main source code we just call the branding class where needed:</p>
 
-<pre><code>labelImage.setImage(Branding.getInstance().getImage());
+<div class="highlighter-rouge"><pre class="highlight"><code>labelImage.setImage(Branding.getInstance().getImage());
 
 loadFile(Branding.getInstance().getFile());
 </code></pre>
+</div>
 
 <p>If we add a new branding, no change in the main applications source code is neccessary.</p>
 
@@ -402,63 +460,42 @@ loadFile(Branding.getInstance().getFile());
 <h2 id="download">Download</h2>
 
 <p>The source code of the sample application can be <a href="https://github.com/andydunkel/EclipseBrandingExample">found here</a>.</p>
-</p>		
+	
+      <p><a class="btn btn-success" href="/eclipse/2014/01/16/branding_of_eclipse_rcp_applications.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: Eclipse, RCP, Branding, and Product by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
-		<h1>
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/coding/tools/2014/01/14/checkout_git_repository_into_existing_folder.html">Checkout GIT repository into existing folder</a>
 		</h1>
 		  <p class="small">Posted on 14 January 2014 by Andy</p>
-		  <p><p>I usually create my project first, tinker around and then at some point I want to use version control, like GIT. So I create the repository and want to check it out and merge it with my existing project folder.</p>
+		  <p>I usually create my project first, tinker around and then at some point I want to use version control, like GIT. So I create the repository and want to check it out and merge it with my existing project folder.</p>
 
 <p>This can be done with the following commands:</p>
 
-<pre><code>git init
+<div class="highlighter-rouge"><pre class="highlight"><code>git init
 git remote add origin PATH_TO_REPOSITORY
 git fetch
 git checkout -t origin/master
 </code></pre>
-</p>		
+</div>
+	
+      <p><a class="btn btn-success" href="/coding/tools/2014/01/14/checkout_git_repository_into_existing_folder.html">Weiterlesen / Read more</a></p>
+      <br/>
 		  <p class="small">Tagged: GIT by Andy</p>
-		  <hr class="postdiv">
-		  
-		
-		<h1>
-		  <a href="/coding/2014/01/10/php-debugging-vm.html">Virtual Machine to debug and develop PHP</a>
-		</h1>
-		  <p class="small">Posted on 10 January 2014 by Andy</p>
-		  <p><p>I used PHP a lot in the past for our websites. I think its not the best programming language, but its simple enough to get things done very quickly. And it runs on the most servers of web hosters.</p>
-
-<p>Today most likely I would choose another language, but I still have to maintain and debug PHP scripts once in a while.</p>
-
-<p>Usually its very painfull, since most of the times I don’t have a running webserver on my local machine. Just makes no sense to have a webserver running all the times. Not to mention a running instance of MySQL.</p>
-
-<p>So I ended up using a simple text editor and uploading the files to my webserver for testing. 
-Of course without debugger thats a very painfull and slow process. I am still puzzled how many PHP developers use <code>echo</code> commands to debug there code.</p>
-
-<p>In the past I used a commercial Zend Studio license. I still have that running on my Mac. However I also wanted a simple solution I can use easily on my Linux notebook.</p>
-
-<p>So I <a href="/projects/php-debugging-vm/index.html">created a virtual machine for PHP debugging</a>. It runs an Apache webserver with, MySQL + phpMyAdmin and Netbeans as IDE. Xdebug is configured in PHP.</p>
-
-<p>I am publishing it here with the hope it might be useful for other:</p>
-
-<p><img src="/projects/php-debugging-vm/vm1_small.png" alt="image" /></p>
-
-<p><a href="/projects/php-debugging-vm/index.html">Click here to get to the project page.</a></p>
-
-</p>		
-		  <p class="small">Tagged: PHP and Projects by Andy</p>
-		  <hr class="postdiv">
-		  
+		</div>  
 		
 
     </div>
     <div class="col-md-3">    
+            	<div class="sidebarpanel">
     	<h4>Partnerlink</h4>
     	<a target="_blank" href="http://www.amazon.de/?_encoding=UTF8&camp=1638&creative=19454&linkCode=ur2&site-redirect=de&tag=ekiwide0b-21">Einkaufen bei Amazon.de</a><img src="https://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&l=ur2&o=3" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />	
+    	</div>
     	
+    	<div class="sidebarpanel">
     	<h4>Werbung</h4>
     	
     	<div align="left">
@@ -474,69 +511,129 @@ Of course without debugger thats a very painfull and slow process. I am still pu
 		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		</script>
 		</div>
+		</div>
 		
+		<div class="sidebarpanel">
 		<h4>Links</h4>
     	<ul class="list-unstyled">
     		<li><a href="http://andydunkel.net/da.asc.zip">Andys PGP-Key</a></li>
     		<li><a href="https://github.com/andydunkel">Me on GitHub</a></li> 	
     		<li><a href="http://stackoverflow.com/users/285039/da">Me on StackOverflow</a></li>    			
     	</ul>
+    	</div>
     	
+    	<div class="sidebarpanel">
     	<h4>Webseiten</h4>
     	<ul class="list-unstyled">
     		<li><a href="http://www.ekiwi.de">eKiwi.de</a></li>
     		<li><a href="http://ekiwi-blog.de">eKiwi.de Blog</a></li>
     		<li><a href="http://www.da-software.de">DA-Software.de</a></li>    		
     	</ul>
+    	</div>
+
+    	<div class="sidebarpanel">
     	<h4>Categories</h4>    	
 		<section>
 		<ul id="categories" class="list-unstyled">
-		<li class='category'><a href='/categories/ccc/'>ccc (1)</a></li>
-<li class='category'><a href='/categories/coding/'>coding (31)</a></li>
-<li class='category'><a href='/categories/computer/'>computer (14)</a></li>
-<li class='category'><a href='/categories/delphi/'>delphi (9)</a></li>
-<li class='category'><a href='/categories/eclipse/'>eclipse (26)</a></li>
-<li class='category'><a href='/categories/finanzen/'>finanzen (1)</a></li>
-<li class='category'><a href='/categories/firemonkey/'>firemonkey (3)</a></li>
-<li class='category'><a href='/categories/fotos/'>fotos (5)</a></li>
-<li class='category'><a href='/categories/gadgets/'>gadgets (26)</a></li>
-<li class='category'><a href='/categories/hiking/'>hiking (9)</a></li>
-<li class='category'><a href='/categories/html/'>html (1)</a></li>
-<li class='category'><a href='/categories/ipad/'>ipad (6)</a></li>
-<li class='category'><a href='/categories/ireland/'>ireland (7)</a></li>
-<li class='category'><a href='/categories/java/'>java (23)</a></li>
-<li class='category'><a href='/categories/jekyll/'>jekyll (2)</a></li>
-<li class='category'><a href='/categories/katzen/'>katzen (4)</a></li>
-<li class='category'><a href='/categories/kochen/'>kochen (2)</a></li>
-<li class='category'><a href='/categories/lazarus/'>lazarus (2)</a></li>
-<li class='category'><a href='/categories/linux/'>linux (15)</a></li>
-<li class='category'><a href='/categories/mac/'>mac (4)</a></li>
-<li class='category'><a href='/categories/meinung/'>meinung (6)</a></li>
-<li class='category'><a href='/categories/minimalismus/'>minimalismus (1)</a></li>
-<li class='category'><a href='/categories/mobilitaet/'>mobilitaet (21)</a></li>
-<li class='category'><a href='/categories/objectivec/'>objectivec (1)</a></li>
-<li class='category'><a href='/categories/opensource/'>opensource (1)</a></li>
-<li class='category'><a href='/categories/osx/'>osx (1)</a></li>
-<li class='category'><a href='/categories/programmierung/'>programmierung (5)</a></li>
-<li class='category'><a href='/categories/radfahren/'>radfahren (31)</a></li>
-<li class='category'><a href='/categories/raspberry/'>raspberry (3)</a></li>
-<li class='category'><a href='/categories/repair/'>repair (2)</a></li>
-<li class='category'><a href='/categories/reparatur/'>reparatur (5)</a></li>
-<li class='category'><a href='/categories/retrotrip/'>retrotrip (1)</a></li>
-<li class='category'><a href='/categories/rezepte/'>rezepte (1)</a></li>
-<li class='category'><a href='/categories/science/'>science (3)</a></li>
-<li class='category'><a href='/categories/software/'>software (1)</a></li>
-<li class='category'><a href='/categories/sonstiges/'>sonstiges (43)</a></li>
-<li class='category'><a href='/categories/swt/'>swt (4)</a></li>
-<li class='category'><a href='/categories/tools/'>tools (24)</a></li>
-<li class='category'><a href='/categories/umwelt/'>umwelt (22)</a></li>
-<li class='category'><a href='/categories/webdesign/'>webdesign (7)</a></li>
-<li class='category'><a href='/categories/webseiten/'>webseiten (7)</a></li>
-<li class='category'><a href='/categories/windows/'>windows (6)</a></li>
-<li class='category'><a href='/categories/xcode/'>xcode (1)</a></li>
+
+  
+  
+     
+      <li class="category"><a href="/categories/eclipse">Eclipse <span>(26)</span></a></li>
+     
+      <li class="category"><a href="/categories/java">Java <span>(23)</span></a></li>
+     
+      <li class="category"><a href="/categories/radfahren">Radfahren <span>(31)</span></a></li>
+     
+      <li class="category"><a href="/categories/hiking">Hiking <span>(9)</span></a></li>
+     
+      <li class="category"><a href="/categories/ireland">Ireland <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/swt">Swt <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/fotos">Fotos <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/katzen">Katzen <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/tools">Tools <span>(24)</span></a></li>
+     
+      <li class="category"><a href="/categories/gadgets">Gadgets <span>(27)</span></a></li>
+     
+      <li class="category"><a href="/categories/rezepte">Rezepte <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
+     
+      <li class="category"><a href="/categories/ipad">Ipad <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/coding">Coding <span>(31)</span></a></li>
+     
+      <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/linux">Linux <span>(15)</span></a></li>
+     
+      <li class="category"><a href="/categories/windows">Windows <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/meinung">Meinung <span>(6)</span></a></li>
+     
+      <li class="category"><a href="/categories/mac">Mac <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/kochen">Kochen <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/reparatur">Reparatur <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/delphi">Delphi <span>(9)</span></a></li>
+     
+      <li class="category"><a href="/categories/firemonkey">Firemonkey <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/raspberry">Raspberry <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/xcode">Xcode <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/minimalismus">Minimalismus <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/webseiten">Webseiten <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/html">Html <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/osx">Osx <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/computer">Computer <span>(14)</span></a></li>
+     
+      <li class="category"><a href="/categories/webdesign">Webdesign <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/lazarus">Lazarus <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/jekyll">Jekyll <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/repair">Repair <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/ccc">Ccc <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/opensource">Opensource <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/programmierung">Programmierung <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/mobilitaet">Mobilitaet <span>(21)</span></a></li>
+     
+      <li class="category"><a href="/categories/umwelt">Umwelt <span>(22)</span></a></li>
+     
+      <li class="category"><a href="/categories/retrotrip">Retrotrip <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/finanzen">Finanzen <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/software">Software <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/hardware">Hardware <span>(1)</span></a></li>
+    
+  
+
+
 
 		</ul>
 		</section>
+		</div>
    </div>
 </div>
 
@@ -548,7 +645,7 @@ Of course without debugger thats a very painfull and slow process. I am still pu
   
     <a href="/page18" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 19 of 55</span>
+  <span class="page_number ">Page: 19 of 56</span>
   
     <a href="/page20" class="next">Next</a>
   
