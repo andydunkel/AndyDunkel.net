@@ -3,7 +3,7 @@ author: admin
 comments: true
 date: 2016-08-21 17:00:00+00:00
 layout: post
-slug: Dell_U2515H_monitor_aufloesung
+slug: dell_monitor_aufloesung
 title: 'Dell U2515H  Monitor mit voller Auflösung betreiben'
 categories:
 - Windows
