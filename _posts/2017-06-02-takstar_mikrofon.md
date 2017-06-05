@@ -4,7 +4,7 @@ comments: true
 date: 2017-06-01 17:00:00+00:00
 layout: post
 slug: takstar_mikrofon
-title: 'Takstar Mikrophon für Nikon D3300'
+title: 'Takstar Mikrofon für Nikon D3300'
 categories:
 - Hardware
 - Gadgets
