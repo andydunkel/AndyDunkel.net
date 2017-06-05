@@ -160,6 +160,32 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/coding/2012/03/21/how-to-add-files-recursively-to-innosetup.html">How to add files recursively to InnoSetup</a>
+		</h1>
+		  <p class="small">Posted on 21 March 2012 by Andy</p>
+		  <p>Especially with my current RCP applications I had the problem how to add all these files to the installer.</p>
+
+<p>Here is an example how to add a complete folder recursively to your InnoSetup:</p>
+
+<blockquote>
+  <p>[Files]<br />
+DestDir: {app}; Source: ..\files*; Flags: recursesubdirs</p>
+</blockquote>
+
+<p>Another hint, if you want to delete the application folder after uninstall (even if there are other files that are not uninstalled by default), add this to your setup:</p>
+
+<blockquote>
+  <p>[UninstallDelete]<br />
+Name: {app}; Type: filesandordirs</p>
+</blockquote>
+	
+      <p><a class="btn btn-success" href="/coding/2012/03/21/how-to-add-files-recursively-to-innosetup.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: InnoSetup by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html">Roomba Fehler 9–Reparaturanleitung</a>
 		</h1>
 		  <p class="small">Posted on 11 March 2012 by Andy</p>
@@ -639,19 +665,6 @@ auch ich (Ingenieur) habe mich nach ausführlichem Studium der Berichte an die R
 		  <p class="small">Tagged: 9, error, Fehler 9, nine, and roomba by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/sonstiges/2012/02/02/doku-hackerportrait-einer-gegenkultur.html">Doku: Hacker–Portrait einer Gegenkultur</a>
-		</h1>
-		  <p class="small">Posted on 02 February 2012 by Andy</p>
-		  <p>Eine kleine und interessante Dokumentation über die Anfänge des CCC und Hackern im Allgemeinen.</p>
-<p> <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:4da15fc2-1716-425a-88ef-25685d68ece6" class="wlWriterEditableSmartContent"><div><object width="651" height="365"><param name="movie" value="http://www.youtube.com/v/VAypNOTczfI?hl=en&amp;hd=1" />&lt;/param&gt;<embed src="http://www.youtube.com/v/VAypNOTczfI?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="651" height="365" />&lt;/embed&gt;</object></div></div></p>
-	
-      <p><a class="btn btn-success" href="/sonstiges/2012/02/02/doku-hackerportrait-einer-gegenkultur.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: Hacker by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -736,7 +749,7 @@ auch ich (Ingenieur) habe mich nach ausführlichem Studium der Berichte an die R
      
       <li class="category"><a href="/categories/linux">Linux <span>(15)</span></a></li>
      
-      <li class="category"><a href="/categories/windows">Windows <span>(6)</span></a></li>
+      <li class="category"><a href="/categories/windows">Windows <span>(7)</span></a></li>
      
       <li class="category"><a href="/categories/meinung">Meinung <span>(6)</span></a></li>
      
@@ -788,7 +801,7 @@ auch ich (Ingenieur) habe mich nach ausführlichem Studium der Berichte an die R
      
       <li class="category"><a href="/categories/finanzen">Finanzen <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/software">Software <span>(1)</span></a></li>
+      <li class="category"><a href="/categories/software">Software <span>(2)</span></a></li>
      
       <li class="category"><a href="/categories/hardware">Hardware <span>(1)</span></a></li>
     

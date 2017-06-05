@@ -160,6 +160,39 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/coding/tools/2014/02/04/check_code_signing_of_applications_on_osx.html">Check code signing of applications on OSX</a>
+		</h1>
+		  <p class="small">Posted on 04 February 2014 by Andy</p>
+		  <p>The last days I was busy signing my Delphi applications on my Mac. One version was signed with my Developer ID, the other one with the third party developer ID for the Mac App Store.</p>
+
+<p>Maybe its all very easy if you use XCode for that, but I had my issues with Delphi, where I had to do many steps manually on the command line.</p>
+
+<p>After the signing you usually want to check if the signature of the application is correct.</p>
+
+<p>You can of course do that on the command line (if you have XCode installed):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>codesign -dv /Applications/Awesome.app
+</code></pre>
+</div>
+
+<p>but I also found a tool with a neat GUI: <a href="http://brockerhoff.net/RB/AppCheckerLite/">RB App Checker</a>.</p>
+
+<p>Its available for free on the <a href="https://itunes.apple.com/us/app/rb-app-checker-lite/id519421117?mt=12">Mac App Store</a>.</p>
+
+<p>You just drag and drop the application on the tool and it shows you very detailed information of the signature.</p>
+
+<p>It also checks entitlements, application receipts and requirements.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/02/rbappchecker/1.png" alt="" /></p>
+
+	
+      <p><a class="btn btn-success" href="/coding/tools/2014/02/04/check_code_signing_of_applications_on_osx.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: Code Signing and OSX by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/delphi/firemonkey/2014/01/28/code_signing_problems_with_delphi_xe4_and_mavericks.html">Code signing problems with Delphi XE4 Mavericks</a>
 		</h1>
 		  <p class="small">Posted on 28 January 2014 by Andy</p>
@@ -466,27 +499,6 @@ loadFile(Branding.getInstance().getFile());
 		  <p class="small">Tagged: Eclipse, RCP, Branding, and Product by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/coding/tools/2014/01/14/checkout_git_repository_into_existing_folder.html">Checkout GIT repository into existing folder</a>
-		</h1>
-		  <p class="small">Posted on 14 January 2014 by Andy</p>
-		  <p>I usually create my project first, tinker around and then at some point I want to use version control, like GIT. So I create the repository and want to check it out and merge it with my existing project folder.</p>
-
-<p>This can be done with the following commands:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>git init
-git remote add origin PATH_TO_REPOSITORY
-git fetch
-git checkout -t origin/master
-</code></pre>
-</div>
-	
-      <p><a class="btn btn-success" href="/coding/tools/2014/01/14/checkout_git_repository_into_existing_folder.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: GIT by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -571,7 +583,7 @@ git checkout -t origin/master
      
       <li class="category"><a href="/categories/linux">Linux <span>(15)</span></a></li>
      
-      <li class="category"><a href="/categories/windows">Windows <span>(6)</span></a></li>
+      <li class="category"><a href="/categories/windows">Windows <span>(7)</span></a></li>
      
       <li class="category"><a href="/categories/meinung">Meinung <span>(6)</span></a></li>
      
@@ -623,7 +635,7 @@ git checkout -t origin/master
      
       <li class="category"><a href="/categories/finanzen">Finanzen <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/software">Software <span>(1)</span></a></li>
+      <li class="category"><a href="/categories/software">Software <span>(2)</span></a></li>
      
       <li class="category"><a href="/categories/hardware">Hardware <span>(1)</span></a></li>
     

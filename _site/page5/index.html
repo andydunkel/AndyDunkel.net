@@ -160,6 +160,34 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/linux/computer/2017/01/11/virtualbox_failed_to_open_directory_shared_folders.html">Virtual Box - "Failed to open directory" bei Shared Foldern unter Linux</a>
+		</h1>
+		  <p class="small">Posted on 11 January 2017 by Andy</p>
+		  <p>Ich habe ein Linux in VirtualBox am Laufen. Für den Datenaustausch habe ich einen “Shared Folder” bzw. einen “Gemeinsamen Ordner” definiert.</p>
+
+<p>Dieser taucht auch im Dateimanager unter Linux auf, allerdings kam beim Zugriff nur diese Meldung:</p>
+
+<p><img src="/assets/uploads/2017/1/virtualbox.png" alt="" /></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Failed to open directory - Permission denied
+</code></pre>
+</div>
+
+<p>Was tun? Die Lösung zu diesem Berechtigungsproblem ist, den eigenen Benutzer der Gruppe <kbd>vboxsf</kbd> hinzuzufügen:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo usermod -aG vboxsf $(whoami)
+</code></pre>
+</div>
+
+<p>Anschließend muss man die virtuelle Maschine noch neu starten. Danach lief der Zugriff ohne Probleme.</p>
+	
+      <p><a class="btn btn-success" href="/linux/computer/2017/01/11/virtualbox_failed_to_open_directory_shared_folders.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: VirtualBox, Linux, and Windows by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/mobilitaet/umwelt/2017/01/08/mobilitaet_dezember_2016.html">Mobilität Dezember 2016</a>
 		</h1>
 		  <p class="small">Posted on 08 January 2017 by Andy</p>
@@ -342,77 +370,6 @@ Cannot create /is/htdocs/wp_koko/.config/mc directory
 		  <p class="small">Tagged: Mobilitaet and Umwelt by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope.html">LetsEncrypt Zertifikat bei Hosteurope eingerichtet</a>
-		</h1>
-		  <p class="small">Posted on 25 November 2016 by Andy</p>
-		  <p><a href="https://letsencrypt.org/">LetsEncrypt</a> bietet nun schon seit einiger Zeit kostenlose SSL-Zertfikate an. Diese kann man auf dem eigenen Server relativ problemlos einrichten und konfigurieren. Bei normalem Webspace sieht es leider anders aus. Ein paar Webhoster unterstützen es mittlerweile. Allerdings gibt es da auch einen Interessenkonflikt, da die Anbieter gerne auch selbst SSL-Zertifikate verkaufen.</p>
-
-<p>So auch bei <a href="https://www.hosteurope.de">Hosteurope</a>. Direkte Unterstützung gibt es nicht und auch über den SSH-Zugang kann man es auch nicht installieren und konfigurieren. Ein SSL-Zertifikat kostet je nach Abstufung mindestens 2,49 Euro im Monat. Dieses ist dann allerdings nur für eine Domain gültig. Mehrere Domains und Subdomains gehen ins Geld.</p>
-
-<p>Wir haben einen ganzen Zoo an Domains und Subdomains. Allerdings ist es bei den größeren Webspacepaketen möglich ein eigenes Zertifikat hochzuladen.</p>
-
-<p>Dies ist auch der Ansatzpunkt wie man LetsEncrypt-Zertifikate nutzen kann.</p>
-
-<h2 id="einrichtung">Einrichtung</h2>
-
-<p>Als Clients für die Generierung funktionieren nur Web-Clients. Ich habe hierfür <a href="https://zerossl.com/free-ssl/#crt">ZeroSLL</a> genutzt. Der Dienst ist leicht bedienbar und generiert alle benötigten Dateien im Prozess.</p>
-
-<p>Im ersten Schritt generiert man den Account-Key und die CSR-Datei (Certificate Signing Request).</p>
-
-<p><img src="/assets/uploads/2016/11/he_ssl1.png" alt="" /></p>
-
-<p>Die CSR enthält alle Domains für die das Zertfikat gelten soll. Dies sollte alle Domains und auch Subdomains umfassen. Für jede Domain sollte auch die Subdomain www. mit angegeben werden.</p>
-
-<p>Natürlich wird das Zertifikat nicht einfach so ausgestellt. Es muss noch überprüft werden, ob man wirklich Inhaber der Domain ist. Dies geht auf zwei Arten: HTTP-Überprüfung oder DNS-Überprüfung. Bei der DNS-Überprüfung fügt man einen DNS-TXT-Eintrag der jeweiligen Domain hinzu. Dieser enthält einen “Schlüssel” anhand dessen das Eigentum überprüft wird.</p>
-
-<p>Ich habe mich für die Überprüfung mittels HTTP entschieden. Hierzu legt man eine Datei mit vom Wizard vorgegebenen Inhalt auf dem Webspace in einem speziellen Verzeichnis an.</p>
-
-<p><img src="/assets/uploads/2016/11/he_ssl3.png" alt="" /></p>
-
-<p><img src="/assets/uploads/2016/11/he_ssl_http.png" alt="" /></p>
-
-<p>Bei vielen Domains und Subdomains artet das recht schnell in viel Arbeit aus. Für jede Domain und Subdomain muss eine entsprechende Datei mit Inhalt angelegt werden. Dieses wird anschließend überprüft. Passt alles, werden die Zertifikate erzeugt.</p>
-
-<p>Diese kann man anschließend bei Hosteurope hochladen:</p>
-
-<p><img src="/assets/uploads/2016/11/he_ssl2.png" alt="" /></p>
-
-<p>Nach wenigen Minuten ist die Einstellung übernommen und die Seite ist mit https:// und dem LetsEncrypt-Zertifikat erreichbar. So weit so gut.</p>
-
-<p><img src="/assets/uploads/2016/11/he_ssl4.png" alt="" /></p>
-
-<h2 id="fazit-und-probleme">Fazit und Probleme</h2>
-
-<p>Obwohl technisch alles funktioniert gibt es doch ein paar Nachteile:</p>
-
-<ol>
-  <li>
-    <p>Man kann nur ein Zertifikat bei Hosteurope hochladen. Kommt eine Domain oder Subdomain hinzu, muss man den Prozess erneut durchführen. Zeitaufwändig.</p>
-  </li>
-  <li>
-    <p>SSL wird für alle Domains und Subdomains aktiviert. Hierbei spielt es keine Rolle, ob man nur eine bestimmte Domain mit SSL ausstatten wollte. Auch die anderen sind nun unter https:// erreichbar. Da das Zertifikat dann nicht passt, mit entsprechender Warnmeldung vom Browser. Deswegen sollte man gleich für alle Domains und Subdomains das Zertifikat mit erstellen.</p>
-  </li>
-  <li>
-    <p>Das Zertifikat ist 90 Tage gültig. Nach Ablauf der Zeit muss man also erneut tätig werden. Ich habe diesen Prozess noch nicht durchgeführt und kann nur hoffen, dass zumindest die Arbeit des Anlegens der Überprüfungsdateien erspart bleibt. Am Besten setzt man sich gleich einen Termin im Kalender dafür. Ansonsten bekommen die Benutzer die Warnmeldung eines abgelaufenen Zertifikats.</p>
-  </li>
-</ol>
-
-<p>Insgesamt kann ich nur hoffen, dass der Konkurrenzdruck zunimmt und Hosteurope irgendwann eine Unterstützung für LetsEncrypt direkt einbaut. Ob das so schnell passiert, wohl eher nicht, da man ja selbst SSL-Zertifikate anbietet.</p>
-
-<h3 id="update-29012017">Update 29.01.2017</h3>
-
-<p>Inzwischen hat Hosteurope die Situation geringfügig verbessert. Neben dem globalen Template, kann man jetzt für jede Domain ein eigenes Zertifikat hochladen. Allerdings ist das erste Zertifikat immer noch global und für alle Domains gültig. In der Praxis hat dies zumindest den Vorteil, dass man nun die Zertifikate unabhängig voneinander erstellen und hochladen kann.</p>
-
-<p><img src="/assets/uploads/2016/11/he_ssl_update.png" alt="" /></p>
-
-	
-      <p><a class="btn btn-success" href="/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: LetsEncrypt and SSL by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -497,7 +454,7 @@ Cannot create /is/htdocs/wp_koko/.config/mc directory
      
       <li class="category"><a href="/categories/linux">Linux <span>(15)</span></a></li>
      
-      <li class="category"><a href="/categories/windows">Windows <span>(6)</span></a></li>
+      <li class="category"><a href="/categories/windows">Windows <span>(7)</span></a></li>
      
       <li class="category"><a href="/categories/meinung">Meinung <span>(6)</span></a></li>
      
@@ -549,7 +506,7 @@ Cannot create /is/htdocs/wp_koko/.config/mc directory
      
       <li class="category"><a href="/categories/finanzen">Finanzen <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/software">Software <span>(1)</span></a></li>
+      <li class="category"><a href="/categories/software">Software <span>(2)</span></a></li>
      
       <li class="category"><a href="/categories/hardware">Hardware <span>(1)</span></a></li>
     
