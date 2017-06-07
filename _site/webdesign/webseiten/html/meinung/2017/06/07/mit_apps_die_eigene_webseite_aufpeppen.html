@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Mit Apps die eigene Webseite aufpeppen</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="/css/syntax.min.css">
+        <script src="/css/jquery.min.js"></script>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/bootstrap-theme.min.css">		
+		<script src="/css/bootstrap.min.js"></script>
+		<!--<link href="/css/additional.min.css" rel="stylesheet">-->
+    <link href="/css/additional.css" rel="stylesheet">
+		<link rel="alternate" type="application/rss+xml" title="AndyDunkel.net RSS Feed" href="http://andydunkel.net/rss.xml" /> 
+		
+		<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#edeff5",
+          "text": "#838391"
+        },
+        "button": {
+          "background": "#4b81e8"
+        }
+      },
+      "theme": "edgeless",
+      "content": {
+        "message": "Wir verwenden Cookies auf der Website, um Ihren Besuch effizienter zu machen und Ihnen Benutzerfreundlichkeit bieten zu können.",
+        "dismiss": "OK",
+        "link": "Informationen",
+        "href": "http://ekiwi.de/datenschutzerklaerung.htm"
+      }
+    })});
+    </script>
+		<!-- End Cookie Consent plugin -->
+		
+    </head>
+    <body>
+    
+    <div class="container">
+    	<div class="col-md-4">
+	    	<a href="/index.html">
+    			<img src="/assets/logo.png" alt="logo" width="300" height="113">
+    		</a>
+    	</div>
+    	<div class="col-md-8" style="padding:20px">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- eKiwiTop -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:728px;height:90px"
+			     data-ad-client="ca-pub-1137550895446814"
+			     data-ad-slot="2555817477"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script> 		
+    	</div>
+    </div>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default">
+      <div class="container">
+	     
+        <div class="navbar-header">	
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+       
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/blog.html">Blog</a></li>
+            
+            <li class="dropdown">
+              <a href="/projects.html" class="dropdown-toggle" data-toggle="dropdown">Projekte <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+	            <li class="dropdown-header">Webseiten</li>
+                <li><a href="http://ekiwi.de">eKiwi.de</a></li>
+                <li><a href="http://acapio.de">Acapio.de</a></li>
+                <li><a href="http://da-software.de">DA-Software.de</a></li>
+                <li><a href="http://eltexto.net">ElTexto</a></li>
+                <li class="divider"></li>
+	               <li class="dropdown-header">Blogs</li>
+				        <li><a href="http://ekiwi-blog.de">eKiwi Blog</a></li>				
+                <li class="divider"></li>
+                <li class="dropdown-header">Sonstiges</li>
+                <li><a href="/documents.html">Dokumente</a></li>
+               </ul>
+            </li>           
+            
+            <li class="dropdown">
+              <a href="/software.html" class="dropdown-toggle" data-toggle="dropdown">Software <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+	            <li class="dropdown-header">OpenSource</li>  
+	            <li><a href="https://github.com/andydunkel?tab=repositories">GitHub Projekte</a></li>
+	            <li class="divider"></li>
+	            <li class="dropdown-header">Kommerzielle Software</li>
+	            <li><a href="http://eltexto.net">El Texto</a></li>
+                <li><a href="http://da-software.de/daform/daform_start.htm">DA-FormMaker</a></li>
+                <li><a href="http://da-software.de/dabestell/index.htm">DA-BestellFormular</a></li>
+                <li><a href="http://da-software.de/daquiz/index.htm">DA-QuizMaker</a></li>
+                <li><a href="http://da-software.de/dahtaccess/dahtaccess_start.htm">DA-HtAccessManager</a></li>                
+              </ul>
+            </li>
+            
+            <li class="dropdown">
+              <a href="/guides/index.html" class="dropdown-toggle" data-toggle="dropdown">Anleitungen / Tutorials <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+	            <li><a href="/guides/repair/index.html">Reparaturanleitungen</a></li>
+              <li><a href="/guides/software/index.html">Software</a></li>              
+              </ul>
+            </li>
+                        
+            
+            <li><a href="/about.html">Persönliches</a></li>
+            <li><a href="/contact.html">Kontakt</a></li>            
+            <li><a href="/imprint.html">Impressum</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+          	<li>
+          	<form action="http://www.google.de" id="cse-search-box" class="navbar-form navbar-left" role="search">
+			  <div class="form-group">
+			    <input type="hidden" name="cx" value="partner-pub-1137550895446814:8857383477" />
+			    <input type="hidden" name="ie" value="UTF-8" />
+			    <input type="text" name="q" size="20" class="form-control"/>
+			  </div>
+			    <input type="submit" name="sa" value="Search" class="btn btn-default"/>			
+			  </form>
+				<script type="text/javascript" src="http://www.google.de/coop/cse/brand?form=cse-search-box&amp;lang=de"></script>
+          	</li>            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container maincontainer">
+
+        <div class="row">
+    	<div class="col-md-9"> 
+    	<div class="postpost">
+
+			<h2>Mit Apps die eigene Webseite aufpeppen</h2>
+			<p class="meta">07 Jun 2017</p>
+			
+			<div class="post">
+			<p><img src="/assets/uploads/2017/6/app_logo.jpg" class="imagelogo" /></p>
+
+<p>Sagt man Apps, meint man meist eine Software für den mobilen Begleiter, dem Smartphone, und Apple wirbt mit einem (mittlerweile geschützten, und deswegen hier nicht wortwörtlich genannten) Slogan, dass es für alles eine App geben würde.</p>
+
+<p>Mittlerweile hat sich der Begriff aber auch darüber hinaus etabliert. Auf dem Computer hat man jetzt ebenfalls Apps, statt Anwendungen. Geht auch leichter über die Lippen.</p>
+
+<p>Auch bei Webseiten halten Apps Einzug. So neu ist das nicht, Wordpress und andere Systeme nennen es Plugins oder Widgets. <strong>Doch wovon reden wir eigentlich?</strong> Eine normale Webseite enthält meist statische Elemente, das Restaurant hat Informationen zu seinen Speisen, Öffungszeiten, Kontaktinfos und ein paar Fotos bereit. Das ist schonmal gut, wer nicht im Internet ist, verliert viele potentielle Kunden. Deswegen gehört die eigene Webseite zur Grundausstattung für jedes Business.</p>
+
+<!--more-->
+
+<h2 id="apps-für-webseiten">Apps für Webseiten</h2>
+
+<p>Mit entsprechenden Apps kann man nun etwas mehr Dienste und Komfort anbieten. Statt der schnöden E-Mail-Adresse, stellt man ein fertiges Kontaktformular zur Verfügung. Das Restaurant bietet die Möglichkeit einer Online-Reservierung an. Ein Kalender informiert über Live-Events, welche der Besucher auch gleich mittels Facebook liken und kommentieren kann. Eintritts-Karten kann man über das Booking-System buchen. Die App kümmert sich im Hintergrund um die technischen Details und Verwaltung.</p>
+
+<p><img src="/assets/uploads/2017/6/apps1.jpg" alt="" /></p>
+
+<p>Die vergangenen Events sind in Galerieren sichtbar. Das FAQ-System beantwortet oft gestellte Fragen und entlastet so den Support. Die Community wird durch Einbindung von sozialen Netzwerken wie Facebook oder Twitter bei der Stange gehalten. Im Forum diskutieren die Besucher und Fans der Webseite.</p>
+
+<p>Die Webseite hat zusätzlich noch eine Anwendung für Statistiken eingebaut. So erhalten Sie Informationen über Ihre Besucher, wo kommen sie her, welche Suchmaschinen werden verwendet. Und natürlich gibt es eine passende App für die Suchmaschinenoptimierung.</p>
+
+<p>Man sieht an den wenigen Beispielen bereits, dass damit die Homepage doch erheblich aufgewertet und kundenfreundlicher werden kann.</p>
+
+<p><img src="/assets/uploads/2017/6/apps.jpg" alt="" /></p>
+
+<p>Diese Dinge waren früher kompliziert umzusetzen. Im Zweifelsfall musste man einen Programmierer mit der Umsetzung beauftragen, was sehr teuer und technisch anspruchsvoll war und immer noch ist.</p>
+
+<p>Doch das Internet ist mittlerweile größer geworden und so gibt es beispielsweise Anbieter, welche einem die meiste Arbeit abnehmen.</p>
+
+<h2 id="anbieter-im-internet">Anbieter im Internet</h2>
+
+<p>Zahlreiche Anbieter buhlen im Internet um Kunden und bieten fertige Online-Tools bzw. Apps für die Webseite an. Meist genügt es die gewünschte Funktion in die Suchmaschine seiner Wahl einzugeben und schon findet man passende Anbieter.</p>
+
+<p>In den meisten Fällen muss man sich dann erstmal anmelden. Anschließend kann man die App konfigurieren und in die eigene Webseite integrieren. Dies ist technisch oft nicht immer einfach, da der Quelltext der Webseite direkt bearbeitet werden muss. Daher kommt diese Lösung eher für technisch versierte Anwender in Frage. Die meisten Lösungen sind auch nicht kostenlos.</p>
+
+<h2 id="apps-von-wixcom">Apps von Wix.com</h2>
+
+<p>Wer seine Webseite bei einem Anbieter wie Wix.com erstellt, kann aus dem Vollen schöpfen. Wer den Anbieter selbst noch nicht kennt, kann sich dort für den Einstieg eine <a href="https://de.wix.com/">kostenlose Homepage erstellen</a>.</p>
+
+<p>Nicht nur die Erstellung der Webseite ist ein Kinderspiel. Wix.com bietet einen <a href="https://de.wix.com/app-market/main" rel="nofollow">eigenen App-Market</a>. Der Anbieter stellt selbst jede Menge kostenlose Apps für die Homepage bereit.</p>
+
+<p><img src="/assets/uploads/2017/6/app_wix_1.jpg" alt="" /></p>
+
+<p>Zahlreiche andere Apps kommen von Drittanbietern. Viele sind auch hier kostenlos. Umfangreichere Anwendungen gibt es gegen Gebühr. Premium-Nutzer freuen sich über noch mehr kostenlose Apps.</p>
+
+<p>Die Art der Anwendungen ist umfangreich, vom einfachen Kontaktformular, Communityfunktionen wie Benutzerforen, FAQ-Systemen, Buchungssystemen und Online-Shop ist alles dabei. Soziale Netzwerke wie Twitter, Facebook oder Instagram lassen sich ebenfalls in die Webseite einbinden. Genauso wie Bezahlfunktionen über Paypal und Co.</p>
+
+<p>Das es sich hierbei nicht nur um Spielereien handelt beweist in Blick in die <a href="https://de.wix.com/app-market/business" target="_blank" rel="nofollow">Business-App-Rubrik</a>.</p>
+
+<p><img src="/assets/uploads/2017/6/app_wix_2.jpg" alt="" /></p>
+
+<p>Das Einbinden ist einfach. Über den App-Market wählt man die gewünschte App aus und fügt diese der Homepage hinzu. Anschließend lassen sich die Apps mit Drag &amp; Drop im Editor zur Homepage hinzufügen und konfigurieren. In der Konfiguration können die Einstellungen und auch das Design beeinflusst werden. Dadurch integrieren sich die Apps perfekt in die Homepage.</p>
+
+<p><img src="/assets/uploads/2017/6/app_wix_3.jpg" alt="" /></p>
+
+<p>Braucht man die Apps am Ende nicht mehr, ist das Entfernen auch kein Problem. Nicht mehr benötigte Anwendungen können problemlos und ohne Nebeneffekte wieder aus dem Editor und der Webseite entfernt werden.</p>
+
+<p>Um Updates für die Apps muss man sich hier ebenfalls nicht kümmern. Dies macht der Anbieter automatisch, so dass man nicht Gefahr läuft eine Webseite mit Sicherheitslücken zu betreiben. Von Weiterentwicklungen profitiert man so ebenfalls automatisch.</p>
+
+<p>Fazit: für Nutzer, welche sich nicht um die technischen Hintergründe kümmern wollen und schnell und einfach ihre Homepage aufpeppen wollen ist Wix.com eine perfekte Lösung.</p>
+
+<p>Die meisten Apps sind kostenlos und sie lassen sich schnell und problemlos in die Webseite integrieren. Auch die enorme Anzahl der Apps ist beeindrucked. Für jede Funktion die in den Sinn kommt, gibt es eine passende App.</p>
+
+<h2 id="plugins-mit-wordpress">Plugins mit Wordpress</h2>
+
+<p>Apps heißen Plugins bei Wordpress und hiervon gibt es tausende und für alle möglichen Zwecke. Sie setzen eine eigene Wordpress-Installation und entsprechenden Webspace mit PHP und Datenbankunterstützung voraus.</p>
+
+<p>Die Installation ist über die integrierte Suche relativ einfach möglich. Die Installation geschieht automatisch. Im Hintergrund werden die benötigten Dateien und Datenbanktabellen installiert. Je nach Plugin muss anschließend noch eine Konfiguration erfolgen.</p>
+
+<p><img src="/assets/uploads/2017/6/wordpress.jpg" alt="" /></p>
+
+<p>Ein paar Nachteile gibt es natürlich. So einfach die Installation ist, die Deinstallation lässt oft Bestandteile im Blog, Dateien oder Datenbankmodifikationen bleiben zurück. Daher sollte man sich genau überlegen, welche Anwendungen man benötigt und nur diese installieren.</p>
+
+<p>Inkompatibilitäten zwischen verschiedenen Plugins sind selten, aber möglich.</p>
+
+<p>Auch um Updates muss man sich kümmern. Jedes Plugin ist ein eigenes Stück Software, im Zweifelsfall mit eigenen Sicherheitslücken. Daher ist die regelmäßige Überprüfung auf Updates Pflicht. Damit ist dies auch eher für technisch versierte Anwender interessant.</p>
+
+<h2 id="fazit">Fazit</h2>
+
+<p>Wie man sieht, ist es heute recht einfach die Webseite funktionaler und benutzerfreundlicher zu gestalten. Insbesondere bei Anbietern wie Wix.com ist es ein Kinderspiel die Webseite mit neuen Funktionen zu erweitern.</p>
+
+<p>Trotz der Vielfalt an Apps sollte man aber auch der Verlockung wiederstehen, zuviele Anwendungen zu integrieren. Eine überladene Webseite bewirkt sonst das Gegenteil. Der Besucher ist überfordert und weiß nicht, was er zuerst beachten soll. Auch hier sind Anbieter wie Wix.com im Vorteil, da sich die Apps auch wieder rückstandslos entfernen lassen. Somit kann man gefahrlos neue Dinge ausprobieren. Bei Wordpress und anderen Systemen bleiben gerne Reste in Form Datenbanktabellen, Dateien und Konfigurationen zurück, welche die Webseite dann als Altlast mitschleppt.</p>
+
+<p>In diesem Sinne wünsche ich allen Webmastern ein frohes Appen! :-)</p>
+
+			</div>
+			
+			<br>
+			
+			<div class="panel panel-default">
+			  <div class="panel-heading">Support</div>
+  				<div class="panel-body">
+					<div class="row">
+					  <div class="col-md-2">
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="9UGVE4ZFX4UYS">
+<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+					  </div>									    
+		  	       </div>
+			   </div>
+			 </div>
+
+			
+			 <div class="panel panel-default">
+			 	<div class="panel-heading">Weitere Artikel:</div>
+				<div class="panel-body">
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/windows/software/2017/06/05/jekyll_windows_bash.html" title="Jeykyll in der Windows 10 Bash nutzen">Jeykyll in der Windows 10 Bash nutzen</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/hardware/gadgets/2017/06/01/takstar_mikrofon.html" title="Takstar Mikrofon für Nikon D3300">Takstar Mikrofon für Nikon D3300</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/computer/software/2017/05/30/the_bat_mail_client.html" title="Umstieg auf TheBat! E-Mail-Client">Umstieg auf TheBat! E-Mail-Client</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/computer/repair/reparatur/2017/04/28/dell_vostro_2520_power_button.html" title="Power Button Reparatur Dell Vostro 2520">Power Button Reparatur Dell Vostro 2520</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/computer/2017/04/24/neuer_computer.html" title="Neuen Computer zusammengebaut">Neuen Computer zusammengebaut</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/webseiten/webdesign/tools/2017/04/17/jekyll_alternative_eltexto.html" title="Jekyll Alternative ElTexto">Jekyll Alternative ElTexto</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/computer/mac/programmierung/2017/04/04/raus_aus_dem_app_store.html" title="Raus aus dem Mac-App-Store">Raus aus dem Mac-App-Store</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/mobilitaet/umwelt/2017/04/03/mobilitaet_maerz_2017.html" title="Mobilität März 2017">Mobilität März 2017</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/linux/webdesign/2017/03/25/uberspace_html_als_php.html" title="Uberspace: .html Dateien als PHP ausführen">Uberspace: .html Dateien als PHP ausführen</a></li>
+				
+				   <li class="list-unstyled"><a href="http://andydunkel.net/gadgets/2017/03/16/nikon_wu_1a_funkadapter_d3300.html" title="Nikon WU-1a Funkadapter für D3300">Nikon WU-1a Funkadapter für D3300</a></li>
+				
+				</div>
+			</div>
+			
+						
+			<script type="text/javascript"><!--
+			google_ad_client = "ca-pub-1137550895446814";
+			/* 468x60, Erstellt 21.03.09 */
+			google_ad_slot = "2357680339";
+			google_ad_width = 468;
+			google_ad_height = 60;
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+		</div><!--end postpost-->
+    	</div>
+    	
+    	<div class="col-md-3">  
+    	  	
+    		<div class="sidebarpanel" align="center">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- Seitenleiste -->
+				<ins class="adsbygoogle"
+				     style="display:inline-block;width:160px;height:600px"
+				     data-ad-client="ca-pub-1137550895446814"
+				     data-ad-slot="1909195079"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>	
+
+    		</div>
+
+    		    	<div class="sidebarpanel">
+    	<h4>Partnerlink</h4>
+    	<a target="_blank" href="http://www.amazon.de/?_encoding=UTF8&camp=1638&creative=19454&linkCode=ur2&site-redirect=de&tag=ekiwide0b-21">Einkaufen bei Amazon.de</a><img src="https://www.assoc-amazon.de/e/ir?t=ekiwide0b-21&l=ur2&o=3" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />	
+    	</div>
+    	
+    	<div class="sidebarpanel">
+    	<h4>Werbung</h4>
+    	
+    	<div align="left">
+		<script type="text/javascript"><!--
+		google_ad_client = "ca-pub-1137550895446814";
+		/* andy.ekiwi.de */
+		google_ad_slot = "3362068620";
+		google_ad_width = 125;
+		google_ad_height = 125;
+		//-->
+		</script>
+		<script type="text/javascript"
+		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+		</div>
+		</div>
+		
+		<div class="sidebarpanel">
+		<h4>Links</h4>
+    	<ul class="list-unstyled">
+    		<li><a href="http://andydunkel.net/da.asc.zip">Andys PGP-Key</a></li>
+    		<li><a href="https://github.com/andydunkel">Me on GitHub</a></li> 	
+    		<li><a href="http://stackoverflow.com/users/285039/da">Me on StackOverflow</a></li>    			
+    	</ul>
+    	</div>
+    	
+    	<div class="sidebarpanel">
+    	<h4>Webseiten</h4>
+    	<ul class="list-unstyled">
+    		<li><a href="http://www.ekiwi.de">eKiwi.de</a></li>
+    		<li><a href="http://ekiwi-blog.de">eKiwi.de Blog</a></li>
+    		<li><a href="http://www.da-software.de">DA-Software.de</a></li>    		
+    	</ul>
+    	</div>
+
+    	<div class="sidebarpanel">
+    	<h4>Categories</h4>    	
+		<section>
+		<ul id="categories" class="list-unstyled">
+
+  
+  
+     
+      <li class="category"><a href="/categories/ccc">Ccc <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/coding">Coding <span>(31)</span></a></li>
+     
+      <li class="category"><a href="/categories/computer">Computer <span>(14)</span></a></li>
+     
+      <li class="category"><a href="/categories/delphi">Delphi <span>(9)</span></a></li>
+     
+      <li class="category"><a href="/categories/eclipse">Eclipse <span>(26)</span></a></li>
+     
+      <li class="category"><a href="/categories/finanzen">Finanzen <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/firemonkey">Firemonkey <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/fotos">Fotos <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/gadgets">Gadgets <span>(27)</span></a></li>
+     
+      <li class="category"><a href="/categories/html">Html <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/hardware">Hardware <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/hiking">Hiking <span>(9)</span></a></li>
+     
+      <li class="category"><a href="/categories/html">Html <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/ireland">Ireland <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/java">Java <span>(23)</span></a></li>
+     
+      <li class="category"><a href="/categories/jekyll">Jekyll <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/katzen">Katzen <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/kochen">Kochen <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/lazarus">Lazarus <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/linux">Linux <span>(15)</span></a></li>
+     
+      <li class="category"><a href="/categories/mac">Mac <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/meinung">Meinung <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/minimalismus">Minimalismus <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/mobilitaet">Mobilitaet <span>(21)</span></a></li>
+     
+      <li class="category"><a href="/categories/osx">Osx <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/opensource">Opensource <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/programmierung">Programmierung <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/radfahren">Radfahren <span>(31)</span></a></li>
+     
+      <li class="category"><a href="/categories/raspberry">Raspberry <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/repair">Repair <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/reparatur">Reparatur <span>(5)</span></a></li>
+     
+      <li class="category"><a href="/categories/retrotrip">Retrotrip <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/rezepte">Rezepte <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/swt">Swt <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/software">Software <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
+     
+      <li class="category"><a href="/categories/tools">Tools <span>(24)</span></a></li>
+     
+      <li class="category"><a href="/categories/umwelt">Umwelt <span>(22)</span></a></li>
+     
+      <li class="category"><a href="/categories/webdesign">Webdesign <span>(8)</span></a></li>
+     
+      <li class="category"><a href="/categories/webseiten">Webseiten <span>(8)</span></a></li>
+     
+      <li class="category"><a href="/categories/windows">Windows <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/xcode">Xcode <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/ipad">Ipad <span>(6)</span></a></li>
+    
+  
+
+
+
+		</ul>
+		</section>
+		</div>
+    	</div>    	
+    </div>			
+
+<hr>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'andydunkelnet'; // required: replace example with your forum shortname
+ 		var disqus_config = function () {	        
+    	    this.page.identifier = 'mit_apps_die_eigene_webseite_aufpeppen';
+    	};
+
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </div>
+    
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.ekiwi.de/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "2"]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+
+    </body>
+</html>

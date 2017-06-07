@@ -44,7 +44,7 @@
 		<section>
 		<ul id="categories" class="list-unstyled">
 
-{% assign tags_list = site.categories %}  
+{% assign tags_list = site.categories | sort {|left, right| left[0] <=> right[0]} %}  
   {% if tags_list.first[0] == null %}
     {% for tag in tags_list %} 
       <li class="category"><a href="/categories/{{ category | downcase }}">{{ tag | capitalize }} <span>({{ site.tags[tag].size }})</span></a></li>

@@ -160,6 +160,132 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/eclipse/2014/01/16/branding_of_eclipse_rcp_applications.html">Branding of Eclipse/RCP Applications</a>
+		</h1>
+		  <p class="small">Posted on 16 January 2014 by Andy</p>
+		  <h2 id="introduction">Introduction</h2>
+
+<p>In this document I want to describe some ideas how branding of an Eclipse RCP application can be implemenented. Since I never done this before, there might be better ways to do that, so feel free to contact me.</p>
+
+<p>Its not a walk through how to do these things step by step, its more an example how certain things could be done. The complete source code is available for download at the end.</p>
+
+<h2 id="was-is-branding">Was is branding?</h2>
+
+<p>First lets discuss what we want to achieve and what branding means in this context. Imagine a situation where we want to ship our software in multiple versions, with different names for the software, different images shown in the GUI, different reports, template files, icons etc.</p>
+
+<p>We have a single source code and want to implement two versions of our product:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/branding1.png" alt="" /></p>
+
+<h2 id="catastic">Catastic</h2>
+
+<p>In my example we want to ship two versions of our cat mail software. Its based on the Eclipse mail application sample. We want to have two versions of that Software: “Catastic” and “FatCat”. Each version should have its own splash screen, Icons, About dialog, custom file templates and also certain strings are different in the UI.</p>
+
+<p>Our goal is to achieve that with minimum impact on our source code. Lets get started!</p>
+
+<h2 id="plugins">Plugins</h2>
+
+<p>Lets start with the plugins:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/plugins.png" alt="" /></p>
+
+<p>The application code resides in “com.da.branding.example”. In addition we create 3 more plugins, one generic branding plugin, which is the “gateway” to the specific branding plugins. If we look at the dependencies, we can see, that our application only depends on the branding plugin:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/packages.png" alt="" /></p>
+
+<p>This allows us to add new brandings, as well as removing brandings, without having our main application depending on a specific branding. The main branding plugin contains the branding logic, the specific plugins mostly contain the spefific branding information, like images, texts etc:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/resources.png" alt="" /></p>
+
+<h2 id="branding">Branding</h2>
+
+<p>OK lets brand the software. There are certain tasks that can be achieved easily by the RCP framework and product configurations. Other functionality must be implemented in code. Lets start what we can do with the product configuration.</p>
+
+<h3 id="product">Product</h3>
+
+<p>A lot of stuff can be done in the product configuration, like splash, about and icons. So we create a product configuration for each output software. The first step is to create an extension point for the products in the specific branding plugins:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/product_plugin.png" alt="" /></p>
+
+<p><em>As you can see, there is also a specific splash screen in each plugin.</em></p>
+
+<p>In the extension point we can define several things for each branded version, the about text, about image, the application name and the icon which appears in the title bar of the application. The extension point is used by the actual product configuration.</p>
+
+<p>For each extension point I created a product configuration for the specific branded applications:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/product_files.png" alt="" /></p>
+
+<p>Selecting the correct product picks of the settings from the extension points and adds them to the product configuration.</p>
+
+<p>The other configuration of the product configuration is straight forward. The important thing is to set the correct settings for the product definition:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/product_definition.png" alt="" /></p>
+
+<p>All other things like the splash screen image and the icons are configured as normal.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/splash.png" alt="" /></p>
+
+<p>When we launch each product configuration, the correct splash screen should be shown, as well as a different application name and a custom about dialog.</p>
+
+<p>However there might be more. The other things we need are implemented in code.</p>
+
+<h3 id="code">Code</h3>
+
+<p>Since now we only changed some visual things. But there might be more, like different templates files, some different logic, whatever.</p>
+
+<p>So we create a class “<a href="https://github.com/andydunkel/EclipseBrandingExample/blob/master/com.da.branding.branding/src/com/da/branding/branding/Branding.java">Branding</a>” in “com.da.branding.branding”, which is a singleton and will be responsible for handling branding requests from our main application.</p>
+
+<p>When we create the singleton, we have to check which product configuration we are running:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>String product = Platform.getProduct().getId();
+</code></pre>
+</div>
+
+<p>We store that information in the Branding object. By that we now can distinguish the current software we are running, for example to display different images, like that:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public Image getImage() {		
+	return ResourceManager.getPluginImage(_brandingPlugin, "res/cat.png");
+}	
+</code></pre>
+</div>
+
+<p>_brandingPlugin contains the name of the specific branding plugin. We can use the same mechanism for files, strings and other things. Even more complex things like returning a perspective. Goal is to implement the differences for each application here.</p>
+
+<p>In our main source code we just call the branding class where needed:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>labelImage.setImage(Branding.getInstance().getImage());
+
+loadFile(Branding.getInstance().getFile());
+</code></pre>
+</div>
+
+<p>If we add a new branding, no change in the main applications source code is neccessary.</p>
+
+<h4 id="notes-for-the-code">Notes for the Code</h4>
+
+<p>In my example everything is in the single branding class. Depending on the amount of logic you need to implement it might be sensible to move logic to its specific plugins. I also thought to create an extension point for the branding logic. However in my example and for the required functionality, lets keep it simple. :-)</p>
+
+<h2 id="application">Application</h2>
+
+<p>Here is how our application looks now:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/screenshot.png" alt="" /></p>
+
+<iframe width="640" height="360" src="//www.youtube.com/embed/Ouyy-4nBjj0?rel=0" frameborder="0" allowfullscreen=""></iframe>
+
+<p>Well, thats it! As said at the beginning, thats not an exact guide how to do this. Depending on the requirements, there are more things to implement or implementation might be different. To see how I did things exactly, have a look to the source code. If there are better ways to do things, well let me know! :-)</p>
+
+<h2 id="download">Download</h2>
+
+<p>The source code of the sample application can be <a href="https://github.com/andydunkel/EclipseBrandingExample">found here</a>.</p>
+	
+      <p><a class="btn btn-success" href="/eclipse/2014/01/16/branding_of_eclipse_rcp_applications.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: Eclipse, RCP, Branding, and Product by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/coding/tools/2014/01/14/checkout_git_repository_into_existing_folder.html">Checkout GIT repository into existing folder</a>
 		</h1>
 		  <p class="small">Posted on 14 January 2014 by Andy</p>
@@ -293,37 +419,6 @@ $ brew doctor
 		  <p class="small">Tagged: homebrew by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/windows/linux/mac/tools/2013/12/05/exfat_truecrypt_volume.html">exFAT für TrueCrypt Volume nutzen</a>
-		</h1>
-		  <p class="small">Posted on 05 December 2013 by Andy</p>
-		  <p>Externe Festplatten und USB-Sticks verschlüssele ich meist mit TrueCrypt. Geht der Datenträger verloren, kann man zumindest recht sicher sein, dass niemand etwas mit den Daten anfangen kann. Da ich privat Windows, OSX und Linux nutze, stellt sich die Frage, welches Dateisystem man verwendet. Schließlich will ich von allen Betriebssystemen problemlos darauf zugreifen können.</p>
-
-<p>Die beste Lösung in Dateisystemform kommt von Microsoft und nennt sich <a href="http://de.wikipedia.org/wiki/ExFAT#exFAT">exFat</a>. Windows kann es ab XP lesen, OSX hat auch keine Probleme damit und auch Linux lässt sich problemlos dazu <a href="http://andydunkel.net/linux/2012/12/18/exfat-unter-ubuntu-nutzen.html">überreden</a>.</p>
-
-<p>Der Vorteil von exFat ist die Möglichkeit der Speicherung von Dateien größer 4GB. Leider bietet TrueCrypt keine Möglichkeit bei der Erstellung von Containern exFat zu nutzen. Entweder das alte FAT oder NTFS.</p>
-
-<p>Macht aber nix, exFat lässt sich trotzdem nutzen: Zuerst wird der TrueCrypt Container ganz normal erstellt und formatiert.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/12/truecrypt/true_format.png" alt="" /></p>
-
-<p>Nachdem der Container erstellt wurde, mountet man ihn. Nun kann man das geöffnete Laufwerk mit dem exFat-Dateisystem formatieren. Im Explorer geht dies allerdings nicht, hier erlaubt Windows das exFat-Dateisystem nur für mobile Datenträger.</p>
-
-<p>Über die Eingabeaufforderung (Windows-Taste und dann CMD eingeben), lässt sich das Laufwerk dann mit exFat-Dateisystem ausstatten:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>format &lt;drive letter&gt;: /FS:exfat /Q
-</code></pre>
-</div>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/12/truecrypt/true_format2.png" alt="" /></p>
-
-	
-      <p><a class="btn btn-success" href="/windows/linux/mac/tools/2013/12/05/exfat_truecrypt_volume.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: truecrypt and exfat by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -376,93 +471,95 @@ $ brew doctor
   
   
      
-      <li class="category"><a href="/categories/eclipse">Eclipse <span>(26)</span></a></li>
-     
-      <li class="category"><a href="/categories/java">Java <span>(23)</span></a></li>
-     
-      <li class="category"><a href="/categories/radfahren">Radfahren <span>(31)</span></a></li>
-     
-      <li class="category"><a href="/categories/hiking">Hiking <span>(9)</span></a></li>
-     
-      <li class="category"><a href="/categories/ireland">Ireland <span>(7)</span></a></li>
-     
-      <li class="category"><a href="/categories/swt">Swt <span>(4)</span></a></li>
-     
-      <li class="category"><a href="/categories/fotos">Fotos <span>(5)</span></a></li>
-     
-      <li class="category"><a href="/categories/katzen">Katzen <span>(4)</span></a></li>
-     
-      <li class="category"><a href="/categories/tools">Tools <span>(24)</span></a></li>
-     
-      <li class="category"><a href="/categories/gadgets">Gadgets <span>(27)</span></a></li>
-     
-      <li class="category"><a href="/categories/rezepte">Rezepte <span>(1)</span></a></li>
-     
-      <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
-     
-      <li class="category"><a href="/categories/ipad">Ipad <span>(6)</span></a></li>
+      <li class="category"><a href="/categories/ccc">Ccc <span>(1)</span></a></li>
      
       <li class="category"><a href="/categories/coding">Coding <span>(31)</span></a></li>
      
-      <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
-     
-      <li class="category"><a href="/categories/linux">Linux <span>(15)</span></a></li>
-     
-      <li class="category"><a href="/categories/windows">Windows <span>(7)</span></a></li>
-     
-      <li class="category"><a href="/categories/meinung">Meinung <span>(6)</span></a></li>
-     
-      <li class="category"><a href="/categories/mac">Mac <span>(4)</span></a></li>
-     
-      <li class="category"><a href="/categories/kochen">Kochen <span>(2)</span></a></li>
-     
-      <li class="category"><a href="/categories/reparatur">Reparatur <span>(5)</span></a></li>
+      <li class="category"><a href="/categories/computer">Computer <span>(14)</span></a></li>
      
       <li class="category"><a href="/categories/delphi">Delphi <span>(9)</span></a></li>
      
+      <li class="category"><a href="/categories/eclipse">Eclipse <span>(26)</span></a></li>
+     
+      <li class="category"><a href="/categories/finanzen">Finanzen <span>(1)</span></a></li>
+     
       <li class="category"><a href="/categories/firemonkey">Firemonkey <span>(3)</span></a></li>
      
-      <li class="category"><a href="/categories/raspberry">Raspberry <span>(3)</span></a></li>
+      <li class="category"><a href="/categories/fotos">Fotos <span>(5)</span></a></li>
      
-      <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
-     
-      <li class="category"><a href="/categories/xcode">Xcode <span>(1)</span></a></li>
-     
-      <li class="category"><a href="/categories/minimalismus">Minimalismus <span>(1)</span></a></li>
-     
-      <li class="category"><a href="/categories/webseiten">Webseiten <span>(7)</span></a></li>
+      <li class="category"><a href="/categories/gadgets">Gadgets <span>(27)</span></a></li>
      
       <li class="category"><a href="/categories/html">Html <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/osx">Osx <span>(1)</span></a></li>
+      <li class="category"><a href="/categories/hardware">Hardware <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/computer">Computer <span>(14)</span></a></li>
+      <li class="category"><a href="/categories/hiking">Hiking <span>(9)</span></a></li>
      
-      <li class="category"><a href="/categories/webdesign">Webdesign <span>(7)</span></a></li>
+      <li class="category"><a href="/categories/html">Html <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/lazarus">Lazarus <span>(2)</span></a></li>
+      <li class="category"><a href="/categories/ireland">Ireland <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/java">Java <span>(23)</span></a></li>
      
       <li class="category"><a href="/categories/jekyll">Jekyll <span>(2)</span></a></li>
      
-      <li class="category"><a href="/categories/repair">Repair <span>(2)</span></a></li>
+      <li class="category"><a href="/categories/katzen">Katzen <span>(4)</span></a></li>
      
-      <li class="category"><a href="/categories/ccc">Ccc <span>(1)</span></a></li>
+      <li class="category"><a href="/categories/kochen">Kochen <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/lazarus">Lazarus <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/linux">Linux <span>(15)</span></a></li>
+     
+      <li class="category"><a href="/categories/mac">Mac <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/meinung">Meinung <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/minimalismus">Minimalismus <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/mobilitaet">Mobilitaet <span>(21)</span></a></li>
+     
+      <li class="category"><a href="/categories/osx">Osx <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
      
       <li class="category"><a href="/categories/opensource">Opensource <span>(1)</span></a></li>
      
       <li class="category"><a href="/categories/programmierung">Programmierung <span>(5)</span></a></li>
      
-      <li class="category"><a href="/categories/mobilitaet">Mobilitaet <span>(21)</span></a></li>
+      <li class="category"><a href="/categories/radfahren">Radfahren <span>(31)</span></a></li>
      
-      <li class="category"><a href="/categories/umwelt">Umwelt <span>(22)</span></a></li>
+      <li class="category"><a href="/categories/raspberry">Raspberry <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/repair">Repair <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/reparatur">Reparatur <span>(5)</span></a></li>
      
       <li class="category"><a href="/categories/retrotrip">Retrotrip <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/finanzen">Finanzen <span>(1)</span></a></li>
+      <li class="category"><a href="/categories/rezepte">Rezepte <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/swt">Swt <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
      
       <li class="category"><a href="/categories/software">Software <span>(2)</span></a></li>
      
-      <li class="category"><a href="/categories/hardware">Hardware <span>(1)</span></a></li>
+      <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
+     
+      <li class="category"><a href="/categories/tools">Tools <span>(24)</span></a></li>
+     
+      <li class="category"><a href="/categories/umwelt">Umwelt <span>(22)</span></a></li>
+     
+      <li class="category"><a href="/categories/webdesign">Webdesign <span>(8)</span></a></li>
+     
+      <li class="category"><a href="/categories/webseiten">Webseiten <span>(8)</span></a></li>
+     
+      <li class="category"><a href="/categories/windows">Windows <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/xcode">Xcode <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/ipad">Ipad <span>(6)</span></a></li>
     
   
 

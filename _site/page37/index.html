@@ -160,6 +160,37 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/eclipse/java/swt/2011/10/04/eclipse-rcp-remove-tab-folder-from-view.html">Eclipse RCP: Remove tab folder from View</a>
+		</h1>
+		  <p class="small">Posted on 04 October 2011 by Andy</p>
+		  <p>If you create a new RCP application a view gets a tab like this:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/10/image3.png" alt="image" /></p>
+
+<p>To remove the tab, use the “addStandaloneView” method in your perspective. Here is an example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public class Perspective implements IPerspectiveFactory {
+  public void createInitialLayout(IPageLayout layout) {       
+    String editorArea = layout.getEditorArea();
+    layout.setEditorAreaVisible(false);
+    
+    layout.addStandaloneView(View.ID, false, IPageLayout.LEFT, 1.0f, editorArea);       
+  }
+}
+</code></pre>
+</div>
+
+<p>The result:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/10/image4.png" alt="image" /></p>
+	
+      <p><a class="btn btn-success" href="/eclipse/java/swt/2011/10/04/eclipse-rcp-remove-tab-folder-from-view.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: folder, RCP, remove, and tab by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/science/2011/10/03/infrarotlicht-sichtbar-machen.html">Infrarotlicht sichtbar machen</a>
 		</h1>
 		  <p class="small">Posted on 03 October 2011 by Andy</p>
@@ -242,26 +273,6 @@
 		  <p class="small">Tagged: Käseralpe, Oberstdorf, and Radtour by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/eclipse/java/2011/09/17/emf-object-is-not-contained-in-a-resource.html">EMF: Object is not contained in a resource</a>
-		</h1>
-		  <p class="small">Posted on 17 September 2011 by Andy</p>
-		  <p>I had a small problem <a href="http://andydunkel.net/eclipse/java/2011/08/02/save-and-load-an-emf-model-to-an-xml-file.html">saving my EMF model to XML</a>. I got the error message “The object … is not contained in a resource”.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/09/image9.png" alt="image" /></p>
-
-<p>The solution is simple. In the EMF editor just set containment to true for the reference:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/09/image10.png" alt="image" /></p>
-
-<p>Done! After that, the object was saved correctly in the XML file.</p>
-	
-      <p><a class="btn btn-success" href="/eclipse/java/2011/09/17/emf-object-is-not-contained-in-a-resource.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: EMF, Problem, Recource, and Save by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -314,93 +325,95 @@
   
   
      
-      <li class="category"><a href="/categories/eclipse">Eclipse <span>(26)</span></a></li>
-     
-      <li class="category"><a href="/categories/java">Java <span>(23)</span></a></li>
-     
-      <li class="category"><a href="/categories/radfahren">Radfahren <span>(31)</span></a></li>
-     
-      <li class="category"><a href="/categories/hiking">Hiking <span>(9)</span></a></li>
-     
-      <li class="category"><a href="/categories/ireland">Ireland <span>(7)</span></a></li>
-     
-      <li class="category"><a href="/categories/swt">Swt <span>(4)</span></a></li>
-     
-      <li class="category"><a href="/categories/fotos">Fotos <span>(5)</span></a></li>
-     
-      <li class="category"><a href="/categories/katzen">Katzen <span>(4)</span></a></li>
-     
-      <li class="category"><a href="/categories/tools">Tools <span>(24)</span></a></li>
-     
-      <li class="category"><a href="/categories/gadgets">Gadgets <span>(27)</span></a></li>
-     
-      <li class="category"><a href="/categories/rezepte">Rezepte <span>(1)</span></a></li>
-     
-      <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
-     
-      <li class="category"><a href="/categories/ipad">Ipad <span>(6)</span></a></li>
+      <li class="category"><a href="/categories/ccc">Ccc <span>(1)</span></a></li>
      
       <li class="category"><a href="/categories/coding">Coding <span>(31)</span></a></li>
      
-      <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
-     
-      <li class="category"><a href="/categories/linux">Linux <span>(15)</span></a></li>
-     
-      <li class="category"><a href="/categories/windows">Windows <span>(7)</span></a></li>
-     
-      <li class="category"><a href="/categories/meinung">Meinung <span>(6)</span></a></li>
-     
-      <li class="category"><a href="/categories/mac">Mac <span>(4)</span></a></li>
-     
-      <li class="category"><a href="/categories/kochen">Kochen <span>(2)</span></a></li>
-     
-      <li class="category"><a href="/categories/reparatur">Reparatur <span>(5)</span></a></li>
+      <li class="category"><a href="/categories/computer">Computer <span>(14)</span></a></li>
      
       <li class="category"><a href="/categories/delphi">Delphi <span>(9)</span></a></li>
      
+      <li class="category"><a href="/categories/eclipse">Eclipse <span>(26)</span></a></li>
+     
+      <li class="category"><a href="/categories/finanzen">Finanzen <span>(1)</span></a></li>
+     
       <li class="category"><a href="/categories/firemonkey">Firemonkey <span>(3)</span></a></li>
      
-      <li class="category"><a href="/categories/raspberry">Raspberry <span>(3)</span></a></li>
+      <li class="category"><a href="/categories/fotos">Fotos <span>(5)</span></a></li>
      
-      <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
-     
-      <li class="category"><a href="/categories/xcode">Xcode <span>(1)</span></a></li>
-     
-      <li class="category"><a href="/categories/minimalismus">Minimalismus <span>(1)</span></a></li>
-     
-      <li class="category"><a href="/categories/webseiten">Webseiten <span>(7)</span></a></li>
+      <li class="category"><a href="/categories/gadgets">Gadgets <span>(27)</span></a></li>
      
       <li class="category"><a href="/categories/html">Html <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/osx">Osx <span>(1)</span></a></li>
+      <li class="category"><a href="/categories/hardware">Hardware <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/computer">Computer <span>(14)</span></a></li>
+      <li class="category"><a href="/categories/hiking">Hiking <span>(9)</span></a></li>
      
-      <li class="category"><a href="/categories/webdesign">Webdesign <span>(7)</span></a></li>
+      <li class="category"><a href="/categories/html">Html <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/lazarus">Lazarus <span>(2)</span></a></li>
+      <li class="category"><a href="/categories/ireland">Ireland <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/java">Java <span>(23)</span></a></li>
      
       <li class="category"><a href="/categories/jekyll">Jekyll <span>(2)</span></a></li>
      
-      <li class="category"><a href="/categories/repair">Repair <span>(2)</span></a></li>
+      <li class="category"><a href="/categories/katzen">Katzen <span>(4)</span></a></li>
      
-      <li class="category"><a href="/categories/ccc">Ccc <span>(1)</span></a></li>
+      <li class="category"><a href="/categories/kochen">Kochen <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/lazarus">Lazarus <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/linux">Linux <span>(15)</span></a></li>
+     
+      <li class="category"><a href="/categories/mac">Mac <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/meinung">Meinung <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/minimalismus">Minimalismus <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/mobilitaet">Mobilitaet <span>(21)</span></a></li>
+     
+      <li class="category"><a href="/categories/osx">Osx <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
      
       <li class="category"><a href="/categories/opensource">Opensource <span>(1)</span></a></li>
      
       <li class="category"><a href="/categories/programmierung">Programmierung <span>(5)</span></a></li>
      
-      <li class="category"><a href="/categories/mobilitaet">Mobilitaet <span>(21)</span></a></li>
+      <li class="category"><a href="/categories/radfahren">Radfahren <span>(31)</span></a></li>
      
-      <li class="category"><a href="/categories/umwelt">Umwelt <span>(22)</span></a></li>
+      <li class="category"><a href="/categories/raspberry">Raspberry <span>(3)</span></a></li>
+     
+      <li class="category"><a href="/categories/repair">Repair <span>(2)</span></a></li>
+     
+      <li class="category"><a href="/categories/reparatur">Reparatur <span>(5)</span></a></li>
      
       <li class="category"><a href="/categories/retrotrip">Retrotrip <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/finanzen">Finanzen <span>(1)</span></a></li>
+      <li class="category"><a href="/categories/rezepte">Rezepte <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/swt">Swt <span>(4)</span></a></li>
+     
+      <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
      
       <li class="category"><a href="/categories/software">Software <span>(2)</span></a></li>
      
-      <li class="category"><a href="/categories/hardware">Hardware <span>(1)</span></a></li>
+      <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
+     
+      <li class="category"><a href="/categories/tools">Tools <span>(24)</span></a></li>
+     
+      <li class="category"><a href="/categories/umwelt">Umwelt <span>(22)</span></a></li>
+     
+      <li class="category"><a href="/categories/webdesign">Webdesign <span>(8)</span></a></li>
+     
+      <li class="category"><a href="/categories/webseiten">Webseiten <span>(8)</span></a></li>
+     
+      <li class="category"><a href="/categories/windows">Windows <span>(7)</span></a></li>
+     
+      <li class="category"><a href="/categories/xcode">Xcode <span>(1)</span></a></li>
+     
+      <li class="category"><a href="/categories/ipad">Ipad <span>(6)</span></a></li>
     
   
 
