@@ -26,3 +26,43 @@ AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-otf
 AddOutputFilterByType DEFLATE font/truetype font/opentype
 </IfModule>
 # END Gzip-Komprimierung
+
+
+# Redirect
+
+# Redirect
+Redirect 301 /delphi/lazarus/2016/01/06/delphi_lazarus.html http://andydunkel.net/delphi/lazarus/2016/01/06/moving_from_delphi_to_lazarus.html
+Redirect 301 /sonstiges/2014/07/21/vobis_denkzettel.html http://andydunkel.net/sonstiges/2014/07/21/vobis_denkzettel_von_1991.html
+Redirect 301 /windows/2015/02/28/geraeterschluesselung_windows_8_1.html http://andydunkel.net/windows/2015/02/28/geraeteverschluesselung_windows_8_1.html
+Redirect 301 /coding/2015/11/13/visual_studio_problem_occured.html http://andydunkel.net/coding/2015/11/13/visual_studio_startup_problems.html
+Redirect 301 /linux/2014/12/02/ubuntu_owncloud_wurde_entfernt.html http://andydunkel.net/linux/2014/12/02/owncloud_automatische_deinstallation_nach_update.html
+Redirect 301 /coding/programmierung/2017/02/02/debugger_funktioniert_nicht_mehr_c_charp.html http://andydunkel.net/coding/programmierung/2017/02/02/debugger_geht_nicht_mehr_c_sharp.html
+Redirect 301 /computer/2016/03/14/thunderbird_owncloud9.html http://andydunkel.net/computer/2016/03/14/owncloud9_thunderbird_synch_problems.html
+Redirect 301 /eclipse/2014/01/16/branding_of_eclipse_applications.html http://andydunkel.net/eclipse/2014/01/16/branding_of_eclipse_rcp_applications.html
+Redirect 301 /radfahren/umwelt/2016/03/13/brompton_taschen.html http://andydunkel.net/radfahren/2016/07/05/brompton_rack_pack.html
+Redirect 301 /webdesign/linux/2016/12/17/midnight_commander_ssh_hosteurope.html http://andydunkel.net/webdesign/linux/2016/12/17/ssh_bei_hosteurope_midknight_commander.html
+Redirect 301 /coding/2013/12/15/github_the_remote_end_hung_up_unexpectedly.html http://andydunkel.net/coding/2013/12/15/git_the_remote_end_hung_up_unexpectedly.html
+Redirect 301 /objectivec/coding/xcode/2014/05/04/mapkit_introduction.html http://andydunkel.net/objectivec/coding/xcode/2014/05/04/jekyll_fuer_die_webseite.html
+Redirect 301 /windows/computer/2016/01/31/thinkpad_w500_integrated_graphic_card_on_windows10.html http://andydunkel.net/windows/computer/2016/01/31/thinkpad_w500_integrated_graphic_card_on_windows_10.html
+Redirect 301 /webseiten/computer/2017/02/20/hosteurope_ssl_verlaengerung.html http://andydunkel.net/webseiten/computer/2017/02/20/verlaengerung_hosteurope_ssl_letsencrypt.html
+Redirect 301 /eclipse/rcp/2014/01/16/branding_of_eclipse_applications.html http://andydunkel.net/eclipse/2014/01/16/branding_of_eclipse_rcp_applications.html
+Redirect 301 /mobilität/umwelt/2016/02/02/mobilitaet_januar_2016.html http://andydunkel.net/mobilitaet/umwelt/2016/02/02/mobilitaet_januar_2016.html
+Redirect 301 /eclipse/rcp/2014/05/24/introduction_to_cnf.html http://andydunkel.net/eclipse/2014/05/24/introduction_to_the_common_navigator_framework.html
+Redirect 301 /gadgets/2017/03/16/nikon_wifi.html http://andydunkel.net/gadgets/2017/03/16/nikon_wu_1a_funkadapter_d3300.html
+Redirect 301 /office/2014/12/08/ikea_bekant_stehschreibtisch.html http://andydunkel.net/gadgets/2015/01/09/ikea_bekant_stehschreibtisch.html
+Redirect 301 /coding/2014/08/05/icon_scaling_for_osx_ios_and_windows.html http://andydunkel.net/coding/2014/08/05/icon_scaling_for_osx_ios_android_and_windows.html
+Redirect 301 /android/coding/2013/08/18/android-studio-nach-update-lasst-sich-das-projekt-nicht-starten.html http://andydunkel.net/coding/2013/08/18/android-studio-nach-update-lasst-sich-das-projekt-nicht-starten.html
+Redirect 301 /categories/projects/ http://andydunkel.net/projects.html
+Redirect 301 /categories/office/ http://andydunkel.net
+Redirect 301 /page1 http://andydunkel.net
+Redirect 301 /computer/repair/reparatur/2017/04/28/power_button_reparatur_dell_vostro.html http://andydunkel.net/computer/repair/reparatur/2017/04/28/dell_vostro_2520_power_button.html
+Redirect 301 /windows/computer/2016/08/21/Dell_U2515H_monitor_aufloesung.html http://andydunkel.net/windows/computer/2016/08/21/dell_monitor_aufloesung.html
+Redirect 301 /office/2015/01/09/ikea_bekant_stehschreibtisch.html http://andydunkel.net/gadgets/2015/01/09/ikea_bekant_stehschreibtisch.html
+Redirect 301 /delphi/coding/2013/11/23/firemonkey_xe_4_taborder_workaround.html.U2+Ordinary+Love+From+Mandela+OST+Lyric+VideoDownload http://andydunkel.net/delphi/coding/2013/11/23/firemonkey_xe_4_taborder_workaround.html
+Redirect 301 /gadgets/?pad/2011/09/05/galaxy-on-fire-2-fr-das-ipad.html http://andydunkel.net/gadgets/ipad/2011/09/05/galaxy-on-fire-2-fr-das-ipad.html
+Redirect 301 /hiking/sonstiges/2011/11/01/?peidenburgruinen-30-10-2011.html http://andydunkel.net/hiking/sonstiges/2011/11/01/speidenburgruinen-30-10-2011.html
+Redirect 301 /gadgets/?pad/2011/06/21/?pad-2-erste-eindrcke.html http://andydunkel.net/gadgets/ipad/2011/06/21/ipad-2-erste-eindrcke.html
+Redirect 301 /coding/programmierung/2017/02/23/clipboard_problem_with_winforms.html http://andydunkel.net/coding/programmierung/2017/02/23/windows_forms_on_osx_clipboard_not_working.html
+Redirect 301 /coding/2014/01/10/php-debugging-vm.html http://andydunkel.net/index.html
+Redirect 301 /projects/2014/10/10/php-debugging-vm.html http://andydunkel.net/index.html
+Redirect 301 /projects/php-debugging-vm/index.html http://andydunkel.net/index.html
