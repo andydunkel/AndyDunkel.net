@@ -165,7 +165,7 @@
 		  <p class="small">Posted on 22 January 2014 by Andy</p>
 		  <p>Some time ago I started porting my application <a href="http://da-software.de/daform/daform_start.htm">DA-FormMaker</a> for the Mac. After finishing the development, the app needs to be signed with the Developer ID. Otherwise your users will end up with some message like:</p>
 
-<p><img src="http://localhost:4000/assets/uploads/2014/01/signing/sign0.png" alt="" /></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign0.png" alt="" /></p>
 
 <p>OK its german, but it means: I don’t know that developer and I will not start that application. So the app needs to be signed. Fair enough.</p>
 
@@ -181,7 +181,7 @@
 
 <p>If you have a developer account you have to create the developer certificates. Easiest way to do that is the XCode Organizer:</p>
 
-<p><img src="http://localhost:4000/assets/uploads/2014/01/signing/sign1.png" alt="" /></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign1.png" alt="" /></p>
 
 <p>Click on your Mac and “Add to member center”. The next dialog will ask you if you want to create/request the certificates needed.</p>
 
@@ -189,21 +189,21 @@
 
 <p>If you have not done that before, enter your Apple ID first. Then hit the refresh button. It should show the certificates that are not installed:</p>
 
-<p><img src="http://localhost:4000/assets/uploads/2014/01/signing/sign2.png" alt="" /></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign2.png" alt="" /></p>
 
 <p>Install the certificates in XCode. I am not 100% sure if that step it really needed. In order to sign the Firemonkey application via command line, we have to install the certificates in our key chain.</p>
 
 <p>To do that, we have to download the cerficate from the certificates section in the developer account:</p>
 
-<p><img src="http://localhost:4000/assets/uploads/2014/01/signing/sign3.png" alt="" /></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign3.png" alt="" /></p>
 
 <p>Save the file to your local disk and open “Keychain Access”. Select “File” -&gt; “Import Items”. Now select the *.cer file you just downloaded and the destination. I choosed system. The certificate should now show up in the list:</p>
 
-<p><img src="http://localhost:4000/assets/uploads/2014/01/signing/sign4.png" alt="" /></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign4.png" alt="" /></p>
 
 <p>If you right click and select “Get Info” on the certificate, you see the properties of the certificate:</p>
 
-<p><img src="http://localhost:4000/assets/uploads/2014/01/signing/sign5.png" alt="" /></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign5.png" alt="" /></p>
 
 <p>You can copy the common name here, which we will later use on the command line to sign the application.</p>
 
@@ -211,7 +211,7 @@
 
 <p>The next step is the release build of your Firemonkey Application. Select the settings for the build and compile the application.</p>
 
-<p><img src="http://localhost:4000/assets/uploads/2014/01/signing/sign6.png" alt="" /></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/signing/sign6.png" alt="" /></p>
 
 <p>After complilation the application should be on your Macs file system in /Users/username/RASPASever/scratch-dir/…</p>
 
@@ -278,7 +278,7 @@ source=Developer ID
 
 <p>We have a single source code and want to implement two versions of our product:</p>
 
-<p><img src="http://localhost:4000/assets/uploads/2014/01/branding/branding1.png" alt="" /></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/branding1.png" alt="" /></p>
 
 <h2 id="catastic">Catastic</h2>
 
@@ -290,15 +290,15 @@ source=Developer ID
 
 <p>Lets start with the plugins:</p>
 
-<p><img src="http://localhost:4000/assets/uploads/2014/01/branding/plugins.png" alt="" /></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/plugins.png" alt="" /></p>
 
 <p>The application code resides in “com.da.branding.example”. In addition we create 3 more plugins, one generic branding plugin, which is the “gateway” to the specific branding plugins. If we look at the dependencies, we can see, that our application only depends on the branding plugin:</p>
 
-<p><img src="http://localhost:4000/assets/uploads/2014/01/branding/packages.png" alt="" /></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/packages.png" alt="" /></p>
 
 <p>This allows us to add new brandings, as well as removing brandings, without having our main application depending on a specific branding. The main branding plugin contains the branding logic, the specific plugins mostly contain the spefific branding information, like images, texts etc:</p>
 
-<p><img src="http://localhost:4000/assets/uploads/2014/01/branding/resources.png" alt="" /></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/resources.png" alt="" /></p>
 
 <h2 id="branding">Branding</h2>
 
@@ -308,7 +308,7 @@ source=Developer ID
 
 <p>A lot of stuff can be done in the product configuration, like splash, about and icons. So we create a product configuration for each output software. The first step is to create an extension point for the products in the specific branding plugins:</p>
 
-<p><img src="http://localhost:4000/assets/uploads/2014/01/branding/product_plugin.png" alt="" /></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/product_plugin.png" alt="" /></p>
 
 <p><em>As you can see, there is also a specific splash screen in each plugin.</em></p>
 
@@ -316,17 +316,17 @@ source=Developer ID
 
 <p>For each extension point I created a product configuration for the specific branded applications:</p>
 
-<p><img src="http://localhost:4000/assets/uploads/2014/01/branding/product_files.png" alt="" /></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/product_files.png" alt="" /></p>
 
 <p>Selecting the correct product picks of the settings from the extension points and adds them to the product configuration.</p>
 
 <p>The other configuration of the product configuration is straight forward. The important thing is to set the correct settings for the product definition:</p>
 
-<p><img src="http://localhost:4000/assets/uploads/2014/01/branding/product_definition.png" alt="" /></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/product_definition.png" alt="" /></p>
 
 <p>All other things like the splash screen image and the icons are configured as normal.</p>
 
-<p><img src="http://localhost:4000/assets/uploads/2014/01/branding/splash.png" alt="" /></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/splash.png" alt="" /></p>
 
 <p>When we launch each product configuration, the correct splash screen should be shown, as well as a different application name and a custom about dialog.</p>
 
@@ -372,7 +372,7 @@ loadFile(Branding.getInstance().getFile());
 
 <p>Here is how our application looks now:</p>
 
-<p><img src="http://localhost:4000/assets/uploads/2014/01/branding/screenshot.png" alt="" /></p>
+<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/screenshot.png" alt="" /></p>
 
 <iframe width="640" height="360" src="//www.youtube.com/embed/Ouyy-4nBjj0?rel=0" frameborder="0" allowfullscreen=""></iframe>
 

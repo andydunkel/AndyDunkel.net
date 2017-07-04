@@ -40,6 +40,8 @@ Die Hardware überzeugt, der Ständer ist recht stabil gebaut. Federn und Fixier
 
 Der Arm lässt sich, keine Hindernisse vorausgesetzt, frei drehen. Die optimale Position lässt sich schnell finden und einstellen. Das Mikro lässt sich jedem neigen und drehen. Braucht man das Mikro nicht, kann man es einfach nach hinten schieben und dann nimmt es auch keinen Platz weg.
 
+<iframe width="640" height="360" src="https://www.youtube.com/embed/2DCV2JibudU" frameborder="0" allowfullscreen></iframe>
+
 ## Fazit
 
 Für kleines Geld bekommt man einen vernünftigen und stabilen Stativarm für den Blue Snowball. Ich war anfangs des geringen Preises wegen skeptisch. Aber es gibt nichts zu meckern, schnelle Montage, perfekter Halt des Mikrofons.
