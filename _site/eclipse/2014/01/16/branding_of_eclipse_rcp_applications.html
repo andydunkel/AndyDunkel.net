@@ -164,7 +164,7 @@
 
 <p>We have a single source code and want to implement two versions of our product:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/branding1.png" alt="" /></p>
+<p><img src="http://localhost:4000/assets/uploads/2014/01/branding/branding1.png" alt="" /></p>
 
 <h2 id="catastic">Catastic</h2>
 
@@ -176,15 +176,15 @@
 
 <p>Lets start with the plugins:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/plugins.png" alt="" /></p>
+<p><img src="http://localhost:4000/assets/uploads/2014/01/branding/plugins.png" alt="" /></p>
 
 <p>The application code resides in “com.da.branding.example”. In addition we create 3 more plugins, one generic branding plugin, which is the “gateway” to the specific branding plugins. If we look at the dependencies, we can see, that our application only depends on the branding plugin:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/packages.png" alt="" /></p>
+<p><img src="http://localhost:4000/assets/uploads/2014/01/branding/packages.png" alt="" /></p>
 
 <p>This allows us to add new brandings, as well as removing brandings, without having our main application depending on a specific branding. The main branding plugin contains the branding logic, the specific plugins mostly contain the spefific branding information, like images, texts etc:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/resources.png" alt="" /></p>
+<p><img src="http://localhost:4000/assets/uploads/2014/01/branding/resources.png" alt="" /></p>
 
 <h2 id="branding">Branding</h2>
 
@@ -194,7 +194,7 @@
 
 <p>A lot of stuff can be done in the product configuration, like splash, about and icons. So we create a product configuration for each output software. The first step is to create an extension point for the products in the specific branding plugins:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/product_plugin.png" alt="" /></p>
+<p><img src="http://localhost:4000/assets/uploads/2014/01/branding/product_plugin.png" alt="" /></p>
 
 <p><em>As you can see, there is also a specific splash screen in each plugin.</em></p>
 
@@ -202,17 +202,17 @@
 
 <p>For each extension point I created a product configuration for the specific branded applications:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/product_files.png" alt="" /></p>
+<p><img src="http://localhost:4000/assets/uploads/2014/01/branding/product_files.png" alt="" /></p>
 
 <p>Selecting the correct product picks of the settings from the extension points and adds them to the product configuration.</p>
 
 <p>The other configuration of the product configuration is straight forward. The important thing is to set the correct settings for the product definition:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/product_definition.png" alt="" /></p>
+<p><img src="http://localhost:4000/assets/uploads/2014/01/branding/product_definition.png" alt="" /></p>
 
 <p>All other things like the splash screen image and the icons are configured as normal.</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/splash.png" alt="" /></p>
+<p><img src="http://localhost:4000/assets/uploads/2014/01/branding/splash.png" alt="" /></p>
 
 <p>When we launch each product configuration, the correct splash screen should be shown, as well as a different application name and a custom about dialog.</p>
 
@@ -258,7 +258,7 @@ loadFile(Branding.getInstance().getFile());
 
 <p>Here is how our application looks now:</p>
 
-<p><img src="http://andydunkel.net/assets/uploads/2014/01/branding/screenshot.png" alt="" /></p>
+<p><img src="http://localhost:4000/assets/uploads/2014/01/branding/screenshot.png" alt="" /></p>
 
 <iframe width="640" height="360" src="//www.youtube.com/embed/Ouyy-4nBjj0?rel=0" frameborder="0" allowfullscreen=""></iframe>
 
@@ -296,25 +296,25 @@ loadFile(Branding.getInstance().getFile());
 			 	<div class="panel-heading">Weitere Artikel:</div>
 				<div class="panel-body">
 				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/hardware/gadgets/2017/07/04/stativarm_fuer_blue_snowball.html" title="Rovtop Mikrofon Ständer / Stativ für Blue Snowball">Rovtop Mikrofon Ständer / Stativ für Blue Snowball</a></li>
+				   <li class="list-unstyled"><a href="http://localhost:4000/hardware/gadgets/2017/07/04/stativarm_fuer_blue_snowball.html" title="Rovtop Mikrofon Ständer / Stativ für Blue Snowball">Rovtop Mikrofon Ständer / Stativ für Blue Snowball</a></li>
 				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/webdesign/webseiten/html/meinung/2017/06/07/mit_apps_die_eigene_webseite_aufpeppen.html" title="Mit Apps die eigene Webseite aufpeppen">Mit Apps die eigene Webseite aufpeppen</a></li>
+				   <li class="list-unstyled"><a href="http://localhost:4000/webdesign/webseiten/html/meinung/2017/06/07/mit_apps_die_eigene_webseite_aufpeppen.html" title="Mit Apps die eigene Webseite aufpeppen">Mit Apps die eigene Webseite aufpeppen</a></li>
 				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/windows/software/2017/06/05/jekyll_windows_bash.html" title="Jeykyll in der Windows 10 Bash nutzen">Jeykyll in der Windows 10 Bash nutzen</a></li>
+				   <li class="list-unstyled"><a href="http://localhost:4000/windows/software/2017/06/05/jekyll_windows_bash.html" title="Jeykyll in der Windows 10 Bash nutzen">Jeykyll in der Windows 10 Bash nutzen</a></li>
 				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/hardware/gadgets/2017/06/01/takstar_mikrofon.html" title="Takstar Mikrofon für Nikon D3300">Takstar Mikrofon für Nikon D3300</a></li>
+				   <li class="list-unstyled"><a href="http://localhost:4000/hardware/gadgets/2017/06/01/takstar_mikrofon.html" title="Takstar Mikrofon für Nikon D3300">Takstar Mikrofon für Nikon D3300</a></li>
 				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/computer/software/2017/05/30/the_bat_mail_client.html" title="Umstieg auf TheBat! E-Mail-Client">Umstieg auf TheBat! E-Mail-Client</a></li>
+				   <li class="list-unstyled"><a href="http://localhost:4000/computer/software/2017/05/30/the_bat_mail_client.html" title="Umstieg auf TheBat! E-Mail-Client">Umstieg auf TheBat! E-Mail-Client</a></li>
 				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/computer/repair/reparatur/2017/04/28/dell_vostro_2520_power_button.html" title="Power Button Reparatur Dell Vostro 2520">Power Button Reparatur Dell Vostro 2520</a></li>
+				   <li class="list-unstyled"><a href="http://localhost:4000/computer/repair/reparatur/2017/04/28/dell_vostro_2520_power_button.html" title="Power Button Reparatur Dell Vostro 2520">Power Button Reparatur Dell Vostro 2520</a></li>
 				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/computer/2017/04/24/neuer_computer.html" title="Neuen Computer zusammengebaut">Neuen Computer zusammengebaut</a></li>
+				   <li class="list-unstyled"><a href="http://localhost:4000/computer/2017/04/24/neuer_computer.html" title="Neuen Computer zusammengebaut">Neuen Computer zusammengebaut</a></li>
 				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/webseiten/webdesign/tools/2017/04/17/jekyll_alternative_eltexto.html" title="Jekyll Alternative ElTexto">Jekyll Alternative ElTexto</a></li>
+				   <li class="list-unstyled"><a href="http://localhost:4000/webseiten/webdesign/tools/2017/04/17/jekyll_alternative_eltexto.html" title="Jekyll Alternative ElTexto">Jekyll Alternative ElTexto</a></li>
 				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/computer/mac/programmierung/2017/04/04/raus_aus_dem_app_store.html" title="Raus aus dem Mac-App-Store">Raus aus dem Mac-App-Store</a></li>
+				   <li class="list-unstyled"><a href="http://localhost:4000/computer/mac/programmierung/2017/04/04/raus_aus_dem_app_store.html" title="Raus aus dem Mac-App-Store">Raus aus dem Mac-App-Store</a></li>
 				
-				   <li class="list-unstyled"><a href="http://andydunkel.net/mobilitaet/umwelt/2017/04/03/mobilitaet_maerz_2017.html" title="Mobilität März 2017">Mobilität März 2017</a></li>
+				   <li class="list-unstyled"><a href="http://localhost:4000/mobilitaet/umwelt/2017/04/03/mobilitaet_maerz_2017.html" title="Mobilität März 2017">Mobilität März 2017</a></li>
 				
 				</div>
 			</div>
