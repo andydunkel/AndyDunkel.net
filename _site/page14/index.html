@@ -160,6 +160,32 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/coding/2015/11/13/visual_studio_startup_problems.html">Visual Studio 2015 startup: problem occurred when loading the menu</a>
+		</h1>
+		  <p class="small">Posted on 13 November 2015 by Andy</p>
+		  <p>This morning I had a strange error message, when I tried to start Visual Studio (version 2015, but it seems this also affects older versions):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>A problem occurred when loading the Microsoft Visual Studio menu. To fix this problem, run 'devenv.exe /resetsettings' from the command prompt. Note: this command resets your environment settings.
+</code></pre>
+</div>
+
+<p><img src="/assets/uploads/2015/11/vs1.png" alt="" /></p>
+
+<p>Needless to say that the proposed command did not do the trick. After some digging in the internet I found the solution. Turned out that Visual Studio has problems, when the <code>PATH</code> variable becomes bigger than 2048 character.</p>
+
+<p>The solution was to remove some items from the <code>PATH</code> variable:</p>
+
+<p><img src="/assets/uploads/2015/11/vs2.png" alt="" /></p>
+
+<p>Doing this and restarting the computer brought Visual Studio back to life.</p>
+	
+      <p><a class="btn btn-success" href="/coding/2015/11/13/visual_studio_startup_problems.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: VisualStudio by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/coding/2015/11/01/inno_setup_ipersistfile_save_schlug_fehl.html">InnoSetup - IPersistFile error 0x80070003</a>
 		</h1>
 		  <p class="small">Posted on 01 November 2015 by Andy</p>
@@ -454,68 +480,6 @@ Some time later another driver was installed, but this time the display turned b
 		  <p class="small">Tagged: Windows and Thinkpad by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/coding/2015/07/12/c_sharp_dateiaenderungen_ueberwachen.html">C#-Dateiänderungen in Verzeichnissen überwachen</a>
-		</h1>
-		  <p class="small">Posted on 12 July 2015 by Andy</p>
-		  <h1 id="c---dateiänderungen-in-verzeichnissen-überwachen">C# - Dateiänderungen in Verzeichnissen überwachen</h1>
-<p>Eine Aufgabe, die kompliziert klingt, es aber dann doch nicht ist: Überwachen von Verzeichnissen auf Änderungen. Egal, ob eine Datei umbenannt wird, eine Datei hinzukommt, Verzeichnisse verschoben werden etc.</p>
-
-<p>Stellt sich heraus, dass dies in C#, bzw. mit dem .net-Framework, eine einfache Sache ist. Die Klasse <code>FileSystemWatcher</code> nimmt uns die Arbeit ab. Einmal gestartet, überwacht und benachrichtigt uns dieser über Änderungen. Hier eine Beschreibung wie man diesen einsetzt.</p>
-
-<p><img src="/assets/uploads/2015/7/fsw1.png" alt="" /></p>
-
-<p>Zuerst legen wir uns das <code>FileSystemWatcher</code>-Object an und konfigurieren es:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>private FileSystemWatcher _watcher;
-
-_watcher = new FileSystemWatcher();
-_watcher.Path = "c:\\temp";
-_watcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.DirectoryName;
-_watcher.Filter = "*.*";
-</code></pre>
-</div>
-
-<p>Neben dem Pfad können wir festlegen über welche Änderungen wir uns benachrichtigen lassen wollen. Ebenfalls können wir festlegen, welche Dateien wir überwachen wollen. In unserem Beispiel einfach alle.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>_watcher.Changed += new FileSystemEventHandler(OnChanged);
-_watcher.Created += new FileSystemEventHandler(OnChanged);
-_watcher.Deleted += new FileSystemEventHandler(OnChanged);
-_watcher.Renamed += new RenamedEventHandler(OnRenamed);
-</code></pre>
-</div>
-
-<p>Nun müssen wir den <code>FileSystemWatcher</code> nur noch starten:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>_watcher.EnableRaisingEvents = true;
-</code></pre>
-</div>
-
-<p>Die EventHandler sehen so aus:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>private void OnRenamed(object sender, RenamedEventArgs e)
-{
-    MessageBox.Show("Änderung: " + e.FullPath + " - " + e.ChangeType.ToString());          
-}
-
-private void OnChanged(object source, FileSystemEventArgs e)
-{
-    MessageBox.Show("Änderung: " + e.FullPath + " - " + e.ChangeType.ToString());
-}
-</code></pre>
-</div>
-
-<p>Die übergebenen EventArgs enthalten Informationen zu den geänderten Datei, als auch Informationen über die Art der Änderung.</p>
-
-<p>Das war es auch schon. Wer will kann sich das <a href="/assets/uploads/2015/7/FileSystemWatcher.zip">Beispielprojekt hier herunterladen</a>.</p>
-
-	
-      <p><a class="btn btn-success" href="/coding/2015/07/12/c_sharp_dateiaenderungen_ueberwachen.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: C# by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -606,7 +570,7 @@ private void OnChanged(object source, FileSystemEventArgs e)
      
       <li class="category"><a href="/categories/lazarus">Lazarus <span>(2)</span></a></li>
      
-      <li class="category"><a href="/categories/linux">Linux <span>(15)</span></a></li>
+      <li class="category"><a href="/categories/linux">Linux <span>(16)</span></a></li>
      
       <li class="category"><a href="/categories/mac">Mac <span>(4)</span></a></li>
      
@@ -640,7 +604,7 @@ private void OnChanged(object source, FileSystemEventArgs e)
      
       <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
      
-      <li class="category"><a href="/categories/software">Software <span>(2)</span></a></li>
+      <li class="category"><a href="/categories/software">Software <span>(3)</span></a></li>
      
       <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
      

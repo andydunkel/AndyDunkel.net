@@ -160,6 +160,40 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/coding/2013/12/15/git_the_remote_end_hung_up_unexpectedly.html">Git - The remote end hung up unexpectedly</a>
+		</h1>
+		  <p class="small">Posted on 15 December 2013 by Andy</p>
+		  <p>Recently I tried to push a bigger repository to Github. At some stage of the upload process failed:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>fatal: The remote end hung up unexpectedly
+Everything up-to-date
+</code></pre>
+</div>
+
+<p>Some research on the internet indicated that the https buffer was not big enough. The simplest fix to that was to increase the buffer size:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git config http.postBuffer 524288000
+</code></pre>
+</div>
+
+<p>That worked fairly well, however the upload was more like a black box thing now. The commit was compressed locally and there was no real upload progress information anymore.</p>
+
+<p>One other solution is to switch from https to SSH by the following command:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git remote add origin git@github.com:username/project.git
+</code></pre>
+</div>
+
+<p>In order to get SSH working you will have to create SSH Keys first, which is <a href="https://help.github.com/articles/generating-ssh-keys">described here</a>.</p>
+
+	
+      <p><a class="btn btn-success" href="/coding/2013/12/15/git_the_remote_end_hung_up_unexpectedly.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: Git and Github by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/mac/tools/2013/12/14/homebrew_link_errors.html">Homebrew - Could not link xz Fehler</a>
 		</h1>
 		  <p class="small">Posted on 14 December 2013 by Andy</p>
@@ -354,48 +388,6 @@ With that workaround the tab key is now working as expected, jumping to the next
 		  <p class="small">Tagged: firemonkey and taborder by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/gadgets/sonstiges/reparatur/2013/11/19/sanyo_z5_thermoschalter.html">Sanyo Z5 Beamer - Thermoschalter zurücksetzen</a>
-		</h1>
-		  <p class="small">Posted on 19 November 2013 by Andy</p>
-		  <p>Am Samstagabend hatte ich mal wieder Zeit für einen Film. Dafür hatte ich mir einigen Jahren mal ein kleines Heimkinosystem eingerichtet: Beamer + 5.1 Boxen. Prima Sache!</p>
-
-<p>Leider ließ sich der Beamer, ein Sanyo Z5, nicht zum mehr Betrieb überreden. Nach dem Einschalten lief zwar der Lüfter, nach wenigen Sekunden schaltete sich der Beamer aber wieder ab. Zusätzlich blinkte die LED zum Lampenwechsel. Ganz toll.</p>
-
-<p>Dann fiel mir auch schon ein möglicher Grund ein. Bei der letzten Benutzung hatte ich etwas zu voreilig die Steckdosenleiste betätigt und den Beamer während der Nachkühlung hart abgeschaltet. :-(</p>
-
-<p>Nagut dachte ich, ist halt durch deine Dummheit die Lampe hinüber. Wäre nach über 6 Jahren und 2000 Betriebsstunden nicht schön, aber vertretbar gewesen.</p>
-
-<p>Nach kurzer Suche im Internet kam allerdings noch eine weitere Möglichkeit ins Spiel. Der Beamer verfügt über einen Thermoschalter, dieser kann sich beim vorzeitigen Abschalten verhaken.</p>
-
-<p>Also fix das Gerät aufgeschraubt, den Schalter betätigt und zur großen Freude lief er dann wieder und der Filmabend konnte mit 30 Minuten Verspätung doch noch beginnen.</p>
-
-<p>Wer das gleiche Problem hat hier eine kurze Anleitung.</p>
-
-<p>Beamer abbauen und dann hinten die drei Schrauben lösen:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/11/beamer/beamer0.jpg" alt="" /></p>
-
-<p>Beamer nun auf den Rücken legen und weitere 3 Schrauben lösen:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/11/beamer/beamer1.jpg" alt="" /></p>
-
-<p>Anschließend lässt sich die obere Abdeckung abnehmen. Die Abdeckung ist mit ein paar Kabeln mit dem Rest verbunden, also etwas Vorsicht walten lassen.</p>
-
-<p>Der Schaltet befindet sich hinten rechts am Gerät. Diesen nun vorsichtig rein drücken. Bei mir gab es ein leises Einrastgeräusch.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/11/beamer/beamer2.jpg" alt="" /></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/11/beamer/beamer3.jpg" alt="" /></p>
-
-<p>Nach dem Zusammenbau lief der Beamer wieder.</p>
-	
-      <p><a class="btn btn-success" href="/gadgets/sonstiges/reparatur/2013/11/19/sanyo_z5_thermoschalter.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: beamer and sanyo by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -486,7 +478,7 @@ With that workaround the tab key is now working as expected, jumping to the next
      
       <li class="category"><a href="/categories/lazarus">Lazarus <span>(2)</span></a></li>
      
-      <li class="category"><a href="/categories/linux">Linux <span>(15)</span></a></li>
+      <li class="category"><a href="/categories/linux">Linux <span>(16)</span></a></li>
      
       <li class="category"><a href="/categories/mac">Mac <span>(4)</span></a></li>
      
@@ -520,7 +512,7 @@ With that workaround the tab key is now working as expected, jumping to the next
      
       <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
      
-      <li class="category"><a href="/categories/software">Software <span>(2)</span></a></li>
+      <li class="category"><a href="/categories/software">Software <span>(3)</span></a></li>
      
       <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
      

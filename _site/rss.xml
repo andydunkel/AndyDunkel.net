@@ -8,7 +8,42 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Tue, 04 Jul 2017 19:00:00 +0200</pubDate>
+    <pubDate>Mon, 17 Jul 2017 19:00:00 +0200</pubDate>
+    <item>
+      <title>Ubuntu Linux Festplatte aufräumen - Alte Kernel entfernen</title>
+      <link>http://andydunkel.net/linux/software/2017/07/17/linux_alte_kernel_entfernen.html</link>
+      <description><![CDATA[
+
+Ich habe ein Ubuntu in einer virtuellen Maschine laufen. Als beim letzten Update die Klage kam, dass der Speicherplatz voll wahr, musste ich der Sache mal nachgehen. Installiert hatte ich nichts neues und auch keine großen Datenmengen kamen dazu. Am Ende hat sich herausgestellt, dass bei jedem Update des Kernels der alte Kernel im System verblieben ist.
+
+Dies hat natürlich auf Dauer dazu geführt, dass die 30 GB Speicher der VM langsam voll liefen.
+
+]]></description>
+      <pubDate>Mon, 17 Jul 2017 19:00:00 +0200</pubDate>
+      <guid>http://andydunkel.net/linux/software/2017/07/17/linux_alte_kernel_entfernen.html</guid>
+      <content:encoded><![CDATA[<img src="/assets/logos/logo_linux.jpg" class="imagelogo">
+
+Ich habe ein Ubuntu in einer virtuellen Maschine laufen. Als beim letzten Update die Klage kam, dass der Speicherplatz voll wahr, musste ich der Sache mal nachgehen. Installiert hatte ich nichts neues und auch keine großen Datenmengen kamen dazu. Am Ende hat sich herausgestellt, dass bei jedem Update des Kernels der alte Kernel im System verblieben ist.
+
+Dies hat natürlich auf Dauer dazu geführt, dass die 30 GB Speicher der VM langsam voll liefen. 
+
+<!--more-->
+
+Da man diese alten Kernel im Normalfall nicht mehr braucht, kann man diese entfernen. Warum das nicht gleich automatisch passiert, keine Ahnung. Im ersten Schritt installieren wir den Synaptic Package Manager:
+
+	sudo apt-get install synaptic
+
+Nach dem Start des Package Managers, filtert man die Kernel in der Suche durch Eingabe von <code>linux-image</code>. In meinem Fall wurden jede Menge ältere Kernel angezeigt. Diese markiert man anschließend zum Entfernen:
+	
+![](/assets/uploads/2017/7/linux1.png)
+
+Hier sollten nur ältere Versionen entfernt werden. Die aktuell verwendete Version sollte man natürlich behalten. Durch Eingabe von <code>uname -r</code> im Terminal kann man den aktuell verwendeten Kernel ermitteln.
+
+![](/assets/uploads/2017/7/linux2.png)
+
+Anschließend übernimmt man die Einstellungen. Es folgt die Deinstallation. Bei mir hat die Deinstallation am Ende satte 6 GB mehr freien Speicher eingebracht.]]></content:encoded>
+      <dc:date>2017-07-17T19:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>Rovtop Mikrofon Ständer / Stativ für Blue Snowball</title>
       <link>http://andydunkel.net/hardware/gadgets/2017/07/04/stativarm_fuer_blue_snowball.html</link>
@@ -17732,6 +17767,6 @@ public static File getPluginFolder() {
 ]]></content:encoded>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2017-07-04T19:00:00+02:00</dc:date>
+    <dc:date>2017-07-17T19:00:00+02:00</dc:date>
   </channel>
 </rss>
