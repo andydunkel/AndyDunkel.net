@@ -160,6 +160,36 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/eclipse/java/2011/06/28/okpressed-in-jface-dialog.html">Java/RCP - okPressed in JFace dialog</a>
+		</h1>
+		  <p class="small">Posted on 28 June 2011 by Andy</p>
+		  <p>Sometimes JFace and RCP are not straightforward. At least not for me. <a href="http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile5.png"><img src="http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile5.png" alt="" /></a></p>
+
+<p>For example the JFace dialog:</p>
+
+<p><a href="http://andydunkel.net/assets/uploads/2011/06/rcp_jface_dlg.png"><img src="http://andydunkel.net/assets/uploads/2011/06/rcp_jface_dlg.png" alt="" /></a></p>
+
+<p>It features an OK and Cancel button by default. If you want to do something when the user clicks the OK button, for example save the values from control elements to variables, you can overwrite the “okPressed” method:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	@Override
+	protected void okPressed() {
+		nameString = textBoxName.getText();
+		super.okPressed();
+	}
+</code></pre>
+</div>
+
+<p>When the OK button is pressed, the “okPressed” method is executed. The “open” method of the dialog returns <em>IDialogConstants.OK_ID</em> in that case (instead of SWT.OK).</p>
+
+<p>Of course there is also a “cancelPressed” method for the Cancel button</p>
+	
+      <p><a class="btn btn-success" href="/eclipse/java/2011/06/28/okpressed-in-jface-dialog.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: cancelPressed, Dialog, JFace, OK, and okPressed by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/coding/2011/06/27/cread-stdout-from-a-console-application.html">C#–Read STDOUT from a console application</a>
 		</h1>
 		  <p class="small">Posted on 27 June 2011 by Andy</p>
@@ -300,47 +330,6 @@ private void UpdateText(string text)
 		  <p class="small">Tagged: Canvas, ipad, and Schutzhülle by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/java/2011/06/22/java-check-if-your-code-is-running-in-eclipse.html">Java: Check if your code is running in Eclipse</a>
-		</h1>
-		  <p class="small">Posted on 22 June 2011 by Andy</p>
-		  <p>Sometimes, for example during debugging, it is useful to check if your code is running from the <a href="http://eclipse.org/">Eclipse</a> IDE to exclude certain code from execution.</p>
-
-<p>How can this be done? Here is an example:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>public class mainClass {
-
-	public static void main(String[] args) {
-		String inEclipse = System.getProperty("ineclipse");
-		
-		if ((inEclipse == null) || (!inEclipse.equals("true"))) {
-			System.out.println("Not running from Eclipse");
-			System.out.println(inEclipse);			
-		} else {
-			System.out.println("Running from Eclipse");
-			System.out.println(inEclipse);
-		}			
-	}
-}
-</code></pre>
-</div>
-
-<!-- more -->
-
-<p>The other thing we need to do here is to set the VM argument “ineclipse” in the “Run Configurations”:</p>
-
-<p><a href="http://andydunkel.net/assets/uploads/2011/06/image5.png"><img src="http://andydunkel.net/assets/uploads/2011/06/image_thumb.png" alt="image" /></a></p>
-
-<p>Here is the output from the example from within Eclipse and from the command line:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2011/06/compare_output.png" alt="compare_output" /></p>
-	
-      <p><a class="btn btn-success" href="/java/2011/06/22/java-check-if-your-code-is-running-in-eclipse.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: Check, Command Line, Debugging, Eclipse, Java, and Running by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -477,6 +466,8 @@ private void UpdateText(string text)
      
       <li class="category"><a href="/categories/webseiten">Webseiten <span>(8)</span></a></li>
      
+      <li class="category"><a href="/categories/wellensittich">Wellensittich <span>(1)</span></a></li>
+     
       <li class="category"><a href="/categories/windows">Windows <span>(7)</span></a></li>
      
       <li class="category"><a href="/categories/xcode">Xcode <span>(1)</span></a></li>
@@ -501,7 +492,7 @@ private void UpdateText(string text)
   
     <a href="/page49" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 50 of 56</span>
+  <span class="page_number ">Page: 50 of 57</span>
   
     <a href="/page51" class="next">Next</a>
   

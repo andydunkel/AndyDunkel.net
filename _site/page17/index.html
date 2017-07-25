@@ -160,6 +160,40 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/delphi/2014/12/08/delphi_xe7_startup_problems.html">Delphi XE7 - Startup problem</a>
+		</h1>
+		  <p class="small">Posted on 08 December 2014 by Andy</p>
+		  <p>I experienced a very annoying problem with after updating Delphi XE7 to update 1.</p>
+
+<p>When Delphi was started, it just hangs. After some time at least an error message pops up informing the user about not enough stack memory.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/12/xe7_1.png" alt="image" /></p>
+
+<p><code>displayNotification: Nicht genügend Stackspeicher / noch enough stack memory </code></p>
+
+<p>Delphi would still not react after clicking “OK” in the error message and remained in an unuseable state.</p>
+
+<p>Looks like some problem with the start page Delphi shows (bds://default.html) when started. Investigations on the internet brought up some information and hints how to solve the problem: clear the Internet Explorers cache, delete the cache folder of Internet Explorer manually. However non of that worked for me.</p>
+
+<p>Another solution is do disable the start page completely. To do that open the explorer (with admin rights) and navigate to the following folder of your Delphi installation:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> c:\Program Files (x86)\Embarcadero\Studio\15.0\Welcomepage\
+</code></pre>
+</div>
+
+<p>In that folder there are lot of subfolders. Open the one with your Delphi language and rename the original <code>default.htm</code> to <code>default_bak.htm</code>. Now create an empty <code>default.htm</code>.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/12/xe7_2.png" alt="image" /></p>
+
+<p>After that is done Delphi should start without any problems. The only downside is that you loose the functionality of the start page, like quick accessing your last projects.</p>
+	
+      <p><a class="btn btn-success" href="/delphi/2014/12/08/delphi_xe7_startup_problems.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: XE by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/linux/2014/12/02/owncloud_automatische_deinstallation_nach_update.html">Owncloud - automatische Deinstallation unter Ubuntu und Passwort zurücksetzen</a>
 		</h1>
 		  <p class="small">Posted on 02 December 2014 by Andy</p>
@@ -412,77 +446,6 @@ Setting up AirSonos for Kitchen {192.168.1.108:1400}
 		  <p class="small">Tagged: Events by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/raspberry/2014/08/29/backup_of_an_sd_card_on_osx.html">Backup of an SD card on OSX</a>
-		</h1>
-		  <p class="small">Posted on 29 August 2014 by Andy</p>
-		  <p>I own a RaspberryPi which I mainly use for <a href="https://owncloud.org/">Owncloud</a> and <a href="http://seafile.com">Seafile</a> as my personal Cloud-Storage. One of my concern is the backup. Lets face it, its a cheap device and it holds all its data on a cheap SD-Card.</p>
-
-<p>In the past I was using a backup script which backups all the data and puts it into a ZIP file. However if something happens to the device or SD card, this means that I have to reinstall everything from scratch.</p>
-
-<p>So I my idea was to buy another RPI and SD card and make an image of the original one every week. If the card in the RPI fails, I just have to plug in the backup card.</p>
-
-<h2 id="creating-the-image">Creating the image</h2>
-
-<h3 id="windows">Windows</h3>
-
-<p>On Windows the easiest way to do a complete backup/image of your SD card is the “Win 32 Disk Imager” tool. Its free and you can <a href="http://sourceforge.net/projects/win32diskimager/">download it here</a>.</p>
-
-<p>The usage is very simple: put the SD card into your card reader, select folder and filename for the image file and select the correct drive number from the list.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/08/win_disk_imager.png" alt="image" /></p>
-
-<p>To start the backup just click the “Read” button. The process takes some time, depending on the size and speed of your SD card.</p>
-
-<p>The restore is also very simple. Insert the new SD card, select the drive number and hit the “Write” button.</p>
-
-<p><strong>Done!</strong></p>
-
-<h3 id="osx-and-linux">OSX and Linux</h3>
-
-<p>On OSX creating an image of the SD card is also very simple. Just open the “Disk Utility”, select the SD card on the left and click “New Image”. The system prompts you for a location of the image.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/08/backup_osx.png" alt="image" /></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/08/sdcard1.png" alt="image" /></p>
-
-<p>On Linux (and OSX too), you can also backup from the command line using the DD command.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo dd if=/dev/rdisk1 of=~/Desktop/pi.img bs=1m
-</code></pre>
-</div>
-
-<p>To find the correct device, you can use the <code>diskutil</code> command (OSX only):</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>diskutil list
-</code></pre>
-</div>
-
-<p>This will output something like that:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2014/08/backup_osx_1.png" alt="image" /></p>
-
-<p>You can find the correct device by looking for a Linux partition.</p>
-
-<p>Note: There is no output of the DD command during the process. Also the image has the same size as the original SD card. So it makes sense to compress the image with ZIP or GZIP.</p>
-
-<h4 id="restore">Restore</h4>
-
-<p>The restore is similar:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo dd if=/path/to/backup.img of=/dev/rdisk1 bs=1m
-</code></pre>
-</div>
-
-<p>Once the restore is done to the new SD card, just put it into your Raspberry Pi and the system should boot as nothing happened.</p>
-
-	
-      <p><a class="btn btn-success" href="/raspberry/2014/08/29/backup_of_an_sd_card_on_osx.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: Backup by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -619,6 +582,8 @@ Setting up AirSonos for Kitchen {192.168.1.108:1400}
      
       <li class="category"><a href="/categories/webseiten">Webseiten <span>(8)</span></a></li>
      
+      <li class="category"><a href="/categories/wellensittich">Wellensittich <span>(1)</span></a></li>
+     
       <li class="category"><a href="/categories/windows">Windows <span>(7)</span></a></li>
      
       <li class="category"><a href="/categories/xcode">Xcode <span>(1)</span></a></li>
@@ -643,7 +608,7 @@ Setting up AirSonos for Kitchen {192.168.1.108:1400}
   
     <a href="/page16" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 17 of 56</span>
+  <span class="page_number ">Page: 17 of 57</span>
   
     <a href="/page18" class="next">Next</a>
   

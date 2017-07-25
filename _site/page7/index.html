@@ -160,6 +160,45 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/coding/2016/11/22/c-sharp-mehrsprachig-backgroundworker.html">Mehrsprache C# Anwendungen - nicht lokalisierte Backgroundworker und Threads</a>
+		</h1>
+		  <p class="small">Posted on 22 November 2016 by Andy</p>
+		  <p>Vor einiger Zeit habe ich beschrieben, wie man <a href="//andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html">C#-Anwendungen lokalisieren</a> kann.</p>
+
+<p>Die Sprache kann man z.B. so im Code festlegen:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>CultureInfo myCultureInfo = new CultureInfo("en");
+Thread.CurrentThread.CurrentCulture = myCultureInfo;
+Thread.CurrentThread.CurrentUICulture = myCultureInfo;
+</code></pre>
+</div>
+
+<p>Allerdings reicht dies nicht in allen Fällen aus. So trat das Problem auf, dass in Backgroundworkern und Threads in meinen Logik-Klassen, immer die deutschen Texte verwendet worden sind:</p>
+
+<p><img src="/assets/uploads/2016/11/trans_error1.png" alt="" /></p>
+
+<p>Hier sollte eigentlich der Text in englischer Sprache aus der Resourcendatei kommen.</p>
+
+<h2 id="lösung">Lösung</h2>
+
+<p>Die Lösung ist einfach, zumindest ab .net Version 4.5. Hier fügt man einfach die folgenden zwei Zeilen dem ursprünglichen Code hinzu:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>CultureInfo.DefaultThreadCurrentCulture = myCultureInfo;
+CultureInfo.DefaultThreadCurrentUICulture = myCultureInfo;
+</code></pre>
+</div>
+
+<p>Der Code bewirkt das auch andere Threads und damit auch die Backgroundworker die richtige Sprache verwenden.</p>
+
+<p><img src="/assets/uploads/2016/11/trans_error1.png" alt="" /></p>
+	
+      <p><a class="btn btn-success" href="/coding/2016/11/22/c-sharp-mehrsprachig-backgroundworker.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: C# by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/mobilitaet/umwelt/2016/11/03/mobilitaet_oktober_2016.html">Mobilität Oktober 2016</a>
 		</h1>
 		  <p class="small">Posted on 03 November 2016 by Andy</p>
@@ -314,36 +353,6 @@
 		  <p class="small">Tagged: Viren, Trojaner, and Sicherheit by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/mobilitaet/umwelt/2016/09/04/mobilitaet_august_2016.html">Mobilität August 2016</a>
-		</h1>
-		  <p class="small">Posted on 04 September 2016 by Andy</p>
-		  <p>Der August lief fahrradmäßig, dank gutem Wetter, nochmal recht gut. Mal schauen wie es im September wird. Leider wurde auch das Auto mehr bewegt, was vermutlich die nächsten Monate noch mehr wird. Trotzdem doppelt soviel mit dem Rad unterwegs gewesen als mit dem Auto.</p>
-
-<h3 id="fahrrad">Fahrrad</h3>
-
-<ul>
-  <li>Gesamt km: 625 km</li>
-  <li>Fahrten: 32</li>
-  <li>Durchschnitt pro Fahrt: 19,5 km</li>
-</ul>
-
-<h3 id="auto">Auto</h3>
-
-<ul>
-  <li>Gesamt km: 296</li>
-  <li>Fahrten: 13</li>
-  <li>Durchschnitt pro Fahrt: 22,77 km</li>
-  <li>Getankt: 0 Liter</li>
-</ul>
-
-	
-      <p><a class="btn btn-success" href="/mobilitaet/umwelt/2016/09/04/mobilitaet_august_2016.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: Mobilitaet and Umwelt by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -480,6 +489,8 @@
      
       <li class="category"><a href="/categories/webseiten">Webseiten <span>(8)</span></a></li>
      
+      <li class="category"><a href="/categories/wellensittich">Wellensittich <span>(1)</span></a></li>
+     
       <li class="category"><a href="/categories/windows">Windows <span>(7)</span></a></li>
      
       <li class="category"><a href="/categories/xcode">Xcode <span>(1)</span></a></li>
@@ -504,7 +515,7 @@
   
     <a href="/page6" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 7 of 56</span>
+  <span class="page_number ">Page: 7 of 57</span>
   
     <a href="/page8" class="next">Next</a>
   
