@@ -160,6 +160,41 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/coding/eclipse/2012/11/02/easy-logging-for-rcp-applications.html">Easy logging for RCP applications</a>
+		</h1>
+		  <p class="small">Posted on 02 November 2012 by Andy</p>
+		  <p>A small class for easy logging in RCP applications by using the Activators logging functions. This class mainly wraps the need of creating an IStatus object each time we want to log something.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+
+public class LoggerUtil {
+    public static void info(String message){
+        IStatus status = new Status(IStatus.INFO,Activator.PLUGIN_ID, message);
+        Activator.getDefault().getLog().log(status);
+    }
+
+    public static void error(String message){
+        IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, message);
+        Activator.getDefault().getLog().log(status);
+    }
+
+    public static void warning(String message){
+        IStatus status = new Status(IStatus.WARNING,.PLUGIN_ID, message);
+        Activator.getDefault().getLog().log(status);
+    }
+}
+</code></pre>
+</div>
+
+	
+      <p><a class="btn btn-success" href="/coding/eclipse/2012/11/02/easy-logging-for-rcp-applications.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged:  by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/coding/eclipse/2012/11/02/rcp-switch-to-perspective-via-code.html">RCP: Switch to perspective via code</a>
 		</h1>
 		  <p class="small">Posted on 02 November 2012 by Andy</p>
@@ -358,20 +393,6 @@ public void createInitialLayout(IPageLayout layout) {
 		  <p class="small">Tagged:  by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/radfahren/2012/09/03/katzbrui-2012.html">Katzbrui 2012</a>
-		</h1>
-		  <p class="small">Posted on 03 September 2012 by Andy</p>
-		  <p><img src="http://andydunkel.net/assets/uploads/2012/09/2012-09-02-17.28.44.jpg" alt="2012 09 02 17 28 44" /></p>
-
-<p> </p>
-	
-      <p><a class="btn btn-success" href="/radfahren/2012/09/03/katzbrui-2012.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged:  by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -440,7 +461,7 @@ public void createInitialLayout(IPageLayout layout) {
      
       <li class="category"><a href="/categories/fotos">Fotos <span>(5)</span></a></li>
      
-      <li class="category"><a href="/categories/gadgets">Gadgets <span>(28)</span></a></li>
+      <li class="category"><a href="/categories/gadgets">Gadgets <span>(29)</span></a></li>
      
       <li class="category"><a href="/categories/html">Html <span>(1)</span></a></li>
      
@@ -486,7 +507,7 @@ public void createInitialLayout(IPageLayout layout) {
      
       <li class="category"><a href="/categories/repair">Repair <span>(2)</span></a></li>
      
-      <li class="category"><a href="/categories/reparatur">Reparatur <span>(5)</span></a></li>
+      <li class="category"><a href="/categories/reparatur">Reparatur <span>(6)</span></a></li>
      
       <li class="category"><a href="/categories/retrotrip">Retrotrip <span>(1)</span></a></li>
      

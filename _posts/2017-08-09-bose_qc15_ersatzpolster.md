@@ -29,7 +29,7 @@ Die Ersatzpolster kann man z.B. auf Amazon.de kaufen, wahlweise das [Originalers
 
 Der Wechsel geht aber recht schnell von statten, ich habe dies hier im Video festgehalten:
 
-	VIDEO
+<iframe width="640" height="360" src="https://www.youtube.com/embed/0BeEnkYMe4g" frameborder="0" allowfullscreen></iframe>
 
 Die Ohrpolster werden über kleine Plastiknasen am Gehäuse gehalten. Diese kann man mit sanfter Gewalt einfach abziehen. Da die Abdeckung noch in Ordnung war, habe ich diese einfach dran gelassen. Das neue Polster muss dann wieder an den Plastikhalterungen befestigt werden. Am Besten merkt man sich grob die Position der Plastiknasen, legt das neue Polster auf und klippst dieses dann mit dem Fingernagel in die Nasen ein. Ein leichtes Klicken signalisiert den Erfolg. Ist das erledigt hält die neue Polsterung auch perfekt.
 

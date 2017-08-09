@@ -160,6 +160,40 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/sonstiges/tools/2011/08/27/nicht-gengend-serverspeicher.html">Nicht genügend Serverspeicher</a>
+		</h1>
+		  <p class="small">Posted on 27 August 2011 by Andy</p>
+		  <p>Momentan ziehe ich Windows Probleme magisch an. Heute habe ich auf meinem Server (eigentlich nur eine Windows XP Kiste mit ein paar Freigaben) Acronis True Image installiert. Backups sind ja wichtig und so…</p>
+
+<p>Nicht nur, dass es hierbei schon <a href="http://blog.ekiwi.de/?p=733">zu Problemen kam</a>, nein, ich konnte anschließend auch nicht mehr auf meine Netzwerkfreigaben zugreifen. Fehlermeldung: “Nicht genügend Serverspeicher”. Super! <img src="http://andydunkel.net/assets/uploads/2011/08/wlEmoticon-cryingface.png" alt="Weinendes Smiley" /></p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image21.png" alt="image" /></p>
+
+<p>Nach etwas Internetrecherche kam ich zu folgendem Lösungsvorschlag. In der Registry unter <br />
+“HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services<br />
+\lanmanserver\parameters”</p>
+
+<p>den Parameter “IRPStackSize” abändern. 32 hex, bzw. 50 ist das Maximum.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image22.png" alt="image" /></p>
+
+<p>Bei mir war der Eintrag nicht vorhanden, also anlegen mit Rechtsklick:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image23.png" alt="image" /></p>
+
+<p>Anschließend den Wert eingeben:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/08/image24.png" alt="image" /></p>
+
+<p>Nun noch neustarten und schon ging wieder alles. Easy oder? <img src="http://andydunkel.net/assets/uploads/2011/08/wlEmoticon-smile2.png" alt="Smiley" /></p>
+	
+      <p><a class="btn btn-success" href="/sonstiges/tools/2011/08/27/nicht-gengend-serverspeicher.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: Acronis, Netzwerkfreigaben, and Serverspeicher by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/sonstiges/2011/08/25/strom-bei-der-arbeit.html">Strom bei der Arbeit</a>
 		</h1>
 		  <p class="small">Posted on 25 August 2011 by Andy</p>
@@ -237,18 +271,6 @@
 		  <p class="small">Tagged: Dokumentenscanner, klein, and USB by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/sonstiges/2011/08/15/schwan.html">Schwan</a>
-		</h1>
-		  <p class="small">Posted on 15 August 2011 by Andy</p>
-		  <p><img src="http://andydunkel.net/assets/uploads/2011/08/image16.png" alt="image" /></p>
-	
-      <p><a class="btn btn-success" href="/sonstiges/2011/08/15/schwan.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: Schwan by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -317,7 +339,7 @@
      
       <li class="category"><a href="/categories/fotos">Fotos <span>(5)</span></a></li>
      
-      <li class="category"><a href="/categories/gadgets">Gadgets <span>(28)</span></a></li>
+      <li class="category"><a href="/categories/gadgets">Gadgets <span>(29)</span></a></li>
      
       <li class="category"><a href="/categories/html">Html <span>(1)</span></a></li>
      
@@ -363,7 +385,7 @@
      
       <li class="category"><a href="/categories/repair">Repair <span>(2)</span></a></li>
      
-      <li class="category"><a href="/categories/reparatur">Reparatur <span>(5)</span></a></li>
+      <li class="category"><a href="/categories/reparatur">Reparatur <span>(6)</span></a></li>
      
       <li class="category"><a href="/categories/retrotrip">Retrotrip <span>(1)</span></a></li>
      
