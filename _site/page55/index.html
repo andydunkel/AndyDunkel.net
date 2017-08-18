@@ -160,6 +160,28 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/radfahren/tools/2011/05/23/google-maps-karten-kml-datei-exportierenspeichern.html">Google Maps Karten KML Datei exportieren/speichern</a>
+		</h1>
+		  <p class="small">Posted on 23 May 2011 by Andy</p>
+		  <p>Ich nutze <a href="http://mytracks.appspot.com/">MyTracks</a> von Google zum GPS-Logging meiner Radtouren. Nach dem Upload stehen diese erst mal nur in Google Maps zur Verfügung. Der Download als <a href="http://de.wikipedia.org/wiki/Keyhole_Markup_Language">KML-Datei</a> ist über einen “Trick” möglich:</p>
+
+<p>Man wählt zuerst die Karte in Google Maps aus. Klickt dann auf Link und kopiert diesen:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/05/image8.png" alt="image" /></p>
+
+<p>Link nun einfach in die Adresszeile des Browsers kopieren und &amp;output=kml einfügen.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/05/image9.png" alt="image" /></p>
+
+<p>Enter und der Download der KML-Datei beginnt.</p>
+	
+      <p><a class="btn btn-success" href="/radfahren/tools/2011/05/23/google-maps-karten-kml-datei-exportierenspeichern.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: Maps KML GPS Loggin Export by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/radfahren/2011/05/22/alpen-panorama-runde-vom-21-05-2011.html">Alpen-Panorama-Runde vom 21.05.2011</a>
 		</h1>
 		  <p class="small">Posted on 22 May 2011 by Andy</p>
@@ -272,44 +294,6 @@ Aufgezeichnet am: Fr. Mai 20 13:57:10 MESZ 2011</p>
 		  <p class="small">Tagged: Alpen Radeln Fotos by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/java/swt/2011/05/17/javaswt-gui-access-from-thread.html">Java/SWT GUI Access from Thread</a>
-		</h1>
-		  <p class="small">Posted on 17 May 2011 by Andy</p>
-		  <p>A thread in Java cannot directly access the GUI. With the following snippet the access is possible:</p>
-
-<p>Call from the thread:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>@Override
-public void run() {
-	html = "&lt;h1&gt;Huhu&lt;/h1&gt;";
-	dlg.setSomeStuffToGui(html);	
-}
-</code></pre>
-</div>
-
-<p>Method in the GUI:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>public void setSomeStuffToGui(final String html) {
-	Display display = getDisplay();
-	
-	display.asyncExec(new Runnable() {
-        public void run() {
-        	//your stuff goes here:
-        	textField.setText(html);
-        }
-      });			
-}
-</code></pre>
-</div>
-
-	
-      <p><a class="btn btn-success" href="/java/swt/2011/05/17/javaswt-gui-access-from-thread.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: Java, SWT, and Thread by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -404,7 +388,7 @@ public void run() {
      
       <li class="category"><a href="/categories/mac">Mac <span>(4)</span></a></li>
      
-      <li class="category"><a href="/categories/meinung">Meinung <span>(7)</span></a></li>
+      <li class="category"><a href="/categories/meinung">Meinung <span>(8)</span></a></li>
      
       <li class="category"><a href="/categories/minimalismus">Minimalismus <span>(1)</span></a></li>
      
@@ -442,9 +426,9 @@ public void run() {
      
       <li class="category"><a href="/categories/umwelt">Umwelt <span>(22)</span></a></li>
      
-      <li class="category"><a href="/categories/webdesign">Webdesign <span>(8)</span></a></li>
+      <li class="category"><a href="/categories/webdesign">Webdesign <span>(9)</span></a></li>
      
-      <li class="category"><a href="/categories/webseiten">Webseiten <span>(8)</span></a></li>
+      <li class="category"><a href="/categories/webseiten">Webseiten <span>(9)</span></a></li>
      
       <li class="category"><a href="/categories/wellensittich">Wellensittich <span>(1)</span></a></li>
      
