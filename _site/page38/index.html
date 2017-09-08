@@ -160,6 +160,45 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/java/2011/10/12/java-reading-output-from-a-consolestdout.html">Java: Reading output from the Console/StdOut</a>
+		</h1>
+		  <p class="small">Posted on 12 October 2011 by Andy</p>
+		  <p>Today I had a small problem. I wanted to start an external C++ console programm with some parameters and get the output back to my Java program.</p>
+
+<p>Here is a code snippet that reads the output from a console program:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+
+  public static void main(String[] args) throws IOException {
+        String cmd = "cmd.exe /c dir c:\\temp";
+        
+        String line;
+        Process p = Runtime.getRuntime().exec(cmd);
+        BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        while ((line = input.readLine()) != null) {
+          System.out.println(line);
+        }
+        input.close();
+  }
+}
+</code></pre>
+</div>
+
+<p>The snippet just outputs the received information.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2011/10/image5.png" alt="image" /></p>
+	
+      <p><a class="btn btn-success" href="/java/2011/10/12/java-reading-output-from-a-consolestdout.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: cmd.exe, Console, Java, read, and StdOut by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/eclipse/java/swt/2011/10/06/jface-set-selection-index-in-tableviewer.html">JFace: Set selection index in TableViewer</a>
 		</h1>
 		  <p class="small">Posted on 06 October 2011 by Andy</p>
@@ -245,34 +284,6 @@ tableViewer.setSelection(new StructuredSelection(tableViewer.getElementAt(select
 		  <p class="small">Tagged: default, EMF, null, string, and value by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/eclipse/java/2011/09/27/java-open-an-url-in-the-standard-browser.html">Java: Open an URL in the standard browser</a>
-		</h1>
-		  <p class="small">Posted on 27 September 2011 by Andy</p>
-		  <p>Here is short code snippet to open an URL with the systems standard browser:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>public void openUrl(String url) throws IOException, URISyntaxException {
-  if(java.awt.Desktop.isDesktopSupported() ) {
-        java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
-
-        if(desktop.isSupported(java.awt.Desktop.Action.BROWSE) ) {
-          java.net.URI uri = new java.net.URI(url);
-              desktop.browse(uri);
-        }
-      } 
-}
-</code></pre>
-</div>
-
-<p>java.awt.Desktop is supported as of Java 6.</p>
-
-	
-      <p><a class="btn btn-success" href="/eclipse/java/2011/09/27/java-open-an-url-in-the-standard-browser.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: brower, open, standard, and system by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -329,7 +340,7 @@ tableViewer.setSelection(new StructuredSelection(tableViewer.getElementAt(select
      
       <li class="category"><a href="/categories/coding">Coding <span>(32)</span></a></li>
      
-      <li class="category"><a href="/categories/computer">Computer <span>(14)</span></a></li>
+      <li class="category"><a href="/categories/computer">Computer <span>(15)</span></a></li>
      
       <li class="category"><a href="/categories/delphi">Delphi <span>(9)</span></a></li>
      
@@ -345,7 +356,7 @@ tableViewer.setSelection(new StructuredSelection(tableViewer.getElementAt(select
      
       <li class="category"><a href="/categories/html">Html <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/hardware">Hardware <span>(2)</span></a></li>
+      <li class="category"><a href="/categories/hardware">Hardware <span>(3)</span></a></li>
      
       <li class="category"><a href="/categories/hiking">Hiking <span>(9)</span></a></li>
      
