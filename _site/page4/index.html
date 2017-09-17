@@ -160,6 +160,26 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/computer/mac/programmierung/2017/04/04/raus_aus_dem_app_store.html">Raus aus dem Mac-App-Store</a>
+		</h1>
+		  <p class="small">Posted on 04 April 2017 by Andy</p>
+		  <p>Außerplanmäßige Mails von Itunes Connect verheißen meist nichts gutes, sondern Arbeit. Vor einiger Zeit hat Apple angekündigt, dass ältere Apps ohne Updates künftig keine Heimat mehr im App-Store haben. 6 Monate räumt Apple den Entwicklern ein. Wer in diesem Zeitraum seine Anwendung nicht updatet fliegt. So auch eine meiner Anwendungen. Nun kann man sich darüber streiten, ob das sinnvoll ist. Einige Software erfordert Pflege, andere ist irgendwann einfach mal fertig. Sofern die Anwendung funktioniert und nicht abschmiert, gibt es keinen Grund daran etwas zu ändern.</p>
+
+<p>Im Zweifelsfall zählt man also die Build-Nummer hoch und reicht die App neu ein. Mit etwas Glück darf man sich dann noch mit dem Review-Team herumärgern, welches die ein oder andere Regel etwas zu genau auslegt.</p>
+
+<p>Ein Drittel der Einnahmen darf man an Apple abdrücken für diese Dienstleistung. Das Herumärgern mit den Sandboxvorgaben nicht eingerechnet. Einige Entwickler <a href="http://ekiwi-blog.de/?p=3349">verlassen so den App-Store mittlerweile wieder</a>.</p>
+
+<p>Für den Anwender mag der App-Store bequem sein, zumindest solange <a href="https://www.heise.de/mac-and-i/meldung/Abgelaufene-Apple-Entwickler-Zertifikate-bringen-Mac-Apps-zum-Absturz-3631040.html">keine Zertifikate bei Apple ablaufen</a>.</p>
+
+<p>Als Entwickler sehe ich keine Vorteile mehr beim App-Store. Die Hoffnung mehr Sichtbarkeit und Verbreitung zu erfahren hat sich nicht so bewahrheitet. Ich selbst schaue auch nie in den App-Store rein um irgendeine Software zu suchen. Meist finde ich interessante Software über Google und kaufe diese dann einfach direkt beim Anbieter.</p>
+	
+      <p><a class="btn btn-success" href="/computer/mac/programmierung/2017/04/04/raus_aus_dem_app_store.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: Apple and Softwareentwicklung by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/mobilitaet/umwelt/2017/04/03/mobilitaet_maerz_2017.html">Mobilität März 2017</a>
 		</h1>
 		  <p class="small">Posted on 03 April 2017 by Andy</p>
@@ -280,137 +300,6 @@
 		  <p class="small">Tagged: Mobilitaet and Umwelt by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/coding/programmierung/2017/02/23/windows_forms_on_osx_clipboard_not_working.html">Windows Forms on OSX - Clipboard not working</a>
-		</h1>
-		  <p class="small">Posted on 23 February 2017 by Andy</p>
-		  <p>You can run Winforms applications on OSX by using Mono. Its looking sort of ugly, but most stuff works out of box. However there are some bugs, which make the usage of the application an annoyance. For example the clipboard is not working as expected. Copy and paste works in the application itself, but if you copy anything from another application on OSX. This means, that the application has its own clipboard. Setting the clipboard with <code>Clipboard.SetText("schlurps")</code> only sets the application internal clipboard.</p>
-
-<p>This is a known issue (see <a href="https://bugzilla.xamarin.com/show_bug.cgi?id=3106">here</a>) and looking to the reported dates, I would not expect any</p>
-
-<h2 id="the-workaround">The workaround</h2>
-
-<p>On Stackoverflow is a <a href="http://stackoverflow.com/questions/28611112/mono-clipboard-fix">proposed and working solution</a> to copy data from the OSX clipboard and also retrieve data from it. It uses the <code>pbcopy</code> command for that.</p>
-
-<p>While that works this is manual action. You can access the clipboard, but you cannot just paste from OSX. I made a workaround which involves a timer. The timer checks every 250ms if the content of the Mac-Clipboard has been changed. In that case the application clipboard is set.</p>
-
-<p>Here is the class:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>public class MacClipboard
-{
-    private static String _osxClipboard = "";
-
-    private static Timer _timer = new Timer();
-
-    public static string OsxClipboard
-    {
-        get
-        {
-            return _osxClipboard;
-        }
-
-        set
-        {
-            _osxClipboard = value;
-        }
-    }
-    
-    public static void Init()
-    {
-        _timer.Interval = 250;
-        _timer.Enabled = true;
-        _timer.Tick += Timer_Tick;
-    }
-
-    private static void Timer_Tick(object sender, EventArgs e)
-    {
-        UpdateClipboard();
-    }
-
-    public static void UpdateClipboard()
-    {
-        String s = Paste();
-
-        if (_osxClipboard != s)
-        {
-            _osxClipboard = s;
-            Clipboard.SetText(s);
-        }
-    }
-
-
-    /// &lt;summary&gt;
-    /// Copy on MAC OS X using pbcopy commandline
-    /// &lt;/summary&gt;
-    /// &lt;param name="textToCopy"&gt;&lt;/param&gt;
-    public static void Copy(string textToCopy)
-    {
-        try
-        {
-            using (var p = new Process())
-            {
-
-                p.StartInfo = new ProcessStartInfo("pbcopy", "-pboard general -Prefer txt");
-                p.StartInfo.UseShellExecute = false;
-                p.StartInfo.RedirectStandardOutput = false;
-                p.StartInfo.RedirectStandardInput = true;
-                p.Start();
-                p.StandardInput.Write(textToCopy);
-                p.StandardInput.Close();
-                p.WaitForExit();
-            }
-        }
-        catch (Exception ex)
-        {
-            Trace.WriteLine(ex.Message);
-        }
-
-
-    }
-
-    /// &lt;summary&gt;
-    /// Paste on MAC OS X using pbpaste commandline
-    /// &lt;/summary&gt;
-    /// &lt;returns&gt;&lt;/returns&gt;
-    public static string Paste()
-    {
-        try
-        {
-            string pasteText;
-            using (var p = new Process())
-            {
-
-                p.StartInfo = new ProcessStartInfo("pbpaste", "-pboard general");
-                p.StartInfo.UseShellExecute = false;
-                p.StartInfo.RedirectStandardOutput = true;
-                p.Start();
-                pasteText = p.StandardOutput.ReadToEnd();
-                p.WaitForExit();
-            }
-
-            return pasteText;
-        }
-        catch (Exception ex)
-        {
-            Trace.WriteLine(ex.Message);
-            return null;
-        }
-
-    }
-}
-</code></pre>
-</div>
-
-<p>I am only starting the timer on OSX in my application. If the user copies something into the clipboard it will be made available in the application clipboard. You can also set or the OSX clipboard manually. It should also be easy to extend the code for the other way around. If the application clipboard changes, the content could be copied back to the OSX clipboard.</p>
-
-<p>Its not a very good implementation, but it works.</p>
-	
-      <p><a class="btn btn-success" href="/coding/programmierung/2017/02/23/windows_forms_on_osx_clipboard_not_working.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: Csharp, OSX, and Winforms by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -519,7 +408,7 @@
      
       <li class="category"><a href="/categories/programmierung">Programmierung <span>(6)</span></a></li>
      
-      <li class="category"><a href="/categories/radfahren">Radfahren <span>(31)</span></a></li>
+      <li class="category"><a href="/categories/radfahren">Radfahren <span>(32)</span></a></li>
      
       <li class="category"><a href="/categories/raspberry">Raspberry <span>(3)</span></a></li>
      
@@ -573,7 +462,7 @@
   
     <a href="/page3" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 4 of 57</span>
+  <span class="page_number ">Page: 4 of 58</span>
   
     <a href="/page5" class="next">Next</a>
   

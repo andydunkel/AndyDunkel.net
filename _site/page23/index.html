@@ -160,6 +160,107 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/delphi/coding/2013/11/23/firemonkey_xe_4_taborder_workaround.html">Delphi XE4/Firemonkey - Taborder not working + Workaround</a>
+		</h1>
+		  <p class="small">Posted on 23 November 2013 by Andy</p>
+		  <p>Firemonkey, the framework for cross plattform development, still seems to have some problems and bugs. :-( One of the problems I came across was that the TabOrder property was not working:</p>
+
+<iframe width="640" height="360" src="//www.youtube.com/embed/adnmXK3xzyE" frameborder="0" allowfullscreen=""></iframe>
+
+<p>The problem starts with the inability to set the TabOrder correctly in the designer. They are reset all the time to their defaults. When the application is running, the TabOrder works for some basic dialogs. In others dialogs nothing happens, or the tab key focuses the wrong control.</p>
+
+<p>Looking up the bug database from Embarcadero, this is a known problem / bug. Some people in the internet suggest to set the TabOrder property programmatically during runtime, but that also did not work for me.</p>
+
+<p>After a lot of trying, I found a workaround, that at least works for me. Since I could not set the TabOrder property, I used the HelpContext property (which I dont use in my application) to define the order of the controls:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2013/11/taborder/1.png" alt="" /></p>
+
+<p><em>Note: You can also use the Tag value, but I am using that one for my translation logic.</em></p>
+
+<p>Next step was to create a class helper for TForm:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>unit FormHelper;
+
+interface
+
+type
+  TFormHelper = class helper for TForm
+    procedure DoTabHandlingXE(comp : TForm; tabOrder : Integer);
+  end;
+
+implementation
+
+//Workaround for Tab-Bug in Firemonkey
+procedure TFormHelper.DoTabHandlingXE(comp: TForm; tabOrder : Integer);
+var
+  i, c :integer;
+  current : TComponent;
+  currentNext : integer;
+  focus : TStyledControl;
+begin
+  c := Self.ComponentCount - 1;
+  currentNext := 9999;
+  focus := nil;
+
+  for i := 0 to c do begin
+      current := Self.Components[i];
+      if (current is TStyledControl) then begin
+          if ((current as TStyledControl).HelpContext &lt; currentNext) and 
+		  ((current as TStyledControl).HelpContext &gt; tabOrder) then begin
+            currentNext := (current as TStyledControl).HelpContext;
+          end;
+      end;
+  end;	
+
+  for i := 0 to c do begin
+      current := Self.Components[i];
+      if (current is TStyledControl) then begin
+        if (currentNext = (current as TStyledControl).HelpContext) then begin
+          focus := (current as TStyledControl);
+        end;
+      end;
+  end;
+
+  if focus &lt;&gt; nil then begin
+    focus.SetFocus;
+  end;
+end;
+end.
+</code></pre>
+</div>
+
+<p>I am sure there could be some optimizations done with that code, but it works. What we are doing here is to iterate over all controls of a given form and find the next higher value of the HelpContext. Thats the control we want to set focus, when the user hits the tab key.</p>
+
+<p>Of course the code does nothing to far, since the method is not called yet. So the next step is to implement the KeyDown event in the form:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>procedure TfrmEinzField.KeyDown(var Key: Word; var KeyChar: Char;
+  Shift: TShiftState);
+var
+  control : TStyledControl;
+begin
+  if Key = vkTab then
+  begin
+    //custom handling
+    if (Self.GetFocused is TStyledControl) then begin
+      control := (Self.GetFocused as TStyledControl);
+      DoTabHandlingXE(Self, control.HelpContext);
+    end;
+  end else
+    inherited; //do default handling
+end;
+</code></pre>
+</div>
+
+<p>In the code, we get the currently focused control. Then we call the method we wrote before with the current Form variable and the controls HelpContext value.
+With that workaround the tab key is now working as expected, jumping to the next control.</p>
+	
+      <p><a class="btn btn-success" href="/delphi/coding/2013/11/23/firemonkey_xe_4_taborder_workaround.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: firemonkey and taborder by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/gadgets/sonstiges/reparatur/2013/11/19/sanyo_z5_thermoschalter.html">Sanyo Z5 Beamer - Thermoschalter zurücksetzen</a>
 		</h1>
 		  <p class="small">Posted on 19 November 2013 by Andy</p>
@@ -298,56 +399,6 @@
 		  <p class="small">Tagged: ip, Java, and Mac by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/eclipse/2013/08/29/set-workspace-location-for-rcp-application.html">Set workspace location for RCP application</a>
-		</h1>
-		  <p class="small">Posted on 29 August 2013 by Andy</p>
-		  <p>In my Eclipse / RCP application the .metadata directory was always created in the working directory. This worked fine when I was opening the application normally.</p>
-
-<p>However, I needed file associations, so the user can just double click on file somewhere on his computer and open the file.</p>
-
-<p>If you do this, the working directory is set to the directory where the file is located. This resulted in the creation of a .metadata directy at the same location. Brrr…</p>
-
-<p>Since I dont like the creation of .metadata in the working directory either, because thats usually the application folder and not writeable, this needed to be addressed anyway.</p>
-
-<p>So I looked for a solution to change the workspace location for the application.</p>
-
-<p>To achieve this, two steps are neccessary. First we add an additional parameter in the Run configuration:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/08/working_dir1.png" alt="Working dir1" /></p>
-
-<p> </p>
-
-<p>The paramater is <em>-data @noDefault</em> and makes it possible for us to set up our own location.</p>
-
-<p>Which we do in the *Application class of our application:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/08/working_dir2.png" alt="Working dir2" /></p>
-
-<p> </p>
-
-<p>Here is the example code for copy and paste:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>try {
-	Location instanceLoc = Platform.getInstanceLocation();
-
-	// set location to c:\temp
-	instanceLoc.set(new URL("file", null, "c:\\temp"), false);
-}
-catch (Exception err) {
-	System.out.println(err.getMessage());
-}
-</code></pre>
-</div>
-
-<p>In the example we just use c:\temp, but you usually might want to set this path to the <a href="http://codedump.ekiwi.de/?p=46">application data</a> folder on the system.</p>
-	
-      <p><a class="btn btn-success" href="/eclipse/2013/08/29/set-workspace-location-for-rcp-application.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: appdata, RCP, and Workspace by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -456,7 +507,7 @@ catch (Exception err) {
      
       <li class="category"><a href="/categories/programmierung">Programmierung <span>(6)</span></a></li>
      
-      <li class="category"><a href="/categories/radfahren">Radfahren <span>(31)</span></a></li>
+      <li class="category"><a href="/categories/radfahren">Radfahren <span>(32)</span></a></li>
      
       <li class="category"><a href="/categories/raspberry">Raspberry <span>(3)</span></a></li>
      
@@ -510,7 +561,7 @@ catch (Exception err) {
   
     <a href="/page22" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 23 of 57</span>
+  <span class="page_number ">Page: 23 of 58</span>
   
     <a href="/page24" class="next">Next</a>
   

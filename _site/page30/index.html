@@ -160,6 +160,37 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/coding/eclipse/2012/11/02/rcp-switch-to-perspective-via-code.html">RCP: Switch to perspective via code</a>
+		</h1>
+		  <p class="small">Posted on 02 November 2012 by Andy</p>
+		  <p>A small snippet which switches to a certain perspective via code:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>IPerspectiveDescriptor[] perspectives =
+PlatformUI.getWorkbench().getPerspectiveRegistry().getPerspectives();
+
+IWorkbenchPage page =
+PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+    if(page != null) {
+      for (IPerspectiveDescriptor des : perspectives) {
+        if (des.getId().equals("my.perspective.id")) {
+          page.setPerspective(des);
+          break;
+        }
+      }
+    }
+
+return null;
+</code></pre>
+</div>
+
+	
+      <p><a class="btn btn-success" href="/coding/eclipse/2012/11/02/rcp-switch-to-perspective-via-code.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged:  by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/coding/eclipse/2012/11/01/rcp-remove-unwanted-preference-pages.html">RCP: Remove unwanted preference pages</a>
 		</h1>
 		  <p class="small">Posted on 01 November 2012 by Andy</p>
@@ -341,36 +372,6 @@ public void createInitialLayout(IPageLayout layout) {
 		  <p class="small">Tagged:  by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/hiking/ireland/2012/08/08/gougane-bara-irland.html">Gougane Bara Irland</a>
-		</h1>
-		  <p class="small">Posted on 08 August 2012 by Andy</p>
-		  <p><a href="http://de.wikipedia.org/wiki/Gougane_Barra">Gougane Bara</a> Irland, Wandertour</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/P1000046.jpg" alt="P1000046" /></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/P1000058.jpg" alt="P1000058" /></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/P1000065.jpg" alt="P1000065" /></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/SDC10308.jpg" alt="SDC10308" /></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/SDC10281.jpg" alt="SDC10281" /></p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/08/SDC10317.jpg" alt="SDC10317" /></p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-	
-      <p><a class="btn btn-success" href="/hiking/ireland/2012/08/08/gougane-bara-irland.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged:  by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -479,7 +480,7 @@ public void createInitialLayout(IPageLayout layout) {
      
       <li class="category"><a href="/categories/programmierung">Programmierung <span>(6)</span></a></li>
      
-      <li class="category"><a href="/categories/radfahren">Radfahren <span>(31)</span></a></li>
+      <li class="category"><a href="/categories/radfahren">Radfahren <span>(32)</span></a></li>
      
       <li class="category"><a href="/categories/raspberry">Raspberry <span>(3)</span></a></li>
      
@@ -533,7 +534,7 @@ public void createInitialLayout(IPageLayout layout) {
   
     <a href="/page29" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 30 of 57</span>
+  <span class="page_number ">Page: 30 of 58</span>
   
     <a href="/page31" class="next">Next</a>
   

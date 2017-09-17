@@ -8,7 +8,42 @@
     <title>AndyDunkel.net</title>
     <link>http://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Wed, 30 Aug 2017 12:00:00 +0200</pubDate>
+    <pubDate>Sat, 16 Sep 2017 12:00:00 +0200</pubDate>
+    <item>
+      <title>Radtour zur Viehscheid Nesselwang 2017 und Mehlblockalpe</title>
+      <link>http://andydunkel.net/radfahren/2017/09/16/viehscheid_nessewang_2017_mehlblockalpe.html</link>
+      <description><![CDATA[
+
+Freitag ging es zur Viehscheid nach Nesselwang. Spontane Alternative zum Arbeiten. Kalte 4 Grad am Morgen auf dem Rad machten die Tour anfangs nicht angenehm. Erst später wurde es dank der Sonne wärmer. Trotz allem neigt sich die Radsaison dem Ende.
+
+]]></description>
+      <pubDate>Sat, 16 Sep 2017 12:00:00 +0200</pubDate>
+      <guid>http://andydunkel.net/radfahren/2017/09/16/viehscheid_nessewang_2017_mehlblockalpe.html</guid>
+      <content:encoded><![CDATA[<img src="/assets/uploads/2017/9/nesselwang_logo.jpg" class="imagelogo">
+
+Freitag ging es zur Viehscheid nach Nesselwang. Spontane Alternative zum Arbeiten. Kalte 4 Grad am Morgen auf dem Rad machten die Tour anfangs nicht angenehm. Erst später wurde es dank der Sonne wärmer. Trotz allem neigt sich die Radsaison dem Ende.
+
+<!--more-->
+
+Die Viehscheid in Nesselwang ist keine besonders große. Die letzten Jahre ging es nach Bad Hindelang, eine wesentlich größere Veranstaltung, welche man, wie das Oktoberfest, nur unter der Woche besuchen sollte. So hatte auch die kleine Viehscheid ihren Charme und bei leckerem [Zötler Bier](https://www.zoetler.de/) lies es sich in der Sonne aushalten.
+
+<!--more-->
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/Fc2q_En_WmQ" frameborder="0" allowfullscreen></iframe>
+
+![](/assets/uploads/2017/9/nesselwang1.jpg)
+
+![](/assets/uploads/2017/9/nesselwang2.jpg)
+
+Anschließend ging es zum ersten Besuch der [Mehlblockalpe](http://andydunkel.net/hiking/radfahren/sonstiges/2011/06/18/mehlblockalpe-im-kempter-wald-anfahrt-und-infos.html) in diesem Jahr. Auch hier wetter- und jahreszeitentechnisch auch der letzte Besuch.
+
+Die Essensportionen sind dort jedenfalls immer noch üppig und gut. :-)
+
+![](/assets/uploads/2017/9/nesselwang3.jpg)
+
+![](/assets/uploads/2017/9/nesselwang4.jpg)]]></content:encoded>
+      <dc:date>2017-09-16T12:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>Stromverbrauch - Dell Optiplex USFF 7010 und 9020 als Server?</title>
       <link>http://andydunkel.net/computer/hardware/2017/08/30/stromverbrauch_dell_optiplex_7010_9020.html</link>
@@ -18171,6 +18206,6 @@ public static File getPluginFolder() {
 ]]></content:encoded>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2017-08-30T12:00:00+02:00</dc:date>
+    <dc:date>2017-09-16T12:00:00+02:00</dc:date>
   </channel>
 </rss>

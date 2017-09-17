@@ -160,6 +160,36 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/coding/2014/01/10/php_debugging_vm_to_debug_and_develip_php.html">Virtual Machine to debug and develop PHP</a>
+		</h1>
+		  <p class="small">Posted on 10 January 2014 by Andy</p>
+		  <p>I used PHP a lot in the past for our websites. I think its not the best programming language, but its simple enough to get things done very quickly. And it runs on the most servers of web hosters.</p>
+
+<p>Today most likely I would choose another language, but I still have to maintain and debug PHP scripts once in a while.</p>
+
+<p>Usually its very painfull, since most of the times I don’t have a running webserver on my local machine. Just makes no sense to have a webserver running all the times. Not to mention a running instance of MySQL.</p>
+
+<p>So I ended up using a simple text editor and uploading the files to my webserver for testing. 
+Of course without debugger thats a very painfull and slow process. I am still puzzled how many PHP developers use <code>echo</code> commands to debug there code.</p>
+
+<p>In the past I used a commercial Zend Studio license. I still have that running on my Mac. However I also wanted a simple solution I can use easily on my Linux notebook.</p>
+
+<p>So I <a href="/projects/php-debugging-vm/index.html">created a virtual machine for PHP debugging</a>. It runs an Apache webserver with, MySQL + phpMyAdmin and Netbeans as IDE. Xdebug is configured in PHP.</p>
+
+<p>I am publishing it here with the hope it might be useful for other:</p>
+
+<p><img src="/projects/php-debugging-vm/vm1_small.png" alt="image" /></p>
+
+<p><a href="/projects/php-debugging-vm/index.html">Click here to get to the project page.</a></p>
+
+	
+      <p><a class="btn btn-success" href="/coding/2014/01/10/php_debugging_vm_to_debug_and_develip_php.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: PHP and Projects by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/coding/2013/12/15/git_the_remote_end_hung_up_unexpectedly.html">Git - The remote end hung up unexpectedly</a>
 		</h1>
 		  <p class="small">Posted on 15 December 2013 by Andy</p>
@@ -287,107 +317,6 @@ $ brew doctor
 		  <p class="small">Tagged: other by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/delphi/coding/2013/11/23/firemonkey_xe_4_taborder_workaround.html">Delphi XE4/Firemonkey - Taborder not working + Workaround</a>
-		</h1>
-		  <p class="small">Posted on 23 November 2013 by Andy</p>
-		  <p>Firemonkey, the framework for cross plattform development, still seems to have some problems and bugs. :-( One of the problems I came across was that the TabOrder property was not working:</p>
-
-<iframe width="640" height="360" src="//www.youtube.com/embed/adnmXK3xzyE" frameborder="0" allowfullscreen=""></iframe>
-
-<p>The problem starts with the inability to set the TabOrder correctly in the designer. They are reset all the time to their defaults. When the application is running, the TabOrder works for some basic dialogs. In others dialogs nothing happens, or the tab key focuses the wrong control.</p>
-
-<p>Looking up the bug database from Embarcadero, this is a known problem / bug. Some people in the internet suggest to set the TabOrder property programmatically during runtime, but that also did not work for me.</p>
-
-<p>After a lot of trying, I found a workaround, that at least works for me. Since I could not set the TabOrder property, I used the HelpContext property (which I dont use in my application) to define the order of the controls:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/11/taborder/1.png" alt="" /></p>
-
-<p><em>Note: You can also use the Tag value, but I am using that one for my translation logic.</em></p>
-
-<p>Next step was to create a class helper for TForm:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>unit FormHelper;
-
-interface
-
-type
-  TFormHelper = class helper for TForm
-    procedure DoTabHandlingXE(comp : TForm; tabOrder : Integer);
-  end;
-
-implementation
-
-//Workaround for Tab-Bug in Firemonkey
-procedure TFormHelper.DoTabHandlingXE(comp: TForm; tabOrder : Integer);
-var
-  i, c :integer;
-  current : TComponent;
-  currentNext : integer;
-  focus : TStyledControl;
-begin
-  c := Self.ComponentCount - 1;
-  currentNext := 9999;
-  focus := nil;
-
-  for i := 0 to c do begin
-      current := Self.Components[i];
-      if (current is TStyledControl) then begin
-          if ((current as TStyledControl).HelpContext &lt; currentNext) and 
-		  ((current as TStyledControl).HelpContext &gt; tabOrder) then begin
-            currentNext := (current as TStyledControl).HelpContext;
-          end;
-      end;
-  end;	
-
-  for i := 0 to c do begin
-      current := Self.Components[i];
-      if (current is TStyledControl) then begin
-        if (currentNext = (current as TStyledControl).HelpContext) then begin
-          focus := (current as TStyledControl);
-        end;
-      end;
-  end;
-
-  if focus &lt;&gt; nil then begin
-    focus.SetFocus;
-  end;
-end;
-end.
-</code></pre>
-</div>
-
-<p>I am sure there could be some optimizations done with that code, but it works. What we are doing here is to iterate over all controls of a given form and find the next higher value of the HelpContext. Thats the control we want to set focus, when the user hits the tab key.</p>
-
-<p>Of course the code does nothing to far, since the method is not called yet. So the next step is to implement the KeyDown event in the form:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>procedure TfrmEinzField.KeyDown(var Key: Word; var KeyChar: Char;
-  Shift: TShiftState);
-var
-  control : TStyledControl;
-begin
-  if Key = vkTab then
-  begin
-    //custom handling
-    if (Self.GetFocused is TStyledControl) then begin
-      control := (Self.GetFocused as TStyledControl);
-      DoTabHandlingXE(Self, control.HelpContext);
-    end;
-  end else
-    inherited; //do default handling
-end;
-</code></pre>
-</div>
-
-<p>In the code, we get the currently focused control. Then we call the method we wrote before with the current Form variable and the controls HelpContext value.
-With that workaround the tab key is now working as expected, jumping to the next control.</p>
-	
-      <p><a class="btn btn-success" href="/delphi/coding/2013/11/23/firemonkey_xe_4_taborder_workaround.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: firemonkey and taborder by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -496,7 +425,7 @@ With that workaround the tab key is now working as expected, jumping to the next
      
       <li class="category"><a href="/categories/programmierung">Programmierung <span>(6)</span></a></li>
      
-      <li class="category"><a href="/categories/radfahren">Radfahren <span>(31)</span></a></li>
+      <li class="category"><a href="/categories/radfahren">Radfahren <span>(32)</span></a></li>
      
       <li class="category"><a href="/categories/raspberry">Raspberry <span>(3)</span></a></li>
      
@@ -550,7 +479,7 @@ With that workaround the tab key is now working as expected, jumping to the next
   
     <a href="/page21" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 22 of 57</span>
+  <span class="page_number ">Page: 22 of 58</span>
   
     <a href="/page23" class="next">Next</a>
   
