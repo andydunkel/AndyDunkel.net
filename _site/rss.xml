@@ -33,9 +33,7 @@ Dies gibt jede Menge Statusinformationen und Logmessages aus und meist auch den 
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/R8mMsUTyByM" frameborder="0" allowfullscreen></iframe>
 
-Bei mir war das Problem, dass mein Blogartikel in der Zukunft lag. Poste ich bei Wordpress, wird einfach die aktuelle Zeit genommen, quasi sofort. Bei Jekyll trage ich das Datum und die Uhrzeit in den Header ein. Da die Zeit nicht wirklich relevant ist, stand dort 17 Uhr. Im speziellen Fall hat ein paar Stunden in der Zukunft. Beim normalen Erzeugen wurde kein Fehler ausgegeben. Erst im Verbose-Output stand dann der folgende Eintrag:
-
- 	Skipping: _posts/2017-09-22-jekyll_blogartikel_wird_nicht_erzeugt.md has a future date
+Bei mir war das Problem, dass mein Blogartikel in der Zukunft lag. Poste ich bei Wordpress, wird einfach die aktuelle Zeit genommen, quasi sofort. Bei Jekyll trage ich das Datum und die Uhrzeit in den Header ein. Da die Zeit nicht wirklich relevant ist, stand dort 17 Uhr. Im speziellen Fall hat ein paar Stunden in der Zukunft. Beim normalen Erzeugen wurde kein Fehler ausgegeben. Erst im Verbose-Output stand dann der folgende Eintrag: <code>Skipping: _posts/2017-09-22-jekyll_blogartikel_wird_nicht_erzeugt.md has a future date</code>
 
 ![](/assets/uploads/2017/9/jekyll.png)
 
