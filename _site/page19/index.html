@@ -160,6 +160,110 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/raspberry/linux/2014/10/29/airsonos_airplay_fuer_sonos.html">AirSonos - Airplay für Sonos mit dem Raspberry Pi</a>
+		</h1>
+		  <p class="small">Posted on 29 October 2014 by Andy</p>
+		  <p>Vor kurzem habe ich mir ein <a href="http://www.sonos.com/shop/products/play1">Sonos Play1</a> zugelegt. Mein Kumpel Kiwi besitzt dieses bereits eine Weile und hat <a href="http://blog.ekiwi.de/?p=1927">das hier</a> vor einiger Zeit bereits getestet. Gegen Hardware und Technik ist nichts einzuwenden. Die Klang ist gut und die App funktioniert zuverlässig. Leider ist das auch der einzige Knackpunkt am Sonos-System: ohne Sonos-App kein Abspielen von Inhalten. 
+Problemlos funktioniert dies für vorhandene Inhalte auf dem Smartphone oder Tablett. Radiosender und diverse Musikdienste lassen sich ebenfalls über die App nutzen.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/10/sonos.jpg" alt="image" /></p>
+
+<p>IOS- und Mac-User, wie ich, vermissen die Unterstützung für Airplay. Diese erlaubt die Wiedergabe aus jeder App. Ich verwende <a href="http://vemedio.com/products/instacast">Instacast</a> als Podcastapp auf meinem Telefon. Mit dieser läuft jedoch nichts in Sachen Sonos.</p>
+
+<p>Die Lösung in diesem Fall heißt <a href="https://github.com/stephen/airsonos">AirSonos</a>: AirSonos ist ein, in <a href="http://nodejs.org/">Node.js</a> geschriebener, AirPlay-Server, welche die Musik an das Sonos-System weiterleitet. Der Server läuft auf einem extra Rechner, welcher an das Heimnetzwerk angeschlossen sein muss. In Zeiten von Raspberry Pi und Co. ist damit zum Glück kein großer klobiger PC mehr notwendig. Die Software kommt zudem mit mehreren Lautsprechern im Netzwerk klar.</p>
+
+<p>Legen wir los: Ich beschreibe Installation und Einrichtung unter <a href="http://www.raspbian.org/">Raspbian</a> auf dem Raspberry Pi. Das ganze funktioniert aber auch mit etwas Variation auf anderen Linuxderivaten und Rechnertypen.</p>
+
+<h2 id="Übertakten">Übertakten</h2>
+
+<p>Mit der Standardtaktfrequenz vom RPI funktionierte bei mir die Musikwiedergabe leider nicht flüssig. Deswegen ist die Empfehlung den Kleinen auf 1000 Mhz zu übertakten. Dies geschieht entweder direkt bei der Installation von Raspbian oder später durch einfaches Bearbeiten der entsprechenden Config-Datei:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> sudo vim /boot/config.txt
+</code></pre>
+</div>
+
+<p>In der Config-Datei kommentiert man die folgenden Zeilen ein (# Symbol am Anfang entfernen):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> #Turbo
+ arm_freq=1000
+ core_freq=500
+ sdram_freq=500
+ over_voltage=6
+</code></pre>
+</div>
+
+<p>Nach dem Neustart sollte der RPI in der neuen hohen Taktrate unterwegs sein.</p>
+
+<p>Installation von AirSonos</p>
+
+<p>Wie so oft beginnen wir die Installation mit einem Update der Paketquellen und der bereits installierten Software:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> sudo apt-get update
+ sudo apt-get upgrade
+</code></pre>
+</div>
+
+<p>Nun installieren wir noch ein paar Dinge:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> sudo apt-get install git-all libavahi-compat-libdnssd-dev
+</code></pre>
+</div>
+
+<p>Es folgt Node.js, welches wir vorkompiliert herunterladen:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> wget http://node-arm.herokuapp.com/node_latest_armhf.deb
+</code></pre>
+</div>
+
+<p>und installieren:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> sudo dpkg -i node_latest_armhf.deb
+</code></pre>
+</div>
+
+<p>Das Ganze dauert ein wenig, also geduldig sein. :-)
+Im vorletzten Schritt folgt nun noch die Installation von AirSonos selbst:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> sudo npm install airsonos -g
+</code></pre>
+</div>
+
+<p>Auch das dauert eine Weile. Unschön: bei mir kam es vor, dass der Vorgang mit der Fehlermeldung <code>npm ERR! cb() never called</code> abgebrochen wurde. Hier hat es geholfen den letzten Schritt einfach nochmal durchzuführen.</p>
+
+<h2 id="fertig">Fertig!</h2>
+
+<p>Ist alles installiert und eingerichtet, kann man AirSonos starten:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> sudo airsonos
+</code></pre>
+</div>
+
+<p>Es sollten nun alle Sonos-Lautsprecher im Netzwerk gefunden und aufgelistet werden:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Searching for Sonos devices on network...
+Setting up AirSonos for Kitchen {192.168.1.108:1400}
+</code></pre>
+</div>
+
+<p>Im IOS-Gerät der Wahl werden diese jetzt auch als AirPlay-Device angezeigt und können entsprechend genutzt werden.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2014/10/airplay.png" alt="image" /></p>
+
+<p>Kleiner Schönheitsfehler, schließt man die Konsole zum Rechner beendet sich AirSonos. Dies kann man verhindern indem man den Prozess von der Konsole entkoppelt:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> $ airsonos &amp; disown
+</code></pre>
+</div>
+
+<p>Viel Spaß beim Ausprobieren!</p>
+	
+      <p><a class="btn btn-success" href="/raspberry/linux/2014/10/29/airsonos_airplay_fuer_sonos.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: Sonos and Linux by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/eclipse/java/2014/10/17/eclipse_rcp_editor_part_lost_focus.html">Eclipse RCP: lost focus event for Editor Part</a>
 		</h1>
 		  <p class="small">Posted on 17 October 2014 by Andy</p>
@@ -357,30 +461,6 @@ Die hatte meine Oma damals gesammelt, da sie einen PC brauchte für die Buchhalt
 		  <p class="small">Tagged: Computer by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/minimalismus/2014/07/07/we_the_tiny_house_people.html">Dokumentation: We the tiny house people</a>
-		</h1>
-		  <p class="small">Posted on 07 July 2014 by Andy</p>
-		  <p>Eher durch Zufall bin ich über einen Podcast auf die Dokumentation “<a href="https://www.youtube.com/watch?v=lDcVrVA4bSQ">We the tiny house people</a>” gestoßen. Die “Tiny House” Bewegung kommt ursprünglich aus den USA und findet anscheinend weltweit einige Anhänger.</p>
-
-<p>Statt beim Wohnen und Hausbau auf immer größer und mehr zu setzen, geht es bei den “Tiny Houses” darum sich klein, kompakt und funktionell einzurichten. Einige sind sogar mobil.</p>
-
-<p>Obwohl die Tiny Houses recht preiswert sind, da klein und gerne auch selbst gebaut, mangelt es innen oft nicht an Komfort. Oft werden individuell optimierte Möbel und Einrichtungen gezeigt. Kein Wunder, da das Haus aufgrund der Größe deutlich weniger kostet, hat man am Ende schlicht mehr Geld für eine hochwertige, individuelle Inneneinrichtung, welche maßgeschneidert auf die Größe ist. Qualität statt Quantität. Jedes Ding hat seinen Platz. Und natürlich ist auch der Unterhalt eines solchen Kleinhauses weniger kostspielig.</p>
-
-<p>Die Motive der Hausbesitzer sind unterschiedlich. Der Eine möchte der Umwelt wenig zumuten, andere wollen nicht über Jahrzehnte mit Krediten von der Bank abhängig sein. Und natürlich gibt es auch Leute die sich schlicht nicht mehr leisten können.</p>
-
-<p>Was auffällt: viele der Hausbesitzer sind anscheinend Singles und alleine leben. Mit Partner dürfte es doch anspruchsvoller sein auf engem Raum zusammen zu leben, wenn man sich nicht aus dem Weg gehen kann.</p>
-
-<p>Ich gebe zu, viele der dargestellten Häuser und Wohnstätten wären mir doch zu klein, dennoch zeigen die Beispiele wie man sich auch mit wenig Platz äußerst komfortabel einrichten kann, wenn man sich auf das Wesentliche konzentriert. Probieren würde ich es mal für einige Zeit.</p>
-
-<iframe width="640" height="360" src="//www.youtube.com/embed/lDcVrVA4bSQ" frameborder="0" allowfullscreen=""></iframe>
-	
-      <p><a class="btn btn-success" href="/minimalismus/2014/07/07/we_the_tiny_house_people.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: Tiny Houses by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -485,7 +565,7 @@ Die hatte meine Oma damals gesammelt, da sie einen PC brauchte für die Buchhalt
      
       <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/opensource">Opensource <span>(1)</span></a></li>
+      <li class="category"><a href="/categories/opensource">Opensource <span>(2)</span></a></li>
      
       <li class="category"><a href="/categories/programmierung">Programmierung <span>(6)</span></a></li>
      
@@ -505,7 +585,7 @@ Die hatte meine Oma damals gesammelt, da sie einen PC brauchte für die Buchhalt
      
       <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
      
-      <li class="category"><a href="/categories/software">Software <span>(3)</span></a></li>
+      <li class="category"><a href="/categories/software">Software <span>(4)</span></a></li>
      
       <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
      

@@ -160,6 +160,44 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/java/swt/2011/05/17/javaswt-gui-access-from-thread.html">Java/SWT GUI Access from Thread</a>
+		</h1>
+		  <p class="small">Posted on 17 May 2011 by Andy</p>
+		  <p>A thread in Java cannot directly access the GUI. With the following snippet the access is possible:</p>
+
+<p>Call from the thread:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@Override
+public void run() {
+	html = "&lt;h1&gt;Huhu&lt;/h1&gt;";
+	dlg.setSomeStuffToGui(html);	
+}
+</code></pre>
+</div>
+
+<p>Method in the GUI:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public void setSomeStuffToGui(final String html) {
+	Display display = getDisplay();
+	
+	display.asyncExec(new Runnable() {
+        public void run() {
+        	//your stuff goes here:
+        	textField.setText(html);
+        }
+      });			
+}
+</code></pre>
+</div>
+
+	
+      <p><a class="btn btn-success" href="/java/swt/2011/05/17/javaswt-gui-access-from-thread.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: Java, SWT, and Thread by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/eclipse/java/2011/05/16/remove-unwanted-actions-in-rcp-application.html">Remove unwanted actions in RCP application</a>
 		</h1>
 		  <p class="small">Posted on 16 May 2011 by Andy</p>
@@ -288,39 +326,6 @@ protected void configureShell(Shell shell) {
 		  <p class="small">Tagged: Irland by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/hiking/ireland/2011/05/11/comeragh-mountains.html">Comeragh Mountains</a>
-		</h1>
-		  <p class="small">Posted on 11 May 2011 by Andy</p>
-		  <div id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:fb8bbd9d-782b-47dc-a982-6edf15d63d37" class="wlWriterEditableSmartContent" style="margin: 0px; display: inline; float: none; padding: 0px;">
-<div><object width="581" height="326"><param name="movie" value="http://www.youtube.com/v/aUPTGg19DkY?hl=en&amp;hd=1" /><embed type="application/x-shockwave-flash" width="581" height="326" src="http://www.youtube.com/v/aUPTGg19DkY?hl=en&amp;hd=1" />&lt;/embed&gt;</object></div>
-</div>
-
-<p>Gesamtentfernung: 14,63 km (9,1 mi)
-Gesamtzeit: 5:45:13
-Zeit in Bewegung: 3:44:07
-Durchschnittsgeschw.: 2,54 km/h (1,6 mi/h)
-Durchschnitt in Bew.: 3,92 km/h (2,4 mi/h)
-Max. Geschwindigkeit: 10,80 km/h (6,7 mi/h)
-Niedrigste Höhenlage: 319 m (1046 Fuß)
-Höchste Höhenlage: 828 m (2717 Fuß)
-Höhengewinn: 785 m (2574 Fuß)
-Maximale Steigung: 0 %
-Minimale Steigung: 0 %
-Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011</p>
-
-<p><img src="http://chart.apis.google.com/chart?&amp;chs=600x350&amp;cht=lxy&amp;chtt=H%C3%B6he&amp;chxt=x,y&amp;chxr=0,0,14,21,300.0,900.0,100&amp;chco=009A00&amp;chm=B,00AA00,0,0,0&amp;chg=100000,16.666666666666668,1,0&amp;chd=e:AAAIATAhAvA9BLBZBnB0CCCOCZCgCuC9DLDaDoD2EFETEgEvE9FLFZFnF2GEGOGcGrG5HHHSHdHvH9ILIYImI1JDJRJfJuJ8KKKZKnK1LELSLgLrL5MIMUMhMwM-NNNbNpN3OCOJOTOZOlOwO6PIPWPkPyP.QIQVQjQtQ5RGRUReRpR3SFSQSeSsS6TETSThTvT9UJUXUlUzVCVQVeVtV7WKWYWmW0W.XMXaXpX3YGYUYiYwY6ZGZUZjZxZ.aKaZaoa2bEbSbfbtb6cDcOcZckcvc6dDdQdedsd6eJeTehewe.fNfbfjfygAgPgegsg7hKhYhmhth8iKiYimi0jBjMjajoj2kBkPkdkrk5lIlWlklxl.mOmcmqm4nHnVngnvn9oLoZooo2pEpSpgpvp6qEqMqaqoq1rDrKrVrgrsr5sFsTshsvs-tMtbtpt4uGuVujuxvAvOvcvqv5wIwXwkwww.xMxbxpx3yFyUyiyxy.zNzczqz0z.0N0b0q051H1V1k1y1.2N2c2q243G3U3i3w3-4M4a4p43,DoDsD3EHEqFjGpH3JGKPLTMQNNOAO0PlQcRPSHS0TNTPTOTIS9StSeSQSER9R1RwRsRvRvR0RsRwR1SWS-ToUGUiVEVnWFWdWwXMXhXhXPXDXIXUXfXlXoXrXrXpXqX5YmZvbLc1eqgWhtjQlKnMo0p6qcrCr5syttuxv6w-x9yyzi0Q1O2C2i2z283K3W3k3t3y3w3y344C4J4O4L4E3736333m3K2123293A3B3G3N3H222d2U2T2S2N2G181u1b1K1A040t0k0i0o0s0r0o0p0s0n0g0c0e0l0p0w0208030j0Pz.zxzdzDysyVyLyAxvxEwNvfvMvPvKvAu8vQvsv.v-vtvVvFvGvGvIvHvFu3uiuRuQubuouvurudt8tdtHtBtBs8sxsbr2q7p6ovnumhlsk2kFjBhxggfUeYdTcHbFaZZ1ZQYrYFXQWWVRUdTuTCSNRYQkP8PaO5OVOANmNLMvMLLjLAKjKKJyJkJVI8IGHHGZGXG0HMHMG2GUFdEgDqDBCfCnDTENE7FiF8F1FXEtEGDo" alt="" /></p>
-
-<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.de/maps/ms?ie=UTF8&amp;hl=de&amp;t=h&amp;msa=0&amp;msid=208324790998598431494.0004a2c77da6e2fbee31d&amp;ll=52.258702,-7.567863&amp;spn=0.036776,0.072956&amp;z=13&amp;output=embed"></iframe>
-<p><br /><small><a href="http://maps.google.de/maps/ms?ie=UTF8&amp;hl=de&amp;t=h&amp;msa=0&amp;msid=208324790998598431494.0004a2c77da6e2fbee31d&amp;ll=52.258702,-7.567863&amp;spn=0.036776,0.072956&amp;z=13&amp;source=embed" style="color:#0000FF;text-align:left">2011-05-08 09:21 - Comeragh Mountain</a> auf einer größeren Karte anzeigen</small></p>
-
-	
-      <p><a class="btn btn-success" href="/hiking/ireland/2011/05/11/comeragh-mountains.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: Hiking / Wandern by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -425,7 +430,7 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011</p>
      
       <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/opensource">Opensource <span>(1)</span></a></li>
+      <li class="category"><a href="/categories/opensource">Opensource <span>(2)</span></a></li>
      
       <li class="category"><a href="/categories/programmierung">Programmierung <span>(6)</span></a></li>
      
@@ -445,7 +450,7 @@ Aufgezeichnet am: So. Mai 08 09:21:55 GMT+01:00 2011</p>
      
       <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
      
-      <li class="category"><a href="/categories/software">Software <span>(3)</span></a></li>
+      <li class="category"><a href="/categories/software">Software <span>(4)</span></a></li>
      
       <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
      

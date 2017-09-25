@@ -160,6 +160,46 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/linux/2013/04/23/wget-mit-benutzername-und-passwort.html">wget mit Benutzername und Passwort</a>
+		</h1>
+		  <p class="small">Posted on 23 April 2013 by Andy</p>
+		  <p>Auf meinem <a href="http://www.amazon.de/gp/product/B008PT4GGC/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B008PT4GGC&amp;linkCode=as2&amp;tag=ekiwide0b-21">RaspberryPi</a> läuft momentan ein Cronjob der alle 30 Minuten meinen Feedreader (<a href="http://tt-rss.org/redmine/projects/tt-rss/wiki">Tiny Tiny RSS</a>) aktualisiert. Dieser ist, aus Sicherheitsgründen, mittlerweile mit einem Passwort geschützt und läuft auf meinem Webspace. Etwas unpraktische Kombination, aber Cronjobs auf meinem Webspace haben so ihre Eigenheiten.</p>
+
+<p>Durch den Passwortschutz konnte der Cronjob nun nicht mehr das Aktualisierungscript mittels “wget” aufrufen. :-(</p>
+
+<p>Dafür müssen wir wget einfach ein paar Parameter mitgeben:</p>
+
+<blockquote>
+
+</blockquote>
+
+<blockquote>
+
+  <p>–user=userName<br />
+–password=passWord</p>
+
+</blockquote>
+
+<p>Funktioniert für FTP- und HTTP-Passwörter. Hier ein Beispiel</p>
+
+<blockquote>
+
+</blockquote>
+
+<blockquote>
+
+  <p>$ wget –user=andy –password=’geheim’ http://ekiwi.de/foo.zip</p>
+
+</blockquote>
+
+	
+      <p><a class="btn btn-success" href="/linux/2013/04/23/wget-mit-benutzername-und-passwort.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: raspberry, rpi, and wget by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/tools/2013/04/22/enigmail-und-openpgp-inv_recp-0-0x008d5dbc.html">Enigmail und OpenPGP: INV_RECP 0 0x008D5DBC</a>
 		</h1>
 		  <p class="small">Posted on 22 April 2013 by Andy</p>
@@ -293,44 +333,6 @@ $ sudo ubiquity</p>
 		  <p class="small">Tagged:  by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/linux/2013/01/29/steam-halflife-und-linux-error-initializing-main-frame-buffer.html">Steam, Halflife und Linux: Error initializing main frame buffer</a>
-		</h1>
-		  <p class="small">Posted on 29 January 2013 by Andy</p>
-		  <p>Vor kurzem wurde die Beta-Version vom Steam Client für Linux gestartet. Mittlerweile gibt es auch die Klassiker Halflife 1 und Counterstrike für Linux. </p>
-
-<p>Also flugs auf meinem Ubuntu Laptop installiert, die Spiele heruntergeladen und beim Start dann die Ernüchterung:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2013/01/CS_error_frame_buffer.png" alt="Counter Strike Frame Buffer Error" /></p>
-
-<p>Eine richtige Lösung konnte ich auf die Schnelle nicht finden, aber zumindest einen Workaround um das Spiel im Fenstermodus zu starten:</p>
-
-<ul>
-  <li>
-    <p>Steam starten</p>
-  </li>
-  <li>
-    <p>Rechtsklick auf das Spiel</p>
-  </li>
-  <li>
-    <p>Einstellungen bzw. Propierties auswählen</p>
-  </li>
-  <li>
-    <p>Start Optionen / Start Options</p>
-  </li>
-  <li>
-    <p>dort “-window” hinzufügen (ohne Anführungszeichen)</p>
-  </li>
-</ul>
-
-<p>Anschließend konnte das Spiel starten, wenn auch nicht ganz so schön mit Rahmen im Fenster.</p>
-	
-      <p><a class="btn btn-success" href="/linux/2013/01/29/steam-halflife-und-linux-error-initializing-main-frame-buffer.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged:  by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -435,7 +437,7 @@ $ sudo ubiquity</p>
      
       <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/opensource">Opensource <span>(1)</span></a></li>
+      <li class="category"><a href="/categories/opensource">Opensource <span>(2)</span></a></li>
      
       <li class="category"><a href="/categories/programmierung">Programmierung <span>(6)</span></a></li>
      
@@ -455,7 +457,7 @@ $ sudo ubiquity</p>
      
       <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
      
-      <li class="category"><a href="/categories/software">Software <span>(3)</span></a></li>
+      <li class="category"><a href="/categories/software">Software <span>(4)</span></a></li>
      
       <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
      
