@@ -160,6 +160,49 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/coding/2015/11/01/inno_setup_ipersistfile_save_schlug_fehl.html">InnoSetup - IPersistFile error 0x80070003</a>
+		</h1>
+		  <p class="small">Posted on 01 November 2015 by Andy</p>
+		  <p>I use <a href="http://www.jrsoftware.org/isinfo.php">InnoSetup</a> to ship my <a href="http://da-software.de/">software</a>. Years everything went without any problems. Recently I got feedback from customers, saying that there where errors during the setup. I tried it myself serveral times and sometimes I got this error message:</p>
+
+<p><img src="/assets/uploads/2015/11/innosetup.png" alt="" /></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>IPersistFile::Save schlug fehl; Code 0x80070003.
+Das System kann den angegebenen Pfad nicht finden.
+</code></pre>
+</div>
+
+<p>It always happened when the setup tried to create the first shortcut in the users start menu.</p>
+
+<p>What went wrong? After some investigation it turned out, that the uninstall routine of my setup was to blame. When my software is installed, the old version is removed automatically. This is done by some Pascal Script code in the setup.</p>
+
+<p>When this routine was removed, everything went fine. The problem seems to be, that there is timing issue. The uninstallation was finished, but the old shortcut was still “in use”. So the setup could not recreate it.</p>
+
+<p>The solution was to add a small wait time after the uninstallation call in the setup script:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>procedure CurStepChanged(CurStep: TSetupStep);
+begin
+  if (CurStep=ssInstall) then
+  begin
+    if (IsUpgrade()) then
+    begin
+      UnInstallOldVersion();
+      Sleep(2000); //wait two seconds here
+    end;
+  end;
+end;
+</code></pre>
+</div>
+
+<p>After that the problem was gone.</p>
+	
+      <p><a class="btn btn-success" href="/coding/2015/11/01/inno_setup_ipersistfile_save_schlug_fehl.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: InnoSetup by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/jekyll/2015/10/08/jekyll_el_capitan.html">Jekyll auf El Capitan installieren</a>
 		</h1>
 		  <p class="small">Posted on 08 October 2015 by Andy</p>
@@ -473,100 +516,6 @@ private void OnChanged(object source, FileSystemEventArgs e)
 		  <p class="small">Tagged: C# by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html">C#-Anwendungen mehrsprachig gestalten</a>
-		</h1>
-		  <p class="small">Posted on 04 July 2015 by Andy</p>
-		  <h1 id="c-anwendungen-lokalisieren">C# Anwendungen lokalisieren</h1>
-
-<p>Im folgenden Artikel werde ich kurz die ersten Schritte beschreiben um eine C#-Anwendung mehrsprachig zu gestalten.</p>
-
-<p>Legen wir los und beginnen mit den Formularen. Im Designer setzen wir die Eigenschaft <code>Localizable</code> auf <code>true</code>:</p>
-
-<p><img src="/assets/uploads/2015/7/inter1.png" alt="" /></p>
-
-<p>Anschließend können wir über die <code>Language</code>-Eigenschaft die Sprache umschalten. In Beispiel möchte ich die Sprachen Deutsch und Englisch implementieren. Im Hintergrund legt Visual Studio nun für die gewählte Sprache die entsprechende Resourcen-Datei an:</p>
-
-<p><img src="/assets/uploads/2015/7/inter2.png" alt="" /></p>
-
-<p>Für jede Sprache können wir jetzt im Designer die Texte der Steuerelemente anpassen und übersetzen. Da für jede Sprache oft auch mehr oder weniger Platz benötigt wird um Texte oder Grafiken darzustellen, können wir auch für jede Sprache das Design abändern.</p>
-
-<p>Beim Start der Anwendung wird nun automatisch die Sprache des Systems ermittelt und die Anwendung automatisch in der passenden Sprache geöffnet. Oder alternativ die Default-Sprache.</p>
-
-<h2 id="sprache-manuell-festlegen">Sprache manuell festlegen</h2>
-
-<p>Nicht immer will man sich auf die automatische Sprachwahl vom System verlassen. Daher können wir beim Start der Anwendung die Sprache auch manuell festlegen:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>CultureInfo myCultureInfo = new CultureInfo("en");
-Thread.CurrentThread.CurrentCulture = myCultureInfo;
-Thread.CurrentThread.CurrentUICulture = myCultureInfo;
-</code></pre>
-</div>
-
-<p>Ein guter Platz für diese Einstellung ist z.B. die <code>Program.cs</code> Datei:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>/// &lt;summary&gt;
-/// The main entry point for the application.
-/// &lt;/summary&gt;
-[STAThread]
-static void Main()
-{
-    CultureInfo myCultureInfo = new CultureInfo("de");
-    Thread.CurrentThread.CurrentCulture = myCultureInfo;
-    Thread.CurrentThread.CurrentUICulture = myCultureInfo;
-
-    Application.EnableVisualStyles();
-    Application.SetCompatibleTextRenderingDefault(false);
-    Application.Run(new MainForm());
-}
-</code></pre>
-</div>
-
-<p>Die Angabe der Sprache erfolgt in Form von <code>en</code> oder spezifischer mit <code>en-US</code>.</p>
-
-<h2 id="strings-im-code">Strings im Code</h2>
-
-<p>Die Übersetzung der Anwendung im Designer gestaltet sich wie gesehen recht einfach. Doch was ist mit Strings im Code?</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>MetroMessageBox.Show(this, "Die Einstellungen werden nach Neustart der Anwendung übernommen.", "Hinweis");
-</code></pre>
-</div>
-
-<p>Auch diese müssen übersetzt werden. Auch dies ist sehr leicht möglich. Zuerst legen wir neue Resourcendateien für unsere Sprachen an:</p>
-
-<p><img src="/assets/uploads/2015/7/inter3.png" alt="" /></p>
-
-<p>In diesen Tragen wir jetzt unsere Strings ein, mit den jeweiligen Übersetzungen.</p>
-
-<p><img src="/assets/uploads/2015/7/inter4.png" alt="" /></p>
-
-<p>Nun passen wir den Code unserer MessageBox noch an:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>MetroMessageBox.Show(this, AppResources.SettingsMessage, AppResources.SettingsTitle);
-</code></pre>
-</div>
-
-<p>Das wars auch schon.</p>
-
-<h2 id="abschluss">Abschluss</h2>
-
-<p>Neben den Texten gibt es noch weitere Dinge zu beachten, welche hier nicht besprochen wurden, wie Datum- und Zeitangaben, welche oft anders formatiert sind.</p>
-
-<p>Hier ein Beispiel:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>CultureInfo ci = new CultureInfo("de");
-MessageBox.Show(DateTime.Now.ToString("d", ci));
-</code></pre>
-</div>
-
-<p>Wie man sieht, ist die grundsätzliche Mehrsprachigkeit einer Anwendung in C# sehr leicht möglich.</p>
-	
-      <p><a class="btn btn-success" href="/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: C# by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -671,7 +620,7 @@ MessageBox.Show(DateTime.Now.ToString("d", ci));
      
       <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/opensource">Opensource <span>(2)</span></a></li>
+      <li class="category"><a href="/categories/opensource">Opensource <span>(3)</span></a></li>
      
       <li class="category"><a href="/categories/programmierung">Programmierung <span>(6)</span></a></li>
      
@@ -691,7 +640,7 @@ MessageBox.Show(DateTime.Now.ToString("d", ci));
      
       <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
      
-      <li class="category"><a href="/categories/software">Software <span>(4)</span></a></li>
+      <li class="category"><a href="/categories/software">Software <span>(5)</span></a></li>
      
       <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
      

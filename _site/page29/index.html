@@ -160,6 +160,38 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/gadgets/2012/12/03/macos-mauszeiger-beschleunigen.html">MacOS: Mauszeiger beschleunigen</a>
+		</h1>
+		  <p class="small">Posted on 03 December 2012 by Andy</p>
+		  <p>Ich habe mir letzte Woche eine <a href="http://www.amazon.de/gp/product/B002NX0M8C/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B002NX0M8C&amp;linkCode=as2&amp;tag=ekiwide0b-21">Apple Magic Maus</a> gekauft. Einrichtung war schnell erledigt. Die Maus selbst ist schick, die Touchbedienung erstmal gewöhnungsbedürftig. </p>
+
+<p>Allerdings war mir der Mauszeiger viel zu langsam, trotz höchster Einstellung in den Mauseinstellungen.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/12/Tracking.png" alt="Tracking" /></p>
+
+<p>Natürlich gibt es mit etwas Terminal-FU Abhilfe. Also Terminal aufmachen und folgende Zeile reinklopfen:</p>
+
+<blockquote>
+
+</blockquote>
+
+<blockquote>
+
+  <p>defaults write -g com.apple.mouse.scaling 8.0</p>
+
+</blockquote>
+
+<p>Wobei 8.0 die Geschwindigkeit der Maus ist. Die höchste Defaulteinstellung in der GUI ist 5.0. Also einfach mal etwas herum probieren. Damit die Änderung wirksam wird muss man sich noch Ausloggen und wieder Einloggen. Jetzt flitzt der Mauszeiger auch über den 27” Monitor. </p>
+
+<p><a href="http://www.amazon.de/gp/product/B002NX0M8C/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B002NX0M8C&amp;linkCode=as2&amp;tag=ekiwide0b-21"><img src="http://andydunkel.net/assets/uploads/2012/12/2012-11-30-21.19.13.jpg" alt="2012 11 30 21 19 13" /></a></p>
+	
+      <p><a class="btn btn-success" href="/gadgets/2012/12/03/macos-mauszeiger-beschleunigen.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged:  by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/gadgets/2012/11/27/neue-leuchtmittel.html">Neue Leuchtmittel</a>
 		</h1>
 		  <p class="small">Posted on 27 November 2012 by Andy</p>
@@ -367,46 +399,6 @@ private InputStream convertStringToInputStream(String s) {
 		  <p class="small">Tagged: Error 9 and roomba by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/coding/eclipse/2012/11/04/rcp-problems-when-generating-pdf-files-with-rcp.html">RCP: Problems when generating PDF files with RCP</a>
-		</h1>
-		  <p class="small">Posted on 04 November 2012 by Andy</p>
-		  <p>Recently I ran into a problem in my RCP application during the generation of a PDF file from a <a href="http://www.eclipse.org/birt/phoenix/">BIRT</a> report. This only happened when trying to run the export from the exported product:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/11.png" alt="1" /></p>
-
-<p>The first problem was an “Error.OutputFormatNotSupported”.</p>
-
-<p>This was a little bit strange, since I would have expected some syntax errors in my project trying to use stuff from another plugin that is referenced to my project.</p>
-
-<p>Anyway, I was able to fix this by adding “org.eclipse.birt.engine.emitter.pdf” to my run configuration. After that I got another error:</p>
-
-<blockquote>
-
-</blockquote>
-
-<blockquote>
-
-  <p>org.eclipse.birt.report.engine.api.engineexception cant create data engine</p>
-
-</blockquote>
-
-<p>Remembering that I am using JavaScript in my BIRT report, the approach was similar. Just a missing reference to “org.eclipse.birt.report.engine.script.javascript”.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/21.png" alt="2" /></p>
-
-<p>After that, the report was working from Eclipse as well as from the exported project. </p>
-
-<p>Here is a kitten:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/31.png" alt="3" /></p>
-	
-      <p><a class="btn btn-success" href="/coding/eclipse/2012/11/04/rcp-problems-when-generating-pdf-files-with-rcp.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: birt and RCP by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -511,7 +503,7 @@ private InputStream convertStringToInputStream(String s) {
      
       <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/opensource">Opensource <span>(2)</span></a></li>
+      <li class="category"><a href="/categories/opensource">Opensource <span>(3)</span></a></li>
      
       <li class="category"><a href="/categories/programmierung">Programmierung <span>(6)</span></a></li>
      
@@ -531,7 +523,7 @@ private InputStream convertStringToInputStream(String s) {
      
       <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
      
-      <li class="category"><a href="/categories/software">Software <span>(4)</span></a></li>
+      <li class="category"><a href="/categories/software">Software <span>(5)</span></a></li>
      
       <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
      

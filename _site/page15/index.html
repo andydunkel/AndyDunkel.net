@@ -160,6 +160,59 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/linux/opensource/2016/01/16/gimp_save_for_web.html">Gimp - Save for Web Plugin</a>
+		</h1>
+		  <p class="small">Posted on 16 January 2016 by Andy</p>
+		  <p><em>Note: German versions of this article can be found <a href="http://ekiwi-blog.de/?p=2507">here</a> and <a href="http://ekiwi-blog.de/?p=2524">here</a>.</em></p>
+
+<p>One of my favorite features of Photoshop if the feature “Save for web”. Its a nice tool to optimize your image for the web. You can basically choose file format, compression, number of colors and see the results of the optimization in a preview image.</p>
+
+<p>In <a href="http://www.gimp.org">Gimp</a> there is no such feature by default yet. But there is a plugin that implements the feature. You can <a href="http://registry.gimp.org/node/33">download it here</a>.</p>
+
+<p>After installation the plugin becomes available in the file menu. The plugin offers the same functions as the Photoshop one:</p>
+
+<p><img src="/assets/uploads/2016/1/save_for_web_linux.png" alt="" /></p>
+
+<p><img src="/assets/uploads/2016/1/save_for_web_linux_main.png" alt="" /></p>
+
+<h2 id="installation-on-windows">Installation on Windows</h2>
+
+<p>On Windows you just extract the .exe file of the plugin into the plugin directory of Gimp: <code>c:\Users\username\.gimp-2.8\plug-ins</code>.</p>
+
+<h2 id="installation-on-linux">Installation on Linux</h2>
+
+<p>After extraction of the archive on Linux the installation is done in three simple steps:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>./configure
+make
+make install
+</code></pre>
+</div>
+
+<p>However there where a few problems with that. The <code>configure</code> script exited with an error message:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>configure: error: Package requirements (gimp-2.0 &gt;= 2.3.0 gimpui-2.0 &gt;= 2.3.0) were not met:
+
+No package 'gimp-2.0' found
+No package 'gimpui-2.0' found
+</code></pre>
+</div>
+
+<p>This looks like Gimp could not be found, but thats not true. Actually you need the <code>gimp2.0-dev</code> package installed:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install gimp2.0-dev intltool
+</code></pre>
+</div>
+
+<p>In my case it also needed the package <code>intltool</code>. After that the installation steps went without no further errors.</p>
+	
+      <p><a class="btn btn-success" href="/linux/opensource/2016/01/16/gimp_save_for_web.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: Gimp by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/ccc/2016/01/09/32c3.html">32c3</a>
 		</h1>
 		  <p class="small">Posted on 09 January 2016 by Andy</p>
@@ -386,49 +439,6 @@
 		  <p class="small">Tagged: VisualStudio by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/coding/2015/11/01/inno_setup_ipersistfile_save_schlug_fehl.html">InnoSetup - IPersistFile error 0x80070003</a>
-		</h1>
-		  <p class="small">Posted on 01 November 2015 by Andy</p>
-		  <p>I use <a href="http://www.jrsoftware.org/isinfo.php">InnoSetup</a> to ship my <a href="http://da-software.de/">software</a>. Years everything went without any problems. Recently I got feedback from customers, saying that there where errors during the setup. I tried it myself serveral times and sometimes I got this error message:</p>
-
-<p><img src="/assets/uploads/2015/11/innosetup.png" alt="" /></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>IPersistFile::Save schlug fehl; Code 0x80070003.
-Das System kann den angegebenen Pfad nicht finden.
-</code></pre>
-</div>
-
-<p>It always happened when the setup tried to create the first shortcut in the users start menu.</p>
-
-<p>What went wrong? After some investigation it turned out, that the uninstall routine of my setup was to blame. When my software is installed, the old version is removed automatically. This is done by some Pascal Script code in the setup.</p>
-
-<p>When this routine was removed, everything went fine. The problem seems to be, that there is timing issue. The uninstallation was finished, but the old shortcut was still “in use”. So the setup could not recreate it.</p>
-
-<p>The solution was to add a small wait time after the uninstallation call in the setup script:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>procedure CurStepChanged(CurStep: TSetupStep);
-begin
-  if (CurStep=ssInstall) then
-  begin
-    if (IsUpgrade()) then
-    begin
-      UnInstallOldVersion();
-      Sleep(2000); //wait two seconds here
-    end;
-  end;
-end;
-</code></pre>
-</div>
-
-<p>After that the problem was gone.</p>
-	
-      <p><a class="btn btn-success" href="/coding/2015/11/01/inno_setup_ipersistfile_save_schlug_fehl.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: InnoSetup by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -533,7 +543,7 @@ end;
      
       <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/opensource">Opensource <span>(2)</span></a></li>
+      <li class="category"><a href="/categories/opensource">Opensource <span>(3)</span></a></li>
      
       <li class="category"><a href="/categories/programmierung">Programmierung <span>(6)</span></a></li>
      
@@ -553,7 +563,7 @@ end;
      
       <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
      
-      <li class="category"><a href="/categories/software">Software <span>(4)</span></a></li>
+      <li class="category"><a href="/categories/software">Software <span>(5)</span></a></li>
      
       <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
      

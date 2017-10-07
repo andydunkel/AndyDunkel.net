@@ -160,6 +160,46 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/coding/eclipse/2012/11/04/rcp-problems-when-generating-pdf-files-with-rcp.html">RCP: Problems when generating PDF files with RCP</a>
+		</h1>
+		  <p class="small">Posted on 04 November 2012 by Andy</p>
+		  <p>Recently I ran into a problem in my RCP application during the generation of a PDF file from a <a href="http://www.eclipse.org/birt/phoenix/">BIRT</a> report. This only happened when trying to run the export from the exported product:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/11.png" alt="1" /></p>
+
+<p>The first problem was an “Error.OutputFormatNotSupported”.</p>
+
+<p>This was a little bit strange, since I would have expected some syntax errors in my project trying to use stuff from another plugin that is referenced to my project.</p>
+
+<p>Anyway, I was able to fix this by adding “org.eclipse.birt.engine.emitter.pdf” to my run configuration. After that I got another error:</p>
+
+<blockquote>
+
+</blockquote>
+
+<blockquote>
+
+  <p>org.eclipse.birt.report.engine.api.engineexception cant create data engine</p>
+
+</blockquote>
+
+<p>Remembering that I am using JavaScript in my BIRT report, the approach was similar. Just a missing reference to “org.eclipse.birt.report.engine.script.javascript”.</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/21.png" alt="2" /></p>
+
+<p>After that, the report was working from Eclipse as well as from the exported project. </p>
+
+<p>Here is a kitten:</p>
+
+<p><img src="http://andydunkel.net/assets/uploads/2012/11/31.png" alt="3" /></p>
+	
+      <p><a class="btn btn-success" href="/coding/eclipse/2012/11/04/rcp-problems-when-generating-pdf-files-with-rcp.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: birt and RCP by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/coding/eclipse/2012/11/03/rcp-get-command-line-parameters-in-eclipse-apps.html">RCP: Get command line parameters in Eclipse Apps</a>
 		</h1>
 		  <p class="small">Posted on 03 November 2012 by Andy</p>
@@ -285,111 +325,6 @@ public void postStartup(){
 		  <p class="small">Tagged: Eclipse, plugin, preferences, and RCP by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/coding/eclipse/2012/11/01/rcp-perspectives-and-perspective-contributions-2.html">RCP: Perspectives and Perspective Contributions</a>
-		</h1>
-		  <p class="small">Posted on 01 November 2012 by Andy</p>
-		  <p>Note: I put the example project in a ZIP file, you can use that to have a look to the actual code, <a href="http://andydunkel.net/assets/wp-custom/com.da.perspectives.example.zip">Download</a>.</p>
-
-<h3 id="start">Start</h3>
-
-<p>In the first step, we create a sample plugin project (Mail project):</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/1.png" alt="1" /></p>
-
-<h3 id="make-the-perspective-bar-visible">Make the perspective bar visible</h3>
-
-<p>This needs to be done in the ApplicationWorkbenchWindowAdvisor.java class, in the preWindowOpen method:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>IWorkbenchWindowConfigurer configurer = getWindowConfigurer();
-configurer.setShowPerspectiveBar(true);
-</code></pre>
-</div>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/2.png" alt="2" /></p>
-
-<h3 id="create-another-plugin-with-perspective">Create another plugin with perspective</h3>
-
-<p>We create another plugin project in the workspace, select “No” for “Rich Client Application” (no template in the next step):</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/3.png" alt="3" /></p>
-
-<p>After the project is created, open the “plugin.xml” file of the new plugin project. We create a new “org.eclipse.ui.perspectives” extension point:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/4.png" alt="4" /></p>
-
-<p>To create the perspective class, we click on the “class” link and create the class:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/5.png" alt="5" /></p>
-
-<p>In our main projects “plugin.xml” add our new plugin project as dependency:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/6.png" alt="6" /> <img src="http://andydunkel.net/assets/uploads/2012/11/7.png" alt="7" /></p>
-
-<p>If we switch to this perspective, the window will become empty. We want an view appear in this perspective. In the example project, we create an “ImageView” and define the view in the “plugin.xml”:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/8.png" alt="8" /></p>
-
-<p>After that, we have to add the code which defines our perspective:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>@Override
-public void createInitialLayout(IPageLayout layout) {
-  String editorArea = layout.getEditorArea();
-  layout.setEditorAreaVisible(false);
-  
-  layout.addStandaloneView(ImageView.ID,  false, IPageLayout.TOP, 1, editorArea);
-}
-</code></pre>
-</div>
-
-<h3 id="contribute-to-an-existing-perspective">Contribute to an existing perspective</h3>
-
-<p>OK, different example: We now want to contribute our ImageView to an existing perspective. For that, we add to our contribution project an “perpectiveExtensions” extension point:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/9.png" alt="9" /></p>
-
-<p>As “targetID” enter the ID of our main perspective in the “main.gui” project. Now we add a view ot our perpective extension. Right click -&gt; New -&gt; view:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/a.png" alt="a" /></p>
-
-<p>When the application starts, the ImageViewer will appear next to the message view:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/b.png" alt="b" /></p>
-
-<h3 id="contribute-to-the-toolbar">Contribute to the toolbar</h3>
-
-<p>Now we want, that our contribution plugin also contributes a toolbar and menu items to our main application. For that, we have to define an “org.eclipse.ui.actionSets” extension point. Now we have to add the action set to our perspectiveExtension.</p>
-
-<p>The “plugin.xml” extension points should now look something like this:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/c.png" alt="c" /></p>
-
-<p>If it does not show up, make sure you entered a correct “toolbarPath” in the definition of your actionSet action:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/d.png" alt="d" /></p>
-
-<p>If everything is right, the new icon should appear in the toolbar of our main application.</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/e.png" alt="e" /></p>
-
-<h3 id="remove-an-existing-item-from-the-toolbar">Remove an existing item from the toolbar</h3>
-
-<p>If we switch to our new perspective, the image viewer, we are able to open new message views via toolbar and the menu. However, we do not want this. So we need to get rid of the menu items and toolbar items. The perspectiveExtension allows us to hide items, too. To do this, we add another perspectiveExtension for our perspective for the image view:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/g.png" alt="g" /></p>
-
-<p>Now we add “hiddenMenuItems” and “hiddenToolBarItems”:</p>
-
-<p><img src="http://andydunkel.net/assets/uploads/2012/11/h.png" alt="h" /></p>
-
-<p>Basically we just enter the IDs of the commands here. If we switch now to our perspective, the toolbar items defined should be invisible.</p>
-	
-      <p><a class="btn btn-success" href="/coding/eclipse/2012/11/01/rcp-perspectives-and-perspective-contributions-2.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: Eclipse, perspectives, and RCP by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -494,7 +429,7 @@ public void createInitialLayout(IPageLayout layout) {
      
       <li class="category"><a href="/categories/objectivec">Objectivec <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/opensource">Opensource <span>(2)</span></a></li>
+      <li class="category"><a href="/categories/opensource">Opensource <span>(3)</span></a></li>
      
       <li class="category"><a href="/categories/programmierung">Programmierung <span>(6)</span></a></li>
      
@@ -514,7 +449,7 @@ public void createInitialLayout(IPageLayout layout) {
      
       <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
      
-      <li class="category"><a href="/categories/software">Software <span>(4)</span></a></li>
+      <li class="category"><a href="/categories/software">Software <span>(5)</span></a></li>
      
       <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
      
