@@ -18,7 +18,7 @@ Mal wieder Fehler 9 beim [Roomba](http://www.amazon.de/gp/product/B002P68ADQ/ref
 
 
 
-Hatte ja bereits erwartet, dass der Roomba irgendwann mal wieder Probleme macht. Bei der letzten Reparatur [(hier geht es zur Anleitung)](http://andydunkel.net/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html) wurde nur ein Sensor ausgetauscht und die Ursache des Defekts ist, nach allem was ich gelesen hatte, auf Materialermüdung zurückzuführen.
+Hatte ja bereits erwartet, dass der Roomba irgendwann mal wieder Probleme macht. Bei der letzten Reparatur [(hier geht es zur Anleitung)](https://andydunkel.net/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html) wurde nur ein Sensor ausgetauscht und die Ursache des Defekts ist, nach allem was ich gelesen hatte, auf Materialermüdung zurückzuführen.
 
 
 
@@ -28,7 +28,7 @@ Daher meine Empfehlung, wenn das Ding einmal zerlegt ist, am Besten gleich beide
 
 
 
-![2012 11 21 20 05 05](http://andydunkel.net/assets/uploads/2012/11/2012-11-21-20.05.05.jpg)
+![2012 11 21 20 05 05](https://andydunkel.net/assets/uploads/2012/11/2012-11-21-20.05.05.jpg)
 
 
 
@@ -48,4 +48,4 @@ Nicht falsch verstehen, ich bin mit dem [Roomba](http://www.amazon.de/gp/product
 
 
 
-![2012 11 21 20 15 48](http://andydunkel.net/assets/uploads/2012/11/2012-11-21-20.15.48.jpg)
+![2012 11 21 20 15 48](https://andydunkel.net/assets/uploads/2012/11/2012-11-21-20.15.48.jpg)

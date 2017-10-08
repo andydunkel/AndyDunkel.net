@@ -15,7 +15,7 @@ tags:
 
 In my current RCP application some unwanted Eclipse actions showed up in the toolbar and menubar:
 
-![image](http://andydunkel.net/assets/uploads/2011/05/image4.png)
+![image](https://andydunkel.net/assets/uploads/2011/05/image4.png)
 
 How to get rid of these?
 
@@ -56,4 +56,4 @@ Call “removeUnWantedActions” from the constructor.
 
 The unwanted actions should be gone now:
 
-![image](http://andydunkel.net/assets/uploads/2011/05/image5.png)
+![image](https://andydunkel.net/assets/uploads/2011/05/image5.png)

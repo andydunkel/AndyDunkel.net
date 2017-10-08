@@ -19,15 +19,15 @@ Enough [chitchat](http://youtu.be/oHoeXFbc1PA?t=10s), lets get started.
 
 The first step is to create a demo application where you can put the CNF view. Use the RCP sample application with a view. After you created the demo project, add the <code>org.eclipse.ui.navigator</code> plugin to the manifest.
 
-![](http://andydunkel.net/assets/uploads/2014/05/cnf/cnf1.png)
+![](https://andydunkel.net/assets/uploads/2014/05/cnf/cnf1.png)
 
 The next step is to add the view to the project by adding it to the <code>org.eclipse.ui.views</code> extension point.
 
-![](http://andydunkel.net/assets/uploads/2014/05/cnf/cnf2.png)
+![](https://andydunkel.net/assets/uploads/2014/05/cnf/cnf2.png)
 
 Enter the ID, a name and create a new class, subclassing the <code>CommonNavigator</code> class. In the example this class is named <code>MyNavigator</code>.
 
-![](http://andydunkel.net/assets/uploads/2014/05/cnf/cnf3.png)
+![](https://andydunkel.net/assets/uploads/2014/05/cnf/cnf3.png)
 
 After thats done, add the view to the perspective, either by plugin.xml or in code.
 
@@ -67,21 +67,21 @@ Usually you would not statically set the input like in the example, but thats ju
 
 Now there are some things to do in the <code>plugin.xml</code> file. The first thing is to add an <code>org.eclipse.ui.navigator.navigatorContent</code> extension point.
 
-![](http://andydunkel.net/assets/uploads/2014/05/cnf/cnf4.png)
+![](https://andydunkel.net/assets/uploads/2014/05/cnf/cnf4.png)
 
 Enter an ID and a name and create a contentProvider and labelProvider for the extension point, by clicking on the links in the plugin.xml editor.
 
 The label and content providers need some basic coding now. The content provider takes a <code>NavigatorRoot</code> object as input and should return an array ouf our <code>ParentNode</code> objects. The label provider takes the <code>ParentNode</code> as input and return its name property ([see here for code](https://github.com/andydunkel/RCP-Demo-Application/tree/master/com.da.editor/src/com/da/editor/cnf)). 
 
-![](http://andydunkel.net/assets/uploads/2014/05/cnf/cnf5.png)
+![](https://andydunkel.net/assets/uploads/2014/05/cnf/cnf5.png)
 
 In the next step, define the triggerPoints which define when the content should appear. Add a <code>triggerPoints</code> to the <code>navigatorContent</code> extension point we created before. When done add a <code>instanceof</code> element and enter the name of the <code>NavigatorRoot</code> class. The result should look like that: 
 
-![](http://andydunkel.net/assets/uploads/2014/05/cnf/cnf6.png)
+![](https://andydunkel.net/assets/uploads/2014/05/cnf/cnf6.png)
 
 In the last step, add an <code>org.eclipse.ui.navigator.viewer</code> extension point:
 
-![](http://andydunkel.net/assets/uploads/2014/05/cnf/cnf7.png)
+![](https://andydunkel.net/assets/uploads/2014/05/cnf/cnf7.png)
 
 The extension point registers the view as the navigator view and binds the content to it. First create the <code>viewer</code> element, then the <code>viewerContentBinding</code>. Enter the view id here again. Add an <code>includes</code> element, which well, includes the <code>navigatorContent</code> as <code>contentExtension.</code> In the pattern field, enter the id of the <code>navigatorContent</code> we created above.
 
@@ -89,7 +89,7 @@ The extension point registers the view as the navigator view and binds the conte
 
 Once all is done and the application is launched, you should now see the content in the navigator tree:
 
-![](http://andydunkel.net/assets/uploads/2014/05/cnf/cnf8.png)
+![](https://andydunkel.net/assets/uploads/2014/05/cnf/cnf8.png)
 
 Since a lot of steps are required, especially in the <code>plugin.xml</code>, its most likely that the content will not show up. In that case check your code and the xml files for typos. 
 

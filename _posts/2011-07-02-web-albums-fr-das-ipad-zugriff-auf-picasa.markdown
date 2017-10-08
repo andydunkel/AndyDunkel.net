@@ -22,7 +22,7 @@ Ganz überzeugt mich die Weboberfläche aber nicht, besonders beim Anschauen der
 
 Abhilfe schafft die App “[Web Albums for iPad](http://itunes.apple.com/de/app/web-albums-for-ipad-a-picasa/id364824944?mt=8)”. Kostet 2,39 Euro, ist sein Geld aber wert. Nachdem man sein Picasa Account eingetragen hat sieht man sofort seine Alben:
 
-![image](http://andydunkel.net/assets/uploads/2011/07/image.png)
+![image](https://andydunkel.net/assets/uploads/2011/07/image.png)
 
 Wie geht’s weiter?  
 
@@ -31,7 +31,7 @@ Wie geht’s weiter?
 
 Ein Klick/Touch auf das Album öffnet dieses, die Bilder werden dann als Thumbnails angezeigt. Ein weiterer Klick und schon wird das Bild Vollbild angezeigt.
 
-[![image](http://andydunkel.net/assets/uploads/2011/07/image_thumb.png)](http://andydunkel.net/assets/uploads/2011/07/image1.png)
+[![image](https://andydunkel.net/assets/uploads/2011/07/image_thumb.png)](https://andydunkel.net/assets/uploads/2011/07/image1.png)
 
 Mit Klick auf den Play-Button startet das ganze als Vollbild-Slideshow. Durch Wischen kann man durch die Bilder navigieren. Über WLAN ist das ganze auch recht flott. Die Bilder werden im Hintergrund schon mal vorgeladen.
 

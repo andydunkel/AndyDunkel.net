@@ -16,13 +16,13 @@ tags:
 - Windows
 ---
 
-Tja, nach meinem letzten Eintrag [zum Thema](http://andydunkel.net/sonstiges/2011/07/31/kein-service-pack-1-frs-thinkpad-edge.html), war ich recht optimistisch. Aber denkste, zwar tauchte das Service Pack nun in der Liste der Updates auf, lud herunter und tat so, als ob es sich installierte.
+Tja, nach meinem letzten Eintrag [zum Thema](https://andydunkel.net/sonstiges/2011/07/31/kein-service-pack-1-frs-thinkpad-edge.html), war ich recht optimistisch. Aber denkste, zwar tauchte das Service Pack nun in der Liste der Updates auf, lud herunter und tat so, als ob es sich installierte.
 
 Beim nächsten Neustart wurde dann wieder ein Fehler festgestellt und die Installation zurückgerollt:
 
 **Unbekannter Fehler 0x8004401e**
 
-[![image](http://andydunkel.net/assets/uploads/2011/08/image_thumb.png)](http://andydunkel.net/assets/uploads/2011/08/image.png)
+[![image](https://andydunkel.net/assets/uploads/2011/08/image_thumb.png)](https://andydunkel.net/assets/uploads/2011/08/image.png)
 
 Na toll, Google und Foren gaben zum Thema nicht viel her. Außer probiere mal Voodoo XY, installiere Windows neu, deinstalliere alle Treiber und installiere alle neu, mit Linux wäre das nicht passiert…
 
@@ -42,13 +42,13 @@ Zuerst legt man eine Windows DVD ein. Wer keine hat, kann sich ein Image aus dem
 
 Dann geht man auf Arbeitsplatz und das DVD-Laufwerk öffnet die DVD und klickt auf die **setup.exe**:
 
-![image](http://andydunkel.net/assets/uploads/2011/08/image1.png)
+![image](https://andydunkel.net/assets/uploads/2011/08/image1.png)
 
 Anschließend klickt man auf “Jetzt installieren”. Dann  geht’s weiter:
 
-![image](http://andydunkel.net/assets/uploads/2011/08/image2.png)
+![image](https://andydunkel.net/assets/uploads/2011/08/image2.png)
 
-[![image](http://andydunkel.net/assets/uploads/2011/08/image_thumb1.png)](http://andydunkel.net/assets/uploads/2011/08/image3.png)
+[![image](https://andydunkel.net/assets/uploads/2011/08/image_thumb1.png)](https://andydunkel.net/assets/uploads/2011/08/image3.png)
 
 Updates wollen wir keine machen und wir machen ein “Upgrade”.
 
@@ -58,4 +58,4 @@ Nachdem das ganze fertig war, hat dann auch die Service Pack 1 Installation gekl
 
 Tada:
 
-![image](http://andydunkel.net/assets/uploads/2011/08/image4.png)
+![image](https://andydunkel.net/assets/uploads/2011/08/image4.png)

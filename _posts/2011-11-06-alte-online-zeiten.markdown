@@ -12,7 +12,7 @@ categories:
 
 Gerade bin ich im Internet über ein Video gestolpert, welches den Sound eines guten alten 56k Modems wiedergibt.
 
-[![image](http://andydunkel.net/assets/uploads/2011/11/image_thumb.png)](http://andydunkel.net/assets/uploads/2011/11/image1.png)
+[![image](https://andydunkel.net/assets/uploads/2011/11/image_thumb.png)](https://andydunkel.net/assets/uploads/2011/11/image1.png)
 
 Irgendwie ist daraus doch ein etwas längerer Artikel im eKiwi-Blog geworden:
 

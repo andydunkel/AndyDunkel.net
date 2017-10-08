@@ -35,7 +35,7 @@ Nun wollte Windows aktiviert werden, trotz gültigem Product-Key. Es kam immer d
 
 
 
-![Key ungültig](http://andydunkel.net/assets/uploads/2013/05/no_valid_key.png)
+![Key ungültig](https://andydunkel.net/assets/uploads/2013/05/no_valid_key.png)
 
 
 
@@ -76,7 +76,7 @@ Also fix den Registry-Editor öffnen:
 
 
 
-![Registry bearbeiten](http://andydunkel.net/assets/uploads/2013/05/registry.png)
+![Registry bearbeiten](https://andydunkel.net/assets/uploads/2013/05/registry.png)
 
 
 
@@ -86,7 +86,7 @@ Damit die Änderungen übernommen werden, muss man noch die Admin-Eingabeaufford
 
 
 
-![Eingabeaufforderung](http://andydunkel.net/assets/uploads/2013/05/eingabeaufforderung.png)
+![Eingabeaufforderung](https://andydunkel.net/assets/uploads/2013/05/eingabeaufforderung.png)
 
 
 
@@ -96,7 +96,7 @@ Und dann als Administrator starten:
 
 
 
-![Als Admin ausführen](http://andydunkel.net/assets/uploads/2013/05/runas.png)
+![Als Admin ausführen](https://andydunkel.net/assets/uploads/2013/05/runas.png)
 
 
 
@@ -106,4 +106,4 @@ Nun noch "slmgr /rearm" in die Konsole eintippen und es erfolgt eine Meldung, da
 
 
 
-![slrmgr /rearm](http://andydunkel.net/assets/uploads/2013/05/slrmgr.png)
+![slrmgr /rearm](https://andydunkel.net/assets/uploads/2013/05/slrmgr.png)

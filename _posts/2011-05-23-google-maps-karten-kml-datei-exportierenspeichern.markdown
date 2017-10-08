@@ -17,11 +17,11 @@ Ich nutze [MyTracks](http://mytracks.appspot.com/) von Google zum GPS-Logging me
 
 Man wählt zuerst die Karte in Google Maps aus. Klickt dann auf Link und kopiert diesen:
 
-![image](http://andydunkel.net/assets/uploads/2011/05/image8.png)
+![image](https://andydunkel.net/assets/uploads/2011/05/image8.png)
 
 Link nun einfach in die Adresszeile des Browsers kopieren und &output=kml einfügen.
 
-![image](http://andydunkel.net/assets/uploads/2011/05/image9.png)
+![image](https://andydunkel.net/assets/uploads/2011/05/image9.png)
 
  
 

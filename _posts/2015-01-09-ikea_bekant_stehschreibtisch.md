@@ -29,11 +29,11 @@ Tischbeine und Tischplatte gibt es in verschiedenen Farben, welche sich beliebig
 
 Ebenfalls positiv: auf den ganzen Schreibtisch gibt es 10 Jahre Garantie. Auch auf die Motoren. 
 
-![image](http://andydunkel.net/assets/uploads/2015/1/bekant.jpg)
+![image](https://andydunkel.net/assets/uploads/2015/1/bekant.jpg)
 
 Für den Kabelsalat gibt es eine Netzablage unter dem Tisch, in welcher sich die meisten Kabel verstauen lassen. 
 
-![image](http://andydunkel.net/assets/uploads/2015/1/bekant2.jpg)
+![image](https://andydunkel.net/assets/uploads/2015/1/bekant2.jpg)
 
 ## Die erste Woche
 

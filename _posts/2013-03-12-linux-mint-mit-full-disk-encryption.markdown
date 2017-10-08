@@ -54,4 +54,4 @@ Ansonsten mal schauen ob Mint nachher besser läuft als das Ubuntu.
 
 
 
-![2013 03 12 11 01 55](http://andydunkel.net/assets/uploads/2013/03/2013-03-12-11.01.55.jpg)
+![2013 03 12 11 01 55](https://andydunkel.net/assets/uploads/2013/03/2013-03-12-11.01.55.jpg)

@@ -18,7 +18,7 @@ tags:
 
 Recently I needed to start a console application from C#, wait until the execution has finished and read the output back. Here is a simple way this can be done.
 
-![image](http://andydunkel.net/assets/uploads/2011/06/image9.png)
+![image](https://andydunkel.net/assets/uploads/2011/06/image9.png)
 
 The first thing is to run the process and attach an EventHandler for the finish of the process:
 

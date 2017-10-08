@@ -41,4 +41,4 @@ Anschließend einfach das Tool starten, standardmäßig wird die Schnittstelle e
 
 
 
-![EthStatus](http://andydunkel.net/assets/uploads/2012/12/EthStatus.png)
+![EthStatus](https://andydunkel.net/assets/uploads/2012/12/EthStatus.png)

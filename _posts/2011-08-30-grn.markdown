@@ -10,4 +10,4 @@ categories:
 - Radfahren
 ---
 
-![image](http://andydunkel.net/assets/uploads/2011/08/image25.png)
+![image](https://andydunkel.net/assets/uploads/2011/08/image25.png)

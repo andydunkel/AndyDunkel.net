@@ -21,7 +21,7 @@ Windows schafft es auch nach vielen Jahren mich zu überraschen. Diesmal auf der
 
 Nun wollte Windows keine dieser Befehle mehr kennen:
 
-[![image](http://andydunkel.net/assets/uploads/2011/08/image_thumb6.png)](http://andydunkel.net/assets/uploads/2011/08/image12.png)
+[![image](https://andydunkel.net/assets/uploads/2011/08/image_thumb6.png)](https://andydunkel.net/assets/uploads/2011/08/image12.png)
 
 **Was kann man tun?**
 
@@ -31,11 +31,11 @@ Nach etwas Überlegungszeit war mein erster Ansatz die PATH Umgebungsvariable. D
 
 Hier nun die Abhilfe: Zuerst in die Systemsteuerung gehen, dort dann auf “System” und anschließend auf “Erweiterte Systemeinstellungen”:
 
-![image](http://andydunkel.net/assets/uploads/2011/08/image13.png)
+![image](https://andydunkel.net/assets/uploads/2011/08/image13.png)
 
 Dort klickt man dann auf den Button “Umgebungsvariablen” woraufhin sich dann dieser schöne Dialog öffnet:
 
-![image](http://andydunkel.net/assets/uploads/2011/08/image14.png)
+![image](https://andydunkel.net/assets/uploads/2011/08/image14.png)
 
 Nun einfach zur Variable “path” scrollen und bearbeiten klicken. Bei mir haben dann die folgenden Einträge gefehlt:
 
@@ -45,6 +45,6 @@ Diese fügt man nun einfach am Ende der Liste hinzu (Trennung der Einträge mit 
 
 Anschließend ist auch Windows wieder lieb:
 
-![image](http://andydunkel.net/assets/uploads/2011/08/image15.png)
+![image](https://andydunkel.net/assets/uploads/2011/08/image15.png)
 
 Leider konnte ich keine Ursache herausfinden, warum die Einträge weg waren. Meine Vermutung liegt in einer fehlerhaften Installation eines anderen Programms.

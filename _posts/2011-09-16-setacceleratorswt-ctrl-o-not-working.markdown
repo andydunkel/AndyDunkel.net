@@ -18,9 +18,9 @@ tags:
 
 In my current RCP application I had a problem that the menu key shortcuts did not work correctly:
 
-![image](http://andydunkel.net/assets/uploads/2011/09/image8.png)
+![image](https://andydunkel.net/assets/uploads/2011/09/image8.png)
 
-When I started the application and pressed the shortcut, nothing happened. After I opened the menu once, suddenly everything worked! ![Nachdenkliches Smiley](http://andydunkel.net/assets/uploads/2011/09/wlEmoticon-thinkingsmile.png)
+When I started the application and pressed the shortcut, nothing happened. After I opened the menu once, suddenly everything worked! ![Nachdenkliches Smiley](https://andydunkel.net/assets/uploads/2011/09/wlEmoticon-thinkingsmile.png)
 
 I created the menu item in the “ApplicationActionBarAdvisor”:
 

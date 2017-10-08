@@ -13,7 +13,7 @@ tags:
 - Reparatur
 ---
 
-Nachdem der Roomba (580) seit seiner [letzten Reparatur](http://andydunkel.net/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html) problemlos lief, hat sich letzte Woche ein Kopfhörerkabel in der Seitenbürste verfangen. Dies hatte dann vermutlich den Motor überlastet, so dass dieser nur noch sporadisch lief. Na toll.
+Nachdem der Roomba (580) seit seiner [letzten Reparatur](https://andydunkel.net/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html) problemlos lief, hat sich letzte Woche ein Kopfhörerkabel in der Seitenbürste verfangen. Dies hatte dann vermutlich den Motor überlastet, so dass dieser nur noch sporadisch lief. Na toll.
 
 Gute Nachricht, es gibt die passenden Ersatzteile im Internet zu bestellen (einfach nach Seitenbürstenmodul googlen) und diese sind sehr leicht zu wechseln. So kam wenige Tage später der passende Motor für knapp 40 Euro ins Haus. Nicht gerade billig, aber immerhin ist auch eine neue Seitenbürste mit dabei.
 

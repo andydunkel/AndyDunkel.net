@@ -32,6 +32,6 @@ To dynamically set the title of a RCP application, the following code snippet is
     }
 
 
-The window title can be set via the “_IWorkbenchWindowConfigurer_”. You can get a reference to it in the “_ApplicationWorkbenchAdvisor_”. The result looks like this (obviously ![Erstauntes Smiley](http://andydunkel.net/assets/uploads/2011/05/wlEmoticon-surprisedsmile.png)):
+The window title can be set via the “_IWorkbenchWindowConfigurer_”. You can get a reference to it in the “_ApplicationWorkbenchAdvisor_”. The result looks like this (obviously ![Erstauntes Smiley](https://andydunkel.net/assets/uploads/2011/05/wlEmoticon-surprisedsmile.png)):
 
-![image](http://andydunkel.net/assets/uploads/2011/05/image10.png)
+![image](https://andydunkel.net/assets/uploads/2011/05/image10.png)

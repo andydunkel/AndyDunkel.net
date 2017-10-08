@@ -41,7 +41,7 @@ Nachdem wir nun wissen welcher Sensor kaputt ist, geht es nun darum den Roomba z
 
 Folgende Ersatzteile werden benötigt:
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb.png)](http://andydunkel.net/assets/uploads/2012/03/image.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb.png)](https://andydunkel.net/assets/uploads/2012/03/image.png)
 
 Diese gibt es bei Conrad (hier auch die Bestellnummern von Conrad). Kostet ca. 1 Euro pro Bauteil. Für jeden Sensor werden jeweils eine Diode und ein Fototransistor benötigt.
 
@@ -49,17 +49,17 @@ Nun geht es ans Zerlegen des Roomba. Kleiner Hinweis. Am besten die Schrauben na
 
 Zuerst Dreckbehälter und die Bürsten entfernen. Anschließend die Bodenplatte abschrauben:
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb1.png)](http://andydunkel.net/assets/uploads/2012/03/image1.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb1.png)](https://andydunkel.net/assets/uploads/2012/03/image1.png)
 
 Jetzt wird die Batterie entfernt und der Bumper abmontiert. Dieser ist mit 10 Schrauben befestigt.
 
  
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb2.png)](http://andydunkel.net/assets/uploads/2012/03/image2.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb2.png)](https://andydunkel.net/assets/uploads/2012/03/image2.png)
 
 Um den Bumper komplett abzunehmen muss noch der Empfänger für die Basisstation gelöst werden:
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb3.png)](http://andydunkel.net/assets/uploads/2012/03/image3.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb3.png)](https://andydunkel.net/assets/uploads/2012/03/image3.png)
 
 Bei der Gelegenheit können wir nun die Bumperschalter prüfen. 
 
@@ -67,43 +67,43 @@ Lassen sich diese betätigen oder hat sich eventuell ein Fremdkörper verhakt. F
 
 Die Abdeckung sitzt in der Mitte recht fest, man muss schon etwas Kraft aufwenden.
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb4.png)](http://andydunkel.net/assets/uploads/2012/03/image4.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb4.png)](https://andydunkel.net/assets/uploads/2012/03/image4.png)
 
 Im nächsten Schritt sind nun wieder einige Schrauben zu lösen. Hinweis: Eine ist etwas kleiner.
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb5.png)](http://andydunkel.net/assets/uploads/2012/03/image5.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb5.png)](https://andydunkel.net/assets/uploads/2012/03/image5.png)
 
 Nun kommt auch schon die Platine zum Vorschein. Jetzt entfernen wir den grauen Ring und Abdeckung in der Mitte.
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb6.png)](http://andydunkel.net/assets/uploads/2012/03/image6.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb6.png)](https://andydunkel.net/assets/uploads/2012/03/image6.png)
 
 Es wird kaum überraschen, noch mehr Schrauben:
 
      
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb7.png)](http://andydunkel.net/assets/uploads/2012/03/image7.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb7.png)](https://andydunkel.net/assets/uploads/2012/03/image7.png)
 
 Nun lösen wir die oberen Stecker der Platine:
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb8.png)](http://andydunkel.net/assets/uploads/2012/03/image8.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb8.png)](https://andydunkel.net/assets/uploads/2012/03/image8.png)
 
-Die Platine nun vorsichtig nach oben ziehen und überklappen. Nun sieht man bereits die Bumpersensorbaugruppe. [![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb9.png)](http://andydunkel.net/assets/uploads/2012/03/image9.png)
+Die Platine nun vorsichtig nach oben ziehen und überklappen. Nun sieht man bereits die Bumpersensorbaugruppe. [![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb9.png)](https://andydunkel.net/assets/uploads/2012/03/image9.png)
 
 Die Baugruppe ist mit 2 Schrauben fixiert. Diese lösen. Diese muss nun zerlegt werden. Vorsichtig die Plastikverbindung lösen. Achtung, drinnen ist eine Feder die bei der Gelegenheit gerne wegfliegt.
 
  
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb10.png)](http://andydunkel.net/assets/uploads/2012/03/image10.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb10.png)](https://andydunkel.net/assets/uploads/2012/03/image10.png)
 
 Hat man den Bumperschalter zerlegt findet man auch schon die kleine Platine und die Übeltäter:
 
-![image](http://andydunkel.net/assets/uploads/2012/03/image11.png)
+![image](https://andydunkel.net/assets/uploads/2012/03/image11.png)
 
-Wie man sieht habe ich auch eine kleine Verletzung beim Zerlegen davongetragen. ![Smiley](http://andydunkel.net/assets/uploads/2012/03/wlEmoticon-smile.png)
+Wie man sieht habe ich auch eine kleine Verletzung beim Zerlegen davongetragen. ![Smiley](https://andydunkel.net/assets/uploads/2012/03/wlEmoticon-smile.png)
 
 Nun muss man zum Lötkolben greifen und den Fototransistor und die Diode ersetzen. Zuerst die alten auslöten und dann die neuen einlöten:
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb11.png)](http://andydunkel.net/assets/uploads/2012/03/image12.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb11.png)](https://andydunkel.net/assets/uploads/2012/03/image12.png)
 
 Der Fototransistor ist der obere bei den Kabel und ist oben etwas blau.
 

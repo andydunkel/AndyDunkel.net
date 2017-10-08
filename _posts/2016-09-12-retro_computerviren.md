@@ -43,7 +43,7 @@ Stattdessen musste man neue Disketten vor den ersten Gebrauch erstmal überprüf
 
 Mittlerweile sind die Viren von damals sogar ein Teil der Computergeschichte. Es gibt Artikel auf [Wikipedia](https://de.wikipedia.org/wiki/(c)Brain) und auf [Archive.org](https://archive.org/details/malwaremuseum) kann man die Viren sogar gefahrlos in virtueller Umgebung ausprobieren. Wer hätte das gedacht.
 
-<a href="https://archive.org/details/malwaremuseum"><img src="http://andydunkel.net/assets/uploads/2016/9/malware.png"></a>
+<a href="https://archive.org/details/malwaremuseum"><img src="https://andydunkel.net/assets/uploads/2016/9/malware.png"></a>
 
 Zum Glück blieb diese Virenerfahrung auf dem PC die einzige bisher. 
 
@@ -55,6 +55,6 @@ Im Gegensatz zu früher, wo es primär um Aufmerksamtkeit und "Ruhm" ging, geht 
 
 [Antivirenprogramme gibt es mittlerweile viele](https://www.netzsieger.de/k/antivirus) und sind auch als Pflicht anzusehen.
 
-<a href="https://www.netzsieger.de/k/antivirus"><img src="http://andydunkel.net/assets/uploads/2016/9/virus2.png"></a>
+<a href="https://www.netzsieger.de/k/antivirus"><img src="https://andydunkel.net/assets/uploads/2016/9/virus2.png"></a>
 
 Ob wir in 20 Jahren auf diese Zeit zurückblicken und uns sagen: "Ach dieser tolle Computervirus damals, der hat mir damals alle Urlaubsfotos verschlüsselt". Denke das darf bezweifelt werden. :-)

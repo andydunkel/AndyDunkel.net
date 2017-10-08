@@ -14,13 +14,13 @@ tags:
 
 ---
 
-Ende letzten Jahres habe ich mir ein [Brompton Faltrad}(http://andydunkel.net/radfahren/umwelt/2016/02/28/brompton_faltrad.html) gekauft. Nun bin ich damit zum ersten Mal mit dem ICE in meine Heimat Lübben gefahren.
+Ende letzten Jahres habe ich mir ein [Brompton Faltrad}(https://andydunkel.net/radfahren/umwelt/2016/02/28/brompton_faltrad.html) gekauft. Nun bin ich damit zum ersten Mal mit dem ICE in meine Heimat Lübben gefahren.
 
 ![](/assets/uploads/2016/5/brompton1.jpg)
 
 Die Mitnahme im ICE ging ohne Probleme. Das Rad verschwandt in der Tasche. Von außen erinnert dann nix mehr an ein Rad. Platz fand das Brompton zwischen den Sitzen oder in den Ablageflächen für den Koffer. Zwischen den Sitzen hatte ich es immer im Blick. Lediglich im Regionalexpress musste ich es, etwas weiter entfernt, in der Kofferablage platzieren. Da wird man schon etwas nervös und hofft, dass niemand das Rad beim Aussteigen mitnimmt.
 
-Der Vorteil [meiner Tasche}(http://andydunkel.net/radfahren/umwelt/2016/03/13/brompton_taschen.html) ist, dass sich diese recht kompakt zusammenfalten lässt. Am Zielort angekommen konnte ich das Rad auspacken und zum Zielort radeln. Da es sich bei der Tasche um eine ohne Rollen handelt, musste ich es auf dem Bahnhof, beim Umsteigen, jeweils ein Stück tragen. Das geht, solange der Weg nicht zu lang ist. Auf Dauer wird das Rad dann doch schwer. Zur Not müsste ich es dann halt auspacken und auf den Gepäckträgerrollen schieben.
+Der Vorteil [meiner Tasche}(https://andydunkel.net/radfahren/umwelt/2016/03/13/brompton_taschen.html) ist, dass sich diese recht kompakt zusammenfalten lässt. Am Zielort angekommen konnte ich das Rad auspacken und zum Zielort radeln. Da es sich bei der Tasche um eine ohne Rollen handelt, musste ich es auf dem Bahnhof, beim Umsteigen, jeweils ein Stück tragen. Das geht, solange der Weg nicht zu lang ist. Auf Dauer wird das Rad dann doch schwer. Zur Not müsste ich es dann halt auspacken und auf den Gepäckträgerrollen schieben.
 
 ![](/assets/uploads/2016/5/brompton2.jpg)
 

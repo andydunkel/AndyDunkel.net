@@ -19,7 +19,7 @@ Recently I ran into a problem in my RCP application during the generation of a P
 
 
 
-![1](http://andydunkel.net/assets/uploads/2012/11/11.png)
+![1](https://andydunkel.net/assets/uploads/2012/11/11.png)
 
 
 
@@ -55,7 +55,7 @@ Remembering that I am using JavaScript in my BIRT report, the approach was simil
 
 
 
-![2](http://andydunkel.net/assets/uploads/2012/11/21.png)
+![2](https://andydunkel.net/assets/uploads/2012/11/21.png)
 
 
 
@@ -70,4 +70,4 @@ Here is a kitten:
 
 
 
-![3](http://andydunkel.net/assets/uploads/2012/11/31.png)
+![3](https://andydunkel.net/assets/uploads/2012/11/31.png)

@@ -44,8 +44,8 @@ This outputs date and time into a QR code and outputs a PNG file. In the HTML fi
 
 The QR code looks like that (if you do a refresh in the browser the code will change):
 
-![](http://andydunkel.net/assets/wp-custom/qrcode/img.php)
+![](https://andydunkel.net/assets/wp-custom/qrcode/img.php)
 
-And that’s it. ![Smiley](http://andydunkel.net/assets/uploads/2011/07/wlEmoticon-smile.png) More documentation can be found on the projects homepage.
+And that’s it. ![Smiley](https://andydunkel.net/assets/uploads/2011/07/wlEmoticon-smile.png) More documentation can be found on the projects homepage.
 
-Here is the complete [example as download](http://andydunkel.net/assets/wp-custom/qrcode/qrcode.zip).
+Here is the complete [example as download](https://andydunkel.net/assets/wp-custom/qrcode/qrcode.zip).

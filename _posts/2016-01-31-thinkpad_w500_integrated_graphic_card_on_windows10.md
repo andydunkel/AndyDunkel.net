@@ -22,7 +22,7 @@ Mein Thinkpad W500, mit SSD und 6GB RAM, ist immer noch eine veritable Workstati
 
 Leider liefert Lenovo keine neuen Treiber für das Notebook. Man will da [lieber neue Geräte verkaufen](http://www.heise.de/newsticker/meldung/Lenovo-Chef-Windows-10-Gratis-Upgrade-war-ein-Fehler-3067578.html), als sich um den alten Kram zu kümmern. Übrigens läuft Linux ohne Probleme.
 
-Hauptsächlich macht die Grafikkarte Probleme. hier gibt es keinen Treiber für Windows 10. Ich hatte bereits geschrieben, wie man die [ATI Fire GL 5700 Grafikkarte](http://andydunkel.net/computer/2015/08/09/windows_10_on_thinkpad_w500.html) unter Windows 10 zum Laufen bekommt. Dies funktioniert auch problemlos, allerdings läuft dann immer die ATI-Grafikkarte. Diese verbraucht allerdings mehr Strom, was zu geringerer Akkulaufzeit führt.
+Hauptsächlich macht die Grafikkarte Probleme. hier gibt es keinen Treiber für Windows 10. Ich hatte bereits geschrieben, wie man die [ATI Fire GL 5700 Grafikkarte](https://andydunkel.net/computer/2015/08/09/windows_10_on_thinkpad_w500.html) unter Windows 10 zum Laufen bekommt. Dies funktioniert auch problemlos, allerdings läuft dann immer die ATI-Grafikkarte. Diese verbraucht allerdings mehr Strom, was zu geringerer Akkulaufzeit führt.
 
 Also die integrierte Grafik im Bios aktiviert. Linux bootet ohne Probleme, unter Windows wird erstmal nur der Standardtreiber installiert. Bei der integrierten Grafik handelt es sich um einen "Intel Graphics Media Accelerator 4500MHD"-Grafikkarte. Leider gibt es von Haus aus keinen Treiber für Windows 10. Auch hier führt der Weg über den Windows 7 Treiber zum Erfolg. Nach mehreren Versuchen mit diversen Treibern, die nicht funktioniert haben (ließen sich gar nicht installieren), habe ich den folgenden Treiber von der Intel-Webseite ausprobiert [Win7Vista_64_151717bb.zip](https://downloadcenter.intel.com/download/18402).
 
@@ -54,7 +54,7 @@ My Thinkpad W500 is still a very powerful workstation for everything I am doing.
 
 Lenovo does not provide any Windows 10 support for the W500. Selling new laptops seems more important for them than supporting older models. By the way: Linux runs without any problems. The biggest driver problem is the graphic card. There is no driver for Windows 10.
 
-I wrote an [article](http://andydunkel.net/computer/2015/08/09/windows_10_on_thinkpad_w500.html) in the past how to get the "ATI Fire GL 5700 Grafikkarte running on Windows 10. This works without problems, however the ATI card needs a lot of power, which results in bad battery life.
+I wrote an [article](https://andydunkel.net/computer/2015/08/09/windows_10_on_thinkpad_w500.html) in the past how to get the "ATI Fire GL 5700 Grafikkarte running on Windows 10. This works without problems, however the ATI card needs a lot of power, which results in bad battery life.
 
 To get more battery life I switched to the integrated graphics card in the Bios. Linux runs without problems, Windows does not have a driver for the "Intel Graphics Media Accelerator 4500MHD" and runs only the standard driver. As for the ATI card installing the Windows 7 driver is the solution. Finding the correct driver was a bit of an issue. Several drivers did not work, however the following worked: [Win7Vista_64_151717bb.zip](https://downloadcenter.intel.com/download/18402).
 

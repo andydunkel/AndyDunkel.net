@@ -25,7 +25,7 @@ Gekauft habe ich Qualitätslampen der Firma Parlat.
 
 
 
-[![2012 11 27 18 01 58](http://andydunkel.net/assets/uploads/2012/11/2012-11-27-18.01.58.jpg)](http://www.amazon.de/gp/product/B005F2LZ0C/ref=as_li_ss_tl?ie=UTF8&camp=1638&creative=19454&creativeASIN=B005F2LZ0C&linkCode=as2&tag=ekiwide0b-21)
+[![2012 11 27 18 01 58](https://andydunkel.net/assets/uploads/2012/11/2012-11-27-18.01.58.jpg)](http://www.amazon.de/gp/product/B005F2LZ0C/ref=as_li_ss_tl?ie=UTF8&camp=1638&creative=19454&creativeASIN=B005F2LZ0C&linkCode=as2&tag=ekiwide0b-21)
 
 
 
@@ -60,4 +60,4 @@ Hier ein Foto, durch die Helligkeit der Lampen kann man es nicht so richtig foto
 
 
 
-![DSCN3062](http://andydunkel.net/assets/uploads/2012/11/DSCN3062.jpg)
+![DSCN3062](https://andydunkel.net/assets/uploads/2012/11/DSCN3062.jpg)

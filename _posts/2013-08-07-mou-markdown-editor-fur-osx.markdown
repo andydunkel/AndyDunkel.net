@@ -12,7 +12,7 @@ tags:
 - Markdown
 ---
 
-Markdown ist meine neue "[Lieblingsauszeichnungssprache](http://andydunkel.net/tools/2013/06/16/markdown.html)" für Dokumente aller Art geworden. In der täglichen Arbeit fällt viel an was niedergeschrieben werden will: Notizen, kleinere und größere Dokumentationen. Da es im Prinzip nur Textdateien sind, sind diese auch sehr leicht auffindbar mittels Spotlight oder unter Windows mit der Desktop-Search.
+Markdown ist meine neue "[Lieblingsauszeichnungssprache](https://andydunkel.net/tools/2013/06/16/markdown.html)" für Dokumente aller Art geworden. In der täglichen Arbeit fällt viel an was niedergeschrieben werden will: Notizen, kleinere und größere Dokumentationen. Da es im Prinzip nur Textdateien sind, sind diese auch sehr leicht auffindbar mittels Spotlight oder unter Windows mit der Desktop-Search.
 
 
 
@@ -27,7 +27,7 @@ Als Editor verwende ich unter MacOS die Anwenung "[Mou](http://mouapp.com/)". Di
 
 
 
-[![Screen Shot 2013 08 07 at 9 36 25 PM](http://andydunkel.net/assets/uploads/2013/08/Screen-Shot-2013-08-07-at-9.36.25-PM.png)](http://mouapp.com/)
+[![Screen Shot 2013 08 07 at 9 36 25 PM](https://andydunkel.net/assets/uploads/2013/08/Screen-Shot-2013-08-07-at-9.36.25-PM.png)](http://mouapp.com/)
 
 
 

@@ -26,8 +26,8 @@ The following snippet sets the title for a JFace dialog:
 
 However the following error might occur:
 
-[![image](http://andydunkel.net/assets/uploads/2011/05/image_thumb1.png)](http://andydunkel.net/assets/uploads/2011/05/image1.png)
+[![image](https://andydunkel.net/assets/uploads/2011/05/image_thumb1.png)](https://andydunkel.net/assets/uploads/2011/05/image1.png)
 
 This can be resolved if you change the setting from “error” to “warning” in the [Eclipse](http://eclipse.org/) preferences.
 
-[![image](http://andydunkel.net/assets/uploads/2011/05/image_thumb2.png)](http://andydunkel.net/assets/uploads/2011/05/image2.png)
+[![image](https://andydunkel.net/assets/uploads/2011/05/image_thumb2.png)](https://andydunkel.net/assets/uploads/2011/05/image2.png)

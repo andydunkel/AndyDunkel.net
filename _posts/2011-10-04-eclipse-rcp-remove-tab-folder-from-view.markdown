@@ -19,7 +19,7 @@ tags:
 
 If you create a new RCP application a view gets a tab like this:
 
-![image](http://andydunkel.net/assets/uploads/2011/10/image3.png)
+![image](https://andydunkel.net/assets/uploads/2011/10/image3.png)
 
 To remove the tab, use the “addStandaloneView” method in your perspective. Here is an example:
     
@@ -41,4 +41,4 @@ The result:
 
 
 
-![image](http://andydunkel.net/assets/uploads/2011/10/image4.png)
+![image](https://andydunkel.net/assets/uploads/2011/10/image4.png)

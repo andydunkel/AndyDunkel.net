@@ -15,7 +15,7 @@ I experienced a very annoying problem with after updating Delphi XE7 to update 1
 
 When Delphi was started, it just hangs. After some time at least an error message pops up informing the user about not enough stack memory.
 
-![image](http://andydunkel.net/assets/uploads/2014/12/xe7_1.png)
+![image](https://andydunkel.net/assets/uploads/2014/12/xe7_1.png)
 
 <code>displayNotification: Nicht genügend Stackspeicher / noch enough stack memory </code>
 
@@ -29,6 +29,6 @@ Another solution is do disable the start page completely. To do that open the ex
 
 In that folder there are lot of subfolders. Open the one with your Delphi language and rename the original <code>default.htm</code> to <code>default_bak.htm</code>. Now create an empty <code>default.htm</code>. 
 
-![image](http://andydunkel.net/assets/uploads/2014/12/xe7_2.png)
+![image](https://andydunkel.net/assets/uploads/2014/12/xe7_2.png)
 
 After that is done Delphi should start without any problems. The only downside is that you loose the functionality of the start page, like quick accessing your last projects.

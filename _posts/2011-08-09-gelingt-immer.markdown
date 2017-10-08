@@ -13,6 +13,6 @@ tags:
 - Immer
 ---
 
-![image](http://andydunkel.net/assets/uploads/2011/08/image10.png)
+![image](https://andydunkel.net/assets/uploads/2011/08/image10.png)
 
 > “Zu den wenigen Dingen, welche im Leben immer gelingen, gehört zweifelsohne das Rührei.”

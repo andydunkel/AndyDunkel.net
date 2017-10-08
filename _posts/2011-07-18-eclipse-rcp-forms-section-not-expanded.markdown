@@ -21,7 +21,7 @@ Sometimes strange things happen in Eclipse. Like this one in [WindowBuilder](htt
 
 I created a Forms API section in the program, but when I executed the program, the section was not expanded, not content was shown:
 
-![image](http://andydunkel.net/assets/uploads/2011/07/image15.png)
+![image](https://andydunkel.net/assets/uploads/2011/07/image15.png)
 
 In the properties editor, expanded was set to true. What to do??
 
@@ -29,8 +29,8 @@ In the properties editor, expanded was set to true. What to do??
 
 The solution is simple, it appears that the order of commands in the source code has some importance. The setExpanded Method must be called after the setClient method of the Section.
 
-![image](http://andydunkel.net/assets/uploads/2011/07/image16.png)
+![image](https://andydunkel.net/assets/uploads/2011/07/image16.png)
 
 After that, the section is expanded properly:
 
-![image](http://andydunkel.net/assets/uploads/2011/07/image17.png)
+![image](https://andydunkel.net/assets/uploads/2011/07/image17.png)

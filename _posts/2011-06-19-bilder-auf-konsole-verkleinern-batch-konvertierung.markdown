@@ -20,7 +20,7 @@ Bilder von modernen Digi-Cams sind recht groß. Will man diese per E-Mail versch
 
 Das ganze geht dann mit dem Befehl “**mogrify -resize 800 *.JPG**” den man einfach in dem Verzeichnis auf der Konsole eingibt wo die Bilder sind.
 
-![image](http://andydunkel.net/assets/uploads/2011/06/image3.png)
+![image](https://andydunkel.net/assets/uploads/2011/06/image3.png)
 
 <!-- more -->
 
@@ -28,8 +28,8 @@ Die Bilder haben anschließend eine Breite von 800 Pixel, die Höhe wird automat
 
 **Achtung! Die Bilder werden in dem Verzeichnis überschrieben.**
 
-Daher sollte man die Dateien vorher kopieren. ![Smiley](http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile4.png)
+Daher sollte man die Dateien vorher kopieren. ![Smiley](https://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile4.png)
 
 Damit ich den Befehl von überall auf der Konsole aufrufen kann, habe ich den Pfad in die “Path” Umgebungsvariable aufgenommen:
 
-![image](http://andydunkel.net/assets/uploads/2011/06/image4.png)
+![image](https://andydunkel.net/assets/uploads/2011/06/image4.png)

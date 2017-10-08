@@ -16,7 +16,7 @@ tags:
 
 In our current project we came across the following error, when we opened multiple of our editors in a RCP application: 
 
-![image](http://andydunkel.net/assets/uploads/2011/09/image5.png)
+![image](https://andydunkel.net/assets/uploads/2011/09/image5.png)
 
 Never seen this one before. Most sources in the internet mentioned something about “not disposing SWT resources”. However this happened when we opened the editor. So a “not disposed” problem was very unlikely.
 
@@ -72,7 +72,7 @@ You can check how many handles an application uses in the task manager. You must
 
 
 
-![image](http://andydunkel.net/assets/uploads/2011/09/image6.png)
+![image](https://andydunkel.net/assets/uploads/2011/09/image6.png)
 
 
 

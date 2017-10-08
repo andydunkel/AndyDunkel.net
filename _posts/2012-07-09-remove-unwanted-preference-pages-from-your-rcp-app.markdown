@@ -19,7 +19,7 @@ In my recent RCP app some unwanted preferences, contributed from other plugins s
 
 
 
-![NewImage](http://andydunkel.net/assets/uploads/2012/07/RCP_preferences1.png)
+![NewImage](https://andydunkel.net/assets/uploads/2012/07/RCP_preferences1.png)
 
 
 

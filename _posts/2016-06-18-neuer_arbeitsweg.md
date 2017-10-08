@@ -47,7 +47,7 @@ Spannend wird es denke im Herbst und Winter werden. Denke da wird es schwierig d
 
 Mein Hinweg führt mich zudem direkt an einer Hauptstraße entlang. Hier wird man leider recht oft von Autofahrern sehr knapp überholt. Das wird sicher im Winter mit schlecht geräumten Straße nicht besser. Einen vernünftigen Radweg gibt es leider nicht.
 
-Mein Vorteil ist, dass ich Alternativen habe. Sollte das Wetter mal dermaßen schlecht sein, steige ich einfach den Zug. Der nächste Bahnhof ist ca. 3 km weg von Obergünzburg. Mit dem [Brompton](http://andydunkel.net/radfahren/umwelt/2016/02/28/brompton_faltrad.html) kommt man da auch ohne Auto problemlos hin. Und etwas Bewegung hat man so auch noch. 
+Mein Vorteil ist, dass ich Alternativen habe. Sollte das Wetter mal dermaßen schlecht sein, steige ich einfach den Zug. Der nächste Bahnhof ist ca. 3 km weg von Obergünzburg. Mit dem [Brompton](https://andydunkel.net/radfahren/umwelt/2016/02/28/brompton_faltrad.html) kommt man da auch ohne Auto problemlos hin. Und etwas Bewegung hat man so auch noch. 
 
 Alternativ kann mich meine Freundin morgens meist mitnehmen. Dann gehts zurück mit Zug und Brompton.
 

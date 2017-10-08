@@ -10,7 +10,7 @@ categories:
 - Gadgets
 ---
 
-**Dies ist die englische Version, wer die Reparaturanleitung auf Deutsch lesen möchte, [hier klicken](http://andydunkel.net/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html).**
+**Dies ist die englische Version, wer die Reparaturanleitung auf Deutsch lesen möchte, [hier klicken](https://andydunkel.net/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html).**
 
 
 
@@ -91,12 +91,12 @@ For the repair the following parts are needed:
 
 
 
-![Diode2](http://andydunkel.net/assets/uploads/2012/11/diode2.png)
+![Diode2](https://andydunkel.net/assets/uploads/2012/11/diode2.png)
 
 
 
 
-![Ir diode](http://andydunkel.net/assets/uploads/2012/11/ir_diode.png)
+![Ir diode](https://andydunkel.net/assets/uploads/2012/11/ir_diode.png)
 
 
 
@@ -116,7 +116,7 @@ First remove the dirt box and the brushes. Now remove the plate on the bottom:
 
 
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb1.png)](http://andydunkel.net/assets/uploads/2012/03/image1.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb1.png)](https://andydunkel.net/assets/uploads/2012/03/image1.png)
 
 
 
@@ -126,7 +126,7 @@ Now remove the [battery](http://www.amazon.de/gp/product/B001VHQ32U/ref=as_li_ss
 
 
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb2.png)](http://andydunkel.net/assets/uploads/2012/03/image2.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb2.png)](https://andydunkel.net/assets/uploads/2012/03/image2.png)
 
 
 
@@ -136,7 +136,7 @@ To remove the bumper completly we have the remove the sensor for the base statio
 
 
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb3.png)](http://andydunkel.net/assets/uploads/2012/03/image3.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb3.png)](https://andydunkel.net/assets/uploads/2012/03/image3.png)
 
 
 
@@ -151,7 +151,7 @@ Now remove the upper plating. These plate is relativly hard to remove. Use "care
 
 
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb4.png)](http://andydunkel.net/assets/uploads/2012/03/image4.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb4.png)](https://andydunkel.net/assets/uploads/2012/03/image4.png)
 
 
 
@@ -161,7 +161,7 @@ In the next step we have to remove a lot of screws. Note that one is slightly sm
 
 
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb5.png)](http://andydunkel.net/assets/uploads/2012/03/image5.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb5.png)](https://andydunkel.net/assets/uploads/2012/03/image5.png)
 
 
 
@@ -171,7 +171,7 @@ Now we can see the circuit board. Remove the grey ring in the middle.
 
 
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb6.png)](http://andydunkel.net/assets/uploads/2012/03/image6.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb6.png)](https://andydunkel.net/assets/uploads/2012/03/image6.png)
 
 
 
@@ -181,7 +181,7 @@ You may not be surprised, even more screws to remove:
 
 
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb7.png)](http://andydunkel.net/assets/uploads/2012/03/image7.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb7.png)](https://andydunkel.net/assets/uploads/2012/03/image7.png)
 
 
 
@@ -191,7 +191,7 @@ Remove the cable connector from the circuit board:
 
 
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb8.png)](http://andydunkel.net/assets/uploads/2012/03/image8.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb8.png)](https://andydunkel.net/assets/uploads/2012/03/image8.png)
 
 
 
@@ -201,7 +201,7 @@ Carefully flip over the circuit board, after that we can already see the bumper 
 
 
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb9.png)](http://andydunkel.net/assets/uploads/2012/03/image9.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb9.png)](https://andydunkel.net/assets/uploads/2012/03/image9.png)
 
 
 
@@ -211,7 +211,7 @@ These are fixed with two screws. We remove these now. Now we have to disassemble
 
 
 
-[![image](http://andydunkel.net/assets/uploads/2012/03/image_thumb10.png)](http://andydunkel.net/assets/uploads/2012/03/image10.png)
+[![image](https://andydunkel.net/assets/uploads/2012/03/image_thumb10.png)](https://andydunkel.net/assets/uploads/2012/03/image10.png)
 
 
 
@@ -221,7 +221,7 @@ Inside you find a small PCB with the two diodes:
 
 
 
-![image](http://andydunkel.net/assets/uploads/2012/03/image11.png)
+![image](https://andydunkel.net/assets/uploads/2012/03/image11.png)
 
 
 
@@ -231,7 +231,7 @@ Now grab your soldering gun and replace the two components:
 
 
 
-![Diode pcb](http://andydunkel.net/assets/uploads/2012/11/diode_pcb.jpg)
+![Diode pcb](https://andydunkel.net/assets/uploads/2012/11/diode_pcb.jpg)
 
 
 

@@ -17,8 +17,8 @@ tags:
 
 Die Übersetzung von .net-Anwendungen ist in Visual Studio bereits ganz gut umgesetzt. Ich hatte bereits darüber geschrieben:
 
-- [C#-Anwendungen mehrsprachig gestalten](http://www.andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html)
-- [WPF-Anwendungen mehrsprachig](http://www.andydunkel.net/coding/2016/12/15/wpf_anwendungen_mehrsprachig.html)
+- [C#-Anwendungen mehrsprachig gestalten](https://www.andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html)
+- [WPF-Anwendungen mehrsprachig](https://www.andydunkel.net/coding/2016/12/15/wpf_anwendungen_mehrsprachig.html)
 
 Allerdings gibt es auch ein paar Schattenseiten. Die Übersetzungen sind in diverse Resourcendateien verteilt. Mit Visual Studio ist das Bearbeiten einfach möglich. Will man Übersetzungen extern machen lassen, ist das schwierig.
 

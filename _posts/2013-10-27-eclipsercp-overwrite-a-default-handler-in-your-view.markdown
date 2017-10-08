@@ -31,7 +31,7 @@ In the views plugin, add a handler to the org.eclipse.ui.handlers section of you
 
 
 
-![NewImage](http://andydunkel.net/assets/uploads/2013/10/NewImage.png)
+![NewImage](https://andydunkel.net/assets/uploads/2013/10/NewImage.png)
 
 
 
@@ -41,7 +41,7 @@ This causes the command only to be active in our view. Next thing is to define t
 
 
 
-![Handler2](http://andydunkel.net/assets/uploads/2013/10/handler2.png)
+![Handler2](https://andydunkel.net/assets/uploads/2013/10/handler2.png)
 
 
 

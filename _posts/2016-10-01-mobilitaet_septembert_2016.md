@@ -16,7 +16,7 @@ tags:
 
 Die Hälfte vom Monat war Urlaub angesagt, daher wurde weniger geradelt und etwas mehr Auto gefahren. Leider wird das Wetter langsam ungemütlich, besonders am Morgen kostet es einiges an Überwindung die 20km zur Arbeit herunter zu radeln. Daher wird die Fahrradleistung eher weiter nach unten gehen. 
 
-Das das [Brompton Faltrad](http://andydunkel.net/radfahren/umwelt/2016/02/28/brompton_faltrad.html) auch für längere Strecken geeignet ist, habe ich diesen Monat getestet. Eine spontane 80 km Radtour war kein Problem. Lediglich die wenigen Gänge machen sich bei stärkeren Steigungen bemerkbar. Ich war ja anfangs skeptisch, ob es nicht doch zu anstrengend und zu unpraktisch ist, aber das Brompton erweist sich als vollwertiges Fahrrad ohne große Einschränkungen.
+Das das [Brompton Faltrad](https://andydunkel.net/radfahren/umwelt/2016/02/28/brompton_faltrad.html) auch für längere Strecken geeignet ist, habe ich diesen Monat getestet. Eine spontane 80 km Radtour war kein Problem. Lediglich die wenigen Gänge machen sich bei stärkeren Steigungen bemerkbar. Ich war ja anfangs skeptisch, ob es nicht doch zu anstrengend und zu unpraktisch ist, aber das Brompton erweist sich als vollwertiges Fahrrad ohne große Einschränkungen.
 
 ### Fahrrad
 

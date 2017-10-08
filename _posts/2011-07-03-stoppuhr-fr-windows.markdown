@@ -15,8 +15,8 @@ tags:
 
 Der Titel sagt eigentlich alles. Eine kleine kostenlose Stoppuhr für Windows. Ohne besondere Funktionen. 
 
-[![image](http://andydunkel.net/assets/uploads/2011/07/image_thumb1.png)](http://andydunkel.net/assets/uploads/2011/07/image2.png)
+[![image](https://andydunkel.net/assets/uploads/2011/07/image_thumb1.png)](https://andydunkel.net/assets/uploads/2011/07/image2.png)
 
 Das .net Framework 2.0 wird benötigt.
 
-[Download hier!](http://andydunkel.net/assets/wp-custom/StopWatch.zip)
+[Download hier!](https://andydunkel.net/assets/wp-custom/StopWatch.zip)

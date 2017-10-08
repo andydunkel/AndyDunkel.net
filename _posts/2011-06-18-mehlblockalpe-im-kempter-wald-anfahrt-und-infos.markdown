@@ -25,7 +25,7 @@ Also los geht's: Urtypische Alpe im Kempter Wald zwischen [Görisried](http://ww
 
 Der Kempter Wald ist eine Empfehlung für Radler. Kilometerlange Wege durch den Wald, dem [Dengelstein](http://de.wikipedia.org/wiki/Dengelstein) und natürlich Einkehrmöglichkeiten wie die besagte Mehlblockalpe, falls man mal Durst bekommen sollte.
 
-Großer Biergarten. Das ![Bierkrug](http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-mug.png) Bier kostet 2 Euro und wird direkt vom Kasten verkauft, Essen ist ebenfalls günstig, sehr gut und die Portionen sind reichlich. Selbstbedienung. Montag ist Ruhetag.
+Großer Biergarten. Das ![Bierkrug](https://andydunkel.net/assets/uploads/2011/06/wlEmoticon-mug.png) Bier kostet 2 Euro und wird direkt vom Kasten verkauft, Essen ist ebenfalls günstig, sehr gut und die Portionen sind reichlich. Selbstbedienung. Montag ist Ruhetag.
 
 Die letzten Male wurde zudem immer Musik gespielt. Einen Einblick in das Ambiente bietet sicher das folgende Video:
 
@@ -36,7 +36,7 @@ Die letzten Male wurde zudem immer Musik gespielt. Einen Einblick in das Ambient
 
 
 
-Insgesamt, Empfehlung mal vorbei zu schauen! ![Smiley mit geöffnetem Mund](http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-openmouthedsmile.png)
+Insgesamt, Empfehlung mal vorbei zu schauen! ![Smiley mit geöffnetem Mund](https://andydunkel.net/assets/uploads/2011/06/wlEmoticon-openmouthedsmile.png)
 
 <!-- more -->
 
@@ -57,4 +57,4 @@ Rennrad geht über Görisried auch, der letzte Kilometer ist allerdings Schotter
 
 So hier noch ein paar Fotos:
 
-![DSCN2108](http://andydunkel.net/assets/uploads/2011/06/DSCN21081.jpg)![Biketour_12_6_11 020](http://andydunkel.net/assets/uploads/2011/06/Biketour_12_6_11-020.jpg)![Biketour_12_6_11 021](http://andydunkel.net/assets/uploads/2011/06/Biketour_12_6_11-021.jpg)![Biketour_12_6_11 022](http://andydunkel.net/assets/uploads/2011/06/Biketour_12_6_11-022.jpg)![DSCN2104](http://andydunkel.net/assets/uploads/2011/06/DSCN21041.jpg)![DSCN2105](http://andydunkel.net/assets/uploads/2011/06/DSCN21051.jpg)
+![DSCN2108](https://andydunkel.net/assets/uploads/2011/06/DSCN21081.jpg)![Biketour_12_6_11 020](https://andydunkel.net/assets/uploads/2011/06/Biketour_12_6_11-020.jpg)![Biketour_12_6_11 021](https://andydunkel.net/assets/uploads/2011/06/Biketour_12_6_11-021.jpg)![Biketour_12_6_11 022](https://andydunkel.net/assets/uploads/2011/06/Biketour_12_6_11-022.jpg)![DSCN2104](https://andydunkel.net/assets/uploads/2011/06/DSCN21041.jpg)![DSCN2105](https://andydunkel.net/assets/uploads/2011/06/DSCN21051.jpg)

@@ -44,7 +44,7 @@ To achieve this, two steps are neccessary. First we add an additional parameter 
 
 
 
-![Working dir1](http://andydunkel.net/assets/uploads/2013/08/working_dir1.png)
+![Working dir1](https://andydunkel.net/assets/uploads/2013/08/working_dir1.png)
 
 
 
@@ -64,7 +64,7 @@ Which we do in the *Application class of our application:
 
 
 
-![Working dir2](http://andydunkel.net/assets/uploads/2013/08/working_dir2.png)
+![Working dir2](https://andydunkel.net/assets/uploads/2013/08/working_dir2.png)
 
 
 

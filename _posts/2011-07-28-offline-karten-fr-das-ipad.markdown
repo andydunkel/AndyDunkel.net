@@ -20,7 +20,7 @@ Aber es gibt ja für alles eine App: [ForeverMap](http://itunes.apple.com/de/app
 
 Gibt’s im App-Store für bescheidene 1,59 Euro. Nach der Installation installiert man sich die gewünschten Karten gleich Länderweise. Deutschland schlägt mit 400 MB zu Buche, andere Länder sind kleiner. 
 
-![image](http://andydunkel.net/assets/uploads/2011/07/image20.png)
+![image](https://andydunkel.net/assets/uploads/2011/07/image20.png)
 
 **Was kann man noch machen?**
 
@@ -28,8 +28,8 @@ Gibt’s im App-Store für bescheidene 1,59 Euro. Nach der Installation installi
 
 Routen planen, sowohl für Auto oder Fußgänger. Ist allerdings keine Navi im klassischen Sinne. 
 
-Offlinesuche nach Adressen und Locations, z.B. wo ist die Kneipe? ![Smiley](http://andydunkel.net/assets/uploads/2011/07/wlEmoticon-smile6.png)
+Offlinesuche nach Adressen und Locations, z.B. wo ist die Kneipe? ![Smiley](https://andydunkel.net/assets/uploads/2011/07/wlEmoticon-smile6.png)
 
 Das ganze basiert auf [www.openstreetmap.org/](http://www.openstreetmap.org/), ist also aktuell.
 
-![image](http://andydunkel.net/assets/uploads/2011/07/image21.png)
+![image](https://andydunkel.net/assets/uploads/2011/07/image21.png)

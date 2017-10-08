@@ -15,7 +15,7 @@ tags:
 
 ---
 
-Für den Transport meines [Brompton](http://andydunkel.net/radfahren/umwelt/2016/02/28/brompton_faltrad.html) habe ich zwei Taschen gekauft. Die einfache Brompton Überwurftasche und eine komplett geschlossene für den Transport, z.B. im ICE oder im Auto auf der Rücksitzbank. 
+Für den Transport meines [Brompton](https://andydunkel.net/radfahren/umwelt/2016/02/28/brompton_faltrad.html) habe ich zwei Taschen gekauft. Die einfache Brompton Überwurftasche und eine komplett geschlossene für den Transport, z.B. im ICE oder im Auto auf der Rücksitzbank. 
 
 ## Brompton Überwurftasche
 

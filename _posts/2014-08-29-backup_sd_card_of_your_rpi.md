@@ -26,7 +26,7 @@ On Windows the easiest way to do a complete backup/image of your SD card is the 
 
 The usage is very simple: put the SD card into your card reader, select folder and filename for the image file and select the correct drive number from the list.
 
-![image](http://andydunkel.net/assets/uploads/2014/08/win_disk_imager.png)
+![image](https://andydunkel.net/assets/uploads/2014/08/win_disk_imager.png)
 
 To start the backup just click the "Read" button. The process takes some time, depending on the size and speed of your SD card.
 
@@ -39,9 +39,9 @@ The restore is also very simple. Insert the new SD card, select the drive number
 
 On OSX creating an image of the SD card is also very simple. Just open the "Disk Utility", select the SD card on the left and click "New Image". The system prompts you for a location of the image.
 
-![image](http://andydunkel.net/assets/uploads/2014/08/backup_osx.png)
+![image](https://andydunkel.net/assets/uploads/2014/08/backup_osx.png)
 
-![image](http://andydunkel.net/assets/uploads/2014/08/sdcard1.png)
+![image](https://andydunkel.net/assets/uploads/2014/08/sdcard1.png)
 
 On Linux (and OSX too), you can also backup from the command line using the DD command.
 
@@ -53,7 +53,7 @@ To find the correct device, you can use the <code>diskutil</code> command (OSX o
 	
 This will output something like that:
 
-![image](http://andydunkel.net/assets/uploads/2014/08/backup_osx_1.png)
+![image](https://andydunkel.net/assets/uploads/2014/08/backup_osx_1.png)
 
 You can find the correct device by looking for a Linux partition.
 

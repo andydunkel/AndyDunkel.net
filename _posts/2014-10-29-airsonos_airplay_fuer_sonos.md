@@ -16,7 +16,7 @@ tags:
 Vor kurzem habe ich mir ein [Sonos Play1](http://www.sonos.com/shop/products/play1) zugelegt. Mein Kumpel Kiwi besitzt dieses bereits eine Weile und hat [das hier](http://blog.ekiwi.de/?p=1927) vor einiger Zeit bereits getestet. Gegen Hardware und Technik ist nichts einzuwenden. Die Klang ist gut und die App funktioniert zuverlässig. Leider ist das auch der einzige Knackpunkt am Sonos-System: ohne Sonos-App kein Abspielen von Inhalten. 
 Problemlos funktioniert dies für vorhandene Inhalte auf dem Smartphone oder Tablett. Radiosender und diverse Musikdienste lassen sich ebenfalls über die App nutzen.
 
-![image](http://andydunkel.net/assets/uploads/2014/10/sonos.jpg)
+![image](https://andydunkel.net/assets/uploads/2014/10/sonos.jpg)
 
 IOS- und Mac-User, wie ich, vermissen die Unterstützung für Airplay. Diese erlaubt die Wiedergabe aus jeder App. Ich verwende [Instacast](http://vemedio.com/products/instacast) als Podcastapp auf meinem Telefon. Mit dieser läuft jedoch nichts in Sachen Sonos. 
 
@@ -79,7 +79,7 @@ Es sollten nun alle Sonos-Lautsprecher im Netzwerk gefunden und aufgelistet werd
 
 Im IOS-Gerät der Wahl werden diese jetzt auch als AirPlay-Device angezeigt und können entsprechend genutzt werden.
 
-![image](http://andydunkel.net/assets/uploads/2014/10/airplay.png)
+![image](https://andydunkel.net/assets/uploads/2014/10/airplay.png)
 
 Kleiner Schönheitsfehler, schließt man die Konsole zum Rechner beendet sich AirSonos. Dies kann man verhindern indem man den Prozess von der Konsole entkoppelt:
 

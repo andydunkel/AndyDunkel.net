@@ -26,10 +26,10 @@ Damals wurden Computer noch nicht im Internet bestellt, sondern ging in diese sp
 
 Computer hatten mich damals bereits schon fasziniert und so hatte ich etwa ein Jahr später auch meinen ersten eigenen, einen Amiga 500.
 
-![image](http://andydunkel.net/assets/uploads/2014/07/vobis.png)
+![image](https://andydunkel.net/assets/uploads/2014/07/vobis.png)
 
 Jedenfalls lag der Schnellhefter viele Jahre im Schrank. Seitdem hatte ich den immer mal wieder alle paar Jahre in der Hand. Freute mich innerlich was es damals für archaische Computer gab. Amüsiert blätterte ich nochmal durch die Prospekte, sah, dass damals auch Amigas und Ataris angeboten wurden und erinnerte mich, wie im Freundeskreis darüber gestritten würde ob nun PC, Amiga, C64 oder Atari besser war. Oder vielleicht doch die Konsole?
 
 Danach wanderte der Schnellhefter wieder in die Ablage für ein paar Jahre. Jetzt hatte ich ihn wieder in den Händen und ich habe mich entschieden, dass Ding einfach mal einzuscannen, hier online zu stellen und anschließend das Original zu entsorgen. Nimmt am Ende doch nur Platz weg.
 
-[Hier gehts zum PDF](http://andydunkel.net/assets/uploads/2014/07/vobis_denkzettel_1991.pdf). Viel Spaß. :-) 
+[Hier gehts zum PDF](https://andydunkel.net/assets/uploads/2014/07/vobis_denkzettel_1991.pdf). Viel Spaß. :-) 

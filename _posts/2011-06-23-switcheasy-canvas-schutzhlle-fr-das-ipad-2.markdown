@@ -20,11 +20,11 @@ Letztendlich fiel die Wahl auf das [SwitchEasy Canvas](http://www.amazon.de/gp/p
 
 Hier sind ein paar Bilder von dem Teil (anklicken zum Vergrößern), am Ende des Artikels gibt’s noch ein kurzes Testvideo:
 
-[![DSCN2138](http://andydunkel.net/assets/uploads/2011/06/DSCN2138_thumb.jpg)](http://andydunkel.net/assets/uploads/2011/06/DSCN2138.jpg)[![DSCN2146](http://andydunkel.net/assets/uploads/2011/06/DSCN2146_thumb.jpg)](http://andydunkel.net/assets/uploads/2011/06/DSCN2146.jpg)[![DSCN2151](http://andydunkel.net/assets/uploads/2011/06/DSCN2151_thumb.jpg)](http://andydunkel.net/assets/uploads/2011/06/DSCN2151.jpg)
+[![DSCN2138](https://andydunkel.net/assets/uploads/2011/06/DSCN2138_thumb.jpg)](https://andydunkel.net/assets/uploads/2011/06/DSCN2138.jpg)[![DSCN2146](https://andydunkel.net/assets/uploads/2011/06/DSCN2146_thumb.jpg)](https://andydunkel.net/assets/uploads/2011/06/DSCN2146.jpg)[![DSCN2151](https://andydunkel.net/assets/uploads/2011/06/DSCN2151_thumb.jpg)](https://andydunkel.net/assets/uploads/2011/06/DSCN2151.jpg)
 
 <!-- more -->
 
-[![DSCN2147](http://andydunkel.net/assets/uploads/2011/06/DSCN2147_thumb.jpg)](http://andydunkel.net/assets/uploads/2011/06/DSCN2147.jpg)[![DSCN2153](http://andydunkel.net/assets/uploads/2011/06/DSCN2153_thumb.jpg)](http://andydunkel.net/assets/uploads/2011/06/DSCN2153.jpg)[![DSCN2155](http://andydunkel.net/assets/uploads/2011/06/DSCN2155_thumb.jpg)](http://andydunkel.net/assets/uploads/2011/06/DSCN2155.jpg)
+[![DSCN2147](https://andydunkel.net/assets/uploads/2011/06/DSCN2147_thumb.jpg)](https://andydunkel.net/assets/uploads/2011/06/DSCN2147.jpg)[![DSCN2153](https://andydunkel.net/assets/uploads/2011/06/DSCN2153_thumb.jpg)](https://andydunkel.net/assets/uploads/2011/06/DSCN2153.jpg)[![DSCN2155](https://andydunkel.net/assets/uploads/2011/06/DSCN2155_thumb.jpg)](https://andydunkel.net/assets/uploads/2011/06/DSCN2155.jpg)
 
 Der Vorteil des Cases ist, dass es Vorder- und Rückseite des Gerätes schützt. Kamera und Tasten bleiben dabei voll zugänglich. Ebenfalls nett, die automatische Ausschaltfunktion des SmartCovers wird unterstützt. Klappt man das Case zu, wird das iPad automatisch abgeschaltet. Beim Aufklappen schaltet sich das iPad wieder an.
 

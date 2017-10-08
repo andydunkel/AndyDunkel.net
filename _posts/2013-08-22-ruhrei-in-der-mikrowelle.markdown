@@ -33,7 +33,7 @@ Also doch selbst probieren. Hier die Anleitung: Zuerst das Ei in ein geeignetes
 
 
 
-![Ei 1](http://andydunkel.net/assets/uploads/2013/08/ei1.png)
+![Ei 1](https://andydunkel.net/assets/uploads/2013/08/ei1.png)
 
 
 
@@ -43,7 +43,7 @@ Dann geht das Ganze mit Deckel (nur auflegen) in die Mikrowelle (die mal wieder 
 
 
 
-![Ei 2](http://andydunkel.net/assets/uploads/2013/08/ei2.png)
+![Ei 2](https://andydunkel.net/assets/uploads/2013/08/ei2.png)
 
 
 
@@ -53,7 +53,7 @@ Dann mit volle Pulle (bei mir 750 Watt), etwa 1-2 Minuten erwärmen. Nach einer 
 
 
 
-![Ei 3](http://andydunkel.net/assets/uploads/2013/08/Ei3.png)
+![Ei 3](https://andydunkel.net/assets/uploads/2013/08/Ei3.png)
 
 
 

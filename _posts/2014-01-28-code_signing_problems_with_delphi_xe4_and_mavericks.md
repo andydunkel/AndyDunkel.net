@@ -14,7 +14,7 @@ tags:
 - OSX
 ---
 
-Some days ago I wrote a [blog post](http://andydunkel.net/delphi/firemonkey/2014/01/22/signing_delphi_xe_applications_for_osx.html) about signing a Firemonkey application manually with the developer ID.
+Some days ago I wrote a [blog post](https://andydunkel.net/delphi/firemonkey/2014/01/22/signing_delphi_xe_applications_for_osx.html) about signing a Firemonkey application manually with the developer ID.
 
 For app store applications Delphi automatically runs the code signing procedure for you and creates a PKG file. Handy!
 

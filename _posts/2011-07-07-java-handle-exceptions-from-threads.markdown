@@ -61,7 +61,7 @@ No we will start our thread from the main method of our Java program:
 
 This thread will throw a divide by zero exception:
 
-![](http://andydunkel.net/assets/uploads/2011/07/java_exception1.png)
+![](https://andydunkel.net/assets/uploads/2011/07/java_exception1.png)
 
 To catch the exception we will now extend the ThreadGroup class:
 
@@ -94,5 +94,5 @@ If we start our Thread with this group, the exception will be caught by the "unc
 
 
 
-[![](http://andydunkel.net/assets/uploads/2011/07/java_exception2.png)](http://andydunkel.net/assets/uploads/2011/07/java_exception2.png)
+[![](https://andydunkel.net/assets/uploads/2011/07/java_exception2.png)](https://andydunkel.net/assets/uploads/2011/07/java_exception2.png)
 

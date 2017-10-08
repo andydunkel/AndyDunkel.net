@@ -29,7 +29,7 @@ Offensichtlich versuchte er hier partout noch mit meinem alten Key die Nachricht
 
 
 
-![Enigmail Key Settings](http://andydunkel.net/assets/uploads/2013/04/EnigMailKeySetting.png)
+![Enigmail Key Settings](https://andydunkel.net/assets/uploads/2013/04/EnigMailKeySetting.png)
 
 
 

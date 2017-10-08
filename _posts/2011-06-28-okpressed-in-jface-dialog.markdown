@@ -17,11 +17,11 @@ tags:
 - okPressed
 ---
 
-Sometimes JFace and RCP are not straightforward. At least not for me. [![](http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile5.png)](http://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile5.png)
+Sometimes JFace and RCP are not straightforward. At least not for me. [![](https://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile5.png)](https://andydunkel.net/assets/uploads/2011/06/wlEmoticon-smile5.png)
 
 For example the JFace dialog:
 
-[![](http://andydunkel.net/assets/uploads/2011/06/rcp_jface_dlg.png)](http://andydunkel.net/assets/uploads/2011/06/rcp_jface_dlg.png)
+[![](https://andydunkel.net/assets/uploads/2011/06/rcp_jface_dlg.png)](https://andydunkel.net/assets/uploads/2011/06/rcp_jface_dlg.png)
 
 It features an OK and Cancel button by default. If you want to do something when the user clicks the OK button, for example save the values from control elements to variables, you can overwrite the "okPressed" method:
     

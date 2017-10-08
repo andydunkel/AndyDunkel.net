@@ -14,4 +14,4 @@ Das Erstellen eines Bildschirmfotos bzw. Screenshots auf dem iPad ist recht einf
 
 Man drückt die Powertaste und dann anschließend die Home-Taste (die in der Mitte unten). Der Screenshot wird dann automatisch in den eigenen Bildern gespeichert. Das ganze funktioniert auch in Spielen.
 
-![image](http://andydunkel.net/assets/uploads/2011/06/image6.png)![image](http://andydunkel.net/assets/uploads/2011/06/image7.png)
+![image](https://andydunkel.net/assets/uploads/2011/06/image6.png)![image](https://andydunkel.net/assets/uploads/2011/06/image7.png)

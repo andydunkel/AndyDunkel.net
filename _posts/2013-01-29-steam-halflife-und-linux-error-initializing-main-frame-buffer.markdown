@@ -20,7 +20,7 @@ Also flugs auf meinem Ubuntu Laptop installiert, die Spiele heruntergeladen und 
 
 
 
-![Counter Strike Frame Buffer Error](http://andydunkel.net/assets/uploads/2013/01/CS_error_frame_buffer.png)
+![Counter Strike Frame Buffer Error](https://andydunkel.net/assets/uploads/2013/01/CS_error_frame_buffer.png)
 
 
 

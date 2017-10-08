@@ -77,5 +77,5 @@ Das Beispielprojekt kann [hier heruntergeladen werden](/assets/wp-custom/wpfloce
 
 ### Weiterführende Links
 
-- [C#-Anwendungen mehrsprachig gestalten](http://andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html)
-- [C# Backgroundworker und Threads lokalisieren](http://andydunkel.net/coding/2016/11/22/c-sharp-mehrsprachig-backgroundworker.html)
+- [C#-Anwendungen mehrsprachig gestalten](https://andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html)
+- [C# Backgroundworker und Threads lokalisieren](https://andydunkel.net/coding/2016/11/22/c-sharp-mehrsprachig-backgroundworker.html)

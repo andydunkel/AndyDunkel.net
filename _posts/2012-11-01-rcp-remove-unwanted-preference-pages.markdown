@@ -21,7 +21,7 @@ In my RCP application some unwanted sections in the preferences showed up:
 
 
 
-![Unwanted Preferences](http://andydunkel.net/assets/uploads/2012/11/UnwantedPreferences.png)
+![Unwanted Preferences](https://andydunkel.net/assets/uploads/2012/11/UnwantedPreferences.png)
 
 
 

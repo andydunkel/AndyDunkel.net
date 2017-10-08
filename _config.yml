@@ -3,6 +3,6 @@ markdown: kramdown
 highligther: true
 paginate: 5
 exclude: ['raw']
-url: http://andydunkel.net
+url: https://andydunkel.net
 gems: [jekyll-paginate]
 excerpt_separator: <!--more-->

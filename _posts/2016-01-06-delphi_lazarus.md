@@ -14,15 +14,15 @@ tags:
 
 ---
 
-Some time ago I wrote a blog post about [my experiences](http://andydunkel.net/delphi/firemonkey/2014/03/05/delphi_and_firemonkey_experience.html) migrating my Delphi VLC applications to Firemonkey. Firemonkey allows you to create multi platform applications. Multi platform means Windows and OSX here. In my blog post I was somehow optimistic about the way Delphi is moving. It was a lot of work to move from an VCL application to the Firemonkey framework. But in the end I decided to leave Delphi behind me and move to [Lazarus](http://www.lazarus-ide.org/). I used Delphi for about 15 years, so that was not an easy decision.
+Some time ago I wrote a blog post about [my experiences](https://andydunkel.net/delphi/firemonkey/2014/03/05/delphi_and_firemonkey_experience.html) migrating my Delphi VLC applications to Firemonkey. Firemonkey allows you to create multi platform applications. Multi platform means Windows and OSX here. In my blog post I was somehow optimistic about the way Delphi is moving. It was a lot of work to move from an VCL application to the Firemonkey framework. But in the end I decided to leave Delphi behind me and move to [Lazarus](http://www.lazarus-ide.org/). I used Delphi for about 15 years, so that was not an easy decision.
 
 In this blog post I want to describe some of my thoughts to give some ideas, for people facing similar problems. My last Delphi experience is based on Delphi XE4 which is some years old. Newer versions sure will have many bugs fixed and will be more stable. This is mostly based on the Firemonkey part of Delphi. 
 
 ## Bugs and limitations
 
-I faced a lot of bugs in Firemonkey. Basic stuff would not work and needed workarounds, like [not working tab order](http://andydunkel.net/delphi/coding/2013/11/23/firemonkey_xe_4_taborder_workaround.html) or [graphic problems](http://andydunkel.net/delphi/2015/02/04/firemonkey_switchable_graphics_problem.html) on some laptops.
+I faced a lot of bugs in Firemonkey. Basic stuff would not work and needed workarounds, like [not working tab order](https://andydunkel.net/delphi/coding/2013/11/23/firemonkey_xe_4_taborder_workaround.html) or [graphic problems](https://andydunkel.net/delphi/2015/02/04/firemonkey_switchable_graphics_problem.html) on some laptops.
 
-Also the IDE was never free of bugs. I had [problems signing](http://andydunkel.net/delphi/firemonkey/2014/01/28/code_signing_problems_with_delphi_xe4_and_mavericks.html) my application for the app store. The IDE would sometimes show syntax errors in my code, but would compile the program just fine.
+Also the IDE was never free of bugs. I had [problems signing](https://andydunkel.net/delphi/firemonkey/2014/01/28/code_signing_problems_with_delphi_xe4_and_mavericks.html) my application for the app store. The IDE would sometimes show syntax errors in my code, but would compile the program just fine.
 
 Nothing was a complete show stopper, there was always some sort of workaround. But workarounds take time to implement and you are never sure about any side effects. And things like tab order is really basic stuff, which you would expect to work.
 

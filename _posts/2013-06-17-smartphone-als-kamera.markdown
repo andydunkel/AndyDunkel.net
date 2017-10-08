@@ -35,7 +35,7 @@ Allerdings ist das Ding auch sehr unhandlich. Ich will es eigentlich nicht die g
 
 
 
-![2013 06 17 21 32 27](http://andydunkel.net/assets/uploads/2013/06/2013-06-17-21.32.27.jpg)
+![2013 06 17 21 32 27](https://andydunkel.net/assets/uploads/2013/06/2013-06-17-21.32.27.jpg)
 
 
 
@@ -60,7 +60,7 @@ Fazit: es war praktischer und bis auf die Spezialfälle wo man gerne eine optisc
 
 
 
-![2013 06 17 18 34 25](http://andydunkel.net/assets/uploads/2013/06/2013-06-17-18.34.25.jpg)
+![2013 06 17 18 34 25](https://andydunkel.net/assets/uploads/2013/06/2013-06-17-18.34.25.jpg)
 
 
 

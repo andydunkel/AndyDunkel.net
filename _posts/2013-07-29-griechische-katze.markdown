@@ -16,6 +16,6 @@ Heute war dann zumindest noch die hungrige Katze da:
 
   
   
-[![20130729-145519.jpg](http://andydunkel.net/assets/uploads/2013/07/20130729-145519.jpg)](http://andydunkel.net/assets/uploads/2013/07/20130729-145519.jpg)
+[![20130729-145519.jpg](https://andydunkel.net/assets/uploads/2013/07/20130729-145519.jpg)](https://andydunkel.net/assets/uploads/2013/07/20130729-145519.jpg)
 
 Schauen wir mal nächste Woche.

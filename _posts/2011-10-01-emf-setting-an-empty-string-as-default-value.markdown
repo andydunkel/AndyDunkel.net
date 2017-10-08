@@ -19,12 +19,12 @@ tags:
 
 If you create a string in an EMF model, its null by default:
 
-[![image](http://andydunkel.net/assets/uploads/2011/10/image_thumb.png)](http://andydunkel.net/assets/uploads/2011/10/image.png)
+[![image](https://andydunkel.net/assets/uploads/2011/10/image_thumb.png)](https://andydunkel.net/assets/uploads/2011/10/image.png)
 
 If you want to have an empty string, instead of null, you have to enter a “Default Value Literal”. For an empty string, just click on the value and hit enter (very obvious):
 
-![image](http://andydunkel.net/assets/uploads/2011/10/image1.png)
+![image](https://andydunkel.net/assets/uploads/2011/10/image1.png)
 
 To get the null value back, just click on “Restore Default Value” in the toolbar of the properties view. 
 
-![image](http://andydunkel.net/assets/uploads/2011/10/image2.png)
+![image](https://andydunkel.net/assets/uploads/2011/10/image2.png)

@@ -43,8 +43,8 @@ How can this be done? Here is an example:
 
 The other thing we need to do here is to set the VM argument “ineclipse” in the “Run Configurations”:
 
-[![image](http://andydunkel.net/assets/uploads/2011/06/image_thumb.png)](http://andydunkel.net/assets/uploads/2011/06/image5.png)
+[![image](https://andydunkel.net/assets/uploads/2011/06/image_thumb.png)](https://andydunkel.net/assets/uploads/2011/06/image5.png)
 
 Here is the output from the example from within Eclipse and from the command line:
 
-![compare_output](http://andydunkel.net/assets/uploads/2011/06/compare_output.png)
+![compare_output](https://andydunkel.net/assets/uploads/2011/06/compare_output.png)

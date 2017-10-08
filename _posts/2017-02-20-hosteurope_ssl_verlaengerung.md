@@ -14,13 +14,13 @@ tags:
 
 ---
 
-Letzte Woche stand nun die Verlängerung des Letsencrypt-Zertifikates an. Die Einrichtung hatte ich in einem [anderen Blogartikel](http://andydunkel.net/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope.html) beschrieben. Die Einrichtung ist, gelinde gesagt, umständlich. Bei einer Domain ist das Ganze noch überschaubar, bei vielen Domains und Subdomains wirds umständlich. 
+Letzte Woche stand nun die Verlängerung des Letsencrypt-Zertifikates an. Die Einrichtung hatte ich in einem [anderen Blogartikel](https://andydunkel.net/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope.html) beschrieben. Die Einrichtung ist, gelinde gesagt, umständlich. Bei einer Domain ist das Ganze noch überschaubar, bei vielen Domains und Subdomains wirds umständlich. 
 
 Man muss sich als Eigentümer der Domain verifizieren. Hierbei hat man zwei Möglichkeiten. Entweder man legt eine spezielle Datei auf dem Webspace an oder man hinterlegt einen TXT-Eintrag im DNS. Ich hatte mich für die erste Variante entschieden. Ich hatte die Hoffnung, dass bei der Verlängerung einfach die gleichen Daten bzw. Dateien nochmals abgefragt werden. Leider ist dem nicht so, man muss sich neu verifizieren. Inklusive neuer Dateien mit neuen Inhalten.
 
 ## Verlängern über ZeroSSLL
 
-Das Prozedere gleicht dem [der ersten Erstellung](http://andydunkel.net/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope.html). Man kann wahlweise seinen Letsencrypt-Key und Domains CSR-Datei einbinden. Damit spart man sich allerdings nur etwas Tipparbeit. Hat man die Dateien nicht mehr, keine Panik, einfach neu einrichten und fertig. 
+Das Prozedere gleicht dem [der ersten Erstellung](https://andydunkel.net/webseiten/computer/2016/11/25/letsencrypt_bei_hosteurope.html). Man kann wahlweise seinen Letsencrypt-Key und Domains CSR-Datei einbinden. Damit spart man sich allerdings nur etwas Tipparbeit. Hat man die Dateien nicht mehr, keine Panik, einfach neu einrichten und fertig. 
 
 ![](/assets/uploads/2017/2/ssl2.png)
 

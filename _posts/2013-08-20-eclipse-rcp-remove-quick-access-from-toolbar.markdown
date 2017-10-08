@@ -26,7 +26,7 @@ After updating my RCP application from Eclipse 3.7 to Eclipse 4.x the toolbar al
 
 
 
-![Quick access](http://andydunkel.net/assets/uploads/2013/08/quick_access.png)
+![Quick access](https://andydunkel.net/assets/uploads/2013/08/quick_access.png)
 
 
 
@@ -53,12 +53,12 @@ Then add a property in the plugin.xml to your product extension point:
 
 
 
-![Property](http://andydunkel.net/assets/uploads/2013/08/property.png)
+![Property](https://andydunkel.net/assets/uploads/2013/08/property.png)
 
 
 
 
-![Property2](http://andydunkel.net/assets/uploads/2013/08/property2.png)
+![Property2](https://andydunkel.net/assets/uploads/2013/08/property2.png)
 
 
 

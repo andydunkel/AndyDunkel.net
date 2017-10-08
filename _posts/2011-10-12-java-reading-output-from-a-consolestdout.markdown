@@ -51,4 +51,4 @@ The snippet just outputs the received information.
 
 
 
-![image](http://andydunkel.net/assets/uploads/2011/10/image5.png)
+![image](https://andydunkel.net/assets/uploads/2011/10/image5.png)

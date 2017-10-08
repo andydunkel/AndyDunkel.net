@@ -22,6 +22,6 @@ Nach kurzer Recherche im Internet, man muss dafür Apple Quicktime installiert h
 
 Die Lösung war dann doch recht “einfach”. Man muss in den Optionen (Tools –> Optionen) noch Quicktime als Dateityp aktivieren.
 
-![image](http://andydunkel.net/assets/uploads/2011/06/image10.png)
+![image](https://andydunkel.net/assets/uploads/2011/06/image10.png)
 
 Das ganze ist etwas missverständlich, da dort nur etwas von *.mov Dateien steht. Danach wurden die Videos aber erkannt, importiert und hochgeladen.

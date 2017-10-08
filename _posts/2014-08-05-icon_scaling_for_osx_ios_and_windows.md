@@ -17,11 +17,11 @@ Some time ago me and my friend finished some apps for IOS. One problem is, when 
 
 Especially for IOS apps creating the icon and use it in XCode is not that easy. A lot of different sizes need to be created:
 
-![image](http://andydunkel.net/assets/uploads/2014/08/icon1.png)
+![image](https://andydunkel.net/assets/uploads/2014/08/icon1.png)
 
 Doing that manually involves a lot of work with your favorite image editing tool. So we created a small software tool for that. The Icon Scaler:
 
-![image](http://andydunkel.net/assets/uploads/2014/08/icon2.png)
+![image](https://andydunkel.net/assets/uploads/2014/08/icon2.png)
 
 Just drop your icon image into the tool, select the output formats and click the export button. The tool can create icons for IOS (iPhone and iPad), OSX, Android and Windows.
 

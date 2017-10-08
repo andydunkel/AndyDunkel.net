@@ -21,17 +21,17 @@ In this tutorial I want to describe how you can add maps to your application. Po
 
 In XCode create a new project, select iOS and single view application and enter the details for project. Once the project is created. The first thing we are doing, is adding the MapKit to the linked frameworks:
 
-![image](http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_1.png)
+![image](https://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_1.png)
 
 Otherwise the application will crash instantaneously. Once we have done that, we go to the main storyboard and drag the map view into our view.
 
-![image](http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_2.png)
+![image](https://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_2.png)
 
 In the properties of the MapView you can configure some basic settings, like showing the users location, activate / deactive zooming, rotating, scrolling etc...
 
 The next step is to create the Outlet for the map view in our application. This can be done using the Assistant editor and CTRL dragging the MKMapView onto the header file and enter a name for the variable:
 
-![image](http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_3.png)
+![image](https://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_3.png)
 
 We also need to add MapKit to the imports. While we are doing that we also add the map delegate:
 
@@ -47,7 +47,7 @@ For maps there are three types how to display the map: Standard, Satellite and H
 
 For that we are adding a segmented control to the view and CTRL drag an IBAction to our .m file:
 
-![image](http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_4.png)
+![image](https://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_4.png)
 
 ...and implement the action method:
 
@@ -157,10 +157,10 @@ Now we implement the method for the update:
 
 The method gets called everytime the user position gets updated. It calculates the distance between the users position and the predefined location. The result is then shown on the label we just dropped on the view:
 
-![image](http://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_5.png)
+![image](https://andydunkel.net/assets/uploads/2014/05/mapkit/mapkit_5.png)
 
 ## The end
 
-Well thats it for some quickstart with MapKit. You can download the source code of the [example here](http://andydunkel.net/assets/uploads/2014/05/mapkit/MapKitExample.zip).
+Well thats it for some quickstart with MapKit. You can download the source code of the [example here](https://andydunkel.net/assets/uploads/2014/05/mapkit/MapKitExample.zip).
 
 

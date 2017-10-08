@@ -15,7 +15,7 @@ tags:
 - RCP
 ---
 
-Note: I put the example project in a ZIP file, you can use that to have a look to the actual code, [Download](http://andydunkel.net/assets/wp-custom/com.da.perspectives.example.zip).
+Note: I put the example project in a ZIP file, you can use that to have a look to the actual code, [Download](https://andydunkel.net/assets/wp-custom/com.da.perspectives.example.zip).
 
 
 
@@ -30,7 +30,7 @@ In the first step, we create a sample plugin project (Mail project):
 
 
 
-![1](http://andydunkel.net/assets/uploads/2012/11/1.png)
+![1](https://andydunkel.net/assets/uploads/2012/11/1.png)
 
 
 
@@ -52,7 +52,7 @@ This needs to be done in the ApplicationWorkbenchWindowAdvisor.java class, in th
 
 
 
-![2](http://andydunkel.net/assets/uploads/2012/11/2.png)
+![2](https://andydunkel.net/assets/uploads/2012/11/2.png)
 
 
 
@@ -67,7 +67,7 @@ We create another plugin project in the workspace, select "No" for "Rich Client 
 
 
 
-![3](http://andydunkel.net/assets/uploads/2012/11/3.png)
+![3](https://andydunkel.net/assets/uploads/2012/11/3.png)
 
 
 
@@ -77,7 +77,7 @@ After the project is created, open the "plugin.xml" file of the new plugin proje
 
 
 
-![4](http://andydunkel.net/assets/uploads/2012/11/4.png)
+![4](https://andydunkel.net/assets/uploads/2012/11/4.png)
 
 
 
@@ -87,7 +87,7 @@ To create the perspective class, we click on the "class" link and create the cla
 
 
 
-![5](http://andydunkel.net/assets/uploads/2012/11/5.png)
+![5](https://andydunkel.net/assets/uploads/2012/11/5.png)
 
 
 
@@ -97,7 +97,7 @@ In our main projects "plugin.xml" add our new plugin project as dependency:
 
 
 
-![6](http://andydunkel.net/assets/uploads/2012/11/6.png) ![7](http://andydunkel.net/assets/uploads/2012/11/7.png)
+![6](https://andydunkel.net/assets/uploads/2012/11/6.png) ![7](https://andydunkel.net/assets/uploads/2012/11/7.png)
 
 
 
@@ -107,7 +107,7 @@ If we switch to this perspective, the window will become empty. We want an view 
 
 
 
-![8](http://andydunkel.net/assets/uploads/2012/11/8.png)
+![8](https://andydunkel.net/assets/uploads/2012/11/8.png)
 
 
 
@@ -139,7 +139,7 @@ OK, different example: We now want to contribute our ImageView to an existing pe
 
 
 
-![9](http://andydunkel.net/assets/uploads/2012/11/9.png)
+![9](https://andydunkel.net/assets/uploads/2012/11/9.png)
 
 
 
@@ -149,7 +149,7 @@ As "targetID" enter the ID of our main perspective in the "main.gui" project. No
 
 
 
-![a](http://andydunkel.net/assets/uploads/2012/11/a.png)
+![a](https://andydunkel.net/assets/uploads/2012/11/a.png)
 
 
 
@@ -159,7 +159,7 @@ When the application starts, the ImageViewer will appear next to the message vie
 
 
 
-![b](http://andydunkel.net/assets/uploads/2012/11/b.png)
+![b](https://andydunkel.net/assets/uploads/2012/11/b.png)
 
 
 
@@ -179,7 +179,7 @@ The "plugin.xml" extension points should now look something like this:
 
 
 
-![c](http://andydunkel.net/assets/uploads/2012/11/c.png)
+![c](https://andydunkel.net/assets/uploads/2012/11/c.png)
 
 
 
@@ -189,7 +189,7 @@ If it does not show up, make sure you entered a correct "toolbarPath" in the def
 
 
 
-![d](http://andydunkel.net/assets/uploads/2012/11/d.png)
+![d](https://andydunkel.net/assets/uploads/2012/11/d.png)
 
 
 
@@ -199,7 +199,7 @@ If everything is right, the new icon should appear in the toolbar of our main ap
 
 
 
-![e](http://andydunkel.net/assets/uploads/2012/11/e.png)
+![e](https://andydunkel.net/assets/uploads/2012/11/e.png)
 
 
 
@@ -214,7 +214,7 @@ If we switch to our new perspective, the image viewer, we are able to open new m
 
 
 
-![g](http://andydunkel.net/assets/uploads/2012/11/g.png)
+![g](https://andydunkel.net/assets/uploads/2012/11/g.png)
 
 
 
@@ -224,7 +224,7 @@ Now we add "hiddenMenuItems" and "hiddenToolBarItems":
 
 
 
-![h](http://andydunkel.net/assets/uploads/2012/11/h.png)
+![h](https://andydunkel.net/assets/uploads/2012/11/h.png)
 
 
 

@@ -18,7 +18,7 @@ Gerade getestet: Die Software AirBubble macht aus einem Android Handy einen [Air
 
 Man startet die Software auf dem Handy und wählt dann im iTunes das Handy als Lautsprecher aus. Wenige Sekunden später geht’s dann auch schon los.
 
-[![airbubble](http://andydunkel.net/assets/uploads/2011/06/airbubble_thumb.jpg)](http://andydunkel.net/assets/uploads/2011/06/airbubble.jpg)
+[![airbubble](https://andydunkel.net/assets/uploads/2011/06/airbubble_thumb.jpg)](https://andydunkel.net/assets/uploads/2011/06/airbubble.jpg)
 
 Das ganze kann man auch auf mehreren Lautsprechern ausgeben lassen, ganz synchron ist die Sache aber nicht.
 

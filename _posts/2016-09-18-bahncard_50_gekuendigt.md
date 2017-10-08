@@ -15,7 +15,7 @@ tags:
 
 ---
 
-Vor kurzem habe ich meine Bahncard 50 gekündigt. Ich hatte diese viele Jahre. Ich fahre öfter mit der Bahn. Und eigentlich auch gerne. Allerdings fühlte ich mich [in der letzten Zeit immer mehr benachteiligt](http://andydunkel.net/mobilitaet/2016/07/07/bahncard_50.html). 
+Vor kurzem habe ich meine Bahncard 50 gekündigt. Ich hatte diese viele Jahre. Ich fahre öfter mit der Bahn. Und eigentlich auch gerne. Allerdings fühlte ich mich [in der letzten Zeit immer mehr benachteiligt](https://andydunkel.net/mobilitaet/2016/07/07/bahncard_50.html). 
 
 Gegenüber den Sparpreisen kann man als Bahncard 50 Kunde kaum sparen. Klar, man verzichtet auf das flexible Ticket und hat Zugbindung, auch stornieren geht nicht ohne Gebühr. Aber den meisten Fällen habe ich den geplanten Zug genommen und storniert habe ich bis jetzt auch nur einmal.
 

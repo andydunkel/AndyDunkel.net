@@ -20,7 +20,7 @@ Allerdings war mir der Mauszeiger viel zu langsam, trotz höchster Einstellung i
 
 
 
-![Tracking](http://andydunkel.net/assets/uploads/2012/12/Tracking.png)
+![Tracking](https://andydunkel.net/assets/uploads/2012/12/Tracking.png)
 
 
 
@@ -46,4 +46,4 @@ Wobei 8.0 die Geschwindigkeit der Maus ist. Die höchste Defaulteinstellung in d
 
 
 
-[![2012 11 30 21 19 13](http://andydunkel.net/assets/uploads/2012/12/2012-11-30-21.19.13.jpg)](http://www.amazon.de/gp/product/B002NX0M8C/ref=as_li_ss_tl?ie=UTF8&camp=1638&creative=19454&creativeASIN=B002NX0M8C&linkCode=as2&tag=ekiwide0b-21)
+[![2012 11 30 21 19 13](https://andydunkel.net/assets/uploads/2012/12/2012-11-30-21.19.13.jpg)](http://www.amazon.de/gp/product/B002NX0M8C/ref=as_li_ss_tl?ie=UTF8&camp=1638&creative=19454&creativeASIN=B002NX0M8C&linkCode=as2&tag=ekiwide0b-21)
