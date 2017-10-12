@@ -4,7 +4,7 @@ comments: true
 date: 2017-06-05 17:00:00+00:00
 layout: post
 slug: jekyll_windows_bash
-title: 'Jekyll in der Windows 10 Bash nutzen'
+title: 'Jekyll in der Windows 10 Bash installieren'
 categories:
 - Windows
 - Software
