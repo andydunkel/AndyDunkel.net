@@ -160,6 +160,33 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/coding/2014/08/05/icon_scaling_for_osx_ios_android_and_windows.html">Icon scaling tool for OSX, IOS, Android and Windows</a>
+		</h1>
+		  <p class="small">Posted on 05 August 2014 by Andy</p>
+		  <p>Some time ago me and my friend finished some apps for IOS. One problem is, when you are finished with programming, a lot of work still needs to be done in order to publish the app: writing the decription for the App Store, create screenshots and of course create an icon for the app.</p>
+
+<p>Especially for IOS apps creating the icon and use it in XCode is not that easy. A lot of different sizes need to be created:</p>
+
+<p><img src="https://andydunkel.net/assets/uploads/2014/08/icon1.png" alt="image" /></p>
+
+<p>Doing that manually involves a lot of work with your favorite image editing tool. So we created a small software tool for that. The Icon Scaler:</p>
+
+<p><img src="https://andydunkel.net/assets/uploads/2014/08/icon2.png" alt="image" /></p>
+
+<p>Just drop your icon image into the tool, select the output formats and click the export button. The tool can create icons for IOS (iPhone and iPad), OSX, Android and Windows.</p>
+
+<p>The app is available in the <a href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=866537106">Mac App Store</a>.</p>
+
+<p>If you only need to resize icons for IOS and OSX you can have a look to our tool <a href="https://itunes.apple.com/de/app/asset-scaler/id901167651?mt=12">Asset Scaler</a>.</p>
+
+	
+      <p><a class="btn btn-success" href="/coding/2014/08/05/icon_scaling_for_osx_ios_android_and_windows.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: Icon, Assets, and xcassets by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/sonstiges/2014/07/21/vobis_denkzettel_von_1991.html">Vobis - Denkzettel von 1991</a>
 		</h1>
 		  <p class="small">Posted on 21 July 2014 by Andy</p>
@@ -496,73 +523,6 @@ point.title = @"Andys Home";
 		  <p class="small">Tagged: MapKit by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/meinung/tools/2014/04/18/jekyll_fuer_die_webseite.html">Umstellung auf Jekyll</a>
-		</h1>
-		  <p class="small">Posted on 18 April 2014 by Andy</p>
-		  <p>Seit ein paar Monaten verwende <a href="http://jekyllrb.com/">Jekyll</a> für meine Webseite/Blog. Zeit genug um ein Fazit zu ziehen. Als ich meinen Blog startete habe ich klassisch mit Wordpress begonnen.
-Da ich damals noch nicht wusste wie weit meine Blogausdauer gehen würde, war das eine gute Lösung. Wordpress ist schnell installiert und recht leicht durch Plugins und Themes anpassbar.  Zugegeben, damals hatte ich mich auch nicht weiter mit Alternativen oder anderen Systemen beschäftigt.</p>
-
-<p>Für einen reinen Blog ist Wordpress gut genug. Aber irgendwann sollte meine Webseite eine Mischung aus Webseite und Blog werden. Wordpress stößt hier, trotz anlegbarer Seiten und Unterseiten, an seine Grenzen. Die Inhalte wandern allesamt in eine MySQL-Datenbank an die man zwar problemlos rankommt, aber irgendwie sind die Inhalte doch darin gefangen.
-Designanpassungen erfordern eine Einarbeitung in das Template-System von Wordpress. Spaß, nicht!</p>
-
-<p>Also Alternativen gesucht, bis ich irgendwann auf Jekyll gestoßen bin. Jekyll lässt sich als eine Art Generator für Webseiten und Blogs beschreiben. Statt dynamischer serverseitiger Scriptsprache mit Datenbank und Gedöns, wird das Blog offline erstellt und besteht nur aus Text- und HTML-Dateien. Blogartikel und HTML-Seiten lassen sich sehr leicht als Markdowndatei verfassen.</p>
-
-<p>Jekyll generiert daraus dann die eigentliche Webseite. Diese besteht nur noch aus HTML-Seiten, den Bildern und sonstigen Dateien und wird dann nur noch auf den Server gepackt. Fertig!</p>
-
-<p>Damit die Webseite auch so aussieht wie Webseitenbetreiber sich das wünscht, steht vorher noch eine Anpassung des Templates an.</p>
-
-<p>Da die Webseite nur aus einfachen Textdateien besteht kann diese recht leicht in ein beliebiges Versionierungssystem gepackt werden. Backup der Webseite? Einfach alle Dateien Zippen und fertig.</p>
-
-<h2 id="statische-seiten">Statische Seiten</h2>
-
-<p>Während Wordpress die Seiten beim Aufruf neu erzeugt, ist die Jekyll-Seite nichts weiter als HTML-Seiten. Serverseitig wird daher wenig benötigt: Einfacher Webspace genügt, PHP und Datenbank werden nicht gebraucht. Sicherheitslücken sind bei statischen HTML-Seiten auch kein Thema. Regelmäßige Updates wie bei Wordpress entfallen daher.</p>
-
-<p>Dennoch: Bei größeren Webseiten / Blogs zieht das auch Probleme nach sich. Bei jeder Aktualisierung ändern sich viele, wenn nicht gar alle, HTML-Seiten. Die müssen auf den Webspace transferiert werden.
-Geht dies bei Klein-Webseiten noch einfach mit FTP, verkommt es bei größeren Seiten schnell zu einer Langwierigkeit. Da ich Shell-Zugang habe, mache ich hier einen Umweg über Git. Dies funktioniert so: Offline Webseite erstellen, git push auf den Server. Zuletzt wird auf dem Webserver die neue Version abgerufen. Ein Update der Webseite auf dem Server dauert so nur eine knappe Minute.</p>
-
-<p>Dann gibt es Dinge die bei statischen Webseiten nicht gehen: Kommentarfunktion oder Suche sind zwei davon. Beides lässt sich mit externen Diensten nachrüsten, Kommentare mache ich bei Disqus und die Suche übernimmt Google. Allerdings ist mir auch klar, dass ich hier einen Teil meiner Webseite und Daten aus der Hand gebe.</p>
-
-<h2 id="installation-bis-zur-ersten-webseite">Installation bis zur Ersten Webseite</h2>
-
-<p>Die Installation ist recht einfach, unter Linux und MacOS (mit Homebrew) ist das mit einer Handvoll Terminalbefehlen erledigt. Unter <a href="http://herbie79.de/development/web/2014/03/22/Running_Jekyll_on_Windows.html">Windows</a> ist der Aufwand etwas höher. Strafe muss sein liebe Windows-Nutzer.</p>
-
-<p>Jetzt beginnt der eigentliche Aufwand. Im Gegensatz zu Wordpress  hieß das: etwas mehr Aufwand hineinstecken bis das Design meinen Wünschen angepasst war. Ein guter Mittelweg war für mich einfach Bootstrap zu verwenden und an meine Bedürfnisse anzupassen.
-Im Gegenzug hat man volle Kontrolle über seine Webseite bis in den letzten HTML-Tag.</p>
-
-<p>Wer bereits einen Wordpress oder anderen Blog betreibt wird sich darüber freuen, dass man die Inhalte des alten Blogs übernehmen kann. Hier gibt es entsprechende Konverter.</p>
-
-<h2 id="plugins">Plugins</h2>
-
-<p>Sehr beliebt bei Wordpress, die Plugins. Welche man reichhaltig installiert, ohne sich Gedanken zu machen welche Änderungen diese an der Datenbank vornehmen oder welche Sicherheitslücken mit installiert werden. Natürlich müssen auch diese regelmäßig auf Updates überprüft werden.
-Für Jekyll gibt es auch Plugins. Diese kommen in Form von Ruby-Dateien daher, welche einfach in ein Verzeichnis gepackt werden. Macht ein Plugin mal nicht was es soll, kann man es mit etwas Programmierkenntnissen anpassen oder einfach löschen und Webseite neu erstellen. Fertig.</p>
-
-<h2 id="bloggen-mit-jekyll">Bloggen mit Jekyll</h2>
-
-<p>Bloggen geht einfach: Der Blogartikel wird in Markdownsyntax in eine Textdatei (mit einem speziellen Header) geschrieben. 
-Etwas umständlicher wird es beim Einbinden von Bildern.</p>
-
-<p>Bei Wordpress verwendete ich nicht das Webinterface sondern einen lokales Programm (MarsEdit). Hier fügt man die Bilder mit Copy &amp; Paste ein. Der Editor kümmert sich dann um die Größenanpassung, Upload und Verlinkung.</p>
-
-<p>Dieser Komfort steht bei Jekyll nicht zur Verfügung. Die Bilder müssen in der richtigen Größe in die Webseite gespeichert und dann von Hand im Artikel verlinkt werden. Kein großer Akt, aber etwas umständlicher.</p>
-
-<h2 id="webseiten">Webseiten</h2>
-
-<p>Neben der reinen Blogfunktionalität, wollte ich auch eine Webseite bauen. Auch dafür ist Jekyll geeignet. Ein gemeinsames Menü für die gesamte Webseite? Kein Problem! Einfach im Template anlegen. Beim generieren wird alles automatisch richtig in alle Seiten eingefügt. Das gesamte Design der Webseite ist extrem schnell austauschbar, da alle Unterseiten und Artikel nur den Inhalt enthalten.
-Mittlerweile erstelle ich jede neue Webseite, egal ob klein oder groß, schnell in Jekyll.</p>
-
-<h2 id="fazit">Fazit</h2>
-
-<p>Um es kurz zu machen, ich bin sehr zufrieden mit Jekyll. Es gibt ein paar Nachteile, aber die Vorteile überwiegen zumindest für mich. Es war am Anfang etwas aufwändiger alles einzurichten und zu konfigurieren. Dafür habe ich, salopp formuliert, jetzt die Kontrolle über jedes Byte meiner Webseite.
-Hat man die diese Hürde genommen, ist die Pflege der Webseite eine Leichtigkeit.
-Nachts kann ich ruhig schlafen, um Sicherheitsupdates für die Webseite muss ich mir keine Gedanken mehr machen. Gleiches gilt für Backups. Die Nachteile, wie fehlende Suche oder fehlende Kommentarfunktion lassen sich umgehen.</p>
-	
-      <p><a class="btn btn-success" href="/meinung/tools/2014/04/18/jekyll_fuer_die_webseite.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: Jekyll and Webseite by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -619,7 +579,7 @@ Nachts kann ich ruhig schlafen, um Sicherheitsupdates für die Webseite muss ich
      
       <li class="category"><a href="/categories/coding">Coding <span>(32)</span></a></li>
      
-      <li class="category"><a href="/categories/computer">Computer <span>(15)</span></a></li>
+      <li class="category"><a href="/categories/computer">Computer <span>(16)</span></a></li>
      
       <li class="category"><a href="/categories/delphi">Delphi <span>(9)</span></a></li>
      
@@ -687,7 +647,7 @@ Nachts kann ich ruhig schlafen, um Sicherheitsupdates für die Webseite muss ich
      
       <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
      
-      <li class="category"><a href="/categories/software">Software <span>(5)</span></a></li>
+      <li class="category"><a href="/categories/software">Software <span>(6)</span></a></li>
      
       <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
      

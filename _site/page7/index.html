@@ -160,6 +160,42 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/coding/programmierung/2017/02/01/resxmanager_uebersetzungs_werkzeug_fuer_c_sharp.html">ResXManager - Übersetzungstool für .net Anwendungen</a>
+		</h1>
+		  <p class="small">Posted on 01 February 2017 by Andy</p>
+		  <p>Die Übersetzung von .net-Anwendungen ist in Visual Studio bereits ganz gut umgesetzt. Ich hatte bereits darüber geschrieben:</p>
+
+<ul>
+  <li><a href="https://www.andydunkel.net/coding/2015/07/04/c_sharp_anwendungen_mehrsprachig.html">C#-Anwendungen mehrsprachig gestalten</a></li>
+  <li><a href="https://www.andydunkel.net/coding/2016/12/15/wpf_anwendungen_mehrsprachig.html">WPF-Anwendungen mehrsprachig</a></li>
+</ul>
+
+<p>Allerdings gibt es auch ein paar Schattenseiten. Die Übersetzungen sind in diverse Resourcendateien verteilt. Mit Visual Studio ist das Bearbeiten einfach möglich. Will man Übersetzungen extern machen lassen, ist das schwierig.</p>
+
+<p>Auch mehrere Sprachen gleichzeitig zu übersetzen ist umständlich. Man muss jede Resourcendatei öffnen, die Texte anlegen und übersetzen.</p>
+
+<p>In diese Bresche springt das kostenlose Plugin <a href="https://resxresourcemanager.codeplex.com/">ResXManager</a>. Es sammelt die Resourcen aus dem gesamten Projekt zusammen, welche anschließend in einer Liste gleich in alle Sprachen übersetzt werden kann. Auch werden fehlende Übersetzungen gleich farblich markiert. Somit können fehlende Texte und Lücken schnell indentifiziert werden.</p>
+
+<p><img src="/assets/uploads/2017/2/resx_1.png" alt="" /></p>
+
+<p>Export und späterer Import mit Excel ist möglich. Damit kann man die Übersetzungen jemand anderem überlassen.</p>
+
+<p>Wer, wie ich, die Übersetzungen selbst machen muss, freut sich über Integration von Übersetzungsdiensten, wie Bing. Mit diesen kann man die Übersetzung ermitteln lassen. Man muss anschließend nur die Übersetzung überprüfen, sofern man der jeweiligen Sprache mächtig ist. Zumindest erleichtert dies schonmal jede Menge Arbeit.</p>
+
+<p>In jedem Fall eine gute Erweiterung für Visual Studio. Sie erleichtert den Umgang mit Übersetzungen enorm. Kostenlos ist das Plugin auch noch. Perfekt.</p>
+
+<ul>
+  <li><a href="https://resxresourcemanager.codeplex.com/">Hier geht es zur Webseite</a></li>
+  <li><a href="https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager">Download für Visual Studio im Marketplace</a></li>
+</ul>
+	
+      <p><a class="btn btn-success" href="/coding/programmierung/2017/02/01/resxmanager_uebersetzungs_werkzeug_fuer_c_sharp.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: Csharp, Coding, and Internatiolization by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/webdesign/webseiten/meinung/2017/01/28/webseiten_mit_templates_erstellen.html">Webseiten mit Templates erstellen</a>
 		</h1>
 		  <p class="small">Posted on 28 January 2017 by Andy</p>
@@ -330,46 +366,6 @@
 		  <p class="small">Tagged: Mobilitaet and Umwelt by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/webdesign/linux/2016/12/17/ssh_bei_hosteurope_midknight_commander.html">SSH bei Hosteurope - Midnight Commander ausführen</a>
-		</h1>
-		  <p class="small">Posted on 17 December 2016 by Andy</p>
-		  <p>Der SSH-Zugang bei Managed Servern ist bei Hosteurope naturgemäß eingeschränkt. Man kann seine eigenen Dateien verwalten, das wars.</p>
-
-<p>Ausführen kann man die installierten Programme. Aber auch hier gibt es Einschränkungen. So läuft der Midnight Commander standardmäßig erstmal nicht. Stattdessen erscheint die folgende Fehlermeldung:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>user@hosteurope:~$ mc
-Failed to run:
-Cannot create /is/htdocs/wp_koko/.config/mc directory
-</code></pre>
-</div>
-
-<p>Dies ist einfach nur ein Berechtigungsproblem. Auf dieses Verzeichnis hat standardmäßig nur der FTP-User Zugriff. Es gibt aber eine Lösung. Man legt das Verzeichnis einfach von Hand über FTP an.</p>
-
-<p>Angelegt werden müssen drei Verzeichnisse:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>.config
-.cache
-.local	
-</code></pre>
-</div>
-
-<p><img src="/assets/uploads/2016/12/mc1.png" alt="" /></p>
-
-<p>Anschließend ändert man über die Dateiverwaltung im KIS die Berechtigung für diese drei Ordner. Dies muss dann der SSH-Benutzer sein. Dieser fängt mit <code>wp</code> an.</p>
-
-<p><img src="/assets/uploads/2016/12/mc2.png" alt="" /></p>
-
-<p>Anschließend klappt der Start vom Midnight Commander-</p>
-
-<p><img src="/assets/uploads/2016/12/mc3.png" alt="" /></p>
-	
-      <p><a class="btn btn-success" href="/webdesign/linux/2016/12/17/ssh_bei_hosteurope_midknight_commander.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: Hosteurope by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -426,7 +422,7 @@ Cannot create /is/htdocs/wp_koko/.config/mc directory
      
       <li class="category"><a href="/categories/coding">Coding <span>(32)</span></a></li>
      
-      <li class="category"><a href="/categories/computer">Computer <span>(15)</span></a></li>
+      <li class="category"><a href="/categories/computer">Computer <span>(16)</span></a></li>
      
       <li class="category"><a href="/categories/delphi">Delphi <span>(9)</span></a></li>
      
@@ -494,7 +490,7 @@ Cannot create /is/htdocs/wp_koko/.config/mc directory
      
       <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
      
-      <li class="category"><a href="/categories/software">Software <span>(5)</span></a></li>
+      <li class="category"><a href="/categories/software">Software <span>(6)</span></a></li>
      
       <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
      

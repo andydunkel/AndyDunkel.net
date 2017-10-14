@@ -160,6 +160,34 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/java/2011/07/18/eclipse-rcp-forms-section-not-expanded.html">Eclipse RCP: Forms Section not expanded</a>
+		</h1>
+		  <p class="small">Posted on 18 July 2011 by Andy</p>
+		  <p>Sometimes strange things happen in Eclipse. Like this one in <a href="http://www.eclipse.org/windowbuilder/">WindowBuilder</a>, the best tool for designing GUIs in Eclipse (<a href="http://twitter.com/#!/hrb79/status/92941011923374080">via</a>).</p>
+
+<p>I created a Forms API section in the program, but when I executed the program, the section was not expanded, not content was shown:</p>
+
+<p><img src="https://andydunkel.net/assets/uploads/2011/07/image15.png" alt="image" /></p>
+
+<p>In the properties editor, expanded was set to true. What to do??</p>
+
+<!-- more -->
+
+<p>The solution is simple, it appears that the order of commands in the source code has some importance. The setExpanded Method must be called after the setClient method of the Section.</p>
+
+<p><img src="https://andydunkel.net/assets/uploads/2011/07/image16.png" alt="image" /></p>
+
+<p>After that, the section is expanded properly:</p>
+
+<p><img src="https://andydunkel.net/assets/uploads/2011/07/image17.png" alt="image" /></p>
+	
+      <p><a class="btn btn-success" href="/java/2011/07/18/eclipse-rcp-forms-section-not-expanded.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: API, expanded, Forms, Section, setExpanded, and WindowBuilder by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/ireland/2011/07/18/ireland-july-2011.html">Ireland-July 2011</a>
 		</h1>
 		  <p class="small">Posted on 18 July 2011 by Andy</p>
@@ -218,21 +246,6 @@
 		  <p class="small">Tagged: Katze by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/radfahren/2011/07/11/radtour-mit-orbeidskollegen06-07-2011.html">Radtour mit Orbeidskollegen–06.07.2011</a>
-		</h1>
-		  <p class="small">Posted on 11 July 2011 by Andy</p>
-		  <p>Fast schon Tradition, die jährliche Radtour im Sommer mit den Kollegen. Diesmal ging es nicht nach Katzbrui, sondern eine Runde um Kaufbeuren und anschließender Einkehr in Gennachhausen: <a href="http://www.gasthaus-zum-hack.de/" target="_blank">Zum Hack</a>.</p>
-<p>Zum Abschluss gab es noch einen Abstecher <a href="http://www.mccallionsirishpub.de/" target="_blank">in den Irish Pub</a>.</p>
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:8fadd103-0f20-49ec-bf5c-939b0d33b34f" class="wlWriterEditableSmartContent"><div><object width="585" height="329"><param name="movie" value="http://www.youtube.com/v/WONCZtcfrqw?hl=en&amp;hd=1" />&lt;/param&gt;<embed src="http://www.youtube.com/v/WONCZtcfrqw?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="585" height="329" />&lt;/embed&gt;</object></div></div>
-
-	
-      <p><a class="btn btn-success" href="/radfahren/2011/07/11/radtour-mit-orbeidskollegen06-07-2011.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: Radfahren by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -289,7 +302,7 @@
      
       <li class="category"><a href="/categories/coding">Coding <span>(32)</span></a></li>
      
-      <li class="category"><a href="/categories/computer">Computer <span>(15)</span></a></li>
+      <li class="category"><a href="/categories/computer">Computer <span>(16)</span></a></li>
      
       <li class="category"><a href="/categories/delphi">Delphi <span>(9)</span></a></li>
      
@@ -357,7 +370,7 @@
      
       <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
      
-      <li class="category"><a href="/categories/software">Software <span>(5)</span></a></li>
+      <li class="category"><a href="/categories/software">Software <span>(6)</span></a></li>
      
       <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
      

@@ -160,6 +160,46 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/webdesign/linux/2016/12/17/ssh_bei_hosteurope_midknight_commander.html">SSH bei Hosteurope - Midnight Commander ausführen</a>
+		</h1>
+		  <p class="small">Posted on 17 December 2016 by Andy</p>
+		  <p>Der SSH-Zugang bei Managed Servern ist bei Hosteurope naturgemäß eingeschränkt. Man kann seine eigenen Dateien verwalten, das wars.</p>
+
+<p>Ausführen kann man die installierten Programme. Aber auch hier gibt es Einschränkungen. So läuft der Midnight Commander standardmäßig erstmal nicht. Stattdessen erscheint die folgende Fehlermeldung:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>user@hosteurope:~$ mc
+Failed to run:
+Cannot create /is/htdocs/wp_koko/.config/mc directory
+</code></pre>
+</div>
+
+<p>Dies ist einfach nur ein Berechtigungsproblem. Auf dieses Verzeichnis hat standardmäßig nur der FTP-User Zugriff. Es gibt aber eine Lösung. Man legt das Verzeichnis einfach von Hand über FTP an.</p>
+
+<p>Angelegt werden müssen drei Verzeichnisse:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>.config
+.cache
+.local	
+</code></pre>
+</div>
+
+<p><img src="/assets/uploads/2016/12/mc1.png" alt="" /></p>
+
+<p>Anschließend ändert man über die Dateiverwaltung im KIS die Berechtigung für diese drei Ordner. Dies muss dann der SSH-Benutzer sein. Dieser fängt mit <code>wp</code> an.</p>
+
+<p><img src="/assets/uploads/2016/12/mc2.png" alt="" /></p>
+
+<p>Anschließend klappt der Start vom Midnight Commander-</p>
+
+<p><img src="/assets/uploads/2016/12/mc3.png" alt="" /></p>
+	
+      <p><a class="btn btn-success" href="/webdesign/linux/2016/12/17/ssh_bei_hosteurope_midknight_commander.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: Hosteurope by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/coding/2016/12/15/wpf_anwendungen_mehrsprachig.html">WPF Anwendung lokalisieren und übersetzen</a>
 		</h1>
 		  <p class="small">Posted on 15 December 2016 by Andy</p>
@@ -381,39 +421,6 @@ CultureInfo.DefaultThreadCurrentUICulture = myCultureInfo;
 		  <p class="small">Tagged: C# by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/mobilitaet/umwelt/2016/11/03/mobilitaet_oktober_2016.html">Mobilität Oktober 2016</a>
-		</h1>
-		  <p class="small">Posted on 03 November 2016 by Andy</p>
-		  <p>Das Wetter ist kalt, nebelig und verregnet. Das wirkt sich auch aufs Radfahren aus. Radfahren zur Arbeit hat sich erstmal erledigt. Eventuell werde ich mich irgendwann dazu aufraffen, aber regelmäßig wird das nix im Winter.0</p>
-
-<p>Gefahren bin ich im Wesentlichen nur noch mit dem Brompton zum und vom Bahnhof. Dennoch bleibt die Autofahrerei niedrig. 217km bin ich gefahren. Der Rest war dann mitfahren, bzw. Zug und Brompton.</p>
-
-<p>Meist fahre ich früh bei meiner Freundin mit zur Arbeit. Nachmittags geht es dann mit dem Zug zurück. Obwohl Zugfahrt + Radfahren doppelt so lang dauert, wie die Autofahrt, finde ich es nicht so wild. Etwas Bewegung nach dem Bürotag tut gut und die Zeit im Zug kann ich zum Lesen nutzen. Auch eine Tätigkeit zu der ich sonst selten komme.</p>
-
-<h3 id="fahrrad">Fahrrad</h3>
-
-<ul>
-  <li>Gesamt km: 66 km</li>
-  <li>Fahrten: 24</li>
-  <li>Durchschnitt pro Fahrt: 2,75 km</li>
-</ul>
-
-<h3 id="auto">Auto</h3>
-
-<ul>
-  <li>Gesamt km: 217</li>
-  <li>Fahrten: 10</li>
-  <li>Durchschnitt pro Fahrt: 21,7 km</li>
-  <li>Getankt: 0 Liter</li>
-</ul>
-	
-      <p><a class="btn btn-success" href="/mobilitaet/umwelt/2016/11/03/mobilitaet_oktober_2016.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: Mobilitaet and Umwelt by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -470,7 +477,7 @@ CultureInfo.DefaultThreadCurrentUICulture = myCultureInfo;
      
       <li class="category"><a href="/categories/coding">Coding <span>(32)</span></a></li>
      
-      <li class="category"><a href="/categories/computer">Computer <span>(15)</span></a></li>
+      <li class="category"><a href="/categories/computer">Computer <span>(16)</span></a></li>
      
       <li class="category"><a href="/categories/delphi">Delphi <span>(9)</span></a></li>
      
@@ -538,7 +545,7 @@ CultureInfo.DefaultThreadCurrentUICulture = myCultureInfo;
      
       <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
      
-      <li class="category"><a href="/categories/software">Software <span>(5)</span></a></li>
+      <li class="category"><a href="/categories/software">Software <span>(6)</span></a></li>
      
       <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
      

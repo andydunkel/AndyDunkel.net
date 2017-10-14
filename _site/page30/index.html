@@ -160,6 +160,32 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/gadgets/2012/11/22/roomba-fehler-nummer-9-die-zweite.html">Roomba Fehler Nummer 9 die zweite</a>
+		</h1>
+		  <p class="small">Posted on 22 November 2012 by Andy</p>
+		  <p>Mal wieder Fehler 9 beim <a href="http://www.amazon.de/gp/product/B002P68ADQ/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B002P68ADQ&amp;linkCode=as2&amp;tag=ekiwide0b-21">Roomba</a>. Diesmal war es ein eher schleichender Prozess, mal ging er, mal drehte er sich nur noch im Kreis, um irgendwann mit 9 maligem Piepen den Dienst zu quittieren. Ein anderes Mal konzentrierte er sich verdächtiger Weise nur auf eine hälfte des Raums.</p>
+
+<p>Hatte ja bereits erwartet, dass der Roomba irgendwann mal wieder Probleme macht. Bei der letzten Reparatur <a href="https://andydunkel.net/gadgets/sonstiges/2012/03/11/roomba-fehler-9reparaturanleitung.html">(hier geht es zur Anleitung)</a> wurde nur ein Sensor ausgetauscht und die Ursache des Defekts ist, nach allem was ich gelesen hatte, auf Materialermüdung zurückzuführen.</p>
+
+<p>Daher meine Empfehlung, wenn das Ding einmal zerlegt ist, am Besten gleich beide Sensoren reparieren. </p>
+
+<p><img src="https://andydunkel.net/assets/uploads/2012/11/2012-11-21-20.05.05.jpg" alt="2012 11 21 20 05 05" /></p>
+
+<p>Also wieder das Standardprogramm, zerlegen und neue Dioden einlöten. Ging diesmal auch wesentlich flotter. Wieder zusammensetzen und schon tut er wieder seinen Dienst wie gewohnt. Jetzt hoffe ich, dass das das letzte Mal war, dass ich das Ding zerlegen muss. :-)</p>
+
+<p>Nicht falsch verstehen, ich bin mit dem <a href="http://www.amazon.de/gp/product/B002P68ADQ/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B002P68ADQ&amp;linkCode=as2&amp;tag=ekiwide0b-21">Roomba</a> immer noch sehr zufrieden und würde mir jederzeit wieder einen kaufen. Hatte wohl etwas Pech. Kumpel hat gleiches Modell, am gleichen Tag gekauft und bisher keine Probleme. </p>
+
+<p><strong>Hier die Übeltäter:</strong></p>
+
+<p><img src="https://andydunkel.net/assets/uploads/2012/11/2012-11-21-20.15.48.jpg" alt="2012 11 21 20 15 48" /></p>
+	
+      <p><a class="btn btn-success" href="/gadgets/2012/11/22/roomba-fehler-nummer-9-die-zweite.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: Error 9 and roomba by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/coding/eclipse/2012/11/04/rcp-problems-when-generating-pdf-files-with-rcp.html">RCP: Problems when generating PDF files with RCP</a>
 		</h1>
 		  <p class="small">Posted on 04 November 2012 by Andy</p>
@@ -285,46 +311,6 @@ return null;
 		  <p class="small">Tagged:  by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/coding/eclipse/2012/11/01/rcp-remove-unwanted-preference-pages.html">RCP: Remove unwanted preference pages</a>
-		</h1>
-		  <p class="small">Posted on 01 November 2012 by Andy</p>
-		  <p>In my RCP application some unwanted sections in the preferences showed up:</p>
-
-<p><img src="https://andydunkel.net/assets/uploads/2012/11/UnwantedPreferences.png" alt="Unwanted Preferences" /></p>
-
-<p>How to get rid of them? Thats easy, in the “ApplicationWorkbenchAdvisor” class, override the “postStartup” method:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>@Override
-public void postStartup(){
-	  PreferenceManager pm = PlatformUI.getWorkbench().getPreferenceManager();
-	  pm.remove("org.eclipse.help.ui.browsersPreferencePage"); //$NON-NLS-1$
-	  pm.remove("org.eclipse.help.ui.contentPreferencePage"); //$NON-NLS-1$
-}
-</code></pre>
-</div>
-
-<p>What if you don’t know the id of the preference page? No problem, you can output those with the following code snippet:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>@Override
-public void postStartup(){
-	  PreferenceManager pm = PlatformUI.getWorkbench().getPreferenceManager();
-	  IPreferenceNode[] arr = pm.getRootSubNodes();
-	          
-	  for(IPreferenceNode pn:arr){
-	      System.out.println("Label:" + pn.getLabelText() + " ID:" + pn.getId());
-	  }
-}
-</code></pre>
-</div>
-
-	
-      <p><a class="btn btn-success" href="/coding/eclipse/2012/11/01/rcp-remove-unwanted-preference-pages.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: Eclipse, plugin, preferences, and RCP by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -381,7 +367,7 @@ public void postStartup(){
      
       <li class="category"><a href="/categories/coding">Coding <span>(32)</span></a></li>
      
-      <li class="category"><a href="/categories/computer">Computer <span>(15)</span></a></li>
+      <li class="category"><a href="/categories/computer">Computer <span>(16)</span></a></li>
      
       <li class="category"><a href="/categories/delphi">Delphi <span>(9)</span></a></li>
      
@@ -449,7 +435,7 @@ public void postStartup(){
      
       <li class="category"><a href="/categories/science">Science <span>(3)</span></a></li>
      
-      <li class="category"><a href="/categories/software">Software <span>(5)</span></a></li>
+      <li class="category"><a href="/categories/software">Software <span>(6)</span></a></li>
      
       <li class="category"><a href="/categories/sonstiges">Sonstiges <span>(43)</span></a></li>
      
