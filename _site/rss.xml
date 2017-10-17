@@ -8,7 +8,32 @@
     <title>AndyDunkel.net</title>
     <link>https://andydunkel.net</link>
     <description>RSS feed for AndyDunkel.net</description>
-    <pubDate>Sat, 14 Oct 2017 12:00:00 +0200</pubDate>
+    <pubDate>Tue, 17 Oct 2017 19:00:00 +0200</pubDate>
+    <item>
+      <title>Rovtop Mikrofon Stativ für Blue Snowball umgekehrt betreiben</title>
+      <link>https://andydunkel.net/hardware/gadgets/2017/10/17/stativarm_fuer_blue_snowball_teil2.html</link>
+      <description><![CDATA[
+
+Eine kleine Ergänzung zu meinem Artikel über den Rovtop Mikrofon-Stativ für mein Blue Snoball Mikrofon. Es kam über Youtube die Anfrage rein, ob man das Mikro auch von oben herab damit betreiben kann. Ich habe es getestet und heraus kam ein kurzes Video.
+
+]]></description>
+      <pubDate>Tue, 17 Oct 2017 19:00:00 +0200</pubDate>
+      <guid>https://andydunkel.net/hardware/gadgets/2017/10/17/stativarm_fuer_blue_snowball_teil2.html</guid>
+      <content:encoded><![CDATA[<img src="/assets/uploads/2017/7/stativ_logo.jpg" class="imagelogo">
+
+Eine kleine Ergänzung zu meinem [Artikel über den Rovtop Mikrofon-Stativ für mein Blue Snoball Mikrofon](https://andydunkel.net/hardware/gadgets/2017/07/04/stativarm_fuer_blue_snowball.html). Es kam über Youtube die Anfrage rein, ob man das Mikro auch von oben herab damit betreiben kann. Ich habe es getestet und heraus kam ein kurzes Video.
+
+<!--more-->
+
+Kurz gesagt, lässt sich das Mikro und das Stativ umgekehrt betreiben. Es hält und fällt nicht herunter, lässt sich drehen. Einschränkungen gibt es, wenn man versucht den Stativarm komplett heraus zu ziehen. Hierbei hält es dann nicht mehr in der Position. Der Hebel ist zu groß.
+
+
+
+
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=DE&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=ekiwide0b-21&marketplace=amazon&region=DE&placement=B01N2U8REH&asins=B01N2U8REH&linkId=819b6596c1e0f43e87699ee1a51cde29&show_border=true&link_opens_in_new_window=true"></iframe>
+]]></content:encoded>
+      <dc:date>2017-10-17T19:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>Port Monitoring mit Wireshark und Netgear Switch</title>
       <link>https://andydunkel.net/computer/software/2017/10/14/netzwerk_port_monitoring_mit_wireshark.html</link>
@@ -18420,6 +18445,6 @@ public static File getPluginFolder() {
 ]]></content:encoded>
       <dc:date>2011-04-28T22:59:35+02:00</dc:date>
     </item>
-    <dc:date>2017-10-14T12:00:00+02:00</dc:date>
+    <dc:date>2017-10-17T19:00:00+02:00</dc:date>
   </channel>
 </rss>

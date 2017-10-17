@@ -160,6 +160,55 @@
 		
     <div class="postfrontpage">
 		<h1 class="postfrontpage_heading">
+		  <a href="/jekyll/webdesign/2016/01/21/jekyll_related_posts.html">Jekyll - Related Posts / Verwandte Artikel</a>
+		</h1>
+		  <p class="small">Posted on 21 January 2016 by Andy</p>
+		  <p>Jekyll bietet über das die Variable <code>site.related_posts</code> eine Funktion um “Verwandte Artikel” zu einem Blogpost anzuzeigen. Standardmäßig ist die Funktion jedoch eher eingeschränkt und enthält nur die letzten 10 Artikel.</p>
+
+<p>Das Ganze wird z.B. so verwendet:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">post</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">site.related_posts</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+   </span><span class="err">&lt;li&gt;&lt;a</span><span class="w"> </span><span class="err">href=</span><span class="s2">"{{ site.url }}{{ post.url }}"</span><span class="w"> </span><span class="err">title="</span><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">post.title</span><span class="w"> </span><span class="p">}</span><span class="err">}&gt;</span><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">post.title</span><span class="w"> </span><span class="p">}</span><span class="err">}&lt;/a&gt;&lt;/li&gt;</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>Da jeweils immer nur die letzten 10 Artikel angezeigt werden, ist das nicht wirklich “related”. Immerhin wird noch die Option angeboten das Ganze über einen Index etwas schlauer zu machen. Mit der Option <code>--lsi</code> wird beim Generieren der Seite ein Index angelegt und die Funktion arbeitet semantisch etwas schlauer. Bei mir hat das jedoch auch nicht funktioniert. Hier kam es leider nur zu einer Fehlermeldung. Außerdem wollte ich nicht stupide immer 10 Artikel angezeigt bekommen, obs passt oder nicht.</p>
+
+<p>Auf der Suche nach einer besseren Lösung bin ich auf <a href="https://github.com/jumanji27/related-posts-jekyll-plugin">ein Github-Projekt</a> gestoßen. Das Plugin kopiert man einfach in das Plugin-Verzeichnis von Jekyll. Es ersetzt die Standardfunktion von Jekyll. Die Zuordnung der verwandten Artikel erfolgt beim Plugin über die Tags, gleicher Tag == verwandt.</p>
+
+<p>Zur Einbindung habe ich folgenden Code verwendet.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">site.related_posts.size</span><span class="w"> </span><span class="err">&gt;</span><span class="w"> </span><span class="err">0</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+ </span><span class="err">&lt;div</span><span class="w"> </span><span class="err">class=</span><span class="s2">"panel panel-default"</span><span class="err">&gt;</span><span class="w">
+ 	</span><span class="err">&lt;div</span><span class="w"> </span><span class="err">class=</span><span class="s2">"panel-heading"</span><span class="err">&gt;Verwandte</span><span class="w"> </span><span class="err">Artikel:&lt;/div&gt;</span><span class="w">
+	</span><span class="err">&lt;div</span><span class="w"> </span><span class="err">class=</span><span class="s2">"panel-body"</span><span class="err">&gt;</span><span class="w">
+	</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">post</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">site.related_posts</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+	   </span><span class="err">&lt;li&gt;&lt;a</span><span class="w"> </span><span class="err">href=</span><span class="s2">"{{ site.url }}{{ post.url }}"</span><span class="w"> </span><span class="err">title="</span><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">post.title</span><span class="w"> </span><span class="p">}</span><span class="err">}&gt;</span><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">post.title</span><span class="w"> </span><span class="p">}</span><span class="err">}&lt;/a&gt;&lt;/li&gt;</span><span class="w">
+	</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+	</span><span class="err">&lt;/div&gt;</span><span class="w">
+</span><span class="err">&lt;/div&gt;</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>Das Ergebnis sieht dann z.B. so aus:</p>
+
+<p><img src="/assets/uploads/2016/1/related_posts.png" alt="" /></p>
+
+<p>Der Code stellt die Box zudem nur dar, wenn es verwandte Artikel gibt.</p>
+
+<hr />
+
+<p>Beim Schreiben dieses Artikels ist es mir aufgefallen, dass es gar nicht so leicht ist “Liquid code” in Jekyll als Code darzustellen. Wie das geht, <a href="https://truongtx.me/2013/01/09/display-liquid-code-in-jekyll/">ist hier erklärt</a>.</p>
+	
+      <p><a class="btn btn-success" href="/jekyll/webdesign/2016/01/21/jekyll_related_posts.html">Weiterlesen / Read more</a></p>
+      <br/>
+		  <p class="small">Tagged: Jekyll and Webdesign by Andy</p>
+		</div>  
+		
+    <div class="postfrontpage">
+		<h1 class="postfrontpage_heading">
 		  <a href="/coding/2016/01/17/iconexperience_icon_set.html">IconExperience - Icons für Softwareentwickler</a>
 		</h1>
 		  <p class="small">Posted on 17 January 2016 by Andy</p>
@@ -382,70 +431,6 @@ No package 'gimpui-2.0' found
 		  <p class="small">Tagged: Delphi and Lazarus by Andy</p>
 		</div>  
 		
-    <div class="postfrontpage">
-		<h1 class="postfrontpage_heading">
-		  <a href="/repair/reparatur/2015/12/04/festplatte_dell_2520.html">Festplatte eines Dell Vostro 2520 wechseln</a>
-		</h1>
-		  <p class="small">Posted on 04 December 2015 by Andy</p>
-		  <p>Das Dell Vostro 2520 gehört zu den preiswerteren Laptops. Standardmäßig  gerade 2 GB RAM und langsamer Festplatte ausgestattet ist es eher langsam.</p>
-
-<p>Da die Preise für <a href="https://www.amazon.de/s/ref=as_li_ss_tl?_encoding=UTF8&amp;camp=1638&amp;creative=19454&amp;field-keywords=ssd&amp;linkCode=ur2&amp;site-redirect=de&amp;tag=ekiwide0b-21&amp;url=search-alias%3Daps">SSD-Festplatten</a> mittlerweile ganz passabel sind, lohnt es sich die Aufrüstung des Laptops um mehr Geschwindigkeit zu erzielen.</p>
-
-<p>Im Folgenden beschreibe ich die notwendigen Schritte. Das ganze ist nicht sonderlich kompliziert, wenn man weiß wie es geht.</p>
-
-<p>Die Schritte lassen sich auch für die Erweiterung des Arbeitsspeichers nutzen. Dieser sitzt unter der Tastatur, welche wir auch für die Festplatte entfernen müssen.</p>
-
-<h2 id="legen-wir-los">Legen wir los</h2>
-
-<p>Als Werkzeit genügt ein Kreuzschraubendreher und eventuell noch ein normaler, um diverse Plastikschnapper wegdrücken zu können.</p>
-
-<p>Zuerst entfernen wir den Akku und drehen den Laptop auf die Rückseite. Auf der Unterseite gibt es jede Menge Schrauben. Diese entfernen wir alle:</p>
-
-<p><img src="/assets/uploads/2015/12/lap0.jpg" alt="" /></p>
-
-<p>Ist das erledigt, drehen wir das Laptop wieder um und öffnen den Display-Deckel. Nun muss die Tastatur entfernt werden. Diese ist am oberen Ende mit vier Plastiknasen fixiert:</p>
-
-<p><img src="/assets/uploads/2015/12/lap1.jpg" alt="" /></p>
-
-<p><img src="/assets/uploads/2015/12/lap2.jpg" alt="" /></p>
-
-<p>Am Besten geht man so vor, dass man mit einem flachen spitzen Gegenstand den Schnapper nach oben wegdrückt und dann mit einem anderen flachen Werkzeug unter die Tastatur hebelt und diese dann nach oben drückt:</p>
-
-<p><img src="/assets/uploads/2015/12/lap3.jpg" alt="" /></p>
-
-<p>Nachdem alle vier Schnapper gelöst sind, können wir die Tastatur nach oben wegziehen. Da die Tastatur mit einem Flachbandkabel mit dem Mainboard verbunden ist, sollte das vorsichtig geschehen.</p>
-
-<p><img src="/assets/uploads/2015/12/lap4.jpg" alt="" /></p>
-
-<p>Das Flachbandkabel ist lang genug, so dass wir es nicht  unbedingt entfernen müssen. Im Inneren müssen zwei weitere Schrauben gelöst werden:</p>
-
-<p><img src="/assets/uploads/2015/12/lap5.jpg" alt="" /></p>
-
-<p>Anschließend kann die Handballenablage (bzw. oberer Rahmen) entfernt werden. Zuvor entfernen wir noch die zwei Flachbandkabel von Ein-/Ausschalter und dem Touchpad:</p>
-
-<p><img src="/assets/uploads/2015/12/lap6.jpg" alt="" /></p>
-
-<p><img src="/assets/uploads/2015/12/lap7.jpg" alt="" /></p>
-
-<p>Die Flachbandkabel lassen sich leicht entfernen und wieder anbringen.</p>
-
-<p>Im letzten Schritt entfernen wir jetzt die Festplatte. Diese wird durch eine Schraube fixiert, welche wir bereits im ersten Schritt entfernt haben.</p>
-
-<p>Somit kann diese einfach durch Ziehen nach rechts entfernt werden:</p>
-
-<p><img src="/assets/uploads/2015/12/lap9.jpg" alt="" /></p>
-
-<p>Nun kann die neue Platte eingesetzt werden. Es folgt der Zusammenbau. Hierfür sind einfach die Schritte rückwärts durchzuführen.</p>
-
-<p>Wer den Arbeitsspeicher wechseln oder erweitern möchte. Dieser befindet sich links neben dem Flachbandkabel der Tastatur:</p>
-
-<p><img src="/assets/uploads/2015/12/lap8.jpg" alt="" /></p>
-	
-      <p><a class="btn btn-success" href="/repair/reparatur/2015/12/04/festplatte_dell_2520.html">Weiterlesen / Read more</a></p>
-      <br/>
-		  <p class="small">Tagged: Laptop and Reparatur by Andy</p>
-		</div>  
-		
 
     </div>
     <div class="col-md-3">    
@@ -514,11 +499,11 @@ No package 'gimpui-2.0' found
      
       <li class="category"><a href="/categories/fotos">Fotos <span>(5)</span></a></li>
      
-      <li class="category"><a href="/categories/gadgets">Gadgets <span>(29)</span></a></li>
+      <li class="category"><a href="/categories/gadgets">Gadgets <span>(30)</span></a></li>
      
       <li class="category"><a href="/categories/html">Html <span>(1)</span></a></li>
      
-      <li class="category"><a href="/categories/hardware">Hardware <span>(3)</span></a></li>
+      <li class="category"><a href="/categories/hardware">Hardware <span>(4)</span></a></li>
      
       <li class="category"><a href="/categories/hiking">Hiking <span>(9)</span></a></li>
      
@@ -608,7 +593,7 @@ No package 'gimpui-2.0' found
   
     <a href="/page14" class="previous">Previous</a>
   
-  <span class="page_number ">Page: 15 of 58</span>
+  <span class="page_number ">Page: 15 of 59</span>
   
     <a href="/page16" class="next">Next</a>
   
