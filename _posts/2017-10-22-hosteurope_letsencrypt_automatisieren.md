@@ -25,7 +25,11 @@ Glücklicherweise wurde Emile Schenk von <a href="http://donauweb.at" target="_b
 
 Das Script selbst basiert auf [CertLE](https://github.com/skoerfgen/CertLE), einem LetsEncrypt-Client auf Basis von PHP. Der Aufruf erfolgt direkt in der Shell. D.h. ein SSH-Zugang bei Hosteurope ist Pflicht. Bevor man sich nun an die Automatisierung macht, sollte man das im ersten Blogartikel gezeigte manuelle Verfahren einmal von Hand durchmachen, damit man die beiden benötigten Dateien <code>account_key.pem</code> und <code>domain_key.pem</code> erhält.
 
-Das Script gibt es [hier zum Download](hosteurope_letsencrypt.zip). Schauen wir uns im ersten Schritt die Dateien an:
+Das Script gibt es [hier zum Download](/assets/uploads/2017/10/hosteurope_letsencrypt.zip). 
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/IP3Kgc7deZ0" frameborder="0" allowfullscreen></iframe>
+
+Schauen wir uns im ersten Schritt die Dateien an:
 
 ![](/assets/uploads/2017/10/cert_1.png)
 
