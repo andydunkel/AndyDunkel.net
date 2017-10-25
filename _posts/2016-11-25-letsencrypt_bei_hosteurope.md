@@ -72,4 +72,8 @@ Inzwischen hat Hosteurope die Situation geringfügig verbessert. Neben dem globa
 ![](/assets/uploads/2016/11/he_ssl_update.png)
 
 
+### Update 25.10.2017
+
+Die Unterstützung seitens Hosteurope lässt weiterhin auf sich warten. Trotzdem gibt es jetzt eine Möglichkeit die [Erneuerung der LetsEncrypt Zertifikate zu automatisieren](https://andydunkel.net/webseiten/computer/2017/10/22/hosteurope_letsencrypt_automatisieren.html).
+
 
