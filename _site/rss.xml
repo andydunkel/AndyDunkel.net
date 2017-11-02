@@ -1818,7 +1818,7 @@ Its not a very good implementation, but it works.]]></content:encoded>
       <dc:date>2017-02-23T18:00:00+01:00</dc:date>
     </item>
     <item>
-      <title>Letsencrypt bei Hosteurope verlängern</title>
+      <title>Letsencrypt bei Hosteurope verlängern / Update: automatische Verlängerung</title>
       <link>https://andydunkel.net/webseiten/computer/2017/02/20/verlaengerung_hosteurope_ssl_letsencrypt.html</link>
       <description><![CDATA[Letzte Woche stand nun die Verlängerung des Letsencrypt-Zertifikates an. Die Einrichtung hatte ich in einem anderen Blogartikel beschrieben. Die Einrichtung ist, gelinde gesagt, umständlich. Bei einer Domain ist das Ganze noch überschaubar, bei vielen Domains und Subdomains wirds umständlich.
 
@@ -1837,6 +1837,10 @@ Geht auch besser
 Wie es besser geht zeigt der Anbieter Uberspace. Bei dem Webspace dort ist die Einrichtung von Letsencrypt für alle Domains und Subdomains in wenigen Minuten eingerichtet. Außerdem gibt es die Möglichkeit die Erneuerung über einen Cron-Job zu automatisieren.
 
 Bleibt zu hoffen, dass Hosteurope das irgendwann auch anbieten wird. Etwas Verbesserungen gibt es bereits. So kann man jetzt für jede Domain und Subdomain eigene Zertifikate hinterlegen. Kommt eine Domain oder Subdomain hinzu, kann man dieses nun zusätzlich erstellen und einbinden. Vorher musste man das Zertifikat für alle Domains erneuern.
+
+Update
+
+Mittlerweile gibt es eine Möglichkeit die ganze Angelegenheit zu automatisiern. Mehr Infos im neuen Blogartikel: LetsEncrypt Zertifikate automatisch verlängern bei Hosteurope.
 ]]></description>
       <pubDate>Mon, 20 Feb 2017 18:00:00 +0100</pubDate>
       <guid>https://andydunkel.net/webseiten/computer/2017/02/20/verlaengerung_hosteurope_ssl_letsencrypt.html</guid>
@@ -1858,7 +1862,10 @@ Nach der ganzen manuellen Arbeit mit der Verifikation hat es dann auch schon gek
 Wie es besser geht zeigt der Anbieter Uberspace. Bei dem Webspace dort ist die [Einrichtung von Letsencrypt](https://wiki.uberspace.de/webserver:https) für alle Domains und Subdomains in wenigen Minuten eingerichtet. Außerdem gibt es die Möglichkeit die Erneuerung über einen Cron-Job zu automatisieren. 
 
 Bleibt zu hoffen, dass Hosteurope das irgendwann auch anbieten wird. Etwas Verbesserungen gibt es bereits. So kann man jetzt für jede Domain und Subdomain eigene Zertifikate hinterlegen. Kommt eine Domain oder Subdomain hinzu, kann man dieses nun zusätzlich erstellen und einbinden. Vorher musste man das Zertifikat für alle Domains erneuern.
-]]></content:encoded>
+
+## Update
+
+Mittlerweile gibt es eine Möglichkeit die ganze Angelegenheit zu automatisiern. Mehr Infos im neuen Blogartikel: [LetsEncrypt Zertifikate automatisch verlängern bei Hosteurope](https://andydunkel.net/webseiten/computer/2017/10/22/hosteurope_letsencrypt_automatisieren.html).]]></content:encoded>
       <dc:date>2017-02-20T18:00:00+01:00</dc:date>
     </item>
     <item>
