@@ -21,6 +21,8 @@ So here is my solution: only the latest log files are kept. Also, once the curre
 
 <!--more-->
 
+<iframe width="640" height="360" src="https://www.youtube.com/embed/4mbehj5SI8Q" frameborder="0" gesture="media" allowfullscreen></iframe>
+
 In order to set up logging for your application, you have to install a message handler:
 
 	QtMessageHandler qInstallMessageHandler(QtMessageHandler handler)
