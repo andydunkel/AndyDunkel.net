@@ -105,3 +105,15 @@ Ausführen. Dieser erledigt den Upload, sofern man die korrekten Zugangsdaten in
 Beim manuellen Upload verwendet man die <code>fullchain.pem</code> als Zertifikat und <code>domain_key.pem</code> als Key-Datei. Anschließend überprüft man im Browser, ob das Zertifikat korrekt übernommen worden ist. Dies kann ein paar Minuten dauern. 
 
 Beim Erneuten verlängern, müssen nun nur noch alle paar Monate die Befehle für die Generierung und dem Upload ausgeführt werden.
+
+## Update
+
+Kommt beim Ausführen der Scripte eine Fehlermeldung:
+
+	file_get_contents(http://www.domain.de/.well-known/acme-challenge/59fee33f9fd03): 
+	failed to open stream: php_network_getaddresses: getaddrinfo failed: 
+	Name or service not known
+
+Sollte man die Script-Einstellungen im KIS überprüfen. Hier kann ggf. eine Einstellung verhindern, dass PHP auf externe URLs zugreifen kann:
+
+![](/assets/uploads/2017/10/cert_sec.png)	

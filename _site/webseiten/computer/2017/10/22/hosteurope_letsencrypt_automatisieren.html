@@ -261,6 +261,20 @@ Saved Certificate to: cert.pem
 
 <p>Beim Erneuten verlängern, müssen nun nur noch alle paar Monate die Befehle für die Generierung und dem Upload ausgeführt werden.</p>
 
+<h2 id="update">Update</h2>
+
+<p>Kommt beim Ausführen der Scripte eine Fehlermeldung:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>file_get_contents(http://www.domain.de/.well-known/acme-challenge/59fee33f9fd03): 
+failed to open stream: php_network_getaddresses: getaddrinfo failed: 
+Name or service not known
+</code></pre>
+</div>
+
+<p>Sollte man die Script-Einstellungen im KIS überprüfen. Hier kann ggf. eine Einstellung verhindern, dass PHP auf externe URLs zugreifen kann:</p>
+
+<p><img src="/assets/uploads/2017/10/cert_sec.png" alt="" /></p>
+
 			</div>
 			
 			<br>
