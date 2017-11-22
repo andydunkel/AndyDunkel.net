@@ -4,7 +4,7 @@ comments: true
 date: 2017-10-22 10:00:00+00:00
 layout: post
 slug: hosteurope_letsencrypt_automatisieren
-title: 'Hosteurope - SSL-Zertifikate von LetsEncrypt automatisieren'
+title: 'Hosteurope - SSL-Zertifikate von LetsEncrypt automatisch verlängern und einrichten'
 categories:
 - Webseiten
 - Computer
