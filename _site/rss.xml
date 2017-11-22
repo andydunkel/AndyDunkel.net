@@ -263,7 +263,7 @@ The logs are now saved to the log folder and rotated:
       <dc:date>2017-11-08T11:00:00+01:00</dc:date>
     </item>
     <item>
-      <title>Hosteurope - SSL-Zertifikate von LetsEncrypt automatisieren</title>
+      <title>Hosteurope - SSL-Zertifikate von LetsEncrypt automatisch verlängern und einrichten</title>
       <link>https://andydunkel.net/webseiten/computer/2017/10/22/hosteurope_letsencrypt_automatisieren.html</link>
       <description><![CDATA[
 
